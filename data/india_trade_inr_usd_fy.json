@@ -1,0 +1,221 @@
+{
+  "source_url": "https://www.fbil.org.in/wasdm/refrates/fetchfiltered",
+  "source_note": "RBI Table 139 covers financial years through 2023-2024; FBIL daily reference rates are used to extend the series through 2025-2026.",
+  "rows": [
+    {
+      "financial_year": "1984-1985",
+      "inr_per_usd_avg": 11.8886,
+      "inr_per_usd_end": 12.43
+    },
+    {
+      "financial_year": "1985-1986",
+      "inr_per_usd_avg": 12.2349,
+      "inr_per_usd_end": 12.3061
+    },
+    {
+      "financial_year": "1986-1987",
+      "inr_per_usd_avg": 12.7782,
+      "inr_per_usd_end": 12.8882
+    },
+    {
+      "financial_year": "1987-1988",
+      "inr_per_usd_avg": 12.9658,
+      "inr_per_usd_end": 13.0318
+    },
+    {
+      "financial_year": "1988-1989",
+      "inr_per_usd_avg": 14.4817,
+      "inr_per_usd_end": 15.663
+    },
+    {
+      "financial_year": "1989-1990",
+      "inr_per_usd_avg": 16.6492,
+      "inr_per_usd_end": 17.3248
+    },
+    {
+      "financial_year": "1990-1991",
+      "inr_per_usd_avg": 17.9428,
+      "inr_per_usd_end": 19.6429
+    },
+    {
+      "financial_year": "1991-1992",
+      "inr_per_usd_avg": 24.4737,
+      "inr_per_usd_end": 31.2256
+    },
+    {
+      "financial_year": "1992-1993",
+      "inr_per_usd_avg": 30.6488,
+      "inr_per_usd_end": 31.2354
+    },
+    {
+      "financial_year": "1993-1994",
+      "inr_per_usd_avg": 31.3655,
+      "inr_per_usd_end": 31.3725
+    },
+    {
+      "financial_year": "1994-1995",
+      "inr_per_usd_avg": 31.3986,
+      "inr_per_usd_end": 31.495
+    },
+    {
+      "financial_year": "1995-1996",
+      "inr_per_usd_avg": 33.4498,
+      "inr_per_usd_end": 34.35
+    },
+    {
+      "financial_year": "1996-1997",
+      "inr_per_usd_avg": 35.4999,
+      "inr_per_usd_end": 35.915
+    },
+    {
+      "financial_year": "1997-1998",
+      "inr_per_usd_avg": 37.1648,
+      "inr_per_usd_end": 39.495
+    },
+    {
+      "financial_year": "1998-1999",
+      "inr_per_usd_avg": 42.0706,
+      "inr_per_usd_end": 42.435
+    },
+    {
+      "financial_year": "1999-2000",
+      "inr_per_usd_avg": 43.3327,
+      "inr_per_usd_end": 43.605
+    },
+    {
+      "financial_year": "2000-2001",
+      "inr_per_usd_avg": 45.6844,
+      "inr_per_usd_end": 46.64
+    },
+    {
+      "financial_year": "2001-2002",
+      "inr_per_usd_avg": 47.6919,
+      "inr_per_usd_end": 48.8
+    },
+    {
+      "financial_year": "2002-2003",
+      "inr_per_usd_avg": 48.3953,
+      "inr_per_usd_end": 47.505
+    },
+    {
+      "financial_year": "2003-2004",
+      "inr_per_usd_avg": 45.9516,
+      "inr_per_usd_end": 43.445
+    },
+    {
+      "financial_year": "2004-2005",
+      "inr_per_usd_avg": 44.9315,
+      "inr_per_usd_end": 43.755
+    },
+    {
+      "financial_year": "2005-2006",
+      "inr_per_usd_avg": 44.2735,
+      "inr_per_usd_end": 44.605
+    },
+    {
+      "financial_year": "2006-2007",
+      "inr_per_usd_avg": 45.2495,
+      "inr_per_usd_end": 43.595
+    },
+    {
+      "financial_year": "2007-2008",
+      "inr_per_usd_avg": 40.2607,
+      "inr_per_usd_end": 39.985
+    },
+    {
+      "financial_year": "2008-2009",
+      "inr_per_usd_avg": 45.9933,
+      "inr_per_usd_end": 50.945
+    },
+    {
+      "financial_year": "2009-2010",
+      "inr_per_usd_avg": 47.4433,
+      "inr_per_usd_end": 45.135
+    },
+    {
+      "financial_year": "2010-2011",
+      "inr_per_usd_avg": 45.5626,
+      "inr_per_usd_end": 44.645
+    },
+    {
+      "financial_year": "2011-2012",
+      "inr_per_usd_avg": 47.9229,
+      "inr_per_usd_end": 51.16
+    },
+    {
+      "financial_year": "2012-2013",
+      "inr_per_usd_avg": 54.4099,
+      "inr_per_usd_end": 54.3893
+    },
+    {
+      "financial_year": "2013-2014",
+      "inr_per_usd_avg": 60.5019,
+      "inr_per_usd_end": 60.0998
+    },
+    {
+      "financial_year": "2014-2015",
+      "inr_per_usd_avg": 61.1436,
+      "inr_per_usd_end": 62.5908
+    },
+    {
+      "financial_year": "2015-2016",
+      "inr_per_usd_avg": 65.4685,
+      "inr_per_usd_end": 66.3329
+    },
+    {
+      "financial_year": "2016-2017",
+      "inr_per_usd_avg": 67.072,
+      "inr_per_usd_end": 64.8386
+    },
+    {
+      "financial_year": "2017-2018",
+      "inr_per_usd_avg": 64.4549,
+      "inr_per_usd_end": 65.0441
+    },
+    {
+      "financial_year": "2018-2019",
+      "inr_per_usd_avg": 69.9229,
+      "inr_per_usd_end": 69.1713
+    },
+    {
+      "financial_year": "2019-2020",
+      "inr_per_usd_avg": 70.897,
+      "inr_per_usd_end": 75.3859
+    },
+    {
+      "financial_year": "2020-2021",
+      "inr_per_usd_avg": 74.225,
+      "inr_per_usd_end": 73.5047
+    },
+    {
+      "financial_year": "2021-2022",
+      "inr_per_usd_avg": 74.5039,
+      "inr_per_usd_end": 75.8071
+    },
+    {
+      "financial_year": "2022-2023",
+      "inr_per_usd_avg": 80.3635,
+      "inr_per_usd_end": 82.2169
+    },
+    {
+      "financial_year": "2023-2024",
+      "inr_per_usd_avg": 82.7897,
+      "inr_per_usd_end": 83.3739
+    },
+    {
+      "financial_year": "2024-2025",
+      "inr_per_usd_avg": 84.569772,
+      "inr_per_usd_end": 85.5814
+    },
+    {
+      "financial_year": "2025-2026",
+      "inr_per_usd_avg": 88.307136,
+      "inr_per_usd_end": 94.6543
+    }
+  ],
+  "sources": {
+    "table_139_url": "https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/139T_13092024245FFE1BB8CB45C3A51183FB6ADA6DC8.XLSX",
+    "fbil_reference_rates_url": "https://www.fbil.org.in/wasdm/refrates/fetchfiltered",
+    "fbil_base_url": "https://www.fbil.org.in/wasdm"
+  }
+}

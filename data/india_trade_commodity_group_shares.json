@@ -1,0 +1,5325 @@
+{
+  "source_update_note": "FTPA annual commodity-group summary reports fetched from the official Government of India trade portal on 08 Jun 2026. March selections were used to capture completed fiscal years.",
+  "export_rows": [
+    {
+      "financial_year": "2009-2010",
+      "report_year": 2010,
+      "report_month": "March",
+      "total_usd_mn": 178751.43,
+      "total_growth_pct": null,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 1105.95,
+          "growth_pct": null,
+          "share_pct": 0.62
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 12971.25,
+          "growth_pct": null,
+          "share_pct": 7.26
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 2095.28,
+          "growth_pct": null,
+          "share_pct": 1.17
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 7217.25,
+          "growth_pct": null,
+          "share_pct": 4.04
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 3381.34,
+          "growth_pct": null,
+          "share_pct": 1.89
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 28720.69,
+          "growth_pct": null,
+          "share_pct": 16.07
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 141,
+          "growth_pct": null,
+          "share_pct": 0.08
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 17214.89,
+          "growth_pct": null,
+          "share_pct": 9.63
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 3341.39,
+          "growth_pct": null,
+          "share_pct": 1.87
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 2183.98,
+          "growth_pct": null,
+          "share_pct": 1.22
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 1181.16,
+          "growth_pct": null,
+          "share_pct": 0.66
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 12279.41,
+          "growth_pct": null,
+          "share_pct": 6.87
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 764.61,
+          "growth_pct": null,
+          "share_pct": 0.43
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 5602.07,
+          "growth_pct": null,
+          "share_pct": 3.13
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 10034.33,
+          "growth_pct": null,
+          "share_pct": 5.61
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 57.61,
+          "growth_pct": null,
+          "share_pct": 0.03
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 10209.07,
+          "growth_pct": null,
+          "share_pct": 5.71
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 103.05,
+          "growth_pct": null,
+          "share_pct": 0.06
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 23271,
+          "growth_pct": null,
+          "share_pct": 13.02
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 28185.93,
+          "growth_pct": null,
+          "share_pct": 15.77
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 8690.14,
+          "growth_pct": null,
+          "share_pct": 4.86
+        }
+      ]
+    },
+    {
+      "financial_year": "2010-2011",
+      "report_year": 2011,
+      "report_month": "March",
+      "total_usd_mn": 249815.54,
+      "total_growth_pct": 39.76,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1105.95,
+          "current_usd_mn": 1521.1,
+          "growth_pct": 37.54,
+          "share_pct": 0.61
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 12971.25,
+          "current_usd_mn": 17762.51,
+          "growth_pct": 36.94,
+          "share_pct": 7.11
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 2095.28,
+          "current_usd_mn": 2622.72,
+          "growth_pct": 25.17,
+          "share_pct": 1.05
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 7217.25,
+          "current_usd_mn": 7097.88,
+          "growth_pct": -1.65,
+          "share_pct": 2.84
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 3381.34,
+          "current_usd_mn": 3913.82,
+          "growth_pct": 15.75,
+          "share_pct": 1.57
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 28720.69,
+          "current_usd_mn": 42346.29,
+          "growth_pct": 47.44,
+          "share_pct": 16.95
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 141,
+          "current_usd_mn": 166.09,
+          "growth_pct": 17.8,
+          "share_pct": 0.07
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 17214.89,
+          "current_usd_mn": 20827.98,
+          "growth_pct": 20.99,
+          "share_pct": 8.34
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 3341.39,
+          "current_usd_mn": 4701.18,
+          "growth_pct": 40.7,
+          "share_pct": 1.88
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 2183.98,
+          "current_usd_mn": 2596.58,
+          "growth_pct": 18.89,
+          "share_pct": 1.04
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 1181.16,
+          "current_usd_mn": 1625.22,
+          "growth_pct": 37.59,
+          "share_pct": 0.65
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 12279.41,
+          "current_usd_mn": 19323,
+          "growth_pct": 57.36,
+          "share_pct": 7.73
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 764.61,
+          "current_usd_mn": 1062.56,
+          "growth_pct": 38.97,
+          "share_pct": 0.43
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 5602.07,
+          "current_usd_mn": 8455.47,
+          "growth_pct": 50.93,
+          "share_pct": 3.38
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 10034.33,
+          "current_usd_mn": 13065.99,
+          "growth_pct": 30.21,
+          "share_pct": 5.23
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 57.61,
+          "current_usd_mn": 52.61,
+          "growth_pct": -8.69,
+          "share_pct": 0.02
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 10209.07,
+          "current_usd_mn": 16424.93,
+          "growth_pct": 60.89,
+          "share_pct": 6.57
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 103.05,
+          "current_usd_mn": 85.13,
+          "growth_pct": -17.39,
+          "share_pct": 0.03
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 23271,
+          "current_usd_mn": 28665.97,
+          "growth_pct": 23.18,
+          "share_pct": 11.47
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 28185.93,
+          "current_usd_mn": 36370.11,
+          "growth_pct": 29.04,
+          "share_pct": 14.56
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 8690.14,
+          "current_usd_mn": 21128.4,
+          "growth_pct": 143.13,
+          "share_pct": 8.46
+        }
+      ]
+    },
+    {
+      "financial_year": "2011-2012",
+      "report_year": 2012,
+      "report_month": "March",
+      "total_usd_mn": 305963.9,
+      "total_growth_pct": 22.48,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1521.1,
+          "current_usd_mn": 1894.64,
+          "growth_pct": 24.56,
+          "share_pct": 0.62
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 17762.51,
+          "current_usd_mn": 27881.08,
+          "growth_pct": 56.97,
+          "share_pct": 9.11
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 2622.72,
+          "current_usd_mn": 3443.63,
+          "growth_pct": 31.3,
+          "share_pct": 1.13
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 7097.88,
+          "current_usd_mn": 6570.26,
+          "growth_pct": -7.43,
+          "share_pct": 2.15
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 3913.82,
+          "current_usd_mn": 4806.63,
+          "growth_pct": 22.81,
+          "share_pct": 1.57
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 42346.29,
+          "current_usd_mn": 46374.13,
+          "growth_pct": 9.51,
+          "share_pct": 15.16
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 166.09,
+          "current_usd_mn": 210.34,
+          "growth_pct": 26.64,
+          "share_pct": 0.07
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 20827.98,
+          "current_usd_mn": 27013.9,
+          "growth_pct": 29.7,
+          "share_pct": 8.83
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 4701.18,
+          "current_usd_mn": 6189.73,
+          "growth_pct": 31.66,
+          "share_pct": 2.02
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 2596.58,
+          "current_usd_mn": 2962.34,
+          "growth_pct": 14.09,
+          "share_pct": 0.97
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 1625.22,
+          "current_usd_mn": 1783.41,
+          "growth_pct": 9.73,
+          "share_pct": 0.58
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 19323,
+          "current_usd_mn": 21218.9,
+          "growth_pct": 9.81,
+          "share_pct": 6.94
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 1062.56,
+          "current_usd_mn": 1380.55,
+          "growth_pct": 29.93,
+          "share_pct": 0.45
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 8455.47,
+          "current_usd_mn": 9075.55,
+          "growth_pct": 7.33,
+          "share_pct": 2.97
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 13065.99,
+          "current_usd_mn": 16017.66,
+          "growth_pct": 22.59,
+          "share_pct": 5.24
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 52.61,
+          "current_usd_mn": 60.5,
+          "growth_pct": 15,
+          "share_pct": 0.02
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 16424.93,
+          "current_usd_mn": 20932.45,
+          "growth_pct": 27.44,
+          "share_pct": 6.84
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 85.13,
+          "current_usd_mn": 83.23,
+          "growth_pct": -2.23,
+          "share_pct": 0.03
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 28665.97,
+          "current_usd_mn": 34136.64,
+          "growth_pct": 19.08,
+          "share_pct": 11.16
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 36370.11,
+          "current_usd_mn": 56716.72,
+          "growth_pct": 55.94,
+          "share_pct": 18.54
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 21128.4,
+          "current_usd_mn": 17211.61,
+          "growth_pct": -18.54,
+          "share_pct": 5.63
+        }
+      ]
+    },
+    {
+      "financial_year": "2012-2013",
+      "report_year": 2013,
+      "report_month": "March",
+      "total_usd_mn": 300400.58,
+      "total_growth_pct": -1.82,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1894.64,
+          "current_usd_mn": 1840.71,
+          "growth_pct": -2.85,
+          "share_pct": 0.61
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 27881.08,
+          "current_usd_mn": 32655.55,
+          "growth_pct": 17.12,
+          "share_pct": 10.87
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 3443.63,
+          "current_usd_mn": 3464.08,
+          "growth_pct": 0.59,
+          "share_pct": 1.15
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 6570.26,
+          "current_usd_mn": 3681.36,
+          "growth_pct": -43.97,
+          "share_pct": 1.23
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 4806.63,
+          "current_usd_mn": 4883.92,
+          "growth_pct": 1.61,
+          "share_pct": 1.63
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 46374.13,
+          "current_usd_mn": 42988.49,
+          "growth_pct": -7.3,
+          "share_pct": 14.31
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 210.34,
+          "current_usd_mn": 206.62,
+          "growth_pct": -1.77,
+          "share_pct": 0.07
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 27013.9,
+          "current_usd_mn": 28915.55,
+          "growth_pct": 7.04,
+          "share_pct": 9.63
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 6189.73,
+          "current_usd_mn": 6178.95,
+          "growth_pct": -0.17,
+          "share_pct": 2.06
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 2962.34,
+          "current_usd_mn": 3176.73,
+          "growth_pct": 7.24,
+          "share_pct": 1.06
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 1783.41,
+          "current_usd_mn": 1935.81,
+          "growth_pct": 8.55,
+          "share_pct": 0.64
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 21218.9,
+          "current_usd_mn": 21455.99,
+          "growth_pct": 1.12,
+          "share_pct": 7.14
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 1380.55,
+          "current_usd_mn": 1518.6,
+          "growth_pct": 10,
+          "share_pct": 0.51
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 9075.55,
+          "current_usd_mn": 8253.02,
+          "growth_pct": -9.06,
+          "share_pct": 2.75
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 16017.66,
+          "current_usd_mn": 16408.46,
+          "growth_pct": 2.44,
+          "share_pct": 5.46
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 60.5,
+          "current_usd_mn": 51.9,
+          "growth_pct": -14.21,
+          "share_pct": 0.02
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 20932.45,
+          "current_usd_mn": 19242.04,
+          "growth_pct": -8.08,
+          "share_pct": 6.41
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 83.23,
+          "current_usd_mn": 145.97,
+          "growth_pct": 75.38,
+          "share_pct": 0.05
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 34136.64,
+          "current_usd_mn": 32885.46,
+          "growth_pct": -3.67,
+          "share_pct": 10.95
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 56716.72,
+          "current_usd_mn": 60859.81,
+          "growth_pct": 7.3,
+          "share_pct": 20.26
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 17211.61,
+          "current_usd_mn": 9651.57,
+          "growth_pct": -43.92,
+          "share_pct": 3.21
+        }
+      ]
+    },
+    {
+      "financial_year": "2013-2014",
+      "report_year": 2014,
+      "report_month": "March",
+      "total_usd_mn": 314405.3,
+      "total_growth_pct": 4.66,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1840.71,
+          "current_usd_mn": 1625.05,
+          "growth_pct": -11.72,
+          "share_pct": 0.52
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 32655.55,
+          "current_usd_mn": 32953.58,
+          "growth_pct": 0.91,
+          "share_pct": 10.48
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 3464.08,
+          "current_usd_mn": 5016.46,
+          "growth_pct": 44.81,
+          "share_pct": 1.6
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 3681.36,
+          "current_usd_mn": 3583.86,
+          "growth_pct": -2.65,
+          "share_pct": 1.14
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 4883.92,
+          "current_usd_mn": 5722.54,
+          "growth_pct": 17.17,
+          "share_pct": 1.82
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 42988.49,
+          "current_usd_mn": 41389.07,
+          "growth_pct": -3.72,
+          "share_pct": 13.16
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 206.62,
+          "current_usd_mn": 236.45,
+          "growth_pct": 14.44,
+          "share_pct": 0.08
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 28915.55,
+          "current_usd_mn": 30793.62,
+          "growth_pct": 6.5,
+          "share_pct": 9.79
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 6178.95,
+          "current_usd_mn": 6860.02,
+          "growth_pct": 11.02,
+          "share_pct": 2.18
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 3176.73,
+          "current_usd_mn": 3600.58,
+          "growth_pct": 13.34,
+          "share_pct": 1.15
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 1935.81,
+          "current_usd_mn": 2099.81,
+          "growth_pct": 8.47,
+          "share_pct": 0.67
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 21455.99,
+          "current_usd_mn": 22365.63,
+          "growth_pct": 4.24,
+          "share_pct": 7.11
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 1518.6,
+          "current_usd_mn": 1562.96,
+          "growth_pct": 2.92,
+          "share_pct": 0.5
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 8253.02,
+          "current_usd_mn": 7842.8,
+          "growth_pct": -4.97,
+          "share_pct": 2.49
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 16408.46,
+          "current_usd_mn": 17361.42,
+          "growth_pct": 5.81,
+          "share_pct": 5.52
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 51.9,
+          "current_usd_mn": 30.89,
+          "growth_pct": -40.49,
+          "share_pct": 0.01
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 19242.04,
+          "current_usd_mn": 22164.67,
+          "growth_pct": 15.19,
+          "share_pct": 7.05
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 145.97,
+          "current_usd_mn": 47.35,
+          "growth_pct": -67.56,
+          "share_pct": 0.02
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 32885.46,
+          "current_usd_mn": 36967.56,
+          "growth_pct": 12.41,
+          "share_pct": 11.76
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 60859.81,
+          "current_usd_mn": 63177.46,
+          "growth_pct": 3.81,
+          "share_pct": 20.09
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 9651.57,
+          "current_usd_mn": 9003.52,
+          "growth_pct": -6.71,
+          "share_pct": 2.86
+        }
+      ]
+    },
+    {
+      "financial_year": "2014-2015",
+      "report_year": 2015,
+      "report_month": "March",
+      "total_usd_mn": 310338.48,
+      "total_growth_pct": -1.29,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1625.05,
+          "current_usd_mn": 1502.88,
+          "growth_pct": -7.52,
+          "share_pct": 0.48
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 32953.58,
+          "current_usd_mn": 30147.31,
+          "growth_pct": -8.52,
+          "share_pct": 9.71
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 5016.46,
+          "current_usd_mn": 5510.49,
+          "growth_pct": 9.85,
+          "share_pct": 1.78
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 3583.86,
+          "current_usd_mn": 2410.19,
+          "growth_pct": -32.75,
+          "share_pct": 0.78
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 5722.54,
+          "current_usd_mn": 6195.21,
+          "growth_pct": 8.26,
+          "share_pct": 2
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 41389.07,
+          "current_usd_mn": 41266.07,
+          "growth_pct": -0.3,
+          "share_pct": 13.3
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 236.45,
+          "current_usd_mn": 274.5,
+          "growth_pct": 16.09,
+          "share_pct": 0.09
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 30793.62,
+          "current_usd_mn": 31731.23,
+          "growth_pct": 3.04,
+          "share_pct": 10.22
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 6860.02,
+          "current_usd_mn": 6615.17,
+          "growth_pct": -3.57,
+          "share_pct": 2.13
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 3600.58,
+          "current_usd_mn": 4042.51,
+          "growth_pct": 12.27,
+          "share_pct": 1.3
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 2099.81,
+          "current_usd_mn": 2180.67,
+          "growth_pct": 3.85,
+          "share_pct": 0.7
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 22365.63,
+          "current_usd_mn": 24742.75,
+          "growth_pct": 10.63,
+          "share_pct": 7.97
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 1562.96,
+          "current_usd_mn": 1686.34,
+          "growth_pct": 7.89,
+          "share_pct": 0.54
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 7842.8,
+          "current_usd_mn": 6260.73,
+          "growth_pct": -20.17,
+          "share_pct": 2.02
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 17361.42,
+          "current_usd_mn": 19453.69,
+          "growth_pct": 12.05,
+          "share_pct": 6.27
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 30.89,
+          "current_usd_mn": 54.77,
+          "growth_pct": 77.31,
+          "share_pct": 0.02
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 22164.67,
+          "current_usd_mn": 26636.37,
+          "growth_pct": 20.17,
+          "share_pct": 8.58
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 47.35,
+          "current_usd_mn": 36.59,
+          "growth_pct": -22.73,
+          "share_pct": 0.01
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 36967.56,
+          "current_usd_mn": 37140.74,
+          "growth_pct": 0.47,
+          "share_pct": 11.97
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 63177.46,
+          "current_usd_mn": 56794.15,
+          "growth_pct": -10.1,
+          "share_pct": 18.3
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 9003.52,
+          "current_usd_mn": 5656.13,
+          "growth_pct": -37.18,
+          "share_pct": 1.82
+        }
+      ]
+    },
+    {
+      "financial_year": "2015-2016",
+      "report_year": 2016,
+      "report_month": "March",
+      "total_usd_mn": 262291.09,
+      "total_growth_pct": -15.48,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1502.88,
+          "current_usd_mn": 1562.44,
+          "growth_pct": 3.96,
+          "share_pct": 0.6
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 30147.31,
+          "current_usd_mn": 24522.02,
+          "growth_pct": -18.66,
+          "share_pct": 9.35
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 5510.49,
+          "current_usd_mn": 4767.51,
+          "growth_pct": -13.48,
+          "share_pct": 1.82
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 2410.19,
+          "current_usd_mn": 2014.92,
+          "growth_pct": -16.4,
+          "share_pct": 0.77
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 6195.21,
+          "current_usd_mn": 5554.46,
+          "growth_pct": -10.34,
+          "share_pct": 2.12
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 41266.07,
+          "current_usd_mn": 39284.27,
+          "growth_pct": -4.8,
+          "share_pct": 14.98
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 274.5,
+          "current_usd_mn": 227.72,
+          "growth_pct": -17.04,
+          "share_pct": 0.09
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 31731.23,
+          "current_usd_mn": 32164.51,
+          "growth_pct": 1.37,
+          "share_pct": 12.26
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 6615.17,
+          "current_usd_mn": 6420.06,
+          "growth_pct": -2.95,
+          "share_pct": 2.45
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 4042.51,
+          "current_usd_mn": 3880.25,
+          "growth_pct": -4.01,
+          "share_pct": 1.48
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 2180.67,
+          "current_usd_mn": 2347.88,
+          "growth_pct": 7.67,
+          "share_pct": 0.9
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 24742.75,
+          "current_usd_mn": 18504.98,
+          "growth_pct": -25.21,
+          "share_pct": 7.06
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 1686.34,
+          "current_usd_mn": 1640.46,
+          "growth_pct": -2.72,
+          "share_pct": 0.63
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 6260.73,
+          "current_usd_mn": 5959.52,
+          "growth_pct": -4.81,
+          "share_pct": 2.27
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 19453.69,
+          "current_usd_mn": 18945.72,
+          "growth_pct": -2.61,
+          "share_pct": 7.22
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 54.77,
+          "current_usd_mn": 89.5,
+          "growth_pct": 63.41,
+          "share_pct": 0.03
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 26636.37,
+          "current_usd_mn": 22463.7,
+          "growth_pct": -15.67,
+          "share_pct": 8.56
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 36.59,
+          "current_usd_mn": 29.01,
+          "growth_pct": -20.71,
+          "share_pct": 0.01
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 37140.74,
+          "current_usd_mn": 35953.31,
+          "growth_pct": -3.2,
+          "share_pct": 13.71
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 56794.15,
+          "current_usd_mn": 30582.64,
+          "growth_pct": -46.15,
+          "share_pct": 11.66
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 5656.13,
+          "current_usd_mn": 5376.2,
+          "growth_pct": -4.95,
+          "share_pct": 2.05
+        }
+      ]
+    },
+    {
+      "financial_year": "2016-2017",
+      "report_year": 2017,
+      "report_month": "March",
+      "total_usd_mn": 275852.43,
+      "total_growth_pct": 5.17,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1562.44,
+          "current_usd_mn": 1611.74,
+          "growth_pct": 3.16,
+          "share_pct": 0.58
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 24522.02,
+          "current_usd_mn": 24549.19,
+          "growth_pct": 0.11,
+          "share_pct": 8.9
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 4767.51,
+          "current_usd_mn": 5903.06,
+          "growth_pct": 23.82,
+          "share_pct": 2.14
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 2014.92,
+          "current_usd_mn": 3255.61,
+          "growth_pct": 61.58,
+          "share_pct": 1.18
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 5554.46,
+          "current_usd_mn": 5308.3,
+          "growth_pct": -4.43,
+          "share_pct": 1.92
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 39284.27,
+          "current_usd_mn": 43412.76,
+          "growth_pct": 10.51,
+          "share_pct": 15.74
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 227.72,
+          "current_usd_mn": 224.83,
+          "growth_pct": -1.27,
+          "share_pct": 0.08
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 32164.51,
+          "current_usd_mn": 32779.3,
+          "growth_pct": 1.91,
+          "share_pct": 11.88
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 6420.06,
+          "current_usd_mn": 6438.38,
+          "growth_pct": 0.29,
+          "share_pct": 2.33
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 3880.25,
+          "current_usd_mn": 4087.58,
+          "growth_pct": 5.34,
+          "share_pct": 1.48
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 2347.88,
+          "current_usd_mn": 2335.18,
+          "growth_pct": -0.54,
+          "share_pct": 0.85
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 18504.98,
+          "current_usd_mn": 21890.32,
+          "growth_pct": 18.29,
+          "share_pct": 7.94
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 1640.46,
+          "current_usd_mn": 1889.58,
+          "growth_pct": 15.19,
+          "share_pct": 0.68
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 5959.52,
+          "current_usd_mn": 5962.93,
+          "growth_pct": 0.06,
+          "share_pct": 2.16
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 18945.72,
+          "current_usd_mn": 19877.99,
+          "growth_pct": 4.92,
+          "share_pct": 7.21
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 89.5,
+          "current_usd_mn": 117.92,
+          "growth_pct": 31.75,
+          "share_pct": 0.04
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 22463.7,
+          "current_usd_mn": 23163.13,
+          "growth_pct": 3.11,
+          "share_pct": 8.4
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 29.01,
+          "current_usd_mn": 28.74,
+          "growth_pct": -0.93,
+          "share_pct": 0.01
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 35953.31,
+          "current_usd_mn": 35766.63,
+          "growth_pct": -0.52,
+          "share_pct": 12.97
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 30582.64,
+          "current_usd_mn": 31545.26,
+          "growth_pct": 3.15,
+          "share_pct": 11.44
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 5376.2,
+          "current_usd_mn": 5704.01,
+          "growth_pct": 6.1,
+          "share_pct": 2.07
+        }
+      ]
+    },
+    {
+      "financial_year": "2017-2018",
+      "report_year": 2018,
+      "report_month": "March",
+      "total_usd_mn": 303526.16,
+      "total_growth_pct": 10.03,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1611.74,
+          "current_usd_mn": 1819.82,
+          "growth_pct": 12.91,
+          "share_pct": 0.6
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 24549.19,
+          "current_usd_mn": 27778.34,
+          "growth_pct": 13.15,
+          "share_pct": 9.15
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 5903.06,
+          "current_usd_mn": 7389.22,
+          "growth_pct": 25.18,
+          "share_pct": 2.43
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 3255.61,
+          "current_usd_mn": 3305.28,
+          "growth_pct": 1.53,
+          "share_pct": 1.09
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 5308.3,
+          "current_usd_mn": 5445.4,
+          "growth_pct": 2.58,
+          "share_pct": 1.79
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 43412.76,
+          "current_usd_mn": 41544.44,
+          "growth_pct": -4.3,
+          "share_pct": 13.69
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 224.83,
+          "current_usd_mn": 232.8,
+          "growth_pct": 3.55,
+          "share_pct": 0.08
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 32779.3,
+          "current_usd_mn": 37559.55,
+          "growth_pct": 14.58,
+          "share_pct": 12.37
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 6438.38,
+          "current_usd_mn": 7572.68,
+          "growth_pct": 17.62,
+          "share_pct": 2.49
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 4087.58,
+          "current_usd_mn": 4520.73,
+          "growth_pct": 10.6,
+          "share_pct": 1.49
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 2335.18,
+          "current_usd_mn": 2650.53,
+          "growth_pct": 13.5,
+          "share_pct": 0.87
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 21890.32,
+          "current_usd_mn": 28211.07,
+          "growth_pct": 28.87,
+          "share_pct": 9.29
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 1889.58,
+          "current_usd_mn": 2273.41,
+          "growth_pct": 20.31,
+          "share_pct": 0.75
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 5962.93,
+          "current_usd_mn": 6393.12,
+          "growth_pct": 7.21,
+          "share_pct": 2.11
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 19877.99,
+          "current_usd_mn": 24311.37,
+          "growth_pct": 22.3,
+          "share_pct": 8.01
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 117.92,
+          "current_usd_mn": 78.6,
+          "growth_pct": -33.34,
+          "share_pct": 0.03
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 23163.13,
+          "current_usd_mn": 23481.41,
+          "growth_pct": 1.37,
+          "share_pct": 7.74
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 28.74,
+          "current_usd_mn": 21.95,
+          "growth_pct": -23.62,
+          "share_pct": 0.01
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 35766.63,
+          "current_usd_mn": 36048.78,
+          "growth_pct": 0.79,
+          "share_pct": 11.88
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 31545.26,
+          "current_usd_mn": 37465.08,
+          "growth_pct": 18.77,
+          "share_pct": 12.34
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 5704.01,
+          "current_usd_mn": 5422.56,
+          "growth_pct": -4.93,
+          "share_pct": 1.79
+        }
+      ]
+    },
+    {
+      "financial_year": "2018-2019",
+      "report_year": 2019,
+      "report_month": "March",
+      "total_usd_mn": 330078.09,
+      "total_growth_pct": 8.75,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1819.82,
+          "current_usd_mn": 1664.29,
+          "growth_pct": -8.55,
+          "share_pct": 0.5
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 27778.34,
+          "current_usd_mn": 28615.65,
+          "growth_pct": 3.01,
+          "share_pct": 8.67
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 7389.22,
+          "current_usd_mn": 6802.56,
+          "growth_pct": -7.94,
+          "share_pct": 2.06
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 3305.28,
+          "current_usd_mn": 3597.86,
+          "growth_pct": 8.85,
+          "share_pct": 1.09
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 5445.4,
+          "current_usd_mn": 5300.46,
+          "growth_pct": -2.66,
+          "share_pct": 1.61
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 41544.44,
+          "current_usd_mn": 40251.03,
+          "growth_pct": -3.11,
+          "share_pct": 12.19
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 232.8,
+          "current_usd_mn": 313.6,
+          "growth_pct": 34.7,
+          "share_pct": 0.1
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 37559.55,
+          "current_usd_mn": 43761.32,
+          "growth_pct": 16.51,
+          "share_pct": 13.26
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 7572.68,
+          "current_usd_mn": 9439.68,
+          "growth_pct": 24.65,
+          "share_pct": 2.86
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 4520.73,
+          "current_usd_mn": 5116.52,
+          "growth_pct": 13.18,
+          "share_pct": 1.55
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 2650.53,
+          "current_usd_mn": 3492.41,
+          "growth_pct": 31.76,
+          "share_pct": 1.06
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 28211.07,
+          "current_usd_mn": 25430.71,
+          "growth_pct": -9.86,
+          "share_pct": 7.7
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 2273.41,
+          "current_usd_mn": 2323.96,
+          "growth_pct": 2.22,
+          "share_pct": 0.7
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 6393.12,
+          "current_usd_mn": 8829.43,
+          "growth_pct": 38.11,
+          "share_pct": 2.67
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 24311.37,
+          "current_usd_mn": 28658.05,
+          "growth_pct": 17.88,
+          "share_pct": 8.68
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 78.6,
+          "current_usd_mn": 144.23,
+          "growth_pct": 83.49,
+          "share_pct": 0.04
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 23481.41,
+          "current_usd_mn": 26635.04,
+          "growth_pct": 13.43,
+          "share_pct": 8.07
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 21.95,
+          "current_usd_mn": 16.15,
+          "growth_pct": -26.45,
+          "share_pct": 0
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 36048.78,
+          "current_usd_mn": 36886,
+          "growth_pct": 2.32,
+          "share_pct": 11.17
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 37465.08,
+          "current_usd_mn": 46553.58,
+          "growth_pct": 24.26,
+          "share_pct": 14.1
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 5422.56,
+          "current_usd_mn": 6245.57,
+          "growth_pct": 15.18,
+          "share_pct": 1.89
+        }
+      ]
+    },
+    {
+      "financial_year": "2019-2020",
+      "report_year": 2020,
+      "report_month": "March",
+      "total_usd_mn": 313361.04,
+      "total_growth_pct": -5.06,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1664.29,
+          "current_usd_mn": 1587.1,
+          "growth_pct": -4.64,
+          "share_pct": 0.51
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 28615.65,
+          "current_usd_mn": 26219.12,
+          "growth_pct": -8.37,
+          "share_pct": 8.37
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 6802.56,
+          "current_usd_mn": 6722.07,
+          "growth_pct": -1.18,
+          "share_pct": 2.15
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 3597.86,
+          "current_usd_mn": 4600.12,
+          "growth_pct": 27.86,
+          "share_pct": 1.47
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 5300.46,
+          "current_usd_mn": 4810.29,
+          "growth_pct": -9.25,
+          "share_pct": 1.54
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 40251.03,
+          "current_usd_mn": 35898.49,
+          "growth_pct": -10.81,
+          "share_pct": 11.46
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 313.6,
+          "current_usd_mn": 278.89,
+          "growth_pct": -11.07,
+          "share_pct": 0.09
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 43761.32,
+          "current_usd_mn": 45022.14,
+          "growth_pct": 2.88,
+          "share_pct": 14.37
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 9439.68,
+          "current_usd_mn": 8240.6,
+          "growth_pct": -12.7,
+          "share_pct": 2.63
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 5116.52,
+          "current_usd_mn": 5273.74,
+          "growth_pct": 3.07,
+          "share_pct": 1.68
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 3492.41,
+          "current_usd_mn": 3374.9,
+          "growth_pct": -3.36,
+          "share_pct": 1.08
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 25430.71,
+          "current_usd_mn": 23910.2,
+          "growth_pct": -5.98,
+          "share_pct": 7.63
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 2323.96,
+          "current_usd_mn": 2366.49,
+          "growth_pct": 1.83,
+          "share_pct": 0.76
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 8829.43,
+          "current_usd_mn": 11700.58,
+          "growth_pct": 32.52,
+          "share_pct": 3.73
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 28658.05,
+          "current_usd_mn": 28103.96,
+          "growth_pct": -1.93,
+          "share_pct": 8.97
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 144.23,
+          "current_usd_mn": 191.51,
+          "growth_pct": 32.78,
+          "share_pct": 0.06
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 26635.04,
+          "current_usd_mn": 23721.64,
+          "growth_pct": -10.94,
+          "share_pct": 7.57
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 16.15,
+          "current_usd_mn": 30.57,
+          "growth_pct": 89.32,
+          "share_pct": 0.01
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 36886,
+          "current_usd_mn": 33719.3,
+          "growth_pct": -8.59,
+          "share_pct": 10.76
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 46553.58,
+          "current_usd_mn": 41288.74,
+          "growth_pct": -11.31,
+          "share_pct": 13.18
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 6245.57,
+          "current_usd_mn": 6300.6,
+          "growth_pct": 0.88,
+          "share_pct": 2.01
+        }
+      ]
+    },
+    {
+      "financial_year": "2020-2021",
+      "report_year": 2021,
+      "report_month": "March",
+      "total_usd_mn": 291808.48,
+      "total_growth_pct": -6.88,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1587.1,
+          "current_usd_mn": 1492.6,
+          "growth_pct": -5.95,
+          "share_pct": 0.51
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 26219.12,
+          "current_usd_mn": 32517.17,
+          "growth_pct": 24.02,
+          "share_pct": 11.14
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 6722.07,
+          "current_usd_mn": 5962.39,
+          "growth_pct": -11.3,
+          "share_pct": 2.04
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 4600.12,
+          "current_usd_mn": 7041.21,
+          "growth_pct": 53.07,
+          "share_pct": 2.41
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 4810.29,
+          "current_usd_mn": 3488.2,
+          "growth_pct": -27.48,
+          "share_pct": 1.2
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 35898.49,
+          "current_usd_mn": 26022.82,
+          "growth_pct": -27.51,
+          "share_pct": 8.92
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 278.89,
+          "current_usd_mn": 268.56,
+          "growth_pct": -3.7,
+          "share_pct": 0.09
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 45022.14,
+          "current_usd_mn": 48262.27,
+          "growth_pct": 7.2,
+          "share_pct": 16.54
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 8240.6,
+          "current_usd_mn": 8062.51,
+          "growth_pct": -2.16,
+          "share_pct": 2.76
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 5273.74,
+          "current_usd_mn": 5662.1,
+          "growth_pct": 7.36,
+          "share_pct": 1.94
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 3374.9,
+          "current_usd_mn": 3412.93,
+          "growth_pct": 1.13,
+          "share_pct": 1.17
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 23910.2,
+          "current_usd_mn": 27655.48,
+          "growth_pct": 15.66,
+          "share_pct": 9.48
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 2366.49,
+          "current_usd_mn": 2225.41,
+          "growth_pct": -5.96,
+          "share_pct": 0.76
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 11700.58,
+          "current_usd_mn": 11093.29,
+          "growth_pct": -5.19,
+          "share_pct": 3.8
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 28103.96,
+          "current_usd_mn": 25993.91,
+          "growth_pct": -7.51,
+          "share_pct": 8.91
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 191.51,
+          "current_usd_mn": 151.1,
+          "growth_pct": -21.1,
+          "share_pct": 0.05
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 23721.64,
+          "current_usd_mn": 20265.79,
+          "growth_pct": -14.57,
+          "share_pct": 6.94
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 30.57,
+          "current_usd_mn": 2.27,
+          "growth_pct": -92.57,
+          "share_pct": 0
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 33719.3,
+          "current_usd_mn": 30354.03,
+          "growth_pct": -9.98,
+          "share_pct": 10.4
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 41288.74,
+          "current_usd_mn": 25804.37,
+          "growth_pct": -37.5,
+          "share_pct": 8.84
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 6300.6,
+          "current_usd_mn": 6070.07,
+          "growth_pct": -3.66,
+          "share_pct": 2.08
+        }
+      ]
+    },
+    {
+      "financial_year": "2021-2022",
+      "report_year": 2022,
+      "report_month": "March",
+      "total_usd_mn": 422004.4,
+      "total_growth_pct": 44.62,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1492.6,
+          "current_usd_mn": 1779.04,
+          "growth_pct": 19.19,
+          "share_pct": 0.42
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 32517.17,
+          "current_usd_mn": 37841.09,
+          "growth_pct": 16.37,
+          "share_pct": 8.97
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 5962.39,
+          "current_usd_mn": 7772.36,
+          "growth_pct": 30.36,
+          "share_pct": 1.84
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 7041.21,
+          "current_usd_mn": 6085.42,
+          "growth_pct": -13.57,
+          "share_pct": 1.44
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 3488.2,
+          "current_usd_mn": 4658.53,
+          "growth_pct": 33.55,
+          "share_pct": 1.1
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 26022.82,
+          "current_usd_mn": 39099.11,
+          "growth_pct": 50.25,
+          "share_pct": 9.27
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 268.56,
+          "current_usd_mn": 376.17,
+          "growth_pct": 40.07,
+          "share_pct": 0.09
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 48262.27,
+          "current_usd_mn": 56300.03,
+          "growth_pct": 16.65,
+          "share_pct": 13.34
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 8062.51,
+          "current_usd_mn": 10625.98,
+          "growth_pct": 31.79,
+          "share_pct": 2.52
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 5662.1,
+          "current_usd_mn": 6446.67,
+          "growth_pct": 13.86,
+          "share_pct": 1.53
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 3412.93,
+          "current_usd_mn": 5268.42,
+          "growth_pct": 54.37,
+          "share_pct": 1.25
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 27655.48,
+          "current_usd_mn": 47257.32,
+          "growth_pct": 70.88,
+          "share_pct": 11.2
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 2225.41,
+          "current_usd_mn": 2903.04,
+          "growth_pct": 30.45,
+          "share_pct": 0.69
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 11093.29,
+          "current_usd_mn": 15660.38,
+          "growth_pct": 41.17,
+          "share_pct": 3.71
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 25993.91,
+          "current_usd_mn": 35281.78,
+          "growth_pct": 35.73,
+          "share_pct": 8.36
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 151.1,
+          "current_usd_mn": 209.56,
+          "growth_pct": 38.69,
+          "share_pct": 0.05
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 20265.79,
+          "current_usd_mn": 25976.91,
+          "growth_pct": 28.18,
+          "share_pct": 6.16
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 2.27,
+          "current_usd_mn": 3.78,
+          "growth_pct": 66.4,
+          "share_pct": 0
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 30354.03,
+          "current_usd_mn": 42915.54,
+          "growth_pct": 41.38,
+          "share_pct": 10.17
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 25804.37,
+          "current_usd_mn": 67471.7,
+          "growth_pct": 161.47,
+          "share_pct": 15.99
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 6070.07,
+          "current_usd_mn": 8071.56,
+          "growth_pct": 32.97,
+          "share_pct": 1.91
+        }
+      ]
+    },
+    {
+      "financial_year": "2022-2023",
+      "report_year": 2023,
+      "report_month": "March",
+      "total_usd_mn": 451070,
+      "total_growth_pct": 6.89,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1779.04,
+          "current_usd_mn": 1970.18,
+          "growth_pct": 10.74,
+          "share_pct": 0.44
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 37841.09,
+          "current_usd_mn": 42299.96,
+          "growth_pct": 11.78,
+          "share_pct": 9.38
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 7772.36,
+          "current_usd_mn": 8077.98,
+          "growth_pct": 3.93,
+          "share_pct": 1.79
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 6085.42,
+          "current_usd_mn": 4869.13,
+          "growth_pct": -19.99,
+          "share_pct": 1.08
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 4658.53,
+          "current_usd_mn": 4975.95,
+          "growth_pct": 6.81,
+          "share_pct": 1.1
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 39099.11,
+          "current_usd_mn": 37956.99,
+          "growth_pct": -2.92,
+          "share_pct": 8.41
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 376.17,
+          "current_usd_mn": 374.47,
+          "growth_pct": -0.45,
+          "share_pct": 0.08
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 56300.03,
+          "current_usd_mn": 57427.28,
+          "growth_pct": 2,
+          "share_pct": 12.73
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 10625.98,
+          "current_usd_mn": 9336.19,
+          "growth_pct": -12.14,
+          "share_pct": 2.07
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 6446.67,
+          "current_usd_mn": 6358.13,
+          "growth_pct": -1.37,
+          "share_pct": 1.41
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 5268.42,
+          "current_usd_mn": 4815.09,
+          "growth_pct": -8.6,
+          "share_pct": 1.07
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 47257.32,
+          "current_usd_mn": 36675.36,
+          "growth_pct": -22.39,
+          "share_pct": 8.13
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 2903.04,
+          "current_usd_mn": 3732.16,
+          "growth_pct": 28.56,
+          "share_pct": 0.83
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 15660.38,
+          "current_usd_mn": 23553.35,
+          "growth_pct": 50.4,
+          "share_pct": 5.22
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 35281.78,
+          "current_usd_mn": 38162.11,
+          "growth_pct": 8.16,
+          "share_pct": 8.46
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 209.56,
+          "current_usd_mn": 297.55,
+          "growth_pct": 41.99,
+          "share_pct": 0.07
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 25976.91,
+          "current_usd_mn": 27981.84,
+          "growth_pct": 7.72,
+          "share_pct": 6.2
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 3.78,
+          "current_usd_mn": 2,
+          "growth_pct": -47.11,
+          "share_pct": 0
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 42915.54,
+          "current_usd_mn": 35359.4,
+          "growth_pct": -17.61,
+          "share_pct": 7.84
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 67471.7,
+          "current_usd_mn": 97468.45,
+          "growth_pct": 44.46,
+          "share_pct": 21.61
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 8071.56,
+          "current_usd_mn": 9376.44,
+          "growth_pct": 16.17,
+          "share_pct": 2.08
+        }
+      ]
+    },
+    {
+      "financial_year": "2023-2024",
+      "report_year": 2024,
+      "report_month": "March",
+      "total_usd_mn": 437072.03,
+      "total_growth_pct": -3.1,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1970.18,
+          "current_usd_mn": 2119,
+          "growth_pct": 7.55,
+          "share_pct": 0.48
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 42299.96,
+          "current_usd_mn": 38197,
+          "growth_pct": -9.7,
+          "share_pct": 8.74
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 8077.98,
+          "current_usd_mn": 7372,
+          "growth_pct": -8.74,
+          "share_pct": 1.69
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 4869.13,
+          "current_usd_mn": 6688.94,
+          "growth_pct": 37.37,
+          "share_pct": 1.53
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 4975.95,
+          "current_usd_mn": 4467.85,
+          "growth_pct": -10.21,
+          "share_pct": 1.02
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 37956.99,
+          "current_usd_mn": 32706.94,
+          "growth_pct": -13.83,
+          "share_pct": 7.48
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 374.47,
+          "current_usd_mn": 370.57,
+          "growth_pct": -1.04,
+          "share_pct": 0.08
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 57427.28,
+          "current_usd_mn": 58563.96,
+          "growth_pct": 1.98,
+          "share_pct": 13.4
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 9336.19,
+          "current_usd_mn": 8944.24,
+          "growth_pct": -4.2,
+          "share_pct": 2.05
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 6358.13,
+          "current_usd_mn": 6772.27,
+          "growth_pct": 6.51,
+          "share_pct": 1.55
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 4815.09,
+          "current_usd_mn": 4555.47,
+          "growth_pct": -5.39,
+          "share_pct": 1.04
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 36675.36,
+          "current_usd_mn": 34398.88,
+          "growth_pct": -6.21,
+          "share_pct": 7.87
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 3732.16,
+          "current_usd_mn": 3860.04,
+          "growth_pct": 3.43,
+          "share_pct": 0.88
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 23553.35,
+          "current_usd_mn": 29122.88,
+          "growth_pct": 23.65,
+          "share_pct": 6.66
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 38162.11,
+          "current_usd_mn": 40877.33,
+          "growth_pct": 7.11,
+          "share_pct": 9.35
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 297.55,
+          "current_usd_mn": 312.92,
+          "growth_pct": 5.17,
+          "share_pct": 0.07
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 27981.84,
+          "current_usd_mn": 29600.5,
+          "growth_pct": 5.78,
+          "share_pct": 6.77
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 2,
+          "current_usd_mn": 2.61,
+          "growth_pct": 30.45,
+          "share_pct": 0
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 35359.4,
+          "current_usd_mn": 34431.84,
+          "growth_pct": -2.62,
+          "share_pct": 7.88
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 97468.45,
+          "current_usd_mn": 84156.72,
+          "growth_pct": -13.66,
+          "share_pct": 19.25
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 9376.44,
+          "current_usd_mn": 9550.09,
+          "growth_pct": 1.85,
+          "share_pct": 2.19
+        }
+      ]
+    },
+    {
+      "financial_year": "2024-2025",
+      "report_year": 2025,
+      "report_month": "March",
+      "total_usd_mn": 437704.58,
+      "total_growth_pct": 0.14,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 2119,
+          "current_usd_mn": 2738.3,
+          "growth_pct": 29.23,
+          "share_pct": 0.63
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 38197,
+          "current_usd_mn": 40978.9,
+          "growth_pct": 7.28,
+          "share_pct": 9.36
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 7372,
+          "current_usd_mn": 7405,
+          "growth_pct": 0.45,
+          "share_pct": 1.69
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 6688.94,
+          "current_usd_mn": 5328.13,
+          "growth_pct": -20.34,
+          "share_pct": 1.22
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 4467.85,
+          "current_usd_mn": 4577.43,
+          "growth_pct": 2.45,
+          "share_pct": 1.05
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 32706.94,
+          "current_usd_mn": 29818.2,
+          "growth_pct": -8.83,
+          "share_pct": 6.81
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 370.57,
+          "current_usd_mn": 400.13,
+          "growth_pct": 7.98,
+          "share_pct": 0.09
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 58563.96,
+          "current_usd_mn": 60882.01,
+          "growth_pct": 3.96,
+          "share_pct": 13.91
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 8944.24,
+          "current_usd_mn": 9790.56,
+          "growth_pct": 9.46,
+          "share_pct": 2.24
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 6772.27,
+          "current_usd_mn": 6501.4,
+          "growth_pct": -4,
+          "share_pct": 1.49
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 4555.47,
+          "current_usd_mn": 4545.01,
+          "growth_pct": -0.23,
+          "share_pct": 1.04
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 34398.88,
+          "current_usd_mn": 31314.35,
+          "growth_pct": -8.97,
+          "share_pct": 7.15
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 3860.04,
+          "current_usd_mn": 4212.65,
+          "growth_pct": 9.13,
+          "share_pct": 0.96
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 29122.88,
+          "current_usd_mn": 38556.49,
+          "growth_pct": 32.39,
+          "share_pct": 8.81
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 40877.33,
+          "current_usd_mn": 44936.43,
+          "growth_pct": 9.93,
+          "share_pct": 10.27
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 312.92,
+          "current_usd_mn": 288,
+          "growth_pct": -7.96,
+          "share_pct": 0.07
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 29600.5,
+          "current_usd_mn": 35497.95,
+          "growth_pct": 19.92,
+          "share_pct": 8.11
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 2.61,
+          "current_usd_mn": 3.17,
+          "growth_pct": 21.67,
+          "share_pct": 0
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 34431.84,
+          "current_usd_mn": 36442.73,
+          "growth_pct": 5.84,
+          "share_pct": 8.33
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 84156.72,
+          "current_usd_mn": 63383.44,
+          "growth_pct": -24.68,
+          "share_pct": 14.48
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 9550.09,
+          "current_usd_mn": 10104.28,
+          "growth_pct": 5.8,
+          "share_pct": 2.31
+        }
+      ]
+    },
+    {
+      "financial_year": "2025-2026",
+      "report_year": 2026,
+      "report_month": "March",
+      "total_usd_mn": 441730.12,
+      "total_growth_pct": 0.92,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 2738.3,
+          "current_usd_mn": 3076.68,
+          "growth_pct": 12.36,
+          "share_pct": 0.7
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 40978.9,
+          "current_usd_mn": 41043.48,
+          "growth_pct": 0.16,
+          "share_pct": 9.29
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 7405,
+          "current_usd_mn": 8431.33,
+          "growth_pct": 13.86,
+          "share_pct": 1.91
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 5328.13,
+          "current_usd_mn": 5519.57,
+          "growth_pct": 3.59,
+          "share_pct": 1.25
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 4577.43,
+          "current_usd_mn": 4489.58,
+          "growth_pct": -1.92,
+          "share_pct": 1.02
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 29818.2,
+          "current_usd_mn": 28208.27,
+          "growth_pct": -5.4,
+          "share_pct": 6.39
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 400.13,
+          "current_usd_mn": 398.6,
+          "growth_pct": -0.38,
+          "share_pct": 0.09
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 60882.01,
+          "current_usd_mn": 61634.61,
+          "growth_pct": 1.24,
+          "share_pct": 13.95
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 9790.56,
+          "current_usd_mn": 9217.91,
+          "growth_pct": -5.85,
+          "share_pct": 2.09
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 6501.4,
+          "current_usd_mn": 6420.63,
+          "growth_pct": -1.24,
+          "share_pct": 1.45
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 4545.01,
+          "current_usd_mn": 4474.1,
+          "growth_pct": -1.56,
+          "share_pct": 1.01
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 31314.35,
+          "current_usd_mn": 34869.4,
+          "growth_pct": 11.35,
+          "share_pct": 7.89
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 4212.65,
+          "current_usd_mn": 4421.02,
+          "growth_pct": 4.95,
+          "share_pct": 1
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 38556.49,
+          "current_usd_mn": 47962.3,
+          "growth_pct": 24.39,
+          "share_pct": 10.86
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 44936.43,
+          "current_usd_mn": 48848.9,
+          "growth_pct": 8.71,
+          "share_pct": 11.06
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 288,
+          "current_usd_mn": 394.76,
+          "growth_pct": 37.07,
+          "share_pct": 0.09
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 35497.95,
+          "current_usd_mn": 33589.33,
+          "growth_pct": -5.38,
+          "share_pct": 7.6
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 3.17,
+          "current_usd_mn": 1.78,
+          "growth_pct": -43.78,
+          "share_pct": 0
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 36442.73,
+          "current_usd_mn": 35718.75,
+          "growth_pct": -1.99,
+          "share_pct": 8.09
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 63383.44,
+          "current_usd_mn": 53828.12,
+          "growth_pct": -15.08,
+          "share_pct": 12.19
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 10104.28,
+          "current_usd_mn": 9180.98,
+          "growth_pct": -9.14,
+          "share_pct": 2.08
+        }
+      ]
+    }
+  ],
+  "import_rows": [
+    {
+      "financial_year": "2009-2010",
+      "report_year": 2010,
+      "report_month": "March",
+      "total_usd_mn": 288372.88,
+      "total_growth_pct": null,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 458.33,
+          "growth_pct": null,
+          "share_pct": 0.16
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 10695.95,
+          "growth_pct": null,
+          "share_pct": 3.71
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 63.87,
+          "growth_pct": null,
+          "share_pct": 0.02
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 14331.37,
+          "growth_pct": null,
+          "share_pct": 4.97
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 531.68,
+          "growth_pct": null,
+          "share_pct": 0.18
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 46303.08,
+          "growth_pct": null,
+          "share_pct": 16.06
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 114.38,
+          "growth_pct": null,
+          "share_pct": 0.04
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 24515.82,
+          "growth_pct": null,
+          "share_pct": 8.5
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 7079.98,
+          "growth_pct": null,
+          "share_pct": 2.46
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 1325.36,
+          "growth_pct": null,
+          "share_pct": 0.46
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 4604.02,
+          "growth_pct": null,
+          "share_pct": 1.6
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 16101.26,
+          "growth_pct": null,
+          "share_pct": 5.58
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 2604.66,
+          "growth_pct": null,
+          "share_pct": 0.9
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 22659.02,
+          "growth_pct": null,
+          "share_pct": 7.86
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 24220.24,
+          "growth_pct": null,
+          "share_pct": 8.4
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 59.08,
+          "growth_pct": null,
+          "share_pct": 0.02
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 12025.2,
+          "growth_pct": null,
+          "share_pct": 4.17
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 4704,
+          "growth_pct": null,
+          "share_pct": 1.63
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 3112.62,
+          "growth_pct": null,
+          "share_pct": 1.08
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 87135.86,
+          "growth_pct": null,
+          "share_pct": 30.22
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 0,
+          "current_usd_mn": 5727.12,
+          "growth_pct": null,
+          "share_pct": 1.99
+        }
+      ]
+    },
+    {
+      "financial_year": "2010-2011",
+      "report_year": 2011,
+      "report_month": "March",
+      "total_usd_mn": 369769.13,
+      "total_growth_pct": 28.23,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 458.33,
+          "current_usd_mn": 749.85,
+          "growth_pct": 63.61,
+          "share_pct": 0.2
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 10695.95,
+          "current_usd_mn": 10755.94,
+          "growth_pct": 0.56,
+          "share_pct": 2.91
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 63.87,
+          "current_usd_mn": 94.45,
+          "growth_pct": 47.88,
+          "share_pct": 0.03
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 14331.37,
+          "current_usd_mn": 16204.24,
+          "growth_pct": 13.07,
+          "share_pct": 4.38
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 531.68,
+          "current_usd_mn": 731.76,
+          "growth_pct": 37.63,
+          "share_pct": 0.2
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 46303.08,
+          "current_usd_mn": 77021.21,
+          "growth_pct": 66.34,
+          "share_pct": 20.83
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 114.38,
+          "current_usd_mn": 156.38,
+          "growth_pct": 36.72,
+          "share_pct": 0.04
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 24515.82,
+          "current_usd_mn": 29517.16,
+          "growth_pct": 20.4,
+          "share_pct": 7.98
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 7079.98,
+          "current_usd_mn": 9824.13,
+          "growth_pct": 38.76,
+          "share_pct": 2.66
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 1325.36,
+          "current_usd_mn": 1728.45,
+          "growth_pct": 30.41,
+          "share_pct": 0.47
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 4604.02,
+          "current_usd_mn": 5708.33,
+          "growth_pct": 23.99,
+          "share_pct": 1.54
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 16101.26,
+          "current_usd_mn": 21149.9,
+          "growth_pct": 31.36,
+          "share_pct": 5.72
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 2604.66,
+          "current_usd_mn": 3205.71,
+          "growth_pct": 23.08,
+          "share_pct": 0.87
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 22659.02,
+          "current_usd_mn": 28497.35,
+          "growth_pct": 25.77,
+          "share_pct": 7.71
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 24220.24,
+          "current_usd_mn": 29765.68,
+          "growth_pct": 22.9,
+          "share_pct": 8.05
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 59.08,
+          "current_usd_mn": 70.04,
+          "growth_pct": 18.55,
+          "share_pct": 0.02
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 12025.2,
+          "current_usd_mn": 11843.76,
+          "growth_pct": -1.51,
+          "share_pct": 3.2
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 4704,
+          "current_usd_mn": 6151.81,
+          "growth_pct": 30.78,
+          "share_pct": 1.66
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 3112.62,
+          "current_usd_mn": 3807.3,
+          "growth_pct": 22.32,
+          "share_pct": 1.03
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 87135.86,
+          "current_usd_mn": 105964.31,
+          "growth_pct": 21.61,
+          "share_pct": 28.66
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 5727.12,
+          "current_usd_mn": 6821.37,
+          "growth_pct": 19.11,
+          "share_pct": 1.84
+        }
+      ]
+    },
+    {
+      "financial_year": "2011-2012",
+      "report_year": 2012,
+      "report_month": "March",
+      "total_usd_mn": 489319.49,
+      "total_growth_pct": 32.33,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 749.85,
+          "current_usd_mn": 1028.38,
+          "growth_pct": 37.14,
+          "share_pct": 0.21
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 10755.94,
+          "current_usd_mn": 14062.52,
+          "growth_pct": 30.74,
+          "share_pct": 2.87
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 94.45,
+          "current_usd_mn": 118.4,
+          "growth_pct": 25.37,
+          "share_pct": 0.02
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 16204.24,
+          "current_usd_mn": 25731.74,
+          "growth_pct": 58.8,
+          "share_pct": 5.26
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 731.76,
+          "current_usd_mn": 813.17,
+          "growth_pct": 11.13,
+          "share_pct": 0.17
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 77021.21,
+          "current_usd_mn": 91044.08,
+          "growth_pct": 18.21,
+          "share_pct": 18.61
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 156.38,
+          "current_usd_mn": 200.2,
+          "growth_pct": 28.02,
+          "share_pct": 0.04
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 29517.16,
+          "current_usd_mn": 38927.05,
+          "growth_pct": 31.88,
+          "share_pct": 7.96
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 9824.13,
+          "current_usd_mn": 11486.21,
+          "growth_pct": 16.92,
+          "share_pct": 2.35
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 1728.45,
+          "current_usd_mn": 2228.19,
+          "growth_pct": 28.91,
+          "share_pct": 0.46
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 5708.33,
+          "current_usd_mn": 7389.98,
+          "growth_pct": 29.46,
+          "share_pct": 1.51
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 21149.9,
+          "current_usd_mn": 26595.54,
+          "growth_pct": 25.75,
+          "share_pct": 5.44
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 3205.71,
+          "current_usd_mn": 4113.29,
+          "growth_pct": 28.31,
+          "share_pct": 0.84
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 28497.35,
+          "current_usd_mn": 34864.21,
+          "growth_pct": 22.34,
+          "share_pct": 7.13
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 29765.68,
+          "current_usd_mn": 37950.68,
+          "growth_pct": 27.5,
+          "share_pct": 7.76
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 70.04,
+          "current_usd_mn": 98.82,
+          "growth_pct": 41.08,
+          "share_pct": 0.02
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 11843.76,
+          "current_usd_mn": 14335.24,
+          "growth_pct": 21.04,
+          "share_pct": 2.93
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 6151.81,
+          "current_usd_mn": 8764.59,
+          "growth_pct": 42.47,
+          "share_pct": 1.79
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 3807.3,
+          "current_usd_mn": 4736.69,
+          "growth_pct": 24.41,
+          "share_pct": 0.97
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 105964.31,
+          "current_usd_mn": 154967.55,
+          "growth_pct": 46.25,
+          "share_pct": 31.67
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 6821.37,
+          "current_usd_mn": 9862.96,
+          "growth_pct": 44.59,
+          "share_pct": 2.02
+        }
+      ]
+    },
+    {
+      "financial_year": "2012-2013",
+      "report_year": 2013,
+      "report_month": "March",
+      "total_usd_mn": 490736.65,
+      "total_growth_pct": 0.29,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1028.38,
+          "current_usd_mn": 1038.41,
+          "growth_pct": 0.98,
+          "share_pct": 0.21
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 14062.52,
+          "current_usd_mn": 16774.5,
+          "growth_pct": 19.29,
+          "share_pct": 3.42
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 118.4,
+          "current_usd_mn": 83.05,
+          "growth_pct": -29.86,
+          "share_pct": 0.02
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 25731.74,
+          "current_usd_mn": 26020.12,
+          "growth_pct": 1.12,
+          "share_pct": 5.3
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 813.17,
+          "current_usd_mn": 819.53,
+          "growth_pct": 0.78,
+          "share_pct": 0.17
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 91044.08,
+          "current_usd_mn": 83862.47,
+          "growth_pct": -7.89,
+          "share_pct": 17.09
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 200.2,
+          "current_usd_mn": 240.48,
+          "growth_pct": 20.12,
+          "share_pct": 0.05
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 38927.05,
+          "current_usd_mn": 37449.32,
+          "growth_pct": -3.8,
+          "share_pct": 7.63
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 11486.21,
+          "current_usd_mn": 12510.97,
+          "growth_pct": 8.92,
+          "share_pct": 2.55
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 2228.19,
+          "current_usd_mn": 2244.58,
+          "growth_pct": 0.74,
+          "share_pct": 0.46
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 7389.98,
+          "current_usd_mn": 7278.58,
+          "growth_pct": -1.51,
+          "share_pct": 1.48
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 26595.54,
+          "current_usd_mn": 26731.81,
+          "growth_pct": 0.51,
+          "share_pct": 5.45
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 4113.29,
+          "current_usd_mn": 4291.76,
+          "growth_pct": 4.34,
+          "share_pct": 0.87
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 34864.21,
+          "current_usd_mn": 33548.65,
+          "growth_pct": -3.77,
+          "share_pct": 6.84
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 37950.68,
+          "current_usd_mn": 35044.14,
+          "growth_pct": -7.66,
+          "share_pct": 7.14
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 98.82,
+          "current_usd_mn": 100.81,
+          "growth_pct": 2.01,
+          "share_pct": 0.02
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 14335.24,
+          "current_usd_mn": 17663.42,
+          "growth_pct": 23.22,
+          "share_pct": 3.6
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 8764.59,
+          "current_usd_mn": 6554.29,
+          "growth_pct": -25.22,
+          "share_pct": 1.34
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 4736.69,
+          "current_usd_mn": 4918.65,
+          "growth_pct": 3.84,
+          "share_pct": 1
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 154967.55,
+          "current_usd_mn": 164040.56,
+          "growth_pct": 5.85,
+          "share_pct": 33.43
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 9862.96,
+          "current_usd_mn": 9520.58,
+          "growth_pct": -3.47,
+          "share_pct": 1.94
+        }
+      ]
+    },
+    {
+      "financial_year": "2013-2014",
+      "report_year": 2014,
+      "report_month": "March",
+      "total_usd_mn": 450199.79,
+      "total_growth_pct": -8.26,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1038.41,
+          "current_usd_mn": 1075.13,
+          "growth_pct": 3.54,
+          "share_pct": 0.24
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 16774.5,
+          "current_usd_mn": 13492.25,
+          "growth_pct": -19.57,
+          "share_pct": 3
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 83.05,
+          "current_usd_mn": 67.65,
+          "growth_pct": -18.54,
+          "share_pct": 0.02
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 26020.12,
+          "current_usd_mn": 24603.63,
+          "growth_pct": -5.44,
+          "share_pct": 5.47
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 819.53,
+          "current_usd_mn": 901.49,
+          "growth_pct": 10,
+          "share_pct": 0.2
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 83862.47,
+          "current_usd_mn": 58436.49,
+          "growth_pct": -30.32,
+          "share_pct": 12.98
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 240.48,
+          "current_usd_mn": 203.05,
+          "growth_pct": -15.56,
+          "share_pct": 0.05
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 37449.32,
+          "current_usd_mn": 35645.21,
+          "growth_pct": -4.82,
+          "share_pct": 7.92
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 12510.97,
+          "current_usd_mn": 12768.94,
+          "growth_pct": 2.06,
+          "share_pct": 2.84
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 2244.58,
+          "current_usd_mn": 2047.01,
+          "growth_pct": -8.8,
+          "share_pct": 0.45
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 7278.58,
+          "current_usd_mn": 7402.22,
+          "growth_pct": 1.7,
+          "share_pct": 1.64
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 26731.81,
+          "current_usd_mn": 21563.13,
+          "growth_pct": -19.34,
+          "share_pct": 4.79
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 4291.76,
+          "current_usd_mn": 4156.11,
+          "growth_pct": -3.16,
+          "share_pct": 0.92
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 33548.65,
+          "current_usd_mn": 33237.99,
+          "growth_pct": -0.93,
+          "share_pct": 7.38
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 35044.14,
+          "current_usd_mn": 30249.17,
+          "growth_pct": -13.68,
+          "share_pct": 6.72
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 100.81,
+          "current_usd_mn": 129.03,
+          "growth_pct": 28,
+          "share_pct": 0.03
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 17663.42,
+          "current_usd_mn": 16167.51,
+          "growth_pct": -8.47,
+          "share_pct": 3.59
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 6554.29,
+          "current_usd_mn": 4551.03,
+          "growth_pct": -30.56,
+          "share_pct": 1.01
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 4918.65,
+          "current_usd_mn": 4835.93,
+          "growth_pct": -1.68,
+          "share_pct": 1.07
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 164040.56,
+          "current_usd_mn": 164764.69,
+          "growth_pct": 0.44,
+          "share_pct": 36.6
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 9520.58,
+          "current_usd_mn": 13902.12,
+          "growth_pct": 46.02,
+          "share_pct": 3.09
+        }
+      ]
+    },
+    {
+      "financial_year": "2014-2015",
+      "report_year": 2015,
+      "report_month": "March",
+      "total_usd_mn": 448033.41,
+      "total_growth_pct": -0.48,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1075.13,
+          "current_usd_mn": 1034.06,
+          "growth_pct": -3.82,
+          "share_pct": 0.23
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 13492.25,
+          "current_usd_mn": 19004.14,
+          "growth_pct": 40.85,
+          "share_pct": 4.24
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 67.65,
+          "current_usd_mn": 73.93,
+          "growth_pct": 9.28,
+          "share_pct": 0.02
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 24603.63,
+          "current_usd_mn": 26917.86,
+          "growth_pct": 9.41,
+          "share_pct": 6.01
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 901.49,
+          "current_usd_mn": 1092.62,
+          "growth_pct": 21.2,
+          "share_pct": 0.24
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 58436.49,
+          "current_usd_mn": 62351.34,
+          "growth_pct": 6.7,
+          "share_pct": 13.92
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 203.05,
+          "current_usd_mn": 201.29,
+          "growth_pct": -0.86,
+          "share_pct": 0.04
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 35645.21,
+          "current_usd_mn": 38553.65,
+          "growth_pct": 8.16,
+          "share_pct": 8.61
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 12768.94,
+          "current_usd_mn": 14326.69,
+          "growth_pct": 12.2,
+          "share_pct": 3.2
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 2047.01,
+          "current_usd_mn": 2373.87,
+          "growth_pct": 15.97,
+          "share_pct": 0.53
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 7402.22,
+          "current_usd_mn": 7636.46,
+          "growth_pct": 3.16,
+          "share_pct": 1.7
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 21563.13,
+          "current_usd_mn": 27046.58,
+          "growth_pct": 25.43,
+          "share_pct": 6.04
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 4156.11,
+          "current_usd_mn": 4283.47,
+          "growth_pct": 3.06,
+          "share_pct": 0.96
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 33237.99,
+          "current_usd_mn": 37540.31,
+          "growth_pct": 12.94,
+          "share_pct": 8.38
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 30249.17,
+          "current_usd_mn": 31340.19,
+          "growth_pct": 3.61,
+          "share_pct": 7
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 129.03,
+          "current_usd_mn": 161.5,
+          "growth_pct": 25.16,
+          "share_pct": 0.04
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 16167.51,
+          "current_usd_mn": 15287.74,
+          "growth_pct": -5.44,
+          "share_pct": 3.41
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 4551.03,
+          "current_usd_mn": 3631.43,
+          "growth_pct": -20.21,
+          "share_pct": 0.81
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 4835.93,
+          "current_usd_mn": 5512.44,
+          "growth_pct": 13.99,
+          "share_pct": 1.23
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 164764.69,
+          "current_usd_mn": 138325.51,
+          "growth_pct": -16.05,
+          "share_pct": 30.87
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 13902.12,
+          "current_usd_mn": 11338.33,
+          "growth_pct": -18.44,
+          "share_pct": 2.53
+        }
+      ]
+    },
+    {
+      "financial_year": "2015-2016",
+      "report_year": 2016,
+      "report_month": "March",
+      "total_usd_mn": 381007.76,
+      "total_growth_pct": -14.96,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1034.06,
+          "current_usd_mn": 895.75,
+          "growth_pct": -13.38,
+          "share_pct": 0.24
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 19004.14,
+          "current_usd_mn": 20673.66,
+          "growth_pct": 8.79,
+          "share_pct": 5.43
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 73.93,
+          "current_usd_mn": 97.23,
+          "growth_pct": 31.52,
+          "share_pct": 0.03
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 26917.86,
+          "current_usd_mn": 20684.03,
+          "growth_pct": -23.16,
+          "share_pct": 5.43
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 1092.62,
+          "current_usd_mn": 1031.28,
+          "growth_pct": -5.61,
+          "share_pct": 0.27
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 62351.34,
+          "current_usd_mn": 56508.62,
+          "growth_pct": -9.37,
+          "share_pct": 14.83
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 201.29,
+          "current_usd_mn": 221.01,
+          "growth_pct": 9.79,
+          "share_pct": 0.06
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 38553.65,
+          "current_usd_mn": 36888.21,
+          "growth_pct": -4.32,
+          "share_pct": 9.68
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 14326.69,
+          "current_usd_mn": 13760.68,
+          "growth_pct": -3.95,
+          "share_pct": 3.61
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 2373.87,
+          "current_usd_mn": 2438.51,
+          "growth_pct": 2.72,
+          "share_pct": 0.64
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 7636.46,
+          "current_usd_mn": 7157.27,
+          "growth_pct": -6.28,
+          "share_pct": 1.88
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 27046.58,
+          "current_usd_mn": 24703.68,
+          "growth_pct": -8.66,
+          "share_pct": 6.48
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 4283.47,
+          "current_usd_mn": 4176.62,
+          "growth_pct": -2.49,
+          "share_pct": 1.1
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 37540.31,
+          "current_usd_mn": 40939.82,
+          "growth_pct": 9.06,
+          "share_pct": 10.75
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 31340.19,
+          "current_usd_mn": 32299.41,
+          "growth_pct": 3.06,
+          "share_pct": 8.48
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 161.5,
+          "current_usd_mn": 124.22,
+          "growth_pct": -23.08,
+          "share_pct": 0.03
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 15287.74,
+          "current_usd_mn": 15394.27,
+          "growth_pct": 0.7,
+          "share_pct": 4.04
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 3631.43,
+          "current_usd_mn": 2761.07,
+          "growth_pct": -23.97,
+          "share_pct": 0.72
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 5512.44,
+          "current_usd_mn": 5332.49,
+          "growth_pct": -3.26,
+          "share_pct": 1.4
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 138325.51,
+          "current_usd_mn": 82944.47,
+          "growth_pct": -40.04,
+          "share_pct": 21.77
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 11338.33,
+          "current_usd_mn": 11975.46,
+          "growth_pct": 5.62,
+          "share_pct": 3.14
+        }
+      ]
+    },
+    {
+      "financial_year": "2016-2017",
+      "report_year": 2017,
+      "report_month": "March",
+      "total_usd_mn": 384357.03,
+      "total_growth_pct": 0.88,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 895.75,
+          "current_usd_mn": 841.22,
+          "growth_pct": -6.09,
+          "share_pct": 0.22
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 20673.66,
+          "current_usd_mn": 23210.67,
+          "growth_pct": 12.27,
+          "share_pct": 6.04
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 97.23,
+          "current_usd_mn": 94.37,
+          "growth_pct": -2.94,
+          "share_pct": 0.02
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 20684.03,
+          "current_usd_mn": 21636.83,
+          "growth_pct": 4.61,
+          "share_pct": 5.63
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 1031.28,
+          "current_usd_mn": 992.81,
+          "growth_pct": -3.73,
+          "share_pct": 0.26
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 56508.62,
+          "current_usd_mn": 53738.63,
+          "growth_pct": -4.9,
+          "share_pct": 13.98
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 221.01,
+          "current_usd_mn": 224.19,
+          "growth_pct": 1.44,
+          "share_pct": 0.06
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 36888.21,
+          "current_usd_mn": 33680.84,
+          "growth_pct": -8.69,
+          "share_pct": 8.76
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 13760.68,
+          "current_usd_mn": 14019.63,
+          "growth_pct": 1.88,
+          "share_pct": 3.65
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 2438.51,
+          "current_usd_mn": 2271.48,
+          "growth_pct": -6.85,
+          "share_pct": 0.59
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 7157.27,
+          "current_usd_mn": 6993.65,
+          "growth_pct": -2.29,
+          "share_pct": 1.82
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 24703.68,
+          "current_usd_mn": 21551.87,
+          "growth_pct": -12.76,
+          "share_pct": 5.61
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 4176.62,
+          "current_usd_mn": 4398.06,
+          "growth_pct": 5.3,
+          "share_pct": 1.14
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 40939.82,
+          "current_usd_mn": 42878.89,
+          "growth_pct": 4.74,
+          "share_pct": 11.16
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 32299.41,
+          "current_usd_mn": 31820.14,
+          "growth_pct": -1.48,
+          "share_pct": 8.28
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 124.22,
+          "current_usd_mn": 91.56,
+          "growth_pct": -26.29,
+          "share_pct": 0.02
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 15394.27,
+          "current_usd_mn": 19560.2,
+          "growth_pct": 27.06,
+          "share_pct": 5.09
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 2761.07,
+          "current_usd_mn": 2074.44,
+          "growth_pct": -24.87,
+          "share_pct": 0.54
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 5332.49,
+          "current_usd_mn": 5516.64,
+          "growth_pct": 3.45,
+          "share_pct": 1.44
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 82944.47,
+          "current_usd_mn": 86963.84,
+          "growth_pct": 4.85,
+          "share_pct": 22.63
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 11975.46,
+          "current_usd_mn": 11797.05,
+          "growth_pct": -1.49,
+          "share_pct": 3.07
+        }
+      ]
+    },
+    {
+      "financial_year": "2017-2018",
+      "report_year": 2018,
+      "report_month": "March",
+      "total_usd_mn": 465580.99,
+      "total_growth_pct": 21.13,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 841.22,
+          "current_usd_mn": 1039.28,
+          "growth_pct": 23.54,
+          "share_pct": 0.22
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 23210.67,
+          "current_usd_mn": 22223.1,
+          "growth_pct": -4.25,
+          "share_pct": 4.77
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 94.37,
+          "current_usd_mn": 123.06,
+          "growth_pct": 30.41,
+          "share_pct": 0.03
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 21636.83,
+          "current_usd_mn": 31743.71,
+          "growth_pct": 46.71,
+          "share_pct": 6.82
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 992.81,
+          "current_usd_mn": 1056.6,
+          "growth_pct": 6.43,
+          "share_pct": 0.23
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 53738.63,
+          "current_usd_mn": 74668.31,
+          "growth_pct": 38.95,
+          "share_pct": 16.04
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 224.19,
+          "current_usd_mn": 292.05,
+          "growth_pct": 30.27,
+          "share_pct": 0.06
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 33680.84,
+          "current_usd_mn": 40392.72,
+          "growth_pct": 19.93,
+          "share_pct": 8.68
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 14019.63,
+          "current_usd_mn": 17038.02,
+          "growth_pct": 21.53,
+          "share_pct": 3.66
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 2271.48,
+          "current_usd_mn": 2715.3,
+          "growth_pct": 19.54,
+          "share_pct": 0.58
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 6993.65,
+          "current_usd_mn": 8276.87,
+          "growth_pct": 18.35,
+          "share_pct": 1.78
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 21551.87,
+          "current_usd_mn": 27429.26,
+          "growth_pct": 27.27,
+          "share_pct": 5.89
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 4398.06,
+          "current_usd_mn": 5340.29,
+          "growth_pct": 21.42,
+          "share_pct": 1.15
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 42878.89,
+          "current_usd_mn": 52890.68,
+          "growth_pct": 23.35,
+          "share_pct": 11.36
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 31820.14,
+          "current_usd_mn": 37798.72,
+          "growth_pct": 18.79,
+          "share_pct": 8.12
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 91.56,
+          "current_usd_mn": 46.83,
+          "growth_pct": -48.86,
+          "share_pct": 0.01
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 19560.2,
+          "current_usd_mn": 19175.01,
+          "growth_pct": -1.97,
+          "share_pct": 4.12
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 2074.44,
+          "current_usd_mn": 2077.61,
+          "growth_pct": 0.15,
+          "share_pct": 0.45
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 5516.64,
+          "current_usd_mn": 6401.9,
+          "growth_pct": 16.05,
+          "share_pct": 1.38
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 86963.84,
+          "current_usd_mn": 108658.69,
+          "growth_pct": 24.95,
+          "share_pct": 23.34
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 11797.05,
+          "current_usd_mn": 6192.98,
+          "growth_pct": -47.5,
+          "share_pct": 1.33
+        }
+      ]
+    },
+    {
+      "financial_year": "2018-2019",
+      "report_year": 2019,
+      "report_month": "March",
+      "total_usd_mn": 514078.42,
+      "total_growth_pct": 10.42,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1039.28,
+          "current_usd_mn": 1070.57,
+          "growth_pct": 3.01,
+          "share_pct": 0.21
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 22223.1,
+          "current_usd_mn": 18568.41,
+          "growth_pct": -16.45,
+          "share_pct": 3.61
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 123.06,
+          "current_usd_mn": 155.7,
+          "growth_pct": 26.52,
+          "share_pct": 0.03
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 31743.71,
+          "current_usd_mn": 33628.21,
+          "growth_pct": 5.94,
+          "share_pct": 6.54
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 1056.6,
+          "current_usd_mn": 1093.33,
+          "growth_pct": 3.48,
+          "share_pct": 0.21
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 74668.31,
+          "current_usd_mn": 64678.83,
+          "growth_pct": -13.38,
+          "share_pct": 12.58
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 292.05,
+          "current_usd_mn": 332.03,
+          "growth_pct": 13.69,
+          "share_pct": 0.06
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 40392.72,
+          "current_usd_mn": 47803.6,
+          "growth_pct": 18.35,
+          "share_pct": 9.3
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 17038.02,
+          "current_usd_mn": 18469.3,
+          "growth_pct": 8.4,
+          "share_pct": 3.59
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 2715.3,
+          "current_usd_mn": 2790.23,
+          "growth_pct": 2.76,
+          "share_pct": 0.54
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 8276.87,
+          "current_usd_mn": 8761.74,
+          "growth_pct": 5.86,
+          "share_pct": 1.7
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 27429.26,
+          "current_usd_mn": 32389.68,
+          "growth_pct": 18.08,
+          "share_pct": 6.3
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 5340.29,
+          "current_usd_mn": 5895.05,
+          "growth_pct": 10.39,
+          "share_pct": 1.15
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 52890.68,
+          "current_usd_mn": 57377.29,
+          "growth_pct": 8.48,
+          "share_pct": 11.16
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 37798.72,
+          "current_usd_mn": 44146.46,
+          "growth_pct": 16.79,
+          "share_pct": 8.59
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 46.83,
+          "current_usd_mn": 52.72,
+          "growth_pct": 12.59,
+          "share_pct": 0.01
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 19175.01,
+          "current_usd_mn": 20679.64,
+          "growth_pct": 7.85,
+          "share_pct": 4.02
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 2077.61,
+          "current_usd_mn": 2375.57,
+          "growth_pct": 14.34,
+          "share_pct": 0.46
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 6401.9,
+          "current_usd_mn": 6759.84,
+          "growth_pct": 5.59,
+          "share_pct": 1.31
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 108658.69,
+          "current_usd_mn": 140920.64,
+          "growth_pct": 29.69,
+          "share_pct": 27.41
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 6192.98,
+          "current_usd_mn": 6129.59,
+          "growth_pct": -1.02,
+          "share_pct": 1.19
+        }
+      ]
+    },
+    {
+      "financial_year": "2019-2020",
+      "report_year": 2020,
+      "report_month": "March",
+      "total_usd_mn": 474709.28,
+      "total_growth_pct": -7.66,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1070.57,
+          "current_usd_mn": 890.64,
+          "growth_pct": -16.81,
+          "share_pct": 0.19
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 18568.41,
+          "current_usd_mn": 19022.05,
+          "growth_pct": 2.44,
+          "share_pct": 4.01
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 155.7,
+          "current_usd_mn": 181.93,
+          "growth_pct": 16.85,
+          "share_pct": 0.04
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 33628.21,
+          "current_usd_mn": 27357.21,
+          "growth_pct": -18.65,
+          "share_pct": 5.76
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 1093.33,
+          "current_usd_mn": 1045.27,
+          "growth_pct": -4.4,
+          "share_pct": 0.22
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 64678.83,
+          "current_usd_mn": 54453.82,
+          "growth_pct": -15.81,
+          "share_pct": 11.47
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 332.03,
+          "current_usd_mn": 276.12,
+          "growth_pct": -16.84,
+          "share_pct": 0.06
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 47803.6,
+          "current_usd_mn": 44305.72,
+          "growth_pct": -7.32,
+          "share_pct": 9.33
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 18469.3,
+          "current_usd_mn": 17082.78,
+          "growth_pct": -7.51,
+          "share_pct": 3.6
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 2790.23,
+          "current_usd_mn": 2594.91,
+          "growth_pct": -7,
+          "share_pct": 0.55
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 8761.74,
+          "current_usd_mn": 7794.5,
+          "growth_pct": -11.04,
+          "share_pct": 1.64
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 32389.68,
+          "current_usd_mn": 28508.15,
+          "growth_pct": -11.98,
+          "share_pct": 6.01
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 5895.05,
+          "current_usd_mn": 5728.69,
+          "growth_pct": -2.82,
+          "share_pct": 1.21
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 57377.29,
+          "current_usd_mn": 54397.94,
+          "growth_pct": -5.19,
+          "share_pct": 11.46
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 44146.46,
+          "current_usd_mn": 43304.23,
+          "growth_pct": -1.91,
+          "share_pct": 9.12
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 52.72,
+          "current_usd_mn": 88.29,
+          "growth_pct": 67.45,
+          "share_pct": 0.02
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 20679.64,
+          "current_usd_mn": 21736.42,
+          "growth_pct": 5.11,
+          "share_pct": 4.58
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 2375.57,
+          "current_usd_mn": 2025.51,
+          "growth_pct": -14.74,
+          "share_pct": 0.43
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 6759.84,
+          "current_usd_mn": 7504.51,
+          "growth_pct": 11.02,
+          "share_pct": 1.58
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 140920.64,
+          "current_usd_mn": 130550.31,
+          "growth_pct": -7.36,
+          "share_pct": 27.5
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 6129.59,
+          "current_usd_mn": 5860.29,
+          "growth_pct": -4.39,
+          "share_pct": 1.23
+        }
+      ]
+    },
+    {
+      "financial_year": "2020-2021",
+      "report_year": 2021,
+      "report_month": "March",
+      "total_usd_mn": 394435.88,
+      "total_growth_pct": -16.91,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 890.64,
+          "current_usd_mn": 834.67,
+          "growth_pct": -6.28,
+          "share_pct": 0.21
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 19022.05,
+          "current_usd_mn": 19970.16,
+          "growth_pct": 4.98,
+          "share_pct": 5.06
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 181.93,
+          "current_usd_mn": 225.63,
+          "growth_pct": 24.02,
+          "share_pct": 0.06
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 27357.21,
+          "current_usd_mn": 20857.05,
+          "growth_pct": -23.76,
+          "share_pct": 5.29
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 1045.27,
+          "current_usd_mn": 596.99,
+          "growth_pct": -42.89,
+          "share_pct": 0.15
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 54453.82,
+          "current_usd_mn": 55179.99,
+          "growth_pct": 1.33,
+          "share_pct": 13.99
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 276.12,
+          "current_usd_mn": 265.02,
+          "growth_pct": -4.02,
+          "share_pct": 0.07
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 44305.72,
+          "current_usd_mn": 44907.23,
+          "growth_pct": 1.36,
+          "share_pct": 11.39
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 17082.78,
+          "current_usd_mn": 15835.98,
+          "growth_pct": -7.3,
+          "share_pct": 4.01
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 2594.91,
+          "current_usd_mn": 2208.38,
+          "growth_pct": -14.9,
+          "share_pct": 0.56
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 7794.5,
+          "current_usd_mn": 5836.49,
+          "growth_pct": -25.12,
+          "share_pct": 1.48
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 28508.15,
+          "current_usd_mn": 23752.53,
+          "growth_pct": -16.68,
+          "share_pct": 6.02
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 5728.69,
+          "current_usd_mn": 5085.77,
+          "growth_pct": -11.22,
+          "share_pct": 1.29
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 54397.94,
+          "current_usd_mn": 54287.92,
+          "growth_pct": -0.2,
+          "share_pct": 13.76
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 43304.23,
+          "current_usd_mn": 34349.06,
+          "growth_pct": -20.68,
+          "share_pct": 8.71
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 88.29,
+          "current_usd_mn": 81.61,
+          "growth_pct": -7.56,
+          "share_pct": 0.02
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 21736.42,
+          "current_usd_mn": 15369.2,
+          "growth_pct": -29.29,
+          "share_pct": 3.9
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 2025.51,
+          "current_usd_mn": 1498.94,
+          "growth_pct": -26,
+          "share_pct": 0.38
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 7504.51,
+          "current_usd_mn": 5297.99,
+          "growth_pct": -29.4,
+          "share_pct": 1.34
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 130550.31,
+          "current_usd_mn": 82683.88,
+          "growth_pct": -36.67,
+          "share_pct": 20.96
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 5860.29,
+          "current_usd_mn": 5311.39,
+          "growth_pct": -9.37,
+          "share_pct": 1.35
+        }
+      ]
+    },
+    {
+      "financial_year": "2021-2022",
+      "report_year": 2022,
+      "report_month": "March",
+      "total_usd_mn": 613052.05,
+      "total_growth_pct": 55.43,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 834.67,
+          "current_usd_mn": 1237.94,
+          "growth_pct": 48.32,
+          "share_pct": 0.2
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 19970.16,
+          "current_usd_mn": 30008.27,
+          "growth_pct": 50.27,
+          "share_pct": 4.89
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 225.63,
+          "current_usd_mn": 223.91,
+          "growth_pct": -0.76,
+          "share_pct": 0.04
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 20857.05,
+          "current_usd_mn": 40829.53,
+          "growth_pct": 95.76,
+          "share_pct": 6.66
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 596.99,
+          "current_usd_mn": 850.41,
+          "growth_pct": 42.45,
+          "share_pct": 0.14
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 55179.99,
+          "current_usd_mn": 81635.5,
+          "growth_pct": 47.94,
+          "share_pct": 13.32
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 265.02,
+          "current_usd_mn": 334.94,
+          "growth_pct": 26.38,
+          "share_pct": 0.05
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 44907.23,
+          "current_usd_mn": 67636.59,
+          "growth_pct": 50.61,
+          "share_pct": 11.03
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 15835.98,
+          "current_usd_mn": 23407.28,
+          "growth_pct": 47.81,
+          "share_pct": 3.82
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 2208.38,
+          "current_usd_mn": 2949.57,
+          "growth_pct": 33.56,
+          "share_pct": 0.48
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 5836.49,
+          "current_usd_mn": 8371.3,
+          "growth_pct": 43.43,
+          "share_pct": 1.37
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 23752.53,
+          "current_usd_mn": 34904.69,
+          "growth_pct": 46.95,
+          "share_pct": 5.69
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 5085.77,
+          "current_usd_mn": 7267.02,
+          "growth_pct": 42.89,
+          "share_pct": 1.19
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 54287.92,
+          "current_usd_mn": 73674.21,
+          "growth_pct": 35.71,
+          "share_pct": 12.02
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 34349.06,
+          "current_usd_mn": 45704.34,
+          "growth_pct": 33.06,
+          "share_pct": 7.46
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 81.61,
+          "current_usd_mn": 57.2,
+          "growth_pct": -29.92,
+          "share_pct": 0.01
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 15369.2,
+          "current_usd_mn": 16433.74,
+          "growth_pct": 6.93,
+          "share_pct": 2.68
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 1498.94,
+          "current_usd_mn": 1356.05,
+          "growth_pct": -9.53,
+          "share_pct": 0.22
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 5297.99,
+          "current_usd_mn": 7666.56,
+          "growth_pct": 44.71,
+          "share_pct": 1.25
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 82683.88,
+          "current_usd_mn": 161810.45,
+          "growth_pct": 95.7,
+          "share_pct": 26.39
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 5311.39,
+          "current_usd_mn": 6692.56,
+          "growth_pct": 26,
+          "share_pct": 1.09
+        }
+      ]
+    },
+    {
+      "financial_year": "2022-2023",
+      "report_year": 2023,
+      "report_month": "March",
+      "total_usd_mn": 715968.9,
+      "total_growth_pct": 16.79,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1237.94,
+          "current_usd_mn": 1216.51,
+          "growth_pct": -1.73,
+          "share_pct": 0.17
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 30008.27,
+          "current_usd_mn": 32234.23,
+          "growth_pct": 7.42,
+          "share_pct": 4.5
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 223.91,
+          "current_usd_mn": 246.68,
+          "growth_pct": 10.17,
+          "share_pct": 0.03
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 40829.53,
+          "current_usd_mn": 59066.85,
+          "growth_pct": 44.67,
+          "share_pct": 8.25
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 850.41,
+          "current_usd_mn": 1064.93,
+          "growth_pct": 25.23,
+          "share_pct": 0.15
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 81635.5,
+          "current_usd_mn": 73902.05,
+          "growth_pct": -9.47,
+          "share_pct": 10.32
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 334.94,
+          "current_usd_mn": 331,
+          "growth_pct": -1.18,
+          "share_pct": 0.05
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 67636.59,
+          "current_usd_mn": 73734.75,
+          "growth_pct": 9.02,
+          "share_pct": 10.3
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 23407.28,
+          "current_usd_mn": 26958.44,
+          "growth_pct": 15.17,
+          "share_pct": 3.77
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 2949.57,
+          "current_usd_mn": 3621.71,
+          "growth_pct": 22.79,
+          "share_pct": 0.51
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 8371.3,
+          "current_usd_mn": 10242.02,
+          "growth_pct": 22.35,
+          "share_pct": 1.43
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 34904.69,
+          "current_usd_mn": 42323.42,
+          "growth_pct": 21.25,
+          "share_pct": 5.91
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 7267.02,
+          "current_usd_mn": 7901.88,
+          "growth_pct": 8.74,
+          "share_pct": 1.1
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 73674.21,
+          "current_usd_mn": 77263.53,
+          "growth_pct": 4.87,
+          "share_pct": 10.79
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 45704.34,
+          "current_usd_mn": 51786.75,
+          "growth_pct": 13.31,
+          "share_pct": 7.23
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 57.2,
+          "current_usd_mn": 77.58,
+          "growth_pct": 35.64,
+          "share_pct": 0.01
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 16433.74,
+          "current_usd_mn": 26329.23,
+          "growth_pct": 60.21,
+          "share_pct": 3.68
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 1356.05,
+          "current_usd_mn": 1602.92,
+          "growth_pct": 18.2,
+          "share_pct": 0.22
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 7666.56,
+          "current_usd_mn": 9906.75,
+          "growth_pct": 29.22,
+          "share_pct": 1.38
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 161810.45,
+          "current_usd_mn": 209418.17,
+          "growth_pct": 29.42,
+          "share_pct": 29.25
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 6692.56,
+          "current_usd_mn": 6739.5,
+          "growth_pct": 0.7,
+          "share_pct": 0.94
+        }
+      ]
+    },
+    {
+      "financial_year": "2023-2024",
+      "report_year": 2024,
+      "report_month": "March",
+      "total_usd_mn": 678214.77,
+      "total_growth_pct": -5.27,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1216.51,
+          "current_usd_mn": 1000.83,
+          "growth_pct": -17.73,
+          "share_pct": 0.15
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 32234.23,
+          "current_usd_mn": 30557.41,
+          "growth_pct": -5.2,
+          "share_pct": 4.51
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 246.68,
+          "current_usd_mn": 251.42,
+          "growth_pct": 1.92,
+          "share_pct": 0.04
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 59066.85,
+          "current_usd_mn": 48178.57,
+          "growth_pct": -18.43,
+          "share_pct": 7.1
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 1064.93,
+          "current_usd_mn": 936.68,
+          "growth_pct": -12.04,
+          "share_pct": 0.14
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 73902.05,
+          "current_usd_mn": 78441.91,
+          "growth_pct": 6.14,
+          "share_pct": 11.57
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 331,
+          "current_usd_mn": 389.52,
+          "growth_pct": 17.68,
+          "share_pct": 0.06
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 73734.75,
+          "current_usd_mn": 61863.92,
+          "growth_pct": -16.1,
+          "share_pct": 9.12
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 26958.44,
+          "current_usd_mn": 25415.7,
+          "growth_pct": -5.72,
+          "share_pct": 3.75
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 3621.71,
+          "current_usd_mn": 3706.21,
+          "growth_pct": 2.33,
+          "share_pct": 0.55
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 10242.02,
+          "current_usd_mn": 9007.81,
+          "growth_pct": -12.05,
+          "share_pct": 1.33
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 42323.42,
+          "current_usd_mn": 45162.35,
+          "growth_pct": 6.71,
+          "share_pct": 6.66
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 7901.88,
+          "current_usd_mn": 8853.22,
+          "growth_pct": 12.04,
+          "share_pct": 1.31
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 77263.53,
+          "current_usd_mn": 87856.99,
+          "growth_pct": 13.71,
+          "share_pct": 12.95
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 51786.75,
+          "current_usd_mn": 56319.6,
+          "growth_pct": 8.75,
+          "share_pct": 8.3
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 77.58,
+          "current_usd_mn": 80.96,
+          "growth_pct": 4.36,
+          "share_pct": 0.01
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 26329.23,
+          "current_usd_mn": 25175.91,
+          "growth_pct": -4.38,
+          "share_pct": 3.71
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 1602.92,
+          "current_usd_mn": 1321.4,
+          "growth_pct": -17.56,
+          "share_pct": 0.19
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 9906.75,
+          "current_usd_mn": 8104.57,
+          "growth_pct": -18.19,
+          "share_pct": 1.19
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 209418.17,
+          "current_usd_mn": 178732.7,
+          "growth_pct": -14.65,
+          "share_pct": 26.35
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 6739.5,
+          "current_usd_mn": 6857.1,
+          "growth_pct": 1.74,
+          "share_pct": 1.01
+        }
+      ]
+    },
+    {
+      "financial_year": "2024-2025",
+      "report_year": 2025,
+      "report_month": "March",
+      "total_usd_mn": 721200.22,
+      "total_growth_pct": 6.34,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1000.83,
+          "current_usd_mn": 1457.77,
+          "growth_pct": 45.66,
+          "share_pct": 0.2
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 30557.41,
+          "current_usd_mn": 35151.78,
+          "growth_pct": 15.04,
+          "share_pct": 4.87
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 251.42,
+          "current_usd_mn": 309.05,
+          "growth_pct": 22.92,
+          "share_pct": 0.04
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 48178.57,
+          "current_usd_mn": 42079.02,
+          "growth_pct": -12.66,
+          "share_pct": 5.83
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 936.68,
+          "current_usd_mn": 1016.75,
+          "growth_pct": 8.55,
+          "share_pct": 0.14
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 78441.91,
+          "current_usd_mn": 88942.8,
+          "growth_pct": 13.39,
+          "share_pct": 12.33
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 389.52,
+          "current_usd_mn": 413.23,
+          "growth_pct": 6.09,
+          "share_pct": 0.06
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 61863.92,
+          "current_usd_mn": 63223.55,
+          "growth_pct": 2.2,
+          "share_pct": 8.77
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 25415.7,
+          "current_usd_mn": 26125.14,
+          "growth_pct": 2.79,
+          "share_pct": 3.62
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 3706.21,
+          "current_usd_mn": 4135.9,
+          "growth_pct": 11.59,
+          "share_pct": 0.57
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 9007.81,
+          "current_usd_mn": 9628.83,
+          "growth_pct": 6.89,
+          "share_pct": 1.34
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 45162.35,
+          "current_usd_mn": 47425.23,
+          "growth_pct": 5.01,
+          "share_pct": 6.58
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 8853.22,
+          "current_usd_mn": 9662.25,
+          "growth_pct": 9.14,
+          "share_pct": 1.34
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 87856.99,
+          "current_usd_mn": 98650.56,
+          "growth_pct": 12.29,
+          "share_pct": 13.68
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 56319.6,
+          "current_usd_mn": 62044,
+          "growth_pct": 10.16,
+          "share_pct": 8.6
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 80.96,
+          "current_usd_mn": 73.86,
+          "growth_pct": -8.77,
+          "share_pct": 0.01
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 25175.91,
+          "current_usd_mn": 27793.27,
+          "growth_pct": 10.4,
+          "share_pct": 3.85
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 1321.4,
+          "current_usd_mn": 1077.58,
+          "growth_pct": -18.45,
+          "share_pct": 0.15
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 8104.57,
+          "current_usd_mn": 8860.46,
+          "growth_pct": 9.33,
+          "share_pct": 1.23
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 178732.7,
+          "current_usd_mn": 185779.29,
+          "growth_pct": 3.94,
+          "share_pct": 25.76
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 6857.1,
+          "current_usd_mn": 7349.9,
+          "growth_pct": 7.19,
+          "share_pct": 1.02
+        }
+      ]
+    },
+    {
+      "financial_year": "2025-2026",
+      "report_year": 2026,
+      "report_month": "March",
+      "total_usd_mn": 774978.19,
+      "total_growth_pct": 7.46,
+      "groups": [
+        {
+          "name": "PLANTATION",
+          "previous_usd_mn": 1457.77,
+          "current_usd_mn": 1324.99,
+          "growth_pct": -9.11,
+          "share_pct": 0.17
+        },
+        {
+          "name": "AGRI & ALLIED PRODUCTS",
+          "previous_usd_mn": 35151.78,
+          "current_usd_mn": 36398.93,
+          "growth_pct": 3.55,
+          "share_pct": 4.7
+        },
+        {
+          "name": "MARINE PRODUCTS",
+          "previous_usd_mn": 309.05,
+          "current_usd_mn": 363.42,
+          "growth_pct": 17.59,
+          "share_pct": 0.05
+        },
+        {
+          "name": "ORES & MINERALS",
+          "previous_usd_mn": 42079.02,
+          "current_usd_mn": 42343.55,
+          "growth_pct": 0.63,
+          "share_pct": 5.46
+        },
+        {
+          "name": "LEATHER & LEATHER MANUFACTURES",
+          "previous_usd_mn": 1016.75,
+          "current_usd_mn": 966.08,
+          "growth_pct": -4.98,
+          "share_pct": 0.12
+        },
+        {
+          "name": "GEMS & JEWELLERY",
+          "previous_usd_mn": 88942.8,
+          "current_usd_mn": 109392.94,
+          "growth_pct": 22.99,
+          "share_pct": 14.12
+        },
+        {
+          "name": "SPORTS GOODS",
+          "previous_usd_mn": 413.23,
+          "current_usd_mn": 503.25,
+          "growth_pct": 21.79,
+          "share_pct": 0.06
+        },
+        {
+          "name": "CHEMICALS & RELATED PRODUCTS",
+          "previous_usd_mn": 63223.55,
+          "current_usd_mn": 72687.97,
+          "growth_pct": 14.97,
+          "share_pct": 9.38
+        },
+        {
+          "name": "PLASTIC & RUBBER ARTICLES",
+          "previous_usd_mn": 26125.14,
+          "current_usd_mn": 26799.55,
+          "growth_pct": 2.58,
+          "share_pct": 3.46
+        },
+        {
+          "name": "ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE",
+          "previous_usd_mn": 4135.9,
+          "current_usd_mn": 5158.94,
+          "growth_pct": 24.74,
+          "share_pct": 0.67
+        },
+        {
+          "name": "PAPER & RELATED PRODUCTS",
+          "previous_usd_mn": 9628.83,
+          "current_usd_mn": 9291.75,
+          "growth_pct": -3.5,
+          "share_pct": 1.2
+        },
+        {
+          "name": "BASE METALS",
+          "previous_usd_mn": 47425.23,
+          "current_usd_mn": 50345.43,
+          "growth_pct": 6.16,
+          "share_pct": 6.5
+        },
+        {
+          "name": "OPTICAL, MEDICAL & SURGICAL INSTRUMENTS",
+          "previous_usd_mn": 9662.25,
+          "current_usd_mn": 10903.81,
+          "growth_pct": 12.85,
+          "share_pct": 1.41
+        },
+        {
+          "name": "ELECTORONICS ITEMS",
+          "previous_usd_mn": 98650.56,
+          "current_usd_mn": 116176.21,
+          "growth_pct": 17.77,
+          "share_pct": 14.99
+        },
+        {
+          "name": "MACHINERY",
+          "previous_usd_mn": 62044,
+          "current_usd_mn": 71381.89,
+          "growth_pct": 15.05,
+          "share_pct": 9.21
+        },
+        {
+          "name": "OFFICE EQUIPMENTS",
+          "previous_usd_mn": 73.86,
+          "current_usd_mn": 62.12,
+          "growth_pct": -15.9,
+          "share_pct": 0.01
+        },
+        {
+          "name": "TRANSPORT EQUIPMENTS",
+          "previous_usd_mn": 27793.27,
+          "current_usd_mn": 27716.62,
+          "growth_pct": -0.28,
+          "share_pct": 3.58
+        },
+        {
+          "name": "PROJECT GOODS",
+          "previous_usd_mn": 1077.58,
+          "current_usd_mn": 1060.24,
+          "growth_pct": -1.61,
+          "share_pct": 0.14
+        },
+        {
+          "name": "TEXTILES & ALLIED PRODUCTS",
+          "previous_usd_mn": 8860.46,
+          "current_usd_mn": 10416.15,
+          "growth_pct": 17.56,
+          "share_pct": 1.34
+        },
+        {
+          "name": "PETROLEUM CRUDE & PRODUCTS",
+          "previous_usd_mn": 185779.29,
+          "current_usd_mn": 173941.9,
+          "growth_pct": -6.37,
+          "share_pct": 22.44
+        },
+        {
+          "name": "OTHERS",
+          "previous_usd_mn": 7349.9,
+          "current_usd_mn": 7742.46,
+          "growth_pct": 5.34,
+          "share_pct": 1
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "side": "export",
+      "url": "https://tradestat.commerce.gov.in/ftpa/export_commodity_group_new",
+      "label": "exports",
+      "fieldPrefix": ""
+    },
+    {
+      "side": "import",
+      "url": "https://tradestat.commerce.gov.in/ftpa/import_commodity_group_new",
+      "label": "imports",
+      "fieldPrefix": "I"
+    }
+  ]
+}

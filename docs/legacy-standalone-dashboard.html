@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>India Trade Dashboard</title>
+    <style>
+      :root {
+        --bg: #f4f7fb;
+        --panel: #ffffff;
+        --panel-soft: #f8fafc;
+        --text: #142033;
+        --muted: #5b6b80;
+        --line: #d8e1ed;
+        --export: #1d4ed8;
+        --import: #c2410c;
+        --balance: #0f766e;
+        --accent: #7c3aed;
+        --danger: #b91c1c;
+        --success: #166534;
+        --shadow: 0 12px 30px rgba(16, 24, 40, 0.08);
+        --radius: 14px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html, body {
+        margin: 0;
+        min-height: 100%;
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.75)),
+          radial-gradient(circle at top left, rgba(29, 78, 216, 0.09), transparent 30%),
+          radial-gradient(circle at top right, rgba(124, 58, 237, 0.07), transparent 28%),
+          var(--bg);
+        color: var(--text);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      a { color: inherit; }
+
+      .wrap {
+        width: min(1280px, calc(100vw - 32px));
+        margin: 0 auto;
+        padding: 24px 0 40px;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(29, 78, 216, 0.08);
+        color: var(--export);
+        font-weight: 700;
+        font-size: 12px;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        margin: 12px 0 8px;
+        font-size: clamp(28px, 3vw, 42px);
+        line-height: 1.05;
+        letter-spacing: 0;
+      }
+
+      .lede {
+        margin: 0;
+        max-width: 72ch;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.55;
+      }
+
+      .chiprow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 14px;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255,255,255,0.8);
+        color: var(--muted);
+        font-size: 12px;
+        box-shadow: 0 1px 0 rgba(16,24,40,0.02);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: flex-end;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 11px 14px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #fff;
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 1px 0 rgba(16,24,40,0.03);
+      }
+
+      .btn.primary {
+        border-color: rgba(29, 78, 216, 0.24);
+        background: linear-gradient(180deg, rgba(29,78,216,0.1), rgba(29,78,216,0.04));
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .panel {
+        background: var(--panel);
+        border: 1px solid rgba(216, 225, 237, 0.9);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .panel-pad {
+        padding: 18px;
+      }
+
+      .schema-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .schema-item {
+        padding: 14px;
+        border-radius: 12px;
+        background: var(--panel-soft);
+        border: 1px solid var(--line);
+      }
+
+      .schema-item .name {
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+
+      .schema-item .type {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 12px;
+      }
+
+      .metric {
+        padding: 14px;
+        border-radius: 12px;
+        background: var(--panel-soft);
+        border: 1px solid var(--line);
+      }
+
+      .metric .label {
+        color: var(--muted);
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+
+      .metric .value {
+        font-size: 26px;
+        font-weight: 800;
+        letter-spacing: 0;
+      }
+
+      .metric .sub {
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.4;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 700;
+        margin-top: 8px;
+      }
+
+      .badge.good {
+        background: rgba(22, 101, 52, 0.12);
+        color: var(--success);
+      }
+
+      .badge.bad {
+        background: rgba(185, 28, 28, 0.11);
+        color: var(--danger);
+      }
+
+      .badge.note {
+        background: rgba(124, 58, 237, 0.1);
+        color: var(--accent);
+      }
+
+      .section {
+        margin-top: 18px;
+      }
+
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 12px;
+        margin: 4px 0 12px;
+      }
+
+      .section-head h2 {
+        margin: 0;
+        font-size: 20px;
+      }
+
+      .section-head p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .chart-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 0.9fr;
+        gap: 16px;
+      }
+
+      .chart {
+        padding: 18px;
+      }
+
+      .chart svg {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 10px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .legend span {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+
+      .dot.export { background: var(--export); }
+      .dot.import { background: var(--import); }
+      .dot.balance { background: var(--balance); }
+
+      .insights {
+        display: grid;
+        gap: 12px;
+      }
+
+      .insight {
+        padding: 16px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+      }
+
+      .insight .kicker {
+        font-size: 11px;
+        font-weight: 800;
+        color: var(--accent);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .insight h3 {
+        margin: 0 0 6px;
+        font-size: 16px;
+      }
+
+      .insight p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      .table-wrap {
+        overflow: auto;
+        border-radius: var(--radius);
+        border: 1px solid var(--line);
+        background: #fff;
+        box-shadow: var(--shadow);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 980px;
+      }
+
+      th, td {
+        text-align: left;
+        padding: 12px 14px;
+        border-bottom: 1px solid var(--line);
+        white-space: nowrap;
+        font-size: 13px;
+      }
+
+      th {
+        position: sticky;
+        top: 0;
+        background: #f9fbfd;
+        z-index: 1;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--muted);
+      }
+
+      tbody tr:hover {
+        background: rgba(29, 78, 216, 0.035);
+      }
+
+      td.num {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+      }
+
+      td.neg { color: var(--danger); font-weight: 700; }
+      td.pos { color: var(--success); font-weight: 700; }
+      .footer-note {
+        color: var(--muted);
+        font-size: 12px;
+        margin-top: 10px;
+      }
+
+      @media (max-width: 1080px) {
+        .hero, .chart-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .wrap {
+          width: min(100vw - 20px, 1280px);
+          padding-top: 12px;
+        }
+
+        .topbar {
+          flex-direction: column;
+        }
+
+        .schema-grid, .metric-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .actions {
+          justify-content: flex-start;
+        }
+
+        h1 {
+          font-size: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="topbar">
+        <div>
+          <div class="eyebrow">Government of India trade data</div>
+          <h1>India import and export dashboard</h1>
+          <p class="lede">
+            A share-friendly summary of the TRADESTAT annual series. The first view shows the data shape and the year-wise totals; the supporting panels call out the biggest shifts and the persistent import-heavy balance.
+          </p>
+          <div class="chiprow" id="status-chips"></div>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="./data/india_trade_yearly_bundle.zip">Download bundle</a>
+          <a class="btn" href="./data/india_trade_yearly_summary.csv">CSV</a>
+          <a class="btn" href="./data/india_trade_yearly_raw.json">Raw JSON</a>
+        </div>
+      </div>
+
+      <section class="hero">
+        <div class="panel panel-pad">
+          <div class="section-head">
+            <div>
+              <h2>Schema</h2>
+              <p>What each row contains and how the numbers are structured.</p>
+            </div>
+          </div>
+          <div class="schema-grid" id="schema-grid"></div>
+        </div>
+
+        <div class="panel panel-pad">
+          <div class="section-head">
+            <div>
+              <h2>Latest snapshot</h2>
+              <p>Useful for a first pass or a social post.</p>
+            </div>
+          </div>
+          <div class="metric-grid" id="metric-grid"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <h2>Key trade patterns</h2>
+            <p>Exports and imports move together, but imports stay above exports every year in this set.</p>
+          </div>
+        </div>
+        <div class="chart-grid">
+          <div class="panel chart">
+            <div class="legend">
+              <span><i class="dot export"></i>Exports</span>
+              <span><i class="dot import"></i>Imports</span>
+              <span><i class="dot balance"></i>Trade balance</span>
+            </div>
+            <svg id="trend-chart" viewBox="0 0 880 430" role="img" aria-label="Exports and imports trend chart"></svg>
+          </div>
+          <div class="insights" id="insights"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <h2>Year-wise data</h2>
+            <p>Full table for scanning, comparison, and copy-paste.</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Financial year</th>
+                <th class="num">Exports (US$ mn)</th>
+                <th class="num">Imports (US$ mn)</th>
+                <th class="num">Trade balance</th>
+                <th class="num">Export YoY</th>
+                <th class="num">Import YoY</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="data-body"></tbody>
+          </table>
+        </div>
+        <div class="footer-note">
+          Source: TRADESTAT, Ministry of Commerce and Industry. The 2025-2026 row is year-to-date, not a closed year.
+        </div>
+      </section>
+    </div>
+
+    <script id="trade-data" type="application/json">
+    {
+      "source_update_note": "TRADESTAT banner showed data available 2017-2018 to 2025-2026; page report dated 07 Jun 2026 and last data updated 19/05/2026.",
+      "summary": [
+        {"financial_year":"2017-2018","export_usd_mn":303526.16,"import_usd_mn":465580.99,"trade_balance_usd_mn":-162054.83,"export_yoy_pct":null,"import_yoy_pct":null,"data_status":"annual"},
+        {"financial_year":"2018-2019","export_usd_mn":330078.09,"import_usd_mn":514078.42,"trade_balance_usd_mn":-184000.33,"export_yoy_pct":8.75,"import_yoy_pct":10.42,"data_status":"annual"},
+        {"financial_year":"2019-2020","export_usd_mn":313361.04,"import_usd_mn":474709.28,"trade_balance_usd_mn":-161348.24,"export_yoy_pct":-5.06,"import_yoy_pct":-7.66,"data_status":"annual"},
+        {"financial_year":"2020-2021","export_usd_mn":291808.48,"import_usd_mn":394435.88,"trade_balance_usd_mn":-102627.40,"export_yoy_pct":-6.88,"import_yoy_pct":-16.91,"data_status":"annual"},
+        {"financial_year":"2021-2022","export_usd_mn":422004.40,"import_usd_mn":613052.05,"trade_balance_usd_mn":-191047.65,"export_yoy_pct":44.62,"import_yoy_pct":55.43,"data_status":"annual"},
+        {"financial_year":"2022-2023","export_usd_mn":451070.00,"import_usd_mn":715968.90,"trade_balance_usd_mn":-264898.90,"export_yoy_pct":6.89,"import_yoy_pct":16.79,"data_status":"annual"},
+        {"financial_year":"2023-2024","export_usd_mn":437072.03,"import_usd_mn":678214.77,"trade_balance_usd_mn":-241142.74,"export_yoy_pct":-3.10,"import_yoy_pct":-5.27,"data_status":"annual"},
+        {"financial_year":"2024-2025","export_usd_mn":437704.58,"import_usd_mn":721200.22,"trade_balance_usd_mn":-283495.64,"export_yoy_pct":0.14,"import_yoy_pct":6.34,"data_status":"annual"},
+        {"financial_year":"2025-2026","export_usd_mn":441745.86,"import_usd_mn":776013.65,"trade_balance_usd_mn":-334267.79,"export_yoy_pct":0.92,"import_yoy_pct":7.60,"data_status":"year_to_date"}
+      ],
+      "schema": [
+        {"name":"financial_year","type":"string","description":"Financial year label from the government table."},
+        {"name":"export_usd_mn","type":"number","description":"Exports in US dollar millions."},
+        {"name":"import_usd_mn","type":"number","description":"Imports in US dollar millions."},
+        {"name":"trade_balance_usd_mn","type":"number","description":"Exports minus imports, so negative values indicate a deficit."},
+        {"name":"export_yoy_pct","type":"number | null","description":"Year-over-year change in exports."},
+        {"name":"import_yoy_pct","type":"number | null","description":"Year-over-year change in imports."},
+        {"name":"data_status","type":"string","description":"Annual or year-to-date status."}
+      ],
+      "sources": {
+        "export": "./data/india_trade_yearly_summary.csv",
+        "raw": "./data/india_trade_yearly_raw.json"
+      }
+    }
+    </script>
+    <script>
+      const data = JSON.parse(document.getElementById('trade-data').textContent.trim());
+
+      const fmt = new Intl.NumberFormat('en-US', { maximumFractionDigits: 2, minimumFractionDigits: 2 });
+      const pct = new Intl.NumberFormat('en-US', { maximumFractionDigits: 2, minimumFractionDigits: 2, signDisplay: 'always' });
+      const shortMoney = (n) => `$${fmt.format(n / 1000)}B`;
+      const signMoney = (n) => `${n < 0 ? '-' : '+'}$${fmt.format(Math.abs(n) / 1000)}B`;
+
+      const rows = data.summary;
+      const latest = rows[rows.length - 1];
+      const prior = rows[rows.length - 2];
+
+      const exportGrowthPeak = rows.slice(1).reduce((best, row) => {
+        if (best === null || row.export_yoy_pct > best.export_yoy_pct) return row;
+        return best;
+      }, null);
+      const importGrowthPeak = rows.slice(1).reduce((best, row) => {
+        if (best === null || row.import_yoy_pct > best.import_yoy_pct) return row;
+        return best;
+      }, null);
+      const smallestDeficit = rows.reduce((best, row) => {
+        if (!best || row.trade_balance_usd_mn > best.trade_balance_usd_mn) return row;
+        return best;
+      }, null);
+      const widestDeficit = rows.reduce((best, row) => {
+        if (!best || row.trade_balance_usd_mn < best.trade_balance_usd_mn) return row;
+        return best;
+      }, null);
+
+      const schemaGrid = document.getElementById('schema-grid');
+      data.schema.forEach((field) => {
+        const el = document.createElement('div');
+        el.className = 'schema-item';
+        el.innerHTML = `<div class="name">${field.name}</div><div class="type">${field.type}</div><div class="type" style="margin-top:8px;">${field.description}</div>`;
+        schemaGrid.appendChild(el);
+      });
+
+      const metricGrid = document.getElementById('metric-grid');
+      const metrics = [
+        {
+          label: 'Latest exports',
+          value: shortMoney(latest.export_usd_mn),
+          sub: `${latest.financial_year} ${latest.data_status === 'year_to_date' ? '(YTD)' : ''}`,
+          badge: latest.export_yoy_pct >= 0 ? `Up ${pct.format(latest.export_yoy_pct)}% YoY` : `Down ${pct.format(latest.export_yoy_pct)}% YoY`,
+          tone: latest.export_yoy_pct >= 0 ? 'good' : 'bad'
+        },
+        {
+          label: 'Latest imports',
+          value: shortMoney(latest.import_usd_mn),
+          sub: `${latest.financial_year} ${latest.data_status === 'year_to_date' ? '(YTD)' : ''}`,
+          badge: latest.import_yoy_pct >= 0 ? `Up ${pct.format(latest.import_yoy_pct)}% YoY` : `Down ${pct.format(latest.import_yoy_pct)}% YoY`,
+          tone: 'bad'
+        },
+        {
+          label: 'Trade balance',
+          value: signMoney(latest.trade_balance_usd_mn),
+          sub: `${latest.financial_year}; imports still lead exports`,
+          badge: 'Deficit',
+          tone: 'bad'
+        },
+        {
+          label: 'Versus previous year',
+          value: signMoney(latest.import_usd_mn - prior.import_usd_mn),
+          sub: 'Import growth is outpacing export growth again',
+          badge: `Exports ${pct.format(latest.export_yoy_pct)}% vs imports ${pct.format(latest.import_yoy_pct)}%`,
+          tone: 'note'
+        }
+      ];
+
+      metrics.forEach((m) => {
+        const el = document.createElement('div');
+        el.className = 'metric';
+        el.innerHTML = `
+          <div class="label">${m.label}</div>
+          <div class="value">${m.value}</div>
+          <div class="sub">${m.sub}</div>
+          <div class="badge ${m.tone}">${m.badge}</div>
+        `;
+        metricGrid.appendChild(el);
+      });
+
+      const insights = document.getElementById('insights');
+      const insightBlocks = [
+        {
+          kicker: 'Pattern 1',
+          title: 'Imports exceed exports in every year shown',
+          text: `The gap stays negative throughout the whole series, from ${signMoney(rows[0].trade_balance_usd_mn)} in ${rows[0].financial_year} to ${signMoney(widestDeficit.trade_balance_usd_mn)} in ${widestDeficit.financial_year}.`
+        },
+        {
+          kicker: 'Pattern 2',
+          title: 'The strongest rebound happened in 2021-2022',
+          text: `Exports jumped ${pct.format(exportGrowthPeak.export_yoy_pct)}% and imports jumped ${pct.format(importGrowthPeak.import_yoy_pct)}% after the pandemic-era slump.`
+        },
+        {
+          kicker: 'Pattern 3',
+          title: 'The deficit widened again after a short pause',
+          text: `2023-2024 eased slightly, but the latest year-to-date figure widened back to ${signMoney(latest.trade_balance_usd_mn)}.`
+        },
+        {
+          kicker: 'Pattern 4',
+          title: 'Best balance year still remains a deficit',
+          text: `${smallestDeficit.financial_year} had the narrowest gap at ${signMoney(smallestDeficit.trade_balance_usd_mn)}, which is still below zero.`
+        }
+      ];
+
+      insightBlocks.forEach((item) => {
+        const el = document.createElement('article');
+        el.className = 'insight';
+        el.innerHTML = `
+          <div class="kicker">${item.kicker}</div>
+          <h3>${item.title}</h3>
+          <p>${item.text}</p>
+        `;
+        insights.appendChild(el);
+      });
+
+      const tbody = document.getElementById('data-body');
+      rows.forEach((row) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${row.financial_year}</td>
+          <td class="num">${fmt.format(row.export_usd_mn)}</td>
+          <td class="num">${fmt.format(row.import_usd_mn)}</td>
+          <td class="num ${row.trade_balance_usd_mn < 0 ? 'neg' : 'pos'}">${fmt.format(row.trade_balance_usd_mn)}</td>
+          <td class="num">${row.export_yoy_pct === null ? '—' : pct.format(row.export_yoy_pct)}%</td>
+          <td class="num">${row.import_yoy_pct === null ? '—' : pct.format(row.import_yoy_pct)}%</td>
+          <td><span class="badge ${row.data_status === 'year_to_date' ? 'note' : 'good'}">${row.data_status.replace(/_/g, ' ')}</span></td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      const statusChips = document.getElementById('status-chips');
+      const chips = [
+        `Source updated ${data.source_update_note.match(/last data updated ([^;]+)\./)?.[1] || 'recently'}`,
+        `Exports series: ${rows.length} years`,
+        `Imports series: ${rows.length} years`,
+        'Current year is year-to-date'
+      ];
+      chips.forEach((text) => {
+        const chip = document.createElement('span');
+        chip.className = 'chip';
+        chip.textContent = text;
+        statusChips.appendChild(chip);
+      });
+
+      const svg = document.getElementById('trend-chart');
+      const width = 880;
+      const height = 430;
+      const pad = { top: 28, right: 26, bottom: 52, left: 68 };
+      const chartW = width - pad.left - pad.right;
+      const chartH = height - pad.top - pad.bottom;
+      const xStep = chartW / Math.max(rows.length - 1, 1);
+      const maxVal = Math.max(...rows.map((d) => Math.max(d.export_usd_mn, d.import_usd_mn))) * 1.08;
+      const minBalance = Math.min(...rows.map((d) => d.trade_balance_usd_mn)) * 1.06;
+      const maxBalance = 0;
+
+      const x = (i) => pad.left + i * xStep;
+      const y = (v) => pad.top + chartH - (v / maxVal) * chartH;
+      const yBalance = (v) => pad.top + chartH - ((v - minBalance) / (maxBalance - minBalance)) * chartH;
+
+      const linePath = (values, accessor) => values.map((d, i) => `${i === 0 ? 'M' : 'L'} ${x(i).toFixed(2)} ${y(accessor(d)).toFixed(2)}`).join(' ');
+      const exportPath = linePath(rows, (d) => d.export_usd_mn);
+      const importPath = linePath(rows, (d) => d.import_usd_mn);
+
+      const ticks = [];
+      const tickCount = 5;
+      for (let i = 0; i <= tickCount; i += 1) {
+        const v = maxVal * (1 - i / tickCount);
+        const yy = y(v);
+        ticks.push(`<line x1="${pad.left}" x2="${width - pad.right}" y1="${yy}" y2="${yy}" stroke="#e7eef6" stroke-width="1" />`);
+        ticks.push(`<text x="${pad.left - 10}" y="${yy + 4}" text-anchor="end" fill="#5b6b80" font-size="11">${Math.round(v / 1000)}B</text>`);
+      }
+
+      const yearLabels = rows.map((d, i) => {
+        const isYtd = d.data_status === 'year_to_date';
+        return `<text x="${x(i)}" y="${height - 20}" text-anchor="middle" fill="${isYtd ? '#7c3aed' : '#5b6b80'}" font-size="11" font-weight="${isYtd ? 700 : 500}">${d.financial_year}</text>`;
+      }).join('');
+
+      const balanceBars = rows.map((d, i) => {
+        const top = yBalance(0);
+        const bottom = yBalance(d.trade_balance_usd_mn);
+        const h = Math.abs(bottom - top);
+        const yPos = d.trade_balance_usd_mn < 0 ? top : bottom;
+        return `<rect x="${x(i) - 14}" y="${yPos}" width="28" height="${h}" rx="8" fill="rgba(15,118,110,0.12)" stroke="rgba(15,118,110,0.45)" />`;
+      }).join('');
+
+      const pointDots = rows.map((d, i) => {
+        const exportY = y(d.export_usd_mn);
+        const importY = y(d.import_usd_mn);
+        return `
+          <circle cx="${x(i)}" cy="${exportY}" r="4" fill="#1d4ed8" stroke="#ffffff" stroke-width="2" />
+          <circle cx="${x(i)}" cy="${importY}" r="4" fill="#c2410c" stroke="#ffffff" stroke-width="2" />
+        `;
+      }).join('');
+
+      svg.innerHTML = `
+        <defs>
+          <linearGradient id="exportFill" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#1d4ed8" stop-opacity="0.16" />
+            <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0.02" />
+          </linearGradient>
+          <linearGradient id="importFill" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#c2410c" stop-opacity="0.15" />
+            <stop offset="100%" stop-color="#c2410c" stop-opacity="0.02" />
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="${width}" height="${height}" rx="18" fill="#fbfdff" />
+        ${ticks.join('')}
+        <line x1="${pad.left}" x2="${width - pad.right}" y1="${yBalance(0)}" y2="${yBalance(0)}" stroke="#0f766e" stroke-opacity="0.45" stroke-dasharray="6 6" />
+        ${balanceBars}
+        <path d="${exportPath}" fill="none" stroke="#1d4ed8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="${importPath}" fill="none" stroke="#c2410c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+        ${pointDots}
+        ${yearLabels}
+        <text x="${pad.left}" y="${pad.top - 8}" fill="#142033" font-size="13" font-weight="700">US$ billion</text>
+      `;
+    </script>
+  </body>
+</html>

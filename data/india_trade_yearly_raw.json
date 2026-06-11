@@ -1,0 +1,2287 @@
+{
+  "source_update_note": "FTSPCC monthly country-wise total trade page reported data available from January 2010 to Apr 2026; annual values were taken from the March cumulative row for each fiscal year. Report dated 08 Jun 2026.",
+  "monthly_rows": [
+    {
+      "financial_year": "2010-2011",
+      "calendar_year": 2010,
+      "month": 4,
+      "month_name": "April",
+      "export_usd_mn": 18063.14,
+      "import_usd_mn": 31674.81,
+      "trade_balance_usd_mn": -13611.670000000002,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2010-2011",
+      "calendar_year": 2010,
+      "month": 5,
+      "month_name": "May",
+      "export_usd_mn": 35348,
+      "import_usd_mn": 61421.71,
+      "trade_balance_usd_mn": -26073.71,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2010-2011",
+      "calendar_year": 2010,
+      "month": 6,
+      "month_name": "June",
+      "export_usd_mn": 56015.77,
+      "import_usd_mn": 90070.17,
+      "trade_balance_usd_mn": -34054.4,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2010-2011",
+      "calendar_year": 2010,
+      "month": 7,
+      "month_name": "July",
+      "export_usd_mn": 72971.82,
+      "import_usd_mn": 119740.6,
+      "trade_balance_usd_mn": -46768.78,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2010-2011",
+      "calendar_year": 2010,
+      "month": 8,
+      "month_name": "August",
+      "export_usd_mn": 90755.33,
+      "import_usd_mn": 146848.29,
+      "trade_balance_usd_mn": -56092.96000000001,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2010-2011",
+      "calendar_year": 2010,
+      "month": 9,
+      "month_name": "September",
+      "export_usd_mn": 109621.7,
+      "import_usd_mn": 176360.02,
+      "trade_balance_usd_mn": -66738.31999999999,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2010-2011",
+      "calendar_year": 2010,
+      "month": 10,
+      "month_name": "October",
+      "export_usd_mn": 128611.96,
+      "import_usd_mn": 208821.75,
+      "trade_balance_usd_mn": -80209.79,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2010-2011",
+      "calendar_year": 2010,
+      "month": 11,
+      "month_name": "November",
+      "export_usd_mn": 150110.5,
+      "import_usd_mn": 237664.01,
+      "trade_balance_usd_mn": -87553.51000000001,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2010-2011",
+      "calendar_year": 2010,
+      "month": 12,
+      "month_name": "December",
+      "export_usd_mn": 173459.6,
+      "import_usd_mn": 269175.17,
+      "trade_balance_usd_mn": -95715.56999999998,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2010-2011",
+      "calendar_year": 2011,
+      "month": 1,
+      "month_name": "January",
+      "export_usd_mn": 196151.24,
+      "import_usd_mn": 302528.77,
+      "trade_balance_usd_mn": -106377.53000000003,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2010-2011",
+      "calendar_year": 2011,
+      "month": 2,
+      "month_name": "February",
+      "export_usd_mn": 219394.63,
+      "import_usd_mn": 335502.11,
+      "trade_balance_usd_mn": -116107.47999999998,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2010-2011",
+      "calendar_year": 2011,
+      "month": 3,
+      "month_name": "March",
+      "export_usd_mn": 249814.48,
+      "import_usd_mn": 369769.14,
+      "trade_balance_usd_mn": -119954.66,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2011-2012",
+      "calendar_year": 2011,
+      "month": 4,
+      "month_name": "April",
+      "export_usd_mn": 23394.3,
+      "import_usd_mn": 36595.07,
+      "trade_balance_usd_mn": -13200.77,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2011-2012",
+      "calendar_year": 2011,
+      "month": 5,
+      "month_name": "May",
+      "export_usd_mn": 49917.41,
+      "import_usd_mn": 81849.78,
+      "trade_balance_usd_mn": -31932.369999999995,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2011-2012",
+      "calendar_year": 2011,
+      "month": 6,
+      "month_name": "June",
+      "export_usd_mn": 76453.8,
+      "import_usd_mn": 122699.24,
+      "trade_balance_usd_mn": -46245.44,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2011-2012",
+      "calendar_year": 2011,
+      "month": 7,
+      "month_name": "July",
+      "export_usd_mn": 102884.27,
+      "import_usd_mn": 163805.44,
+      "trade_balance_usd_mn": -60921.17,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2011-2012",
+      "calendar_year": 2011,
+      "month": 8,
+      "month_name": "August",
+      "export_usd_mn": 127685.35,
+      "import_usd_mn": 203790.13,
+      "trade_balance_usd_mn": -76104.78,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2011-2012",
+      "calendar_year": 2011,
+      "month": 9,
+      "month_name": "September",
+      "export_usd_mn": 154247.01,
+      "import_usd_mn": 243546.21,
+      "trade_balance_usd_mn": -89299.19999999998,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2011-2012",
+      "calendar_year": 2011,
+      "month": 10,
+      "month_name": "October",
+      "export_usd_mn": 177880.08,
+      "import_usd_mn": 284721.24,
+      "trade_balance_usd_mn": -106841.16,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2011-2012",
+      "calendar_year": 2011,
+      "month": 11,
+      "month_name": "November",
+      "export_usd_mn": 201184.82,
+      "import_usd_mn": 323823.75,
+      "trade_balance_usd_mn": -122638.93,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2011-2012",
+      "calendar_year": 2011,
+      "month": 12,
+      "month_name": "December",
+      "export_usd_mn": 226550.52,
+      "import_usd_mn": 363867.82,
+      "trade_balance_usd_mn": -137317.30000000002,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2011-2012",
+      "calendar_year": 2012,
+      "month": 1,
+      "month_name": "January",
+      "export_usd_mn": 251929.53,
+      "import_usd_mn": 406820.27,
+      "trade_balance_usd_mn": -154890.74000000002,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2011-2012",
+      "calendar_year": 2012,
+      "month": 2,
+      "month_name": "February",
+      "export_usd_mn": 277123.95,
+      "import_usd_mn": 446938.82,
+      "trade_balance_usd_mn": -169814.87,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2011-2012",
+      "calendar_year": 2012,
+      "month": 3,
+      "month_name": "March",
+      "export_usd_mn": 305963.28,
+      "import_usd_mn": 489319.54,
+      "trade_balance_usd_mn": -183356.25999999995,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2012-2013",
+      "calendar_year": 2012,
+      "month": 4,
+      "month_name": "April",
+      "export_usd_mn": 23785.22,
+      "import_usd_mn": 38170.99,
+      "trade_balance_usd_mn": -14385.769999999997,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2012-2013",
+      "calendar_year": 2012,
+      "month": 5,
+      "month_name": "May",
+      "export_usd_mn": 48604.65,
+      "import_usd_mn": 80358.34,
+      "trade_balance_usd_mn": -31753.689999999995,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2012-2013",
+      "calendar_year": 2012,
+      "month": 6,
+      "month_name": "June",
+      "export_usd_mn": 73514.73,
+      "import_usd_mn": 116514.96,
+      "trade_balance_usd_mn": -43000.23000000001,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2012-2013",
+      "calendar_year": 2012,
+      "month": 7,
+      "month_name": "July",
+      "export_usd_mn": 96601.89,
+      "import_usd_mn": 157134.09,
+      "trade_balance_usd_mn": -60532.2,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2012-2013",
+      "calendar_year": 2012,
+      "month": 8,
+      "month_name": "August",
+      "export_usd_mn": 119725.08,
+      "import_usd_mn": 194441.38,
+      "trade_balance_usd_mn": -74716.3,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2012-2013",
+      "calendar_year": 2012,
+      "month": 9,
+      "month_name": "September",
+      "export_usd_mn": 144607.48,
+      "import_usd_mn": 236493.69,
+      "trade_balance_usd_mn": -91886.20999999999,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2012-2013",
+      "calendar_year": 2012,
+      "month": 10,
+      "month_name": "October",
+      "export_usd_mn": 168622.15,
+      "import_usd_mn": 280737.5,
+      "trade_balance_usd_mn": -112115.35,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2012-2013",
+      "calendar_year": 2012,
+      "month": 11,
+      "month_name": "November",
+      "export_usd_mn": 191864.04,
+      "import_usd_mn": 321191.45,
+      "trade_balance_usd_mn": -129327.41,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2012-2013",
+      "calendar_year": 2012,
+      "month": 12,
+      "month_name": "December",
+      "export_usd_mn": 217298.29,
+      "import_usd_mn": 364242.18,
+      "trade_balance_usd_mn": -146943.88999999998,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2012-2013",
+      "calendar_year": 2013,
+      "month": 1,
+      "month_name": "January",
+      "export_usd_mn": 243190.05,
+      "import_usd_mn": 408996.9,
+      "trade_balance_usd_mn": -165806.85000000003,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2012-2013",
+      "calendar_year": 2013,
+      "month": 2,
+      "month_name": "February",
+      "export_usd_mn": 269858.8,
+      "import_usd_mn": 449788.93,
+      "trade_balance_usd_mn": -179930.13,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2012-2013",
+      "calendar_year": 2013,
+      "month": 3,
+      "month_name": "March",
+      "export_usd_mn": 300400.01,
+      "import_usd_mn": 490736.67,
+      "trade_balance_usd_mn": -190336.65999999997,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2013-2014",
+      "calendar_year": 2013,
+      "month": 4,
+      "month_name": "April",
+      "export_usd_mn": 24483.79,
+      "import_usd_mn": 41576.27,
+      "trade_balance_usd_mn": -17092.479999999996,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2013-2014",
+      "calendar_year": 2013,
+      "month": 5,
+      "month_name": "May",
+      "export_usd_mn": 49434.33,
+      "import_usd_mn": 85563.56,
+      "trade_balance_usd_mn": -36129.229999999996,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2013-2014",
+      "calendar_year": 2013,
+      "month": 6,
+      "month_name": "June",
+      "export_usd_mn": 73432.09,
+      "import_usd_mn": 120867.91,
+      "trade_balance_usd_mn": -47435.82000000001,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2013-2014",
+      "calendar_year": 2013,
+      "month": 7,
+      "month_name": "July",
+      "export_usd_mn": 99262.73,
+      "import_usd_mn": 159194.07,
+      "trade_balance_usd_mn": -59931.34000000001,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2013-2014",
+      "calendar_year": 2013,
+      "month": 8,
+      "month_name": "August",
+      "export_usd_mn": 125615.54,
+      "import_usd_mn": 196219.71,
+      "trade_balance_usd_mn": -70604.17,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2013-2014",
+      "calendar_year": 2013,
+      "month": 9,
+      "month_name": "September",
+      "export_usd_mn": 153751.26,
+      "import_usd_mn": 230477.85,
+      "trade_balance_usd_mn": -76726.59,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2013-2014",
+      "calendar_year": 2013,
+      "month": 10,
+      "month_name": "October",
+      "export_usd_mn": 181231.29,
+      "import_usd_mn": 268552.78,
+      "trade_balance_usd_mn": -87321.49000000002,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2013-2014",
+      "calendar_year": 2013,
+      "month": 11,
+      "month_name": "November",
+      "export_usd_mn": 205434,
+      "import_usd_mn": 302325.6,
+      "trade_balance_usd_mn": -96891.59999999998,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2013-2014",
+      "calendar_year": 2013,
+      "month": 12,
+      "month_name": "December",
+      "export_usd_mn": 231827.97,
+      "import_usd_mn": 338905.6,
+      "trade_balance_usd_mn": -107077.62999999998,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2013-2014",
+      "calendar_year": 2014,
+      "month": 1,
+      "month_name": "January",
+      "export_usd_mn": 258719.57,
+      "import_usd_mn": 375252.47,
+      "trade_balance_usd_mn": -116532.89999999997,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2013-2014",
+      "calendar_year": 2014,
+      "month": 2,
+      "month_name": "February",
+      "export_usd_mn": 284062.29,
+      "import_usd_mn": 408904.18,
+      "trade_balance_usd_mn": -124841.89000000001,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2013-2014",
+      "calendar_year": 2014,
+      "month": 3,
+      "month_name": "March",
+      "export_usd_mn": 314403.26,
+      "import_usd_mn": 450199.29,
+      "trade_balance_usd_mn": -135796.02999999997,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2014-2015",
+      "calendar_year": 2014,
+      "month": 4,
+      "month_name": "April",
+      "export_usd_mn": 26021.49,
+      "import_usd_mn": 35795.27,
+      "trade_balance_usd_mn": -9773.779999999995,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2014-2015",
+      "calendar_year": 2014,
+      "month": 5,
+      "month_name": "May",
+      "export_usd_mn": 54009.28,
+      "import_usd_mn": 74746.57,
+      "trade_balance_usd_mn": -20737.290000000008,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2014-2015",
+      "calendar_year": 2014,
+      "month": 6,
+      "month_name": "June",
+      "export_usd_mn": 79905.12,
+      "import_usd_mn": 113098.94,
+      "trade_balance_usd_mn": -33193.82000000001,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2014-2015",
+      "calendar_year": 2014,
+      "month": 7,
+      "month_name": "July",
+      "export_usd_mn": 105689.81,
+      "import_usd_mn": 153206.96,
+      "trade_balance_usd_mn": -47517.149999999994,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2014-2015",
+      "calendar_year": 2014,
+      "month": 8,
+      "month_name": "August",
+      "export_usd_mn": 132527.51,
+      "import_usd_mn": 190678.96,
+      "trade_balance_usd_mn": -58151.44999999998,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2014-2015",
+      "calendar_year": 2014,
+      "month": 9,
+      "month_name": "September",
+      "export_usd_mn": 161394.7,
+      "import_usd_mn": 234020.68,
+      "trade_balance_usd_mn": -72625.97999999998,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2014-2015",
+      "calendar_year": 2014,
+      "month": 10,
+      "month_name": "October",
+      "export_usd_mn": 187285.42,
+      "import_usd_mn": 273489.53,
+      "trade_balance_usd_mn": -86204.11000000002,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2014-2015",
+      "calendar_year": 2014,
+      "month": 11,
+      "month_name": "November",
+      "export_usd_mn": 213770.79,
+      "import_usd_mn": 316212.03,
+      "trade_balance_usd_mn": -102441.24000000002,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2014-2015",
+      "calendar_year": 2014,
+      "month": 12,
+      "month_name": "December",
+      "export_usd_mn": 239927.4,
+      "import_usd_mn": 351545.26,
+      "trade_balance_usd_mn": -111617.86000000002,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2014-2015",
+      "calendar_year": 2015,
+      "month": 1,
+      "month_name": "January",
+      "export_usd_mn": 264320.89,
+      "import_usd_mn": 383810.46,
+      "trade_balance_usd_mn": -119489.57,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2014-2015",
+      "calendar_year": 2015,
+      "month": 2,
+      "month_name": "February",
+      "export_usd_mn": 286304.4,
+      "import_usd_mn": 412535.81,
+      "trade_balance_usd_mn": -126231.40999999997,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2014-2015",
+      "calendar_year": 2015,
+      "month": 3,
+      "month_name": "March",
+      "export_usd_mn": 310338.32,
+      "import_usd_mn": 447964.58,
+      "trade_balance_usd_mn": -137626.26,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2015-2016",
+      "calendar_year": 2015,
+      "month": 4,
+      "month_name": "April",
+      "export_usd_mn": 22096.66,
+      "import_usd_mn": 33506.45,
+      "trade_balance_usd_mn": -11409.789999999997,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2015-2016",
+      "calendar_year": 2015,
+      "month": 5,
+      "month_name": "May",
+      "export_usd_mn": 44586.8,
+      "import_usd_mn": 66344.27,
+      "trade_balance_usd_mn": -21757.47,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2015-2016",
+      "calendar_year": 2015,
+      "month": 6,
+      "month_name": "June",
+      "export_usd_mn": 66874.28,
+      "import_usd_mn": 99880.5,
+      "trade_balance_usd_mn": -33006.22,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2015-2016",
+      "calendar_year": 2015,
+      "month": 7,
+      "month_name": "July",
+      "export_usd_mn": 90066.04,
+      "import_usd_mn": 136252.51,
+      "trade_balance_usd_mn": -46186.470000000016,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2015-2016",
+      "calendar_year": 2015,
+      "month": 8,
+      "month_name": "August",
+      "export_usd_mn": 111850.6,
+      "import_usd_mn": 170234.27,
+      "trade_balance_usd_mn": -58383.669999999984,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2015-2016",
+      "calendar_year": 2015,
+      "month": 9,
+      "month_name": "September",
+      "export_usd_mn": 133722.6,
+      "import_usd_mn": 202270.73,
+      "trade_balance_usd_mn": -68548.13,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2015-2016",
+      "calendar_year": 2015,
+      "month": 10,
+      "month_name": "October",
+      "export_usd_mn": 155178.55,
+      "import_usd_mn": 233419.06,
+      "trade_balance_usd_mn": -78240.51000000001,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2015-2016",
+      "calendar_year": 2015,
+      "month": 11,
+      "month_name": "November",
+      "export_usd_mn": 174739.54,
+      "import_usd_mn": 263315.47,
+      "trade_balance_usd_mn": -88575.92999999996,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2015-2016",
+      "calendar_year": 2015,
+      "month": 12,
+      "month_name": "December",
+      "export_usd_mn": 197332.65,
+      "import_usd_mn": 297411.91,
+      "trade_balance_usd_mn": -100079.25999999998,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2015-2016",
+      "calendar_year": 2016,
+      "month": 1,
+      "month_name": "January",
+      "export_usd_mn": 218531.66,
+      "import_usd_mn": 326278.5,
+      "trade_balance_usd_mn": -107746.84,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2015-2016",
+      "calendar_year": 2016,
+      "month": 2,
+      "month_name": "February",
+      "export_usd_mn": 239374.85,
+      "import_usd_mn": 353697.41,
+      "trade_balance_usd_mn": -114322.55999999997,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2015-2016",
+      "calendar_year": 2016,
+      "month": 3,
+      "month_name": "March",
+      "export_usd_mn": 262281.74,
+      "import_usd_mn": 381007.77,
+      "trade_balance_usd_mn": -118726.03000000003,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2016-2017",
+      "calendar_year": 2016,
+      "month": 4,
+      "month_name": "April",
+      "export_usd_mn": 20705.34,
+      "import_usd_mn": 25689.16,
+      "trade_balance_usd_mn": -4983.82,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2016-2017",
+      "calendar_year": 2016,
+      "month": 5,
+      "month_name": "May",
+      "export_usd_mn": 43012.53,
+      "import_usd_mn": 53975.41,
+      "trade_balance_usd_mn": -10962.880000000005,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2016-2017",
+      "calendar_year": 2016,
+      "month": 6,
+      "month_name": "June",
+      "export_usd_mn": 65513.54,
+      "import_usd_mn": 84892.41,
+      "trade_balance_usd_mn": -19378.870000000003,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2016-2017",
+      "calendar_year": 2016,
+      "month": 7,
+      "month_name": "July",
+      "export_usd_mn": 87098.79,
+      "import_usd_mn": 114197.67,
+      "trade_balance_usd_mn": -27098.880000000005,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2016-2017",
+      "calendar_year": 2016,
+      "month": 8,
+      "month_name": "August",
+      "export_usd_mn": 108539.75,
+      "import_usd_mn": 143500.73,
+      "trade_balance_usd_mn": -34960.98000000001,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2016-2017",
+      "calendar_year": 2016,
+      "month": 9,
+      "month_name": "September",
+      "export_usd_mn": 131128.29,
+      "import_usd_mn": 175341.31,
+      "trade_balance_usd_mn": -44213.01999999999,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2016-2017",
+      "calendar_year": 2016,
+      "month": 10,
+      "month_name": "October",
+      "export_usd_mn": 154337.53,
+      "import_usd_mn": 209836.46,
+      "trade_balance_usd_mn": -55498.92999999999,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2016-2017",
+      "calendar_year": 2016,
+      "month": 11,
+      "month_name": "November",
+      "export_usd_mn": 174295.14,
+      "import_usd_mn": 243298.3,
+      "trade_balance_usd_mn": -69003.15999999997,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2016-2017",
+      "calendar_year": 2016,
+      "month": 12,
+      "month_name": "December",
+      "export_usd_mn": 198148.86,
+      "import_usd_mn": 277900.73,
+      "trade_balance_usd_mn": -79751.87,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2016-2017",
+      "calendar_year": 2017,
+      "month": 1,
+      "month_name": "January",
+      "export_usd_mn": 220498.33,
+      "import_usd_mn": 310161.84,
+      "trade_balance_usd_mn": -89663.51000000004,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2016-2017",
+      "calendar_year": 2017,
+      "month": 2,
+      "month_name": "February",
+      "export_usd_mn": 245218.09,
+      "import_usd_mn": 344410.28,
+      "trade_balance_usd_mn": -99192.19000000003,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2016-2017",
+      "calendar_year": 2017,
+      "month": 3,
+      "month_name": "March",
+      "export_usd_mn": 274480.28,
+      "import_usd_mn": 384356.86,
+      "trade_balance_usd_mn": -109876.57999999996,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2017-2018",
+      "calendar_year": 2017,
+      "month": 4,
+      "month_name": "April",
+      "export_usd_mn": 24526.23,
+      "import_usd_mn": 38834.65,
+      "trade_balance_usd_mn": -14308.420000000002,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2017-2018",
+      "calendar_year": 2017,
+      "month": 5,
+      "month_name": "May",
+      "export_usd_mn": 48507.43,
+      "import_usd_mn": 77113.32,
+      "trade_balance_usd_mn": -28605.890000000007,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2017-2018",
+      "calendar_year": 2017,
+      "month": 6,
+      "month_name": "June",
+      "export_usd_mn": 71507.49,
+      "import_usd_mn": 114168.24,
+      "trade_balance_usd_mn": -42660.75,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2017-2018",
+      "calendar_year": 2017,
+      "month": 7,
+      "month_name": "July",
+      "export_usd_mn": 93797.17,
+      "import_usd_mn": 148383.35,
+      "trade_balance_usd_mn": -54586.18000000001,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2017-2018",
+      "calendar_year": 2017,
+      "month": 8,
+      "month_name": "August",
+      "export_usd_mn": 117148.28,
+      "import_usd_mn": 184453.7,
+      "trade_balance_usd_mn": -67305.42000000001,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2017-2018",
+      "calendar_year": 2017,
+      "month": 9,
+      "month_name": "September",
+      "export_usd_mn": 145714.05,
+      "import_usd_mn": 222416.68,
+      "trade_balance_usd_mn": -76702.63,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2017-2018",
+      "calendar_year": 2017,
+      "month": 10,
+      "month_name": "October",
+      "export_usd_mn": 168602.52,
+      "import_usd_mn": 259918.04,
+      "trade_balance_usd_mn": -91315.52000000002,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2017-2018",
+      "calendar_year": 2017,
+      "month": 11,
+      "month_name": "November",
+      "export_usd_mn": 194895.19,
+      "import_usd_mn": 301307.68,
+      "trade_balance_usd_mn": -106412.48999999999,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2017-2018",
+      "calendar_year": 2017,
+      "month": 12,
+      "month_name": "December",
+      "export_usd_mn": 222727.52,
+      "import_usd_mn": 343338.53,
+      "trade_balance_usd_mn": -120611.01000000004,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2017-2018",
+      "calendar_year": 2018,
+      "month": 1,
+      "month_name": "January",
+      "export_usd_mn": 248136.52,
+      "import_usd_mn": 384421.8,
+      "trade_balance_usd_mn": -136285.28,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2017-2018",
+      "calendar_year": 2018,
+      "month": 2,
+      "month_name": "February",
+      "export_usd_mn": 274168.78,
+      "import_usd_mn": 422757.18,
+      "trade_balance_usd_mn": -148588.39999999997,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2017-2018",
+      "calendar_year": 2018,
+      "month": 3,
+      "month_name": "March",
+      "export_usd_mn": 303484.47,
+      "import_usd_mn": 465580.29,
+      "trade_balance_usd_mn": -162095.82,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2018-2019",
+      "calendar_year": 2018,
+      "month": 4,
+      "month_name": "April",
+      "export_usd_mn": 25947.94,
+      "import_usd_mn": 39966.9,
+      "trade_balance_usd_mn": -14018.960000000003,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2018-2019",
+      "calendar_year": 2018,
+      "month": 5,
+      "month_name": "May",
+      "export_usd_mn": 54892.75,
+      "import_usd_mn": 83884.18,
+      "trade_balance_usd_mn": -28991.429999999993,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2018-2019",
+      "calendar_year": 2018,
+      "month": 6,
+      "month_name": "June",
+      "export_usd_mn": 82050.23,
+      "import_usd_mn": 128690.82,
+      "trade_balance_usd_mn": -46640.59000000001,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2018-2019",
+      "calendar_year": 2018,
+      "month": 7,
+      "month_name": "July",
+      "export_usd_mn": 107804.89,
+      "import_usd_mn": 173078.85,
+      "trade_balance_usd_mn": -65273.96000000001,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2018-2019",
+      "calendar_year": 2018,
+      "month": 8,
+      "month_name": "August",
+      "export_usd_mn": 135613.41,
+      "import_usd_mn": 218809.96,
+      "trade_balance_usd_mn": -83196.54999999999,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2018-2019",
+      "calendar_year": 2018,
+      "month": 9,
+      "month_name": "September",
+      "export_usd_mn": 163479.67,
+      "import_usd_mn": 261629.6,
+      "trade_balance_usd_mn": -98149.93,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2018-2019",
+      "calendar_year": 2018,
+      "month": 10,
+      "month_name": "October",
+      "export_usd_mn": 190154.43,
+      "import_usd_mn": 306307.38,
+      "trade_balance_usd_mn": -116152.95000000001,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2018-2019",
+      "calendar_year": 2018,
+      "month": 11,
+      "month_name": "November",
+      "export_usd_mn": 216226.25,
+      "import_usd_mn": 349962.66,
+      "trade_balance_usd_mn": -133736.40999999997,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2018-2019",
+      "calendar_year": 2018,
+      "month": 12,
+      "month_name": "December",
+      "export_usd_mn": 244084.43,
+      "import_usd_mn": 392313.68,
+      "trade_balance_usd_mn": -148229.25,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2018-2019",
+      "calendar_year": 2019,
+      "month": 1,
+      "month_name": "January",
+      "export_usd_mn": 270493.81,
+      "import_usd_mn": 433768.96,
+      "trade_balance_usd_mn": -163275.15000000002,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2018-2019",
+      "calendar_year": 2019,
+      "month": 2,
+      "month_name": "February",
+      "export_usd_mn": 297360.05,
+      "import_usd_mn": 470359.35,
+      "trade_balance_usd_mn": -172999.3,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2018-2019",
+      "calendar_year": 2019,
+      "month": 3,
+      "month_name": "March",
+      "export_usd_mn": 330077.75,
+      "import_usd_mn": 514078.4,
+      "trade_balance_usd_mn": -184000.65000000002,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2019-2020",
+      "calendar_year": 2019,
+      "month": 4,
+      "month_name": "April",
+      "export_usd_mn": 25992.56,
+      "import_usd_mn": 42387.19,
+      "trade_balance_usd_mn": -16394.63,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2019-2020",
+      "calendar_year": 2019,
+      "month": 5,
+      "month_name": "May",
+      "export_usd_mn": 55871.25,
+      "import_usd_mn": 89070.6,
+      "trade_balance_usd_mn": -33199.350000000006,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2019-2020",
+      "calendar_year": 2019,
+      "month": 6,
+      "month_name": "June",
+      "export_usd_mn": 80893.85,
+      "import_usd_mn": 130103.08,
+      "trade_balance_usd_mn": -49209.229999999996,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2019-2020",
+      "calendar_year": 2019,
+      "month": 7,
+      "month_name": "July",
+      "export_usd_mn": 107120.4,
+      "import_usd_mn": 170533.74,
+      "trade_balance_usd_mn": -63413.34,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2019-2020",
+      "calendar_year": 2019,
+      "month": 8,
+      "month_name": "August",
+      "export_usd_mn": 133134.03,
+      "import_usd_mn": 210385.78,
+      "trade_balance_usd_mn": -77251.75,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2019-2020",
+      "calendar_year": 2019,
+      "month": 9,
+      "month_name": "September",
+      "export_usd_mn": 159158.77,
+      "import_usd_mn": 248080.65,
+      "trade_balance_usd_mn": -88921.88,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2019-2020",
+      "calendar_year": 2019,
+      "month": 10,
+      "month_name": "October",
+      "export_usd_mn": 185391.66,
+      "import_usd_mn": 286066.98,
+      "trade_balance_usd_mn": -100675.31999999998,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2019-2020",
+      "calendar_year": 2019,
+      "month": 11,
+      "month_name": "November",
+      "export_usd_mn": 211162.46,
+      "import_usd_mn": 324590.18,
+      "trade_balance_usd_mn": -113427.72,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2019-2020",
+      "calendar_year": 2019,
+      "month": 12,
+      "month_name": "December",
+      "export_usd_mn": 238269.07,
+      "import_usd_mn": 364184.41,
+      "trade_balance_usd_mn": -125915.33999999997,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2019-2020",
+      "calendar_year": 2020,
+      "month": 1,
+      "month_name": "January",
+      "export_usd_mn": 264121.67,
+      "import_usd_mn": 405333.89,
+      "trade_balance_usd_mn": -141212.22000000003,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2019-2020",
+      "calendar_year": 2020,
+      "month": 2,
+      "month_name": "February",
+      "export_usd_mn": 291863.96,
+      "import_usd_mn": 443238.32,
+      "trade_balance_usd_mn": -151374.36,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2019-2020",
+      "calendar_year": 2020,
+      "month": 3,
+      "month_name": "March",
+      "export_usd_mn": 313354.03,
+      "import_usd_mn": 474709.33,
+      "trade_balance_usd_mn": -161355.3,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2020-2021",
+      "calendar_year": 2020,
+      "month": 4,
+      "month_name": "April",
+      "export_usd_mn": 10168.73,
+      "import_usd_mn": 17085.76,
+      "trade_balance_usd_mn": -6917.029999999999,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2020-2021",
+      "calendar_year": 2020,
+      "month": 5,
+      "month_name": "May",
+      "export_usd_mn": 29411.38,
+      "import_usd_mn": 39945.62,
+      "trade_balance_usd_mn": -10534.240000000002,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2020-2021",
+      "calendar_year": 2020,
+      "month": 6,
+      "month_name": "June",
+      "export_usd_mn": 51441.85,
+      "import_usd_mn": 61269.17,
+      "trade_balance_usd_mn": -9827.32,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2020-2021",
+      "calendar_year": 2020,
+      "month": 7,
+      "month_name": "July",
+      "export_usd_mn": 75226.53,
+      "import_usd_mn": 90385.19,
+      "trade_balance_usd_mn": -15158.660000000003,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2020-2021",
+      "calendar_year": 2020,
+      "month": 8,
+      "month_name": "August",
+      "export_usd_mn": 98056.7,
+      "import_usd_mn": 121419.28,
+      "trade_balance_usd_mn": -23362.58,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2020-2021",
+      "calendar_year": 2020,
+      "month": 9,
+      "month_name": "September",
+      "export_usd_mn": 125614.48,
+      "import_usd_mn": 151937.62,
+      "trade_balance_usd_mn": -26323.14,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2020-2021",
+      "calendar_year": 2020,
+      "month": 10,
+      "month_name": "October",
+      "export_usd_mn": 150541.18,
+      "import_usd_mn": 186011.46,
+      "trade_balance_usd_mn": -35470.28,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2020-2021",
+      "calendar_year": 2020,
+      "month": 11,
+      "month_name": "November",
+      "export_usd_mn": 174160.9,
+      "import_usd_mn": 219823.76,
+      "trade_balance_usd_mn": -45662.860000000015,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2020-2021",
+      "calendar_year": 2020,
+      "month": 12,
+      "month_name": "December",
+      "export_usd_mn": 201378.04,
+      "import_usd_mn": 262758.22,
+      "trade_balance_usd_mn": -61380.179999999964,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2020-2021",
+      "calendar_year": 2021,
+      "month": 1,
+      "month_name": "January",
+      "export_usd_mn": 228917.15,
+      "import_usd_mn": 304788.38,
+      "trade_balance_usd_mn": -75871.23000000001,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2020-2021",
+      "calendar_year": 2021,
+      "month": 2,
+      "month_name": "February",
+      "export_usd_mn": 256550.35,
+      "import_usd_mn": 345537.04,
+      "trade_balance_usd_mn": -88986.68999999997,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2020-2021",
+      "calendar_year": 2021,
+      "month": 3,
+      "month_name": "March",
+      "export_usd_mn": 291806.69,
+      "import_usd_mn": 394435.95,
+      "trade_balance_usd_mn": -102629.26000000001,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2021-2022",
+      "calendar_year": 2021,
+      "month": 4,
+      "month_name": "April",
+      "export_usd_mn": 30733.26,
+      "import_usd_mn": 46043.82,
+      "trade_balance_usd_mn": -15310.560000000001,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2021-2022",
+      "calendar_year": 2021,
+      "month": 5,
+      "month_name": "May",
+      "export_usd_mn": 63029.09,
+      "import_usd_mn": 84878.42,
+      "trade_balance_usd_mn": -21849.33,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2021-2022",
+      "calendar_year": 2021,
+      "month": 6,
+      "month_name": "June",
+      "export_usd_mn": 95520.21,
+      "import_usd_mn": 126976.58,
+      "trade_balance_usd_mn": -31456.369999999995,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2021-2022",
+      "calendar_year": 2021,
+      "month": 7,
+      "month_name": "July",
+      "export_usd_mn": 131027.63,
+      "import_usd_mn": 173123.51,
+      "trade_balance_usd_mn": -42095.880000000005,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2021-2022",
+      "calendar_year": 2021,
+      "month": 8,
+      "month_name": "August",
+      "export_usd_mn": 164431.88,
+      "import_usd_mn": 218216.39,
+      "trade_balance_usd_mn": -53784.51000000001,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2021-2022",
+      "calendar_year": 2021,
+      "month": 9,
+      "month_name": "September",
+      "export_usd_mn": 198246.84,
+      "import_usd_mn": 274502.62,
+      "trade_balance_usd_mn": -76255.78,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2021-2022",
+      "calendar_year": 2021,
+      "month": 10,
+      "month_name": "October",
+      "export_usd_mn": 233976.22,
+      "import_usd_mn": 328140.79,
+      "trade_balance_usd_mn": -94164.56999999998,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2021-2022",
+      "calendar_year": 2021,
+      "month": 11,
+      "month_name": "November",
+      "export_usd_mn": 265771.13,
+      "import_usd_mn": 381165.56,
+      "trade_balance_usd_mn": -115394.43,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2021-2022",
+      "calendar_year": 2021,
+      "month": 12,
+      "month_name": "December",
+      "export_usd_mn": 305042.72,
+      "import_usd_mn": 441495.84,
+      "trade_balance_usd_mn": -136453.12000000005,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2021-2022",
+      "calendar_year": 2022,
+      "month": 1,
+      "month_name": "January",
+      "export_usd_mn": 340275.59,
+      "import_usd_mn": 494062.66,
+      "trade_balance_usd_mn": -153787.06999999995,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2021-2022",
+      "calendar_year": 2022,
+      "month": 2,
+      "month_name": "February",
+      "export_usd_mn": 377429.42,
+      "import_usd_mn": 549961.03,
+      "trade_balance_usd_mn": -172531.61000000004,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2021-2022",
+      "calendar_year": 2022,
+      "month": 3,
+      "month_name": "March",
+      "export_usd_mn": 422003.11,
+      "import_usd_mn": 613051.5,
+      "trade_balance_usd_mn": -191048.39,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2022-2023",
+      "calendar_year": 2022,
+      "month": 4,
+      "month_name": "April",
+      "export_usd_mn": 39693.52,
+      "import_usd_mn": 58057.59,
+      "trade_balance_usd_mn": -18364.07,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2022-2023",
+      "calendar_year": 2022,
+      "month": 5,
+      "month_name": "May",
+      "export_usd_mn": 78692.99,
+      "import_usd_mn": 119184.02,
+      "trade_balance_usd_mn": -40491.03,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2022-2023",
+      "calendar_year": 2022,
+      "month": 6,
+      "month_name": "June",
+      "export_usd_mn": 120971.22,
+      "import_usd_mn": 183536.72,
+      "trade_balance_usd_mn": -62565.5,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2022-2023",
+      "calendar_year": 2022,
+      "month": 7,
+      "month_name": "July",
+      "export_usd_mn": 159305.43,
+      "import_usd_mn": 247308.05,
+      "trade_balance_usd_mn": -88002.62,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2022-2023",
+      "calendar_year": 2022,
+      "month": 8,
+      "month_name": "August",
+      "export_usd_mn": 196322.12,
+      "import_usd_mn": 309186.6,
+      "trade_balance_usd_mn": -112864.47999999998,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2022-2023",
+      "calendar_year": 2022,
+      "month": 9,
+      "month_name": "September",
+      "export_usd_mn": 231721.95,
+      "import_usd_mn": 372559.58,
+      "trade_balance_usd_mn": -140837.63,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2022-2023",
+      "calendar_year": 2022,
+      "month": 10,
+      "month_name": "October",
+      "export_usd_mn": 263323.04,
+      "import_usd_mn": 430470.06,
+      "trade_balance_usd_mn": -167147.02000000002,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2022-2023",
+      "calendar_year": 2022,
+      "month": 11,
+      "month_name": "November",
+      "export_usd_mn": 298209.59,
+      "import_usd_mn": 487421.44,
+      "trade_balance_usd_mn": -189211.84999999998,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2022-2023",
+      "calendar_year": 2022,
+      "month": 12,
+      "month_name": "December",
+      "export_usd_mn": 336294.8,
+      "import_usd_mn": 548640.21,
+      "trade_balance_usd_mn": -212345.40999999997,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2022-2023",
+      "calendar_year": 2023,
+      "month": 1,
+      "month_name": "January",
+      "export_usd_mn": 372094.28,
+      "import_usd_mn": 601466.53,
+      "trade_balance_usd_mn": -229372.25,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2022-2023",
+      "calendar_year": 2023,
+      "month": 2,
+      "month_name": "February",
+      "export_usd_mn": 409107.5,
+      "import_usd_mn": 655048.07,
+      "trade_balance_usd_mn": -245940.56999999995,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2022-2023",
+      "calendar_year": 2023,
+      "month": 3,
+      "month_name": "March",
+      "export_usd_mn": 451065.07,
+      "import_usd_mn": 715968.86,
+      "trade_balance_usd_mn": -264903.79,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2023-2024",
+      "calendar_year": 2023,
+      "month": 4,
+      "month_name": "April",
+      "export_usd_mn": 34605.42,
+      "import_usd_mn": 49056.17,
+      "trade_balance_usd_mn": -14450.75,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2023-2024",
+      "calendar_year": 2023,
+      "month": 5,
+      "month_name": "May",
+      "export_usd_mn": 69557.6,
+      "import_usd_mn": 106537.51,
+      "trade_balance_usd_mn": -36979.90999999999,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2023-2024",
+      "calendar_year": 2023,
+      "month": 6,
+      "month_name": "June",
+      "export_usd_mn": 103878.22,
+      "import_usd_mn": 160050.69,
+      "trade_balance_usd_mn": -56172.47,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2023-2024",
+      "calendar_year": 2023,
+      "month": 7,
+      "month_name": "July",
+      "export_usd_mn": 138378.3,
+      "import_usd_mn": 213541.49,
+      "trade_balance_usd_mn": -75163.19,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2023-2024",
+      "calendar_year": 2023,
+      "month": 8,
+      "month_name": "August",
+      "export_usd_mn": 176679.14,
+      "import_usd_mn": 275840.35,
+      "trade_balance_usd_mn": -99161.20999999996,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2023-2024",
+      "calendar_year": 2023,
+      "month": 9,
+      "month_name": "September",
+      "export_usd_mn": 211087.35,
+      "import_usd_mn": 330319.53,
+      "trade_balance_usd_mn": -119232.18000000002,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2023-2024",
+      "calendar_year": 2023,
+      "month": 10,
+      "month_name": "October",
+      "export_usd_mn": 244520.9,
+      "import_usd_mn": 393760.47,
+      "trade_balance_usd_mn": -149239.56999999998,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2023-2024",
+      "calendar_year": 2023,
+      "month": 11,
+      "month_name": "November",
+      "export_usd_mn": 278266.51,
+      "import_usd_mn": 448246.18,
+      "trade_balance_usd_mn": -169979.66999999998,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2023-2024",
+      "calendar_year": 2023,
+      "month": 12,
+      "month_name": "December",
+      "export_usd_mn": 316656.1,
+      "import_usd_mn": 504694.81,
+      "trade_balance_usd_mn": -188038.71000000002,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2023-2024",
+      "calendar_year": 2024,
+      "month": 1,
+      "month_name": "January",
+      "export_usd_mn": 353987.71,
+      "import_usd_mn": 558041.36,
+      "trade_balance_usd_mn": -204053.64999999997,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2023-2024",
+      "calendar_year": 2024,
+      "month": 2,
+      "month_name": "February",
+      "export_usd_mn": 395393.49,
+      "import_usd_mn": 618154.08,
+      "trade_balance_usd_mn": -222760.58999999997,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2023-2024",
+      "calendar_year": 2024,
+      "month": 3,
+      "month_name": "March",
+      "export_usd_mn": 437111.44,
+      "import_usd_mn": 675429.83,
+      "trade_balance_usd_mn": -238318.38999999996,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2024-2025",
+      "calendar_year": 2024,
+      "month": 4,
+      "month_name": "April",
+      "export_usd_mn": 39740.3,
+      "import_usd_mn": 54467.47,
+      "trade_balance_usd_mn": -14727.169999999998,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2024-2025",
+      "calendar_year": 2024,
+      "month": 5,
+      "month_name": "May",
+      "export_usd_mn": 78554.45,
+      "import_usd_mn": 116123.35,
+      "trade_balance_usd_mn": -37568.90000000001,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2024-2025",
+      "calendar_year": 2024,
+      "month": 6,
+      "month_name": "June",
+      "export_usd_mn": 113997.33,
+      "import_usd_mn": 172115.47,
+      "trade_balance_usd_mn": -58118.14,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2024-2025",
+      "calendar_year": 2024,
+      "month": 7,
+      "month_name": "July",
+      "export_usd_mn": 146666.81,
+      "import_usd_mn": 231588.27,
+      "trade_balance_usd_mn": -84921.45999999999,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2024-2025",
+      "calendar_year": 2024,
+      "month": 8,
+      "month_name": "August",
+      "export_usd_mn": 179550.28,
+      "import_usd_mn": 300115.74,
+      "trade_balance_usd_mn": -120565.45999999999,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2024-2025",
+      "calendar_year": 2024,
+      "month": 9,
+      "month_name": "September",
+      "export_usd_mn": 213638.65,
+      "import_usd_mn": 358852.78,
+      "trade_balance_usd_mn": -145214.13000000003,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2024-2025",
+      "calendar_year": 2024,
+      "month": 10,
+      "month_name": "October",
+      "export_usd_mn": 252614.4,
+      "import_usd_mn": 424063.65,
+      "trade_balance_usd_mn": -171449.25000000003,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2024-2025",
+      "calendar_year": 2024,
+      "month": 11,
+      "month_name": "November",
+      "export_usd_mn": 284550.38,
+      "import_usd_mn": 487929.91,
+      "trade_balance_usd_mn": -203379.52999999997,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2024-2025",
+      "calendar_year": 2024,
+      "month": 12,
+      "month_name": "December",
+      "export_usd_mn": 322351.7,
+      "import_usd_mn": 546362.97,
+      "trade_balance_usd_mn": -224011.26999999996,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2024-2025",
+      "calendar_year": 2025,
+      "month": 1,
+      "month_name": "January",
+      "export_usd_mn": 358677.63,
+      "import_usd_mn": 606130.89,
+      "trade_balance_usd_mn": -247453.26,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2024-2025",
+      "calendar_year": 2025,
+      "month": 2,
+      "month_name": "February",
+      "export_usd_mn": 395618.1,
+      "import_usd_mn": 657459.81,
+      "trade_balance_usd_mn": -261841.71000000008,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2024-2025",
+      "calendar_year": 2025,
+      "month": 3,
+      "month_name": "March",
+      "export_usd_mn": 437666,
+      "import_usd_mn": 721200.07,
+      "trade_balance_usd_mn": -283534.06999999995,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2025-2026",
+      "calendar_year": 2025,
+      "month": 4,
+      "month_name": "April",
+      "export_usd_mn": 38250.7,
+      "import_usd_mn": 65381.06,
+      "trade_balance_usd_mn": -27130.36,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2025-2026",
+      "calendar_year": 2025,
+      "month": 5,
+      "month_name": "May",
+      "export_usd_mn": 76562.55,
+      "import_usd_mn": 126236.3,
+      "trade_balance_usd_mn": -49673.75,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2025-2026",
+      "calendar_year": 2025,
+      "month": 6,
+      "month_name": "June",
+      "export_usd_mn": 111532.56,
+      "import_usd_mn": 180312.52,
+      "trade_balance_usd_mn": -68779.95999999999,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2025-2026",
+      "calendar_year": 2025,
+      "month": 7,
+      "month_name": "July",
+      "export_usd_mn": 148557.13,
+      "import_usd_mn": 245196.58,
+      "trade_balance_usd_mn": -96639.44999999998,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2025-2026",
+      "calendar_year": 2025,
+      "month": 8,
+      "month_name": "August",
+      "export_usd_mn": 183321.87,
+      "import_usd_mn": 307172.09,
+      "trade_balance_usd_mn": -123850.22000000003,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2025-2026",
+      "calendar_year": 2025,
+      "month": 9,
+      "month_name": "September",
+      "export_usd_mn": 219455.2,
+      "import_usd_mn": 376268.53,
+      "trade_balance_usd_mn": -156813.33000000002,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2025-2026",
+      "calendar_year": 2025,
+      "month": 10,
+      "month_name": "October",
+      "export_usd_mn": 253568.12,
+      "import_usd_mn": 452996.18,
+      "trade_balance_usd_mn": -199428.06,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2025-2026",
+      "calendar_year": 2025,
+      "month": 11,
+      "month_name": "November",
+      "export_usd_mn": 291444.01,
+      "import_usd_mn": 515977.4,
+      "trade_balance_usd_mn": -224533.39,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2025-2026",
+      "calendar_year": 2025,
+      "month": 12,
+      "month_name": "December",
+      "export_usd_mn": 329695.21,
+      "import_usd_mn": 580451.65,
+      "trade_balance_usd_mn": -250756.44,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2025-2026",
+      "calendar_year": 2026,
+      "month": 1,
+      "month_name": "January",
+      "export_usd_mn": 366168.52,
+      "import_usd_mn": 651678.19,
+      "trade_balance_usd_mn": -285509.6699999999,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2025-2026",
+      "calendar_year": 2026,
+      "month": 2,
+      "month_name": "February",
+      "export_usd_mn": 402787.57,
+      "import_usd_mn": 715389.17,
+      "trade_balance_usd_mn": -312601.60000000003,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2025-2026",
+      "calendar_year": 2026,
+      "month": 3,
+      "month_name": "March",
+      "export_usd_mn": 441705.46,
+      "import_usd_mn": 774977.93,
+      "trade_balance_usd_mn": -333272.47000000003,
+      "source_url": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    }
+  ],
+  "summary": [
+    {
+      "financial_year": "2010-2011",
+      "export_usd_mn": 249814.48,
+      "import_usd_mn": 369769.14,
+      "trade_balance_usd_mn": -119954.66,
+      "export_yoy_pct": null,
+      "import_yoy_pct": null,
+      "data_status": "annual",
+      "source_export": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise",
+      "source_import": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2011-2012",
+      "export_usd_mn": 305963.28,
+      "import_usd_mn": 489319.54,
+      "trade_balance_usd_mn": -183356.26,
+      "export_yoy_pct": 22.48,
+      "import_yoy_pct": 32.33,
+      "data_status": "annual",
+      "source_export": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise",
+      "source_import": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2012-2013",
+      "export_usd_mn": 300400.01,
+      "import_usd_mn": 490736.67,
+      "trade_balance_usd_mn": -190336.66,
+      "export_yoy_pct": -1.82,
+      "import_yoy_pct": 0.29,
+      "data_status": "annual",
+      "source_export": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise",
+      "source_import": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2013-2014",
+      "export_usd_mn": 314403.26,
+      "import_usd_mn": 450199.29,
+      "trade_balance_usd_mn": -135796.03,
+      "export_yoy_pct": 4.66,
+      "import_yoy_pct": -8.26,
+      "data_status": "annual",
+      "source_export": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise",
+      "source_import": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2014-2015",
+      "export_usd_mn": 310338.32,
+      "import_usd_mn": 447964.58,
+      "trade_balance_usd_mn": -137626.26,
+      "export_yoy_pct": -1.29,
+      "import_yoy_pct": -0.5,
+      "data_status": "annual",
+      "source_export": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise",
+      "source_import": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2015-2016",
+      "export_usd_mn": 262281.74,
+      "import_usd_mn": 381007.77,
+      "trade_balance_usd_mn": -118726.03,
+      "export_yoy_pct": -15.49,
+      "import_yoy_pct": -14.95,
+      "data_status": "annual",
+      "source_export": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise",
+      "source_import": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2016-2017",
+      "export_usd_mn": 274480.28,
+      "import_usd_mn": 384356.86,
+      "trade_balance_usd_mn": -109876.58,
+      "export_yoy_pct": 4.65,
+      "import_yoy_pct": 0.88,
+      "data_status": "annual",
+      "source_export": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise",
+      "source_import": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2017-2018",
+      "export_usd_mn": 303484.47,
+      "import_usd_mn": 465580.29,
+      "trade_balance_usd_mn": -162095.82,
+      "export_yoy_pct": 10.57,
+      "import_yoy_pct": 21.13,
+      "data_status": "annual",
+      "source_export": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise",
+      "source_import": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2018-2019",
+      "export_usd_mn": 330077.75,
+      "import_usd_mn": 514078.4,
+      "trade_balance_usd_mn": -184000.65,
+      "export_yoy_pct": 8.76,
+      "import_yoy_pct": 10.42,
+      "data_status": "annual",
+      "source_export": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise",
+      "source_import": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2019-2020",
+      "export_usd_mn": 313354.03,
+      "import_usd_mn": 474709.33,
+      "trade_balance_usd_mn": -161355.3,
+      "export_yoy_pct": -5.07,
+      "import_yoy_pct": -7.66,
+      "data_status": "annual",
+      "source_export": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise",
+      "source_import": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2020-2021",
+      "export_usd_mn": 291806.69,
+      "import_usd_mn": 394435.95,
+      "trade_balance_usd_mn": -102629.26,
+      "export_yoy_pct": -6.88,
+      "import_yoy_pct": -16.91,
+      "data_status": "annual",
+      "source_export": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise",
+      "source_import": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2021-2022",
+      "export_usd_mn": 422003.11,
+      "import_usd_mn": 613051.5,
+      "trade_balance_usd_mn": -191048.39,
+      "export_yoy_pct": 44.62,
+      "import_yoy_pct": 55.42,
+      "data_status": "annual",
+      "source_export": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise",
+      "source_import": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2022-2023",
+      "export_usd_mn": 451065.07,
+      "import_usd_mn": 715968.86,
+      "trade_balance_usd_mn": -264903.79,
+      "export_yoy_pct": 6.89,
+      "import_yoy_pct": 16.79,
+      "data_status": "annual",
+      "source_export": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise",
+      "source_import": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2023-2024",
+      "export_usd_mn": 437111.44,
+      "import_usd_mn": 675429.83,
+      "trade_balance_usd_mn": -238318.39,
+      "export_yoy_pct": -3.09,
+      "import_yoy_pct": -5.66,
+      "data_status": "annual",
+      "source_export": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise",
+      "source_import": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2024-2025",
+      "export_usd_mn": 437666,
+      "import_usd_mn": 721200.07,
+      "trade_balance_usd_mn": -283534.07,
+      "export_yoy_pct": 0.13,
+      "import_yoy_pct": 6.78,
+      "data_status": "annual",
+      "source_export": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise",
+      "source_import": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    },
+    {
+      "financial_year": "2025-2026",
+      "export_usd_mn": 441705.46,
+      "import_usd_mn": 774977.93,
+      "trade_balance_usd_mn": -333272.47,
+      "export_yoy_pct": 0.92,
+      "import_yoy_pct": 7.46,
+      "data_status": "annual",
+      "source_export": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise",
+      "source_import": "https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+    }
+  ],
+  "exportSeries": [
+    {
+      "selectedYear": "2011-2012",
+      "previousYearValue": 249814.48,
+      "currentYearValue": 305963.28,
+      "growthPercent": 22.48
+    },
+    {
+      "selectedYear": "2012-2013",
+      "previousYearValue": 305963.28,
+      "currentYearValue": 300400.01,
+      "growthPercent": -1.82
+    },
+    {
+      "selectedYear": "2013-2014",
+      "previousYearValue": 300400.01,
+      "currentYearValue": 314403.26,
+      "growthPercent": 4.66
+    },
+    {
+      "selectedYear": "2014-2015",
+      "previousYearValue": 314403.26,
+      "currentYearValue": 310338.32,
+      "growthPercent": -1.29
+    },
+    {
+      "selectedYear": "2015-2016",
+      "previousYearValue": 310338.32,
+      "currentYearValue": 262281.74,
+      "growthPercent": -15.49
+    },
+    {
+      "selectedYear": "2016-2017",
+      "previousYearValue": 262281.74,
+      "currentYearValue": 274480.28,
+      "growthPercent": 4.65
+    },
+    {
+      "selectedYear": "2017-2018",
+      "previousYearValue": 274480.28,
+      "currentYearValue": 303484.47,
+      "growthPercent": 10.57
+    },
+    {
+      "selectedYear": "2018-2019",
+      "previousYearValue": 303484.47,
+      "currentYearValue": 330077.75,
+      "growthPercent": 8.76
+    },
+    {
+      "selectedYear": "2019-2020",
+      "previousYearValue": 330077.75,
+      "currentYearValue": 313354.03,
+      "growthPercent": -5.07
+    },
+    {
+      "selectedYear": "2020-2021",
+      "previousYearValue": 313354.03,
+      "currentYearValue": 291806.69,
+      "growthPercent": -6.88
+    },
+    {
+      "selectedYear": "2021-2022",
+      "previousYearValue": 291806.69,
+      "currentYearValue": 422003.11,
+      "growthPercent": 44.62
+    },
+    {
+      "selectedYear": "2022-2023",
+      "previousYearValue": 422003.11,
+      "currentYearValue": 451065.07,
+      "growthPercent": 6.89
+    },
+    {
+      "selectedYear": "2023-2024",
+      "previousYearValue": 451065.07,
+      "currentYearValue": 437111.44,
+      "growthPercent": -3.09
+    },
+    {
+      "selectedYear": "2024-2025",
+      "previousYearValue": 437111.44,
+      "currentYearValue": 437666,
+      "growthPercent": 0.13
+    },
+    {
+      "selectedYear": "2025-2026",
+      "previousYearValue": 437666,
+      "currentYearValue": 441705.46,
+      "growthPercent": 0.92
+    }
+  ],
+  "importSeries": [
+    {
+      "selectedYear": "2011-2012",
+      "previousYearValue": 369769.14,
+      "currentYearValue": 489319.54,
+      "growthPercent": 32.33
+    },
+    {
+      "selectedYear": "2012-2013",
+      "previousYearValue": 489319.54,
+      "currentYearValue": 490736.67,
+      "growthPercent": 0.29
+    },
+    {
+      "selectedYear": "2013-2014",
+      "previousYearValue": 490736.67,
+      "currentYearValue": 450199.29,
+      "growthPercent": -8.26
+    },
+    {
+      "selectedYear": "2014-2015",
+      "previousYearValue": 450199.29,
+      "currentYearValue": 447964.58,
+      "growthPercent": -0.5
+    },
+    {
+      "selectedYear": "2015-2016",
+      "previousYearValue": 447964.58,
+      "currentYearValue": 381007.77,
+      "growthPercent": -14.95
+    },
+    {
+      "selectedYear": "2016-2017",
+      "previousYearValue": 381007.77,
+      "currentYearValue": 384356.86,
+      "growthPercent": 0.88
+    },
+    {
+      "selectedYear": "2017-2018",
+      "previousYearValue": 384356.86,
+      "currentYearValue": 465580.29,
+      "growthPercent": 21.13
+    },
+    {
+      "selectedYear": "2018-2019",
+      "previousYearValue": 465580.29,
+      "currentYearValue": 514078.4,
+      "growthPercent": 10.42
+    },
+    {
+      "selectedYear": "2019-2020",
+      "previousYearValue": 514078.4,
+      "currentYearValue": 474709.33,
+      "growthPercent": -7.66
+    },
+    {
+      "selectedYear": "2020-2021",
+      "previousYearValue": 474709.33,
+      "currentYearValue": 394435.95,
+      "growthPercent": -16.91
+    },
+    {
+      "selectedYear": "2021-2022",
+      "previousYearValue": 394435.95,
+      "currentYearValue": 613051.5,
+      "growthPercent": 55.42
+    },
+    {
+      "selectedYear": "2022-2023",
+      "previousYearValue": 613051.5,
+      "currentYearValue": 715968.86,
+      "growthPercent": 16.79
+    },
+    {
+      "selectedYear": "2023-2024",
+      "previousYearValue": 715968.86,
+      "currentYearValue": 675429.83,
+      "growthPercent": -5.66
+    },
+    {
+      "selectedYear": "2024-2025",
+      "previousYearValue": 675429.83,
+      "currentYearValue": 721200.07,
+      "growthPercent": 6.78
+    },
+    {
+      "selectedYear": "2025-2026",
+      "previousYearValue": 721200.07,
+      "currentYearValue": 774977.93,
+      "growthPercent": 7.46
+    }
+  ]
+}

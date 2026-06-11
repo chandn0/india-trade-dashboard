@@ -1,0 +1,1366 @@
+{
+ "source_update_note": "EIDB country-wise all-commodities pages fetched on 2026-06-10; HS-2 chapters for FY 2025-2026, US$ million.",
+ "source_urls": {
+  "exports": "https://tradestat.commerce.gov.in/eidb/country_wise_all_commodities_export",
+  "imports": "https://tradestat.commerce.gov.in/eidb/country_wise_all_commodities_import"
+ },
+ "fiscal_year": "2025-2026",
+ "partners": [
+  {
+   "country": "CHINA P RP",
+   "exports": {
+    "total_usd_mn": 19471.1,
+    "top_chapters": [
+     {
+      "hs2": "85",
+      "desc": "ELECTRICAL MACHINERY AND EQUIPMENT AND PARTS THEREOF; SOUND RECORDERS AND REPRODUCERS, TELEVISION IMAGE AND SOUND RECORDERS AND REPRODUCERS,AND PARTS.",
+      "value_usd_mn": 3178.29
+     },
+     {
+      "hs2": "27",
+      "desc": "MINERAL FUELS, MINERAL OILS AND PRODUCTS OF THEIR DISTILLATION; BITUMINOUS SUBSTANCES; MINERAL WAXES.",
+      "value_usd_mn": 2462.26
+     },
+     {
+      "hs2": "26",
+      "desc": "ORES, SLAG AND ASH.",
+      "value_usd_mn": 1796.72
+     },
+     {
+      "hs2": "03",
+      "desc": "FISH AND CRUSTACEANS, MOLLUSCS AND OTHER AQUATIC INVERTABRATES.",
+      "value_usd_mn": 1374.97
+     },
+     {
+      "hs2": "29",
+      "desc": "ORGANIC CHEMICALS",
+      "value_usd_mn": 1343.03
+     },
+     {
+      "hs2": "84",
+      "desc": "NUCLEAR REACTORS, BOILERS, MACHINERY AND MECHANICAL APPLIANCES; PARTS THEREOF.",
+      "value_usd_mn": 1263.12
+     },
+     {
+      "hs2": "25",
+      "desc": "SALT; SULPHUR; EARTHS AND STONE; PLASTERING MATERIALS, LIME AND CEMENT.",
+      "value_usd_mn": 874.27
+     },
+     {
+      "hs2": "15",
+      "desc": "ANIMAL OR VEGETABLE FATS AND OILS AND THEIR CLEAVAGE PRODUCTS; PRE. EDIBLE FATS; ANIMAL OR VEGETABLE WAXEX.",
+      "value_usd_mn": 769.35
+     },
+     {
+      "hs2": "74",
+      "desc": "COPPER AND ARTICLES THEREOF.",
+      "value_usd_mn": 760.73
+     },
+     {
+      "hs2": "67",
+      "desc": "PREPARED FEATHERS AND DOWN AND ARTICLES MADE OF FEATHERS OR OF DOWN; ARTIFICIAL FLOWERS; ARTICLES OF HUMAN HAIR.",
+      "value_usd_mn": 494.1
+     }
+    ]
+   },
+   "imports": {
+    "total_usd_mn": 131633.35,
+    "top_chapters": [
+     {
+      "hs2": "85",
+      "desc": "ELECTRICAL MACHINERY AND EQUIPMENT AND PARTS THEREOF; SOUND RECORDERS AND REPRODUCERS, TELEVISION IMAGE AND SOUND RECORDERS AND REPRODUCERS,AND PARTS.",
+      "value_usd_mn": 46367.46
+     },
+     {
+      "hs2": "84",
+      "desc": "NUCLEAR REACTORS, BOILERS, MACHINERY AND MECHANICAL APPLIANCES; PARTS THEREOF.",
+      "value_usd_mn": 29450.97
+     },
+     {
+      "hs2": "29",
+      "desc": "ORGANIC CHEMICALS",
+      "value_usd_mn": 11521.52
+     },
+     {
+      "hs2": "39",
+      "desc": "PLASTIC AND ARTICLES THEREOF.",
+      "value_usd_mn": 6711.48
+     },
+     {
+      "hs2": "87",
+      "desc": "VEHICLES OTHER THAN RAILWAY OR TRAMWAY ROLLING STOCK, AND PARTS AND ACCESSORIES THEREOF.",
+      "value_usd_mn": 2869.28
+     },
+     {
+      "hs2": "90",
+      "desc": "OPTICAL, PHOTOGRAPHIC CINEMATOGRAPHIC MEASURING, CHECKING PRECISION, MEDICAL OR SURGICAL INST. AND APPARATUS PARTS AND ACCESSORIES THEREOF;",
+      "value_usd_mn": 2752.64
+     },
+     {
+      "hs2": "76",
+      "desc": "ALUMINIUM AND ARTICLES THEREOF.",
+      "value_usd_mn": 2581.13
+     },
+     {
+      "hs2": "73",
+      "desc": "ARTICLES OF IRON OR STEEL",
+      "value_usd_mn": 2504.74
+     },
+     {
+      "hs2": "31",
+      "desc": "FERTILISERS.",
+      "value_usd_mn": 2336.7
+     },
+     {
+      "hs2": "38",
+      "desc": "MISCELLANEOUS CHEMICAL PRODUCTS.",
+      "value_usd_mn": 2028.63
+     }
+    ]
+   }
+  },
+  {
+   "country": "U S A",
+   "exports": {
+    "total_usd_mn": 87316.02,
+    "top_chapters": [
+     {
+      "hs2": "85",
+      "desc": "ELECTRICAL MACHINERY AND EQUIPMENT AND PARTS THEREOF; SOUND RECORDERS AND REPRODUCERS, TELEVISION IMAGE AND SOUND RECORDERS AND REPRODUCERS,AND PARTS.",
+      "value_usd_mn": 25682.64
+     },
+     {
+      "hs2": "30",
+      "desc": "PHARMACEUTICAL PRODUCTS",
+      "value_usd_mn": 8665.13
+     },
+     {
+      "hs2": "84",
+      "desc": "NUCLEAR REACTORS, BOILERS, MACHINERY AND MECHANICAL APPLIANCES; PARTS THEREOF.",
+      "value_usd_mn": 7190.2
+     },
+     {
+      "hs2": "71",
+      "desc": "NATURAL OR CULTURED PEARLS,PRECIOUS OR SEMIPRECIOUS STONES,PRE.METALS,CLAD WITH PRE.METAL AND ARTCLS THEREOF;IMIT.JEWLRY;COIN.",
+      "value_usd_mn": 5116.68
+     },
+     {
+      "hs2": "27",
+      "desc": "MINERAL FUELS, MINERAL OILS AND PRODUCTS OF THEIR DISTILLATION; BITUMINOUS SUBSTANCES; MINERAL WAXES.",
+      "value_usd_mn": 3522.24
+     },
+     {
+      "hs2": "73",
+      "desc": "ARTICLES OF IRON OR STEEL",
+      "value_usd_mn": 3015.46
+     },
+     {
+      "hs2": "29",
+      "desc": "ORGANIC CHEMICALS",
+      "value_usd_mn": 2679.95
+     },
+     {
+      "hs2": "63",
+      "desc": "OTHER MADE UP TEXTILE ARTICLES; SETS; WORN CLOTHING AND WORN TEXTILE ARTICLES; RAGS",
+      "value_usd_mn": 2634.29
+     },
+     {
+      "hs2": "87",
+      "desc": "VEHICLES OTHER THAN RAILWAY OR TRAMWAY ROLLING STOCK, AND PARTS AND ACCESSORIES THEREOF.",
+      "value_usd_mn": 2467.33
+     },
+     {
+      "hs2": "62",
+      "desc": "ARTICLES OF APPAREL AND CLOTHING ACCESSORIES, NOT KNITTED OR CROCHETED.",
+      "value_usd_mn": 2467.28
+     }
+    ]
+   },
+   "imports": {
+    "total_usd_mn": 53488.69,
+    "top_chapters": [
+     {
+      "hs2": "27",
+      "desc": "MINERAL FUELS, MINERAL OILS AND PRODUCTS OF THEIR DISTILLATION; BITUMINOUS SUBSTANCES; MINERAL WAXES.",
+      "value_usd_mn": 17315.21
+     },
+     {
+      "hs2": "71",
+      "desc": "NATURAL OR CULTURED PEARLS,PRECIOUS OR SEMIPRECIOUS STONES,PRE.METALS,CLAD WITH PRE.METAL AND ARTCLS THEREOF;IMIT.JEWLRY;COIN.",
+      "value_usd_mn": 6848.83
+     },
+     {
+      "hs2": "85",
+      "desc": "ELECTRICAL MACHINERY AND EQUIPMENT AND PARTS THEREOF; SOUND RECORDERS AND REPRODUCERS, TELEVISION IMAGE AND SOUND RECORDERS AND REPRODUCERS,AND PARTS.",
+      "value_usd_mn": 5555.02
+     },
+     {
+      "hs2": "84",
+      "desc": "NUCLEAR REACTORS, BOILERS, MACHINERY AND MECHANICAL APPLIANCES; PARTS THEREOF.",
+      "value_usd_mn": 4683.17
+     },
+     {
+      "hs2": "90",
+      "desc": "OPTICAL, PHOTOGRAPHIC CINEMATOGRAPHIC MEASURING, CHECKING PRECISION, MEDICAL OR SURGICAL INST. AND APPARATUS PARTS AND ACCESSORIES THEREOF;",
+      "value_usd_mn": 2261.43
+     },
+     {
+      "hs2": "88",
+      "desc": "AIRCRAFT, SPACECRAFT, AND PARTS THEREOF.",
+      "value_usd_mn": 1909.8
+     },
+     {
+      "hs2": "29",
+      "desc": "ORGANIC CHEMICALS",
+      "value_usd_mn": 1756.64
+     },
+     {
+      "hs2": "39",
+      "desc": "PLASTIC AND ARTICLES THEREOF.",
+      "value_usd_mn": 1438.53
+     },
+     {
+      "hs2": "08",
+      "desc": "EDIBLE FRUIT AND NUTS; PEEL OR CITRUS FRUIT OR MELONS.",
+      "value_usd_mn": 1426.25
+     },
+     {
+      "hs2": "38",
+      "desc": "MISCELLANEOUS CHEMICAL PRODUCTS.",
+      "value_usd_mn": 1246.74
+     }
+    ]
+   }
+  },
+  {
+   "country": "U ARAB EMTS",
+   "exports": {
+    "total_usd_mn": 37359.18,
+    "top_chapters": [
+     {
+      "hs2": "71",
+      "desc": "NATURAL OR CULTURED PEARLS,PRECIOUS OR SEMIPRECIOUS STONES,PRE.METALS,CLAD WITH PRE.METAL AND ARTCLS THEREOF;IMIT.JEWLRY;COIN.",
+      "value_usd_mn": 8687.57
+     },
+     {
+      "hs2": "27",
+      "desc": "MINERAL FUELS, MINERAL OILS AND PRODUCTS OF THEIR DISTILLATION; BITUMINOUS SUBSTANCES; MINERAL WAXES.",
+      "value_usd_mn": 5850.69
+     },
+     {
+      "hs2": "85",
+      "desc": "ELECTRICAL MACHINERY AND EQUIPMENT AND PARTS THEREOF; SOUND RECORDERS AND REPRODUCERS, TELEVISION IMAGE AND SOUND RECORDERS AND REPRODUCERS,AND PARTS.",
+      "value_usd_mn": 5397.88
+     },
+     {
+      "hs2": "84",
+      "desc": "NUCLEAR REACTORS, BOILERS, MACHINERY AND MECHANICAL APPLIANCES; PARTS THEREOF.",
+      "value_usd_mn": 2354.97
+     },
+     {
+      "hs2": "89",
+      "desc": "SHIPS, BOATS AND FLOATING STRUCTURES.",
+      "value_usd_mn": 1314
+     },
+     {
+      "hs2": "87",
+      "desc": "VEHICLES OTHER THAN RAILWAY OR TRAMWAY ROLLING STOCK, AND PARTS AND ACCESSORIES THEREOF.",
+      "value_usd_mn": 1177.88
+     },
+     {
+      "hs2": "73",
+      "desc": "ARTICLES OF IRON OR STEEL",
+      "value_usd_mn": 835.02
+     },
+     {
+      "hs2": "10",
+      "desc": "CEREALS.",
+      "value_usd_mn": 723.42
+     },
+     {
+      "hs2": "61",
+      "desc": "ARTICLES OF APPAREL AND CLOTHING ACCESSORIES, KNITTED OR CORCHETED.",
+      "value_usd_mn": 700.14
+     },
+     {
+      "hs2": "72",
+      "desc": "IRON AND STEEL",
+      "value_usd_mn": 615.83
+     }
+    ]
+   },
+   "imports": {
+    "total_usd_mn": 63894.43,
+    "top_chapters": [
+     {
+      "hs2": "71",
+      "desc": "NATURAL OR CULTURED PEARLS,PRECIOUS OR SEMIPRECIOUS STONES,PRE.METALS,CLAD WITH PRE.METAL AND ARTCLS THEREOF;IMIT.JEWLRY;COIN.",
+      "value_usd_mn": 24825.69
+     },
+     {
+      "hs2": "27",
+      "desc": "MINERAL FUELS, MINERAL OILS AND PRODUCTS OF THEIR DISTILLATION; BITUMINOUS SUBSTANCES; MINERAL WAXES.",
+      "value_usd_mn": 24272.88
+     },
+     {
+      "hs2": "28",
+      "desc": "INORGANIC CHEMICALS; ORGANIC OR INORGANIC COMPOUNDS OF PRECIOUS METALS, OF RARE-EARTH METALS, OR RADI. ELEM. OR OF ISOTOPES.",
+      "value_usd_mn": 3359.27
+     },
+     {
+      "hs2": "88",
+      "desc": "AIRCRAFT, SPACECRAFT, AND PARTS THEREOF.",
+      "value_usd_mn": 1898.72
+     },
+     {
+      "hs2": "74",
+      "desc": "COPPER AND ARTICLES THEREOF.",
+      "value_usd_mn": 1419.52
+     },
+     {
+      "hs2": "39",
+      "desc": "PLASTIC AND ARTICLES THEREOF.",
+      "value_usd_mn": 1195.78
+     },
+     {
+      "hs2": "25",
+      "desc": "SALT; SULPHUR; EARTHS AND STONE; PLASTERING MATERIALS, LIME AND CEMENT.",
+      "value_usd_mn": 1181.78
+     },
+     {
+      "hs2": "89",
+      "desc": "SHIPS, BOATS AND FLOATING STRUCTURES.",
+      "value_usd_mn": 1046.14
+     },
+     {
+      "hs2": "76",
+      "desc": "ALUMINIUM AND ARTICLES THEREOF.",
+      "value_usd_mn": 804.23
+     },
+     {
+      "hs2": "72",
+      "desc": "IRON AND STEEL",
+      "value_usd_mn": 646.71
+     }
+    ]
+   }
+  },
+  {
+   "country": "RUSSIA",
+   "exports": {
+    "total_usd_mn": 4493.52,
+    "top_chapters": [
+     {
+      "hs2": "84",
+      "desc": "NUCLEAR REACTORS, BOILERS, MACHINERY AND MECHANICAL APPLIANCES; PARTS THEREOF.",
+      "value_usd_mn": 660.18
+     },
+     {
+      "hs2": "30",
+      "desc": "PHARMACEUTICAL PRODUCTS",
+      "value_usd_mn": 471.34
+     },
+     {
+      "hs2": "85",
+      "desc": "ELECTRICAL MACHINERY AND EQUIPMENT AND PARTS THEREOF; SOUND RECORDERS AND REPRODUCERS, TELEVISION IMAGE AND SOUND RECORDERS AND REPRODUCERS,AND PARTS.",
+      "value_usd_mn": 344.64
+     },
+     {
+      "hs2": "29",
+      "desc": "ORGANIC CHEMICALS",
+      "value_usd_mn": 326.17
+     },
+     {
+      "hs2": "28",
+      "desc": "INORGANIC CHEMICALS; ORGANIC OR INORGANIC COMPOUNDS OF PRECIOUS METALS, OF RARE-EARTH METALS, OR RADI. ELEM. OR OF ISOTOPES.",
+      "value_usd_mn": 196.81
+     },
+     {
+      "hs2": "38",
+      "desc": "MISCELLANEOUS CHEMICAL PRODUCTS.",
+      "value_usd_mn": 169.33
+     },
+     {
+      "hs2": "03",
+      "desc": "FISH AND CRUSTACEANS, MOLLUSCS AND OTHER AQUATIC INVERTABRATES.",
+      "value_usd_mn": 159.14
+     },
+     {
+      "hs2": "21",
+      "desc": "MISCELLANEOUS EDIBLE PREPARATIONS.",
+      "value_usd_mn": 156.45
+     },
+     {
+      "hs2": "90",
+      "desc": "OPTICAL, PHOTOGRAPHIC CINEMATOGRAPHIC MEASURING, CHECKING PRECISION, MEDICAL OR SURGICAL INST. AND APPARATUS PARTS AND ACCESSORIES THEREOF;",
+      "value_usd_mn": 145.63
+     },
+     {
+      "hs2": "69",
+      "desc": "CERAMIC PRODUCTS.",
+      "value_usd_mn": 138.77
+     }
+    ]
+   },
+   "imports": {
+    "total_usd_mn": 55369.56,
+    "top_chapters": [
+     {
+      "hs2": "27",
+      "desc": "MINERAL FUELS, MINERAL OILS AND PRODUCTS OF THEIR DISTILLATION; BITUMINOUS SUBSTANCES; MINERAL WAXES.",
+      "value_usd_mn": 47824.9
+     },
+     {
+      "hs2": "31",
+      "desc": "FERTILISERS.",
+      "value_usd_mn": 3117.9
+     },
+     {
+      "hs2": "15",
+      "desc": "ANIMAL OR VEGETABLE FATS AND OILS AND THEIR CLEAVAGE PRODUCTS; PRE. EDIBLE FATS; ANIMAL OR VEGETABLE WAXEX.",
+      "value_usd_mn": 1675.72
+     },
+     {
+      "hs2": "98",
+      "desc": "PROJECT GOODS; SOME SPECIAL USES.",
+      "value_usd_mn": 632.93
+     },
+     {
+      "hs2": "72",
+      "desc": "IRON AND STEEL",
+      "value_usd_mn": 448.95
+     },
+     {
+      "hs2": "71",
+      "desc": "NATURAL OR CULTURED PEARLS,PRECIOUS OR SEMIPRECIOUS STONES,PRE.METALS,CLAD WITH PRE.METAL AND ARTCLS THEREOF;IMIT.JEWLRY;COIN.",
+      "value_usd_mn": 375.54
+     },
+     {
+      "hs2": "84",
+      "desc": "NUCLEAR REACTORS, BOILERS, MACHINERY AND MECHANICAL APPLIANCES; PARTS THEREOF.",
+      "value_usd_mn": 272.37
+     },
+     {
+      "hs2": "25",
+      "desc": "SALT; SULPHUR; EARTHS AND STONE; PLASTERING MATERIALS, LIME AND CEMENT.",
+      "value_usd_mn": 161.69
+     },
+     {
+      "hs2": "48",
+      "desc": "PAPER AND PAPERBOARD; ARTICLES OF PAPER PULP, OF PAPER OR OF PAPERBOARD.",
+      "value_usd_mn": 117.75
+     },
+     {
+      "hs2": "29",
+      "desc": "ORGANIC CHEMICALS",
+      "value_usd_mn": 109.3
+     }
+    ]
+   }
+  },
+  {
+   "country": "SAUDI ARAB",
+   "exports": {
+    "total_usd_mn": 10281.17,
+    "top_chapters": [
+     {
+      "hs2": "87",
+      "desc": "VEHICLES OTHER THAN RAILWAY OR TRAMWAY ROLLING STOCK, AND PARTS AND ACCESSORIES THEREOF.",
+      "value_usd_mn": 1560.63
+     },
+     {
+      "hs2": "10",
+      "desc": "CEREALS.",
+      "value_usd_mn": 1078.2
+     },
+     {
+      "hs2": "84",
+      "desc": "NUCLEAR REACTORS, BOILERS, MACHINERY AND MECHANICAL APPLIANCES; PARTS THEREOF.",
+      "value_usd_mn": 1011.81
+     },
+     {
+      "hs2": "74",
+      "desc": "COPPER AND ARTICLES THEREOF.",
+      "value_usd_mn": 982.51
+     },
+     {
+      "hs2": "29",
+      "desc": "ORGANIC CHEMICALS",
+      "value_usd_mn": 718.53
+     },
+     {
+      "hs2": "85",
+      "desc": "ELECTRICAL MACHINERY AND EQUIPMENT AND PARTS THEREOF; SOUND RECORDERS AND REPRODUCERS, TELEVISION IMAGE AND SOUND RECORDERS AND REPRODUCERS,AND PARTS.",
+      "value_usd_mn": 502.23
+     },
+     {
+      "hs2": "73",
+      "desc": "ARTICLES OF IRON OR STEEL",
+      "value_usd_mn": 433.97
+     },
+     {
+      "hs2": "02",
+      "desc": "MEAT AND EDIBLE MEAT OFFAL.",
+      "value_usd_mn": 361.15
+     },
+     {
+      "hs2": "71",
+      "desc": "NATURAL OR CULTURED PEARLS,PRECIOUS OR SEMIPRECIOUS STONES,PRE.METALS,CLAD WITH PRE.METAL AND ARTCLS THEREOF;IMIT.JEWLRY;COIN.",
+      "value_usd_mn": 246.52
+     },
+     {
+      "hs2": "09",
+      "desc": "COFFEE, TEA, MATE AND SPICES.",
+      "value_usd_mn": 238.65
+     }
+    ]
+   },
+   "imports": {
+    "total_usd_mn": 30790.31,
+    "top_chapters": [
+     {
+      "hs2": "27",
+      "desc": "MINERAL FUELS, MINERAL OILS AND PRODUCTS OF THEIR DISTILLATION; BITUMINOUS SUBSTANCES; MINERAL WAXES.",
+      "value_usd_mn": 21788.12
+     },
+     {
+      "hs2": "31",
+      "desc": "FERTILISERS.",
+      "value_usd_mn": 2397.39
+     },
+     {
+      "hs2": "29",
+      "desc": "ORGANIC CHEMICALS",
+      "value_usd_mn": 1277.21
+     },
+     {
+      "hs2": "39",
+      "desc": "PLASTIC AND ARTICLES THEREOF.",
+      "value_usd_mn": 1120.78
+     },
+     {
+      "hs2": "71",
+      "desc": "NATURAL OR CULTURED PEARLS,PRECIOUS OR SEMIPRECIOUS STONES,PRE.METALS,CLAD WITH PRE.METAL AND ARTCLS THEREOF;IMIT.JEWLRY;COIN.",
+      "value_usd_mn": 1088.86
+     },
+     {
+      "hs2": "88",
+      "desc": "AIRCRAFT, SPACECRAFT, AND PARTS THEREOF.",
+      "value_usd_mn": 702.49
+     },
+     {
+      "hs2": "74",
+      "desc": "COPPER AND ARTICLES THEREOF.",
+      "value_usd_mn": 572.23
+     },
+     {
+      "hs2": "76",
+      "desc": "ALUMINIUM AND ARTICLES THEREOF.",
+      "value_usd_mn": 424.35
+     },
+     {
+      "hs2": "28",
+      "desc": "INORGANIC CHEMICALS; ORGANIC OR INORGANIC COMPOUNDS OF PRECIOUS METALS, OF RARE-EARTH METALS, OR RADI. ELEM. OR OF ISOTOPES.",
+      "value_usd_mn": 390.76
+     },
+     {
+      "hs2": "38",
+      "desc": "MISCELLANEOUS CHEMICAL PRODUCTS.",
+      "value_usd_mn": 284.54
+     }
+    ]
+   }
+  },
+  {
+   "country": "SINGAPORE",
+   "exports": {
+    "total_usd_mn": 11863.67,
+    "top_chapters": [
+     {
+      "hs2": "27",
+      "desc": "MINERAL FUELS, MINERAL OILS AND PRODUCTS OF THEIR DISTILLATION; BITUMINOUS SUBSTANCES; MINERAL WAXES.",
+      "value_usd_mn": 4469.45
+     },
+     {
+      "hs2": "84",
+      "desc": "NUCLEAR REACTORS, BOILERS, MACHINERY AND MECHANICAL APPLIANCES; PARTS THEREOF.",
+      "value_usd_mn": 2134.96
+     },
+     {
+      "hs2": "89",
+      "desc": "SHIPS, BOATS AND FLOATING STRUCTURES.",
+      "value_usd_mn": 1407.44
+     },
+     {
+      "hs2": "29",
+      "desc": "ORGANIC CHEMICALS",
+      "value_usd_mn": 654.12
+     },
+     {
+      "hs2": "71",
+      "desc": "NATURAL OR CULTURED PEARLS,PRECIOUS OR SEMIPRECIOUS STONES,PRE.METALS,CLAD WITH PRE.METAL AND ARTCLS THEREOF;IMIT.JEWLRY;COIN.",
+      "value_usd_mn": 546.82
+     },
+     {
+      "hs2": "85",
+      "desc": "ELECTRICAL MACHINERY AND EQUIPMENT AND PARTS THEREOF; SOUND RECORDERS AND REPRODUCERS, TELEVISION IMAGE AND SOUND RECORDERS AND REPRODUCERS,AND PARTS.",
+      "value_usd_mn": 478.88
+     },
+     {
+      "hs2": "78",
+      "desc": "LEAD AND ARTICLES THEREOF.",
+      "value_usd_mn": 382.9
+     },
+     {
+      "hs2": "90",
+      "desc": "OPTICAL, PHOTOGRAPHIC CINEMATOGRAPHIC MEASURING, CHECKING PRECISION, MEDICAL OR SURGICAL INST. AND APPARATUS PARTS AND ACCESSORIES THEREOF;",
+      "value_usd_mn": 242.01
+     },
+     {
+      "hs2": "79",
+      "desc": "ZINC AND ARTICLES THEREOF.",
+      "value_usd_mn": 125.82
+     },
+     {
+      "hs2": "33",
+      "desc": "ESSENTIAL OILS AND RESINOIDS; PERFUMERY, COSMETIC OR TOILET PREPARATIONS.",
+      "value_usd_mn": 115.45
+     }
+    ]
+   },
+   "imports": {
+    "total_usd_mn": 24240.6,
+    "top_chapters": [
+     {
+      "hs2": "85",
+      "desc": "ELECTRICAL MACHINERY AND EQUIPMENT AND PARTS THEREOF; SOUND RECORDERS AND REPRODUCERS, TELEVISION IMAGE AND SOUND RECORDERS AND REPRODUCERS,AND PARTS.",
+      "value_usd_mn": 6229.94
+     },
+     {
+      "hs2": "84",
+      "desc": "NUCLEAR REACTORS, BOILERS, MACHINERY AND MECHANICAL APPLIANCES; PARTS THEREOF.",
+      "value_usd_mn": 4280.95
+     },
+     {
+      "hs2": "27",
+      "desc": "MINERAL FUELS, MINERAL OILS AND PRODUCTS OF THEIR DISTILLATION; BITUMINOUS SUBSTANCES; MINERAL WAXES.",
+      "value_usd_mn": 2909.24
+     },
+     {
+      "hs2": "71",
+      "desc": "NATURAL OR CULTURED PEARLS,PRECIOUS OR SEMIPRECIOUS STONES,PRE.METALS,CLAD WITH PRE.METAL AND ARTCLS THEREOF;IMIT.JEWLRY;COIN.",
+      "value_usd_mn": 1609.33
+     },
+     {
+      "hs2": "39",
+      "desc": "PLASTIC AND ARTICLES THEREOF.",
+      "value_usd_mn": 1496.31
+     },
+     {
+      "hs2": "90",
+      "desc": "OPTICAL, PHOTOGRAPHIC CINEMATOGRAPHIC MEASURING, CHECKING PRECISION, MEDICAL OR SURGICAL INST. AND APPARATUS PARTS AND ACCESSORIES THEREOF;",
+      "value_usd_mn": 1295.94
+     },
+     {
+      "hs2": "29",
+      "desc": "ORGANIC CHEMICALS",
+      "value_usd_mn": 1159.11
+     },
+     {
+      "hs2": "89",
+      "desc": "SHIPS, BOATS AND FLOATING STRUCTURES.",
+      "value_usd_mn": 1114.83
+     },
+     {
+      "hs2": "15",
+      "desc": "ANIMAL OR VEGETABLE FATS AND OILS AND THEIR CLEAVAGE PRODUCTS; PRE. EDIBLE FATS; ANIMAL OR VEGETABLE WAXEX.",
+      "value_usd_mn": 787.06
+     },
+     {
+      "hs2": "72",
+      "desc": "IRON AND STEEL",
+      "value_usd_mn": 486.02
+     }
+    ]
+   }
+  },
+  {
+   "country": "HONG KONG",
+   "exports": {
+    "total_usd_mn": 8081.83,
+    "top_chapters": [
+     {
+      "hs2": "71",
+      "desc": "NATURAL OR CULTURED PEARLS,PRECIOUS OR SEMIPRECIOUS STONES,PRE.METALS,CLAD WITH PRE.METAL AND ARTCLS THEREOF;IMIT.JEWLRY;COIN.",
+      "value_usd_mn": 6124.22
+     },
+     {
+      "hs2": "85",
+      "desc": "ELECTRICAL MACHINERY AND EQUIPMENT AND PARTS THEREOF; SOUND RECORDERS AND REPRODUCERS, TELEVISION IMAGE AND SOUND RECORDERS AND REPRODUCERS,AND PARTS.",
+      "value_usd_mn": 1167.14
+     },
+     {
+      "hs2": "84",
+      "desc": "NUCLEAR REACTORS, BOILERS, MACHINERY AND MECHANICAL APPLIANCES; PARTS THEREOF.",
+      "value_usd_mn": 167.37
+     },
+     {
+      "hs2": "27",
+      "desc": "MINERAL FUELS, MINERAL OILS AND PRODUCTS OF THEIR DISTILLATION; BITUMINOUS SUBSTANCES; MINERAL WAXES.",
+      "value_usd_mn": 86.62
+     },
+     {
+      "hs2": "62",
+      "desc": "ARTICLES OF APPAREL AND CLOTHING ACCESSORIES, NOT KNITTED OR CROCHETED.",
+      "value_usd_mn": 65.76
+     },
+     {
+      "hs2": "03",
+      "desc": "FISH AND CRUSTACEANS, MOLLUSCS AND OTHER AQUATIC INVERTABRATES.",
+      "value_usd_mn": 54.22
+     },
+     {
+      "hs2": "90",
+      "desc": "OPTICAL, PHOTOGRAPHIC CINEMATOGRAPHIC MEASURING, CHECKING PRECISION, MEDICAL OR SURGICAL INST. AND APPARATUS PARTS AND ACCESSORIES THEREOF;",
+      "value_usd_mn": 49.03
+     },
+     {
+      "hs2": "02",
+      "desc": "MEAT AND EDIBLE MEAT OFFAL.",
+      "value_usd_mn": 42.9
+     },
+     {
+      "hs2": "30",
+      "desc": "PHARMACEUTICAL PRODUCTS",
+      "value_usd_mn": 37.12
+     },
+     {
+      "hs2": "41",
+      "desc": "RAW HIDES AND SKINS (OTHER THAN FURSKINS) AND LEATHER",
+      "value_usd_mn": 27.2
+     }
+    ]
+   },
+   "imports": {
+    "total_usd_mn": 24331.02,
+    "top_chapters": [
+     {
+      "hs2": "85",
+      "desc": "ELECTRICAL MACHINERY AND EQUIPMENT AND PARTS THEREOF; SOUND RECORDERS AND REPRODUCERS, TELEVISION IMAGE AND SOUND RECORDERS AND REPRODUCERS,AND PARTS.",
+      "value_usd_mn": 10492.8
+     },
+     {
+      "hs2": "71",
+      "desc": "NATURAL OR CULTURED PEARLS,PRECIOUS OR SEMIPRECIOUS STONES,PRE.METALS,CLAD WITH PRE.METAL AND ARTCLS THEREOF;IMIT.JEWLRY;COIN.",
+      "value_usd_mn": 10006.25
+     },
+     {
+      "hs2": "84",
+      "desc": "NUCLEAR REACTORS, BOILERS, MACHINERY AND MECHANICAL APPLIANCES; PARTS THEREOF.",
+      "value_usd_mn": 1584.21
+     },
+     {
+      "hs2": "90",
+      "desc": "OPTICAL, PHOTOGRAPHIC CINEMATOGRAPHIC MEASURING, CHECKING PRECISION, MEDICAL OR SURGICAL INST. AND APPARATUS PARTS AND ACCESSORIES THEREOF;",
+      "value_usd_mn": 471.49
+     },
+     {
+      "hs2": "91",
+      "desc": "CLOCKS AND WATCHES AND PARTS THEREOF.",
+      "value_usd_mn": 227.75
+     },
+     {
+      "hs2": "39",
+      "desc": "PLASTIC AND ARTICLES THEREOF.",
+      "value_usd_mn": 201.81
+     },
+     {
+      "hs2": "72",
+      "desc": "IRON AND STEEL",
+      "value_usd_mn": 146.29
+     },
+     {
+      "hs2": "76",
+      "desc": "ALUMINIUM AND ARTICLES THEREOF.",
+      "value_usd_mn": 111.83
+     },
+     {
+      "hs2": "87",
+      "desc": "VEHICLES OTHER THAN RAILWAY OR TRAMWAY ROLLING STOCK, AND PARTS AND ACCESSORIES THEREOF.",
+      "value_usd_mn": 97.91
+     },
+     {
+      "hs2": "73",
+      "desc": "ARTICLES OF IRON OR STEEL",
+      "value_usd_mn": 85.04
+     }
+    ]
+   }
+  },
+  {
+   "country": "GERMANY",
+   "exports": {
+    "total_usd_mn": 11526.08,
+    "top_chapters": [
+     {
+      "hs2": "85",
+      "desc": "ELECTRICAL MACHINERY AND EQUIPMENT AND PARTS THEREOF; SOUND RECORDERS AND REPRODUCERS, TELEVISION IMAGE AND SOUND RECORDERS AND REPRODUCERS,AND PARTS.",
+      "value_usd_mn": 1794.47
+     },
+     {
+      "hs2": "84",
+      "desc": "NUCLEAR REACTORS, BOILERS, MACHINERY AND MECHANICAL APPLIANCES; PARTS THEREOF.",
+      "value_usd_mn": 1463.83
+     },
+     {
+      "hs2": "87",
+      "desc": "VEHICLES OTHER THAN RAILWAY OR TRAMWAY ROLLING STOCK, AND PARTS AND ACCESSORIES THEREOF.",
+      "value_usd_mn": 786.81
+     },
+     {
+      "hs2": "29",
+      "desc": "ORGANIC CHEMICALS",
+      "value_usd_mn": 765.21
+     },
+     {
+      "hs2": "61",
+      "desc": "ARTICLES OF APPAREL AND CLOTHING ACCESSORIES, KNITTED OR CORCHETED.",
+      "value_usd_mn": 531.07
+     },
+     {
+      "hs2": "73",
+      "desc": "ARTICLES OF IRON OR STEEL",
+      "value_usd_mn": 510.9
+     },
+     {
+      "hs2": "30",
+      "desc": "PHARMACEUTICAL PRODUCTS",
+      "value_usd_mn": 446.73
+     },
+     {
+      "hs2": "62",
+      "desc": "ARTICLES OF APPAREL AND CLOTHING ACCESSORIES, NOT KNITTED OR CROCHETED.",
+      "value_usd_mn": 401.67
+     },
+     {
+      "hs2": "90",
+      "desc": "OPTICAL, PHOTOGRAPHIC CINEMATOGRAPHIC MEASURING, CHECKING PRECISION, MEDICAL OR SURGICAL INST. AND APPARATUS PARTS AND ACCESSORIES THEREOF;",
+      "value_usd_mn": 356.07
+     },
+     {
+      "hs2": "40",
+      "desc": "RUBBER AND ARTICLES THEREOF.",
+      "value_usd_mn": 354.5
+     }
+    ]
+   },
+   "imports": {
+    "total_usd_mn": 19507.57,
+    "top_chapters": [
+     {
+      "hs2": "84",
+      "desc": "NUCLEAR REACTORS, BOILERS, MACHINERY AND MECHANICAL APPLIANCES; PARTS THEREOF.",
+      "value_usd_mn": 5547.74
+     },
+     {
+      "hs2": "88",
+      "desc": "AIRCRAFT, SPACECRAFT, AND PARTS THEREOF.",
+      "value_usd_mn": 2692.52
+     },
+     {
+      "hs2": "85",
+      "desc": "ELECTRICAL MACHINERY AND EQUIPMENT AND PARTS THEREOF; SOUND RECORDERS AND REPRODUCERS, TELEVISION IMAGE AND SOUND RECORDERS AND REPRODUCERS,AND PARTS.",
+      "value_usd_mn": 2470.99
+     },
+     {
+      "hs2": "90",
+      "desc": "OPTICAL, PHOTOGRAPHIC CINEMATOGRAPHIC MEASURING, CHECKING PRECISION, MEDICAL OR SURGICAL INST. AND APPARATUS PARTS AND ACCESSORIES THEREOF;",
+      "value_usd_mn": 1962.1
+     },
+     {
+      "hs2": "87",
+      "desc": "VEHICLES OTHER THAN RAILWAY OR TRAMWAY ROLLING STOCK, AND PARTS AND ACCESSORIES THEREOF.",
+      "value_usd_mn": 1052.33
+     },
+     {
+      "hs2": "39",
+      "desc": "PLASTIC AND ARTICLES THEREOF.",
+      "value_usd_mn": 679.03
+     },
+     {
+      "hs2": "38",
+      "desc": "MISCELLANEOUS CHEMICAL PRODUCTS.",
+      "value_usd_mn": 501.15
+     },
+     {
+      "hs2": "29",
+      "desc": "ORGANIC CHEMICALS",
+      "value_usd_mn": 430.31
+     },
+     {
+      "hs2": "73",
+      "desc": "ARTICLES OF IRON OR STEEL",
+      "value_usd_mn": 353.49
+     },
+     {
+      "hs2": "72",
+      "desc": "IRON AND STEEL",
+      "value_usd_mn": 322.89
+     }
+    ]
+   }
+  },
+  {
+   "country": "IRAQ",
+   "exports": {
+    "total_usd_mn": 2958.22,
+    "top_chapters": [
+     {
+      "hs2": "10",
+      "desc": "CEREALS.",
+      "value_usd_mn": 674.59
+     },
+     {
+      "hs2": "27",
+      "desc": "MINERAL FUELS, MINERAL OILS AND PRODUCTS OF THEIR DISTILLATION; BITUMINOUS SUBSTANCES; MINERAL WAXES.",
+      "value_usd_mn": 534.35
+     },
+     {
+      "hs2": "02",
+      "desc": "MEAT AND EDIBLE MEAT OFFAL.",
+      "value_usd_mn": 300.1
+     },
+     {
+      "hs2": "08",
+      "desc": "EDIBLE FRUIT AND NUTS; PEEL OR CITRUS FRUIT OR MELONS.",
+      "value_usd_mn": 226.42
+     },
+     {
+      "hs2": "09",
+      "desc": "COFFEE, TEA, MATE AND SPICES.",
+      "value_usd_mn": 133.84
+     },
+     {
+      "hs2": "30",
+      "desc": "PHARMACEUTICAL PRODUCTS",
+      "value_usd_mn": 124.36
+     },
+     {
+      "hs2": "73",
+      "desc": "ARTICLES OF IRON OR STEEL",
+      "value_usd_mn": 117.55
+     },
+     {
+      "hs2": "85",
+      "desc": "ELECTRICAL MACHINERY AND EQUIPMENT AND PARTS THEREOF; SOUND RECORDERS AND REPRODUCERS, TELEVISION IMAGE AND SOUND RECORDERS AND REPRODUCERS,AND PARTS.",
+      "value_usd_mn": 111.25
+     },
+     {
+      "hs2": "84",
+      "desc": "NUCLEAR REACTORS, BOILERS, MACHINERY AND MECHANICAL APPLIANCES; PARTS THEREOF.",
+      "value_usd_mn": 110.69
+     },
+     {
+      "hs2": "69",
+      "desc": "CERAMIC PRODUCTS.",
+      "value_usd_mn": 109.69
+     }
+    ]
+   },
+   "imports": {
+    "total_usd_mn": 24558.5,
+    "top_chapters": [
+     {
+      "hs2": "27",
+      "desc": "MINERAL FUELS, MINERAL OILS AND PRODUCTS OF THEIR DISTILLATION; BITUMINOUS SUBSTANCES; MINERAL WAXES.",
+      "value_usd_mn": 24146.03
+     },
+     {
+      "hs2": "15",
+      "desc": "ANIMAL OR VEGETABLE FATS AND OILS AND THEIR CLEAVAGE PRODUCTS; PRE. EDIBLE FATS; ANIMAL OR VEGETABLE WAXEX.",
+      "value_usd_mn": 215.39
+     },
+     {
+      "hs2": "08",
+      "desc": "EDIBLE FRUIT AND NUTS; PEEL OR CITRUS FRUIT OR MELONS.",
+      "value_usd_mn": 96.02
+     },
+     {
+      "hs2": "89",
+      "desc": "SHIPS, BOATS AND FLOATING STRUCTURES.",
+      "value_usd_mn": 89.55
+     },
+     {
+      "hs2": "76",
+      "desc": "ALUMINIUM AND ARTICLES THEREOF.",
+      "value_usd_mn": 3.45
+     },
+     {
+      "hs2": "38",
+      "desc": "MISCELLANEOUS CHEMICAL PRODUCTS.",
+      "value_usd_mn": 3.18
+     },
+     {
+      "hs2": "47",
+      "desc": "PULP OF WOOD OR OF OTHER FIBROUS CELLULOSIC MATERIAL; WASTE AND SCRAP OF PAPER OR PAPERBOARD.",
+      "value_usd_mn": 1.94
+     },
+     {
+      "hs2": "25",
+      "desc": "SALT; SULPHUR; EARTHS AND STONE; PLASTERING MATERIALS, LIME AND CEMENT.",
+      "value_usd_mn": 1.05
+     },
+     {
+      "hs2": "41",
+      "desc": "RAW HIDES AND SKINS (OTHER THAN FURSKINS) AND LEATHER",
+      "value_usd_mn": 0.91
+     },
+     {
+      "hs2": "51",
+      "desc": "WOOL, FINE OR COARSE ANIMAL HAIR, HORSEHAIR YARN AND WOVEN FABRIC.",
+      "value_usd_mn": 0.34
+     }
+    ]
+   }
+  },
+  {
+   "country": "JAPAN",
+   "exports": {
+    "total_usd_mn": 6039.49,
+    "top_chapters": [
+     {
+      "hs2": "87",
+      "desc": "VEHICLES OTHER THAN RAILWAY OR TRAMWAY ROLLING STOCK, AND PARTS AND ACCESSORIES THEREOF.",
+      "value_usd_mn": 1029.05
+     },
+     {
+      "hs2": "29",
+      "desc": "ORGANIC CHEMICALS",
+      "value_usd_mn": 654.16
+     },
+     {
+      "hs2": "84",
+      "desc": "NUCLEAR REACTORS, BOILERS, MACHINERY AND MECHANICAL APPLIANCES; PARTS THEREOF.",
+      "value_usd_mn": 634.17
+     },
+     {
+      "hs2": "85",
+      "desc": "ELECTRICAL MACHINERY AND EQUIPMENT AND PARTS THEREOF; SOUND RECORDERS AND REPRODUCERS, TELEVISION IMAGE AND SOUND RECORDERS AND REPRODUCERS,AND PARTS.",
+      "value_usd_mn": 425.75
+     },
+     {
+      "hs2": "03",
+      "desc": "FISH AND CRUSTACEANS, MOLLUSCS AND OTHER AQUATIC INVERTABRATES.",
+      "value_usd_mn": 411.69
+     },
+     {
+      "hs2": "76",
+      "desc": "ALUMINIUM AND ARTICLES THEREOF.",
+      "value_usd_mn": 387.39
+     },
+     {
+      "hs2": "71",
+      "desc": "NATURAL OR CULTURED PEARLS,PRECIOUS OR SEMIPRECIOUS STONES,PRE.METALS,CLAD WITH PRE.METAL AND ARTCLS THEREOF;IMIT.JEWLRY;COIN.",
+      "value_usd_mn": 233.38
+     },
+     {
+      "hs2": "72",
+      "desc": "IRON AND STEEL",
+      "value_usd_mn": 223.75
+     },
+     {
+      "hs2": "62",
+      "desc": "ARTICLES OF APPAREL AND CLOTHING ACCESSORIES, NOT KNITTED OR CROCHETED.",
+      "value_usd_mn": 180.46
+     },
+     {
+      "hs2": "38",
+      "desc": "MISCELLANEOUS CHEMICAL PRODUCTS.",
+      "value_usd_mn": 156.88
+     }
+    ]
+   },
+   "imports": {
+    "total_usd_mn": 21436.86,
+    "top_chapters": [
+     {
+      "hs2": "84",
+      "desc": "NUCLEAR REACTORS, BOILERS, MACHINERY AND MECHANICAL APPLIANCES; PARTS THEREOF.",
+      "value_usd_mn": 3892.48
+     },
+     {
+      "hs2": "85",
+      "desc": "ELECTRICAL MACHINERY AND EQUIPMENT AND PARTS THEREOF; SOUND RECORDERS AND REPRODUCERS, TELEVISION IMAGE AND SOUND RECORDERS AND REPRODUCERS,AND PARTS.",
+      "value_usd_mn": 2624.53
+     },
+     {
+      "hs2": "74",
+      "desc": "COPPER AND ARTICLES THEREOF.",
+      "value_usd_mn": 2376.94
+     },
+     {
+      "hs2": "28",
+      "desc": "INORGANIC CHEMICALS; ORGANIC OR INORGANIC COMPOUNDS OF PRECIOUS METALS, OF RARE-EARTH METALS, OR RADI. ELEM. OR OF ISOTOPES.",
+      "value_usd_mn": 2188.78
+     },
+     {
+      "hs2": "72",
+      "desc": "IRON AND STEEL",
+      "value_usd_mn": 1638.49
+     },
+     {
+      "hs2": "87",
+      "desc": "VEHICLES OTHER THAN RAILWAY OR TRAMWAY ROLLING STOCK, AND PARTS AND ACCESSORIES THEREOF.",
+      "value_usd_mn": 1604.24
+     },
+     {
+      "hs2": "39",
+      "desc": "PLASTIC AND ARTICLES THEREOF.",
+      "value_usd_mn": 1199.79
+     },
+     {
+      "hs2": "90",
+      "desc": "OPTICAL, PHOTOGRAPHIC CINEMATOGRAPHIC MEASURING, CHECKING PRECISION, MEDICAL OR SURGICAL INST. AND APPARATUS PARTS AND ACCESSORIES THEREOF;",
+      "value_usd_mn": 1197.77
+     },
+     {
+      "hs2": "29",
+      "desc": "ORGANIC CHEMICALS",
+      "value_usd_mn": 939.03
+     },
+     {
+      "hs2": "73",
+      "desc": "ARTICLES OF IRON OR STEEL",
+      "value_usd_mn": 431.89
+     }
+    ]
+   }
+  },
+  {
+   "country": "KOREA RP",
+   "exports": {
+    "total_usd_mn": 6012.03,
+    "top_chapters": [
+     {
+      "hs2": "84",
+      "desc": "NUCLEAR REACTORS, BOILERS, MACHINERY AND MECHANICAL APPLIANCES; PARTS THEREOF.",
+      "value_usd_mn": 973.95
+     },
+     {
+      "hs2": "27",
+      "desc": "MINERAL FUELS, MINERAL OILS AND PRODUCTS OF THEIR DISTILLATION; BITUMINOUS SUBSTANCES; MINERAL WAXES.",
+      "value_usd_mn": 777.28
+     },
+     {
+      "hs2": "29",
+      "desc": "ORGANIC CHEMICALS",
+      "value_usd_mn": 648.08
+     },
+     {
+      "hs2": "76",
+      "desc": "ALUMINIUM AND ARTICLES THEREOF.",
+      "value_usd_mn": 584.65
+     },
+     {
+      "hs2": "72",
+      "desc": "IRON AND STEEL",
+      "value_usd_mn": 398.44
+     },
+     {
+      "hs2": "78",
+      "desc": "LEAD AND ARTICLES THEREOF.",
+      "value_usd_mn": 342.7
+     },
+     {
+      "hs2": "74",
+      "desc": "COPPER AND ARTICLES THEREOF.",
+      "value_usd_mn": 318.24
+     },
+     {
+      "hs2": "71",
+      "desc": "NATURAL OR CULTURED PEARLS,PRECIOUS OR SEMIPRECIOUS STONES,PRE.METALS,CLAD WITH PRE.METAL AND ARTCLS THEREOF;IMIT.JEWLRY;COIN.",
+      "value_usd_mn": 187.02
+     },
+     {
+      "hs2": "85",
+      "desc": "ELECTRICAL MACHINERY AND EQUIPMENT AND PARTS THEREOF; SOUND RECORDERS AND REPRODUCERS, TELEVISION IMAGE AND SOUND RECORDERS AND REPRODUCERS,AND PARTS.",
+      "value_usd_mn": 179.77
+     },
+     {
+      "hs2": "87",
+      "desc": "VEHICLES OTHER THAN RAILWAY OR TRAMWAY ROLLING STOCK, AND PARTS AND ACCESSORIES THEREOF.",
+      "value_usd_mn": 161.35
+     }
+    ]
+   },
+   "imports": {
+    "total_usd_mn": 21354.69,
+    "top_chapters": [
+     {
+      "hs2": "85",
+      "desc": "ELECTRICAL MACHINERY AND EQUIPMENT AND PARTS THEREOF; SOUND RECORDERS AND REPRODUCERS, TELEVISION IMAGE AND SOUND RECORDERS AND REPRODUCERS,AND PARTS.",
+      "value_usd_mn": 5717.28
+     },
+     {
+      "hs2": "72",
+      "desc": "IRON AND STEEL",
+      "value_usd_mn": 2589.6
+     },
+     {
+      "hs2": "84",
+      "desc": "NUCLEAR REACTORS, BOILERS, MACHINERY AND MECHANICAL APPLIANCES; PARTS THEREOF.",
+      "value_usd_mn": 2381.65
+     },
+     {
+      "hs2": "39",
+      "desc": "PLASTIC AND ARTICLES THEREOF.",
+      "value_usd_mn": 2121.3
+     },
+     {
+      "hs2": "27",
+      "desc": "MINERAL FUELS, MINERAL OILS AND PRODUCTS OF THEIR DISTILLATION; BITUMINOUS SUBSTANCES; MINERAL WAXES.",
+      "value_usd_mn": 1715.62
+     },
+     {
+      "hs2": "29",
+      "desc": "ORGANIC CHEMICALS",
+      "value_usd_mn": 1205.96
+     },
+     {
+      "hs2": "87",
+      "desc": "VEHICLES OTHER THAN RAILWAY OR TRAMWAY ROLLING STOCK, AND PARTS AND ACCESSORIES THEREOF.",
+      "value_usd_mn": 867.15
+     },
+     {
+      "hs2": "79",
+      "desc": "ZINC AND ARTICLES THEREOF.",
+      "value_usd_mn": 604.38
+     },
+     {
+      "hs2": "90",
+      "desc": "OPTICAL, PHOTOGRAPHIC CINEMATOGRAPHIC MEASURING, CHECKING PRECISION, MEDICAL OR SURGICAL INST. AND APPARATUS PARTS AND ACCESSORIES THEREOF;",
+      "value_usd_mn": 566.51
+     },
+     {
+      "hs2": "40",
+      "desc": "RUBBER AND ARTICLES THEREOF.",
+      "value_usd_mn": 428.67
+     }
+    ]
+   }
+  },
+  {
+   "country": "SWITZERLAND",
+   "exports": {
+    "total_usd_mn": 1213.34,
+    "top_chapters": [
+     {
+      "hs2": "29",
+      "desc": "ORGANIC CHEMICALS",
+      "value_usd_mn": 578.41
+     },
+     {
+      "hs2": "71",
+      "desc": "NATURAL OR CULTURED PEARLS,PRECIOUS OR SEMIPRECIOUS STONES,PRE.METALS,CLAD WITH PRE.METAL AND ARTCLS THEREOF;IMIT.JEWLRY;COIN.",
+      "value_usd_mn": 286.52
+     },
+     {
+      "hs2": "84",
+      "desc": "NUCLEAR REACTORS, BOILERS, MACHINERY AND MECHANICAL APPLIANCES; PARTS THEREOF.",
+      "value_usd_mn": 61.18
+     },
+     {
+      "hs2": "85",
+      "desc": "ELECTRICAL MACHINERY AND EQUIPMENT AND PARTS THEREOF; SOUND RECORDERS AND REPRODUCERS, TELEVISION IMAGE AND SOUND RECORDERS AND REPRODUCERS,AND PARTS.",
+      "value_usd_mn": 30.12
+     },
+     {
+      "hs2": "91",
+      "desc": "CLOCKS AND WATCHES AND PARTS THEREOF.",
+      "value_usd_mn": 29.28
+     },
+     {
+      "hs2": "90",
+      "desc": "OPTICAL, PHOTOGRAPHIC CINEMATOGRAPHIC MEASURING, CHECKING PRECISION, MEDICAL OR SURGICAL INST. AND APPARATUS PARTS AND ACCESSORIES THEREOF;",
+      "value_usd_mn": 25.35
+     },
+     {
+      "hs2": "61",
+      "desc": "ARTICLES OF APPAREL AND CLOTHING ACCESSORIES, KNITTED OR CORCHETED.",
+      "value_usd_mn": 21.41
+     },
+     {
+      "hs2": "62",
+      "desc": "ARTICLES OF APPAREL AND CLOTHING ACCESSORIES, NOT KNITTED OR CROCHETED.",
+      "value_usd_mn": 15.25
+     },
+     {
+      "hs2": "88",
+      "desc": "AIRCRAFT, SPACECRAFT, AND PARTS THEREOF.",
+      "value_usd_mn": 15.2
+     },
+     {
+      "hs2": "30",
+      "desc": "PHARMACEUTICAL PRODUCTS",
+      "value_usd_mn": 14.29
+     }
+    ]
+   },
+   "imports": {
+    "total_usd_mn": 24275.13,
+    "top_chapters": [
+     {
+      "hs2": "71",
+      "desc": "NATURAL OR CULTURED PEARLS,PRECIOUS OR SEMIPRECIOUS STONES,PRE.METALS,CLAD WITH PRE.METAL AND ARTCLS THEREOF;IMIT.JEWLRY;COIN.",
+      "value_usd_mn": 20780.88
+     },
+     {
+      "hs2": "84",
+      "desc": "NUCLEAR REACTORS, BOILERS, MACHINERY AND MECHANICAL APPLIANCES; PARTS THEREOF.",
+      "value_usd_mn": 527.03
+     },
+     {
+      "hs2": "30",
+      "desc": "PHARMACEUTICAL PRODUCTS",
+      "value_usd_mn": 493.97
+     },
+     {
+      "hs2": "90",
+      "desc": "OPTICAL, PHOTOGRAPHIC CINEMATOGRAPHIC MEASURING, CHECKING PRECISION, MEDICAL OR SURGICAL INST. AND APPARATUS PARTS AND ACCESSORIES THEREOF;",
+      "value_usd_mn": 418.26
+     },
+     {
+      "hs2": "91",
+      "desc": "CLOCKS AND WATCHES AND PARTS THEREOF.",
+      "value_usd_mn": 399.72
+     },
+     {
+      "hs2": "27",
+      "desc": "MINERAL FUELS, MINERAL OILS AND PRODUCTS OF THEIR DISTILLATION; BITUMINOUS SUBSTANCES; MINERAL WAXES.",
+      "value_usd_mn": 274.44
+     },
+     {
+      "hs2": "15",
+      "desc": "ANIMAL OR VEGETABLE FATS AND OILS AND THEIR CLEAVAGE PRODUCTS; PRE. EDIBLE FATS; ANIMAL OR VEGETABLE WAXEX.",
+      "value_usd_mn": 216.85
+     },
+     {
+      "hs2": "29",
+      "desc": "ORGANIC CHEMICALS",
+      "value_usd_mn": 196.13
+     },
+     {
+      "hs2": "85",
+      "desc": "ELECTRICAL MACHINERY AND EQUIPMENT AND PARTS THEREOF; SOUND RECORDERS AND REPRODUCERS, TELEVISION IMAGE AND SOUND RECORDERS AND REPRODUCERS,AND PARTS.",
+      "value_usd_mn": 195.72
+     },
+     {
+      "hs2": "38",
+      "desc": "MISCELLANEOUS CHEMICAL PRODUCTS.",
+      "value_usd_mn": 124.01
+     }
+    ]
+   }
+  }
+ ]
+}

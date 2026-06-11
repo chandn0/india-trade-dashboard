@@ -1,0 +1,54 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: #f0eee6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.18);
+}
+
+/* Anchored sections clear the sticky header when jumped to. */
+[data-section] {
+  scroll-margin-top: 84px;
+}
+
+/* Refined scrollbars for the scrollable tables / page (fintech feel). */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c4cedd transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #c9d3e0;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #aeb9ca;
+  background-clip: padding-box;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
