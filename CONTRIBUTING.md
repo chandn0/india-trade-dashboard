@@ -42,20 +42,42 @@ proposals. Use pull requests for focused, reviewable changes.
 
 ## Local Workflow
 
+**Prerequisites:** Node.js ≥ 20 (see `.nvmrc`), Python 3.9+ (for data scripts).
+
 Install and run locally:
 
 ```bash
 npm install
-npm run dev
+npm run dev          # starts dev server at http://localhost:3000
 ```
 
-Open `http://localhost:3000`.
-
-Run a production build before opening a pull request:
+Check style and build before opening a pull request:
 
 ```bash
-npm run build
+npm run lint          # ESLint — must pass with 0 errors
+npm run format:check  # Prettier — must pass with 0 differences
+npm run build         # production build — must succeed
 ```
+
+Auto-fix formatting in one step:
+
+```bash
+npm run format
+```
+
+**Data pipeline only** — install the Python dependency once:
+
+```bash
+pip install -r scripts/requirements.txt
+```
+
+Then run any of the fetch/build scripts from `package.json` scripts, or follow `README.md § Refresh the Data`.
+
+## Branch & Commit Convention
+
+- Branch names: `fix/<short-slug>`, `feat/<short-slug>`, `data/<short-slug>`, `docs/<short-slug>`
+- Commit messages: imperative present tense, under 72 characters — `Add mobile tooltip fix for CompositionChart` not `Added tooltip`
+- One logical change per PR; keep diffs small and reviewable
 
 ## Definition Of A Useful PR
 

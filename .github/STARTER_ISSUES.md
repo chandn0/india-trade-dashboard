@@ -42,18 +42,25 @@ reduce trust.
 Proposed next step: compare one overlapping year across FTSPCC, FTPA, and HS4
 totals, then propose wording for the method note.
 
-## 4. Product: Tighten one mobile chart layout pain point
+## 4. Product: Fix cramped axis labels on CompositionChart at ≤375 px
 
 Labels: `good first issue`, `frontend`, `needs-design`, `rank:C`
 
-Problem: the dashboard is dense, and one chart should be checked for cramped
-labels or tooltip behavior on mobile.
+Problem: `app/components/charts/CompositionChart.js` shows year-axis labels
+every `labelStep` ticks, but on a 375 px viewport the step calculation can
+still produce overlapping text when there are 5 years to show.
 
-Why it matters: mobile readers should still be able to inspect the data rather
-than only skim it.
+File to edit: `app/components/charts/CompositionChart.js` (the `labelStep`
+computation around line 182, and the `compact` padding object).
 
-Proposed next step: pick one chart, capture the mobile issue, and make a small
-layout or copy adjustment with before/after evidence.
+Acceptance criteria:
+- At 375 px width, no two axis labels overlap.
+- The latest year label is always visible.
+- `npm run build` passes.
+- PR includes a screenshot at 375 px before and after.
+
+Done when: the build passes and the before/after screenshot confirms labels
+no longer overlap.
 
 ## 5. Data: Draft a manual all-data refresh checklist
 
@@ -68,18 +75,31 @@ updates.
 Proposed next step: add a short checklist to docs or README that maps commands to
 expected output files.
 
-## 6. Data: Explore scheduled data refresh automation
+## 6. Data: Add a `refresh:all` npm script that runs every fetch in order
 
 Labels: `data-pipeline`, `help wanted`, `rank:B`
 
-Problem: data refresh is manual, and the repo does not yet define a safe GitHub
-Action or equivalent workflow.
+Problem: `package.json` only wires one of the eight fetch/build scripts, so
+contributors have to copy-paste commands from `README.md` and get the order
+wrong.
 
-Why it matters: the dashboard should eventually stay current without relying on
-manual local runs.
+Files to edit: `package.json` (`scripts` block), `README.md § Refresh the Data`.
 
-Proposed next step: propose a minimal scheduled-refresh design that runs scripts,
-shows diffs, and avoids committing broken output automatically.
+Acceptance criteria:
+- `npm run refresh:all` runs all scripts in dependency order and stops on the
+  first non-zero exit.
+- Correct order (from `README.md`):
+  1. `fetch:monthly` → `build:yearly`
+  2. `fetch:groups`
+  3. `fetch:hs4-export` + `fetch:hs4-import` (can be parallel)
+  4. `fetch:country` → `build:country-slim`
+  5. `fetch:rbi-fx`
+  6. `fetch:partner-products`
+- `README.md` documents the single command and what files it regenerates.
+- `npm run build` still passes after running `refresh:all`.
+
+Done when: `npm run refresh:all` in a clean checkout regenerates `data/` with
+no manual steps beyond `pip install -r scripts/requirements.txt`.
 
 ## 7. Report: Create a services-trade comparison note
 
@@ -120,28 +140,45 @@ correlation for simple causation.
 Proposed next step: tighten the caveat in the rupee note and consider whether the
 dashboard needs a matching caption.
 
-## 10. Docs: Make one contributor path easier to start
+## 10. Docs: Add a worked example of adding a new chart to CLAUDE.md
 
 Labels: `good first issue`, `docs`, `help wanted`, `rank:C`
 
-Problem: new contributors may still need more concrete examples for their first
-PR.
+Problem: `CLAUDE.md` explains the file layout but a first-time contributor still
+has to figure out the plumbing: where to import data, which lib helpers to reuse,
+and what the PR checklist looks like.
 
-Why it matters: clear first steps make outside contribution more likely.
+File to edit: `CLAUDE.md` (the "Adding a new chart" section).
 
-Proposed next step: improve one section of `CONTRIBUTING.md` or `ROADMAP.md` with
-a specific example and expected evidence.
+Acceptance criteria:
+- Add a step-by-step walkthrough: create the component file in
+  `app/components/charts/`, import any needed data from `app/lib/transforms.js`,
+  add the component to `app/page.js`, run `npm run build`.
+- The example is concrete — it references real file names, not placeholders.
+- The section ends with a two-item checklist: `npm run build` passes, screenshot
+  added to the PR.
 
-## 11. Report: Create a public idea leaderboard
+Done when: a contributor with no prior knowledge of this repo can follow the
+section and add a minimal static chart without asking questions.
 
-Labels: `report`, `methodology`, `help wanted`, `rank:B`
+## 11. Docs: Publish a scored idea leaderboard in a GitHub Discussion or pinned issue
 
-Problem: ideas can be submitted as issues, but there is not yet a public
-leaderboard that ranks them by impact, evidence, ease, and owner fit.
+Labels: `docs`, `methodology`, `help wanted`, `rank:B`
 
-Why it matters: contributors like knowing which ideas are most valuable, and
-maintainers need a visible way to prioritize work without relying on private
-judgment.
+Problem: ideas live in closed issues with inconsistent scoring, so new
+contributors cannot see which ideas are highest-priority without reading through
+old threads.
 
-Proposed next step: use `docs/idea-evaluation-handbook.md` to draft a lightweight
-leaderboard format that can live in an issue, project board, or report note.
+Files involved: `docs/idea-evaluation-handbook.md` (scoring rubric),
+`.github/STARTER_ISSUES.md` (existing backlog to score).
+
+Acceptance criteria:
+- Score every item in `STARTER_ISSUES.md` using the six-dimension rubric from
+  `docs/idea-evaluation-handbook.md` (trade relevance, evidence, ease, owner fit,
+  report value, uncertainty control, each 1–5).
+- Produce a sorted table: columns = Idea, Score, Rank (A/B/C/Park), Owner.
+- Publish as either a GitHub Discussion (preferred) or a pinned issue.
+- Link the leaderboard from `ROADMAP.md`.
+
+Done when: the leaderboard is public, linked from `ROADMAP.md`, and includes all
+11 seed items with scores.
