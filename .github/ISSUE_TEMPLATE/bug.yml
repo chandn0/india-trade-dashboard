@@ -1,0 +1,52 @@
+name: Bug report
+description: Report a dashboard, chart, layout, data, or link bug.
+title: "Bug: "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or bug
+      description: What is broken or confusing?
+      placeholder: "Example: Partner share labels overlap on narrow mobile screens."
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it matters
+      description: Explain the user or report impact.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Source or evidence
+      description: Add screenshots, browser/device details, data examples, or reproduction notes.
+    validations:
+      required: false
+  - type: input
+    id: affected_area
+    attributes:
+      label: Affected chart, file, or page
+      placeholder: "Example: Partner share chart, app/page.js, README.md"
+    validations:
+      required: false
+  - type: textarea
+    id: next_step
+    attributes:
+      label: Proposed next step
+      description: Suggest the smallest fix or investigation.
+    validations:
+      required: false
+  - type: dropdown
+    id: intent
+    attributes:
+      label: Contributor intent
+      options:
+        - "I'm reporting this"
+        - "I can help investigate"
+        - "I want to implement this"
+    validations:
+      required: true

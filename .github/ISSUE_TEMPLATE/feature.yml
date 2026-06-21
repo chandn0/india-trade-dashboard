@@ -1,0 +1,100 @@
+name: Feature or workflow proposal
+description: Suggest a product, contributor workflow, or implementation improvement.
+title: "Feature: "
+labels:
+  - help wanted
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or idea
+      description: What product, workflow, or implementation improvement are you proposing?
+      placeholder: "Example: Add a citation-friendly chart snapshot state."
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it matters
+      description: Explain who benefits and how it improves the dashboard, repo, or report.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Source or evidence
+      description: Add examples, screenshots, source links, or comparable patterns if useful.
+    validations:
+      required: false
+  - type: input
+    id: affected_area
+    attributes:
+      label: Affected chart, file, or page
+      placeholder: "Example: app/page.js, issue templates, data refresh workflow"
+    validations:
+      required: false
+  - type: textarea
+    id: next_step
+    attributes:
+      label: Proposed next step
+      description: Suggest the smallest useful version of this change.
+    validations:
+      required: true
+  - type: dropdown
+    id: square_frame
+    attributes:
+      label: Square-frame placement
+      description: Use docs/idea-evaluation-handbook.md for substantial ideas.
+      options:
+        - "Rank A: high impact, easy implementation"
+        - "Rank B: high impact, hard implementation"
+        - "Rank C: lower impact, easy implementation"
+        - "Park: lower impact, hard implementation or unclear case"
+        - "Not evaluated yet"
+    validations:
+      required: false
+  - type: input
+    id: score
+    attributes:
+      label: Scorecard total
+      description: Add a score out of 30 if you used the handbook.
+      placeholder: "Example: 26/30"
+    validations:
+      required: false
+  - type: dropdown
+    id: first_owner
+    attributes:
+      label: Likely first owner
+      options:
+        - Frontend
+        - Data pipeline
+        - Methodology
+        - Report
+        - Mixed
+        - Not sure
+    validations:
+      required: false
+  - type: textarea
+    id: smallest_version
+    attributes:
+      label: Smallest useful implementation
+      description: What is the smallest version that creates public value?
+    validations:
+      required: false
+  - type: textarea
+    id: uncertainty
+    attributes:
+      label: Uncertainty or caveat
+      description: What should not be over-claimed?
+    validations:
+      required: false
+  - type: dropdown
+    id: intent
+    attributes:
+      label: Contributor intent
+      options:
+        - "I'm reporting this"
+        - "I can help investigate"
+        - "I want to implement this"
+    validations:
+      required: true

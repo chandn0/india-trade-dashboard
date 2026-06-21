@@ -1,0 +1,101 @@
+name: Data or methodology concern
+description: Flag a source issue, reconciliation problem, or methodology concern.
+title: "Method: "
+labels:
+  - methodology
+  - needs-source
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or idea
+      description: What source, data, or methodology issue should be addressed?
+      placeholder: "Example: FY2025-26 totals differ between two official source paths and need an explanatory note."
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it matters
+      description: Explain how this affects reader trust, chart interpretation, or reproducibility.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Source or evidence
+      description: Include source URLs, files, rows, commands, or observed values.
+    validations:
+      required: true
+  - type: input
+    id: affected_area
+    attributes:
+      label: Affected chart, file, or page
+      placeholder: "Example: data/sources.md, scripts/build_ftspcc_yearly.js, country share chart"
+    validations:
+      required: false
+  - type: textarea
+    id: next_step
+    attributes:
+      label: Proposed next step
+      description: Suggest the smallest useful investigation or fix.
+    validations:
+      required: true
+  - type: dropdown
+    id: square_frame
+    attributes:
+      label: Square-frame placement
+      description: Use docs/idea-evaluation-handbook.md for substantial ideas.
+      options:
+        - "Rank A: high impact, easy implementation"
+        - "Rank B: high impact, hard implementation"
+        - "Rank C: lower impact, easy implementation"
+        - "Park: lower impact, hard implementation or unclear case"
+        - "Not evaluated yet"
+    validations:
+      required: false
+  - type: input
+    id: score
+    attributes:
+      label: Scorecard total
+      description: Add a score out of 30 if you used the handbook.
+      placeholder: "Example: 23/30"
+    validations:
+      required: false
+  - type: dropdown
+    id: first_owner
+    attributes:
+      label: Likely first owner
+      options:
+        - Frontend
+        - Data pipeline
+        - Methodology
+        - Report
+        - Mixed
+        - Not sure
+    validations:
+      required: false
+  - type: textarea
+    id: smallest_version
+    attributes:
+      label: Smallest useful implementation
+      description: What is the smallest version that creates public value?
+    validations:
+      required: false
+  - type: textarea
+    id: uncertainty
+    attributes:
+      label: Uncertainty or caveat
+      description: What should not be over-claimed?
+    validations:
+      required: false
+  - type: dropdown
+    id: intent
+    attributes:
+      label: Contributor intent
+      options:
+        - "I'm reporting this"
+        - "I can help investigate"
+        - "I want to implement this"
+    validations:
+      required: true
