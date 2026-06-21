@@ -8,7 +8,9 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
-const src = JSON.parse(readFileSync(join(root, 'data', 'india_trade_country_distribution.json'), 'utf8'));
+const src = JSON.parse(
+  readFileSync(join(root, 'data', 'india_trade_country_distribution.json'), 'utf8'),
+);
 
 const years = [...new Set(src.rows.map((r) => r.fiscal_year))].sort();
 const yearIndex = new Map(years.map((y, i) => [y, i]));
@@ -27,7 +29,7 @@ for (const row of src.rows) {
 
 const last = years.length - 1;
 const countries = [...byCountry.values()].sort(
-  (a, b) => (b.exp[last] + b.imp[last]) - (a.exp[last] + a.imp[last]),
+  (a, b) => b.exp[last] + b.imp[last] - (a.exp[last] + a.imp[last]),
 );
 
 const totalsByYear = new Map(src.yearly_totals.map((t) => [t.fiscal_year, t]));

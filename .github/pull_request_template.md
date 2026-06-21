@@ -1,8 +1,10 @@
+## Linked issue
+
+<!-- e.g. Closes #12 — every PR should trace back to an issue. -->
+
 ## What changed
 
-
 ## Why
-
 
 ## Source/method impact
 
@@ -16,5 +18,7 @@
 
 ## Checks run
 
+- [ ] `npm run lint`
+- [ ] `npm run format:check`
 - [ ] `npm run build`
 - [ ] Other:

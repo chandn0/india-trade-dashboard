@@ -18,7 +18,12 @@ function decodeHtml(text) {
 }
 
 function stripTags(text) {
-  return decodeHtml(text.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim());
+  return decodeHtml(
+    text
+      .replace(/<[^>]*>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim(),
+  );
 }
 
 function parseTradeNumber(text) {
@@ -52,8 +57,12 @@ function extractToken(html) {
 function extractAvailableYears(html) {
   const yearSelectMatch = html.match(/<select[^>]*name="YearCwTt"[^>]*>([\s\S]*?)<\/select>/i);
   if (!yearSelectMatch) throw new Error('Could not find year selector on FTSPCC page');
-  const years = [...yearSelectMatch[1].matchAll(/<option value="(\d{4})"/g)].map((match) => Number(match[1]));
-  return years.filter((year) => Number.isFinite(year) && year >= FIRST_FULL_FISCAL_YEAR_END).sort((a, b) => a - b);
+  const years = [...yearSelectMatch[1].matchAll(/<option value="(\d{4})"/g)].map((match) =>
+    Number(match[1]),
+  );
+  return years
+    .filter((year) => Number.isFinite(year) && year >= FIRST_FULL_FISCAL_YEAR_END)
+    .sort((a, b) => a - b);
 }
 
 function extractRows(html, selectedYear) {
@@ -63,9 +72,13 @@ function extractRows(html, selectedYear) {
   const previousFiscalYear = fiscalYearLabel(selectedYear - 1);
 
   return [...tbodyMatch[1].matchAll(/<tr>([\s\S]*?)<\/tr>/gi)].map((rowMatch) => {
-    const cells = [...rowMatch[1].matchAll(/<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/gi)].map((cell) => cell[1]);
+    const cells = [...rowMatch[1].matchAll(/<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/gi)].map(
+      (cell) => cell[1],
+    );
     if (cells.length < 12) {
-      throw new Error(`Unexpected country row cell count (${cells.length}) for ${currentFiscalYear}`);
+      throw new Error(
+        `Unexpected country row cell count (${cells.length}) for ${currentFiscalYear}`,
+      );
     }
 
     return {
@@ -103,8 +116,12 @@ function sumTotalsFromRows(rows, selectedYear) {
     import_usd_mn: round2(currentImport),
     total_trade_usd_mn: round2(currentExport + currentImport),
     trade_balance_usd_mn: round2(currentExport - currentImport),
-    export_yoy_pct: previousExport ? round2(((currentExport - previousExport) / previousExport) * 100) : null,
-    import_yoy_pct: previousImport ? round2(((currentImport - previousImport) / previousImport) * 100) : null,
+    export_yoy_pct: previousExport
+      ? round2(((currentExport - previousExport) / previousExport) * 100)
+      : null,
+    import_yoy_pct: previousImport
+      ? round2(((currentImport - previousImport) / previousImport) * 100)
+      : null,
   };
 }
 
@@ -170,7 +187,9 @@ function addSharesAndRanks(rowsByYear, totalsByYear, latestFiscalYear) {
     const totals = totalsByYear.get(fiscalYear);
     const exportRanking = [...yearRows].sort((a, b) => b.export_usd_mn - a.export_usd_mn);
     const importRanking = [...yearRows].sort((a, b) => b.import_usd_mn - a.import_usd_mn);
-    const totalTradeRanking = [...yearRows].sort((a, b) => b.total_trade_usd_mn - a.total_trade_usd_mn);
+    const totalTradeRanking = [...yearRows].sort(
+      (a, b) => b.total_trade_usd_mn - a.total_trade_usd_mn,
+    );
 
     const exportRanks = new Map(exportRanking.map((row, idx) => [row.country, idx + 1]));
     const importRanks = new Map(importRanking.map((row, idx) => [row.country, idx + 1]));
@@ -179,9 +198,15 @@ function addSharesAndRanks(rowsByYear, totalsByYear, latestFiscalYear) {
     for (const row of yearRows) {
       enriched.push({
         ...row,
-        export_share_pct: totals.export_usd_mn ? round2((row.export_usd_mn / totals.export_usd_mn) * 100) : 0,
-        import_share_pct: totals.import_usd_mn ? round2((row.import_usd_mn / totals.import_usd_mn) * 100) : 0,
-        total_trade_share_pct: totals.total_trade_usd_mn ? round2((row.total_trade_usd_mn / totals.total_trade_usd_mn) * 100) : 0,
+        export_share_pct: totals.export_usd_mn
+          ? round2((row.export_usd_mn / totals.export_usd_mn) * 100)
+          : 0,
+        import_share_pct: totals.import_usd_mn
+          ? round2((row.import_usd_mn / totals.import_usd_mn) * 100)
+          : 0,
+        total_trade_share_pct: totals.total_trade_usd_mn
+          ? round2((row.total_trade_usd_mn / totals.total_trade_usd_mn) * 100)
+          : 0,
         export_rank: exportRanks.get(row.country),
         import_rank: importRanks.get(row.country),
         total_trade_rank: totalTradeRanks.get(row.country),
@@ -216,7 +241,11 @@ async function main() {
 
   for (const year of yearsToFetch) {
     process.stdout.write(`Fetching country distribution for FY ${fiscalYearLabel(year)}...\r`);
-    const { rows, totals, nextToken } = fetchCountryTable({ token: currentToken, cookieFile, year });
+    const { rows, totals, nextToken } = fetchCountryTable({
+      token: currentToken,
+      cookieFile,
+      year,
+    });
     rowsByYear.set(fiscalYearLabel(year), rows);
     totalsByYear.set(fiscalYearLabel(year), totals);
     currentToken = nextToken;
@@ -225,7 +254,9 @@ async function main() {
 
   const rows = addSharesAndRanks(rowsByYear, totalsByYear, latestFiscalYear);
   const latestRows = rows.filter((row) => row.fiscal_year === latestFiscalYear);
-  const totals = [...totalsByYear.values()].sort((a, b) => a.fiscal_year.localeCompare(b.fiscal_year));
+  const totals = [...totalsByYear.values()].sort((a, b) =>
+    a.fiscal_year.localeCompare(b.fiscal_year),
+  );
 
   const payload = {
     source_update_note: `FTSPCC country-wise total trade page fetched on ${fetchedAt}. Each fiscal year uses the March cumulative table for that year-end; FY ${latestFiscalYear} is marked provisional because it is the latest reported year on the source page.`,
@@ -291,10 +322,22 @@ async function main() {
     ...totals.map((row) => totalsHeaders.map((header) => csvEscape(row[header])).join(',')),
   ];
 
-  await fs.writeFile(path.join(OUT_DIR, 'india_trade_country_distribution.json'), `${JSON.stringify(payload, null, 2)}\n`);
-  await fs.writeFile(path.join(OUT_DIR, 'india_trade_country_distribution.csv'), `${csvRows.join('\n')}\n`);
-  await fs.writeFile(path.join(OUT_DIR, 'india_trade_country_distribution_latest.csv'), `${latestCsvRows.join('\n')}\n`);
-  await fs.writeFile(path.join(OUT_DIR, 'india_trade_country_totals.csv'), `${totalsCsvRows.join('\n')}\n`);
+  await fs.writeFile(
+    path.join(OUT_DIR, 'india_trade_country_distribution.json'),
+    `${JSON.stringify(payload, null, 2)}\n`,
+  );
+  await fs.writeFile(
+    path.join(OUT_DIR, 'india_trade_country_distribution.csv'),
+    `${csvRows.join('\n')}\n`,
+  );
+  await fs.writeFile(
+    path.join(OUT_DIR, 'india_trade_country_distribution_latest.csv'),
+    `${latestCsvRows.join('\n')}\n`,
+  );
+  await fs.writeFile(
+    path.join(OUT_DIR, 'india_trade_country_totals.csv'),
+    `${totalsCsvRows.join('\n')}\n`,
+  );
 
   console.log(`Wrote ${rows.length} country-year rows across ${totals.length} fiscal years.`);
 }

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import * as React from 'react';
 import {
@@ -47,7 +47,11 @@ import partnerProductsData from '../data/india_trade_partner_top_products.json';
 /* Formatters                                                         */
 /* ------------------------------------------------------------------ */
 const nf2 = new Intl.NumberFormat('en-US', { maximumFractionDigits: 2, minimumFractionDigits: 2 });
-const pct = new Intl.NumberFormat('en-US', { maximumFractionDigits: 2, minimumFractionDigits: 2, signDisplay: 'always' });
+const pct = new Intl.NumberFormat('en-US', {
+  maximumFractionDigits: 2,
+  minimumFractionDigits: 2,
+  signDisplay: 'always',
+});
 const moneyB = (n) => `$${nf2.format(n / 1000)}B`;
 // Short form for cramped axes (phones): whole billions, or one-decimal trillions.
 const moneyShortB = (n) => {
@@ -65,7 +69,8 @@ const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 // with a fixed-width viewBox. Below COMPACT_BELOW the geometry switches to a phone layout:
 // taller aspect, tighter padding, fewer axis labels, shorter tick formats.
 const COMPACT_BELOW = 560;
-const useIsomorphicLayoutEffect = typeof window === 'undefined' ? React.useEffect : React.useLayoutEffect;
+const useIsomorphicLayoutEffect =
+  typeof window === 'undefined' ? React.useEffect : React.useLayoutEffect;
 function useMeasuredWidth(ref, fallback) {
   const [width, setWidth] = React.useState(fallback);
   useIsomorphicLayoutEffect(() => {
@@ -99,8 +104,12 @@ const rows = yearlySummaryData.summary;
 // trim the commodity-group rows that drive the composition charts to that same fiscal-year
 // window. Every chart on the dashboard then shares one x-axis.
 const summaryYears = new Set(rows.map((row) => row.financial_year));
-const commodityExportRows = commodityShareData.export_rows.filter((row) => summaryYears.has(row.financial_year));
-const commodityImportRows = commodityShareData.import_rows.filter((row) => summaryYears.has(row.financial_year));
+const commodityExportRows = commodityShareData.export_rows.filter((row) =>
+  summaryYears.has(row.financial_year),
+);
+const commodityImportRows = commodityShareData.import_rows.filter((row) =>
+  summaryYears.has(row.financial_year),
+);
 const mixYears = commodityExportRows.map((row) => row.financial_year);
 
 const rupeeDeficitRows = (() => {
@@ -165,7 +174,8 @@ const GROUP_LABEL = {
   'LEATHER & LEATHER MANUFACTURES': 'Leather',
   'PAPER & RELATED PRODUCTS': 'Paper',
   'OPTICAL, MEDICAL & SURGICAL INSTRUMENTS': 'Instruments',
-  'ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE': 'Stone, ceramics & glass',
+  'ARTICLES OF STONE, PLASTER, CEMENT, ASBESTOS, MICA OR SIMILAR MATERIALS; CERAMIC PRODUCTS; GLASS AND GLASSWARE':
+    'Stone, ceramics & glass',
   PLANTATION: 'Plantation',
   'SPORTS GOODS': 'Sports goods',
   'OFFICE EQUIPMENTS': 'Office equipment',
@@ -217,20 +227,19 @@ function BasketMark({ name, color, rest = false, size = 14 }) {
 
 function buildCommodityComposition(rowsInput, topN) {
   const byGroup = {};
-  rowsInput
-    .forEach((row) => {
-      const year = row.financial_year;
-      row.groups.forEach((group) => {
-        if (!byGroup[group.name]) {
-          byGroup[group.name] = {
-            values: Object.fromEntries(mixYears.map((y) => [y, 0])),
-            shares: Object.fromEntries(mixYears.map((y) => [y, 0])),
-          };
-        }
-        byGroup[group.name].values[year] = Number(group.current_usd_mn ?? 0);
-        byGroup[group.name].shares[year] = Number(group.share_pct ?? 0);
-      });
+  rowsInput.forEach((row) => {
+    const year = row.financial_year;
+    row.groups.forEach((group) => {
+      if (!byGroup[group.name]) {
+        byGroup[group.name] = {
+          values: Object.fromEntries(mixYears.map((y) => [y, 0])),
+          shares: Object.fromEntries(mixYears.map((y) => [y, 0])),
+        };
+      }
+      byGroup[group.name].values[year] = Number(group.current_usd_mn ?? 0);
+      byGroup[group.name].shares[year] = Number(group.share_pct ?? 0);
     });
+  });
 
   const groups = Object.entries(byGroup)
     .map(([name, g]) => ({
@@ -250,10 +259,22 @@ function buildCommodityComposition(rowsInput, topN) {
       const value = it.values[year] || 0;
       const share = it.shares[year] || 0;
       used += share;
-      return { key: it.key, name: it.name, label: `${share.toFixed(1)}% of total`, value, share, color: REST_COLOR };
+      return {
+        key: it.key,
+        name: it.name,
+        label: `${share.toFixed(1)}% of total`,
+        value,
+        share,
+        color: REST_COLOR,
+      };
     });
     const restShare = Math.max(0, 100 - used);
-    return { year, total, segs, rest: { name: 'Other commodity groups', share: restShare, value: (total * restShare) / 100 } };
+    return {
+      year,
+      total,
+      segs,
+      rest: { name: 'Other commodity groups', share: restShare, value: (total * restShare) / 100 },
+    };
   });
   const latestYear = years[years.length - 1];
   const topShare = latestYear.segs.reduce((s, x) => s + x.share, 0);
@@ -279,10 +300,25 @@ let nextBasketColor = 0;
 });
 [exportComp, importComp].forEach((comp) => {
   comp.colorMap = basketColorMap;
-  comp.items.forEach((it) => { it.color = basketColorMap[it.key] || REST_COLOR; });
-  comp.years.forEach((yr) => { yr.segs.forEach((seg) => { seg.color = basketColorMap[seg.key] || REST_COLOR; }); });
+  comp.items.forEach((it) => {
+    it.color = basketColorMap[it.key] || REST_COLOR;
+  });
+  comp.years.forEach((yr) => {
+    yr.segs.forEach((seg) => {
+      seg.color = basketColorMap[seg.key] || REST_COLOR;
+    });
+  });
 });
-const CAT = ['#2563eb', '#0ea5e9', '#14b8a6', '#22c55e', '#84cc16', '#eab308', '#f97316', '#ef4444'];
+const CAT = [
+  '#2563eb',
+  '#0ea5e9',
+  '#14b8a6',
+  '#22c55e',
+  '#84cc16',
+  '#eab308',
+  '#f97316',
+  '#ef4444',
+];
 
 /* ------------------------------------------------------------------ */
 /* Item-level (HS-4) five-year movers                                 */
@@ -297,41 +333,41 @@ const HS4_YEARS = ['2021-22', '2022-23', '2023-24', '2024-25', '2025-26'];
 // Clean, recognizable names for the (abbreviated, ALL-CAPS) official HS-4 descriptions, for the
 // product lines that surface as movers. Anything unmapped falls back to a title-cased description.
 const HS4_LABEL = {
-  '8517': 'Phones & telecom gear',
-  '3004': 'Medicaments (pharma)',
-  '8703': 'Cars & passenger vehicles',
-  '8411': 'Jet engines & turbines',
-  '7113': 'Jewellery',
-  '1006': 'Rice',
-  '2710': 'Refined petroleum',
-  '7102': 'Diamonds',
-  '7208': 'Flat-rolled steel',
-  '7601': 'Unwrought aluminium',
-  '2902': 'Cyclic hydrocarbons',
-  '1701': 'Sugar',
-  '7108': 'Gold',
-  '8542': 'Integrated circuits (chips)',
-  '2709': 'Crude petroleum',
-  '7106': 'Silver',
-  '8802': 'Aircraft',
-  '8541': 'Semiconductor devices',
-  '8529': 'TV & radio parts',
-  '3102': 'Nitrogen fertilisers',
-  '7103': 'Precious stones',
-  '2701': 'Coal',
-  '8524': 'Display modules',
-  '8507': 'Batteries (accumulators)',
-  '8534': 'Printed circuit boards',
-  '8525': 'Cameras & transmission gear',
-  '8504': 'Transformers & power converters',
-  '2933': 'Heterocyclic compounds (APIs)',
-  '2934': 'Nucleic acids & compounds',
-  '2941': 'Antibiotics',
-  '5201': 'Raw cotton',
-  '5205': 'Cotton yarn',
-  '6109': 'T-shirts & knitwear',
-  '7204': 'Steel scrap',
-  '7210': 'Coated flat-rolled steel',
+  8517: 'Phones & telecom gear',
+  3004: 'Medicaments (pharma)',
+  8703: 'Cars & passenger vehicles',
+  8411: 'Jet engines & turbines',
+  7113: 'Jewellery',
+  1006: 'Rice',
+  2710: 'Refined petroleum',
+  7102: 'Diamonds',
+  7208: 'Flat-rolled steel',
+  7601: 'Unwrought aluminium',
+  2902: 'Cyclic hydrocarbons',
+  1701: 'Sugar',
+  7108: 'Gold',
+  8542: 'Integrated circuits (chips)',
+  2709: 'Crude petroleum',
+  7106: 'Silver',
+  8802: 'Aircraft',
+  8541: 'Semiconductor devices',
+  8529: 'TV & radio parts',
+  3102: 'Nitrogen fertilisers',
+  7103: 'Precious stones',
+  2701: 'Coal',
+  8524: 'Display modules',
+  8507: 'Batteries (accumulators)',
+  8534: 'Printed circuit boards',
+  8525: 'Cameras & transmission gear',
+  8504: 'Transformers & power converters',
+  2933: 'Heterocyclic compounds (APIs)',
+  2934: 'Nucleic acids & compounds',
+  2941: 'Antibiotics',
+  5201: 'Raw cotton',
+  5205: 'Cotton yarn',
+  6109: 'T-shirts & knitwear',
+  7204: 'Steel scrap',
+  7210: 'Coated flat-rolled steel',
 };
 function cleanHsDesc(code, raw) {
   if (HS4_LABEL[code]) return HS4_LABEL[code];
@@ -371,8 +407,12 @@ function windowHs4(items, i0, i1) {
       pct: base > 0 ? ((last - base) / base) * 100 : null,
     };
   });
-  const rank = new Map([...list].sort((a, b) => b.last - a.last).map((item, index) => [item.code, index + 1]));
-  list.forEach((item) => { item.latestRank = rank.get(item.code) ?? null; });
+  const rank = new Map(
+    [...list].sort((a, b) => b.last - a.last).map((item, index) => [item.code, index + 1]),
+  );
+  list.forEach((item) => {
+    item.latestRank = rank.get(item.code) ?? null;
+  });
   return list;
 }
 
@@ -409,11 +449,24 @@ function buildTradeGeo(data, width) {
   const maxVal = Math.max(...data.map((d) => Math.max(d.export_usd_mn, d.import_usd_mn))) * 1.08;
   const x = (i) => pad.left + i * xStep;
   const y = (v) => pad.top + ch - (v / maxVal) * ch;
-  const points = data.map((d, i) => ({ i, d, x: x(i), ye: y(d.export_usd_mn), yi: y(d.import_usd_mn) }));
-  const exportPath = points.map((p, i) => `${i ? 'L' : 'M'} ${p.x.toFixed(1)} ${p.ye.toFixed(1)}`).join(' ');
-  const importPath = points.map((p, i) => `${i ? 'L' : 'M'} ${p.x.toFixed(1)} ${p.yi.toFixed(1)}`).join(' ');
+  const points = data.map((d, i) => ({
+    i,
+    d,
+    x: x(i),
+    ye: y(d.export_usd_mn),
+    yi: y(d.import_usd_mn),
+  }));
+  const exportPath = points
+    .map((p, i) => `${i ? 'L' : 'M'} ${p.x.toFixed(1)} ${p.ye.toFixed(1)}`)
+    .join(' ');
+  const importPath = points
+    .map((p, i) => `${i ? 'L' : 'M'} ${p.x.toFixed(1)} ${p.yi.toFixed(1)}`)
+    .join(' ');
   const upper = points.map((p) => `${p.x.toFixed(1)} ${p.yi.toFixed(1)}`);
-  const lower = points.slice().reverse().map((p) => `${p.x.toFixed(1)} ${p.ye.toFixed(1)}`);
+  const lower = points
+    .slice()
+    .reverse()
+    .map((p) => `${p.x.toFixed(1)} ${p.ye.toFixed(1)}`);
   const gapPath = `M ${upper.join(' L ')} L ${lower.join(' L ')} Z`;
   const yTicks = [];
   for (let i = 0; i <= 5; i += 1) {
@@ -421,7 +474,22 @@ function buildTradeGeo(data, width) {
     yTicks.push({ v, y: y(v) });
   }
   const xLabelStep = Math.max(1, Math.ceil((n - 1) / (compact ? 4 : 8)));
-  return { width, height, pad, xStep, maxVal, x, y, points, exportPath, importPath, gapPath, yTicks, compact, xLabelStep };
+  return {
+    width,
+    height,
+    pad,
+    xStep,
+    maxVal,
+    x,
+    y,
+    points,
+    exportPath,
+    importPath,
+    gapPath,
+    yTicks,
+    compact,
+    xLabelStep,
+  };
 }
 
 function buildRupeeDeficitGeo(data, width) {
@@ -464,8 +532,12 @@ function buildRupeeDeficitGeo(data, width) {
     yf: yFx(d.exchange_rate_inr_per_usd),
     yd: yDef(d.cumulative_deficit_usd_mn),
   }));
-  const fxPath = points.map((p, i) => `${i ? 'L' : 'M'} ${p.x.toFixed(1)} ${p.yf.toFixed(1)}`).join(' ');
-  const deficitPath = points.map((p, i) => `${i ? 'L' : 'M'} ${p.x.toFixed(1)} ${p.yd.toFixed(1)}`).join(' ');
+  const fxPath = points
+    .map((p, i) => `${i ? 'L' : 'M'} ${p.x.toFixed(1)} ${p.yf.toFixed(1)}`)
+    .join(' ');
+  const deficitPath = points
+    .map((p, i) => `${i ? 'L' : 'M'} ${p.x.toFixed(1)} ${p.yd.toFixed(1)}`)
+    .join(' ');
   const leftTicks = [];
   const rightTicks = [];
   for (let i = 0; i <= 5; i += 1) {
@@ -475,7 +547,26 @@ function buildRupeeDeficitGeo(data, width) {
     rightTicks.push({ v: def, y: yDef(def) });
   }
   const xLabelStep = Math.max(1, Math.ceil((n - 1) / (compact ? 4 : 8)));
-  return { width, height, pad, xStep, fxMin, fxMax, defMin, defMax, x, yFx, yDef, points, fxPath, deficitPath, leftTicks, rightTicks, compact, xLabelStep };
+  return {
+    width,
+    height,
+    pad,
+    xStep,
+    fxMin,
+    fxMax,
+    defMin,
+    defMax,
+    x,
+    yFx,
+    yDef,
+    points,
+    fxPath,
+    deficitPath,
+    leftTicks,
+    rightTicks,
+    compact,
+    xLabelStep,
+  };
 }
 
 /* ------------------------------------------------------------------ */
@@ -521,7 +612,15 @@ function TradeTrendChart() {
   return (
     <Paper sx={{ ...cardSx }}>
       <Stack spacing={1.5}>
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, alignItems: 'center', justifyContent: 'space-between' }}>
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: 1,
+            alignItems: 'center',
+            justifyContent: 'space-between',
+          }}
+        >
           <Typography variant="subtitle1" sx={{ fontWeight: 800 }}>
             Exports vs imports · US$ billion
           </Typography>
@@ -533,7 +632,17 @@ function TradeTrendChart() {
                   key={l.k}
                   size="small"
                   onClick={() => toggle(l.k)}
-                  icon={<Box sx={{ width: 9, height: 9, borderRadius: l.k === 'gap' ? 0.5 : 999, bgcolor: l.color, ml: '6px !important' }} />}
+                  icon={
+                    <Box
+                      sx={{
+                        width: 9,
+                        height: 9,
+                        borderRadius: l.k === 'gap' ? 0.5 : 999,
+                        bgcolor: l.color,
+                        ml: '6px !important',
+                      }}
+                    />
+                  }
                   label={l.label}
                   sx={{
                     cursor: 'pointer',
@@ -558,44 +667,125 @@ function TradeTrendChart() {
           onTouchMove={(e) => onMove(e.touches[0])}
           sx={{ position: 'relative', width: '100%', cursor: 'crosshair', touchAction: 'pan-y' }}
         >
-          <Box component="svg" viewBox={`0 0 ${geo.width} ${geo.height}`} role="img" aria-label="Exports and imports trend" sx={{ width: '100%', height: 'auto', display: 'block' }}>
+          <Box
+            component="svg"
+            viewBox={`0 0 ${geo.width} ${geo.height}`}
+            role="img"
+            aria-label="Exports and imports trend"
+            sx={{ width: '100%', height: 'auto', display: 'block' }}
+          >
             <defs>
               <linearGradient id="deficitGap" x1="0" x2="0" y1="0" y2="1">
                 <stop offset="0%" stopColor={C.red} stopOpacity="0.18" />
                 <stop offset="100%" stopColor={C.orange} stopOpacity="0.06" />
               </linearGradient>
             </defs>
-            <text x={4} y={20} textAnchor="start" fill="#64748b" fontSize="11" fontWeight="700" fontFamily="IBM Plex Mono, monospace">
+            <text
+              x={4}
+              y={20}
+              textAnchor="start"
+              fill="#64748b"
+              fontSize="11"
+              fontWeight="700"
+              fontFamily="IBM Plex Mono, monospace"
+            >
               US$ bn
             </text>
             {geo.yTicks.map((t, i) => (
               <g key={i}>
-                <line x1={geo.pad.left} x2={geo.width - geo.pad.right} y1={t.y} y2={t.y} stroke={C.grid} strokeWidth="1" />
-                <text x={geo.pad.left - 10} y={t.y + 4} textAnchor="end" fill="#94a3b8" fontSize="11" fontFamily="IBM Plex Mono, monospace">
+                <line
+                  x1={geo.pad.left}
+                  x2={geo.width - geo.pad.right}
+                  y1={t.y}
+                  y2={t.y}
+                  stroke={C.grid}
+                  strokeWidth="1"
+                />
+                <text
+                  x={geo.pad.left - 10}
+                  y={t.y + 4}
+                  textAnchor="end"
+                  fill="#94a3b8"
+                  fontSize="11"
+                  fontFamily="IBM Plex Mono, monospace"
+                >
                   {Math.round(t.v / 1000)}
                 </text>
               </g>
             ))}
             {gapOn ? <path d={geo.gapPath} fill="url(#deficitGap)" /> : null}
-            {show.exports ? <path d={geo.exportPath} fill="none" stroke={C.blue} strokeWidth="3.25" strokeLinecap="round" strokeLinejoin="round" /> : null}
-            {show.imports ? <path d={geo.importPath} fill="none" stroke={C.orange} strokeWidth="3.25" strokeLinecap="round" strokeLinejoin="round" /> : null}
+            {show.exports ? (
+              <path
+                d={geo.exportPath}
+                fill="none"
+                stroke={C.blue}
+                strokeWidth="3.25"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            ) : null}
+            {show.imports ? (
+              <path
+                d={geo.importPath}
+                fill="none"
+                stroke={C.orange}
+                strokeWidth="3.25"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            ) : null}
 
             {hover != null ? (
-              <line x1={p.x} x2={p.x} y1={geo.pad.top} y2={geo.height - geo.pad.bottom} stroke="#0c1730" strokeOpacity="0.18" strokeWidth="1.5" strokeDasharray="4 4" />
+              <line
+                x1={p.x}
+                x2={p.x}
+                y1={geo.pad.top}
+                y2={geo.height - geo.pad.bottom}
+                stroke="#0c1730"
+                strokeOpacity="0.18"
+                strokeWidth="1.5"
+                strokeDasharray="4 4"
+              />
             ) : null}
 
             {geo.points.map((pt) => (
               <React.Fragment key={pt.d.financial_year}>
                 {/* Resting dots are hidden on compact — 16 white-ringed dots on a ~300px line read
                     as a dotted stroke. The hovered year still gets its marker. */}
-                {show.exports && (!geo.compact || hover === pt.i) ? <circle cx={pt.x} cy={pt.ye} r={hover === pt.i ? 5.5 : 3.5} fill={C.blue} stroke="#fff" strokeWidth="2" /> : null}
-                {show.imports && (!geo.compact || hover === pt.i) ? <circle cx={pt.x} cy={pt.yi} r={hover === pt.i ? 5.5 : 3.5} fill={C.orange} stroke="#fff" strokeWidth="2" /> : null}
+                {show.exports && (!geo.compact || hover === pt.i) ? (
+                  <circle
+                    cx={pt.x}
+                    cy={pt.ye}
+                    r={hover === pt.i ? 5.5 : 3.5}
+                    fill={C.blue}
+                    stroke="#fff"
+                    strokeWidth="2"
+                  />
+                ) : null}
+                {show.imports && (!geo.compact || hover === pt.i) ? (
+                  <circle
+                    cx={pt.x}
+                    cy={pt.yi}
+                    r={hover === pt.i ? 5.5 : 3.5}
+                    fill={C.orange}
+                    stroke="#fff"
+                    strokeWidth="2"
+                  />
+                ) : null}
                 {(() => {
                   const n = geo.points.length;
                   if (pt.i !== n - 1 && (n - 1 - pt.i) % geo.xLabelStep !== 0) return null;
                   const last = pt.i === n - 1;
                   return (
-                    <text x={pt.x} y={geo.height - 18} textAnchor={pt.i === 0 ? 'start' : last ? 'end' : 'middle'} fill={last ? C.purple : '#64748b'} fontSize="11" fontWeight={last ? 800 : 500} fontFamily="IBM Plex Mono, monospace">
+                    <text
+                      x={pt.x}
+                      y={geo.height - 18}
+                      textAnchor={pt.i === 0 ? 'start' : last ? 'end' : 'middle'}
+                      fill={last ? C.purple : '#64748b'}
+                      fontSize="11"
+                      fontWeight={last ? 800 : 500}
+                      fontFamily="IBM Plex Mono, monospace"
+                    >
                       {`${pt.d.financial_year.slice(2, 4)}–${pt.d.financial_year.slice(-2)}`}
                     </text>
                   );
@@ -611,7 +801,11 @@ function TradeTrendChart() {
                 left: geo.compact ? 'auto' : `${tipLeft}%`,
                 right: geo.compact ? 4 : 'auto',
                 top: 8,
-                transform: geo.compact ? 'none' : flip ? 'translateX(calc(-100% - 14px))' : 'translateX(14px)',
+                transform: geo.compact
+                  ? 'none'
+                  : flip
+                    ? 'translateX(calc(-100% - 14px))'
+                    : 'translateX(14px)',
                 pointerEvents: 'none',
                 bgcolor: C.ink,
                 color: '#e7ecf5',
@@ -626,15 +820,31 @@ function TradeTrendChart() {
                 {p.d.financial_year}
                 {p.d.data_status === 'year_to_date' ? '  · YTD' : ''}
               </Typography>
-              <TipRow color={C.blue} label="Exports" value={moneyB(p.d.export_usd_mn)} sub={p.d.export_yoy_pct == null ? '' : `${pct.format(p.d.export_yoy_pct)}%`} />
-              <TipRow color={C.orange} label="Imports" value={moneyB(p.d.import_usd_mn)} sub={p.d.import_yoy_pct == null ? '' : `${pct.format(p.d.import_yoy_pct)}%`} />
+              <TipRow
+                color={C.blue}
+                label="Exports"
+                value={moneyB(p.d.export_usd_mn)}
+                sub={p.d.export_yoy_pct == null ? '' : `${pct.format(p.d.export_yoy_pct)}%`}
+              />
+              <TipRow
+                color={C.orange}
+                label="Imports"
+                value={moneyB(p.d.import_usd_mn)}
+                sub={p.d.import_yoy_pct == null ? '' : `${pct.format(p.d.import_yoy_pct)}%`}
+              />
               <Box sx={{ height: '1px', bgcolor: 'rgba(255,255,255,0.12)', my: 0.75 }} />
-              <TipRow color={C.red} label="Deficit" value={moneySignB(p.d.trade_balance_usd_mn)} sub="" />
+              <TipRow
+                color={C.red}
+                label="Deficit"
+                value={moneySignB(p.d.trade_balance_usd_mn)}
+                sub=""
+              />
             </Box>
           ) : null}
         </Box>
         <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-          The shaded band is the trade deficit — the gap between imports and exports. Hover or tap any year for figures; click a legend chip to toggle a series.
+          The shaded band is the trade deficit — the gap between imports and exports. Hover or tap
+          any year for figures; click a legend chip to toggle a series.
         </Typography>
       </Stack>
     </Paper>
@@ -646,7 +856,10 @@ function RupeeDeficitChart() {
   const [show, setShow] = React.useState({ rupee: true, deficit: true });
   const wrapRef = React.useRef(null);
   const measuredWidth = useMeasuredWidth(wrapRef, 1080);
-  const geo = React.useMemo(() => buildRupeeDeficitGeo(rupeeDeficitRows, measuredWidth), [measuredWidth]);
+  const geo = React.useMemo(
+    () => buildRupeeDeficitGeo(rupeeDeficitRows, measuredWidth),
+    [measuredWidth],
+  );
 
   const onMove = (e) => {
     const rect = wrapRef.current?.getBoundingClientRect();
@@ -669,7 +882,15 @@ function RupeeDeficitChart() {
   return (
     <Paper sx={{ ...cardSx }}>
       <Stack spacing={1.5}>
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, alignItems: 'center', justifyContent: 'space-between' }}>
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: 1,
+            alignItems: 'center',
+            justifyContent: 'space-between',
+          }}
+        >
           <Typography variant="subtitle1" sx={{ fontWeight: 800 }}>
             Rupee value vs cumulative export deficit
           </Typography>
@@ -681,7 +902,17 @@ function RupeeDeficitChart() {
                   key={l.k}
                   size="small"
                   onClick={() => toggle(l.k)}
-                  icon={<Box sx={{ width: 9, height: 9, borderRadius: 999, bgcolor: l.color, ml: '6px !important' }} />}
+                  icon={
+                    <Box
+                      sx={{
+                        width: 9,
+                        height: 9,
+                        borderRadius: 999,
+                        bgcolor: l.color,
+                        ml: '6px !important',
+                      }}
+                    />
+                  }
                   label={l.label}
                   sx={{
                     cursor: 'pointer',
@@ -706,31 +937,102 @@ function RupeeDeficitChart() {
           onTouchMove={(e) => onMove(e.touches[0])}
           sx={{ position: 'relative', width: '100%', cursor: 'crosshair', touchAction: 'pan-y' }}
         >
-          <Box component="svg" viewBox={`0 0 ${geo.width} ${geo.height}`} role="img" aria-label="Rupee value and cumulative export deficit" sx={{ width: '100%', height: 'auto', display: 'block' }}>
+          <Box
+            component="svg"
+            viewBox={`0 0 ${geo.width} ${geo.height}`}
+            role="img"
+            aria-label="Rupee value and cumulative export deficit"
+            sx={{ width: '100%', height: 'auto', display: 'block' }}
+          >
             {geo.leftTicks.map((t, i) => (
               <g key={`l-${i}`}>
-                <line x1={geo.pad.left} x2={geo.width - geo.pad.right} y1={t.y} y2={t.y} stroke={C.grid} strokeWidth="1" />
-                <text x={geo.pad.left - 10} y={t.y + 4} textAnchor="end" fill="#94a3b8" fontSize="11" fontFamily="IBM Plex Mono, monospace">
+                <line
+                  x1={geo.pad.left}
+                  x2={geo.width - geo.pad.right}
+                  y1={t.y}
+                  y2={t.y}
+                  stroke={C.grid}
+                  strokeWidth="1"
+                />
+                <text
+                  x={geo.pad.left - 10}
+                  y={t.y + 4}
+                  textAnchor="end"
+                  fill="#94a3b8"
+                  fontSize="11"
+                  fontFamily="IBM Plex Mono, monospace"
+                >
                   {geo.compact ? Math.round(t.v) : nf2.format(t.v)}
                 </text>
               </g>
             ))}
             {geo.rightTicks.map((t, i) => (
-              <text key={`r-${i}`} x={geo.width - geo.pad.right + 10} y={t.y + 4} textAnchor="start" fill="#94a3b8" fontSize="11" fontFamily="IBM Plex Mono, monospace">
+              <text
+                key={`r-${i}`}
+                x={geo.width - geo.pad.right + 10}
+                y={t.y + 4}
+                textAnchor="start"
+                fill="#94a3b8"
+                fontSize="11"
+                fontFamily="IBM Plex Mono, monospace"
+              >
                 {geo.compact ? moneyShortB(t.v) : moneyB(t.v)}
               </text>
             ))}
-            <text x={4} y={20} textAnchor="start" fill="#64748b" fontSize="11" fontWeight="700" fontFamily="IBM Plex Mono, monospace">
+            <text
+              x={4}
+              y={20}
+              textAnchor="start"
+              fill="#64748b"
+              fontSize="11"
+              fontWeight="700"
+              fontFamily="IBM Plex Mono, monospace"
+            >
               INR/USD
             </text>
-            <text x={geo.width - 4} y={20} textAnchor="end" fill="#64748b" fontSize="11" fontWeight="700" fontFamily="IBM Plex Mono, monospace">
+            <text
+              x={geo.width - 4}
+              y={20}
+              textAnchor="end"
+              fill="#64748b"
+              fontSize="11"
+              fontWeight="700"
+              fontFamily="IBM Plex Mono, monospace"
+            >
               Cumulative deficit
             </text>
-            {show.deficit ? <path d={geo.deficitPath} fill="none" stroke={C.red} strokeWidth="3.25" strokeLinecap="round" strokeLinejoin="round" /> : null}
-            {show.rupee ? <path d={geo.fxPath} fill="none" stroke={C.purple} strokeWidth="3.25" strokeLinecap="round" strokeLinejoin="round" /> : null}
+            {show.deficit ? (
+              <path
+                d={geo.deficitPath}
+                fill="none"
+                stroke={C.red}
+                strokeWidth="3.25"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            ) : null}
+            {show.rupee ? (
+              <path
+                d={geo.fxPath}
+                fill="none"
+                stroke={C.purple}
+                strokeWidth="3.25"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            ) : null}
 
             {hover != null ? (
-              <line x1={p.x} x2={p.x} y1={geo.pad.top} y2={geo.height - geo.pad.bottom} stroke="#0c1730" strokeOpacity="0.18" strokeWidth="1.5" strokeDasharray="4 4" />
+              <line
+                x1={p.x}
+                x2={p.x}
+                y1={geo.pad.top}
+                y2={geo.height - geo.pad.bottom}
+                stroke="#0c1730"
+                strokeOpacity="0.18"
+                strokeWidth="1.5"
+                strokeDasharray="4 4"
+              />
             ) : null}
 
             {geo.points.map((pt) => {
@@ -738,10 +1040,36 @@ function RupeeDeficitChart() {
               const showLabel = pt.i === n - 1 || (n - 1 - pt.i) % geo.xLabelStep === 0;
               return (
                 <React.Fragment key={pt.d.financial_year}>
-                  {show.rupee && (!geo.compact || hover === pt.i) ? <circle cx={pt.x} cy={pt.yf} r={hover === pt.i ? 5.5 : 3.5} fill={C.purple} stroke="#fff" strokeWidth="2" /> : null}
-                  {show.deficit && (!geo.compact || hover === pt.i) ? <circle cx={pt.x} cy={pt.yd} r={hover === pt.i ? 5.5 : 3.5} fill={C.red} stroke="#fff" strokeWidth="2" /> : null}
+                  {show.rupee && (!geo.compact || hover === pt.i) ? (
+                    <circle
+                      cx={pt.x}
+                      cy={pt.yf}
+                      r={hover === pt.i ? 5.5 : 3.5}
+                      fill={C.purple}
+                      stroke="#fff"
+                      strokeWidth="2"
+                    />
+                  ) : null}
+                  {show.deficit && (!geo.compact || hover === pt.i) ? (
+                    <circle
+                      cx={pt.x}
+                      cy={pt.yd}
+                      r={hover === pt.i ? 5.5 : 3.5}
+                      fill={C.red}
+                      stroke="#fff"
+                      strokeWidth="2"
+                    />
+                  ) : null}
                   {showLabel ? (
-                    <text x={pt.x} y={geo.height - 18} textAnchor={pt.i === 0 ? 'start' : pt.i === n - 1 ? 'end' : 'middle'} fill={pt.i === n - 1 ? C.purple : '#64748b'} fontSize="11" fontWeight={pt.i === n - 1 ? 800 : 500} fontFamily="IBM Plex Mono, monospace">
+                    <text
+                      x={pt.x}
+                      y={geo.height - 18}
+                      textAnchor={pt.i === 0 ? 'start' : pt.i === n - 1 ? 'end' : 'middle'}
+                      fill={pt.i === n - 1 ? C.purple : '#64748b'}
+                      fontSize="11"
+                      fontWeight={pt.i === n - 1 ? 800 : 500}
+                      fontFamily="IBM Plex Mono, monospace"
+                    >
                       {`${pt.d.financial_year.slice(2, 4)}–${pt.d.financial_year.slice(-2)}`}
                     </text>
                   ) : null}
@@ -757,7 +1085,11 @@ function RupeeDeficitChart() {
                 left: geo.compact ? 'auto' : `${tipLeft}%`,
                 right: geo.compact ? 4 : 'auto',
                 top: geo.compact ? 30 : 8,
-                transform: geo.compact ? 'none' : flip ? 'translateX(calc(-100% - 14px))' : 'translateX(14px)',
+                transform: geo.compact
+                  ? 'none'
+                  : flip
+                    ? 'translateX(calc(-100% - 14px))'
+                    : 'translateX(14px)',
                 pointerEvents: 'none',
                 bgcolor: C.ink,
                 color: '#e7ecf5',
@@ -771,15 +1103,33 @@ function RupeeDeficitChart() {
               <Typography sx={{ ...mono, fontWeight: 700, fontSize: 12, color: '#fff', mb: 0.75 }}>
                 {p.d.financial_year}
               </Typography>
-              <TipRow color={C.purple} label="INR / USD" value={`₹${nf2.format(p.d.exchange_rate_inr_per_usd)}`} sub="" />
-              <TipRow color={C.red} label="Annual deficit" value={moneyB(p.d.annual_deficit_usd_mn)} sub="" />
+              <TipRow
+                color={C.purple}
+                label="INR / USD"
+                value={`₹${nf2.format(p.d.exchange_rate_inr_per_usd)}`}
+                sub=""
+              />
+              <TipRow
+                color={C.red}
+                label="Annual deficit"
+                value={moneyB(p.d.annual_deficit_usd_mn)}
+                sub=""
+              />
               <Box sx={{ height: '1px', bgcolor: 'rgba(255,255,255,0.12)', my: 0.75 }} />
-              <TipRow color={C.red} label="Cumulative" value={moneyB(p.d.cumulative_deficit_usd_mn)} sub="" />
+              <TipRow
+                color={C.red}
+                label="Cumulative"
+                value={moneyB(p.d.cumulative_deficit_usd_mn)}
+                sub=""
+              />
             </Box>
           ) : null}
         </Box>
         <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-          RBI Table 139 provides the financial-year annual average INR per USD; the deficit line is the cumulative annual trade deficit. Both lines start from the same point on the left so you can see how the rupee and the deficit move together — each keeps its own axis, so they're free to diverge over time.
+          RBI Table 139 provides the financial-year annual average INR per USD; the deficit line is
+          the cumulative annual trade deficit. Both lines start from the same point on the left so
+          you can see how the rupee and the deficit move together — each keeps its own axis, so
+          they&apos;re free to diverge over time.
         </Typography>
       </Stack>
     </Paper>
@@ -790,9 +1140,25 @@ function TipRow({ color, label, value, sub }) {
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, py: 0.15 }}>
       <Box sx={{ width: 8, height: 8, borderRadius: 999, bgcolor: color, flexShrink: 0 }} />
-      <Typography sx={{ fontSize: 11.5, color: 'rgba(231,236,245,0.8)', flex: 1 }}>{label}</Typography>
-      <Typography sx={{ ...mono, fontSize: 12, fontWeight: 700, color: '#fff' }}>{value}</Typography>
-      {sub ? <Typography sx={{ ...mono, fontSize: 10.5, color: 'rgba(231,236,245,0.6)', minWidth: 44, textAlign: 'right' }}>{sub}</Typography> : null}
+      <Typography sx={{ fontSize: 11.5, color: 'rgba(231,236,245,0.8)', flex: 1 }}>
+        {label}
+      </Typography>
+      <Typography sx={{ ...mono, fontSize: 12, fontWeight: 700, color: '#fff' }}>
+        {value}
+      </Typography>
+      {sub ? (
+        <Typography
+          sx={{
+            ...mono,
+            fontSize: 10.5,
+            color: 'rgba(231,236,245,0.6)',
+            minWidth: 44,
+            textAlign: 'right',
+          }}
+        >
+          {sub}
+        </Typography>
+      ) : null}
     </Box>
   );
 }
@@ -806,8 +1172,20 @@ function CompositionDonut({ sideLabel, tone, comp }) {
 
   const rest = comp.latestYear.rest;
   const slices = [
-    ...comp.latestYear.segs.map((s) => ({ key: s.key, name: s.name, share: s.share, value: s.value, color: s.color })),
-    { key: 'rest', name: 'Rest of basket', share: rest.share, value: rest.value, color: REST_COLOR },
+    ...comp.latestYear.segs.map((s) => ({
+      key: s.key,
+      name: s.name,
+      share: s.share,
+      value: s.value,
+      color: s.color,
+    })),
+    {
+      key: 'rest',
+      name: 'Rest of basket',
+      share: rest.share,
+      value: rest.value,
+      color: REST_COLOR,
+    },
   ];
   const total = comp.latestYear.total;
   const year = comp.latestYear.year;
@@ -843,9 +1221,15 @@ function CompositionDonut({ sideLabel, tone, comp }) {
   return (
     <Paper sx={{ ...cardSx, borderColor: alpha(accent, 0.2) }}>
       <Stack spacing={1.25}>
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
+        <Box
+          sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1 }}
+        >
           <Typography variant="h6">{`Latest ${sideLabel.toLowerCase()} by industry`}</Typography>
-          <Chip size="small" label={yearLabel} sx={{ bgcolor: alpha(accent, 0.1), color: accent, fontWeight: 800 }} />
+          <Chip
+            size="small"
+            label={yearLabel}
+            sx={{ bgcolor: alpha(accent, 0.1), color: accent, fontWeight: 800 }}
+          />
         </Box>
 
         <Box sx={{ position: 'relative', width: '100%', maxWidth: 300, mx: 'auto' }}>
@@ -887,25 +1271,63 @@ function CompositionDonut({ sideLabel, tone, comp }) {
                   transition: 'opacity 120ms',
                 }}
               >
-                <BasketMark name={a.name} color={iconInk(a.color)} rest={a.key === 'rest'} size={14} />
+                <BasketMark
+                  name={a.name}
+                  color={iconInk(a.color)}
+                  rest={a.key === 'rest'}
+                  size={14}
+                />
               </Box>
             );
           })}
 
-          <Box sx={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', pointerEvents: 'none', textAlign: 'center', px: '22%' }}>
+          <Box
+            sx={{
+              position: 'absolute',
+              inset: 0,
+              display: 'grid',
+              placeItems: 'center',
+              pointerEvents: 'none',
+              textAlign: 'center',
+              px: '22%',
+            }}
+          >
             {hv ? (
               <Box>
-                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 0.5, mb: 0.25 }}>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: 0.5,
+                    mb: 0.25,
+                  }}
+                >
                   <BasketMark name={hv.name} color={hv.color} rest={hv.key === 'rest'} size={16} />
-                  <Typography sx={{ fontSize: 12, fontWeight: 700, lineHeight: 1.1 }}>{hv.name}</Typography>
+                  <Typography sx={{ fontSize: 12, fontWeight: 700, lineHeight: 1.1 }}>
+                    {hv.name}
+                  </Typography>
                 </Box>
-                <Typography sx={{ ...mono, fontSize: 18, fontWeight: 800, color: hv.color, lineHeight: 1.1 }}>{`${hv.share.toFixed(1)}%`}</Typography>
-                <Typography sx={{ ...mono, fontSize: 11, color: 'text.secondary' }}>{moneyB(hv.value)}</Typography>
+                <Typography
+                  sx={{ ...mono, fontSize: 18, fontWeight: 800, color: hv.color, lineHeight: 1.1 }}
+                >{`${hv.share.toFixed(1)}%`}</Typography>
+                <Typography sx={{ ...mono, fontSize: 11, color: 'text.secondary' }}>
+                  {moneyB(hv.value)}
+                </Typography>
               </Box>
             ) : (
               <Box>
-                <Typography sx={{ ...mono, fontSize: 22, fontWeight: 800, color: C.ink, lineHeight: 1.05 }}>{moneyB(total)}</Typography>
-                <Typography variant="overline" sx={{ color: 'text.secondary', display: 'block', lineHeight: 1.4 }}>Total</Typography>
+                <Typography
+                  sx={{ ...mono, fontSize: 22, fontWeight: 800, color: C.ink, lineHeight: 1.05 }}
+                >
+                  {moneyB(total)}
+                </Typography>
+                <Typography
+                  variant="overline"
+                  sx={{ color: 'text.secondary', display: 'block', lineHeight: 1.4 }}
+                >
+                  Total
+                </Typography>
               </Box>
             )}
           </Box>
@@ -913,10 +1335,15 @@ function CompositionDonut({ sideLabel, tone, comp }) {
 
         <Box sx={{ display: 'flex', gap: 0.6, flexWrap: 'wrap' }}>
           {slices.map((s) => (
-            <Box key={s.key} sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 0.5 }}>
+            <Box
+              key={s.key}
+              sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 0.5 }}
+            >
               <BasketMark name={s.name} color={s.color} rest={s.key === 'rest'} />
               <Typography sx={{ fontSize: 11, fontWeight: 700 }}>{s.name}</Typography>
-              <Typography sx={{ ...mono, fontSize: 11, color: 'text.secondary' }}>{`${s.share.toFixed(1)}%`}</Typography>
+              <Typography
+                sx={{ ...mono, fontSize: 11, color: 'text.secondary' }}
+              >{`${s.share.toFixed(1)}%`}</Typography>
             </Box>
           ))}
         </Box>
@@ -929,7 +1356,14 @@ function CompositionDonut({ sideLabel, tone, comp }) {
   );
 }
 
-function CompositionChart({ title, sideLabel, tone, comp, groupNoun = 'official commodity groups', controls = null }) {
+function CompositionChart({
+  title,
+  sideLabel,
+  tone,
+  comp,
+  groupNoun = 'official commodity groups',
+  controls = null,
+}) {
   const accent = toneColor(tone);
   const [hover, setHover] = React.useState(null);
   const wrapRef = React.useRef(null);
@@ -989,19 +1423,30 @@ function CompositionChart({ title, sideLabel, tone, comp, groupNoun = 'official 
   const hb = hover ? order[hover.band] : null;
   const hy = hover ? hover.year : 0;
   const tipLeft = hover ? (x(hy) / width) * 100 : 0;
-  const tipTop = hb ? (y((bands[hover.band].top[hy] + bands[hover.band].bottom[hy]) / 2) / height) * 100 : 0;
+  const tipTop = hb
+    ? (y((bands[hover.band].top[hy] + bands[hover.band].bottom[hy]) / 2) / height) * 100
+    : 0;
   const flip = tipLeft > 58;
 
   return (
     <Paper sx={{ ...cardSx, borderColor: alpha(accent, 0.2) }}>
       <Stack spacing={1.25}>
-        <Box sx={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 1 }}>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'flex-start',
+            justifyContent: 'space-between',
+            gap: 1,
+          }}
+        >
           <Box>
-            <Typography variant="h6">
-              {title}
-            </Typography>
+            <Typography variant="h6">{title}</Typography>
           </Box>
-          <Chip size="small" label={`Top ${comp.items.length} = ${comp.topShare.toFixed(1)}%`} sx={{ bgcolor: alpha(accent, 0.1), color: accent, fontWeight: 800 }} />
+          <Chip
+            size="small"
+            label={`Top ${comp.items.length} = ${comp.topShare.toFixed(1)}%`}
+            sx={{ bgcolor: alpha(accent, 0.1), color: accent, fontWeight: 800 }}
+          />
         </Box>
 
         {controls}
@@ -1014,11 +1459,31 @@ function CompositionChart({ title, sideLabel, tone, comp, groupNoun = 'official 
           onTouchMove={(e) => onMove(e.touches[0])}
           sx={{ position: 'relative', width: '100%', cursor: 'crosshair', touchAction: 'pan-y' }}
         >
-          <Box component="svg" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${title} composition`} sx={{ width: '100%', height: 'auto', display: 'block' }}>
+          <Box
+            component="svg"
+            viewBox={`0 0 ${width} ${height}`}
+            role="img"
+            aria-label={`${title} composition`}
+            sx={{ width: '100%', height: 'auto', display: 'block' }}
+          >
             {[0, 25, 50, 75, 100].map((v) => (
               <g key={v}>
-                <line x1={pad.left} x2={width - pad.right} y1={y(v)} y2={y(v)} stroke={C.grid} strokeWidth="1" />
-                <text x={pad.left - 10} y={y(v) + 4} textAnchor="end" fill="#94a3b8" fontSize="10.5" fontFamily="IBM Plex Mono, monospace">
+                <line
+                  x1={pad.left}
+                  x2={width - pad.right}
+                  y1={y(v)}
+                  y2={y(v)}
+                  stroke={C.grid}
+                  strokeWidth="1"
+                />
+                <text
+                  x={pad.left - 10}
+                  y={y(v) + 4}
+                  textAnchor="end"
+                  fill="#94a3b8"
+                  fontSize="10.5"
+                  fontFamily="IBM Plex Mono, monospace"
+                >
                   {`${v}%`}
                 </text>
               </g>
@@ -1037,17 +1502,43 @@ function CompositionChart({ title, sideLabel, tone, comp, groupNoun = 'official 
             ))}
             {hover ? (
               <g>
-                <line x1={x(hy)} x2={x(hy)} y1={pad.top} y2={pad.top + ch} stroke="#0c1730" strokeOpacity="0.22" strokeWidth="1.5" strokeDasharray="4 4" />
+                <line
+                  x1={x(hy)}
+                  x2={x(hy)}
+                  y1={pad.top}
+                  y2={pad.top + ch}
+                  stroke="#0c1730"
+                  strokeOpacity="0.22"
+                  strokeWidth="1.5"
+                  strokeDasharray="4 4"
+                />
                 <path d={edgePath(hover.band)} fill="none" stroke="#fff" strokeWidth="2.5" />
-                <circle cx={x(hy)} cy={y(bands[hover.band].top[hy])} r="4" fill="#fff" stroke={hb.color} strokeWidth="2.5" />
+                <circle
+                  cx={x(hy)}
+                  cy={y(bands[hover.band].top[hy])}
+                  r="4"
+                  fill="#fff"
+                  stroke={hb.color}
+                  strokeWidth="2.5"
+                />
               </g>
             ) : null}
             {comp.years.map((yr, i) => {
               const labelStep = Math.max(1, Math.ceil((n - 1) / (compact ? 3 : 5)));
               if (i !== n - 1 && (n - 1 - i) % labelStep !== 0) return null;
-              const lbl = yr.year.length > 7 ? `${yr.year.slice(2, 4)}–${yr.year.slice(-2)}` : yr.year;
+              const lbl =
+                yr.year.length > 7 ? `${yr.year.slice(2, 4)}–${yr.year.slice(-2)}` : yr.year;
               return (
-                <text key={yr.year} x={x(i)} y={height - 18} textAnchor={i === 0 ? 'start' : i === n - 1 ? 'end' : 'middle'} fill={i === n - 1 ? C.purple : '#64748b'} fontSize="11" fontWeight={i === n - 1 ? 800 : 600} fontFamily="IBM Plex Mono, monospace">
+                <text
+                  key={yr.year}
+                  x={x(i)}
+                  y={height - 18}
+                  textAnchor={i === 0 ? 'start' : i === n - 1 ? 'end' : 'middle'}
+                  fill={i === n - 1 ? C.purple : '#64748b'}
+                  fontSize="11"
+                  fontWeight={i === n - 1 ? 800 : 600}
+                  fontFamily="IBM Plex Mono, monospace"
+                >
                   {lbl}
                 </text>
               );
@@ -1076,17 +1567,46 @@ function CompositionChart({ title, sideLabel, tone, comp, groupNoun = 'official 
                   transition: 'opacity 120ms',
                 }}
               >
-                <BasketMark name={b.name} color={iconInk(b.color)} rest={b.isRest} size={iconSize} />
+                <BasketMark
+                  name={b.name}
+                  color={iconInk(b.color)}
+                  rest={b.isRest}
+                  size={iconSize}
+                />
               </Box>
             );
           })}
 
           {hb ? (
-            <Box sx={{ position: 'absolute', left: compact ? 'auto' : `${tipLeft}%`, right: compact ? 4 : 'auto', top: compact ? 4 : `${tipTop}%`, transform: compact ? 'none' : flip ? 'translate(calc(-100% - 14px), -50%)' : 'translate(14px, -50%)', pointerEvents: 'none', bgcolor: C.ink, color: '#fff', borderRadius: 2, p: 1.1, width: 190, boxShadow: '0 10px 30px -8px rgba(8,15,30,0.55)', zIndex: 3 }}>
+            <Box
+              sx={{
+                position: 'absolute',
+                left: compact ? 'auto' : `${tipLeft}%`,
+                right: compact ? 4 : 'auto',
+                top: compact ? 4 : `${tipTop}%`,
+                transform: compact
+                  ? 'none'
+                  : flip
+                    ? 'translate(calc(-100% - 14px), -50%)'
+                    : 'translate(14px, -50%)',
+                pointerEvents: 'none',
+                bgcolor: C.ink,
+                color: '#fff',
+                borderRadius: 2,
+                p: 1.1,
+                width: 190,
+                boxShadow: '0 10px 30px -8px rgba(8,15,30,0.55)',
+                zIndex: 3,
+              }}
+            >
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, mb: 0.5 }}>
                 <BasketMark name={hb.name} color={hb.color} rest={hb.isRest} size={15} />
                 <Typography sx={{ fontWeight: 700, fontSize: 12.5 }}>{hb.name}</Typography>
-                <Typography sx={{ ...mono, fontSize: 11, color: 'rgba(231,236,245,0.7)', ml: 'auto' }}>{comp.years[hy].year}</Typography>
+                <Typography
+                  sx={{ ...mono, fontSize: 11, color: 'rgba(231,236,245,0.7)', ml: 'auto' }}
+                >
+                  {comp.years[hy].year}
+                </Typography>
               </Box>
               <Typography sx={{ ...mono, fontSize: 12.5, fontWeight: 700 }}>
                 {shareAt(hb, hy).toFixed(1)}% · {moneyB(valueAt(hb, hy))}
@@ -1097,19 +1617,27 @@ function CompositionChart({ title, sideLabel, tone, comp, groupNoun = 'official 
 
         <Box sx={{ display: 'flex', gap: 0.6, flexWrap: 'wrap' }}>
           {comp.latestYear.segs.map((seg, si) => (
-            <Box key={seg.key} sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 0.5 }}>
+            <Box
+              key={seg.key}
+              sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 0.5 }}
+            >
               <BasketMark name={seg.name} color={seg.color || CAT[si % CAT.length]} />
               <Typography sx={{ fontSize: 11, fontWeight: 700 }}>{seg.name}</Typography>
-              <Typography sx={{ ...mono, fontSize: 11, color: 'text.secondary' }}>{seg.share.toFixed(1)}%</Typography>
+              <Typography sx={{ ...mono, fontSize: 11, color: 'text.secondary' }}>
+                {seg.share.toFixed(1)}%
+              </Typography>
             </Box>
           ))}
           <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 0.5 }}>
             <BasketMark color={REST_COLOR} rest />
-            <Typography sx={{ fontSize: 11, fontWeight: 700, color: 'text.secondary' }}>Rest {comp.latestYear.rest.share.toFixed(1)}%</Typography>
+            <Typography sx={{ fontSize: 11, fontWeight: 700, color: 'text.secondary' }}>
+              Rest {comp.latestYear.rest.share.toFixed(1)}%
+            </Typography>
           </Box>
         </Box>
         <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-          {sideLabel} across {comp.groupCount} {groupNoun}; the top {comp.items.length} are shown as continuous bands and each year sums to 100%.
+          {sideLabel} across {comp.groupCount} {groupNoun}; the top {comp.items.length} are shown as
+          continuous bands and each year sums to 100%.
         </Typography>
       </Stack>
     </Paper>
@@ -1127,10 +1655,24 @@ function Sparkline({ series, color, w = 72, h = 26 }) {
   const n = series.length;
   const x = (i) => (n <= 1 ? w / 2 : (i / (n - 1)) * w);
   const y = (v) => padY + (h - 2 * padY) * (1 - (v - min) / span);
-  const d = series.map((v, i) => `${i ? 'L' : 'M'} ${x(i).toFixed(1)} ${y(v).toFixed(1)}`).join(' ');
+  const d = series
+    .map((v, i) => `${i ? 'L' : 'M'} ${x(i).toFixed(1)} ${y(v).toFixed(1)}`)
+    .join(' ');
   return (
-    <Box component="svg" viewBox={`0 0 ${w} ${h}`} sx={{ width: w, height: h, flexShrink: 0, display: 'block', overflow: 'visible' }} aria-hidden>
-      <path d={d} fill="none" stroke={color} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
+    <Box
+      component="svg"
+      viewBox={`0 0 ${w} ${h}`}
+      sx={{ width: w, height: h, flexShrink: 0, display: 'block', overflow: 'visible' }}
+      aria-hidden
+    >
+      <path
+        d={d}
+        fill="none"
+        stroke={color}
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
       <circle cx={x(n - 1)} cy={y(series[n - 1])} r="2.4" fill={color} />
     </Box>
   );
@@ -1150,18 +1692,42 @@ function MoverRow({ item, color, years = HS4_YEARS, rankFy = '26' }) {
     </Box>
   );
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, py: 0.65, borderTop: '1px solid', borderColor: 'divider' }}>
+    <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: 1,
+        py: 0.65,
+        borderTop: '1px solid',
+        borderColor: 'divider',
+      }}
+    >
       <Box sx={{ minWidth: 0, flex: 1 }}>
-        <Typography sx={{ fontSize: 12.5, fontWeight: 700, lineHeight: 1.2, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+        <Typography
+          sx={{
+            fontSize: 12.5,
+            fontWeight: 700,
+            lineHeight: 1.2,
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+          }}
+        >
           {item.name}
         </Typography>
         {/* Two nowrap halves in a wrapping flex row: on narrow screens the value range drops to
             its own line cleanly instead of leaving a dangling separator at the line break. */}
         <Box sx={{ display: 'flex', flexWrap: 'wrap', columnGap: 0.75 }}>
-          <Typography component="span" sx={{ ...mono, fontSize: 10.5, color: 'text.secondary', whiteSpace: 'nowrap' }}>
+          <Typography
+            component="span"
+            sx={{ ...mono, fontSize: 10.5, color: 'text.secondary', whiteSpace: 'nowrap' }}
+          >
             {`HS ${item.code} · FY${rankFy} rank #${item.latestRank ?? '—'}`}
           </Typography>
-          <Typography component="span" sx={{ ...mono, fontSize: 10.5, color: 'text.secondary', whiteSpace: 'nowrap' }}>
+          <Typography
+            component="span"
+            sx={{ ...mono, fontSize: 10.5, color: 'text.secondary', whiteSpace: 'nowrap' }}
+          >
             {`${moneyB(item.base)} → ${moneyB(item.last)}`}
           </Typography>
         </Box>
@@ -1172,8 +1738,12 @@ function MoverRow({ item, color, years = HS4_YEARS, rankFy = '26' }) {
         </Box>
       </Tooltip>
       <Box sx={{ textAlign: 'right', minWidth: 82 }}>
-        <Typography sx={{ ...mono, fontSize: 12.5, fontWeight: 800, color, lineHeight: 1.2 }}>{moneySignB(item.abs)}</Typography>
-        <Typography sx={{ ...mono, fontSize: 10.5, color: 'text.secondary' }}>{pctLabel(item.pct)}</Typography>
+        <Typography sx={{ ...mono, fontSize: 12.5, fontWeight: 800, color, lineHeight: 1.2 }}>
+          {moneySignB(item.abs)}
+        </Typography>
+        <Typography sx={{ ...mono, fontSize: 10.5, color: 'text.secondary' }}>
+          {pctLabel(item.pct)}
+        </Typography>
       </Box>
     </Box>
   );
@@ -1188,9 +1758,13 @@ function MoversGroup({ title, items, positive, years, rankFy }) {
     <Box sx={{ minWidth: 0 }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.6, mb: 0.25 }}>
         <Icon sx={{ fontSize: 16, color }} />
-        <Typography variant="overline" sx={{ color, letterSpacing: '0.08em' }}>{title}</Typography>
+        <Typography variant="overline" sx={{ color, letterSpacing: '0.08em' }}>
+          {title}
+        </Typography>
       </Box>
-      {items.map((it) => <MoverRow key={it.code} item={it} color={color} years={years} rankFy={rankFy} />)}
+      {items.map((it) => (
+        <MoverRow key={it.code} item={it} color={color} years={years} rankFy={rankFy} />
+      ))}
     </Box>
   );
 }
@@ -1200,9 +1774,15 @@ function MoversCard({ sideLabel, tone, movers }) {
   return (
     <Paper sx={{ ...cardSx, borderColor: alpha(accent, 0.2) }}>
       <Stack spacing={1.5}>
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
+        <Box
+          sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1 }}
+        >
           <Typography variant="h6">{`${sideLabel}: biggest movers`}</Typography>
-          <Chip size="small" label="FY21–22 → FY25–26" sx={{ bgcolor: alpha(accent, 0.1), color: accent, fontWeight: 800 }} />
+          <Chip
+            size="small"
+            label="FY21–22 → FY25–26"
+            sx={{ bgcolor: alpha(accent, 0.1), color: accent, fontWeight: 800 }}
+          />
         </Box>
         <MoversGroup title="Fastest growing" items={movers.gainers} positive />
         <MoversGroup title="Biggest decline" items={movers.decliners} positive={false} />
@@ -1305,14 +1885,29 @@ function MoverExplorer() {
   return (
     <Paper sx={{ ...cardSx, borderColor: alpha(accent, 0.2) }}>
       <Stack spacing={1.5}>
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1, flexWrap: 'wrap' }}>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 1,
+            flexWrap: 'wrap',
+          }}
+        >
           <Typography variant="h6">Explore export &amp; import product lines</Typography>
-          <Chip size="small" label={windowLabel} sx={{ bgcolor: alpha(accent, 0.1), color: accent, fontWeight: 800 }} />
+          <Chip
+            size="small"
+            label={windowLabel}
+            sx={{ bgcolor: alpha(accent, 0.1), color: accent, fontWeight: 800 }}
+          />
         </Box>
 
         <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 1.5, rowGap: 1 }}>
           <ToggleChips
-            options={[['Exports', 'Exports'], ['Imports', 'Imports']]}
+            options={[
+              ['Exports', 'Exports'],
+              ['Imports', 'Imports'],
+            ]}
             value={side}
             onChange={setSide}
             colorFor={(k) => (k === 'Exports' ? C.blue : C.orange)}
@@ -1327,21 +1922,38 @@ function MoverExplorer() {
               step={1}
               marks={HS4_YEARS.map((y, i) => ({ value: i, label: fyTick(y) }))}
               disableSwap
-              getAriaLabel={(idx) => (idx === 0 ? 'Window start fiscal year' : 'Window end fiscal year')}
+              getAriaLabel={(idx) =>
+                idx === 0 ? 'Window start fiscal year' : 'Window end fiscal year'
+              }
               sx={{
                 color: accent,
-                '& .MuiSlider-markLabel': { fontFamily: mono.fontFamily, fontSize: 10, color: 'text.secondary' },
+                '& .MuiSlider-markLabel': {
+                  fontFamily: mono.fontFamily,
+                  fontSize: 10,
+                  color: 'text.secondary',
+                },
               }}
             />
           </Box>
           <ToggleChips
-            options={[['abs', 'US$ change'], ['pct', '% change']]}
+            options={[
+              ['abs', 'US$ change'],
+              ['pct', '% change'],
+            ]}
             value={rankBy}
             onChange={setRankBy}
             colorFor={() => accent}
           />
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25, minWidth: 170 }}>
-            <Typography sx={{ ...mono, fontSize: 11, fontWeight: 700, color: 'text.secondary', whiteSpace: 'nowrap' }}>
+            <Typography
+              sx={{
+                ...mono,
+                fontSize: 11,
+                fontWeight: 700,
+                color: 'text.secondary',
+                whiteSpace: 'nowrap',
+              }}
+            >
               {`Top ${topN}`}
             </Typography>
             <Slider
@@ -1385,18 +1997,39 @@ function MoverExplorer() {
               {matches.length ? `Matches · largest ${side.toLowerCase()} first` : 'No matches'}
             </Typography>
             {matches.map((item) => (
-              <MoverRow key={item.code} item={item} color={item.abs < 0 ? C.red : C.teal} years={windowYears} rankFy={rankFy} />
+              <MoverRow
+                key={item.code}
+                item={item}
+                color={item.abs < 0 ? C.red : C.teal}
+                years={windowYears}
+                rankFy={rankFy}
+              />
             ))}
             {!matches.length ? (
-              <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block', pt: 1 }}>
+              <Typography
+                variant="caption"
+                sx={{ color: 'text.secondary', display: 'block', pt: 1 }}
+              >
                 {`Nothing matches “${query.trim()}” — try a shorter word or a 4-digit HS code.`}
               </Typography>
             ) : null}
           </Box>
         ) : (
           <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 2 }}>
-            <MoversGroup title="Fastest growing" items={ranked.gainers} positive years={windowYears} rankFy={rankFy} />
-            <MoversGroup title="Biggest decline" items={ranked.decliners} positive={false} years={windowYears} rankFy={rankFy} />
+            <MoversGroup
+              title="Fastest growing"
+              items={ranked.gainers}
+              positive
+              years={windowYears}
+              rankFy={rankFy}
+            />
+            <MoversGroup
+              title="Biggest decline"
+              items={ranked.decliners}
+              positive={false}
+              years={windowYears}
+              rankFy={rankFy}
+            />
           </Box>
         )}
 
@@ -1420,7 +2053,8 @@ const VALUE_CHAINS = [
     name: 'Petroleum refining',
     inputs: ['2709'],
     outputs: ['2710'],
-    story: 'Imported crude is refined into diesel, petrol and jet fuel; part of the output is shipped back out, the rest fuels the domestic economy.',
+    story:
+      'Imported crude is refined into diesel, petrol and jet fuel; part of the output is shipped back out, the rest fuels the domestic economy.',
     players: ['Reliance Industries', 'Indian Oil', 'BPCL', 'HPCL', 'Nayara Energy'],
   },
   {
@@ -1428,7 +2062,8 @@ const VALUE_CHAINS = [
     name: 'Gems & jewellery',
     inputs: ['7108', '7102', '7106', '7103'],
     outputs: ['7113', '7102', '7103'],
-    story: 'Gold, silver, rough diamonds and stones come in; cut diamonds and finished jewellery go out. Diamonds appear on both sides — rough in, polished out — while most gold stays as domestic jewellery demand.',
+    story:
+      'Gold, silver, rough diamonds and stones come in; cut diamonds and finished jewellery go out. Diamonds appear on both sides — rough in, polished out — while most gold stays as domestic jewellery demand.',
     players: ['Kiran Gems', 'Shree Ramkrishna Exports', 'Rajesh Exports', 'Titan', 'Malabar Gold'],
   },
   {
@@ -1436,15 +2071,23 @@ const VALUE_CHAINS = [
     name: 'Phones & electronics',
     inputs: ['8542', '8541', '8524', '8507', '8534', '8525', '8504', '8529'],
     outputs: ['8517'],
-    story: 'Chips, display modules, batteries, circuit boards, camera modules and chargers come in; assembled phones and telecom gear go out — the clearest picture of assembly-led export growth.',
-    players: ['Foxconn India', 'Tata Electronics', 'Samsung India', 'Dixon Technologies', 'Pegatron India'],
+    story:
+      'Chips, display modules, batteries, circuit boards, camera modules and chargers come in; assembled phones and telecom gear go out — the clearest picture of assembly-led export growth.',
+    players: [
+      'Foxconn India',
+      'Tata Electronics',
+      'Samsung India',
+      'Dixon Technologies',
+      'Pegatron India',
+    ],
   },
   {
     key: 'pharma',
     name: 'Pharmaceuticals',
     inputs: ['2933', '2934', '2941'],
     outputs: ['3004'],
-    story: 'Bulk drug intermediates and antibiotics come in; finished medicines go out at several times the input value — the deepest value-addition of any chain here.',
+    story:
+      'Bulk drug intermediates and antibiotics come in; finished medicines go out at several times the input value — the deepest value-addition of any chain here.',
     players: ['Sun Pharma', "Dr. Reddy's", 'Cipla', 'Aurobindo Pharma', 'Lupin'],
   },
   {
@@ -1452,7 +2095,8 @@ const VALUE_CHAINS = [
     name: 'Cotton & textiles',
     inputs: ['5201'],
     outputs: ['5205', '6109'],
-    story: 'Raw cotton comes in (a recent reversal — India long exported it); spun yarn and knitwear go out.',
+    story:
+      'Raw cotton comes in (a recent reversal — India long exported it); spun yarn and knitwear go out.',
     players: ['Vardhman Textiles', 'Welspun', 'Trident', 'Arvind', 'Shahi Exports'],
   },
   {
@@ -1460,12 +2104,14 @@ const VALUE_CHAINS = [
     name: 'Coal & steel',
     inputs: ['2701', '7204'],
     outputs: ['7208', '7210'],
-    story: 'Coking coal and scrap feed the mills, but most of the steel stays home — exports cover only a sliver of the input bill.',
+    story:
+      'Coking coal and scrap feed the mills, but most of the steel stays home — exports cover only a sliver of the input bill.',
     players: ['JSW Steel', 'Tata Steel', 'SAIL', 'ArcelorMittal Nippon', 'Jindal Steel'],
   },
 ];
 
-const ratioLabel = (r) => (!Number.isFinite(r) ? '—' : r >= 1 ? `${r.toFixed(1)}×` : `${Math.round(r * 100)}%`);
+const ratioLabel = (r) =>
+  !Number.isFinite(r) ? '—' : r >= 1 ? `${r.toFixed(1)}×` : `${Math.round(r * 100)}%`;
 
 // One categorical colour per chain, shared by the map ribbons, the selector chips and the
 // detail header so the same chain reads as the same thing everywhere.
@@ -1482,14 +2128,18 @@ const CHAIN_COLOR = {
 // one order and the ribbons never cross.
 const CHAIN_FLOWS = (() => {
   const last = HS4_YEARS.length - 1;
-  return VALUE_CHAINS
-    .map((chain) => ({
-      key: chain.key,
-      name: chain.name,
-      inVal: chain.inputs.reduce((sum, code) => sum + (IMPORT_BY_CODE.get(code)?.series[last] ?? 0), 0),
-      outVal: chain.outputs.reduce((sum, code) => sum + (EXPORT_BY_CODE.get(code)?.series[last] ?? 0), 0),
-    }))
-    .sort((a, b) => b.inVal - a.inVal);
+  return VALUE_CHAINS.map((chain) => ({
+    key: chain.key,
+    name: chain.name,
+    inVal: chain.inputs.reduce(
+      (sum, code) => sum + (IMPORT_BY_CODE.get(code)?.series[last] ?? 0),
+      0,
+    ),
+    outVal: chain.outputs.reduce(
+      (sum, code) => sum + (EXPORT_BY_CODE.get(code)?.series[last] ?? 0),
+      0,
+    ),
+  })).sort((a, b) => b.inVal - a.inVal);
 })();
 
 // All six chains in one picture: imported inputs stacked on the left, exported outputs on the
@@ -1530,11 +2180,31 @@ function ValueChainMap({ value, onChange }) {
 
   return (
     <Box ref={wrapRef} sx={{ width: '100%' }}>
-      <Box component="svg" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Map of import-to-export value chains" sx={{ width: '100%', height: 'auto', display: 'block' }}>
-        <text x={compact ? 0 : gutterL} y={13} textAnchor="start" fill={C.orange} fontSize="11" fontWeight="800">
+      <Box
+        component="svg"
+        viewBox={`0 0 ${width} ${height}`}
+        role="img"
+        aria-label="Map of import-to-export value chains"
+        sx={{ width: '100%', height: 'auto', display: 'block' }}
+      >
+        <text
+          x={compact ? 0 : gutterL}
+          y={13}
+          textAnchor="start"
+          fill={C.orange}
+          fontSize="11"
+          fontWeight="800"
+        >
           {compact ? `Inputs · FY${lastFy}` : `Imported inputs · FY${lastFy}`}
         </text>
-        <text x={compact ? width : width - gutterR} y={13} textAnchor="end" fill={C.blue} fontSize="11" fontWeight="800">
+        <text
+          x={compact ? width : width - gutterR}
+          y={13}
+          textAnchor="end"
+          fill={C.blue}
+          fontSize="11"
+          fontWeight="800"
+        >
           {compact ? 'Outputs' : 'Exported outputs'}
         </text>
         {flowRows.map((c) => {
@@ -1562,20 +2232,54 @@ function ValueChainMap({ value, onChange }) {
               opacity={dimmed ? 0.38 : 1}
             >
               <title>{`${c.name}: ${moneyB(c.inVal)} imported inputs → ${moneyB(c.outVal)} exported outputs. Click to inspect.`}</title>
-              <path d={ribbon} fill={color} fillOpacity={active ? 0.4 : 0.22} stroke={selected ? color : 'none'} strokeWidth="1.5" />
+              <path
+                d={ribbon}
+                fill={color}
+                fillOpacity={active ? 0.4 : 0.22}
+                stroke={selected ? color : 'none'}
+                strokeWidth="1.5"
+              />
               <rect x={gutterL} y={c.yIn} width={barW} height={c.hIn} rx="2" fill={color} />
               <rect x={xR} y={c.yOut} width={barW} height={c.hOut} rx="2" fill={color} />
-              <text x={gutterL - 8} y={cyIn - 1} textAnchor="end" fill={color} fontSize={compact ? 10.5 : 11.5} fontWeight="700">
+              <text
+                x={gutterL - 8}
+                y={cyIn - 1}
+                textAnchor="end"
+                fill={color}
+                fontSize={compact ? 10.5 : 11.5}
+                fontWeight="700"
+              >
                 {c.name}
               </text>
-              <text x={gutterL - 8} y={cyIn + 11} textAnchor="end" fill="#64748b" fontSize="10" fontFamily="IBM Plex Mono, monospace">
+              <text
+                x={gutterL - 8}
+                y={cyIn + 11}
+                textAnchor="end"
+                fill="#64748b"
+                fontSize="10"
+                fontFamily="IBM Plex Mono, monospace"
+              >
                 {`${money(c.inVal)} in`}
               </text>
-              <text x={width - gutterR + 8} y={compact ? cyOut + 3 : cyOut - 1} textAnchor="start" fill={color} fontSize="10.5" fontWeight="700" fontFamily="IBM Plex Mono, monospace">
+              <text
+                x={width - gutterR + 8}
+                y={compact ? cyOut + 3 : cyOut - 1}
+                textAnchor="start"
+                fill={color}
+                fontSize="10.5"
+                fontWeight="700"
+                fontFamily="IBM Plex Mono, monospace"
+              >
                 {`${money(c.outVal)} out`}
               </text>
               {!compact ? (
-                <text x={width - gutterR + 8} y={cyOut + 11} textAnchor="start" fill="#64748b" fontSize="10">
+                <text
+                  x={width - gutterR + 8}
+                  y={cyOut + 11}
+                  textAnchor="start"
+                  fill="#64748b"
+                  fontSize="10"
+                >
                   {`coverage ${ratioLabel(coverage)}`}
                 </text>
               ) : null}
@@ -1601,7 +2305,8 @@ function ChainFlowChart({ inSeries, outSeries }) {
   const maxVal = (Math.max(...inSeries, ...outSeries) || 1) * 1.12;
   const x = (i) => pad.left + (i / (n - 1)) * cw;
   const y = (v) => pad.top + ch - (v / maxVal) * ch;
-  const linePath = (s) => s.map((v, i) => `${i ? 'L' : 'M'} ${x(i).toFixed(1)} ${y(v).toFixed(1)}`).join(' ');
+  const linePath = (s) =>
+    s.map((v, i) => `${i ? 'L' : 'M'} ${x(i).toFixed(1)} ${y(v).toFixed(1)}`).join(' ');
 
   const [hover, setHover] = React.useState(null);
   const onMove = (e) => {
@@ -1623,31 +2328,104 @@ function ChainFlowChart({ inSeries, outSeries }) {
       onTouchMove={(e) => onMove(e.touches[0])}
       sx={{ position: 'relative', width: '100%', cursor: 'crosshair', touchAction: 'pan-y' }}
     >
-      <Box component="svg" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Imported inputs versus exported outputs" sx={{ width: '100%', height: 'auto', display: 'block' }}>
-        <text x={4} y={20} textAnchor="start" fill="#64748b" fontSize="11" fontWeight="700" fontFamily="IBM Plex Mono, monospace">
+      <Box
+        component="svg"
+        viewBox={`0 0 ${width} ${height}`}
+        role="img"
+        aria-label="Imported inputs versus exported outputs"
+        sx={{ width: '100%', height: 'auto', display: 'block' }}
+      >
+        <text
+          x={4}
+          y={20}
+          textAnchor="start"
+          fill="#64748b"
+          fontSize="11"
+          fontWeight="700"
+          fontFamily="IBM Plex Mono, monospace"
+        >
           US$ bn
         </text>
         {[0, 1, 2, 3, 4].map((i) => {
           const v = maxVal * (1 - i / 4);
           return (
             <g key={i}>
-              <line x1={pad.left} x2={width - pad.right} y1={y(v)} y2={y(v)} stroke={C.grid} strokeWidth="1" />
-              <text x={pad.left - 10} y={y(v) + 4} textAnchor="end" fill="#94a3b8" fontSize="11" fontFamily="IBM Plex Mono, monospace">
+              <line
+                x1={pad.left}
+                x2={width - pad.right}
+                y1={y(v)}
+                y2={y(v)}
+                stroke={C.grid}
+                strokeWidth="1"
+              />
+              <text
+                x={pad.left - 10}
+                y={y(v) + 4}
+                textAnchor="end"
+                fill="#94a3b8"
+                fontSize="11"
+                fontFamily="IBM Plex Mono, monospace"
+              >
                 {Math.round(v / 1000)}
               </text>
             </g>
           );
         })}
-        <path d={linePath(inSeries)} fill="none" stroke={C.orange} strokeWidth="3.25" strokeLinecap="round" strokeLinejoin="round" />
-        <path d={linePath(outSeries)} fill="none" stroke={C.blue} strokeWidth="3.25" strokeLinecap="round" strokeLinejoin="round" />
+        <path
+          d={linePath(inSeries)}
+          fill="none"
+          stroke={C.orange}
+          strokeWidth="3.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d={linePath(outSeries)}
+          fill="none"
+          stroke={C.blue}
+          strokeWidth="3.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
         {hover != null ? (
-          <line x1={x(hover)} x2={x(hover)} y1={pad.top} y2={height - pad.bottom} stroke="#0c1730" strokeOpacity="0.18" strokeWidth="1.5" strokeDasharray="4 4" />
+          <line
+            x1={x(hover)}
+            x2={x(hover)}
+            y1={pad.top}
+            y2={height - pad.bottom}
+            stroke="#0c1730"
+            strokeOpacity="0.18"
+            strokeWidth="1.5"
+            strokeDasharray="4 4"
+          />
         ) : null}
         {HS4_YEARS.map((yr, i) => (
           <React.Fragment key={yr}>
-            <circle cx={x(i)} cy={y(inSeries[i])} r={hover === i ? 5.5 : 3.5} fill={C.orange} stroke="#fff" strokeWidth="2" />
-            <circle cx={x(i)} cy={y(outSeries[i])} r={hover === i ? 5.5 : 3.5} fill={C.blue} stroke="#fff" strokeWidth="2" />
-            <text x={x(i)} y={height - 16} textAnchor={i === 0 ? 'start' : i === n - 1 ? 'end' : 'middle'} fill={i === n - 1 ? C.purple : '#64748b'} fontSize="11" fontWeight={i === n - 1 ? 800 : 500} fontFamily="IBM Plex Mono, monospace">
+            <circle
+              cx={x(i)}
+              cy={y(inSeries[i])}
+              r={hover === i ? 5.5 : 3.5}
+              fill={C.orange}
+              stroke="#fff"
+              strokeWidth="2"
+            />
+            <circle
+              cx={x(i)}
+              cy={y(outSeries[i])}
+              r={hover === i ? 5.5 : 3.5}
+              fill={C.blue}
+              stroke="#fff"
+              strokeWidth="2"
+            />
+            <text
+              x={x(i)}
+              y={height - 16}
+              textAnchor={i === 0 ? 'start' : i === n - 1 ? 'end' : 'middle'}
+              fill={i === n - 1 ? C.purple : '#64748b'}
+              fontSize="11"
+              fontWeight={i === n - 1 ? 800 : 500}
+              fontFamily="IBM Plex Mono, monospace"
+            >
               {fyTick(yr)}
             </text>
           </React.Fragment>
@@ -1661,7 +2439,11 @@ function ChainFlowChart({ inSeries, outSeries }) {
             left: compact ? 'auto' : `${tipLeft}%`,
             right: compact ? 4 : 'auto',
             top: 8,
-            transform: compact ? 'none' : flip ? 'translateX(calc(-100% - 14px))' : 'translateX(14px)',
+            transform: compact
+              ? 'none'
+              : flip
+                ? 'translateX(calc(-100% - 14px))'
+                : 'translateX(14px)',
             pointerEvents: 'none',
             bgcolor: C.ink,
             color: '#e7ecf5',
@@ -1684,7 +2466,12 @@ function ChainFlowChart({ inSeries, outSeries }) {
             value={moneySignB(outSeries[hover] - inSeries[hover])}
             sub=""
           />
-          <TipRow color={C.teal} label="Coverage" value={coverage == null ? '—' : ratioLabel(coverage)} sub="" />
+          <TipRow
+            color={C.teal}
+            label="Coverage"
+            value={coverage == null ? '—' : ratioLabel(coverage)}
+            sub=""
+          />
         </Box>
       ) : null}
     </Box>
@@ -1694,10 +2481,15 @@ function ChainFlowChart({ inSeries, outSeries }) {
 function ChainStat({ label, value, sub, color = C.ink }) {
   return (
     <Box sx={{ flex: '1 1 140px', minWidth: 130 }}>
-      <Typography variant="overline" sx={{ color: 'text.secondary', letterSpacing: '0.08em', display: 'block', lineHeight: 1.9 }}>
+      <Typography
+        variant="overline"
+        sx={{ color: 'text.secondary', letterSpacing: '0.08em', display: 'block', lineHeight: 1.9 }}
+      >
         {label}
       </Typography>
-      <Typography sx={{ ...mono, fontSize: 19, fontWeight: 800, color, lineHeight: 1.15 }}>{value}</Typography>
+      <Typography sx={{ ...mono, fontSize: 19, fontWeight: 800, color, lineHeight: 1.15 }}>
+        {value}
+      </Typography>
       <Typography sx={{ ...mono, fontSize: 10.5, color: 'text.secondary' }}>{sub}</Typography>
     </Box>
   );
@@ -1735,14 +2527,26 @@ function ValueChainSection() {
   const chainCodes = [...new Set([...chain.inputs, ...chain.outputs])];
   const chainNet = HS4_YEARS.map((_, i) =>
     chainCodes.reduce(
-      (sum, code) => sum + (EXPORT_BY_CODE.get(code)?.series[i] ?? 0) - (IMPORT_BY_CODE.get(code)?.series[i] ?? 0),
+      (sum, code) =>
+        sum +
+        (EXPORT_BY_CODE.get(code)?.series[i] ?? 0) -
+        (IMPORT_BY_CODE.get(code)?.series[i] ?? 0),
       0,
-    ));
+    ),
+  );
 
   return (
     <Paper sx={{ ...cardSx, borderColor: alpha(C.teal, 0.2) }}>
       <Stack spacing={1.5}>
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1, flexWrap: 'wrap' }}>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 1,
+            flexWrap: 'wrap',
+          }}
+        >
           <Typography variant="h6">How imports feed exports</Typography>
           <Chip
             size="small"
@@ -1760,10 +2564,25 @@ function ValueChainSection() {
           colorFor={(key) => CHAIN_COLOR[key] ?? C.teal}
         />
 
-        <Box sx={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 1.5, flexWrap: 'wrap' }}>
-          <Typography sx={{ fontSize: 12.5, color: 'text.secondary', flex: '1 1 320px', minWidth: 0 }}>{chain.story}</Typography>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'baseline',
+            justifyContent: 'space-between',
+            gap: 1.5,
+            flexWrap: 'wrap',
+          }}
+        >
+          <Typography
+            sx={{ fontSize: 12.5, color: 'text.secondary', flex: '1 1 320px', minWidth: 0 }}
+          >
+            {chain.story}
+          </Typography>
           <Stack direction="row" spacing={1.5} sx={{ flexShrink: 0 }}>
-            {[[C.orange, 'Imported inputs'], [C.blue, 'Exported outputs']].map(([color, label]) => (
+            {[
+              [C.orange, 'Imported inputs'],
+              [C.blue, 'Exported outputs'],
+            ].map(([color, label]) => (
               <Box key={label} sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5 }}>
                 <Box sx={{ width: 9, height: 9, borderRadius: 999, bgcolor: color }} />
                 <Typography sx={{ fontSize: 11, fontWeight: 700, color }}>{label}</Typography>
@@ -1774,7 +2593,10 @@ function ValueChainSection() {
 
         {chain.players?.length ? (
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, flexWrap: 'wrap' }}>
-            <Typography variant="overline" sx={{ color: 'text.secondary', letterSpacing: '0.08em', lineHeight: 1.6 }}>
+            <Typography
+              variant="overline"
+              sx={{ color: 'text.secondary', letterSpacing: '0.08em', lineHeight: 1.6 }}
+            >
               Key players
             </Typography>
             {chain.players.map((name) => (
@@ -1823,18 +2645,28 @@ function ValueChainSection() {
 
         <ChainFlowChart inSeries={inSeries} outSeries={outSeries} />
 
-        <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: counterFlows.length ? '1fr 1fr 1fr' : '1fr 1fr' }, gap: 2 }}>
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr', md: counterFlows.length ? '1fr 1fr 1fr' : '1fr 1fr' },
+            gap: 2,
+          }}
+        >
           <Box sx={{ minWidth: 0 }}>
             <Typography variant="overline" sx={{ color: C.orange, letterSpacing: '0.08em' }}>
               Imported inputs
             </Typography>
-            {inputItems.map((it) => <MoverRow key={`in-${it.code}`} item={it} color={C.orange} />)}
+            {inputItems.map((it) => (
+              <MoverRow key={`in-${it.code}`} item={it} color={C.orange} />
+            ))}
           </Box>
           <Box sx={{ minWidth: 0 }}>
             <Typography variant="overline" sx={{ color: C.blue, letterSpacing: '0.08em' }}>
               Exported outputs
             </Typography>
-            {outputItems.map((it) => <MoverRow key={`out-${it.code}`} item={it} color={C.blue} />)}
+            {outputItems.map((it) => (
+              <MoverRow key={`out-${it.code}`} item={it} color={C.blue} />
+            ))}
           </Box>
           {counterFlows.length ? (
             <Box sx={{ minWidth: 0 }}>
@@ -1842,17 +2674,36 @@ function ValueChainSection() {
                 Counter-flows
               </Typography>
               {counterFlows.map(({ it, dir }) => (
-                <MoverRow key={`cf-${dir}-${it.code}`} item={it} color={dir === 'import' ? C.orange : C.blue} />
+                <MoverRow
+                  key={`cf-${dir}-${it.code}`}
+                  item={it}
+                  color={dir === 'import' ? C.orange : C.blue}
+                />
               ))}
-              <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block', pt: 0.5 }}>
-                The same products moving the other way — orange rows are imports of this chain's outputs, blue rows are exports of its inputs. Both count in the chain trade balance.
+              <Typography
+                variant="caption"
+                sx={{ color: 'text.secondary', display: 'block', pt: 0.5 }}
+              >
+                The same products moving the other way — orange rows are imports of this
+                chain&apos;s outputs, blue rows are exports of its inputs. Both count in the chain
+                trade balance.
               </Typography>
             </Box>
           ) : null}
         </Box>
 
         <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-          The map shows all six chains at once — ribbon widths are proportional to value, so a ribbon that narrows left-to-right means most of the input value stays in the domestic economy, and one that widens means value is added at home before export. Coverage compares exported outputs with imported inputs; the chain trade balance counts every flow of these product lines in both directions, counter-flows included. Pairings are matched by product family — not an official input–output table — so treat both as directional signals rather than measured value-added: imported inputs also serve domestic demand (most gold and coal never leave), and exports also draw on domestic inputs. Key players are well-known firms in each chain from public reporting — company-level detail is not part of the official trade data. Gross trade values from FY2021-22 to FY2025-26. Hover or tap the chart for year-by-year figures.
+          The map shows all six chains at once — ribbon widths are proportional to value, so a
+          ribbon that narrows left-to-right means most of the input value stays in the domestic
+          economy, and one that widens means value is added at home before export. Coverage compares
+          exported outputs with imported inputs; the chain trade balance counts every flow of these
+          product lines in both directions, counter-flows included. Pairings are matched by product
+          family — not an official input–output table — so treat both as directional signals rather
+          than measured value-added: imported inputs also serve domestic demand (most gold and coal
+          never leave), and exports also draw on domestic inputs. Key players are well-known firms
+          in each chain from public reporting — company-level detail is not part of the official
+          trade data. Gross trade values from FY2021-22 to FY2025-26. Hover or tap the chart for
+          year-by-year figures.
         </Typography>
       </Stack>
     </Paper>
@@ -1936,7 +2787,11 @@ const PARTNER_COLOR = {};
   let slot = 0;
   ['total', 'exp', 'imp'].forEach((metric) => {
     [...PARTNERS]
-      .sort((a, b) => partnerMetricSeries(b, metric)[COUNTRY_LAST] - partnerMetricSeries(a, metric)[COUNTRY_LAST])
+      .sort(
+        (a, b) =>
+          partnerMetricSeries(b, metric)[COUNTRY_LAST] -
+          partnerMetricSeries(a, metric)[COUNTRY_LAST],
+      )
       .slice(0, PARTNER_TOP_N)
       .forEach((p) => {
         if (!(p.key in PARTNER_COLOR)) {
@@ -1949,9 +2804,16 @@ const PARTNER_COLOR = {};
 
 function buildPartnerComposition(metric) {
   const totalAt = (i) =>
-    metric === 'exp' ? COUNTRY_TOTALS.exp[i] : metric === 'imp' ? COUNTRY_TOTALS.imp[i] : COUNTRY_TOTALS.exp[i] + COUNTRY_TOTALS.imp[i];
+    metric === 'exp'
+      ? COUNTRY_TOTALS.exp[i]
+      : metric === 'imp'
+        ? COUNTRY_TOTALS.imp[i]
+        : COUNTRY_TOTALS.exp[i] + COUNTRY_TOTALS.imp[i];
   const ranked = [...PARTNERS]
-    .sort((a, b) => partnerMetricSeries(b, metric)[COUNTRY_LAST] - partnerMetricSeries(a, metric)[COUNTRY_LAST])
+    .sort(
+      (a, b) =>
+        partnerMetricSeries(b, metric)[COUNTRY_LAST] - partnerMetricSeries(a, metric)[COUNTRY_LAST],
+    )
     .slice(0, PARTNER_TOP_N);
   const years = COUNTRY_YEARS.map((year, i) => {
     const total = totalAt(i);
@@ -1963,7 +2825,12 @@ function buildPartnerComposition(metric) {
       return { key: p.key, name: p.name, value, share, color: PARTNER_COLOR[p.key] || REST_COLOR };
     });
     const restShare = Math.max(0, 100 - used);
-    return { year, total, segs, rest: { name: 'Other partners', share: restShare, value: (total * restShare) / 100 } };
+    return {
+      year,
+      total,
+      segs,
+      rest: { name: 'Other partners', share: restShare, value: (total * restShare) / 100 },
+    };
   });
   const latestYear = years[years.length - 1];
   return {
@@ -1984,19 +2851,64 @@ const PARTNER_COMPS = {
 // Short labels for HS-2 chapters surfacing in partners' top-product lists; unmapped chapters
 // fall back to a sentence-cased official description.
 const HS2_LABEL = {
-  '02': 'Meat', '03': 'Seafood', '04': 'Dairy & honey', '07': 'Vegetables', '08': 'Fruits & nuts',
-  '09': 'Coffee, tea & spices', '10': 'Cereals', '12': 'Oil seeds', '15': 'Vegetable oils & fats',
-  '17': 'Sugar', '19': 'Cereal preparations', '21': 'Misc food', '23': 'Animal feed', '24': 'Tobacco',
-  '25': 'Stone & cement', '26': 'Ores', '27': 'Mineral fuels', '28': 'Inorganic chemicals',
-  '29': 'Organic chemicals', '30': 'Pharmaceuticals', '31': 'Fertilisers', '32': 'Dyes & pigments',
-  '33': 'Cosmetics & essential oils', '38': 'Misc chemicals', '39': 'Plastics', '40': 'Rubber',
-  '41': 'Hides & leather', '44': 'Wood', '48': 'Paper', '52': 'Cotton', '54': 'Synthetic filaments',
-  '55': 'Synthetic fibres', '61': 'Knit apparel', '62': 'Woven apparel', '63': 'Textile articles',
-  '64': 'Footwear', '68': 'Stone articles', '69': 'Ceramics', '70': 'Glass', '71': 'Gems & precious metals',
-  '72': 'Iron & steel', '73': 'Steel articles', '74': 'Copper', '75': 'Nickel', '76': 'Aluminium',
-  '79': 'Zinc', '82': 'Tools & cutlery', '84': 'Machinery', '85': 'Electronics', '86': 'Railway',
-  '87': 'Vehicles', '88': 'Aircraft', '89': 'Ships & boats', '90': 'Instruments', '94': 'Furniture',
-  '95': 'Toys & sports', '98': 'Project goods', '99': 'Unclassified',
+  '02': 'Meat',
+  '03': 'Seafood',
+  '04': 'Dairy & honey',
+  '07': 'Vegetables',
+  '08': 'Fruits & nuts',
+  '09': 'Coffee, tea & spices',
+  10: 'Cereals',
+  12: 'Oil seeds',
+  15: 'Vegetable oils & fats',
+  17: 'Sugar',
+  19: 'Cereal preparations',
+  21: 'Misc food',
+  23: 'Animal feed',
+  24: 'Tobacco',
+  25: 'Stone & cement',
+  26: 'Ores',
+  27: 'Mineral fuels',
+  28: 'Inorganic chemicals',
+  29: 'Organic chemicals',
+  30: 'Pharmaceuticals',
+  31: 'Fertilisers',
+  32: 'Dyes & pigments',
+  33: 'Cosmetics & essential oils',
+  38: 'Misc chemicals',
+  39: 'Plastics',
+  40: 'Rubber',
+  41: 'Hides & leather',
+  44: 'Wood',
+  48: 'Paper',
+  52: 'Cotton',
+  54: 'Synthetic filaments',
+  55: 'Synthetic fibres',
+  61: 'Knit apparel',
+  62: 'Woven apparel',
+  63: 'Textile articles',
+  64: 'Footwear',
+  68: 'Stone articles',
+  69: 'Ceramics',
+  70: 'Glass',
+  71: 'Gems & precious metals',
+  72: 'Iron & steel',
+  73: 'Steel articles',
+  74: 'Copper',
+  75: 'Nickel',
+  76: 'Aluminium',
+  79: 'Zinc',
+  82: 'Tools & cutlery',
+  84: 'Machinery',
+  85: 'Electronics',
+  86: 'Railway',
+  87: 'Vehicles',
+  88: 'Aircraft',
+  89: 'Ships & boats',
+  90: 'Instruments',
+  94: 'Furniture',
+  95: 'Toys & sports',
+  98: 'Project goods',
+  99: 'Unclassified',
 };
 const HS2_ICON = {
   27: OilBarrelRounded,
@@ -2010,16 +2922,29 @@ const HS2_ICON = {
   25: TerrainRounded,
   26: TerrainRounded,
 };
-[28, 29, 31, 32, 33, 38, 90].forEach((ch) => { HS2_ICON[ch] = ScienceRounded; });
-[39, 40].forEach((ch) => { HS2_ICON[ch] = OpacityRounded; });
-[72, 73, 74, 75, 76, 78, 79, 80, 81, 82, 83].forEach((ch) => { HS2_ICON[ch] = ViewInArRounded; });
-[2, 3, 4, 7, 8, 9, 10, 11, 12, 15, 16, 17, 19, 20, 21, 23, 24].forEach((ch) => { HS2_ICON[ch] = AgricultureRounded; });
-[41, 42, 43].forEach((ch) => { HS2_ICON[ch] = CheckroomRounded; }); // leather & travel goods
+[28, 29, 31, 32, 33, 38, 90].forEach((ch) => {
+  HS2_ICON[ch] = ScienceRounded;
+});
+[39, 40].forEach((ch) => {
+  HS2_ICON[ch] = OpacityRounded;
+});
+[72, 73, 74, 75, 76, 78, 79, 80, 81, 82, 83].forEach((ch) => {
+  HS2_ICON[ch] = ViewInArRounded;
+});
+[2, 3, 4, 7, 8, 9, 10, 11, 12, 15, 16, 17, 19, 20, 21, 23, 24].forEach((ch) => {
+  HS2_ICON[ch] = AgricultureRounded;
+});
+[41, 42, 43].forEach((ch) => {
+  HS2_ICON[ch] = CheckroomRounded;
+}); // leather & travel goods
 for (let ch = 50; ch <= 67; ch += 1) HS2_ICON[ch] = CheckroomRounded; // textiles, apparel, footwear
 const hs2Icon = (hs2) => HS2_ICON[Number(hs2)] || CategoryRounded;
 const hs2Label = (chapter) => {
   if (HS2_LABEL[chapter.hs2]) return HS2_LABEL[chapter.hs2];
-  const s = String(chapter.desc || '').toLowerCase().split(/[;,.]/)[0].trim();
+  const s = String(chapter.desc || '')
+    .toLowerCase()
+    .split(/[;,.]/)[0]
+    .trim();
   return s ? s.charAt(0).toUpperCase() + s.slice(1) : `HS ${chapter.hs2}`;
 };
 
@@ -2028,10 +2953,23 @@ const PARTNER_PRODUCTS_FY = partnerProductsData.fiscal_year;
 
 function PartnerProductIcons({ chapters, color, align }) {
   return (
-    <Box sx={{ display: 'flex', gap: 0.5, justifyContent: align === 'right' ? 'flex-end' : 'flex-start', minHeight: 14 }}>
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 0.5,
+        justifyContent: align === 'right' ? 'flex-end' : 'flex-start',
+        minHeight: 14,
+      }}
+    >
       {chapters.map((ch) => {
         const Icon = hs2Icon(ch.hs2);
-        return <Icon key={ch.hs2} sx={{ fontSize: 13, color: alpha(color, 0.9) }} titleAccess={hs2Label(ch)} />;
+        return (
+          <Icon
+            key={ch.hs2}
+            sx={{ fontSize: 13, color: alpha(color, 0.9) }}
+            titleAccess={hs2Label(ch)}
+          />
+        );
       })}
     </Box>
   );
@@ -2046,18 +2984,54 @@ function PartnerButterfly() {
   return (
     <Paper sx={{ ...cardSx }}>
       <Stack spacing={1.25}>
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1, flexWrap: 'wrap' }}>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 1,
+            flexWrap: 'wrap',
+          }}
+        >
           <Typography variant="h6">Top trading partners</Typography>
-          <Chip size="small" label={`Top 12 = ${topShare.toFixed(1)}% of FY${fyTick(COUNTRY_YEARS[COUNTRY_LAST])} trade`} sx={{ bgcolor: alpha(C.teal, 0.1), color: C.teal, fontWeight: 800 }} />
+          <Chip
+            size="small"
+            label={`Top 12 = ${topShare.toFixed(1)}% of FY${fyTick(COUNTRY_YEARS[COUNTRY_LAST])} trade`}
+            sx={{ bgcolor: alpha(C.teal, 0.1), color: C.teal, fontWeight: 800 }}
+          />
         </Box>
 
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <Box sx={{ width: { xs: 78, sm: 104 }, flexShrink: 0 }} />
           <Box sx={{ flex: 1, display: 'flex', minWidth: 0 }}>
-            <Typography sx={{ flex: 1, textAlign: 'right', pr: 1, fontSize: 11, fontWeight: 800, color: C.orange }}>Imports</Typography>
-            <Typography sx={{ flex: 1, pl: 1, fontSize: 11, fontWeight: 800, color: C.blue }}>Exports</Typography>
+            <Typography
+              sx={{
+                flex: 1,
+                textAlign: 'right',
+                pr: 1,
+                fontSize: 11,
+                fontWeight: 800,
+                color: C.orange,
+              }}
+            >
+              Imports
+            </Typography>
+            <Typography sx={{ flex: 1, pl: 1, fontSize: 11, fontWeight: 800, color: C.blue }}>
+              Exports
+            </Typography>
           </Box>
-          <Typography sx={{ width: { xs: 70, sm: 84 }, flexShrink: 0, textAlign: 'right', fontSize: 11, fontWeight: 800, color: 'text.secondary' }}>Balance</Typography>
+          <Typography
+            sx={{
+              width: { xs: 70, sm: 84 },
+              flexShrink: 0,
+              textAlign: 'right',
+              fontSize: 11,
+              fontWeight: 800,
+              color: 'text.secondary',
+            }}
+          >
+            Balance
+          </Typography>
         </Box>
 
         {top.map((p) => {
@@ -2081,19 +3055,62 @@ function PartnerButterfly() {
             </Box>
           );
           return (
-            <Tooltip key={p.key} title={tip} arrow placement="top" enterTouchDelay={0} leaveTouchDelay={2500}>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, py: 0.4, borderTop: '1px solid', borderColor: 'divider', cursor: 'default' }}>
-                <Typography sx={{ width: { xs: 78, sm: 104 }, flexShrink: 0, fontSize: 12.5, fontWeight: 700, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+            <Tooltip
+              key={p.key}
+              title={tip}
+              arrow
+              placement="top"
+              enterTouchDelay={0}
+              leaveTouchDelay={2500}
+            >
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 1,
+                  py: 0.4,
+                  borderTop: '1px solid',
+                  borderColor: 'divider',
+                  cursor: 'default',
+                }}
+              >
+                <Typography
+                  sx={{
+                    width: { xs: 78, sm: 104 },
+                    flexShrink: 0,
+                    fontSize: 12.5,
+                    fontWeight: 700,
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                  }}
+                >
                   {p.name}
                 </Typography>
                 <Box sx={{ flex: 1, minWidth: 0 }}>
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
-                      <Box sx={{ height: 13, width: `${(imp / maxVal) * 100}%`, minWidth: imp > 0 ? '2px' : 0, bgcolor: alpha(C.orange, 0.85), borderRadius: '4px 0 0 4px' }} />
+                      <Box
+                        sx={{
+                          height: 13,
+                          width: `${(imp / maxVal) * 100}%`,
+                          minWidth: imp > 0 ? '2px' : 0,
+                          bgcolor: alpha(C.orange, 0.85),
+                          borderRadius: '4px 0 0 4px',
+                        }}
+                      />
                     </Box>
                     <Box sx={{ width: '1px', alignSelf: 'stretch', bgcolor: '#c4cedd' }} />
                     <Box sx={{ flex: 1 }}>
-                      <Box sx={{ height: 13, width: `${(exp / maxVal) * 100}%`, minWidth: exp > 0 ? '2px' : 0, bgcolor: alpha(C.blue, 0.85), borderRadius: '0 4px 4px 0' }} />
+                      <Box
+                        sx={{
+                          height: 13,
+                          width: `${(exp / maxVal) * 100}%`,
+                          minWidth: exp > 0 ? '2px' : 0,
+                          bgcolor: alpha(C.blue, 0.85),
+                          borderRadius: '0 4px 4px 0',
+                        }}
+                      />
                     </Box>
                   </Box>
                   {topExp.length || topImp.length ? (
@@ -2108,7 +3125,17 @@ function PartnerButterfly() {
                     </Box>
                   ) : null}
                 </Box>
-                <Typography sx={{ ...mono, width: { xs: 70, sm: 84 }, flexShrink: 0, textAlign: 'right', fontSize: 11.5, fontWeight: 800, color: bal >= 0 ? C.teal : C.red }}>
+                <Typography
+                  sx={{
+                    ...mono,
+                    width: { xs: 70, sm: 84 },
+                    flexShrink: 0,
+                    textAlign: 'right',
+                    fontSize: 11.5,
+                    fontWeight: 800,
+                    color: bal >= 0 ? C.teal : C.red,
+                  }}
+                >
                   {moneySignB(bal)}
                 </Typography>
               </Box>
@@ -2130,7 +3157,12 @@ function PartnerTrendCard() {
   const partner = PARTNER_BY_KEY.get(partnerKey) ?? PARTNERS[0];
 
   const data = React.useMemo(
-    () => COUNTRY_YEARS.map((year, i) => ({ financial_year: year, export_usd_mn: partner.exp[i], import_usd_mn: partner.imp[i] })),
+    () =>
+      COUNTRY_YEARS.map((year, i) => ({
+        financial_year: year,
+        export_usd_mn: partner.exp[i],
+        import_usd_mn: partner.imp[i],
+      })),
     [partner],
   );
   const wrapRef = React.useRef(null);
@@ -2157,12 +3189,24 @@ function PartnerTrendCard() {
   return (
     <Paper sx={{ ...cardSx }}>
       <Stack spacing={1.25}>
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1, flexWrap: 'wrap' }}>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 1,
+            flexWrap: 'wrap',
+          }}
+        >
           <Typography variant="h6">{`Partner trend: ${partner.name}`}</Typography>
           <Chip
             size="small"
             label={`FY${fyTick(COUNTRY_YEARS[COUNTRY_LAST])} balance ${moneySignB(latestBal)}`}
-            sx={{ bgcolor: alpha(latestBal >= 0 ? C.teal : C.red, 0.1), color: latestBal >= 0 ? C.teal : C.red, fontWeight: 800 }}
+            sx={{
+              bgcolor: alpha(latestBal >= 0 ? C.teal : C.red, 0.1),
+              color: latestBal >= 0 ? C.teal : C.red,
+              fontWeight: 800,
+            }}
           />
         </Box>
 
@@ -2170,7 +3214,10 @@ function PartnerTrendCard() {
           <ToggleChips
             options={chips.map((c) => [c.key, c.name])}
             value={partnerKey}
-            onChange={(k) => { setPartnerKey(k); setQuery(''); }}
+            onChange={(k) => {
+              setPartnerKey(k);
+              setQuery('');
+            }}
             colorFor={() => C.blue}
           />
           <TextField
@@ -2187,14 +3234,22 @@ function PartnerTrendCard() {
                 ),
               },
             }}
-            sx={{ minWidth: 170, flexGrow: { xs: 1, sm: 0 }, '& .MuiOutlinedInput-root': { borderRadius: 2, bgcolor: 'background.paper' }, '& input': { fontSize: 13 } }}
+            sx={{
+              minWidth: 170,
+              flexGrow: { xs: 1, sm: 0 },
+              '& .MuiOutlinedInput-root': { borderRadius: 2, bgcolor: 'background.paper' },
+              '& input': { fontSize: 13 },
+            }}
           />
         </Box>
         {matches.length ? (
           <ToggleChips
             options={matches.map((c) => [c.key, c.name])}
             value={partnerKey}
-            onChange={(k) => { setPartnerKey(k); setQuery(''); }}
+            onChange={(k) => {
+              setPartnerKey(k);
+              setQuery('');
+            }}
             colorFor={() => C.purple}
           />
         ) : null}
@@ -2207,31 +3262,108 @@ function PartnerTrendCard() {
           onTouchMove={(e) => onMove(e.touches[0])}
           sx={{ position: 'relative', width: '100%', cursor: 'crosshair', touchAction: 'pan-y' }}
         >
-          <Box component="svg" viewBox={`0 0 ${geo.width} ${geo.height}`} role="img" aria-label={`Exports and imports with ${partner.name}`} sx={{ width: '100%', height: 'auto', display: 'block' }}>
-            <text x={4} y={20} textAnchor="start" fill="#64748b" fontSize="11" fontWeight="700" fontFamily="IBM Plex Mono, monospace">
+          <Box
+            component="svg"
+            viewBox={`0 0 ${geo.width} ${geo.height}`}
+            role="img"
+            aria-label={`Exports and imports with ${partner.name}`}
+            sx={{ width: '100%', height: 'auto', display: 'block' }}
+          >
+            <text
+              x={4}
+              y={20}
+              textAnchor="start"
+              fill="#64748b"
+              fontSize="11"
+              fontWeight="700"
+              fontFamily="IBM Plex Mono, monospace"
+            >
               US$ bn
             </text>
             {geo.yTicks.map((t, i) => (
               <g key={i}>
-                <line x1={geo.pad.left} x2={geo.width - geo.pad.right} y1={t.y} y2={t.y} stroke={C.grid} strokeWidth="1" />
-                <text x={geo.pad.left - 10} y={t.y + 4} textAnchor="end" fill="#94a3b8" fontSize="11" fontFamily="IBM Plex Mono, monospace">
+                <line
+                  x1={geo.pad.left}
+                  x2={geo.width - geo.pad.right}
+                  y1={t.y}
+                  y2={t.y}
+                  stroke={C.grid}
+                  strokeWidth="1"
+                />
+                <text
+                  x={geo.pad.left - 10}
+                  y={t.y + 4}
+                  textAnchor="end"
+                  fill="#94a3b8"
+                  fontSize="11"
+                  fontFamily="IBM Plex Mono, monospace"
+                >
                   {Math.round(t.v / 1000)}
                 </text>
               </g>
             ))}
-            <path d={geo.exportPath} fill="none" stroke={C.blue} strokeWidth="3.25" strokeLinecap="round" strokeLinejoin="round" />
-            <path d={geo.importPath} fill="none" stroke={C.orange} strokeWidth="3.25" strokeLinecap="round" strokeLinejoin="round" />
+            <path
+              d={geo.exportPath}
+              fill="none"
+              stroke={C.blue}
+              strokeWidth="3.25"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d={geo.importPath}
+              fill="none"
+              stroke={C.orange}
+              strokeWidth="3.25"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
             {hover != null ? (
-              <line x1={p.x} x2={p.x} y1={geo.pad.top} y2={geo.height - geo.pad.bottom} stroke="#0c1730" strokeOpacity="0.18" strokeWidth="1.5" strokeDasharray="4 4" />
+              <line
+                x1={p.x}
+                x2={p.x}
+                y1={geo.pad.top}
+                y2={geo.height - geo.pad.bottom}
+                stroke="#0c1730"
+                strokeOpacity="0.18"
+                strokeWidth="1.5"
+                strokeDasharray="4 4"
+              />
             ) : null}
             {geo.points.map((pt) => (
               <React.Fragment key={pt.d.financial_year}>
                 {/* Resting dots only when points have breathing room; tight spacing reads as a
                     dotted stroke. The hovered year always gets its marker. */}
-                {(geo.xStep >= 40 && !geo.compact) || hover === pt.i ? <circle cx={pt.x} cy={pt.ye} r={hover === pt.i ? 5.5 : 3.5} fill={C.blue} stroke="#fff" strokeWidth="2" /> : null}
-                {(geo.xStep >= 40 && !geo.compact) || hover === pt.i ? <circle cx={pt.x} cy={pt.yi} r={hover === pt.i ? 5.5 : 3.5} fill={C.orange} stroke="#fff" strokeWidth="2" /> : null}
+                {(geo.xStep >= 40 && !geo.compact) || hover === pt.i ? (
+                  <circle
+                    cx={pt.x}
+                    cy={pt.ye}
+                    r={hover === pt.i ? 5.5 : 3.5}
+                    fill={C.blue}
+                    stroke="#fff"
+                    strokeWidth="2"
+                  />
+                ) : null}
+                {(geo.xStep >= 40 && !geo.compact) || hover === pt.i ? (
+                  <circle
+                    cx={pt.x}
+                    cy={pt.yi}
+                    r={hover === pt.i ? 5.5 : 3.5}
+                    fill={C.orange}
+                    stroke="#fff"
+                    strokeWidth="2"
+                  />
+                ) : null}
                 {pt.i === data.length - 1 || (data.length - 1 - pt.i) % geo.xLabelStep === 0 ? (
-                  <text x={pt.x} y={geo.height - 18} textAnchor={pt.i === 0 ? 'start' : pt.i === data.length - 1 ? 'end' : 'middle'} fill={pt.i === data.length - 1 ? C.purple : '#64748b'} fontSize="11" fontWeight={pt.i === data.length - 1 ? 800 : 500} fontFamily="IBM Plex Mono, monospace">
+                  <text
+                    x={pt.x}
+                    y={geo.height - 18}
+                    textAnchor={pt.i === 0 ? 'start' : pt.i === data.length - 1 ? 'end' : 'middle'}
+                    fill={pt.i === data.length - 1 ? C.purple : '#64748b'}
+                    fontSize="11"
+                    fontWeight={pt.i === data.length - 1 ? 800 : 500}
+                    fontFamily="IBM Plex Mono, monospace"
+                  >
                     {fyTick(pt.d.financial_year)}
                   </text>
                 ) : null}
@@ -2246,7 +3378,11 @@ function PartnerTrendCard() {
                 left: geo.compact ? 'auto' : `${tipLeft}%`,
                 right: geo.compact ? 4 : 'auto',
                 top: 8,
-                transform: geo.compact ? 'none' : flip ? 'translateX(calc(-100% - 14px))' : 'translateX(14px)',
+                transform: geo.compact
+                  ? 'none'
+                  : flip
+                    ? 'translateX(calc(-100% - 14px))'
+                    : 'translateX(14px)',
                 pointerEvents: 'none',
                 bgcolor: C.ink,
                 color: '#e7ecf5',
@@ -2294,14 +3430,18 @@ function PartnerShareCard() {
       tone={META[metric].tone}
       comp={PARTNER_COMPS[metric]}
       groupNoun="partner countries"
-      controls={(
+      controls={
         <ToggleChips
-          options={[['total', 'Total trade'], ['exp', 'Exports'], ['imp', 'Imports']]}
+          options={[
+            ['total', 'Total trade'],
+            ['exp', 'Exports'],
+            ['imp', 'Imports'],
+          ]}
           value={metric}
           onChange={setMetric}
           colorFor={(k) => toneColor(META[k].tone)}
         />
-      )}
+      }
     />
   );
 }
@@ -2321,31 +3461,65 @@ const NAV_SECTIONS = [
 const latestSummary = rows[rows.length - 1];
 const latestFyLabel = `FY${latestSummary.financial_year.slice(2, 4)}–${latestSummary.financial_year.slice(-2)}`;
 const latestIsYtd = latestSummary.data_status === 'year_to_date';
-const latestIsProvisional = countrySlimData.source_update_note?.toLowerCase().includes('provisional');
+const latestIsProvisional = countrySlimData.source_update_note
+  ?.toLowerCase()
+  .includes('provisional');
 const latestStatusNote = latestIsYtd ? 'YTD' : latestIsProvisional ? 'provisional' : '';
 
 function Masthead() {
   return (
     <Box
       component="header"
-      sx={{ position: 'sticky', top: 0, zIndex: 20, bgcolor: C.ink, borderBottom: '1px solid rgba(255,255,255,0.08)' }}
+      sx={{
+        position: 'sticky',
+        top: 0,
+        zIndex: 20,
+        bgcolor: C.ink,
+        borderBottom: '1px solid rgba(255,255,255,0.08)',
+      }}
     >
-      <Container maxWidth="xl" sx={{ py: 1.25, display: 'flex', alignItems: 'center', gap: { xs: 1.25, md: 2 } }}>
+      <Container
+        maxWidth="xl"
+        sx={{ py: 1.25, display: 'flex', alignItems: 'center', gap: { xs: 1.25, md: 2 } }}
+      >
         <Box sx={{ mr: 'auto', minWidth: 0 }}>
-          <Typography variant="h6" component="h1" sx={{ color: '#fff', lineHeight: 1.15, fontSize: { xs: 17, md: 20 }, whiteSpace: 'nowrap' }}>
+          <Typography
+            variant="h6"
+            component="h1"
+            sx={{
+              color: '#fff',
+              lineHeight: 1.15,
+              fontSize: { xs: 17, md: 20 },
+              whiteSpace: 'nowrap',
+            }}
+          >
             India Trade Monitor
           </Typography>
-          <Typography sx={{ color: 'rgba(231,236,245,0.6)', fontSize: 11.5, display: { xs: 'none', sm: 'block' } }}>
+          <Typography
+            sx={{
+              color: 'rgba(231,236,245,0.6)',
+              fontSize: 11.5,
+              display: { xs: 'none', sm: 'block' },
+            }}
+          >
             Exports, imports and the trade balance, from official Government of India data
           </Typography>
         </Box>
-        <Box component="nav" sx={{ display: { xs: 'none', md: 'flex' }, gap: 2.25, mr: 1, flexShrink: 0 }}>
+        <Box
+          component="nav"
+          sx={{ display: { xs: 'none', md: 'flex' }, gap: 2.25, mr: 1, flexShrink: 0 }}
+        >
           {NAV_SECTIONS.map(([label, href]) => (
             <Typography
               key={href}
               component="a"
               href={href}
-              sx={{ fontSize: 13, fontWeight: 600, color: 'rgba(231,236,245,0.72)', '&:hover': { color: '#fff' } }}
+              sx={{
+                fontSize: 13,
+                fontWeight: 600,
+                color: 'rgba(231,236,245,0.72)',
+                '&:hover': { color: '#fff' },
+              }}
             >
               {label}
             </Typography>
@@ -2362,28 +3536,57 @@ function Masthead() {
 }
 
 function Footer() {
-  const linkSx = { color: 'text.primary', textDecoration: 'underline', textDecorationColor: 'rgba(0,0,0,0.25)', '&:hover': { textDecorationColor: 'currentColor' } };
+  const linkSx = {
+    color: 'text.primary',
+    textDecoration: 'underline',
+    textDecorationColor: 'rgba(0,0,0,0.25)',
+    '&:hover': { textDecorationColor: 'currentColor' },
+  };
   return (
     <Box component="footer" sx={{ borderTop: '1px solid', borderColor: 'divider', py: 3 }}>
       <Container maxWidth="xl">
         <Stack spacing={1.25} sx={{ maxWidth: 880 }}>
           <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block' }}>
             Sources: Ministry of Commerce &amp; Industry,{' '}
-            <Box component="a" href="https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise" target="_blank" rel="noopener noreferrer" sx={linkSx}>
+            <Box
+              component="a"
+              href="https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={linkSx}
+            >
               Foreign Trade Statistics (FTSPCC monthly releases)
             </Box>{' '}
             for trade values;{' '}
-            <Box component="a" href="https://trade-analytics.commerce.gov.in/public" target="_blank" rel="noopener noreferrer" sx={linkSx}>
+            <Box
+              component="a"
+              href="https://trade-analytics.commerce.gov.in/public"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={linkSx}
+            >
               TIA public extraction endpoint
             </Box>{' '}
             for HS4 item-level trends;{' '}
-            <Box component="a" href="https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy" target="_blank" rel="noopener noreferrer" sx={linkSx}>
+            <Box
+              component="a"
+              href="https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook+of+Statistics+on+Indian+Economy"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={linkSx}
+            >
               RBI Handbook of Statistics, Table 139
             </Box>{' '}
             for annual-average INR/USD.
           </Typography>
           <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block' }}>
-            Values in current US$; fiscal years run April–March.{latestIsYtd ? ` ${latestFyLabel} is year-to-date.` : latestIsProvisional ? ` ${latestFyLabel} is provisional.` : ''} Independent dashboard; not affiliated with the Government of India.
+            Values in current US$; fiscal years run April–March.
+            {latestIsYtd
+              ? ` ${latestFyLabel} is year-to-date.`
+              : latestIsProvisional
+                ? ` ${latestFyLabel} is provisional.`
+                : ''}{' '}
+            Independent dashboard; not affiliated with the Government of India.
           </Typography>
         </Stack>
       </Container>
@@ -2409,19 +3612,43 @@ function Dashboard() {
 
           {/* COMPOSITION ------------------------------------------------- */}
           <Box component="section" id="basket-mix" data-section>
-            <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 2, mb: 2 }}>
+            <Box
+              sx={{
+                display: 'grid',
+                gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+                gap: 2,
+                mb: 2,
+              }}
+            >
               <CompositionDonut sideLabel="Exports" tone="primary" comp={exportComp} />
               <CompositionDonut sideLabel="Imports" tone="warning" comp={importComp} />
             </Box>
             <Box sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: 2 }}>
-              <CompositionChart title="Historical exports by industry" sideLabel="Exports" tone="primary" comp={exportComp} />
-              <CompositionChart title="Historical imports by industry" sideLabel="Imports" tone="warning" comp={importComp} />
+              <CompositionChart
+                title="Historical exports by industry"
+                sideLabel="Exports"
+                tone="primary"
+                comp={exportComp}
+              />
+              <CompositionChart
+                title="Historical imports by industry"
+                sideLabel="Imports"
+                tone="warning"
+                comp={importComp}
+              />
             </Box>
           </Box>
 
           {/* TRADING PARTNERS ------------------------------------------- */}
           <Box component="section" id="partners" data-section>
-            <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', lg: '1fr 1fr' }, gap: 2, mb: 2 }}>
+            <Box
+              sx={{
+                display: 'grid',
+                gridTemplateColumns: { xs: '1fr', lg: '1fr 1fr' },
+                gap: 2,
+                mb: 2,
+              }}
+            >
               <PartnerButterfly />
               <PartnerTrendCard />
             </Box>
@@ -2430,7 +3657,9 @@ function Dashboard() {
 
           {/* ITEM-LEVEL TRENDS (TOP MOVERS) ----------------------------- */}
           <Box component="section" id="item-trends" data-section>
-            <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 2 }}>
+            <Box
+              sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 2 }}
+            >
               <MoversCard sideLabel="Exports" tone="primary" movers={exportMovers} />
               <MoversCard sideLabel="Imports" tone="warning" movers={importMovers} />
             </Box>
@@ -2445,7 +3674,6 @@ function Dashboard() {
           <Box component="section" id="value-chains" data-section>
             <ValueChainSection />
           </Box>
-
         </Stack>
       </Container>
       <Footer />

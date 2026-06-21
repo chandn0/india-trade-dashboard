@@ -21,12 +21,18 @@ function buildAnnualSummary(monthlyRows) {
     }
   }
 
-  const fiscalYears = [...byFiscalYear.keys()].sort((a, b) => Number(a.slice(0, 4)) - Number(b.slice(0, 4)));
+  const fiscalYears = [...byFiscalYear.keys()].sort(
+    (a, b) => Number(a.slice(0, 4)) - Number(b.slice(0, 4)),
+  );
   const summary = fiscalYears.map((financialYear, idx) => {
     const current = byFiscalYear.get(financialYear);
     const previous = idx > 0 ? byFiscalYear.get(fiscalYears[idx - 1]) : null;
-    const exportYoy = previous ? ((current.export_usd_mn - previous.export_usd_mn) / previous.export_usd_mn) * 100 : null;
-    const importYoy = previous ? ((current.import_usd_mn - previous.import_usd_mn) / previous.import_usd_mn) * 100 : null;
+    const exportYoy = previous
+      ? ((current.export_usd_mn - previous.export_usd_mn) / previous.export_usd_mn) * 100
+      : null;
+    const importYoy = previous
+      ? ((current.import_usd_mn - previous.import_usd_mn) / previous.import_usd_mn) * 100
+      : null;
     return {
       financial_year: financialYear,
       export_usd_mn: round2(current.export_usd_mn),
@@ -62,7 +68,8 @@ function parseMonthlyCsv(text) {
   const rows = [];
   for (const line of lines.slice(1)) {
     if (!line.trim()) continue;
-    const [financial_year, calendar_year, month, month_name, export_usd_mn, import_usd_mn] = line.split(',');
+    const [financial_year, calendar_year, month, month_name, export_usd_mn, import_usd_mn] =
+      line.split(',');
     const exportValue = Number(export_usd_mn);
     const importValue = Number(import_usd_mn);
     rows.push({
@@ -84,7 +91,8 @@ async function main() {
   const monthlyCsv = await fs.readFile(MONTHLY_CSV, 'utf8');
   const monthlyRows = parseMonthlyCsv(monthlyCsv);
   const annual = buildAnnualSummary(monthlyRows);
-  const sourceUpdateNote = 'FTSPCC monthly country-wise total trade page reported data available from January 2010 to Apr 2026; annual values were taken from the March cumulative row for each fiscal year. Report dated 08 Jun 2026.';
+  const sourceUpdateNote =
+    'FTSPCC monthly country-wise total trade page reported data available from January 2010 to Apr 2026; annual values were taken from the March cumulative row for each fiscal year. Report dated 08 Jun 2026.';
   const payload = {
     source_update_note: sourceUpdateNote,
     monthly_rows: monthlyRows,
@@ -92,23 +100,44 @@ async function main() {
   };
 
   const csvRows = [
-    ['financial_year', 'export_usd_mn', 'import_usd_mn', 'trade_balance_usd_mn', 'export_yoy_pct', 'import_yoy_pct', 'data_status'].join(','),
-    ...annual.summary.map((row) => [
-      row.financial_year,
-      row.export_usd_mn,
-      row.import_usd_mn,
-      row.trade_balance_usd_mn,
-      row.export_yoy_pct ?? '',
-      row.import_yoy_pct ?? '',
-      row.data_status,
-    ].join(',')),
+    [
+      'financial_year',
+      'export_usd_mn',
+      'import_usd_mn',
+      'trade_balance_usd_mn',
+      'export_yoy_pct',
+      'import_yoy_pct',
+      'data_status',
+    ].join(','),
+    ...annual.summary.map((row) =>
+      [
+        row.financial_year,
+        row.export_usd_mn,
+        row.import_usd_mn,
+        row.trade_balance_usd_mn,
+        row.export_yoy_pct ?? '',
+        row.import_yoy_pct ?? '',
+        row.data_status,
+      ].join(','),
+    ),
   ];
 
-  await fs.writeFile(path.join(OUT_DIR, 'india_trade_yearly_raw.json'), `${JSON.stringify(payload, null, 2)}\n`);
-  await fs.writeFile(path.join(OUT_DIR, 'india_trade_yearly_summary.csv'), `${csvRows.join('\n')}\n`);
-  await fs.writeFile(path.join(OUT_DIR, 'sources.md'), `Official sources used\n\n- FTSPCC country-wise total trade page: https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise\n- TRADESTAT landing page: https://tradestat.commerce.gov.in/\n- TIA public dashboard home page: https://trade-analytics.commerce.gov.in/public\n- TIA public data extraction endpoint: https://trade-analytics.commerce.gov.in/public/de/dgcisdata\n\nNotes\n- The FTSPCC monthly total-trade page exposes data from January 2010 to Apr 2026 and reports cumulative year-to-date values for each selected month.\n- Annual fiscal-year totals are taken from the March cumulative row for each fiscal year.\n- The stored yearly series therefore begins at 2010-2011, which is the first fully reconstructable fiscal year from the public monthly data.\n- Values are in US $ Million.\n- The top export and import basket shares shown in the dashboard are taken from the official FTPA annual commodity-group summary reports stored in this workspace.\n- The five-year item-level import/export trends in the dashboard are from the TIA public data extraction endpoint using HS4, World, Financial Year, and the years 2021-22 through 2025-26.\n- The 100% share charts normalize the top commodity groups plus Other within each year so the composition can be compared year by year on a percentage basis.\n`);
+  await fs.writeFile(
+    path.join(OUT_DIR, 'india_trade_yearly_raw.json'),
+    `${JSON.stringify(payload, null, 2)}\n`,
+  );
+  await fs.writeFile(
+    path.join(OUT_DIR, 'india_trade_yearly_summary.csv'),
+    `${csvRows.join('\n')}\n`,
+  );
+  await fs.writeFile(
+    path.join(OUT_DIR, 'sources.md'),
+    `Official sources used\n\n- FTSPCC country-wise total trade page: https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise\n- TRADESTAT landing page: https://tradestat.commerce.gov.in/\n- TIA public dashboard home page: https://trade-analytics.commerce.gov.in/public\n- TIA public data extraction endpoint: https://trade-analytics.commerce.gov.in/public/de/dgcisdata\n\nNotes\n- The FTSPCC monthly total-trade page exposes data from January 2010 to Apr 2026 and reports cumulative year-to-date values for each selected month.\n- Annual fiscal-year totals are taken from the March cumulative row for each fiscal year.\n- The stored yearly series therefore begins at 2010-2011, which is the first fully reconstructable fiscal year from the public monthly data.\n- Values are in US $ Million.\n- The top export and import basket shares shown in the dashboard are taken from the official FTPA annual commodity-group summary reports stored in this workspace.\n- The five-year item-level import/export trends in the dashboard are from the TIA public data extraction endpoint using HS4, World, Financial Year, and the years 2021-22 through 2025-26.\n- The 100% share charts normalize the top commodity groups plus Other within each year so the composition can be compared year by year on a percentage basis.\n`,
+  );
 
-  console.log(`Wrote ${annual.summary.length} fiscal years and ${monthlyRows.length} monthly rows.`);
+  console.log(
+    `Wrote ${annual.summary.length} fiscal years and ${monthlyRows.length} monthly rows.`,
+  );
 }
 
 main().catch((error) => {

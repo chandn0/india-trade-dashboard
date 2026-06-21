@@ -77,10 +77,12 @@ async function main() {
   const mergedRows = [...existingRows, ...newRows];
   const payload = {
     source_url: SOURCE_URL,
-    source_note: 'RBI Table 139 covers financial years through 2023-2024; FBIL daily reference rates are used to extend the series through 2025-2026.',
+    source_note:
+      'RBI Table 139 covers financial years through 2023-2024; FBIL daily reference rates are used to extend the series through 2025-2026.',
     rows: mergedRows,
     sources: {
-      table_139_url: 'https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/139T_13092024245FFE1BB8CB45C3A51183FB6ADA6DC8.XLSX',
+      table_139_url:
+        'https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/139T_13092024245FFE1BB8CB45C3A51183FB6ADA6DC8.XLSX',
       fbil_reference_rates_url: SOURCE_URL,
       fbil_base_url: 'https://www.fbil.org.in/wasdm',
     },
@@ -91,7 +93,9 @@ async function main() {
     OUT_CSV,
     [
       'financial_year,inr_per_usd_avg,inr_per_usd_end',
-      ...mergedRows.map((row) => `${row.financial_year},${row.inr_per_usd_avg ?? ''},${row.inr_per_usd_end ?? ''}`),
+      ...mergedRows.map(
+        (row) => `${row.financial_year},${row.inr_per_usd_avg ?? ''},${row.inr_per_usd_end ?? ''}`,
+      ),
     ].join('\n') + '\n',
   );
 

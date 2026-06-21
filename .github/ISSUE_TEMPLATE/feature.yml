@@ -1,6 +1,6 @@
 name: Feature or workflow proposal
 description: Suggest a product, contributor workflow, or implementation improvement.
-title: "Feature: "
+title: 'Feature: '
 labels:
   - help wanted
 body:
@@ -9,7 +9,7 @@ body:
     attributes:
       label: Problem or idea
       description: What product, workflow, or implementation improvement are you proposing?
-      placeholder: "Example: Add a citation-friendly chart snapshot state."
+      placeholder: 'Example: Add a citation-friendly chart snapshot state.'
     validations:
       required: true
   - type: textarea
@@ -30,7 +30,7 @@ body:
     id: affected_area
     attributes:
       label: Affected chart, file, or page
-      placeholder: "Example: app/page.js, issue templates, data refresh workflow"
+      placeholder: 'Example: app/page.js, issue templates, data refresh workflow'
     validations:
       required: false
   - type: textarea
@@ -46,11 +46,11 @@ body:
       label: Square-frame placement
       description: Use docs/idea-evaluation-handbook.md for substantial ideas.
       options:
-        - "Rank A: high impact, easy implementation"
-        - "Rank B: high impact, hard implementation"
-        - "Rank C: lower impact, easy implementation"
-        - "Park: lower impact, hard implementation or unclear case"
-        - "Not evaluated yet"
+        - 'Rank A: high impact, easy implementation'
+        - 'Rank B: high impact, hard implementation'
+        - 'Rank C: lower impact, easy implementation'
+        - 'Park: lower impact, hard implementation or unclear case'
+        - 'Not evaluated yet'
     validations:
       required: false
   - type: input
@@ -58,7 +58,7 @@ body:
     attributes:
       label: Scorecard total
       description: Add a score out of 30 if you used the handbook.
-      placeholder: "Example: 26/30"
+      placeholder: 'Example: 26/30'
     validations:
       required: false
   - type: dropdown
@@ -94,7 +94,7 @@ body:
       label: Contributor intent
       options:
         - "I'm reporting this"
-        - "I can help investigate"
-        - "I want to implement this"
+        - 'I can help investigate'
+        - 'I want to implement this'
     validations:
       required: true

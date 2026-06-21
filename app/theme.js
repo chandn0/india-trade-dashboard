@@ -5,8 +5,7 @@ export const fontSans =
 export const fontMono =
   '"IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace';
 // Editorial display serif for titles only (body/UI stays fontSans).
-export const fontDisplay =
-  '"Fraunces", "Iowan Old Style", Georgia, "Times New Roman", serif';
+export const fontDisplay = '"Fraunces", "Iowan Old Style", Georgia, "Times New Roman", serif';
 
 // Monospace numeric style — reuse anywhere figures are shown so columns align.
 export const mono = {
@@ -31,7 +30,9 @@ export const C = {
 };
 
 export const toneColor = (tone) =>
-  ({ primary: C.blue, warning: C.orange, success: C.teal, accent: C.purple, danger: C.red }[tone] || C.blue);
+  ({ primary: C.blue, warning: C.orange, success: C.teal, accent: C.purple, danger: C.red })[
+    tone
+  ] || C.blue;
 
 const theme = createTheme({
   palette: {

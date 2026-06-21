@@ -1,7 +1,7 @@
 # Why Has the Indian Rupee Fallen So Much?
 
-*Interpretive note using the project’s merchandise-trade and INR/USD series.*
-*Prepared June 2026. Fiscal year = April–March. Exchange rate = INR per USD, so a higher number means a weaker rupee.*
+_Interpretive note using the project’s merchandise-trade and INR/USD series._
+_Prepared June 2026. Fiscal year = April–March. Exchange rate = INR per USD, so a higher number means a weaker rupee._
 
 ---
 

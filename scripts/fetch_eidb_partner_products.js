@@ -13,11 +13,21 @@ import path from 'node:path';
 const SIDES = {
   exports: {
     url: 'https://tradestat.commerce.gov.in/eidb/country_wise_all_commodities_export',
-    fields: { year: 'EidbYearcwace', country: 'EidbCntcwace', report: 'EidbReportcwace', level: 'EidbComLevelcwace' },
+    fields: {
+      year: 'EidbYearcwace',
+      country: 'EidbCntcwace',
+      report: 'EidbReportcwace',
+      level: 'EidbComLevelcwace',
+    },
   },
   imports: {
     url: 'https://tradestat.commerce.gov.in/eidb/country_wise_all_commodities_import',
-    fields: { year: 'EidbYearcwaci', country: 'EidbCntcwaci', report: 'EidbReportcwaci', level: 'EidbComLevelcwaci' },
+    fields: {
+      year: 'EidbYearcwaci',
+      country: 'EidbCntcwaci',
+      report: 'EidbReportcwaci',
+      level: 'EidbComLevelcwaci',
+    },
   },
 };
 const TOP_PARTNERS = 12; // matches the butterfly chart
@@ -25,10 +35,27 @@ const TOP_CHAPTERS = 10; // per side, ranked by current-year value
 const OUT_FILE = path.resolve('data', 'india_trade_partner_top_products.json');
 const COUNTRY_SOURCE = path.resolve('data', 'india_trade_country_distribution.json');
 
-const decode = (t) => t.replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#039;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-const strip = (t) => decode(t.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim());
+const decode = (t) =>
+  t
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#039;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>');
+const strip = (t) =>
+  decode(
+    t
+      .replace(/<[^>]*>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim(),
+  );
 const num = (t) => {
-  const v = Number(strip(t).replace(/,/g, '').replace(/[^0-9.-]/g, ''));
+  const v = Number(
+    strip(t)
+      .replace(/,/g, '')
+      .replace(/[^0-9.-]/g, ''),
+  );
   return Number.isFinite(v) ? v : 0;
 };
 const token = (html) => {
@@ -38,7 +65,10 @@ const token = (html) => {
 };
 
 function curl(args) {
-  return execFileSync('curl', ['-L', '--silent', '--max-time', '90', ...args], { encoding: 'utf8', maxBuffer: 50 * 1024 * 1024 });
+  return execFileSync('curl', ['-L', '--silent', '--max-time', '90', ...args], {
+    encoding: 'utf8',
+    maxBuffer: 50 * 1024 * 1024,
+  });
 }
 
 function parseChapterRows(html, label) {
@@ -72,13 +102,20 @@ async function main() {
     // Fresh GET per side: collects the form token, year list and country option codes.
     const page = curl(['-c', cookieFile, '-b', cookieFile, cfg.url]);
     let tok = token(page);
-    const yearMatch = page.match(new RegExp(`<select[^>]*name="${cfg.fields.year}"[^>]*>([\\s\\S]*?)</select>`, 'i'));
+    const yearMatch = page.match(
+      new RegExp(`<select[^>]*name="${cfg.fields.year}"[^>]*>([\\s\\S]*?)</select>`, 'i'),
+    );
     const years = [...yearMatch[1].matchAll(/<option value="(\d{4})"[^>]*>\s*([\d-]+)/g)];
     const [latestYearValue, latestYearLabel] = [years[0][1], years[0][2]];
     fiscalYear = latestYearLabel;
-    const cntMatch = page.match(new RegExp(`<select[^>]*name="${cfg.fields.country}"[^>]*>([\\s\\S]*?)</select>`, 'i'));
+    const cntMatch = page.match(
+      new RegExp(`<select[^>]*name="${cfg.fields.country}"[^>]*>([\\s\\S]*?)</select>`, 'i'),
+    );
     const countryOptions = new Map(
-      [...cntMatch[1].matchAll(/<option value="([^"]*)"[^>]*>\s*([^<]*?)\s*</g)].map((m) => [m[2].trim(), m[1]]),
+      [...cntMatch[1].matchAll(/<option value="([^"]*)"[^>]*>\s*([^<]*?)\s*</g)].map((m) => [
+        m[2].trim(),
+        m[1],
+      ]),
     );
 
     for (const country of targets) {
@@ -97,7 +134,9 @@ async function main() {
       }).toString();
       const html = curl(['-b', cookieFile, '-c', cookieFile, '-X', 'POST', cfg.url, '-d', body]);
       tok = token(html);
-      const chapters = parseChapterRows(html, `${country}/${side}`).sort((a, b) => b.value_usd_mn - a.value_usd_mn);
+      const chapters = parseChapterRows(html, `${country}/${side}`).sort(
+        (a, b) => b.value_usd_mn - a.value_usd_mn,
+      );
       const total = chapters.reduce((s, r) => s + r.value_usd_mn, 0);
       partners.get(country)[side] = {
         total_usd_mn: Math.round(total * 100) / 100,

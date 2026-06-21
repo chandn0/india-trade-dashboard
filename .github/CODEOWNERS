@@ -1,0 +1,18 @@
+# Code ownership for review routing. GitHub auto-requests these reviewers on matching PRs.
+# As the contributor base grows, split these lines to domain-specific maintainers.
+
+# Default owner for everything.
+*                       @chandn0
+
+# Dashboard / frontend
+/app/                   @chandn0
+
+# Data pipeline and committed data snapshots
+/scripts/               @chandn0
+/data/                  @chandn0
+
+# Report-style docs and methodology notes
+/docs/                  @chandn0
+
+# Repo health: CI, contributor intake, tooling config
+/.github/               @chandn0

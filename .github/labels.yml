@@ -1,50 +1,50 @@
 # Label taxonomy for GitHub Issues and pull requests.
 # These labels are the public triage vocabulary used by CONTRIBUTING.md and ROADMAP.md.
 - name: good first issue
-  color: "7057ff"
+  color: '7057ff'
   description: Small, scoped work suitable for a new contributor.
 - name: help wanted
-  color: "008672"
+  color: '008672'
   description: Useful public work where outside contribution is welcome.
 - name: frontend
-  color: "1d76db"
+  color: '1d76db'
   description: Dashboard UI, charts, layout, interactions, or accessibility.
 - name: data-pipeline
-  color: "0e8a16"
+  color: '0e8a16'
   description: Fetch scripts, build scripts, generated data, or refresh workflow.
 - name: methodology
-  color: "fbca04"
+  color: 'fbca04'
   description: Source reconciliation, assumptions, caveats, or analytical method.
 - name: report
-  color: "d4c5f9"
+  color: 'd4c5f9'
   description: Public narrative, report notes, interpretation, or analysis ideas.
 - name: docs
-  color: "0075ca"
+  color: '0075ca'
   description: README, contributor docs, source notes, or public documentation.
 - name: bug
-  color: "d73a4a"
+  color: 'd73a4a'
   description: Something broken, incorrect, confusing, or regressed.
 - name: priority:high
-  color: "b60205"
+  color: 'b60205'
   description: Important work that materially affects trust, correctness, or usability.
 - name: needs-source
-  color: "c2e0c6"
+  color: 'c2e0c6'
   description: Needs source evidence, official reference, or provenance clarification.
 - name: needs-design
-  color: "bfdadc"
+  color: 'bfdadc'
   description: Needs UX, visual, or interaction design before implementation.
 - name: blocked
-  color: "000000"
+  color: '000000'
   description: Cannot move until a dependency, decision, or upstream source issue clears.
 - name: rank:A
-  color: "0e8a16"
+  color: '0e8a16'
   description: High-impact idea with a clear first implementation.
 - name: rank:B
-  color: "fbca04"
+  color: 'fbca04'
   description: Strategic idea that is valuable but harder to implement.
 - name: rank:C
-  color: "bfd4f2"
+  color: 'bfd4f2'
   description: Useful scoped idea or good starter work.
 - name: parked
-  color: "cfd3d7"
+  color: 'cfd3d7'
   description: Idea needs stronger evidence, scope, or trade/report value before prioritizing.

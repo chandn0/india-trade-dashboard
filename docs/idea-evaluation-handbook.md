@@ -30,9 +30,9 @@ Use this shape:
 
 Use the square frame to decide where an idea belongs before scoring it.
 
-| | Easy to implement | Hard to implement |
-|---|---|---|
-| High trade/report impact | `Rank A: Do soon` | `Rank B: Strategic bet` |
+|                           | Easy to implement      | Hard to implement          |
+| ------------------------- | ---------------------- | -------------------------- |
+| High trade/report impact  | `Rank A: Do soon`      | `Rank B: Strategic bet`    |
 | Lower trade/report impact | `Rank C: Good starter` | `Park: Needs sharper case` |
 
 Definitions:
@@ -53,14 +53,14 @@ Definitions:
 Score each dimension from `1` to `5`. The total is not a final truth; it is a
 triage aid.
 
-| Dimension | What it asks | 1 | 3 | 5 |
-|---|---|---:|---:|---:|
-| Trade-balance relevance | Could this explain export growth, import reduction, or deficit pressure? | Weak or indirect | Sector-level relevance | Directly tied to a large export/import/deficit driver |
-| Evidence strength | Can we support it with official data or transparent methodology? | Anecdotal | Some source support | Strong official or reproducible evidence |
-| Implementation ease | Can a first version be built safely? | Large or unclear | Moderate scope | Small, clear, low-risk |
-| Contributor fit | Is it obvious who can implement it? | No clear owner | Mixed ownership | Clear frontend, data, methodology, or report owner |
-| Public report value | Will it help readers understand the trade story better? | Minor clarity gain | Useful explanation | Changes how readers interpret an important trend |
-| Uncertainty control | Can we state limits and caveats honestly? | High risk of over-claiming | Caveats available | Clear limits and careful wording are easy |
+| Dimension               | What it asks                                                             |                          1 |                      3 |                                                     5 |
+| ----------------------- | ------------------------------------------------------------------------ | -------------------------: | ---------------------: | ----------------------------------------------------: |
+| Trade-balance relevance | Could this explain export growth, import reduction, or deficit pressure? |           Weak or indirect | Sector-level relevance | Directly tied to a large export/import/deficit driver |
+| Evidence strength       | Can we support it with official data or transparent methodology?         |                  Anecdotal |    Some source support |              Strong official or reproducible evidence |
+| Implementation ease     | Can a first version be built safely?                                     |           Large or unclear |         Moderate scope |                                Small, clear, low-risk |
+| Contributor fit         | Is it obvious who can implement it?                                      |             No clear owner |        Mixed ownership |    Clear frontend, data, methodology, or report owner |
+| Public report value     | Will it help readers understand the trade story better?                  |         Minor clarity gain |     Useful explanation |      Changes how readers interpret an important trend |
+| Uncertainty control     | Can we state limits and caveats honestly?                                | High risk of over-claiming |      Caveats available |             Clear limits and careful wording are easy |
 
 Suggested rank and GitHub label:
 

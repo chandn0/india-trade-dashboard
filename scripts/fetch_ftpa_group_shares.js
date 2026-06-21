@@ -33,7 +33,12 @@ function decodeHtml(text) {
 }
 
 function stripTags(text) {
-  return decodeHtml(text.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim());
+  return decodeHtml(
+    text
+      .replace(/<[^>]*>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim(),
+  );
 }
 
 function parseNumber(text) {
@@ -146,18 +151,29 @@ function fetchSummary({ url, token, cookieFile, year, fieldPrefix }) {
 
 function toCsv(rows) {
   return [
-    ['financial_year', 'report_year', 'group_name', 'previous_usd_mn', 'current_usd_mn', 'growth_pct', 'share_pct', 'report_month'].join(','),
+    [
+      'financial_year',
+      'report_year',
+      'group_name',
+      'previous_usd_mn',
+      'current_usd_mn',
+      'growth_pct',
+      'share_pct',
+      'report_month',
+    ].join(','),
     ...rows.flatMap((yearRow) =>
-      yearRow.groups.map((group) => [
-        yearRow.financial_year,
-        yearRow.report_year,
-        group.name,
-        group.previous_usd_mn ?? '',
-        group.current_usd_mn ?? '',
-        group.growth_pct ?? '',
-        group.share_pct ?? '',
-        yearRow.report_month,
-      ].join(',')),
+      yearRow.groups.map((group) =>
+        [
+          yearRow.financial_year,
+          yearRow.report_year,
+          group.name,
+          group.previous_usd_mn ?? '',
+          group.current_usd_mn ?? '',
+          group.growth_pct ?? '',
+          group.share_pct ?? '',
+          yearRow.report_month,
+        ].join(','),
+      ),
     ),
   ].join('\n');
 }
@@ -171,28 +187,57 @@ async function main() {
   for (const year of YEARS) {
     process.stdout.write(`Fetching export summary ${year} ...\r`);
     const exportSession = await initSession(SOURCES[0].url);
-    exportRows.push(fetchSummary({ url: SOURCES[0].url, token: exportSession.token, cookieFile: exportSession.cookieFile, year, fieldPrefix: SOURCES[0].fieldPrefix }));
+    exportRows.push(
+      fetchSummary({
+        url: SOURCES[0].url,
+        token: exportSession.token,
+        cookieFile: exportSession.cookieFile,
+        year,
+        fieldPrefix: SOURCES[0].fieldPrefix,
+      }),
+    );
   }
   process.stdout.write('\n');
 
   for (const year of YEARS) {
     process.stdout.write(`Fetching import summary ${year} ...\r`);
     const importSession = await initSession(SOURCES[1].url);
-    importRows.push(fetchSummary({ url: SOURCES[1].url, token: importSession.token, cookieFile: importSession.cookieFile, year, fieldPrefix: SOURCES[1].fieldPrefix }));
+    importRows.push(
+      fetchSummary({
+        url: SOURCES[1].url,
+        token: importSession.token,
+        cookieFile: importSession.cookieFile,
+        year,
+        fieldPrefix: SOURCES[1].fieldPrefix,
+      }),
+    );
   }
   process.stdout.write('\n');
 
   const payload = {
-    source_update_note: 'FTPA annual commodity-group summary reports fetched from the official Government of India trade portal on 08 Jun 2026. March selections were used to capture completed fiscal years.',
+    source_update_note:
+      'FTPA annual commodity-group summary reports fetched from the official Government of India trade portal on 08 Jun 2026. March selections were used to capture completed fiscal years.',
     export_rows: exportRows,
     import_rows: importRows,
     sources: SOURCES,
   };
 
-  await fs.writeFile(path.join(OUT_DIR, 'india_trade_commodity_group_shares.json'), `${JSON.stringify(payload, null, 2)}\n`);
-  await fs.writeFile(path.join(OUT_DIR, 'india_trade_commodity_group_shares_export.csv'), `${toCsv(exportRows)}\n`);
-  await fs.writeFile(path.join(OUT_DIR, 'india_trade_commodity_group_shares_import.csv'), `${toCsv(importRows)}\n`);
-  await fs.writeFile(path.join(OUT_DIR, 'sources.md'), `Official sources used\n\n- FTPA export commodity-group summary: ${SOURCES[0].url}\n- FTPA import commodity-group summary: ${SOURCES[1].url}\n- FTSPCC country-wise total trade page: https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise\n- TRADESTAT landing page: https://tradestat.commerce.gov.in/\n- TIA public dashboard home page: https://trade-analytics.commerce.gov.in/public\n- TIA public data extraction endpoint: https://trade-analytics.commerce.gov.in/public/de/dgcisdata\n\nNotes\n- The FTPA annual commodity-group summary reports expose fiscal-year data back to 2009-2010 in this stored slice.\n- March selections were used so each record captures a completed fiscal year summary.\n- The stored yearly series therefore begins at 2009-2010 for the export and import basket share charts.\n- Values are in US $ Million.\n- The annual total-trade series begins at 2010-2011 from the FTSPCC monthly totals page.\n- The five-year item-level import/export trends in the dashboard are from the TIA public data extraction endpoint using HS4, World, Financial Year, and the years 2021-22 through 2025-26.\n- The 100% share charts normalize the top commodity groups plus Other within each year so the composition can be compared year by year on a percentage basis.\n`);
+  await fs.writeFile(
+    path.join(OUT_DIR, 'india_trade_commodity_group_shares.json'),
+    `${JSON.stringify(payload, null, 2)}\n`,
+  );
+  await fs.writeFile(
+    path.join(OUT_DIR, 'india_trade_commodity_group_shares_export.csv'),
+    `${toCsv(exportRows)}\n`,
+  );
+  await fs.writeFile(
+    path.join(OUT_DIR, 'india_trade_commodity_group_shares_import.csv'),
+    `${toCsv(importRows)}\n`,
+  );
+  await fs.writeFile(
+    path.join(OUT_DIR, 'sources.md'),
+    `Official sources used\n\n- FTPA export commodity-group summary: ${SOURCES[0].url}\n- FTPA import commodity-group summary: ${SOURCES[1].url}\n- FTSPCC country-wise total trade page: https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise\n- TRADESTAT landing page: https://tradestat.commerce.gov.in/\n- TIA public dashboard home page: https://trade-analytics.commerce.gov.in/public\n- TIA public data extraction endpoint: https://trade-analytics.commerce.gov.in/public/de/dgcisdata\n\nNotes\n- The FTPA annual commodity-group summary reports expose fiscal-year data back to 2009-2010 in this stored slice.\n- March selections were used so each record captures a completed fiscal year summary.\n- The stored yearly series therefore begins at 2009-2010 for the export and import basket share charts.\n- Values are in US $ Million.\n- The annual total-trade series begins at 2010-2011 from the FTSPCC monthly totals page.\n- The five-year item-level import/export trends in the dashboard are from the TIA public data extraction endpoint using HS4, World, Financial Year, and the years 2021-22 through 2025-26.\n- The 100% share charts normalize the top commodity groups plus Other within each year so the composition can be compared year by year on a percentage basis.\n`,
+  );
 
   console.log(`Wrote ${exportRows.length} export years and ${importRows.length} import years.`);
 }

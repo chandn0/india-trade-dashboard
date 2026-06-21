@@ -1,6 +1,6 @@
 name: Bug report
 description: Report a dashboard, chart, layout, data, or link bug.
-title: "Bug: "
+title: 'Bug: '
 labels:
   - bug
 body:
@@ -9,7 +9,7 @@ body:
     attributes:
       label: Problem or bug
       description: What is broken or confusing?
-      placeholder: "Example: Partner share labels overlap on narrow mobile screens."
+      placeholder: 'Example: Partner share labels overlap on narrow mobile screens.'
     validations:
       required: true
   - type: textarea
@@ -30,7 +30,7 @@ body:
     id: affected_area
     attributes:
       label: Affected chart, file, or page
-      placeholder: "Example: Partner share chart, app/page.js, README.md"
+      placeholder: 'Example: Partner share chart, app/page.js, README.md'
     validations:
       required: false
   - type: textarea
@@ -46,7 +46,7 @@ body:
       label: Contributor intent
       options:
         - "I'm reporting this"
-        - "I can help investigate"
-        - "I want to implement this"
+        - 'I can help investigate'
+        - 'I want to implement this'
     validations:
       required: true
