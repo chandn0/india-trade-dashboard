@@ -2,9 +2,10 @@ import fs from 'node:fs/promises';
 import os from 'node:os';
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
+import { FISCAL_YEARS } from './fiscal-config.js';
 
 const OUT_DIR = path.resolve('data');
-const YEARS = Array.from({ length: 17 }, (_, i) => 2010 + i);
+const YEARS = FISCAL_YEARS;
 const MONTH = 3; // March gives the completed fiscal year summary.
 
 const SOURCES = [

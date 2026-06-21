@@ -1,11 +1,13 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { YEAR_START, YEAR_END } from './fiscal-config.js';
 
 const OUT_JSON = path.resolve('data', 'india_trade_inr_usd_fy.json');
 const OUT_CSV = path.resolve('data', 'india_trade_inr_usd_fy.csv');
 const SOURCE_URL = 'https://www.fbil.org.in/wasdm/refrates/fetchfiltered';
-const START_DATE = '2024-04-01';
-const END_DATE = '2026-03-31';
+// Cover the full range: from April of YEAR_START through March of the year after YEAR_END.
+const START_DATE = `${YEAR_START}-04-01`;
+const END_DATE = `${YEAR_END + 1}-03-31`;
 const USD_LABEL = 'INR / 1 USD';
 
 function parseDate(value) {

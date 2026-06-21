@@ -29,3 +29,7 @@ yarn-error.log*
 
 # scratch
 tmp
+
+# Data zip bundle — its contents (yearly_raw.json, yearly_summary.csv, sources.md)
+# are already tracked individually; the zip is redundant.
+data/*.zip

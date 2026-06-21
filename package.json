@@ -14,7 +14,16 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "fetch:country-distribution": "node scripts/fetch_ftspcc_country_distribution.js"
+    "fetch:monthly-totals": "bash scripts/fetch_ftspcc_monthly_totals.sh",
+    "fetch:yearly": "node scripts/fetch_ftspcc_yearly.js",
+    "fetch:country-distribution": "node scripts/fetch_ftspcc_country_distribution.js",
+    "fetch:commodity-shares": "node scripts/fetch_ftpa_group_shares.js",
+    "fetch:partner-products": "node scripts/fetch_eidb_partner_products.js",
+    "fetch:exchange-rate-fbil": "node scripts/fetch_fbil_reference_rates.js",
+    "fetch:exchange-rate-rbi": "python3 scripts/fetch_rbi_exchange_rate.py",
+    "build:yearly": "node scripts/build_ftspcc_yearly.js",
+    "build:country-slim": "node scripts/build_country_slim.js",
+    "refresh:all": "npm run fetch:monthly-totals && npm run build:yearly && npm run fetch:country-distribution && npm run build:country-slim && npm run fetch:commodity-shares && npm run fetch:partner-products && npm run fetch:exchange-rate-fbil"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

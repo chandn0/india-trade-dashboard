@@ -2,11 +2,10 @@ import fs from 'node:fs/promises';
 import os from 'node:os';
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
+import { YEAR_START, YEAR_END } from './fiscal-config.js';
 
 const BASE_URL = 'https://tradestat.commerce.gov.in/ftspcc/ttrade_country_wise';
 const OUT_DIR = path.resolve('data');
-const YEAR_START = 2010;
-const YEAR_END = 2025;
 
 function decodeHtml(text) {
   return text

@@ -57,7 +57,11 @@ extract_totals() {
   ' "$1"
 }
 
-for fiscal_start in $(seq 2010 2025); do
+# Respect shared year-range env vars so a single TRADE_YEAR_START/END env controls all scripts.
+YEAR_START="${TRADE_YEAR_START:-2010}"
+YEAR_END="${TRADE_YEAR_END:-2025}"
+
+for fiscal_start in $(seq "$YEAR_START" "$YEAR_END"); do
   for month in 4 5 6 7 8 9 10 11 12; do
     year="$fiscal_start"
     curl -L --silent -c "$tmpdir/cookies.txt" "$BASE_URL" -o "$tmpdir/page.html"

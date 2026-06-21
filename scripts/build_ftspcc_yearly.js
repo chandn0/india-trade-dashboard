@@ -91,8 +91,9 @@ async function main() {
   const monthlyCsv = await fs.readFile(MONTHLY_CSV, 'utf8');
   const monthlyRows = parseMonthlyCsv(monthlyCsv);
   const annual = buildAnnualSummary(monthlyRows);
-  const sourceUpdateNote =
-    'FTSPCC monthly country-wise total trade page reported data available from January 2010 to Apr 2026; annual values were taken from the March cumulative row for each fiscal year. Report dated 08 Jun 2026.';
+  const lastFY = annual.summary.at(-1)?.financial_year ?? 'unknown';
+  const fetchedOn = new Date().toISOString().slice(0, 10);
+  const sourceUpdateNote = `FTSPCC monthly country-wise total trade page; annual values taken from the March cumulative row for each fiscal year. Latest fiscal year in dataset: ${lastFY}. Generated on ${fetchedOn}.`;
   const payload = {
     source_update_note: sourceUpdateNote,
     monthly_rows: monthlyRows,
