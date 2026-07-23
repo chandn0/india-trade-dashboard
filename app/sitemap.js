@@ -6,5 +6,10 @@ export default function sitemap() {
       changeFrequency: 'monthly',
       priority: 1,
     },
+    {
+      url: `${base}/products`,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
   ];
 }

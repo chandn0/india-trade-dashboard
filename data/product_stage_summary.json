@@ -1,0 +1,2179 @@
+{
+  "metadata": {
+    "fiscalYear": "2025-26",
+    "years": [
+      "2021-22",
+      "2022-23",
+      "2023-24",
+      "2024-25",
+      "2025-26"
+    ],
+    "topProductsPerFlow": 40,
+    "totalUniqueHs4Products": 1235,
+    "classificationSummary": {
+      "HS-2 dominant-use rule": 1022,
+      "curated HS-4": 213
+    },
+    "enrichmentAvailability": {
+      "quantityUnitValue": {
+        "rowCount": 3,
+        "available": true,
+        "path": "data/enrichment/product_quantity_unit_value.csv"
+      },
+      "productPartnerExposure": {
+        "rowCount": 3,
+        "available": true,
+        "path": "data/enrichment/product_partner_exposure.csv"
+      },
+      "domesticSupply": {
+        "rowCount": 12,
+        "available": true,
+        "path": "data/enrichment/product_domestic_supply.csv"
+      },
+      "policy": {
+        "rowCount": 14,
+        "available": true,
+        "path": "data/enrichment/product_policy.csv"
+      },
+      "stateCapability": {
+        "rowCount": 0,
+        "available": false,
+        "path": "data/enrichment/state_product_capability.csv"
+      }
+    },
+    "partnerCoverage": "Partner exposure is an observed HS-2 indicator from the top 10 chapters of 12 major partners, not an HS-4 sourcing share.",
+    "methodology": "All available HS-4 lines are assigned a dominant production stage. Curated HS-4 rows override transparent HS-2 rules. Full-basket summaries use every line; top-40 coverage is retained as a concentration indicator."
+  },
+  "flows": [
+    {
+      "flow": "Imports",
+      "totalUsdMn": 776013.6498849984,
+      "productCount": 1207,
+      "topBasketUsdMn": 509380.2107689999,
+      "classifiedUsdMn": 509380.2107689999,
+      "curatedUsdMn": 681373.5158920003,
+      "curatedCount": 212,
+      "curatedCoveragePct": 87.80432096690267,
+      "coveragePct": 65.64062511587105,
+      "stages": [
+        {
+          "stage": "intermediate input",
+          "valueUsdMn": 263579.43035300006,
+          "productCount": 572,
+          "sharePct": 33.965823976428936
+        },
+        {
+          "stage": "energy input",
+          "valueUsdMn": 203415.40045800005,
+          "productCount": 15,
+          "sharePct": 26.21286371549589
+        },
+        {
+          "stage": "capital good",
+          "valueUsdMn": 96795.21189899997,
+          "productCount": 128,
+          "sharePct": 12.473390373138999
+        },
+        {
+          "stage": "consumption asset",
+          "valueUsdMn": 85393.633541,
+          "productCount": 3,
+          "sharePct": 11.004140655728792
+        },
+        {
+          "stage": "finished product",
+          "valueUsdMn": 57077.449142,
+          "productCount": 300,
+          "sharePct": 7.355212005672658
+        },
+        {
+          "stage": "agricultural commodity",
+          "valueUsdMn": 36616.09875800004,
+          "productCount": 110,
+          "sharePct": 4.718486429127422
+        },
+        {
+          "stage": "raw material",
+          "valueUsdMn": 33136.425734000026,
+          "productCount": 79,
+          "sharePct": 4.270082844407529
+        }
+      ],
+      "topStages": [
+        {
+          "stage": "energy input",
+          "valueUsdMn": 200513.326035,
+          "productCount": 5,
+          "sharePct": 39.364176659373854
+        },
+        {
+          "stage": "intermediate input",
+          "valueUsdMn": 111450.14228599999,
+          "productCount": 16,
+          "sharePct": 21.87955871268462
+        },
+        {
+          "stage": "consumption asset",
+          "valueUsdMn": 84028.099763,
+          "productCount": 2,
+          "sharePct": 16.496145312780147
+        },
+        {
+          "stage": "capital good",
+          "valueUsdMn": 45505.31409,
+          "productCount": 7,
+          "sharePct": 8.933467207393402
+        },
+        {
+          "stage": "finished product",
+          "valueUsdMn": 26647.591425,
+          "productCount": 2,
+          "sharePct": 5.231375475849509
+        },
+        {
+          "stage": "agricultural commodity",
+          "valueUsdMn": 22755.636599999998,
+          "productCount": 4,
+          "sharePct": 4.467318541025833
+        },
+        {
+          "stage": "raw material",
+          "valueUsdMn": 18480.100570000002,
+          "productCount": 4,
+          "sharePct": 3.627958090892657
+        }
+      ],
+      "concentration": {
+        "topShares": {
+          "10": 47.30559827941198,
+          "25": 59.16378643984409,
+          "50": 68.73594811535175,
+          "100": 79.16321415480753
+        },
+        "productsToReach": {
+          "50": 13,
+          "75": 77,
+          "90": 208
+        },
+        "hhi": 464.3306480790692
+      },
+      "products": [
+        {
+          "hscode": "2709",
+          "description": "PETROLEUM OILS AND OILS OBTAINED FROM BITUMINOUS MINERALS, CRUDE",
+          "valueUsdMn": 134716.775447,
+          "productionStage": "energy input",
+          "attributionReason": "Primary fuel, refined petroleum, or energetic feedstock (PETROLEUM OILS AND OILS OBTAINED FROM BITUMINOUS MINERALS, CRUDE) consumed in power generation, transportation, and thermal industrial processes.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Mineral fuels",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Primary fuel, refined petroleum, or energetic feedstock (PETROLEUM OILS AND OILS OBTAINED FROM BITUMINOUS MINERALS, CRUDE) consumed in power generation, transportation, and thermal industrial processes.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Combustible energy input and refined fuel supplying national grid generation, transport networks, and industrial heating.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "7108",
+          "description": "GOLD(INCL GOLD PLTD WTH PLTNM)UNWROUGHT OR IN SEMI MNFCTRD FORMS/IN PWDR FORM",
+          "valueUsdMn": 71977.288159,
+          "productionStage": "consumption asset",
+          "attributionReason": "Dual-use item (GOLD(INCL GOLD PLTD WTH PLTNM)UNWROUGHT OR IN SEMI MNFCTRD FORMS/IN PWDR FORM) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Gems & precious metals",
+          "reviewStatus": "mixed-use",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Dual-use item (GOLD(INCL GOLD PLTD WTH PLTNM)UNWROUGHT OR IN SEMI MNFCTRD FORMS/IN PWDR FORM) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "mixedUseFlag": true,
+          "evidenceNote": "Empirical trade flows indicate dual sourcing for both industrial assembly lines and direct commercial or consumer end markets.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8542",
+          "description": "ELCTRNC INTEGRTD CIRCUITS AND MICRO",
+          "valueUsdMn": 30322.877547,
+          "productionStage": "intermediate input",
+          "attributionReason": "Specialized industrial component, part, or sub-assembly (ELCTRNC INTEGRTD CIRCUITS AND MICRO) integrated into capital machinery or electrical systems.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Electronics",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Specialized industrial component, part, or sub-assembly (ELCTRNC INTEGRTD CIRCUITS AND MICRO) integrated into capital machinery or electrical systems.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Precision manufactured part and intermediate sub-assembly feeding electronics assembly and industrial machinery production.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "2701",
+          "description": "COAL BRIQUETTES OVOIDS AND SIMILAR SOLID FUELS MANUFACTURED FROM COAL",
+          "valueUsdMn": 26729.101868,
+          "productionStage": "energy input",
+          "attributionReason": "Dual-use item (COAL BRIQUETTES OVOIDS AND SIMILAR SOLID FUELS MANUFACTURED FROM COAL) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Mineral fuels",
+          "reviewStatus": "mixed-use",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Dual-use item (COAL BRIQUETTES OVOIDS AND SIMILAR SOLID FUELS MANUFACTURED FROM COAL) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "mixedUseFlag": true,
+          "evidenceNote": "Empirical trade flows indicate dual sourcing for both industrial assembly lines and direct commercial or consumer end markets.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "2711",
+          "description": "PETRLM GASES AND OTHR GASEOUS HYDRCRBNS",
+          "valueUsdMn": 26633.657145,
+          "productionStage": "energy input",
+          "attributionReason": "Dual-use item (PETRLM GASES AND OTHR GASEOUS HYDRCRBNS) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Mineral fuels",
+          "reviewStatus": "mixed-use",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Dual-use item (PETRLM GASES AND OTHR GASEOUS HYDRCRBNS) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "mixedUseFlag": true,
+          "evidenceNote": "Empirical trade flows indicate dual sourcing for both industrial assembly lines and direct commercial or consumer end markets.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8517",
+          "description": "ELCTRCL APARTS FR LINE TELEPHNY/TELGRPHY, INCL TELPHON SETS WTH CORDLS HANDSET CARIER",
+          "valueUsdMn": 21717.083153,
+          "productionStage": "finished product",
+          "attributionReason": "Dual-use item (ELCTRCL APARTS FR LINE TELEPHNY/TELGRPHY, INCL TELPHON SETS WTH CORDLS HANDSET CARIER) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Electronics",
+          "reviewStatus": "mixed-use",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Dual-use item (ELCTRCL APARTS FR LINE TELEPHNY/TELGRPHY, INCL TELPHON SETS WTH CORDLS HANDSET CARIER) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "mixedUseFlag": true,
+          "evidenceNote": "Empirical trade flows indicate dual sourcing for both industrial assembly lines and direct commercial or consumer end markets.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "7102",
+          "description": "DIAMONDS, WHETHER OR NOT WORKED, BUT NOT MOUNTED OR SET",
+          "valueUsdMn": 16408.690585,
+          "productionStage": "intermediate input",
+          "attributionReason": "Dual-use item (DIAMONDS, WHETHER OR NOT WORKED, BUT NOT MOUNTED OR SET) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Gems & precious metals",
+          "reviewStatus": "mixed-use",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Dual-use item (DIAMONDS, WHETHER OR NOT WORKED, BUT NOT MOUNTED OR SET) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "mixedUseFlag": true,
+          "evidenceNote": "Empirical trade flows indicate dual sourcing for both industrial assembly lines and direct commercial or consumer end markets.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8471",
+          "description": "AUTOMATIC DATA PROCESSING MACHINES AND UNITS",
+          "valueUsdMn": 13707.0212,
+          "productionStage": "capital good",
+          "attributionReason": "Dual-use item (AUTOMATIC DATA PROCESSING MACHINES AND UNITS) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Machinery",
+          "reviewStatus": "mixed-use",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Dual-use item (AUTOMATIC DATA PROCESSING MACHINES AND UNITS) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "mixedUseFlag": true,
+          "evidenceNote": "Empirical trade flows indicate dual sourcing for both industrial assembly lines and direct commercial or consumer end markets.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8802",
+          "description": "OTHR AIRCRAFT EXCEPT UNMANNED AIRCRAFT OF 8806(eg HELICOPTER, AEROPLANE)SPACECRAFT (INCL SATELLITE) AND SUBORBITAL AND SPACE",
+          "valueUsdMn": 12834.5931,
+          "productionStage": "capital good",
+          "attributionReason": "Commercial transport vehicle, railway stock, or maritime vessel (OTHR AIRCRAFT EXCEPT UNMANNED AIRCRAFT OF 8806(eg HELICOPTER, AEROPLANE)SPACECRAFT (INCL SATELLITE) AND SUBORBITAL AND SPACE) utilized as a productive logistics and freight asset.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Aircraft",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Commercial transport vehicle, railway stock, or maritime vessel (OTHR AIRCRAFT EXCEPT UNMANNED AIRCRAFT OF 8806(eg HELICOPTER, AEROPLANE)SPACECRAFT (INCL SATELLITE) AND SUBORBITAL AND SPACE) utilized as a productive logistics and freight asset.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Durable transport and logistics capital asset operating within national and international freight supply chains.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "7106",
+          "description": "SILVR(INCLD SLVR PLTD WTH GOLD/PLTNM) UNWRGHT/IN SEMI MNFCTRD FORM/IN PWDR FORM",
+          "valueUsdMn": 12050.811604,
+          "productionStage": "consumption asset",
+          "attributionReason": "Precious metal, bullion, or high-value physical material (SILVR(INCLD SLVR PLTD WTH GOLD/PLTNM) UNWRGHT/IN SEMI MNFCTRD FORM/IN PWDR FORM) substantially held for savings, jewelry reserves, and wealth preservation.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Gems & precious metals",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Precious metal, bullion, or high-value physical material (SILVR(INCLD SLVR PLTD WTH GOLD/PLTNM) UNWRGHT/IN SEMI MNFCTRD FORM/IN PWDR FORM) substantially held for savings, jewelry reserves, and wealth preservation.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Physical precious metal asset serving as a primary store of value and essential bullion inventory for jewelry markets.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "1511",
+          "description": "PALM OIL AND ITS FRACTIONS, WHETHER OR NOT REFINED, BUT NOT CHEMICALLY MODIFIED",
+          "valueUsdMn": 9591.59808,
+          "productionStage": "agricultural commodity",
+          "attributionReason": "Primary harvested agricultural crop, farm produce, or unrefined natural commodity (PALM OIL AND ITS FRACTIONS, WHETHER OR NOT REFINED, BUT NOT CHEMICALLY MODIFIED) traded in bulk agricultural markets.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Vegetable oils & fats",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Primary harvested agricultural crop, farm produce, or unrefined natural commodity (PALM OIL AND ITS FRACTIONS, WHETHER OR NOT REFINED, BUT NOT CHEMICALLY MODIFIED) traded in bulk agricultural markets.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Primary farm commodity and raw agricultural harvest supplying food processing plants and commodity trade networks.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "2710",
+          "description": "PETROLEUM OILSAND OILS OBTND FRM BITMNS MNRLOTHER THAN CRUDE PRPN NES;CNTNG70% OR MOREBY WEIGHT OF THESE OILS",
+          "valueUsdMn": 9319.653926,
+          "productionStage": "energy input",
+          "attributionReason": "Dual-use item (PETROLEUM OILSAND OILS OBTND FRM BITMNS MNRLOTHER THAN CRUDE PRPN NES;CNTNG70% OR MOREBY WEIGHT OF THESE OILS) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Mineral fuels",
+          "reviewStatus": "mixed-use",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Dual-use item (PETROLEUM OILSAND OILS OBTND FRM BITMNS MNRLOTHER THAN CRUDE PRPN NES;CNTNG70% OR MOREBY WEIGHT OF THESE OILS) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "mixedUseFlag": true,
+          "evidenceNote": "Empirical trade flows indicate dual sourcing for both industrial assembly lines and direct commercial or consumer end markets.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "3105",
+          "description": "MNRL/CHMCL FRTLSRS WTH TWO/THREE OF THE FRTLSNG ELMNTS N,P AND K; OTHR FRTLSRS SMLR GOODS IN TBLTS/LIKE FRM IN PKT OF",
+          "valueUsdMn": 7012.080236,
+          "productionStage": "intermediate input",
+          "attributionReason": "Processed chemical compound, reagent, or industrial formulation (MNRL/CHMCL FRTLSRS WTH TWO/THREE OF THE FRTLSNG ELMNTS N,P AND K; OTHR FRTLSRS SMLR GOODS IN TBLTS/LIKE FRM IN PKT OF) incorporated into downstream chemical, pharma, or polymer synthesis.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Fertilisers",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Processed chemical compound, reagent, or industrial formulation (MNRL/CHMCL FRTLSRS WTH TWO/THREE OF THE FRTLSNG ELMNTS N,P AND K; OTHR FRTLSRS SMLR GOODS IN TBLTS/LIKE FRM IN PKT OF) incorporated into downstream chemical, pharma, or polymer synthesis.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Specialty chemical intermediate and building block consumed by domestic formulation plants and industrial syntheses.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8708",
+          "description": "PARTS AND ACCESSORIES OF THE MOTOR VEHICLES OF HEADINGS 8701 TO 8705",
+          "valueUsdMn": 6970.608969,
+          "productionStage": "intermediate input",
+          "attributionReason": "Specialized industrial component, part, or sub-assembly (PARTS AND ACCESSORIES OF THE MOTOR VEHICLES OF HEADINGS 8701 TO 8705) integrated into capital machinery or electrical systems.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Vehicles",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Specialized industrial component, part, or sub-assembly (PARTS AND ACCESSORIES OF THE MOTOR VEHICLES OF HEADINGS 8701 TO 8705) integrated into capital machinery or electrical systems.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Precision manufactured part and intermediate sub-assembly feeding electronics assembly and industrial machinery production.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "1507",
+          "description": "SOYA BEAN OIL AND ITS FRACTNS W/N REFIND BUT NOT CHEMICALLY MODIFIED",
+          "valueUsdMn": 6207.7843,
+          "productionStage": "agricultural commodity",
+          "attributionReason": "Primary harvested agricultural crop, farm produce, or unrefined natural commodity (SOYA BEAN OIL AND ITS FRACTNS W/N REFIND BUT NOT CHEMICALLY MODIFIED) traded in bulk agricultural markets.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Vegetable oils & fats",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Primary harvested agricultural crop, farm produce, or unrefined natural commodity (SOYA BEAN OIL AND ITS FRACTNS W/N REFIND BUT NOT CHEMICALLY MODIFIED) traded in bulk agricultural markets.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Primary farm commodity and raw agricultural harvest supplying food processing plants and commodity trade networks.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8541",
+          "description": "SEMCOND DVS[SCD]( DIOD,TRNSTR,TRNSDCER); P SENST [SCD],P VOLT IF WITH MDL/ OF PNEL, LED,IF WITH LED;MTD PIEZO",
+          "valueUsdMn": 6154.484616,
+          "productionStage": "intermediate input",
+          "attributionReason": "Dual-use item (SEMCOND DVS[SCD]( DIOD,TRNSTR,TRNSDCER); P SENST [SCD],P VOLT IF WITH MDL/ OF PNEL, LED,IF WITH LED;MTD PIEZO) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Electronics",
+          "reviewStatus": "mixed-use",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Dual-use item (SEMCOND DVS[SCD]( DIOD,TRNSTR,TRNSDCER); P SENST [SCD],P VOLT IF WITH MDL/ OF PNEL, LED,IF WITH LED;MTD PIEZO) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "mixedUseFlag": true,
+          "evidenceNote": "Empirical trade flows indicate dual sourcing for both industrial assembly lines and direct commercial or consumer end markets.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "2603",
+          "description": "COPPER ORES AND CONCERTRATES",
+          "valueUsdMn": 5940.808791,
+          "productionStage": "raw material",
+          "attributionReason": "Unprocessed mineral ore or crude geological substance (COPPER ORES AND CONCERTRATES) extracted for industrial smelting or chemical refining.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Ores",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Unprocessed mineral ore or crude geological substance (COPPER ORES AND CONCERTRATES) extracted for industrial smelting or chemical refining.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Mineral feedstock imported or exported in bulk as primary raw material for metallurgical and fertilizer manufacturing.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8507",
+          "description": "ELCTRC ACCUMLTRS,INCL SEPARATORS THEREFOR W/N RECTANGULAR(INCL SQ)",
+          "valueUsdMn": 5623.899427,
+          "productionStage": "intermediate input",
+          "attributionReason": "Specialized industrial component, part, or sub-assembly (ELCTRC ACCUMLTRS,INCL SEPARATORS THEREFOR W/N RECTANGULAR(INCL SQ)) integrated into capital machinery or electrical systems.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Electronics",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Specialized industrial component, part, or sub-assembly (ELCTRC ACCUMLTRS,INCL SEPARATORS THEREFOR W/N RECTANGULAR(INCL SQ)) integrated into capital machinery or electrical systems.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Precision manufactured part and intermediate sub-assembly feeding electronics assembly and industrial machinery production.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "2843",
+          "description": "COLLOIDL PRECIOUS METALS;INORGNC/ORGNC CMPNDS OF PRECIOUS METALS W/N CHMCLY DEFINED AMALGAMS OF PRECIOUS METAL",
+          "valueUsdMn": 5595.683553,
+          "productionStage": "intermediate input",
+          "attributionReason": "Processed chemical compound, reagent, or industrial formulation (COLLOIDL PRECIOUS METALS;INORGNC/ORGNC CMPNDS OF PRECIOUS METALS W/N CHMCLY DEFINED AMALGAMS OF PRECIOUS METAL) incorporated into downstream chemical, pharma, or polymer synthesis.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Inorganic chemicals",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Processed chemical compound, reagent, or industrial formulation (COLLOIDL PRECIOUS METALS;INORGNC/ORGNC CMPNDS OF PRECIOUS METALS W/N CHMCLY DEFINED AMALGAMS OF PRECIOUS METAL) incorporated into downstream chemical, pharma, or polymer synthesis.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Specialty chemical intermediate and building block consumed by domestic formulation plants and industrial syntheses.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8524",
+          "description": "*RECORDS,TAPES & OTHR RECORDED MEDIA FOR SOUND/OTHR SMLRLY RECORDED PHENOMENA BUT EXCL PRDCTS OF CHAPTER 37",
+          "valueUsdMn": 5594.168567,
+          "productionStage": "intermediate input",
+          "attributionReason": "Specialized industrial component, part, or sub-assembly (*RECORDS,TAPES & OTHR RECORDED MEDIA FOR SOUND/OTHR SMLRLY RECORDED PHENOMENA BUT EXCL PRDCTS OF CHAPTER 37) integrated into capital machinery or electrical systems.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Electronics",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Specialized industrial component, part, or sub-assembly (*RECORDS,TAPES & OTHR RECORDED MEDIA FOR SOUND/OTHR SMLRLY RECORDED PHENOMENA BUT EXCL PRDCTS OF CHAPTER 37) integrated into capital machinery or electrical systems.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Precision manufactured part and intermediate sub-assembly feeding electronics assembly and industrial machinery production.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "3102",
+          "description": "MINERAL OR CHEMICAL FERTILISERS, NITROGENOUS",
+          "valueUsdMn": 5564.522655,
+          "productionStage": "intermediate input",
+          "attributionReason": "Processed chemical compound, reagent, or industrial formulation (MINERAL OR CHEMICAL FERTILISERS, NITROGENOUS) incorporated into downstream chemical, pharma, or polymer synthesis.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Fertilisers",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Processed chemical compound, reagent, or industrial formulation (MINERAL OR CHEMICAL FERTILISERS, NITROGENOUS) incorporated into downstream chemical, pharma, or polymer synthesis.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Specialty chemical intermediate and building block consumed by domestic formulation plants and industrial syntheses.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "7113",
+          "description": "ARTCLS OF JEWELLERY AND PRTS THEREOF; OF PRCS MTL/OF MTL CLD WTH PRECIOUS METAL",
+          "valueUsdMn": 4930.508272,
+          "productionStage": "finished product",
+          "attributionReason": "Fully assembled manufactured product (ARTCLS OF JEWELLERY AND PRTS THEREOF; OF PRCS MTL/OF MTL CLD WTH PRECIOUS METAL) predominantly ready for final retail, commercial, or consumer use.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Gems & precious metals",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Fully assembled manufactured product (ARTCLS OF JEWELLERY AND PRTS THEREOF; OF PRCS MTL/OF MTL CLD WTH PRECIOUS METAL) predominantly ready for final retail, commercial, or consumer use.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Finished product distributed through commercial and retail supply chains for final consumption and deployment.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "7204",
+          "description": "FERROUS WASTE AND SCRAP; REMELTING SCRAP INGOTS",
+          "valueUsdMn": 4558.721993,
+          "productionStage": "raw material",
+          "attributionReason": "Primary unprocessed material or scrap feedstock (FERROUS WASTE AND SCRAP; REMELTING SCRAP INGOTS) entering basic material extraction and refining cycles.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Iron & steel",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Primary unprocessed material or scrap feedstock (FERROUS WASTE AND SCRAP; REMELTING SCRAP INGOTS) entering basic material extraction and refining cycles.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Unprocessed material or recovered industrial scrap serving as foundational feedstock for heavy manufacturing.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "7602",
+          "description": "ALUMINIUM WASTE AND SCRAP",
+          "valueUsdMn": 4551.381089,
+          "productionStage": "raw material",
+          "attributionReason": "Primary unprocessed material or scrap feedstock (ALUMINIUM WASTE AND SCRAP) entering basic material extraction and refining cycles.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Aluminium",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Primary unprocessed material or scrap feedstock (ALUMINIUM WASTE AND SCRAP) entering basic material extraction and refining cycles.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Unprocessed material or recovered industrial scrap serving as foundational feedstock for heavy manufacturing.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8504",
+          "description": "ELECTRICAL TRANSFORMERS, STATIC CONVERTERS (FOR EXAMPLE, RECTIFIERS) AND INDUCTORS",
+          "valueUsdMn": 4405.25428,
+          "productionStage": "capital good",
+          "attributionReason": "Dual-use item (ELECTRICAL TRANSFORMERS, STATIC CONVERTERS (FOR EXAMPLE, RECTIFIERS) AND INDUCTORS) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Electronics",
+          "reviewStatus": "mixed-use",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Dual-use item (ELECTRICAL TRANSFORMERS, STATIC CONVERTERS (FOR EXAMPLE, RECTIFIERS) AND INDUCTORS) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "mixedUseFlag": true,
+          "evidenceNote": "Empirical trade flows indicate dual sourcing for both industrial assembly lines and direct commercial or consumer end markets.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8479",
+          "description": "MCHNS AND MCHNCL APPLNCS HVNG INDVDL FUNCTNS,N.E.S.",
+          "valueUsdMn": 4131.912444,
+          "productionStage": "capital good",
+          "attributionReason": "Industrial machinery, automation equipment, or heavy electrical plant (MCHNS AND MCHNCL APPLNCS HVNG INDVDL FUNCTNS,N.E.S.) deployed for long-term productive manufacturing.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Machinery",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Industrial machinery, automation equipment, or heavy electrical plant (MCHNS AND MCHNCL APPLNCS HVNG INDVDL FUNCTNS,N.E.S.) deployed for long-term productive manufacturing.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Durable capital asset and production machinery installed in manufacturing facilities to generate industrial output.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8411",
+          "description": "TURBO",
+          "valueUsdMn": 4108.396144,
+          "productionStage": "capital good",
+          "attributionReason": "Industrial machinery, automation equipment, or heavy electrical plant (TURBO) deployed for long-term productive manufacturing.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Machinery",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Industrial machinery, automation equipment, or heavy electrical plant (TURBO) deployed for long-term productive manufacturing.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Durable capital asset and production machinery installed in manufacturing facilities to generate industrial output.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8473",
+          "description": "PARTS AND ACCESSORIES OTH THN COVERS, CARRYING CASES)SUITABLE FOR USE SOLELY /PRINCIPALLY WITH MACHINES OF HDG 8470 TO 8472",
+          "valueUsdMn": 4025.938592,
+          "productionStage": "intermediate input",
+          "attributionReason": "Specialized industrial component, part, or sub-assembly (PARTS AND ACCESSORIES OTH THN COVERS, CARRYING CASES)SUITABLE FOR USE SOLELY /PRINCIPALLY WITH MACHINES OF HDG 8470 TO 8472) integrated into capital machinery or electrical systems.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Machinery",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Specialized industrial component, part, or sub-assembly (PARTS AND ACCESSORIES OTH THN COVERS, CARRYING CASES)SUITABLE FOR USE SOLELY /PRINCIPALLY WITH MACHINES OF HDG 8470 TO 8472) integrated into capital machinery or electrical systems.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Precision manufactured part and intermediate sub-assembly feeding electronics assembly and industrial machinery production.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "0713",
+          "description": "DRID LEGUMINOUS VEG SHLD W/N SKINNED/SPLIT",
+          "valueUsdMn": 3631.47177,
+          "productionStage": "agricultural commodity",
+          "attributionReason": "Primary harvested agricultural crop, farm produce, or unrefined natural commodity (DRID LEGUMINOUS VEG SHLD W/N SKINNED/SPLIT) traded in bulk agricultural markets.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Vegetables",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Primary harvested agricultural crop, farm produce, or unrefined natural commodity (DRID LEGUMINOUS VEG SHLD W/N SKINNED/SPLIT) traded in bulk agricultural markets.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Primary farm commodity and raw agricultural harvest supplying food processing plants and commodity trade networks.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8536",
+          "description": "ELCTRCLS APPRTS FR SWTCHNG/PRTCTNG ELCTRCLCIRCUITS ETC.(E.G.SWTCHS RELAYS ETC.) FOR A VOLTAGE NOT EXCDG 1000 VOLTS",
+          "valueUsdMn": 3586.334257,
+          "productionStage": "intermediate input",
+          "attributionReason": "Specialized industrial component, part, or sub-assembly (ELCTRCLS APPRTS FR SWTCHNG/PRTCTNG ELCTRCLCIRCUITS ETC.(E.G.SWTCHS RELAYS ETC.) FOR A VOLTAGE NOT EXCDG 1000 VOLTS) integrated into capital machinery or electrical systems.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Electronics",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Specialized industrial component, part, or sub-assembly (ELCTRCLS APPRTS FR SWTCHNG/PRTCTNG ELCTRCLCIRCUITS ETC.(E.G.SWTCHS RELAYS ETC.) FOR A VOLTAGE NOT EXCDG 1000 VOLTS) integrated into capital machinery or electrical systems.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Precision manufactured part and intermediate sub-assembly feeding electronics assembly and industrial machinery production.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "3901",
+          "description": "POLYMERS OF ETHYLENE IN PRIMARY FORMS",
+          "valueUsdMn": 3517.732534,
+          "productionStage": "intermediate input",
+          "attributionReason": "Polymer resin, synthetic rubber, or primary plastic form (POLYMERS OF ETHYLENE IN PRIMARY FORMS) utilized as intermediate molding and extrusion material.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Plastics",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Polymer resin, synthetic rubber, or primary plastic form (POLYMERS OF ETHYLENE IN PRIMARY FORMS) utilized as intermediate molding and extrusion material.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Processed petrochemical intermediate feedstock feeding domestic plastic fabrication, packaging, and rubber product lines.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "7404",
+          "description": "COPPER WASTE AND SCRAP",
+          "valueUsdMn": 3429.188697,
+          "productionStage": "raw material",
+          "attributionReason": "Primary unprocessed material or scrap feedstock (COPPER WASTE AND SCRAP) entering basic material extraction and refining cycles.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Copper",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Primary unprocessed material or scrap feedstock (COPPER WASTE AND SCRAP) entering basic material extraction and refining cycles.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Unprocessed material or recovered industrial scrap serving as foundational feedstock for heavy manufacturing.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "1512",
+          "description": "SUNFLOWER SEED, SAFFLOWER OR COTTON SEED OIL AND THEIR FRACTIONS THEREOF, WHETHER OR NOT REFINED, BUT NOT CHEMICALLY M",
+          "valueUsdMn": 3324.78245,
+          "productionStage": "agricultural commodity",
+          "attributionReason": "Primary harvested agricultural crop, farm produce, or unrefined natural commodity (SUNFLOWER SEED, SAFFLOWER OR COTTON SEED OIL AND THEIR FRACTIONS THEREOF, WHETHER OR NOT REFINED, BUT NOT CHEMICALLY M) traded in bulk agricultural markets.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Vegetable oils & fats",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Primary harvested agricultural crop, farm produce, or unrefined natural commodity (SUNFLOWER SEED, SAFFLOWER OR COTTON SEED OIL AND THEIR FRACTIONS THEREOF, WHETHER OR NOT REFINED, BUT NOT CHEMICALLY M) traded in bulk agricultural markets.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Primary farm commodity and raw agricultural harvest supplying food processing plants and commodity trade networks.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8414",
+          "description": "AIR/VACUUM PUMPS,AIR/OTHR GAS COMPRSRS AND FANS;VNTLTNG/RCYCLNG HOODS INCRPRTNG A FAN,W/N FITTED WITH FILTERS",
+          "valueUsdMn": 3221.035894,
+          "productionStage": "capital good",
+          "attributionReason": "Industrial machinery, automation equipment, or heavy electrical plant (AIR/VACUUM PUMPS,AIR/OTHR GAS COMPRSRS AND FANS;VNTLTNG/RCYCLNG HOODS INCRPRTNG A FAN,W/N FITTED WITH FILTERS) deployed for long-term productive manufacturing.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Machinery",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Industrial machinery, automation equipment, or heavy electrical plant (AIR/VACUUM PUMPS,AIR/OTHR GAS COMPRSRS AND FANS;VNTLTNG/RCYCLNG HOODS INCRPRTNG A FAN,W/N FITTED WITH FILTERS) deployed for long-term productive manufacturing.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Durable capital asset and production machinery installed in manufacturing facilities to generate industrial output.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "2713",
+          "description": "PETROLM COKE PETROLM BITUMN AND OTHR RESDUS OF PETRLM OILS/OILS OBTND FRM BITMNS MNRLS",
+          "valueUsdMn": 3114.137649,
+          "productionStage": "energy input",
+          "attributionReason": "Primary fuel, refined petroleum, or energetic feedstock (PETROLM COKE PETROLM BITUMN AND OTHR RESDUS OF PETRLM OILS/OILS OBTND FRM BITMNS MNRLS) consumed in power generation, transportation, and thermal industrial processes.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Mineral fuels",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Primary fuel, refined petroleum, or energetic feedstock (PETROLM COKE PETROLM BITUMN AND OTHR RESDUS OF PETRLM OILS/OILS OBTND FRM BITMNS MNRLS) consumed in power generation, transportation, and thermal industrial processes.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Combustible energy input and refined fuel supplying national grid generation, transport networks, and industrial heating.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "9018",
+          "description": "INSTRMNTS AND APPLNCS USED IN MDCL,SURGCL, DNTL/VTRNRY SCNCS,INCL SCNTGRPHC APPRTS ELCTRO",
+          "valueUsdMn": 3097.101028,
+          "productionStage": "capital good",
+          "attributionReason": "Professional diagnostic apparatus, laboratory instrument, or measuring system (INSTRMNTS AND APPLNCS USED IN MDCL,SURGCL, DNTL/VTRNRY SCNCS,INCL SCNTGRPHC APPRTS ELCTRO) deployed in healthcare and R&D facilities.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Instruments",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Professional diagnostic apparatus, laboratory instrument, or measuring system (INSTRMNTS AND APPLNCS USED IN MDCL,SURGCL, DNTL/VTRNRY SCNCS,INCL SCNTGRPHC APPRTS ELCTRO) deployed in healthcare and R&D facilities.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Professional capital instrument and diagnostic equipment utilized in institutional, medical, and research operations.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "2902",
+          "description": "CYCLIC HYDROCARBONS",
+          "valueUsdMn": 2819.814741,
+          "productionStage": "intermediate input",
+          "attributionReason": "Processed chemical compound, reagent, or industrial formulation (CYCLIC HYDROCARBONS) incorporated into downstream chemical, pharma, or polymer synthesis.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Organic chemicals",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Processed chemical compound, reagent, or industrial formulation (CYCLIC HYDROCARBONS) incorporated into downstream chemical, pharma, or polymer synthesis.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Specialty chemical intermediate and building block consumed by domestic formulation plants and industrial syntheses.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "7403",
+          "description": "REFINED COPPER AND COPPER ALLOYS, UNWROUGHT",
+          "valueUsdMn": 2768.097393,
+          "productionStage": "intermediate input",
+          "attributionReason": "Semi-finished base metal shape, casting, or metallurgical product (REFINED COPPER AND COPPER ALLOYS, UNWROUGHT) incorporated into structural engineering or equipment fabrication.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Copper",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Semi-finished base metal shape, casting, or metallurgical product (REFINED COPPER AND COPPER ALLOYS, UNWROUGHT) incorporated into structural engineering or equipment fabrication.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Processed metal intermediate input utilized extensively across domestic engineering, automotive, and infrastructure sectors.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "2905",
+          "description": "ACYCLIC ALCOHOLS AND THEIR HALOGENATED, SULPHONATED, NITRATED OR NITROSATED DERIVATIVES",
+          "valueUsdMn": 2752.263599,
+          "productionStage": "intermediate input",
+          "attributionReason": "Processed chemical compound, reagent, or industrial formulation (ACYCLIC ALCOHOLS AND THEIR HALOGENATED, SULPHONATED, NITRATED OR NITROSATED DERIVATIVES) incorporated into downstream chemical, pharma, or polymer synthesis.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Organic chemicals",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Processed chemical compound, reagent, or industrial formulation (ACYCLIC ALCOHOLS AND THEIR HALOGENATED, SULPHONATED, NITRATED OR NITROSATED DERIVATIVES) incorporated into downstream chemical, pharma, or polymer synthesis.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Specialty chemical intermediate and building block consumed by domestic formulation plants and industrial syntheses.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "3907",
+          "description": "POLYACETALS, OTHER POLYETHERS AND EPOXIDE RESINS,",
+          "valueUsdMn": 2732.945015,
+          "productionStage": "intermediate input",
+          "attributionReason": "Polymer resin, synthetic rubber, or primary plastic form (POLYACETALS, OTHER POLYETHERS AND EPOXIDE RESINS,) utilized as intermediate molding and extrusion material.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Plastics",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Polymer resin, synthetic rubber, or primary plastic form (POLYACETALS, OTHER POLYETHERS AND EPOXIDE RESINS,) utilized as intermediate molding and extrusion material.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Processed petrochemical intermediate feedstock feeding domestic plastic fabrication, packaging, and rubber product lines.",
+          "partnerRiskFlag": false
+        }
+      ]
+    },
+    {
+      "flow": "Exports",
+      "totalUsdMn": 441745.8586309996,
+      "productCount": 1217,
+      "topBasketUsdMn": 249345.91140200003,
+      "classifiedUsdMn": 249345.91140200003,
+      "curatedUsdMn": 353629.54687600007,
+      "curatedCount": 211,
+      "curatedCoveragePct": 80.05271356067085,
+      "coveragePct": 56.445557220330244,
+      "stages": [
+        {
+          "stage": "finished product",
+          "valueUsdMn": 163737.87131200018,
+          "productCount": 306,
+          "sharePct": 37.06607953709741
+        },
+        {
+          "stage": "intermediate input",
+          "valueUsdMn": 144077.90011500023,
+          "productCount": 574,
+          "sharePct": 32.615563292773686
+        },
+        {
+          "stage": "energy input",
+          "valueUsdMn": 55871.205461000005,
+          "productCount": 14,
+          "sharePct": 12.647816469439842
+        },
+        {
+          "stage": "capital good",
+          "valueUsdMn": 39628.736276,
+          "productCount": 129,
+          "sharePct": 8.970935550773957
+        },
+        {
+          "stage": "agricultural commodity",
+          "valueUsdMn": 31045.664721999998,
+          "productCount": 116,
+          "sharePct": 7.027946977977931
+        },
+        {
+          "stage": "raw material",
+          "valueUsdMn": 7071.651259999999,
+          "productCount": 75,
+          "sharePct": 1.600841552180144
+        },
+        {
+          "stage": "consumption asset",
+          "valueUsdMn": 312.829485,
+          "productCount": 3,
+          "sharePct": 0.07081661975722417
+        }
+      ],
+      "topStages": [
+        {
+          "stage": "finished product",
+          "valueUsdMn": 117178.64938399997,
+          "productCount": 18,
+          "sharePct": 46.99441379453077
+        },
+        {
+          "stage": "energy input",
+          "valueUsdMn": 52973.29384,
+          "productCount": 1,
+          "sharePct": 21.24490172794351
+        },
+        {
+          "stage": "intermediate input",
+          "valueUsdMn": 50021.718142,
+          "productCount": 13,
+          "sharePct": 20.06117439854631
+        },
+        {
+          "stage": "capital good",
+          "valueUsdMn": 13884.538376000002,
+          "productCount": 5,
+          "sharePct": 5.568384216902237
+        },
+        {
+          "stage": "agricultural commodity",
+          "valueUsdMn": 13579.377543999999,
+          "productCount": 2,
+          "sharePct": 5.445999682788894
+        },
+        {
+          "stage": "raw material",
+          "valueUsdMn": 1708.334116,
+          "productCount": 1,
+          "sharePct": 0.6851261792882549
+        }
+      ],
+      "concentration": {
+        "topShares": {
+          "10": 39.228632890648974,
+          "25": 50.352628019270554,
+          "50": 59.83017364714529,
+          "100": 72.48091581554695
+        },
+        "productsToReach": {
+          "50": 25,
+          "75": 115,
+          "90": 275
+        },
+        "hhi": 278.5240600214718
+      },
+      "products": [
+        {
+          "hscode": "2710",
+          "description": "PETROLEUM OILSAND OILS OBTND FRM BITMNS MNRLOTHER THAN CRUDE PRPN NES;CNTNG70% OR MOREBY WEIGHT OF THESE OILS",
+          "valueUsdMn": 52973.29384,
+          "productionStage": "energy input",
+          "attributionReason": "Dual-use item (PETROLEUM OILSAND OILS OBTND FRM BITMNS MNRLOTHER THAN CRUDE PRPN NES;CNTNG70% OR MOREBY WEIGHT OF THESE OILS) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Mineral fuels",
+          "reviewStatus": "mixed-use",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Dual-use item (PETROLEUM OILSAND OILS OBTND FRM BITMNS MNRLOTHER THAN CRUDE PRPN NES;CNTNG70% OR MOREBY WEIGHT OF THESE OILS) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "mixedUseFlag": true,
+          "evidenceNote": "Empirical trade flows indicate dual sourcing for both industrial assembly lines and direct commercial or consumer end markets.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8517",
+          "description": "ELCTRCL APARTS FR LINE TELEPHNY/TELGRPHY, INCL TELPHON SETS WTH CORDLS HANDSET CARIER",
+          "valueUsdMn": 33759.211577,
+          "productionStage": "finished product",
+          "attributionReason": "Dual-use item (ELCTRCL APARTS FR LINE TELEPHNY/TELGRPHY, INCL TELPHON SETS WTH CORDLS HANDSET CARIER) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Electronics",
+          "reviewStatus": "mixed-use",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Dual-use item (ELCTRCL APARTS FR LINE TELEPHNY/TELGRPHY, INCL TELPHON SETS WTH CORDLS HANDSET CARIER) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "mixedUseFlag": true,
+          "evidenceNote": "Empirical trade flows indicate dual sourcing for both industrial assembly lines and direct commercial or consumer end markets.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "3004",
+          "description": "MDCMNTS (EXCL ITMS OF 3002,3005 / 3006) FR THRPUTC/PRPHYLCTC USES IN MEASURD DOSESOR IN PCKNGS FR RTL SALE",
+          "valueUsdMn": 21866.014285,
+          "productionStage": "finished product",
+          "attributionReason": "Formulated pharmaceutical dosage, biologic, or packaged medicament (MDCMNTS (EXCL ITMS OF 3002,3005 / 3006) FR THRPUTC/PRPHYLCTC USES IN MEASURD DOSESOR IN PCKNGS FR RTL SALE) ready for healthcare administration and retail dispensing.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Pharmaceuticals",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Formulated pharmaceutical dosage, biologic, or packaged medicament (MDCMNTS (EXCL ITMS OF 3002,3005 / 3006) FR THRPUTC/PRPHYLCTC USES IN MEASURD DOSESOR IN PCKNGS FR RTL SALE) ready for healthcare administration and retail dispensing.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Finished therapeutic product and dosage formulation supplied directly to clinics, hospitals, and pharmacies.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "7113",
+          "description": "ARTCLS OF JEWELLERY AND PRTS THEREOF; OF PRCS MTL/OF MTL CLD WTH PRECIOUS METAL",
+          "valueUsdMn": 13276.615956,
+          "productionStage": "finished product",
+          "attributionReason": "Fully assembled manufactured product (ARTCLS OF JEWELLERY AND PRTS THEREOF; OF PRCS MTL/OF MTL CLD WTH PRECIOUS METAL) predominantly ready for final retail, commercial, or consumer use.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Gems & precious metals",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Fully assembled manufactured product (ARTCLS OF JEWELLERY AND PRTS THEREOF; OF PRCS MTL/OF MTL CLD WTH PRECIOUS METAL) predominantly ready for final retail, commercial, or consumer use.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Finished product distributed through commercial and retail supply chains for final consumption and deployment.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "7102",
+          "description": "DIAMONDS, WHETHER OR NOT WORKED, BUT NOT MOUNTED OR SET",
+          "valueUsdMn": 12444.29781,
+          "productionStage": "intermediate input",
+          "attributionReason": "Dual-use item (DIAMONDS, WHETHER OR NOT WORKED, BUT NOT MOUNTED OR SET) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Gems & precious metals",
+          "reviewStatus": "mixed-use",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Dual-use item (DIAMONDS, WHETHER OR NOT WORKED, BUT NOT MOUNTED OR SET) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "mixedUseFlag": true,
+          "evidenceNote": "Empirical trade flows indicate dual sourcing for both industrial assembly lines and direct commercial or consumer end markets.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "1006",
+          "description": "RICE",
+          "valueUsdMn": 11537.352744,
+          "productionStage": "agricultural commodity",
+          "attributionReason": "Primary harvested agricultural crop, farm produce, or unrefined natural commodity (RICE) traded in bulk agricultural markets.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Cereals",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Primary harvested agricultural crop, farm produce, or unrefined natural commodity (RICE) traded in bulk agricultural markets.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Primary farm commodity and raw agricultural harvest supplying food processing plants and commodity trade networks.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8703",
+          "description": "MOTR CARS AND OTHR MOTR VHCLS FR TRNSPRT OF PERSONS(EXCL OF 8702)INCL RCNG CARS ETC",
+          "valueUsdMn": 9040.191216,
+          "productionStage": "finished product",
+          "attributionReason": "Dual-use item (MOTR CARS AND OTHR MOTR VHCLS FR TRNSPRT OF PERSONS(EXCL OF 8702)INCL RCNG CARS ETC) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Vehicles",
+          "reviewStatus": "mixed-use",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Dual-use item (MOTR CARS AND OTHR MOTR VHCLS FR TRNSPRT OF PERSONS(EXCL OF 8702)INCL RCNG CARS ETC) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "mixedUseFlag": true,
+          "evidenceNote": "Empirical trade flows indicate dual sourcing for both industrial assembly lines and direct commercial or consumer end markets.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8708",
+          "description": "PARTS AND ACCESSORIES OF THE MOTOR VEHICLES OF HEADINGS 8701 TO 8705",
+          "valueUsdMn": 7642.937733,
+          "productionStage": "intermediate input",
+          "attributionReason": "Specialized industrial component, part, or sub-assembly (PARTS AND ACCESSORIES OF THE MOTOR VEHICLES OF HEADINGS 8701 TO 8705) integrated into capital machinery or electrical systems.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Vehicles",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Specialized industrial component, part, or sub-assembly (PARTS AND ACCESSORIES OF THE MOTOR VEHICLES OF HEADINGS 8701 TO 8705) integrated into capital machinery or electrical systems.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Precision manufactured part and intermediate sub-assembly feeding electronics assembly and industrial machinery production.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8411",
+          "description": "TURBO",
+          "valueUsdMn": 5672.056958,
+          "productionStage": "capital good",
+          "attributionReason": "Industrial machinery, automation equipment, or heavy electrical plant (TURBO) deployed for long-term productive manufacturing.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Machinery",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Industrial machinery, automation equipment, or heavy electrical plant (TURBO) deployed for long-term productive manufacturing.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Durable capital asset and production machinery installed in manufacturing facilities to generate industrial output.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "0306",
+          "description": "CRSTCN, CRSTCN CKD BY STMNG/BLNG WTR, W/N SHL,LIVE,FRSH,CHLD,FRZN,DRD,SLTD/IN BRINE;SMKD CRSTCN,W/N SHL,W/N CKD IN SMKNG",
+          "valueUsdMn": 5078.889073,
+          "productionStage": "finished product",
+          "attributionReason": "Packaged food, beverage, or prepared consumer product (CRSTCN, CRSTCN CKD BY STMNG/BLNG WTR, W/N SHL,LIVE,FRSH,CHLD,FRZN,DRD,SLTD/IN BRINE;SMKD CRSTCN,W/N SHL,W/N CKD IN SMKNG) formulated for direct retail and food-service distribution.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Seafood",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Packaged food, beverage, or prepared consumer product (CRSTCN, CRSTCN CKD BY STMNG/BLNG WTR, W/N SHL,LIVE,FRSH,CHLD,FRZN,DRD,SLTD/IN BRINE;SMKD CRSTCN,W/N SHL,W/N CKD IN SMKNG) formulated for direct retail and food-service distribution.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Prepared foodstuff and finished consumable item distributed directly to retail, commercial, and hospitality markets.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "0202",
+          "description": "MEAT OF BOVINE ANIMALS, FROZEN",
+          "valueUsdMn": 4612.901803,
+          "productionStage": "finished product",
+          "attributionReason": "Packaged food, beverage, or prepared consumer product (MEAT OF BOVINE ANIMALS, FROZEN) formulated for direct retail and food-service distribution.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Meat",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Packaged food, beverage, or prepared consumer product (MEAT OF BOVINE ANIMALS, FROZEN) formulated for direct retail and food-service distribution.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Prepared foodstuff and finished consumable item distributed directly to retail, commercial, and hospitality markets.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "2933",
+          "description": "HETEROCYCLIC COMPOUNDS WITH NITROGEN",
+          "valueUsdMn": 4363.381043,
+          "productionStage": "intermediate input",
+          "attributionReason": "Processed chemical compound, reagent, or industrial formulation (HETEROCYCLIC COMPOUNDS WITH NITROGEN) incorporated into downstream chemical, pharma, or polymer synthesis.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Organic chemicals",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Processed chemical compound, reagent, or industrial formulation (HETEROCYCLIC COMPOUNDS WITH NITROGEN) incorporated into downstream chemical, pharma, or polymer synthesis.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Specialty chemical intermediate and building block consumed by domestic formulation plants and industrial syntheses.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "7601",
+          "description": "UNWROUGHT ALUMINIUM",
+          "valueUsdMn": 4277.110321,
+          "productionStage": "intermediate input",
+          "attributionReason": "Semi-finished base metal shape, casting, or metallurgical product (UNWROUGHT ALUMINIUM) incorporated into structural engineering or equipment fabrication.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Aluminium",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Semi-finished base metal shape, casting, or metallurgical product (UNWROUGHT ALUMINIUM) incorporated into structural engineering or equipment fabrication.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Processed metal intermediate input utilized extensively across domestic engineering, automotive, and infrastructure sectors.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8711",
+          "description": "MOTORCYCLES (INCLUDING MOPEDS) AND CYCLES FITTED WITH AN AUXILIARY MOTOR, WITH OR WITHOUT SIDE",
+          "valueUsdMn": 3982.740137,
+          "productionStage": "finished product",
+          "attributionReason": "Finished consumer appliance, personal vehicle, or standalone device (MOTORCYCLES (INCLUDING MOPEDS) AND CYCLES FITTED WITH AN AUXILIARY MOTOR, WITH OR WITHOUT SIDE) ready for household or individual usage.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Vehicles",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Finished consumer appliance, personal vehicle, or standalone device (MOTORCYCLES (INCLUDING MOPEDS) AND CYCLES FITTED WITH AN AUXILIARY MOTOR, WITH OR WITHOUT SIDE) ready for household or individual usage.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Manufactured consumer equipment and finished vehicle product distributed directly to end-user retail channels.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "3808",
+          "description": "INSCTCDS,RDNTCDS,FNGCDS,HRBCDS,ANTSPROUTNGPRDCTS AND PLNTGRWTH RGLTRS",
+          "valueUsdMn": 3870.782593,
+          "productionStage": "finished product",
+          "attributionReason": "Fully assembled manufactured product (INSCTCDS,RDNTCDS,FNGCDS,HRBCDS,ANTSPROUTNGPRDCTS AND PLNTGRWTH RGLTRS) predominantly ready for final retail, commercial, or consumer use.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Misc chemicals",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Fully assembled manufactured product (INSCTCDS,RDNTCDS,FNGCDS,HRBCDS,ANTSPROUTNGPRDCTS AND PLNTGRWTH RGLTRS) predominantly ready for final retail, commercial, or consumer use.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Finished product distributed through commercial and retail supply chains for final consumption and deployment.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "5205",
+          "description": "COTN YRN(OTHR THN SWNG THRD)CNTNG 85% OR MORE BY WT OF COTON NT PUT UP FR RETL SALE",
+          "valueUsdMn": 3217.745074,
+          "productionStage": "intermediate input",
+          "attributionReason": "Spun yarn, woven fabric, or textile intermediate (COTN YRN(OTHR THN SWNG THRD)CNTNG 85% OR MORE BY WT OF COTON NT PUT UP FR RETL SALE) utilized as raw material for garment manufacturing and technical textiles.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Cotton",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Spun yarn, woven fabric, or textile intermediate (COTN YRN(OTHR THN SWNG THRD)CNTNG 85% OR MORE BY WT OF COTON NT PUT UP FR RETL SALE) utilized as raw material for garment manufacturing and technical textiles.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Processed textile intermediate feeding domestic apparel manufacturing and export garment fabrication hubs.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8504",
+          "description": "ELECTRICAL TRANSFORMERS, STATIC CONVERTERS (FOR EXAMPLE, RECTIFIERS) AND INDUCTORS",
+          "valueUsdMn": 3199.922313,
+          "productionStage": "capital good",
+          "attributionReason": "Dual-use item (ELECTRICAL TRANSFORMERS, STATIC CONVERTERS (FOR EXAMPLE, RECTIFIERS) AND INDUCTORS) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Electronics",
+          "reviewStatus": "mixed-use",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Dual-use item (ELECTRICAL TRANSFORMERS, STATIC CONVERTERS (FOR EXAMPLE, RECTIFIERS) AND INDUCTORS) utilized both as an industrial intermediate input and as a finished equipment/consumer good across diverse sectors.",
+          "mixedUseFlag": true,
+          "evidenceNote": "Empirical trade flows indicate dual sourcing for both industrial assembly lines and direct commercial or consumer end markets.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "4011",
+          "description": "NEW PNEUMATIC TYRES, OF RUBBER",
+          "valueUsdMn": 3090.155723,
+          "productionStage": "finished product",
+          "attributionReason": "Fully assembled manufactured product (NEW PNEUMATIC TYRES, OF RUBBER) predominantly ready for final retail, commercial, or consumer use.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Rubber",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Fully assembled manufactured product (NEW PNEUMATIC TYRES, OF RUBBER) predominantly ready for final retail, commercial, or consumer use.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Finished product distributed through commercial and retail supply chains for final consumption and deployment.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "6204",
+          "description": "WOMENS OR GIRLS SUITS, ENSEMBLES, JACKETS, BLAZERS, DRESSES, SKIRTS, DIVIDED SKIRTS, TROUSERS, BIB AND BRACE OVE",
+          "valueUsdMn": 3066.083722,
+          "productionStage": "finished product",
+          "attributionReason": "Finished apparel, footwear, or made-up textile article (WOMENS OR GIRLS SUITS, ENSEMBLES, JACKETS, BLAZERS, DRESSES, SKIRTS, DIVIDED SKIRTS, TROUSERS, BIB AND BRACE OVE) ready for final retail consumer wear and use.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Woven apparel",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Finished apparel, footwear, or made-up textile article (WOMENS OR GIRLS SUITS, ENSEMBLES, JACKETS, BLAZERS, DRESSES, SKIRTS, DIVIDED SKIRTS, TROUSERS, BIB AND BRACE OVE) ready for final retail consumer wear and use.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Finished consumer textile and garment product supplied directly to domestic and international retail fashion markets.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "7202",
+          "description": "FERRO",
+          "valueUsdMn": 2889.809502,
+          "productionStage": "intermediate input",
+          "attributionReason": "Semi-finished base metal shape, casting, or metallurgical product (FERRO) incorporated into structural engineering or equipment fabrication.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Iron & steel",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Semi-finished base metal shape, casting, or metallurgical product (FERRO) incorporated into structural engineering or equipment fabrication.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Processed metal intermediate input utilized extensively across domestic engineering, automotive, and infrastructure sectors.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8544",
+          "description": "INSULATED (INCL ENAMELLED OR ANODISED) WIRE, CABLE (INCL CO",
+          "valueUsdMn": 2871.338592,
+          "productionStage": "intermediate input",
+          "attributionReason": "Specialized industrial component, part, or sub-assembly (INSULATED (INCL ENAMELLED OR ANODISED) WIRE, CABLE (INCL CO) integrated into capital machinery or electrical systems.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Electronics",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Specialized industrial component, part, or sub-assembly (INSULATED (INCL ENAMELLED OR ANODISED) WIRE, CABLE (INCL CO) integrated into capital machinery or electrical systems.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Precision manufactured part and intermediate sub-assembly feeding electronics assembly and industrial machinery production.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8481",
+          "description": "TAPS, COCKS, VALVES AND SIMILAR APPLIANCES FOR PIPES, BOILER SHELLS, TANKS, VATS OR THE LIKE, INCLUDING PRESSURE",
+          "valueUsdMn": 2839.551969,
+          "productionStage": "intermediate input",
+          "attributionReason": "Specialized industrial component, part, or sub-assembly (TAPS, COCKS, VALVES AND SIMILAR APPLIANCES FOR PIPES, BOILER SHELLS, TANKS, VATS OR THE LIKE, INCLUDING PRESSURE) integrated into capital machinery or electrical systems.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Machinery",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Specialized industrial component, part, or sub-assembly (TAPS, COCKS, VALVES AND SIMILAR APPLIANCES FOR PIPES, BOILER SHELLS, TANKS, VATS OR THE LIKE, INCLUDING PRESSURE) integrated into capital machinery or electrical systems.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Precision manufactured part and intermediate sub-assembly feeding electronics assembly and industrial machinery production.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "6109",
+          "description": "T",
+          "valueUsdMn": 2369.467175,
+          "productionStage": "finished product",
+          "attributionReason": "Finished apparel, footwear, or made-up textile article (T) ready for final retail consumer wear and use.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Knit apparel",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Finished apparel, footwear, or made-up textile article (T) ready for final retail consumer wear and use.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Finished consumer textile and garment product supplied directly to domestic and international retail fashion markets.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "3002",
+          "description": "HUMN,ANML,BLD FR MDCNL USE; MDFD IMUNLGCL PRDT W/N_BITECH PRCS;VCCNS,TXNS,CLTR_MCRGNSM,ETHER SMLR P; CELL CLTR ,W/N MDFD",
+          "valueUsdMn": 2246.68289,
+          "productionStage": "finished product",
+          "attributionReason": "Formulated pharmaceutical dosage, biologic, or packaged medicament (HUMN,ANML,BLD FR MDCNL USE; MDFD IMUNLGCL PRDT W/N_BITECH PRCS;VCCNS,TXNS,CLTR_MCRGNSM,ETHER SMLR P; CELL CLTR ,W/N MDFD) ready for healthcare administration and retail dispensing.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Pharmaceuticals",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Formulated pharmaceutical dosage, biologic, or packaged medicament (HUMN,ANML,BLD FR MDCNL USE; MDFD IMUNLGCL PRDT W/N_BITECH PRCS;VCCNS,TXNS,CLTR_MCRGNSM,ETHER SMLR P; CELL CLTR ,W/N MDFD) ready for healthcare administration and retail dispensing.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Finished therapeutic product and dosage formulation supplied directly to clinics, hospitals, and pharmacies.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8483",
+          "description": "TRNSMSN SHFTS AND CRNKS;GEARS;BALL SCREWS; BEARING HOUSING ANDOTHR PLAIN SHFT BEARINGS SPD CHNGRS INCL TORQUE CNVRTRSFF",
+          "valueUsdMn": 2242.114938,
+          "productionStage": "intermediate input",
+          "attributionReason": "Specialized industrial component, part, or sub-assembly (TRNSMSN SHFTS AND CRNKS;GEARS;BALL SCREWS; BEARING HOUSING ANDOTHR PLAIN SHFT BEARINGS SPD CHNGRS INCL TORQUE CNVRTRSFF) integrated into capital machinery or electrical systems.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Machinery",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Specialized industrial component, part, or sub-assembly (TRNSMSN SHFTS AND CRNKS;GEARS;BALL SCREWS; BEARING HOUSING ANDOTHR PLAIN SHFT BEARINGS SPD CHNGRS INCL TORQUE CNVRTRSFF) integrated into capital machinery or electrical systems.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Precision manufactured part and intermediate sub-assembly feeding electronics assembly and industrial machinery production.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "3204",
+          "description": "SYNTC ORGNC COLRNG MATR W/N CHMCLY DFND",
+          "valueUsdMn": 2188.10941,
+          "productionStage": "intermediate input",
+          "attributionReason": "Processed chemical compound, reagent, or industrial formulation (SYNTC ORGNC COLRNG MATR W/N CHMCLY DFND) incorporated into downstream chemical, pharma, or polymer synthesis.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Dyes & pigments",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Processed chemical compound, reagent, or industrial formulation (SYNTC ORGNC COLRNG MATR W/N CHMCLY DFND) incorporated into downstream chemical, pharma, or polymer synthesis.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Specialty chemical intermediate and building block consumed by domestic formulation plants and industrial syntheses.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "6907",
+          "description": "CERAMIC FLGS AND PAVING,HEARTH OR WALL TLS CERAMIC MOSAIC CUBES AND LIKE, WHETHER OR NOT ON A BACKING; FINISHING CERAMICS",
+          "valueUsdMn": 2122.685142,
+          "productionStage": "finished product",
+          "attributionReason": "Fully assembled manufactured product (CERAMIC FLGS AND PAVING,HEARTH OR WALL TLS CERAMIC MOSAIC CUBES AND LIKE, WHETHER OR NOT ON A BACKING; FINISHING CERAMICS) predominantly ready for final retail, commercial, or consumer use.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Ceramics",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Fully assembled manufactured product (CERAMIC FLGS AND PAVING,HEARTH OR WALL TLS CERAMIC MOSAIC CUBES AND LIKE, WHETHER OR NOT ON A BACKING; FINISHING CERAMICS) predominantly ready for final retail, commercial, or consumer use.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Finished product distributed through commercial and retail supply chains for final consumption and deployment.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "1701",
+          "description": "CANE/BEET SUGR CHMCLY PURE SUCRSE IN SOLID",
+          "valueUsdMn": 2042.0248,
+          "productionStage": "agricultural commodity",
+          "attributionReason": "Primary harvested agricultural crop, farm produce, or unrefined natural commodity (CANE/BEET SUGR CHMCLY PURE SUCRSE IN SOLID) traded in bulk agricultural markets.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Sugar",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Primary harvested agricultural crop, farm produce, or unrefined natural commodity (CANE/BEET SUGR CHMCLY PURE SUCRSE IN SOLID) traded in bulk agricultural markets.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Primary farm commodity and raw agricultural harvest supplying food processing plants and commodity trade networks.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "6302",
+          "description": "BED LINEN, TABLE LINEN, TOILET LINEN AND KITCHEN LINEN",
+          "valueUsdMn": 2006.635919,
+          "productionStage": "finished product",
+          "attributionReason": "Finished apparel, footwear, or made-up textile article (BED LINEN, TABLE LINEN, TOILET LINEN AND KITCHEN LINEN) ready for final retail consumer wear and use.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Textile articles",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Finished apparel, footwear, or made-up textile article (BED LINEN, TABLE LINEN, TOILET LINEN AND KITCHEN LINEN) ready for final retail consumer wear and use.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Finished consumer textile and garment product supplied directly to domestic and international retail fashion markets.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8429",
+          "description": "SLF",
+          "valueUsdMn": 1768.692048,
+          "productionStage": "capital good",
+          "attributionReason": "Industrial machinery, automation equipment, or heavy electrical plant (SLF) deployed for long-term productive manufacturing.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Machinery",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Industrial machinery, automation equipment, or heavy electrical plant (SLF) deployed for long-term productive manufacturing.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Durable capital asset and production machinery installed in manufacturing facilities to generate industrial output.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8409",
+          "description": "PARTS SUITABLE FOR USE SOLELY OR PRINCIPALLY WITH THE ENGINES OF HEADING 8407 OR 8408",
+          "valueUsdMn": 1760.380937,
+          "productionStage": "intermediate input",
+          "attributionReason": "Specialized industrial component, part, or sub-assembly (PARTS SUITABLE FOR USE SOLELY OR PRINCIPALLY WITH THE ENGINES OF HEADING 8407 OR 8408) integrated into capital machinery or electrical systems.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Machinery",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Specialized industrial component, part, or sub-assembly (PARTS SUITABLE FOR USE SOLELY OR PRINCIPALLY WITH THE ENGINES OF HEADING 8407 OR 8408) integrated into capital machinery or electrical systems.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Precision manufactured part and intermediate sub-assembly feeding electronics assembly and industrial machinery production.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "7308",
+          "description": "STRUCTRS(EXCL PREFABRICTD BLDNGS OF HDG NO.9406)AND PARTS E.G.BRIDGES ROOFS DOORS TUBES ETC USED IN STRUCTRS OF IRON",
+          "valueUsdMn": 1752.737481,
+          "productionStage": "finished product",
+          "attributionReason": "Fully assembled manufactured product (STRUCTRS(EXCL PREFABRICTD BLDNGS OF HDG NO.9406)AND PARTS E.G.BRIDGES ROOFS DOORS TUBES ETC USED IN STRUCTRS OF IRON) predominantly ready for final retail, commercial, or consumer use.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Steel articles",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Fully assembled manufactured product (STRUCTRS(EXCL PREFABRICTD BLDNGS OF HDG NO.9406)AND PARTS E.G.BRIDGES ROOFS DOORS TUBES ETC USED IN STRUCTRS OF IRON) predominantly ready for final retail, commercial, or consumer use.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Finished product distributed through commercial and retail supply chains for final consumption and deployment.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "6304",
+          "description": "OTHER FURNISHING ARTICLES, EXCLUDING THOSE OF HEADING 9404",
+          "valueUsdMn": 1751.609999,
+          "productionStage": "finished product",
+          "attributionReason": "Finished apparel, footwear, or made-up textile article (OTHER FURNISHING ARTICLES, EXCLUDING THOSE OF HEADING 9404) ready for final retail consumer wear and use.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Textile articles",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Finished apparel, footwear, or made-up textile article (OTHER FURNISHING ARTICLES, EXCLUDING THOSE OF HEADING 9404) ready for final retail consumer wear and use.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Finished consumer textile and garment product supplied directly to domestic and international retail fashion markets.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "2601",
+          "description": "IRON ORES AND CONCENTRATES, INCLUDING ROASTED IRON PYRITES IRON ORES AND CONCENTRATES, OTHER THAN ROASTED IRO",
+          "valueUsdMn": 1708.334116,
+          "productionStage": "raw material",
+          "attributionReason": "Unprocessed mineral ore or crude geological substance (IRON ORES AND CONCENTRATES, INCLUDING ROASTED IRON PYRITES IRON ORES AND CONCENTRATES, OTHER THAN ROASTED IRO) extracted for industrial smelting or chemical refining.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Ores",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Unprocessed mineral ore or crude geological substance (IRON ORES AND CONCENTRATES, INCLUDING ROASTED IRON PYRITES IRON ORES AND CONCENTRATES, OTHER THAN ROASTED IRO) extracted for industrial smelting or chemical refining.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Mineral feedstock imported or exported in bulk as primary raw material for metallurgical and fertilizer manufacturing.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "2818",
+          "description": "ARTIFICIAL CORUNDUM, WHETHER OR NOT CHEMICALLY DEFINED; ALUMINIUM OXIDE; ALUMINIUM HYDROXIDE",
+          "valueUsdMn": 1700.552215,
+          "productionStage": "intermediate input",
+          "attributionReason": "Processed chemical compound, reagent, or industrial formulation (ARTIFICIAL CORUNDUM, WHETHER OR NOT CHEMICALLY DEFINED; ALUMINIUM OXIDE; ALUMINIUM HYDROXIDE) incorporated into downstream chemical, pharma, or polymer synthesis.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Inorganic chemicals",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Processed chemical compound, reagent, or industrial formulation (ARTIFICIAL CORUNDUM, WHETHER OR NOT CHEMICALLY DEFINED; ALUMINIUM OXIDE; ALUMINIUM HYDROXIDE) incorporated into downstream chemical, pharma, or polymer synthesis.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Specialty chemical intermediate and building block consumed by domestic formulation plants and industrial syntheses.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "6403",
+          "description": "FTWEAR WTH OUTR SOLES OF RUBR,PLSTCS, LTHR/CMPSTN LTHR AND UPPRS OF LTHR",
+          "valueUsdMn": 1694.068876,
+          "productionStage": "finished product",
+          "attributionReason": "Finished apparel, footwear, or made-up textile article (FTWEAR WTH OUTR SOLES OF RUBR,PLSTCS, LTHR/CMPSTN LTHR AND UPPRS OF LTHR) ready for final retail consumer wear and use.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Footwear",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Finished apparel, footwear, or made-up textile article (FTWEAR WTH OUTR SOLES OF RUBR,PLSTCS, LTHR/CMPSTN LTHR AND UPPRS OF LTHR) ready for final retail consumer wear and use.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Finished consumer textile and garment product supplied directly to domestic and international retail fashion markets.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8901",
+          "description": "CRUISE SHIPS, EXCURSION BOATS , FERRY",
+          "valueUsdMn": 1639.033789,
+          "productionStage": "capital good",
+          "attributionReason": "Commercial transport vehicle, railway stock, or maritime vessel (CRUISE SHIPS, EXCURSION BOATS , FERRY) utilized as a productive logistics and freight asset.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Ships & boats",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Commercial transport vehicle, railway stock, or maritime vessel (CRUISE SHIPS, EXCURSION BOATS , FERRY) utilized as a productive logistics and freight asset.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Durable transport and logistics capital asset operating within national and international freight supply chains.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8413",
+          "description": "PUMPS FOR LIQUIDS, WHETHER OR NOT FITTED WITH A",
+          "valueUsdMn": 1604.833268,
+          "productionStage": "capital good",
+          "attributionReason": "Industrial machinery, automation equipment, or heavy electrical plant (PUMPS FOR LIQUIDS, WHETHER OR NOT FITTED WITH A) deployed for long-term productive manufacturing.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Machinery",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Industrial machinery, automation equipment, or heavy electrical plant (PUMPS FOR LIQUIDS, WHETHER OR NOT FITTED WITH A) deployed for long-term productive manufacturing.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Durable capital asset and production machinery installed in manufacturing facilities to generate industrial output.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "4202",
+          "description": "TRUNKS, SUIT",
+          "valueUsdMn": 1591.175817,
+          "productionStage": "finished product",
+          "attributionReason": "Fully assembled manufactured product (TRUNKS, SUIT) predominantly ready for final retail, commercial, or consumer use.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Wood, leather & paper",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Fully assembled manufactured product (TRUNKS, SUIT) predominantly ready for final retail, commercial, or consumer use.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Finished product distributed through commercial and retail supply chains for final consumption and deployment.",
+          "partnerRiskFlag": false
+        },
+        {
+          "hscode": "8538",
+          "description": "PRTS SUITBL FR USE SOLELY/PRINCIPALLY WTH THE APPRTS OF HDG NO.8535,8536/8537",
+          "valueUsdMn": 1584.388598,
+          "productionStage": "intermediate input",
+          "attributionReason": "Specialized industrial component, part, or sub-assembly (PRTS SUITBL FR USE SOLELY/PRINCIPALLY WTH THE APPRTS OF HDG NO.8535,8536/8537) integrated into capital machinery or electrical systems.",
+          "classificationMethod": "curated HS-4",
+          "confidence": 4,
+          "sector": "Electronics",
+          "reviewStatus": "reviewed",
+          "reviewer": "Methodology Team",
+          "reviewDate": "2026-07-22",
+          "dominantUseRationale": "Specialized industrial component, part, or sub-assembly (PRTS SUITBL FR USE SOLELY/PRINCIPALLY WTH THE APPRTS OF HDG NO.8535,8536/8537) integrated into capital machinery or electrical systems.",
+          "mixedUseFlag": false,
+          "evidenceNote": "Precision manufactured part and intermediate sub-assembly feeding electronics assembly and industrial machinery production.",
+          "partnerRiskFlag": false
+        }
+      ]
+    }
+  ],
+  "trends": [
+    {
+      "year": "2021-22",
+      "importsTotalUsdMn": 613052.0508388213,
+      "exportsTotalUsdMn": 422004.39702188695,
+      "importStages": [
+        {
+          "stage": "intermediate input",
+          "valueUsdMn": 213440.29323740472,
+          "productCount": 565,
+          "sharePct": 34.816014879219566
+        },
+        {
+          "stage": "energy input",
+          "valueUsdMn": 194857.07980801252,
+          "productCount": 15,
+          "sharePct": 31.784752949018802
+        },
+        {
+          "stage": "capital good",
+          "valueUsdMn": 64201.28226059389,
+          "productCount": 129,
+          "sharePct": 10.472403146315088
+        },
+        {
+          "stage": "consumption asset",
+          "valueUsdMn": 49445.063743036,
+          "productCount": 3,
+          "sharePct": 8.065394068151596
+        },
+        {
+          "stage": "finished product",
+          "valueUsdMn": 37456.442323490075,
+          "productCount": 300,
+          "sharePct": 6.109830686030576
+        },
+        {
+          "stage": "agricultural commodity",
+          "valueUsdMn": 29750.293204233603,
+          "productCount": 110,
+          "sharePct": 4.852816847040498
+        },
+        {
+          "stage": "raw material",
+          "valueUsdMn": 23901.596262051706,
+          "productCount": 78,
+          "sharePct": 3.898787424224068
+        }
+      ],
+      "exportStages": [
+        {
+          "stage": "intermediate input",
+          "valueUsdMn": 164380.15090315536,
+          "productCount": 572,
+          "sharePct": 38.952236531940656
+        },
+        {
+          "stage": "finished product",
+          "valueUsdMn": 117875.12241291539,
+          "productCount": 304,
+          "sharePct": 27.932202423663817
+        },
+        {
+          "stage": "energy input",
+          "valueUsdMn": 69570.143842786,
+          "productCount": 15,
+          "sharePct": 16.485644304596615
+        },
+        {
+          "stage": "agricultural commodity",
+          "valueUsdMn": 32993.66373728119,
+          "productCount": 118,
+          "sharePct": 7.81832226633648
+        },
+        {
+          "stage": "capital good",
+          "valueUsdMn": 28609.540165310198,
+          "productCount": 129,
+          "sharePct": 6.779441249240439
+        },
+        {
+          "stage": "raw material",
+          "valueUsdMn": 8502.978662435997,
+          "productCount": 76,
+          "sharePct": 2.0149028594114378
+        },
+        {
+          "stage": "consumption asset",
+          "valueUsdMn": 72.7972980031,
+          "productCount": 3,
+          "sharePct": 0.017250364810612248
+        }
+      ]
+    },
+    {
+      "year": "2022-23",
+      "importsTotalUsdMn": 715968.8974207455,
+      "exportsTotalUsdMn": 451069.9955022092,
+      "importStages": [
+        {
+          "stage": "energy input",
+          "valueUsdMn": 260921.0192022209,
+          "productCount": 15,
+          "sharePct": 36.4430661921461
+        },
+        {
+          "stage": "intermediate input",
+          "valueUsdMn": 234764.74031661765,
+          "productCount": 571,
+          "sharePct": 32.7897959202348
+        },
+        {
+          "stage": "capital good",
+          "valueUsdMn": 76225.48421360258,
+          "productCount": 129,
+          "sharePct": 10.64647982450109
+        },
+        {
+          "stage": "finished product",
+          "valueUsdMn": 41594.851908485514,
+          "productCount": 298,
+          "sharePct": 5.809589223544432
+        },
+        {
+          "stage": "consumption asset",
+          "valueUsdMn": 40373.3830130535,
+          "productCount": 3,
+          "sharePct": 5.638985598186917
+        },
+        {
+          "stage": "agricultural commodity",
+          "valueUsdMn": 33005.061544088705,
+          "productCount": 105,
+          "sharePct": 4.609845715782956
+        },
+        {
+          "stage": "raw material",
+          "valueUsdMn": 29084.35722267639,
+          "productCount": 77,
+          "sharePct": 4.062237525603673
+        }
+      ],
+      "exportStages": [
+        {
+          "stage": "intermediate input",
+          "valueUsdMn": 147959.4428661463,
+          "productCount": 573,
+          "sharePct": 32.801880936773955
+        },
+        {
+          "stage": "finished product",
+          "valueUsdMn": 128267.69262050922,
+          "productCount": 308,
+          "sharePct": 28.43631673565417
+        },
+        {
+          "stage": "energy input",
+          "valueUsdMn": 101241.86189492501,
+          "productCount": 15,
+          "sharePct": 22.444822955294345
+        },
+        {
+          "stage": "agricultural commodity",
+          "valueUsdMn": 34678.826903931214,
+          "productCount": 116,
+          "sharePct": 7.688125401761814
+        },
+        {
+          "stage": "capital good",
+          "valueUsdMn": 31342.514311463798,
+          "productCount": 130,
+          "sharePct": 6.948481305338851
+        },
+        {
+          "stage": "raw material",
+          "valueUsdMn": 7344.203290521898,
+          "productCount": 76,
+          "sharePct": 1.628173756568548
+        },
+        {
+          "stage": "consumption asset",
+          "valueUsdMn": 235.4536147116,
+          "productCount": 3,
+          "sharePct": 0.052198908608286465
+        }
+      ]
+    },
+    {
+      "year": "2023-24",
+      "importsTotalUsdMn": 678214.771758,
+      "exportsTotalUsdMn": 437072.03480599966,
+      "importStages": [
+        {
+          "stage": "intermediate input",
+          "valueUsdMn": 228331.8010469999,
+          "productCount": 569,
+          "sharePct": 33.66659214088499
+        },
+        {
+          "stage": "energy input",
+          "valueUsdMn": 219053.645516,
+          "productCount": 15,
+          "sharePct": 32.298565976112734
+        },
+        {
+          "stage": "capital good",
+          "valueUsdMn": 78372.586562,
+          "productCount": 129,
+          "sharePct": 11.55571801523144
+        },
+        {
+          "stage": "consumption asset",
+          "valueUsdMn": 50985.370543,
+          "productCount": 3,
+          "sharePct": 7.517584792622675
+        },
+        {
+          "stage": "finished product",
+          "valueUsdMn": 45213.80586499998,
+          "productCount": 303,
+          "sharePct": 6.666591137170502
+        },
+        {
+          "stage": "agricultural commodity",
+          "valueUsdMn": 29743.405241000004,
+          "productCount": 110,
+          "sharePct": 4.385543706737933
+        },
+        {
+          "stage": "raw material",
+          "valueUsdMn": 26514.156983999994,
+          "productCount": 79,
+          "sharePct": 3.9094042312397095
+        }
+      ],
+      "exportStages": [
+        {
+          "stage": "intermediate input",
+          "valueUsdMn": 141206.1991950001,
+          "productCount": 574,
+          "sharePct": 32.3073058786926
+        },
+        {
+          "stage": "finished product",
+          "valueUsdMn": 133900.82680400013,
+          "productCount": 307,
+          "sharePct": 30.63587146760232
+        },
+        {
+          "stage": "energy input",
+          "valueUsdMn": 87602.37978700001,
+          "productCount": 14,
+          "sharePct": 20.043007287319014
+        },
+        {
+          "stage": "capital good",
+          "valueUsdMn": 35335.121415,
+          "productCount": 130,
+          "sharePct": 8.084507495585704
+        },
+        {
+          "stage": "agricultural commodity",
+          "valueUsdMn": 29656.481182000003,
+          "productCount": 117,
+          "sharePct": 6.785261654903964
+        },
+        {
+          "stage": "raw material",
+          "valueUsdMn": 9186.872894000002,
+          "productCount": 76,
+          "sharePct": 2.1019127654959027
+        },
+        {
+          "stage": "consumption asset",
+          "valueUsdMn": 184.153529,
+          "productCount": 3,
+          "sharePct": 0.04213345040062767
+        }
+      ]
+    },
+    {
+      "year": "2024-25",
+      "importsTotalUsdMn": 721200.2216919997,
+      "exportsTotalUsdMn": 437704.577887,
+      "importStages": [
+        {
+          "stage": "intermediate input",
+          "valueUsdMn": 235376.881048,
+          "productCount": 571,
+          "sharePct": 32.63682871530252
+        },
+        {
+          "stage": "energy input",
+          "valueUsdMn": 218456.01806299997,
+          "productCount": 15,
+          "sharePct": 30.29061992666652
+        },
+        {
+          "stage": "capital good",
+          "valueUsdMn": 87096.80665000001,
+          "productCount": 129,
+          "sharePct": 12.076647237526242
+        },
+        {
+          "stage": "consumption asset",
+          "valueUsdMn": 62843.26232,
+          "productCount": 3,
+          "sharePct": 8.713705352525285
+        },
+        {
+          "stage": "finished product",
+          "valueUsdMn": 48878.52496200003,
+          "productCount": 304,
+          "sharePct": 6.777386291885307
+        },
+        {
+          "stage": "agricultural commodity",
+          "valueUsdMn": 35154.02983400001,
+          "productCount": 109,
+          "sharePct": 4.874378678299008
+        },
+        {
+          "stage": "raw material",
+          "valueUsdMn": 33394.698814999996,
+          "productCount": 77,
+          "sharePct": 4.630433797795163
+        }
+      ],
+      "exportStages": [
+        {
+          "stage": "finished product",
+          "valueUsdMn": 149636.7326279999,
+          "productCount": 303,
+          "sharePct": 34.18669581898476
+        },
+        {
+          "stage": "intermediate input",
+          "valueUsdMn": 138491.08650700006,
+          "productCount": 575,
+          "sharePct": 31.640310269442423
+        },
+        {
+          "stage": "energy input",
+          "valueUsdMn": 67045.977004,
+          "productCount": 14,
+          "sharePct": 15.317632117914226
+        },
+        {
+          "stage": "capital good",
+          "valueUsdMn": 42672.097722999984,
+          "productCount": 129,
+          "sharePct": 9.7490636102089
+        },
+        {
+          "stage": "agricultural commodity",
+          "valueUsdMn": 31644.547882000017,
+          "productCount": 116,
+          "sharePct": 7.229658879686091
+        },
+        {
+          "stage": "raw material",
+          "valueUsdMn": 6800.254625,
+          "productCount": 73,
+          "sharePct": 1.5536174325221674
+        },
+        {
+          "stage": "consumption asset",
+          "valueUsdMn": 1413.881518,
+          "productCount": 3,
+          "sharePct": 0.32302187124143233
+        }
+      ]
+    },
+    {
+      "year": "2025-26",
+      "importsTotalUsdMn": 776013.6498849993,
+      "exportsTotalUsdMn": 441745.85863100045,
+      "importStages": [
+        {
+          "stage": "intermediate input",
+          "valueUsdMn": 263579.43035300006,
+          "productCount": 572,
+          "sharePct": 33.965823976428894
+        },
+        {
+          "stage": "energy input",
+          "valueUsdMn": 203415.40045800002,
+          "productCount": 15,
+          "sharePct": 26.212863715495853
+        },
+        {
+          "stage": "capital good",
+          "valueUsdMn": 96795.21189899997,
+          "productCount": 128,
+          "sharePct": 12.473390373138987
+        },
+        {
+          "stage": "consumption asset",
+          "valueUsdMn": 85393.633541,
+          "productCount": 3,
+          "sharePct": 11.004140655728781
+        },
+        {
+          "stage": "finished product",
+          "valueUsdMn": 57077.449141999976,
+          "productCount": 300,
+          "sharePct": 7.355212005672648
+        },
+        {
+          "stage": "agricultural commodity",
+          "valueUsdMn": 36616.098758,
+          "productCount": 110,
+          "sharePct": 4.718486429127412
+        },
+        {
+          "stage": "raw material",
+          "valueUsdMn": 33136.425734000004,
+          "productCount": 79,
+          "sharePct": 4.270082844407522
+        }
+      ],
+      "exportStages": [
+        {
+          "stage": "finished product",
+          "valueUsdMn": 163737.87131200012,
+          "productCount": 306,
+          "sharePct": 37.06607953709732
+        },
+        {
+          "stage": "intermediate input",
+          "valueUsdMn": 144077.9001149999,
+          "productCount": 574,
+          "sharePct": 32.615563292773544
+        },
+        {
+          "stage": "energy input",
+          "valueUsdMn": 55871.205461,
+          "productCount": 14,
+          "sharePct": 12.647816469439816
+        },
+        {
+          "stage": "capital good",
+          "valueUsdMn": 39628.736276,
+          "productCount": 129,
+          "sharePct": 8.970935550773937
+        },
+        {
+          "stage": "agricultural commodity",
+          "valueUsdMn": 31045.664721999998,
+          "productCount": 116,
+          "sharePct": 7.027946977977917
+        },
+        {
+          "stage": "raw material",
+          "valueUsdMn": 7071.651259999999,
+          "productCount": 75,
+          "sharePct": 1.600841552180141
+        },
+        {
+          "stage": "consumption asset",
+          "valueUsdMn": 312.829485,
+          "productCount": 3,
+          "sharePct": 0.07081661975722402
+        }
+      ]
+    }
+  ],
+  "stageBalances": [
+    {
+      "stage": "energy input",
+      "importUsdMn": 203415.40045800002,
+      "exportUsdMn": 55871.205461,
+      "firstImportUsdMn": 194857.07980801252,
+      "firstExportUsdMn": 69570.143842786,
+      "importChangePct": 4.392101461450505,
+      "exportChangePct": -19.690829463775064,
+      "netBalanceUsdMn": -147544.194997,
+      "exportCoveragePct": 27.466556285907146
+    },
+    {
+      "stage": "intermediate input",
+      "importUsdMn": 263579.43035300006,
+      "exportUsdMn": 144077.9001149999,
+      "firstImportUsdMn": 213440.29323740472,
+      "firstExportUsdMn": 164380.15090315536,
+      "importChangePct": 23.490942762071047,
+      "exportChangePct": -12.350792158669162,
+      "netBalanceUsdMn": -119501.53023800015,
+      "exportCoveragePct": 54.6620424522668
+    },
+    {
+      "stage": "consumption asset",
+      "importUsdMn": 85393.633541,
+      "exportUsdMn": 312.829485,
+      "firstImportUsdMn": 49445.063743036,
+      "firstExportUsdMn": 72.7972980031,
+      "importChangePct": 72.70406199653674,
+      "exportChangePct": 329.726780500395,
+      "netBalanceUsdMn": -85080.80405600001,
+      "exportCoveragePct": 0.36633818240068367
+    },
+    {
+      "stage": "capital good",
+      "importUsdMn": 96795.21189899997,
+      "exportUsdMn": 39628.736276,
+      "firstImportUsdMn": 64201.28226059389,
+      "firstExportUsdMn": 28609.540165310198,
+      "importChangePct": 50.768346816044684,
+      "exportChangePct": 38.51580992570745,
+      "netBalanceUsdMn": -57166.47562299997,
+      "exportCoveragePct": 40.940802234464066
+    },
+    {
+      "stage": "raw material",
+      "importUsdMn": 33136.425734000004,
+      "exportUsdMn": 7071.651259999999,
+      "firstImportUsdMn": 23901.596262051706,
+      "firstExportUsdMn": 8502.978662435997,
+      "importChangePct": 38.636873331386376,
+      "exportChangePct": -16.83324702153187,
+      "netBalanceUsdMn": -26064.774474000005,
+      "exportCoveragePct": 21.341020050765618
+    },
+    {
+      "stage": "agricultural commodity",
+      "importUsdMn": 36616.098758,
+      "exportUsdMn": 31045.664721999998,
+      "firstImportUsdMn": 29750.293204233603,
+      "firstExportUsdMn": 32993.66373728119,
+      "importChangePct": 23.078110547123483,
+      "exportChangePct": -5.904160964943248,
+      "netBalanceUsdMn": -5570.434036000002,
+      "exportCoveragePct": 84.78692644780199
+    },
+    {
+      "stage": "finished product",
+      "importUsdMn": 57077.449141999976,
+      "exportUsdMn": 163737.87131200012,
+      "firstImportUsdMn": 37456.442323490075,
+      "firstExportUsdMn": 117875.12241291539,
+      "importChangePct": 52.38353031250106,
+      "exportChangePct": 38.90791200065776,
+      "netBalanceUsdMn": 106660.42217000015,
+      "exportCoveragePct": 286.86963726189884
+    }
+  ]
+}

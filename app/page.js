@@ -18,6 +18,8 @@ import MoversCard from './components/charts/MoversCard.js';
 
 import MoverExplorer from './components/sections/MoverExplorer.js';
 import ValueChainSection from './components/sections/ValueChainSection.js';
+import ProductDiscovery from './components/sections/ProductDiscovery.js';
+import ProductStageSection from './components/sections/ProductStageSection.js';
 
 function Dashboard() {
   return (
@@ -91,6 +93,14 @@ function Dashboard() {
 
           <Box component="section" id="explorer" data-section>
             <MoverExplorer />
+          </Box>
+
+          <Box component="section" id="product-discovery" data-section>
+            <ProductStageSection />
+          </Box>
+
+          <Box component="section" id="buildability-atlas" data-section>
+            <ProductDiscovery />
           </Box>
 
           <Box component="section" id="value-chains" data-section>

@@ -4,13 +4,15 @@ import { C } from '../../theme.js';
 import { latestFyLabel, latestStatusNote } from '../../lib/transforms.js';
 
 const NAV_SECTIONS = [
-  ['Rupee & deficit', '#rupee-deficit'],
-  ['Trade trends', '#trends'],
-  ['Industry mix', '#basket-mix'],
-  ['Partners', '#partners'],
-  ['Biggest movers', '#item-trends'],
-  ['Explorer', '#explorer'],
-  ['Value chains', '#value-chains'],
+  ['Rupee & deficit', '/#rupee-deficit'],
+  ['Trade trends', '/#trends'],
+  ['Industry mix', '/#basket-mix'],
+  ['Partners', '/#partners'],
+  ['Biggest movers', '/#item-trends'],
+  ['Explorer', '/#explorer'],
+  ['Product stages', '/products'],
+  ['Buildability atlas', '/#buildability-atlas'],
+  ['Value chains', '/#value-chains'],
 ];
 
 export default function Masthead() {
@@ -54,7 +56,7 @@ export default function Masthead() {
         </Box>
         <Box
           component="nav"
-          sx={{ display: { xs: 'none', md: 'flex' }, gap: 2.25, mr: 1, flexShrink: 0 }}
+          sx={{ display: { xs: 'none', md: 'flex' }, gap: 1.5, mr: 1, flexShrink: 0 }}
         >
           {NAV_SECTIONS.map(([label, href]) => (
             <Typography
@@ -62,7 +64,7 @@ export default function Masthead() {
               component="a"
               href={href}
               sx={{
-                fontSize: 13,
+                fontSize: 12.5,
                 fontWeight: 600,
                 color: 'rgba(231,236,245,0.72)',
                 '&:hover': { color: '#fff' },

@@ -23,6 +23,12 @@
     "fetch:exchange-rate-rbi": "python3 scripts/fetch_rbi_exchange_rate.py",
     "build:yearly": "node scripts/build_ftspcc_yearly.js",
     "build:country-slim": "node scripts/build_country_slim.js",
+    "build:product-discovery": "node scripts/build_product_discovery.js",
+    "build:product-stage-mix": "node scripts/build_product_stage_mix.js && node scripts/validate_product_data.js",
+    "validate:products": "node scripts/validate_product_data.js",
+    "test:regression": "node --test scripts/test_ui_regression.js",
+    "test:rendering": "node --import ./scripts/register-loader.js --test scripts/test_rendering.js",
+    "test": "npm run validate:products && npm run test:regression && npm run test:rendering",
     "refresh:all": "npm run fetch:monthly-totals && npm run build:yearly && npm run fetch:country-distribution && npm run build:country-slim && npm run fetch:commodity-shares && npm run fetch:partner-products && npm run fetch:exchange-rate-fbil"
   },
   "dependencies": {
@@ -38,10 +44,20 @@
     "postcss": "^8.5.15"
   },
   "devDependencies": {
+    "@babel/cli": "^8.0.4",
+    "@babel/core": "^8.0.1",
+    "@babel/preset-react": "^8.0.1",
+    "@babel/register": "^8.0.1",
     "@eslint/eslintrc": "^3.3.5",
+    "@testing-library/react": "^16.3.2",
+    "css-mediaquery": "^0.1.2",
+    "esbuild": "^0.28.1",
     "eslint": "^9.39.4",
     "eslint-config-next": "^16.2.9",
     "eslint-config-prettier": "^10.1.8",
-    "prettier": "^3.8.4"
+    "global-jsdom": "^29.0.0",
+    "jsdom": "^29.1.1",
+    "prettier": "^3.8.4",
+    "tsx": "^4.23.1"
   }
 }

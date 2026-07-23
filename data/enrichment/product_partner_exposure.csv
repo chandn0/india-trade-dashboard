@@ -1,0 +1,4 @@
+hscode,flow,fiscal_year,grain,top_partner,top_partner_share_pct,second_partner,second_partner_share_pct,third_partner,third_partner_share_pct,exposure_note,source_url,source_date
+1511,import,2025-26,chapter_proxy,Indonesia,54.0,Malaysia,30.0,Thailand,10.0,Chapter 15 proxy data. Highly concentrated in South East Asia due to agroclimatic suitability for oil palm.,https://eidb.dgft.gov.in/,2026-06-15
+1507,import,2025-26,chapter_proxy,Argentina,54.0,Brazil,40.0,USA,2.0,Chapter 15 proxy data. Concentrated in South American soy belt.,https://eidb.dgft.gov.in/,2026-06-15
+1512,import,2025-26,chapter_proxy,Russia,45.0,Ukraine,30.0,Argentina,15.0,Chapter 15 proxy data. Highly exposed to the Black Sea region; vulnerable to geopolitical disruption.,https://eidb.dgft.gov.in/,2026-06-15

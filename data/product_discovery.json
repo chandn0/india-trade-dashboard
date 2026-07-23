@@ -1,0 +1,1165 @@
+{
+  "metadata": {
+    "fiscalYear": "2025-2026",
+    "units": "USD million",
+    "generatedAt": "2026-07-23T07:35:23.945Z",
+    "methodology": "Trade values are joined by HS-4. Net deficit equals imports minus exports. Realistic impact applies the curated scenario range to net deficit, not gross imports. Opportunity score combines high-case net impact, category tractability and confidence, normalized to 100.",
+    "sources": [
+      "data/import_product_classification.csv",
+      "derived/top_deficit_products.csv",
+      "derived/hs4_import_dependence_index.csv",
+      "derived/partner_product_deficit.csv"
+    ]
+  },
+  "products": [
+    {
+      "hscode": "2709",
+      "description": "PETROLEUM OILS AND OILS OBTAINED FROM BITUMINOUS MINERALS, CRUDE",
+      "sector": "Energy",
+      "importType": "energy input",
+      "importReason": "India has limited crude reserves relative to refinery throughput and transport demand.",
+      "buildabilityCategory": "structurally imported",
+      "bestLever": "demand shaping",
+      "timeHorizon": "10+ years",
+      "technologyComplexity": "high",
+      "inputDependency": "high",
+      "domesticCapacityProxy": "Large refining base; limited upstream resource endowment",
+      "confidence": 5,
+      "notes": "Electrification and efficiency reduce demand slowly; domestic refining does not replace crude feedstock.",
+      "importUsdMn": 134716.78,
+      "exportUsdMn": 0,
+      "netDeficitUsdMn": 134716.78,
+      "exportCoveragePct": 0,
+      "dependenceScore": 79.49,
+      "realisticReductionLowPct": 5,
+      "realisticReductionHighPct": 15,
+      "realisticNetImpactLowUsdMn": 6735.839,
+      "realisticNetImpactHighUsdMn": 20207.517,
+      "countryExposure": [
+        {
+          "country": "RUSSIA",
+          "importUsdMn": 47824.9
+        },
+        {
+          "country": "U ARAB EMTS",
+          "importUsdMn": 24272.88
+        },
+        {
+          "country": "IRAQ",
+          "importUsdMn": 24146.03
+        }
+      ],
+      "opportunityScore": 61
+    },
+    {
+      "hscode": "7108",
+      "description": "GOLD(INCL GOLD PLTD WTH PLTNM)UNWROUGHT OR IN SEMI MNFCTRD FORMS/IN PWDR FORM",
+      "sector": "Precious metals",
+      "importType": "consumption asset",
+      "importReason": "Household savings and jewellery demand exceed domestic mine supply.",
+      "buildabilityCategory": "substitutable",
+      "bestLever": "demand shaping",
+      "timeHorizon": "3–7 years",
+      "technologyComplexity": "low",
+      "inputDependency": "low",
+      "domesticCapacityProxy": "Deep jewellery ecosystem; negligible mine supply",
+      "confidence": 4,
+      "notes": "Financial-gold products and recycling can reduce physical inflows; cultural demand limits the ceiling.",
+      "importUsdMn": 71977.29,
+      "exportUsdMn": 242.55,
+      "netDeficitUsdMn": 71734.73999999999,
+      "exportCoveragePct": 0.34,
+      "dependenceScore": 89.37,
+      "realisticReductionLowPct": 10,
+      "realisticReductionHighPct": 25,
+      "realisticNetImpactLowUsdMn": 7173.473999999999,
+      "realisticNetImpactHighUsdMn": 17933.684999999998,
+      "countryExposure": [
+        {
+          "country": "U ARAB EMTS",
+          "importUsdMn": 24825.69
+        },
+        {
+          "country": "SWITZERLAND",
+          "importUsdMn": 20780.88
+        },
+        {
+          "country": "HONG KONG",
+          "importUsdMn": 10006.25
+        }
+      ],
+      "opportunityScore": 100
+    },
+    {
+      "hscode": "8542",
+      "description": "ELCTRNC INTEGRTD CIRCUITS AND MICRO",
+      "sector": "Electronics",
+      "importType": "intermediate component",
+      "importReason": "Advanced semiconductor fabrication and packaging capacity remain below domestic electronics demand.",
+      "buildabilityCategory": "partly buildable",
+      "bestLever": "domestic manufacturing",
+      "timeHorizon": "7–10 years",
+      "technologyComplexity": "very high",
+      "inputDependency": "high",
+      "domesticCapacityProxy": "Growing design and assembly base; early fabrication and packaging capacity",
+      "confidence": 4,
+      "notes": "Assembly growth can raise both exports and component imports, so impact must be measured net.",
+      "importUsdMn": 30322.88,
+      "exportUsdMn": 279.68,
+      "netDeficitUsdMn": 30043.2,
+      "exportCoveragePct": 0.92,
+      "dependenceScore": 94.94,
+      "realisticReductionLowPct": 10,
+      "realisticReductionHighPct": 25,
+      "realisticNetImpactLowUsdMn": 3004.32,
+      "realisticNetImpactHighUsdMn": 7510.8,
+      "countryExposure": [
+        {
+          "country": "CHINA P RP",
+          "importUsdMn": 46367.46
+        },
+        {
+          "country": "HONG KONG",
+          "importUsdMn": 10492.8
+        },
+        {
+          "country": "SINGAPORE",
+          "importUsdMn": 6229.94
+        }
+      ],
+      "opportunityScore": 56
+    },
+    {
+      "hscode": "2701",
+      "description": "COAL BRIQUETTES OVOIDS AND SIMILAR SOLID FUELS MANUFACTURED FROM COAL",
+      "sector": "Energy",
+      "importType": "energy input",
+      "importReason": "Power, steel and cement users require grades and volumes not fully met by domestic mines.",
+      "buildabilityCategory": "partly buildable",
+      "bestLever": "demand shaping",
+      "timeHorizon": "5–10 years",
+      "technologyComplexity": "medium",
+      "inputDependency": "medium",
+      "domesticCapacityProxy": "Large domestic coal output; quality and logistics gaps persist",
+      "confidence": 4,
+      "notes": "Renewables, efficiency, rail logistics and selective mine output matter more than blanket import compression.",
+      "importUsdMn": 26729.1,
+      "exportUsdMn": 178.32,
+      "netDeficitUsdMn": 26550.78,
+      "exportCoveragePct": 0.67,
+      "dependenceScore": 72.69,
+      "realisticReductionLowPct": 10,
+      "realisticReductionHighPct": 25,
+      "realisticNetImpactLowUsdMn": 2655.078,
+      "realisticNetImpactHighUsdMn": 6637.695,
+      "countryExposure": [
+        {
+          "country": "RUSSIA",
+          "importUsdMn": 47824.9
+        },
+        {
+          "country": "U ARAB EMTS",
+          "importUsdMn": 24272.88
+        },
+        {
+          "country": "IRAQ",
+          "importUsdMn": 24146.03
+        }
+      ],
+      "opportunityScore": 50
+    },
+    {
+      "hscode": "2711",
+      "description": "PETRLM GASES AND OTHR GASEOUS HYDRCRBNS",
+      "sector": "Energy",
+      "importType": "energy input",
+      "importReason": "Gas demand exceeds domestic production and LPG consumption relies on imported supply.",
+      "buildabilityCategory": "structurally imported",
+      "bestLever": "sourcing diversification",
+      "timeHorizon": "5–10 years",
+      "technologyComplexity": "high",
+      "inputDependency": "high",
+      "domesticCapacityProxy": "Gas grid and terminals are expanding; upstream supply is constrained",
+      "confidence": 4,
+      "notes": "Diversification reduces concentration risk; biogas and electrification provide limited substitution.",
+      "importUsdMn": 26633.66,
+      "exportUsdMn": 393.3,
+      "netDeficitUsdMn": 26240.36,
+      "exportCoveragePct": 1.48,
+      "dependenceScore": 74.35,
+      "realisticReductionLowPct": 5,
+      "realisticReductionHighPct": 15,
+      "realisticNetImpactLowUsdMn": 1312.018,
+      "realisticNetImpactHighUsdMn": 3936.054,
+      "countryExposure": [
+        {
+          "country": "RUSSIA",
+          "importUsdMn": 47824.9
+        },
+        {
+          "country": "U ARAB EMTS",
+          "importUsdMn": 24272.88
+        },
+        {
+          "country": "IRAQ",
+          "importUsdMn": 24146.03
+        }
+      ],
+      "opportunityScore": 9
+    },
+    {
+      "hscode": "8802",
+      "description": "OTHR AIRCRAFT EXCEPT UNMANNED AIRCRAFT OF 8806(eg HELICOPTER, AEROPLANE)SPACECRAFT (INCL SATELLITE) AND SUBORBITAL AND SPACE",
+      "sector": "Aerospace",
+      "importType": "capital good",
+      "importReason": "Airline fleet expansion and defence or space requirements depend on globally concentrated OEMs.",
+      "buildabilityCategory": "partly buildable",
+      "bestLever": "domestic manufacturing",
+      "timeHorizon": "10+ years",
+      "technologyComplexity": "very high",
+      "inputDependency": "high",
+      "domesticCapacityProxy": "Strong space and defence engineering; limited commercial aircraft integration",
+      "confidence": 3,
+      "notes": "Productive imports can build connectivity and future capability; local content is the practical target.",
+      "importUsdMn": 12834.59,
+      "exportUsdMn": 75,
+      "netDeficitUsdMn": 12759.59,
+      "exportCoveragePct": 0.58,
+      "dependenceScore": 96.17,
+      "realisticReductionLowPct": 5,
+      "realisticReductionHighPct": 15,
+      "realisticNetImpactLowUsdMn": 637.9795,
+      "realisticNetImpactHighUsdMn": 1913.9385,
+      "countryExposure": [
+        {
+          "country": "GERMANY",
+          "importUsdMn": 2692.52
+        },
+        {
+          "country": "U S A",
+          "importUsdMn": 1909.8
+        },
+        {
+          "country": "U ARAB EMTS",
+          "importUsdMn": 1898.72
+        }
+      ],
+      "opportunityScore": 11
+    },
+    {
+      "hscode": "8471",
+      "description": "AUTOMATIC DATA PROCESSING MACHINES AND UNITS",
+      "sector": "Electronics",
+      "importType": "finished good",
+      "importReason": "Demand for computers and servers outpaces domestic component ecosystems and branded product scale.",
+      "buildabilityCategory": "partly buildable",
+      "bestLever": "domestic manufacturing",
+      "timeHorizon": "3–7 years",
+      "technologyComplexity": "high",
+      "inputDependency": "high",
+      "domesticCapacityProxy": "Fast-growing electronics assembly and EMS base",
+      "confidence": 4,
+      "notes": "Final assembly is feasible sooner than deep component localisation.",
+      "importUsdMn": 13707.02,
+      "exportUsdMn": 1074.61,
+      "netDeficitUsdMn": 12632.41,
+      "exportCoveragePct": 7.84,
+      "dependenceScore": 77.26,
+      "realisticReductionLowPct": 15,
+      "realisticReductionHighPct": 35,
+      "realisticNetImpactLowUsdMn": 1894.8615,
+      "realisticNetImpactHighUsdMn": 4421.3435,
+      "countryExposure": [
+        {
+          "country": "CHINA P RP",
+          "importUsdMn": 29450.97
+        },
+        {
+          "country": "GERMANY",
+          "importUsdMn": 5547.74
+        },
+        {
+          "country": "U S A",
+          "importUsdMn": 4683.17
+        }
+      ],
+      "opportunityScore": 33
+    },
+    {
+      "hscode": "7106",
+      "description": "SILVR(INCLD SLVR PLTD WTH GOLD/PLTNM) UNWRGHT/IN SEMI MNFCTRD FORM/IN PWDR FORM",
+      "sector": "Precious metals",
+      "importType": "raw material",
+      "importReason": "Industrial, solar and investment demand exceed limited domestic silver mine output.",
+      "buildabilityCategory": "recoverable",
+      "bestLever": "recycling",
+      "timeHorizon": "3–7 years",
+      "technologyComplexity": "medium",
+      "inputDependency": "medium",
+      "domesticCapacityProxy": "Established precious-metal refining and recycling network",
+      "confidence": 3,
+      "notes": "Recovery from electronics and industrial scrap can help, but collection quality is the bottleneck.",
+      "importUsdMn": 12050.81,
+      "exportUsdMn": 49.69,
+      "netDeficitUsdMn": 12001.119999999999,
+      "exportCoveragePct": 0.41,
+      "dependenceScore": 97.12,
+      "realisticReductionLowPct": 10,
+      "realisticReductionHighPct": 25,
+      "realisticNetImpactLowUsdMn": 1200.1119999999999,
+      "realisticNetImpactHighUsdMn": 3000.2799999999997,
+      "countryExposure": [
+        {
+          "country": "U ARAB EMTS",
+          "importUsdMn": 24825.69
+        },
+        {
+          "country": "SWITZERLAND",
+          "importUsdMn": 20780.88
+        },
+        {
+          "country": "HONG KONG",
+          "importUsdMn": 10006.25
+        }
+      ],
+      "opportunityScore": 19
+    },
+    {
+      "hscode": "1511",
+      "description": "PALM OIL AND ITS FRACTIONS, WHETHER OR NOT REFINED, BUT NOT CHEMICALLY MODIFIED",
+      "sector": "Edible oils",
+      "importType": "agricultural commodity",
+      "importReason": "Consumption exceeds domestic oil-palm output and suitable growing zones are limited.",
+      "buildabilityCategory": "growable",
+      "bestLever": "crop-yield expansion",
+      "timeHorizon": "7–10 years",
+      "technologyComplexity": "medium",
+      "inputDependency": "medium",
+      "domesticCapacityProxy": "Oil-palm programmes in southern and north-eastern states",
+      "confidence": 4,
+      "notes": "Expansion competes for land and water; food-price and ecological safeguards constrain substitution.",
+      "importUsdMn": 9591.6,
+      "exportUsdMn": 49.3,
+      "netDeficitUsdMn": 9542.300000000001,
+      "exportCoveragePct": 0.51,
+      "dependenceScore": 73.32,
+      "realisticReductionLowPct": 5,
+      "realisticReductionHighPct": 15,
+      "realisticNetImpactLowUsdMn": 477.11500000000007,
+      "realisticNetImpactHighUsdMn": 1431.345,
+      "countryExposure": [
+        {
+          "country": "RUSSIA",
+          "importUsdMn": 1675.72
+        },
+        {
+          "country": "SINGAPORE",
+          "importUsdMn": 787.06
+        },
+        {
+          "country": "SWITZERLAND",
+          "importUsdMn": 216.85
+        }
+      ],
+      "opportunityScore": 9
+    },
+    {
+      "hscode": "3105",
+      "description": "MNRL/CHMCL FRTLSRS WTH TWO/THREE OF THE FRTLSNG ELMNTS N,P AND K; OTHR FRTLSRS SMLR GOODS IN TBLTS/LIKE FRM IN PKT OF",
+      "sector": "Fertiliser",
+      "importType": "agricultural commodity",
+      "importReason": "Farm nutrient demand and feedstock constraints exceed domestic complex-fertiliser supply.",
+      "buildabilityCategory": "partly buildable",
+      "bestLever": "domestic manufacturing",
+      "timeHorizon": "3–7 years",
+      "technologyComplexity": "high",
+      "inputDependency": "high",
+      "domesticCapacityProxy": "Large blending and distribution base; imported potash and phosphates",
+      "confidence": 4,
+      "notes": "More local conversion still relies on imported mineral feedstocks, limiting net savings.",
+      "importUsdMn": 7012.08,
+      "exportUsdMn": 24.72,
+      "netDeficitUsdMn": 6987.36,
+      "exportCoveragePct": 0.35,
+      "dependenceScore": 86.05,
+      "realisticReductionLowPct": 10,
+      "realisticReductionHighPct": 20,
+      "realisticNetImpactLowUsdMn": 698.736,
+      "realisticNetImpactHighUsdMn": 1397.472,
+      "countryExposure": [
+        {
+          "country": "RUSSIA",
+          "importUsdMn": 3117.9
+        },
+        {
+          "country": "SAUDI ARAB",
+          "importUsdMn": 2397.39
+        },
+        {
+          "country": "CHINA P RP",
+          "importUsdMn": 2336.7
+        }
+      ],
+      "opportunityScore": 10
+    },
+    {
+      "hscode": "1507",
+      "description": "SOYA BEAN OIL AND ITS FRACTNS W/N REFIND BUT NOT CHEMICALLY MODIFIED",
+      "sector": "Edible oils",
+      "importType": "agricultural commodity",
+      "importReason": "Soybean-oil demand exceeds domestic crush and oilseed yields.",
+      "buildabilityCategory": "growable",
+      "bestLever": "crop-yield expansion",
+      "timeHorizon": "5–10 years",
+      "technologyComplexity": "medium",
+      "inputDependency": "medium",
+      "domesticCapacityProxy": "Large soybean acreage and crushing industry",
+      "confidence": 4,
+      "notes": "Yield, seed quality and processing improvements are more realistic than acreage-only expansion.",
+      "importUsdMn": 6207.78,
+      "exportUsdMn": 44.93,
+      "netDeficitUsdMn": 6162.849999999999,
+      "exportCoveragePct": 0.72,
+      "dependenceScore": 78.12,
+      "realisticReductionLowPct": 10,
+      "realisticReductionHighPct": 20,
+      "realisticNetImpactLowUsdMn": 616.285,
+      "realisticNetImpactHighUsdMn": 1232.57,
+      "countryExposure": [
+        {
+          "country": "RUSSIA",
+          "importUsdMn": 1675.72
+        },
+        {
+          "country": "SINGAPORE",
+          "importUsdMn": 787.06
+        },
+        {
+          "country": "SWITZERLAND",
+          "importUsdMn": 216.85
+        }
+      ],
+      "opportunityScore": 8
+    },
+    {
+      "hscode": "2603",
+      "description": "COPPER ORES AND CONCERTRATES",
+      "sector": "Base metals",
+      "importType": "raw material",
+      "importReason": "Copper smelting and manufacturing demand exceed domestic ore production and grade availability.",
+      "buildabilityCategory": "structurally imported",
+      "bestLever": "sourcing diversification",
+      "timeHorizon": "7–10 years",
+      "technologyComplexity": "high",
+      "inputDependency": "high",
+      "domesticCapacityProxy": "Domestic smelting and fabrication capacity; limited mine pipeline",
+      "confidence": 4,
+      "notes": "Recycling can supplement supply, but ore imports remain linked to productive downstream activity.",
+      "importUsdMn": 5940.81,
+      "exportUsdMn": 39.63,
+      "netDeficitUsdMn": 5901.18,
+      "exportCoveragePct": 0.67,
+      "dependenceScore": 92.78,
+      "realisticReductionLowPct": 5,
+      "realisticReductionHighPct": 15,
+      "realisticNetImpactLowUsdMn": 295.059,
+      "realisticNetImpactHighUsdMn": 885.177,
+      "countryExposure": [
+        {
+          "country": "CHINA P RP",
+          "importUsdMn": 0
+        }
+      ],
+      "opportunityScore": 2
+    },
+    {
+      "hscode": "2843",
+      "description": "COLLOIDL PRECIOUS METALS;INORGNC/ORGNC CMPNDS OF PRECIOUS METALS W/N CHMCLY DEFINED AMALGAMS OF PRECIOUS METAL",
+      "sector": "Precious metals",
+      "importType": "intermediate component",
+      "importReason": "Electronics, catalysts and refining require specialised precious-metal compounds not made at sufficient scale.",
+      "buildabilityCategory": "recoverable",
+      "bestLever": "recycling",
+      "timeHorizon": "3–7 years",
+      "technologyComplexity": "very high",
+      "inputDependency": "high",
+      "domesticCapacityProxy": "Specialised refiners exist but collection and refining scale are limited",
+      "confidence": 3,
+      "notes": "Urban mining and catalyst recovery offer a clearer route than primary extraction.",
+      "importUsdMn": 5595.68,
+      "exportUsdMn": 36.29,
+      "netDeficitUsdMn": 5559.39,
+      "exportCoveragePct": 0.65,
+      "dependenceScore": 95.75,
+      "realisticReductionLowPct": 10,
+      "realisticReductionHighPct": 25,
+      "realisticNetImpactLowUsdMn": 555.9390000000001,
+      "realisticNetImpactHighUsdMn": 1389.8475,
+      "countryExposure": [
+        {
+          "country": "U ARAB EMTS",
+          "importUsdMn": 3359.27
+        },
+        {
+          "country": "JAPAN",
+          "importUsdMn": 2188.78
+        },
+        {
+          "country": "SAUDI ARAB",
+          "importUsdMn": 390.76
+        }
+      ],
+      "opportunityScore": 9
+    },
+    {
+      "hscode": "3102",
+      "description": "MINERAL OR CHEMICAL FERTILISERS, NITROGENOUS",
+      "sector": "Fertiliser",
+      "importType": "agricultural commodity",
+      "importReason": "Nitrogen fertiliser demand and gas economics exceed efficient domestic production.",
+      "buildabilityCategory": "partly buildable",
+      "bestLever": "domestic manufacturing",
+      "timeHorizon": "3–7 years",
+      "technologyComplexity": "high",
+      "inputDependency": "high",
+      "domesticCapacityProxy": "Large installed fertiliser capacity and distribution network",
+      "confidence": 4,
+      "notes": "Domestic output can replace product imports but may still require imported gas, so net impact is lower.",
+      "importUsdMn": 5564.52,
+      "exportUsdMn": 28.77,
+      "netDeficitUsdMn": 5535.75,
+      "exportCoveragePct": 0.52,
+      "dependenceScore": 71.02,
+      "realisticReductionLowPct": 10,
+      "realisticReductionHighPct": 20,
+      "realisticNetImpactLowUsdMn": 553.575,
+      "realisticNetImpactHighUsdMn": 1107.15,
+      "countryExposure": [
+        {
+          "country": "RUSSIA",
+          "importUsdMn": 3117.9
+        },
+        {
+          "country": "SAUDI ARAB",
+          "importUsdMn": 2397.39
+        },
+        {
+          "country": "CHINA P RP",
+          "importUsdMn": 2336.7
+        }
+      ],
+      "opportunityScore": 8
+    },
+    {
+      "hscode": "8524",
+      "description": "*RECORDS,TAPES & OTHR RECORDED MEDIA FOR SOUND/OTHR SMLRLY RECORDED PHENOMENA BUT EXCL PRDCTS OF CHAPTER 37",
+      "sector": "Electronics",
+      "importType": "intermediate component",
+      "importReason": "Display modules and flat-panel components depend on East Asian scale and technology ecosystems.",
+      "buildabilityCategory": "partly buildable",
+      "bestLever": "domestic manufacturing",
+      "timeHorizon": "5–10 years",
+      "technologyComplexity": "very high",
+      "inputDependency": "high",
+      "domesticCapacityProxy": "Strong device assembly; nascent display-component base",
+      "confidence": 3,
+      "notes": "Module assembly is nearer-term; substrate and panel fabrication require scale and technology transfer.",
+      "importUsdMn": 5594.17,
+      "exportUsdMn": 292.46,
+      "netDeficitUsdMn": 5301.71,
+      "exportCoveragePct": 5.23,
+      "dependenceScore": 71.6,
+      "realisticReductionLowPct": 10,
+      "realisticReductionHighPct": 25,
+      "realisticNetImpactLowUsdMn": 530.171,
+      "realisticNetImpactHighUsdMn": 1325.4275,
+      "countryExposure": [
+        {
+          "country": "CHINA P RP",
+          "importUsdMn": 46367.46
+        },
+        {
+          "country": "HONG KONG",
+          "importUsdMn": 10492.8
+        },
+        {
+          "country": "SINGAPORE",
+          "importUsdMn": 6229.94
+        }
+      ],
+      "opportunityScore": 7
+    },
+    {
+      "hscode": "8541",
+      "description": "SEMCOND DVS[SCD]( DIOD,TRNSTR,TRNSDCER); P SENST [SCD],P VOLT IF WITH MDL/ OF PNEL, LED,IF WITH LED;MTD PIEZO",
+      "sector": "Electronics",
+      "importType": "intermediate component",
+      "importReason": "Power devices, LEDs and discrete semiconductors require specialised fabs and materials ecosystems.",
+      "buildabilityCategory": "partly buildable",
+      "bestLever": "domestic manufacturing",
+      "timeHorizon": "5–10 years",
+      "technologyComplexity": "very high",
+      "inputDependency": "high",
+      "domesticCapacityProxy": "Design talent and announced packaging or fab projects",
+      "confidence": 4,
+      "notes": "Power and mature-node devices are more tractable than leading-edge chips.",
+      "importUsdMn": 6154.48,
+      "exportUsdMn": 1206.13,
+      "netDeficitUsdMn": 4948.349999999999,
+      "exportCoveragePct": 19.6,
+      "dependenceScore": 65.4,
+      "realisticReductionLowPct": 15,
+      "realisticReductionHighPct": 30,
+      "realisticNetImpactLowUsdMn": 742.2524999999999,
+      "realisticNetImpactHighUsdMn": 1484.5049999999999,
+      "countryExposure": [
+        {
+          "country": "CHINA P RP",
+          "importUsdMn": 46367.46
+        },
+        {
+          "country": "HONG KONG",
+          "importUsdMn": 10492.8
+        },
+        {
+          "country": "SINGAPORE",
+          "importUsdMn": 6229.94
+        }
+      ],
+      "opportunityScore": 11
+    },
+    {
+      "hscode": "8507",
+      "description": "ELCTRC ACCUMLTRS,INCL SEPARATORS THEREFOR W/N RECTANGULAR(INCL SQ)",
+      "sector": "Clean technology",
+      "importType": "intermediate component",
+      "importReason": "Battery-cell demand is rising faster than domestic cell production and critical-mineral processing.",
+      "buildabilityCategory": "partly buildable",
+      "bestLever": "domestic manufacturing",
+      "timeHorizon": "3–7 years",
+      "technologyComplexity": "very high",
+      "inputDependency": "high",
+      "domesticCapacityProxy": "Pack assembly and announced cell plants; weak mineral base",
+      "confidence": 4,
+      "notes": "Cells are buildable, but lithium, nickel and cobalt inputs will remain substantially imported.",
+      "importUsdMn": 5623.9,
+      "exportUsdMn": 713.51,
+      "netDeficitUsdMn": 4910.389999999999,
+      "exportCoveragePct": 12.69,
+      "dependenceScore": 90.91,
+      "realisticReductionLowPct": 20,
+      "realisticReductionHighPct": 40,
+      "realisticNetImpactLowUsdMn": 982.078,
+      "realisticNetImpactHighUsdMn": 1964.156,
+      "countryExposure": [
+        {
+          "country": "CHINA P RP",
+          "importUsdMn": 46367.46
+        },
+        {
+          "country": "HONG KONG",
+          "importUsdMn": 10492.8
+        },
+        {
+          "country": "SINGAPORE",
+          "importUsdMn": 6229.94
+        }
+      ],
+      "opportunityScore": 15
+    },
+    {
+      "hscode": "7204",
+      "description": "FERROUS WASTE AND SCRAP; REMELTING SCRAP INGOTS",
+      "sector": "Base metals",
+      "importType": "raw material",
+      "importReason": "Electric-arc steelmaking and foundries need more quality scrap than formal domestic collection supplies.",
+      "buildabilityCategory": "recoverable",
+      "bestLever": "recycling",
+      "timeHorizon": "1–3 years",
+      "technologyComplexity": "medium",
+      "inputDependency": "low",
+      "domesticCapacityProxy": "Large steel recycling demand; fragmented vehicle and construction scrap collection",
+      "confidence": 5,
+      "notes": "Formal collection, sorting and end-of-life vehicle channels can create a relatively fast net lever.",
+      "importUsdMn": 4558.72,
+      "exportUsdMn": 21.99,
+      "netDeficitUsdMn": 4536.7300000000005,
+      "exportCoveragePct": 0.48,
+      "dependenceScore": 75.29,
+      "realisticReductionLowPct": 20,
+      "realisticReductionHighPct": 40,
+      "realisticNetImpactLowUsdMn": 907.3460000000001,
+      "realisticNetImpactHighUsdMn": 1814.6920000000002,
+      "countryExposure": [
+        {
+          "country": "KOREA RP",
+          "importUsdMn": 2589.6
+        },
+        {
+          "country": "JAPAN",
+          "importUsdMn": 1638.49
+        },
+        {
+          "country": "U ARAB EMTS",
+          "importUsdMn": 646.71
+        }
+      ],
+      "opportunityScore": 19
+    },
+    {
+      "hscode": "7602",
+      "description": "ALUMINIUM WASTE AND SCRAP",
+      "sector": "Base metals",
+      "importType": "raw material",
+      "importReason": "Secondary aluminium capacity needs clean scrap that domestic recovery systems do not supply at scale.",
+      "buildabilityCategory": "recoverable",
+      "bestLever": "recycling",
+      "timeHorizon": "1–3 years",
+      "technologyComplexity": "medium",
+      "inputDependency": "low",
+      "domesticCapacityProxy": "Large aluminium fabricating base and established recyclers",
+      "confidence": 5,
+      "notes": "Better segregation and quality standards can displace imports without primary-mining expansion.",
+      "importUsdMn": 4551.38,
+      "exportUsdMn": 53.8,
+      "netDeficitUsdMn": 4497.58,
+      "exportCoveragePct": 1.18,
+      "dependenceScore": 81.69,
+      "realisticReductionLowPct": 20,
+      "realisticReductionHighPct": 40,
+      "realisticNetImpactLowUsdMn": 899.5160000000001,
+      "realisticNetImpactHighUsdMn": 1799.0320000000002,
+      "countryExposure": [
+        {
+          "country": "CHINA P RP",
+          "importUsdMn": 2581.13
+        },
+        {
+          "country": "U ARAB EMTS",
+          "importUsdMn": 804.23
+        },
+        {
+          "country": "SAUDI ARAB",
+          "importUsdMn": 424.35
+        }
+      ],
+      "opportunityScore": 19
+    },
+    {
+      "hscode": "7102",
+      "description": "DIAMONDS, WHETHER OR NOT WORKED, BUT NOT MOUNTED OR SET",
+      "sector": "Gems and jewellery",
+      "importType": "raw material",
+      "importReason": "India's cutting and polishing export industry relies on imported rough diamonds.",
+      "buildabilityCategory": "structurally imported",
+      "bestLever": "export upgrading",
+      "timeHorizon": "3–7 years",
+      "technologyComplexity": "high",
+      "inputDependency": "high",
+      "domesticCapacityProxy": "World-scale cutting and polishing cluster",
+      "confidence": 5,
+      "notes": "Imports are productive inputs with a large export offset; value-add and export recovery matter more than cutting imports.",
+      "importUsdMn": 16408.69,
+      "exportUsdMn": 12444.3,
+      "netDeficitUsdMn": 3964.3899999999994,
+      "exportCoveragePct": 75.84,
+      "dependenceScore": 57.98,
+      "realisticReductionLowPct": 0,
+      "realisticReductionHighPct": 10,
+      "realisticNetImpactLowUsdMn": 0,
+      "realisticNetImpactHighUsdMn": 396.43899999999996,
+      "countryExposure": [
+        {
+          "country": "U ARAB EMTS",
+          "importUsdMn": 24825.69
+        },
+        {
+          "country": "SWITZERLAND",
+          "importUsdMn": 20780.88
+        },
+        {
+          "country": "HONG KONG",
+          "importUsdMn": 10006.25
+        }
+      ],
+      "opportunityScore": 1
+    },
+    {
+      "hscode": "8473",
+      "description": "PARTS AND ACCESSORIES OTH THN COVERS, CARRYING CASES)SUITABLE FOR USE SOLELY /PRINCIPALLY WITH MACHINES OF HDG 8470 TO 8472",
+      "sector": "Electronics",
+      "importType": "intermediate component",
+      "importReason": "Computer and office-machine assembly relies on imported specialised parts and subassemblies.",
+      "buildabilityCategory": "partly buildable",
+      "bestLever": "domestic manufacturing",
+      "timeHorizon": "3–7 years",
+      "technologyComplexity": "high",
+      "inputDependency": "high",
+      "domesticCapacityProxy": "Growing EMS and final-product assembly base",
+      "confidence": 3,
+      "notes": "Supplier qualification and scale are the main constraints.",
+      "importUsdMn": 4025.94,
+      "exportUsdMn": 524.02,
+      "netDeficitUsdMn": 3501.92,
+      "exportCoveragePct": 13.02,
+      "dependenceScore": 84.84,
+      "realisticReductionLowPct": 15,
+      "realisticReductionHighPct": 30,
+      "realisticNetImpactLowUsdMn": 525.288,
+      "realisticNetImpactHighUsdMn": 1050.576,
+      "countryExposure": [
+        {
+          "country": "CHINA P RP",
+          "importUsdMn": 29450.97
+        },
+        {
+          "country": "GERMANY",
+          "importUsdMn": 5547.74
+        },
+        {
+          "country": "U S A",
+          "importUsdMn": 4683.17
+        }
+      ],
+      "opportunityScore": 6
+    },
+    {
+      "hscode": "1512",
+      "description": "SUNFLOWER SEED, SAFFLOWER OR COTTON SEED OIL AND THEIR FRACTIONS THEREOF, WHETHER OR NOT REFINED, BUT NOT CHEMICALLY M",
+      "sector": "Edible oils",
+      "importType": "agricultural commodity",
+      "importReason": "Sunflower and safflower oil demand exceeds domestic oilseed production and crush economics.",
+      "buildabilityCategory": "growable",
+      "bestLever": "crop-yield expansion",
+      "timeHorizon": "5–10 years",
+      "technologyComplexity": "medium",
+      "inputDependency": "medium",
+      "domesticCapacityProxy": "Existing oilseed farms and crushing capacity",
+      "confidence": 4,
+      "notes": "Yield expansion and crop switching have land and farmer-income trade-offs.",
+      "importUsdMn": 3324.78,
+      "exportUsdMn": 116.54,
+      "netDeficitUsdMn": 3208.2400000000002,
+      "exportCoveragePct": 3.51,
+      "dependenceScore": 75.59,
+      "realisticReductionLowPct": 10,
+      "realisticReductionHighPct": 20,
+      "realisticNetImpactLowUsdMn": 320.82400000000007,
+      "realisticNetImpactHighUsdMn": 641.6480000000001,
+      "countryExposure": [
+        {
+          "country": "RUSSIA",
+          "importUsdMn": 1675.72
+        },
+        {
+          "country": "SINGAPORE",
+          "importUsdMn": 787.06
+        },
+        {
+          "country": "SWITZERLAND",
+          "importUsdMn": 216.85
+        }
+      ],
+      "opportunityScore": 4
+    },
+    {
+      "hscode": "7404",
+      "description": "COPPER WASTE AND SCRAP",
+      "sector": "Base metals",
+      "importType": "raw material",
+      "importReason": "Copper fabricators and smelters require more consistent scrap than domestic collection provides.",
+      "buildabilityCategory": "recoverable",
+      "bestLever": "recycling",
+      "timeHorizon": "1–3 years",
+      "technologyComplexity": "medium",
+      "inputDependency": "low",
+      "domesticCapacityProxy": "Large informal recovery sector and formal smelting capacity",
+      "confidence": 5,
+      "notes": "Traceability, sorting and formalisation can turn domestic waste into usable industrial feedstock.",
+      "importUsdMn": 3429.19,
+      "exportUsdMn": 318.46,
+      "netDeficitUsdMn": 3110.73,
+      "exportCoveragePct": 9.29,
+      "dependenceScore": 89.47,
+      "realisticReductionLowPct": 20,
+      "realisticReductionHighPct": 40,
+      "realisticNetImpactLowUsdMn": 622.1460000000001,
+      "realisticNetImpactHighUsdMn": 1244.2920000000001,
+      "countryExposure": [
+        {
+          "country": "JAPAN",
+          "importUsdMn": 2376.94
+        },
+        {
+          "country": "U ARAB EMTS",
+          "importUsdMn": 1419.52
+        },
+        {
+          "country": "SAUDI ARAB",
+          "importUsdMn": 572.23
+        }
+      ],
+      "opportunityScore": 13
+    },
+    {
+      "hscode": "3901",
+      "description": "POLYMERS OF ETHYLENE IN PRIMARY FORMS",
+      "sector": "Petrochemicals",
+      "importType": "intermediate component",
+      "importReason": "Polyethylene demand exceeds domestic grade mix and cracker capacity.",
+      "buildabilityCategory": "partly buildable",
+      "bestLever": "domestic manufacturing",
+      "timeHorizon": "3–7 years",
+      "technologyComplexity": "high",
+      "inputDependency": "high",
+      "domesticCapacityProxy": "Large petrochemical producers and converters",
+      "confidence": 4,
+      "notes": "New capacity can replace resin imports but often requires imported hydrocarbon feedstock.",
+      "importUsdMn": 3517.73,
+      "exportUsdMn": 434.68,
+      "netDeficitUsdMn": 3083.05,
+      "exportCoveragePct": 12.36,
+      "dependenceScore": 71.72,
+      "realisticReductionLowPct": 10,
+      "realisticReductionHighPct": 25,
+      "realisticNetImpactLowUsdMn": 308.30500000000006,
+      "realisticNetImpactHighUsdMn": 770.7625,
+      "countryExposure": [
+        {
+          "country": "CHINA P RP",
+          "importUsdMn": 6711.48
+        },
+        {
+          "country": "KOREA RP",
+          "importUsdMn": 2121.3
+        },
+        {
+          "country": "SINGAPORE",
+          "importUsdMn": 1496.31
+        }
+      ],
+      "opportunityScore": 6
+    },
+    {
+      "hscode": "8479",
+      "description": "MCHNS AND MCHNCL APPLNCS HVNG INDVDL FUNCTNS,N.E.S.",
+      "sector": "Industrial machinery",
+      "importType": "capital good",
+      "importReason": "Firms import specialised machinery where domestic volumes do not justify local designs or tooling.",
+      "buildabilityCategory": "partly buildable",
+      "bestLever": "domestic manufacturing",
+      "timeHorizon": "5–10 years",
+      "technologyComplexity": "high",
+      "inputDependency": "medium",
+      "domesticCapacityProxy": "Broad machinery and engineering supplier base",
+      "confidence": 3,
+      "notes": "Focus on repeatable machine families; one-off equipment imports are often productive and efficient.",
+      "importUsdMn": 4131.91,
+      "exportUsdMn": 1320.11,
+      "netDeficitUsdMn": 2811.8,
+      "exportCoveragePct": 31.95,
+      "dependenceScore": 85.12,
+      "realisticReductionLowPct": 10,
+      "realisticReductionHighPct": 25,
+      "realisticNetImpactLowUsdMn": 281.18,
+      "realisticNetImpactHighUsdMn": 702.95,
+      "countryExposure": [
+        {
+          "country": "CHINA P RP",
+          "importUsdMn": 29450.97
+        },
+        {
+          "country": "GERMANY",
+          "importUsdMn": 5547.74
+        },
+        {
+          "country": "U S A",
+          "importUsdMn": 4683.17
+        }
+      ],
+      "opportunityScore": 4
+    },
+    {
+      "hscode": "2713",
+      "description": "PETROLM COKE PETROLM BITUMN AND OTHR RESDUS OF PETRLM OILS/OILS OBTND FRM BITMNS MNRLS",
+      "sector": "Energy",
+      "importType": "intermediate component",
+      "importReason": "Cement, metals and industrial users import petroleum coke grades and volumes tied to global refining.",
+      "buildabilityCategory": "substitutable",
+      "bestLever": "demand shaping",
+      "timeHorizon": "3–7 years",
+      "technologyComplexity": "medium",
+      "inputDependency": "medium",
+      "domesticCapacityProxy": "Large cement sector with alternative-fuel capability",
+      "confidence": 4,
+      "notes": "Waste-derived fuels and process efficiency can substitute demand, subject to emissions constraints.",
+      "importUsdMn": 3114.14,
+      "exportUsdMn": 325.94,
+      "netDeficitUsdMn": 2788.2,
+      "exportCoveragePct": 10.47,
+      "dependenceScore": 72.89,
+      "realisticReductionLowPct": 10,
+      "realisticReductionHighPct": 25,
+      "realisticNetImpactLowUsdMn": 278.82,
+      "realisticNetImpactHighUsdMn": 697.05,
+      "countryExposure": [
+        {
+          "country": "RUSSIA",
+          "importUsdMn": 47824.9
+        },
+        {
+          "country": "U ARAB EMTS",
+          "importUsdMn": 24272.88
+        },
+        {
+          "country": "IRAQ",
+          "importUsdMn": 24146.03
+        }
+      ],
+      "opportunityScore": 4
+    },
+    {
+      "hscode": "2809",
+      "description": "DIPHOSPHORUS PENTAOXIDE; PHOSPHORIC ACID; POLYPHOSPHORIC ACIDS, WHETHER OR NOT CHEMICALLY DEFINED",
+      "sector": "Chemicals",
+      "importType": "raw material",
+      "importReason": "Fertiliser and chemical production depend on phosphate rock and acid chains with limited domestic resources.",
+      "buildabilityCategory": "structurally imported",
+      "bestLever": "sourcing diversification",
+      "timeHorizon": "5–10 years",
+      "technologyComplexity": "high",
+      "inputDependency": "high",
+      "domesticCapacityProxy": "Large fertiliser conversion capacity; weak phosphate resource base",
+      "confidence": 4,
+      "notes": "Overseas supply security and nutrient efficiency are more realistic than full localisation.",
+      "importUsdMn": 2681.08,
+      "exportUsdMn": 13.93,
+      "netDeficitUsdMn": 2667.15,
+      "exportCoveragePct": 0.52,
+      "dependenceScore": 74.17,
+      "realisticReductionLowPct": 5,
+      "realisticReductionHighPct": 15,
+      "realisticNetImpactLowUsdMn": 133.35750000000002,
+      "realisticNetImpactHighUsdMn": 400.0725,
+      "countryExposure": [
+        {
+          "country": "U ARAB EMTS",
+          "importUsdMn": 3359.27
+        },
+        {
+          "country": "JAPAN",
+          "importUsdMn": 2188.78
+        },
+        {
+          "country": "SAUDI ARAB",
+          "importUsdMn": 390.76
+        }
+      ],
+      "opportunityScore": 1
+    },
+    {
+      "hscode": "0713",
+      "description": "DRID LEGUMINOUS VEG SHLD W/N SKINNED/SPLIT",
+      "sector": "Agriculture",
+      "importType": "agricultural commodity",
+      "importReason": "Pulse demand periodically exceeds domestic harvests because of yield, acreage and weather volatility.",
+      "buildabilityCategory": "growable",
+      "bestLever": "crop-yield expansion",
+      "timeHorizon": "3–7 years",
+      "technologyComplexity": "medium",
+      "inputDependency": "low",
+      "domesticCapacityProxy": "Large pulse-growing base across central and western India",
+      "confidence": 4,
+      "notes": "Seeds, irrigation, storage and price signals can raise supply; climate variability remains material.",
+      "importUsdMn": 3631.47,
+      "exportUsdMn": 969.58,
+      "netDeficitUsdMn": 2661.89,
+      "exportCoveragePct": 26.7,
+      "dependenceScore": 80.68,
+      "realisticReductionLowPct": 15,
+      "realisticReductionHighPct": 30,
+      "realisticNetImpactLowUsdMn": 399.28349999999995,
+      "realisticNetImpactHighUsdMn": 798.5669999999999,
+      "countryExposure": [],
+      "opportunityScore": 5
+    },
+    {
+      "hscode": "7402",
+      "description": "UNREFINED COPPER; COPPER ANODES FOR ELECTROLYTIC REFINING",
+      "sector": "Base metals",
+      "importType": "intermediate component",
+      "importReason": "Copper refining and fabrication demand exceed available domestic concentrate and anode supply.",
+      "buildabilityCategory": "partly buildable",
+      "bestLever": "domestic manufacturing",
+      "timeHorizon": "3–7 years",
+      "technologyComplexity": "high",
+      "inputDependency": "high",
+      "domesticCapacityProxy": "Domestic refining and fabrication capacity",
+      "confidence": 3,
+      "notes": "Smelting can be localised, but imported concentrate limits the net-deficit gain.",
+      "importUsdMn": 2600.66,
+      "exportUsdMn": 30.13,
+      "netDeficitUsdMn": 2570.5299999999997,
+      "exportCoveragePct": 1.16,
+      "dependenceScore": 80.93,
+      "realisticReductionLowPct": 10,
+      "realisticReductionHighPct": 20,
+      "realisticNetImpactLowUsdMn": 257.053,
+      "realisticNetImpactHighUsdMn": 514.106,
+      "countryExposure": [
+        {
+          "country": "JAPAN",
+          "importUsdMn": 2376.94
+        },
+        {
+          "country": "U ARAB EMTS",
+          "importUsdMn": 1419.52
+        },
+        {
+          "country": "SAUDI ARAB",
+          "importUsdMn": 572.23
+        }
+      ],
+      "opportunityScore": 3
+    },
+    {
+      "hscode": "3904",
+      "description": "POLYMERS OF VINYL CHLORIDE OR OF OTHER HALOGENATED OLEFINS, IN PRIMARY FORMS",
+      "sector": "Petrochemicals",
+      "importType": "intermediate component",
+      "importReason": "PVC demand from construction and infrastructure exceeds domestic resin and feedstock capacity.",
+      "buildabilityCategory": "partly buildable",
+      "bestLever": "domestic manufacturing",
+      "timeHorizon": "3–7 years",
+      "technologyComplexity": "high",
+      "inputDependency": "high",
+      "domesticCapacityProxy": "Large converters and planned resin capacity",
+      "confidence": 4,
+      "notes": "Domestic resin production can replace finished resin imports but retains feedstock dependence.",
+      "importUsdMn": 2686.12,
+      "exportUsdMn": 278.97,
+      "netDeficitUsdMn": 2407.1499999999996,
+      "exportCoveragePct": 10.39,
+      "dependenceScore": 66.18,
+      "realisticReductionLowPct": 15,
+      "realisticReductionHighPct": 30,
+      "realisticNetImpactLowUsdMn": 361.07249999999993,
+      "realisticNetImpactHighUsdMn": 722.1449999999999,
+      "countryExposure": [
+        {
+          "country": "CHINA P RP",
+          "importUsdMn": 6711.48
+        },
+        {
+          "country": "KOREA RP",
+          "importUsdMn": 2121.3
+        },
+        {
+          "country": "SINGAPORE",
+          "importUsdMn": 1496.31
+        }
+      ],
+      "opportunityScore": 5
+    }
+  ]
+}

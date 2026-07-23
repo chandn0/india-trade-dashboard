@@ -1,0 +1,4 @@
+hscode,flow,base_year,base_value_usd,base_quantity,current_year,current_value_usd,current_quantity,quantity_unit,decomposition_method,source_url,source_date
+1511,import,2024-25,10949086758,8878049,2025-26,9591400000,9100000,metric_tonnes,Logarithmic Mean Divisia Index (LMDI),https://eidb.dgft.gov.in/,2026-06-15
+1507,import,2024-25,5956238004,3317972,2025-26,6206400000,3600000,metric_tonnes,Logarithmic Mean Divisia Index (LMDI),https://eidb.dgft.gov.in/,2026-06-15
+1512,import,2024-25,2874913495,2377049,2025-26,3323400000,2900000,metric_tonnes,Logarithmic Mean Divisia Index (LMDI),https://eidb.dgft.gov.in/,2026-06-15
