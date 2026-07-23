@@ -125,15 +125,25 @@ const products = classification.rows.map((row) => {
     realisticReductionHighPct: highPct,
     realisticNetImpactLowUsdMn: netDeficitUsdMn * (lowPct / 100),
     realisticNetImpactHighUsdMn: netDeficitUsdMn * (highPct / 100),
-    opportunityScoreRaw: netDeficitUsdMn * (highPct / 100) * tractability * (confidence / 5),
+    opportunityScores: {
+      netDeficitRelevance: netDeficitUsdMn,
+      technicallyAddressableShare: highPct,
+      implementationFeasibility: tractability,
+      timeAdjustedImpact: netDeficitUsdMn * (highPct / 100) * tractability * (confidence / 5),
+    },
     countryExposure: (partnerByHs2.get(hscode.slice(0, 2)) ?? []).slice(0, 3),
   };
 });
 
-const maxScore = Math.max(...products.map((product) => product.opportunityScoreRaw));
+const maxScore = Math.max(
+  ...products.map((product) =>
+    product.opportunityScores ? product.opportunityScores.timeAdjustedImpact : 0,
+  ),
+);
 for (const product of products) {
-  product.opportunityScore = Math.round((product.opportunityScoreRaw / maxScore) * 100);
-  delete product.opportunityScoreRaw;
+  product.opportunityScore = product.opportunityScores
+    ? Math.round((product.opportunityScores.timeAdjustedImpact / maxScore) * 100)
+    : null;
 }
 products.sort((a, b) => b.netDeficitUsdMn - a.netDeficitUsdMn);
 

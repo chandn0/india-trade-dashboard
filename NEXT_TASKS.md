@@ -169,6 +169,7 @@ Achieved curated coverage:
 - Total Curated HS-4 Lines: **213 products** (100% substantive rationales and evidence notes; zero boilerplate)
 
 S04.1 Quality Remediation Completed:
+
 - **Curated Corrections**: HS 7114 (`consumption asset`), HS 5703 (`finished product`), and HS 5201 (`agricultural commodity`).
 - **Strict Fail-Fast Validation**: Removed default fallbacks from `build_product_stage_mix.js` and added direct schema validation in `validate_product_data.js`.
 - **Dashboard Visibility**: Added `Review status` filter (`Reviewed`, `Mixed-use`, `Needs review`), table status indicators, and full attribution/evidence notes in `ProductCompositionDashboard.js`.

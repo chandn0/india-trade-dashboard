@@ -34,8 +34,7 @@ export default function ChainFlowChart({ inSeries, outSeries }) {
   };
   const tipLeft = hover != null ? (x(hover) / width) * 100 : 0;
   const flip = tipLeft > 60;
-  const coverage =
-    hover != null && inSeries[hover] > 0 ? outSeries[hover] / inSeries[hover] : null;
+  const coverage = hover != null && inSeries[hover] > 0 ? outSeries[hover] / inSeries[hover] : null;
 
   return (
     <Box
@@ -175,18 +174,8 @@ export default function ChainFlowChart({ inSeries, outSeries }) {
           <Typography sx={{ ...mono, fontWeight: 700, fontSize: 12, color: '#fff', mb: 0.75 }}>
             {`FY${HS4_YEARS[hover]}`}
           </Typography>
-          <TipRow
-            color={C.orange}
-            label="Imported inputs"
-            value={moneyB(inSeries[hover])}
-            sub=""
-          />
-          <TipRow
-            color={C.blue}
-            label="Exported outputs"
-            value={moneyB(outSeries[hover])}
-            sub=""
-          />
+          <TipRow color={C.orange} label="Imported inputs" value={moneyB(inSeries[hover])} sub="" />
+          <TipRow color={C.blue} label="Exported outputs" value={moneyB(outSeries[hover])} sub="" />
           <Box sx={{ height: '1px', bgcolor: 'rgba(255,255,255,0.12)', my: 0.75 }} />
           <TipRow
             color={outSeries[hover] - inSeries[hover] >= 0 ? C.teal : C.red}

@@ -54,6 +54,7 @@ File to edit: `app/components/charts/CompositionChart.js` (the `labelStep`
 computation around line 182, and the `compact` padding object).
 
 Acceptance criteria:
+
 - At 375 px width, no two axis labels overlap.
 - The latest year label is always visible.
 - `npm run build` passes.
@@ -86,6 +87,7 @@ wrong.
 Files to edit: `package.json` (`scripts` block), `README.md § Refresh the Data`.
 
 Acceptance criteria:
+
 - `npm run refresh:all` runs all scripts in dependency order and stops on the
   first non-zero exit.
 - Correct order (from `README.md`):
@@ -151,6 +153,7 @@ and what the PR checklist looks like.
 File to edit: `CLAUDE.md` (the "Adding a new chart" section).
 
 Acceptance criteria:
+
 - Add a step-by-step walkthrough: create the component file in
   `app/components/charts/`, import any needed data from `app/lib/transforms.js`,
   add the component to `app/page.js`, run `npm run build`.
@@ -173,6 +176,7 @@ Files involved: `docs/idea-evaluation-handbook.md` (scoring rubric),
 `.github/STARTER_ISSUES.md` (existing backlog to score).
 
 Acceptance criteria:
+
 - Score every item in `STARTER_ISSUES.md` using the six-dimension rubric from
   `docs/idea-evaluation-handbook.md` (trade relevance, evidence, ease, owner fit,
   report value, uncertainty control, each 1–5).

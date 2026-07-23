@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-07-23T10:49:30.404Z",
+  "datasets": {
+    "product_domestic_supply.csv": {
+      "modified_at": "2026-07-23T10:24:56.074Z",
+      "size_bytes": 3976,
+      "row_count": 12,
+      "checksum_sha256": "90b193e4c804abaac04ded6f697113bd12a9e899143c9b03177cb29443bc8aac",
+      "staleness_warning": false
+    },
+    "product_partner_exposure.csv": {
+      "modified_at": "2026-07-23T10:47:08.674Z",
+      "size_bytes": 16900,
+      "row_count": 67,
+      "checksum_sha256": "cea5c5f0a96cdcf64b0845b8104506dda15a564217cb821e860a7f7222682480",
+      "staleness_warning": false
+    },
+    "product_policy.csv": {
+      "modified_at": "2026-07-23T09:56:16.564Z",
+      "size_bytes": 1973,
+      "row_count": 14,
+      "checksum_sha256": "c1148536645e5cd8af4d9920e85a7286521a8b3ed2b7824bb2092865871cd90a",
+      "staleness_warning": false
+    },
+    "product_quantity_unit_value.csv": {
+      "modified_at": "2026-07-23T10:48:39.508Z",
+      "size_bytes": 1228,
+      "row_count": 8,
+      "checksum_sha256": "588083d80aec781ecb71a53b2e40f504f02ae45d8559410564bcdb4830fd8993",
+      "staleness_warning": false
+    },
+    "state_capability.csv": {
+      "modified_at": "2026-07-23T09:56:16.564Z",
+      "size_bytes": 106,
+      "row_count": 0,
+      "checksum_sha256": "344db19e09e1671b45c89eca978dc1a711c521f43d1cf481cb3ce9e1c89a0cb5",
+      "staleness_warning": false
+    },
+    "state_product_capability.csv": {
+      "modified_at": "2026-07-22T15:29:52.095Z",
+      "size_bytes": 139,
+      "row_count": 0,
+      "checksum_sha256": "d0ce6f6d1ebdafad3f4d5856c638c5567c03f140b8b1239f4b7c2ab06c82d9d6",
+      "staleness_warning": false
+    }
+  }
+}

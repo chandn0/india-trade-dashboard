@@ -34,12 +34,12 @@ export function filterAndSortProducts(
 
 export function calculateScenario(
   product,
-  { substitution, exportGrowth, importedInputShare, realisation },
+  { substitution, exportGrowth, importedInputShare, exportImportedInputShare, realisation },
 ) {
   const importReduction = product.latestImportUsdMn * (substitution / 100);
   const replacementInputCost = importReduction * (importedInputShare / 100);
   const exportGain = product.latestExportUsdMn * (exportGrowth / 100);
-  const exportInputCost = exportGain * (importedInputShare / 100);
+  const exportInputCost = exportGain * ((exportImportedInputShare ?? importedInputShare) / 100);
   const grossMovement = importReduction + exportGain;
   const netImpact =
     (importReduction - replacementInputCost + exportGain - exportInputCost) * (realisation / 100);
@@ -56,25 +56,75 @@ export function calculateScenario(
 
 export function calculateScenarioRange(
   product,
-  { substitution, exportGrowth, importedInputShare, realisation },
+  { substitution, exportGrowth, importedInputShare, exportImportedInputShare, realisation },
 ) {
-  const base = calculateScenario(product, { substitution, exportGrowth, importedInputShare, realisation });
-  const conservative = calculateScenario(product, { substitution, exportGrowth, importedInputShare, realisation: Math.max(0, realisation - 15) });
-  const optimistic = calculateScenario(product, { substitution, exportGrowth, importedInputShare, realisation: Math.min(100, realisation + 15) });
-  
+  const base = calculateScenario(product, {
+    substitution,
+    exportGrowth,
+    importedInputShare,
+    exportImportedInputShare,
+    realisation,
+  });
+  const conservative = calculateScenario(product, {
+    substitution: Math.max(0, substitution - 10),
+    exportGrowth: Math.max(0, exportGrowth - 5),
+    importedInputShare: Math.min(100, importedInputShare + 10),
+    exportImportedInputShare: Math.min(100, (exportImportedInputShare ?? importedInputShare) + 10),
+    realisation: Math.max(0, realisation - 15),
+  });
+  const optimistic = calculateScenario(product, {
+    substitution: Math.min(100, substitution + 10),
+    exportGrowth: exportGrowth + 5,
+    importedInputShare: Math.max(0, importedInputShare - 10),
+    exportImportedInputShare: Math.max(0, (exportImportedInputShare ?? importedInputShare) - 10),
+    realisation: Math.min(100, realisation + 15),
+  });
+
   // Calculate sensitivities (+1 point absolute change)
-  const dSub = Math.abs(calculateScenario(product, { substitution: substitution + 1, exportGrowth, importedInputShare, realisation }).netImpact - base.netImpact);
-  const dExp = Math.abs(calculateScenario(product, { substitution, exportGrowth: exportGrowth + 1, importedInputShare, realisation }).netImpact - base.netImpact);
-  const dInp = Math.abs(calculateScenario(product, { substitution, exportGrowth, importedInputShare: importedInputShare + 1, realisation }).netImpact - base.netImpact);
-  const dReal = Math.abs(calculateScenario(product, { substitution, exportGrowth, importedInputShare, realisation: realisation + 1 }).netImpact - base.netImpact);
+  const dSub = Math.abs(
+    calculateScenario(product, {
+      substitution: substitution + 1,
+      exportGrowth,
+      importedInputShare,
+      exportImportedInputShare,
+      realisation,
+    }).netImpact - base.netImpact,
+  );
+  const dExp = Math.abs(
+    calculateScenario(product, {
+      substitution,
+      exportGrowth: exportGrowth + 1,
+      importedInputShare,
+      exportImportedInputShare,
+      realisation,
+    }).netImpact - base.netImpact,
+  );
+  const dInp = Math.abs(
+    calculateScenario(product, {
+      substitution,
+      exportGrowth,
+      importedInputShare: importedInputShare + 1,
+      exportImportedInputShare,
+      realisation,
+    }).netImpact - base.netImpact,
+  );
+  const dReal = Math.abs(
+    calculateScenario(product, {
+      substitution,
+      exportGrowth,
+      importedInputShare,
+      exportImportedInputShare,
+      realisation: realisation + 1,
+    }).netImpact - base.netImpact,
+  );
 
   const sensitivities = [
     { name: 'Substitution limit', value: dSub },
     { name: 'Export growth', value: dExp },
     { name: 'Imported input share', value: dInp },
-    { name: 'Execution realisation', value: dReal }
+    { name: 'Execution realisation', value: dReal },
   ];
-  
+
   sensitivities.sort((a, b) => b.value - a.value);
   const mostInfluentialAssumption = sensitivities[0].name;
 
@@ -83,7 +133,7 @@ export function calculateScenarioRange(
     conservative,
     optimistic,
     mostInfluentialAssumption,
-    breakEvenInputShare: 100 // At 100% imported input, the gross movement is fully cancelled out
+    breakEvenInputShare: 100, // At 100% imported input, the gross movement is fully cancelled out
   };
 }
 
@@ -102,5 +152,5 @@ export function canRemoveComparisonProduct(currentCodes) {
 
 export function removeComparisonProduct(currentCodes, removeCode) {
   if (!canRemoveComparisonProduct(currentCodes)) return currentCodes;
-  return currentCodes.filter(code => code !== removeCode);
+  return currentCodes.filter((code) => code !== removeCode);
 }

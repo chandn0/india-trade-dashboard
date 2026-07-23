@@ -199,7 +199,9 @@ export function ScenarioModeller() {
   const [substitution, setSubstitution] = React.useState(20);
   const [exportGrowth, setExportGrowth] = React.useState(15);
   const [importedInputShare, setImportedInputShare] = React.useState(35);
+  const [exportImportedInputShare, setExportImportedInputShare] = React.useState(35);
   const [realisation, setRealisation] = React.useState(70);
+  const [hasUserInputs, setHasUserInputs] = React.useState(false);
 
   // Hydrate from URL on mount
   React.useEffect(() => {
@@ -210,7 +212,11 @@ export function ScenarioModeller() {
       if (params.has('sub')) setSubstitution(Number(params.get('sub')));
       if (params.has('exp')) setExportGrowth(Number(params.get('exp')));
       if (params.has('inp')) setImportedInputShare(Number(params.get('inp')));
+      if (params.has('einp')) setExportImportedInputShare(Number(params.get('einp')));
       if (params.has('real')) setRealisation(Number(params.get('real')));
+      if (['sub', 'exp', 'inp', 'einp', 'real'].some((key) => params.has(key))) {
+        setHasUserInputs(true);
+      }
     }
   }, []);
 
@@ -222,56 +228,72 @@ export function ScenarioModeller() {
       params.set('sub', substitution);
       params.set('exp', exportGrowth);
       params.set('inp', importedInputShare);
+      params.set('einp', exportImportedInputShare);
       params.set('real', realisation);
       window.history.replaceState(null, '', `?${params.toString()}`);
     }
-  }, [hscode, substitution, exportGrowth, importedInputShare, realisation]);
+  }, [
+    hscode,
+    substitution,
+    exportGrowth,
+    importedInputShare,
+    exportImportedInputShare,
+    realisation,
+  ]);
 
   const product = byCode.get(hscode) ?? productOptions[0];
-  const hasEnrichment = Boolean(product.domesticSupply || product.chapterPartnerExposure || product.policyOverlay || product.quantityUnitValue);
+  const hasSourcedScenario = product.domesticSupply?.analystLocalisableSharePct != null;
+  const scenarioReady = hasSourcedScenario || hasUserInputs;
 
   // Auto-default when product changes
   const handleProductChange = (newHs) => {
     setHscode(newHs);
+    setHasUserInputs(false);
     const p = byCode.get(newHs) ?? productOptions[0];
-    
-    if (p.domesticSupply?.localisableSharePct != null) {
-      setSubstitution(p.domesticSupply.localisableSharePct);
+
+    if (p.domesticSupply?.analystLocalisableSharePct != null) {
+      setSubstitution(p.domesticSupply.analystLocalisableSharePct);
     } else {
       setSubstitution(20);
     }
-    
-    if (p.domesticSupply?.replacementImportedInputPct != null) {
-      setImportedInputShare(p.domesticSupply.replacementImportedInputPct);
-    } else {
-      setImportedInputShare(35);
-    }
+
+    setImportedInputShare(35);
   };
 
-  const { base, conservative, optimistic, mostInfluentialAssumption, breakEvenInputShare } = calculateScenarioRange(product, {
-    substitution,
-    exportGrowth,
-    importedInputShare,
-    realisation,
-  });
+  const { base, conservative, optimistic, mostInfluentialAssumption, breakEvenInputShare } =
+    calculateScenarioRange(product, {
+      substitution,
+      exportGrowth,
+      importedInputShare,
+      exportImportedInputShare,
+      realisation,
+    });
 
-  const maxSub = product.domesticSupply?.localisableSharePct != null && product.domesticSupply.evidenceNote?.includes('structurally') 
-    ? product.domesticSupply.localisableSharePct 
-    : 100;
-  
+  const maxSub =
+    product.domesticSupply?.analystLocalisableSharePct != null &&
+    product.domesticSupply.evidenceNote?.includes('structurally')
+      ? product.domesticSupply.analystLocalisableSharePct
+      : 100;
+
   const hasAuditFields = product.domesticSupply?.derivationMethod;
 
   const handleExport = () => {
     const data = {
       product: { hscode: product.hscode, name: product.description },
-      assumptions: { substitution, exportGrowth, importedInputShare, realisation },
+      assumptions: {
+        substitution,
+        exportGrowth,
+        importedInputShare,
+        exportImportedInputShare,
+        realisation,
+      },
       impact: {
         base: base.netImpact,
         conservative: conservative.netImpact,
-        optimistic: optimistic.netImpact
+        optimistic: optimistic.netImpact,
       },
       url: window.location.href,
-      generatedAt: new Date().toISOString()
+      generatedAt: new Date().toISOString(),
     };
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
@@ -292,7 +314,7 @@ export function ScenarioModeller() {
           background: `linear-gradient(120deg, ${C.ink}, #172554)`,
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'flex-start'
+          alignItems: 'flex-start',
         }}
       >
         <Box>
@@ -308,19 +330,32 @@ export function ScenarioModeller() {
           <Typography
             sx={{ mt: 0.75, maxWidth: 720, fontSize: 12.5, color: 'rgba(255,255,255,0.68)' }}
           >
-            A transparent sensitivity model—not a forecast. Imported inputs and execution realisation
-            are deducted from gross import substitution and export growth.
+            A transparent sensitivity model—not a forecast. Imported inputs and execution
+            realisation are deducted from gross import substitution and export growth.
           </Typography>
         </Box>
-        <Button variant="outlined" size="small" sx={{ color: '#fff', borderColor: 'rgba(255,255,255,0.3)' }} onClick={handleExport}>
+        <Button
+          variant="outlined"
+          size="small"
+          sx={{ color: '#fff', borderColor: 'rgba(255,255,255,0.3)' }}
+          onClick={handleExport}
+          disabled={!scenarioReady}
+        >
           Export Scenario
         </Button>
       </Box>
-      
-      {!hasEnrichment && (
-        <Box sx={{ p: 1.5, bgcolor: alpha(C.orange, 0.1), borderBottom: `1px solid ${alpha(C.orange, 0.2)}` }}>
+
+      {!scenarioReady && (
+        <Box
+          sx={{
+            p: 1.5,
+            bgcolor: alpha(C.orange, 0.1),
+            borderBottom: `1px solid ${alpha(C.orange, 0.2)}`,
+          }}
+        >
           <Typography sx={{ fontSize: 11.5, color: C.orange, fontWeight: 600 }}>
-            ⚠️ Evidence unavailable for HS {product.hscode}. Using generic model defaults.
+            ⚠️ Monetary output is unavailable for HS {product.hscode}. Adjust the assumptions below
+            to run an explicit user scenario.
           </Typography>
         </Box>
       )}
@@ -347,26 +382,55 @@ export function ScenarioModeller() {
           <ScenarioSlider
             label="Domestic import substitution"
             value={substitution}
-            onChange={setSubstitution}
+            onChange={(value) => {
+              setSubstitution(value);
+              setHasUserInputs(true);
+            }}
             max={maxSub}
-            help={maxSub < 100 ? `Structurally capped at ${maxSub}% by evidence constraints` : "Share of the current import line replaced"}
+            help={
+              maxSub < 100
+                ? `Structurally capped at ${maxSub}% by evidence constraints`
+                : 'Share of the current import line replaced'
+            }
           />
           <ScenarioSlider
             label="Additional export growth"
             value={exportGrowth}
-            onChange={setExportGrowth}
+            onChange={(value) => {
+              setExportGrowth(value);
+              setHasUserInputs(true);
+            }}
             help="Increment over the current export value"
           />
           <ScenarioSlider
-            label="Imported-input requirement"
+            label="Imported-input requirement (Domestic)"
             value={importedInputShare}
-            onChange={setImportedInputShare}
-            help={product.domesticSupply?.importDependencePct != null && importedInputShare === product.domesticSupply.importDependencePct ? "Sourced from evidence default" : "Foreign inputs needed for replacement production or new exports"}
+            onChange={(value) => {
+              setImportedInputShare(value);
+              setHasUserInputs(true);
+            }}
+            help={
+              importedInputShare === 35
+                ? 'Standard baseline assumption (35%)'
+                : 'Foreign inputs needed for replacement production'
+            }
+          />
+          <ScenarioSlider
+            label="Imported-input requirement (Export)"
+            value={exportImportedInputShare}
+            onChange={(value) => {
+              setExportImportedInputShare(value);
+              setHasUserInputs(true);
+            }}
+            help="Foreign inputs needed for new exports"
           />
           <ScenarioSlider
             label="Execution realisation"
             value={realisation}
-            onChange={setRealisation}
+            onChange={(value) => {
+              setRealisation(value);
+              setHasUserInputs(true);
+            }}
             help="Share of the modelled technical effect achieved (Base case)"
           />
         </Stack>
@@ -388,7 +452,7 @@ export function ScenarioModeller() {
             {[
               ['Current imports', moneyB(product.latestImportUsdMn), C.orange],
               ['Current exports', moneyB(product.latestExportUsdMn), C.blue],
-              ['Gross movement', moneyB(base.grossMovement), C.purple],
+              ...(scenarioReady ? [['Gross movement', moneyB(base.grossMovement), C.purple]] : []),
             ].map(([label, value, color]) => (
               <Box
                 key={label}
@@ -406,53 +470,118 @@ export function ScenarioModeller() {
                 </Typography>
               </Box>
             ))}
-            <Box
-              sx={{
-                p: 1.4,
-                borderRadius: 2,
-                border: '1px solid',
-                borderColor: C.teal,
-                bgcolor: alpha(C.teal, 0.08),
-              }}
-            >
-              <Typography sx={{ fontSize: 10, color: C.teal, fontWeight: 700 }}>Realistic net impact</Typography>
-              <Typography sx={{ ...mono, mt: 0.25, fontSize: 18, fontWeight: 800, color: C.teal }}>
-                {moneyB(base.netImpact)}
-              </Typography>
-              <Typography sx={{ mt: 0.5, fontSize: 9.5, color: 'text.secondary' }}>
-                Range: {moneyB(conservative.netImpact)} (conservative) to {moneyB(optimistic.netImpact)} (optimistic)
-              </Typography>
-            </Box>
+            {scenarioReady ? (
+              <Box
+                sx={{
+                  p: 1.4,
+                  borderRadius: 2,
+                  border: '1px solid',
+                  borderColor: C.teal,
+                  bgcolor: alpha(C.teal, 0.08),
+                }}
+              >
+                <Typography sx={{ fontSize: 10, color: C.teal, fontWeight: 700 }}>
+                  Realistic net impact
+                </Typography>
+                <Typography
+                  sx={{ ...mono, mt: 0.25, fontSize: 18, fontWeight: 800, color: C.teal }}
+                >
+                  {moneyB(base.netImpact)}
+                </Typography>
+                <Typography sx={{ mt: 0.5, fontSize: 9.5, color: 'text.secondary' }}>
+                  Range: {moneyB(conservative.netImpact)} (conservative) to{' '}
+                  {moneyB(optimistic.netImpact)} (optimistic)
+                </Typography>
+              </Box>
+            ) : (
+              <Box
+                sx={{
+                  p: 1.4,
+                  borderRadius: 2,
+                  border: '1px dashed',
+                  borderColor: C.orange,
+                  bgcolor: alpha(C.orange, 0.08),
+                }}
+              >
+                <Typography sx={{ fontSize: 10, color: C.orange, fontWeight: 700 }}>
+                  Monetary impact suppressed
+                </Typography>
+                <Typography sx={{ mt: 0.25, fontSize: 11, color: 'text.secondary' }}>
+                  Scenario relies solely on generic defaults. Enter actual product evidence to
+                  generate economic estimates.
+                </Typography>
+              </Box>
+            )}
           </Box>
 
-          <Box sx={{ mt: 2, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1.25 }}>
-             <Box sx={{ p: 1.5, borderRadius: 2, bgcolor: alpha(C.blue, 0.04), border: `1px solid ${alpha(C.blue, 0.1)}` }}>
-                <Typography sx={{ fontSize: 10, color: 'text.secondary', fontWeight: 600 }}>Most Influential Assumption</Typography>
-                <Typography sx={{ mt: 0.25, fontSize: 12, fontWeight: 700, color: C.blue }}>{mostInfluentialAssumption}</Typography>
-                <Typography sx={{ mt: 0.25, fontSize: 10, color: 'text.secondary' }}>Drives highest variance in net impact.</Typography>
-             </Box>
-             <Box sx={{ p: 1.5, borderRadius: 2, bgcolor: alpha(C.red, 0.04), border: `1px solid ${alpha(C.red, 0.1)}` }}>
-                <Typography sx={{ fontSize: 10, color: 'text.secondary', fontWeight: 600 }}>Break-Even Bound</Typography>
-                <Typography sx={{ mt: 0.25, fontSize: 12, fontWeight: 700, color: C.red }}>{breakEvenInputShare}% Imported Inputs</Typography>
-                <Typography sx={{ mt: 0.25, fontSize: 10, color: 'text.secondary' }}>If inputs exceed this, net impact turns negative.</Typography>
-             </Box>
-          </Box>
+          {scenarioReady && (
+            <>
+              <Box sx={{ mt: 2, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1.25 }}>
+                <Box
+                  sx={{
+                    p: 1.5,
+                    borderRadius: 2,
+                    bgcolor: alpha(C.blue, 0.04),
+                    border: `1px solid ${alpha(C.blue, 0.1)}`,
+                  }}
+                >
+                  <Typography sx={{ fontSize: 10, color: 'text.secondary', fontWeight: 600 }}>
+                    Most Influential Assumption
+                  </Typography>
+                  <Typography sx={{ mt: 0.25, fontSize: 12, fontWeight: 700, color: C.blue }}>
+                    {mostInfluentialAssumption}
+                  </Typography>
+                  <Typography sx={{ mt: 0.25, fontSize: 10, color: 'text.secondary' }}>
+                    Drives highest variance in net impact.
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    p: 1.5,
+                    borderRadius: 2,
+                    bgcolor: alpha(C.red, 0.04),
+                    border: `1px solid ${alpha(C.red, 0.1)}`,
+                  }}
+                >
+                  <Typography sx={{ fontSize: 10, color: 'text.secondary', fontWeight: 600 }}>
+                    Break-Even Bound
+                  </Typography>
+                  <Typography sx={{ mt: 0.25, fontSize: 12, fontWeight: 700, color: C.red }}>
+                    {breakEvenInputShare}% Imported Inputs
+                  </Typography>
+                  <Typography sx={{ mt: 0.25, fontSize: 10, color: 'text.secondary' }}>
+                    If inputs exceed this, net impact turns negative.
+                  </Typography>
+                </Box>
+              </Box>
 
-          {!hasAuditFields && hasEnrichment && (
-            <Box sx={{ mt: 2, p: 1.25, borderRadius: 1.5, bgcolor: alpha(C.red, 0.05), border: `1px solid ${alpha(C.red, 0.2)}` }}>
-              <Typography sx={{ fontSize: 10.5, color: C.red, fontWeight: 600 }}>
-                ⚠️ Low-Confidence Inputs: Results depend on assumptions without a recorded derivation method.
-              </Typography>
-            </Box>
+              {!hasAuditFields && (
+                <Box
+                  sx={{
+                    mt: 2,
+                    p: 1.25,
+                    borderRadius: 1.5,
+                    bgcolor: alpha(C.red, 0.05),
+                    border: `1px solid ${alpha(C.red, 0.2)}`,
+                  }}
+                >
+                  <Typography sx={{ fontSize: 10.5, color: C.red, fontWeight: 600 }}>
+                    ⚠️ Low-Confidence Inputs: Results depend on assumptions without a recorded
+                    derivation method.
+                  </Typography>
+                </Box>
+              )}
+
+              <Box sx={{ mt: 2, p: 1.5, borderRadius: 2, bgcolor: '#f8fafc' }}>
+                <Typography sx={{ fontSize: 11.5, lineHeight: 1.65 }}>
+                  <strong>Bridge:</strong> {moneyB(base.importReduction)} import reduction +{' '}
+                  {moneyB(base.exportGain)} export gain −{' '}
+                  {moneyB(base.replacementInputCost + base.exportInputCost)} imported inputs, then ×{' '}
+                  {realisation}% realisation (±15% variance).
+                </Typography>
+              </Box>
+            </>
           )}
-
-          <Box sx={{ mt: 2, p: 1.5, borderRadius: 2, bgcolor: '#f8fafc' }}>
-            <Typography sx={{ fontSize: 11.5, lineHeight: 1.65 }}>
-              <strong>Bridge:</strong> {moneyB(base.importReduction)} import reduction +{' '}
-              {moneyB(base.exportGain)} export gain − {moneyB(base.replacementInputCost + base.exportInputCost)}{' '}
-              imported inputs, then × {realisation}% realisation (±15% variance).
-            </Typography>
-          </Box>
           <Typography sx={{ mt: 1.25, fontSize: 10.5, color: 'text.secondary', lineHeight: 1.55 }}>
             Model Version 2.0 (Sensitivity Analysis). Excludes capital cost and GE effects.
           </Typography>
@@ -525,7 +654,9 @@ export function ProductComparison() {
                       size="small"
                       color="inherit"
                       onClick={() =>
-                        setSelectedCodes((current) => removeComparisonProduct(current, product.hscode))
+                        setSelectedCodes((current) =>
+                          removeComparisonProduct(current, product.hscode),
+                        )
                       }
                       sx={{ mt: 0.3, p: 0, minWidth: 0, fontSize: 9 }}
                     >

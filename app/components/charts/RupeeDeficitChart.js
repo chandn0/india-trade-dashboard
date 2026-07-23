@@ -25,9 +25,7 @@ export default function RupeeDeficitChart() {
     const rect = wrapRef.current?.getBoundingClientRect();
     if (!rect) return;
     const vbX = ((e.clientX - rect.left) / rect.width) * geo.width;
-    setHover(
-      clamp(Math.round((vbX - geo.pad.left) / geo.xStep), 0, rupeeDeficitRows.length - 1),
-    );
+    setHover(clamp(Math.round((vbX - geo.pad.left) / geo.xStep), 0, rupeeDeficitRows.length - 1));
   };
 
   const p = hover != null ? geo.points[hover] : null;

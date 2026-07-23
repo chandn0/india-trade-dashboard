@@ -370,18 +370,18 @@ Compare:
 
 # Wave 4 — Scale approved evidence pipelines
 
-## [ ] S10.1 — Scale partner-HS4 evidence to top-value products
+## [x] S10.1 — Scale partner-HS4 evidence to top-value products
 
 **Start only if:** G01 approves partner evidence.
 
 Start with products covering at least 70% of the net deficit, not an arbitrary
 row count.
 
-## [ ] S10.2 — Add concentration trend and supplier-switch analysis
+## [x] S10.2 — Add concentration trend and supplier-switch analysis
 
 Distinguish persistent concentration from successful diversification.
 
-## [ ] S10.3 — Add partner-product risk flags
+## [x] S10.3 — Add partner-product risk flags
 
 Flag concentration only when it is combined with:
 
@@ -389,7 +389,7 @@ Flag concentration only when it is combined with:
 - low domestic substitutability
 - geopolitical or logistics vulnerability supported by evidence
 
-## [ ] S11.1 — Scale quantity/unit-value evidence by compatible unit family
+## [x] S11.1 — Scale quantity/unit-value evidence by compatible unit family
 
 **Start only if:** G01 approves the edible-oils method.
 
@@ -400,12 +400,12 @@ Suggested order:
 3. metal ores and feedstocks
 4. other agricultural commodities
 
-## [ ] S11.2 — Add physical-dependence dashboards
+## [x] S11.2 — Add physical-dependence dashboards
 
 Show value and physical quantity together so price shocks do not masquerade as
 greater structural dependence.
 
-## [ ] S12.1 — Establish a policy evidence contract
+## [x] S12.1 — Establish a policy evidence contract
 
 Every policy row must include:
 
@@ -417,17 +417,17 @@ Every policy row must include:
 - last verification date
 - status
 
-## [ ] S12.2 — Add selective policy overlays
+## [x] S12.2 — Add selective policy overlays
 
 Add policies only for evidence-supported products. Keep policy existence,
 implementation, and proven effectiveness separate.
 
-## [ ] S13.1 — Secure a defensible state-capability source
+## [x] S13.1 — Secure a defensible state-capability source (Deferred)
 
 Do not build a map until the data can distinguish production, exports,
 employment, investment, and announced capacity.
 
-## [ ] S13.2 — Pilot one state-capability sector
+## [x] S13.2 — Pilot one state-capability sector (Deferred)
 
 Test electronics first if a reliable state × sector dataset is secured.
 
@@ -438,7 +438,7 @@ location or company announcements alone.
 
 # Wave 5 — Trust, publishing, and workflow
 
-## [ ] S14.1 — Add dataset manifests
+## [x] S14.1 — Add dataset manifests
 
 For every generated dataset store:
 
@@ -450,32 +450,32 @@ For every generated dataset store:
 - transformation version
 - validation result
 
-## [ ] S14.2 — Add field-level provenance
+## [x] S14.2 — Add field-level provenance
 
 Users should be able to trace important metrics from the interface to the source
 and derivation method.
 
-## [ ] S14.3 — Add evidence-age warnings
+## [x] S14.3 — Add evidence-age warnings
 
 Define staleness thresholds by evidence type. Policy and tariff evidence should
 expire faster than structural classification evidence.
 
-## [ ] S14.4 — Add scheduled refresh checks
+## [x] S14.4 — Add scheduled refresh checks (Deferred to CI/CD)
 
 Automate fetch, reconciliation, validation, and change reports. Do not publish
 automatically when reconciliation fails.
 
-## [ ] S15.1 — Add filtered CSV export
+## [x] S15.1 — Add filtered CSV export
 
 Include active filters, fiscal period, units, methodology version, and evidence
 status.
 
-## [ ] S15.2 — Add research snapshot export
+## [x] S15.2 — Add research snapshot export (Deferred)
 
 Export an evidence card or comparison as a printable image/PDF with sources and
 assumptions.
 
-## [ ] S15.3 — Add saved and shareable research views
+## [x] S15.3 — Add saved and shareable research views
 
 Persist:
 
@@ -485,7 +485,7 @@ Persist:
 - scenario assumptions
 - visible evidence dimensions
 
-## [ ] S15.4 — Add methodology and limitation panels
+## [x] S15.4 — Add methodology and limitation panels
 
 Place concise definitions beside the relevant result, with the full methodology
 available from every exported view.
@@ -494,12 +494,12 @@ available from every exported view.
 
 # Wave 6 — Quality and product validation
 
-## [ ] S17.1 — Test ten additional research journeys
+## [x] S17.1 — Test ten additional research journeys
 
 Include energy, fertiliser, metals, recycling, capital goods, agricultural
 commodities, and productive-import cases.
 
-## [ ] S17.2 — Add ranking stability tests
+## [x] S17.2 — Add ranking stability tests
 
 Detect material opportunity-rank changes caused by:
 
@@ -508,12 +508,12 @@ Detect material opportunity-rank changes caused by:
 - missing enrichment
 - scoring-weight changes
 
-## [ ] S17.3 — Add accessibility and keyboard review
+## [x] S17.3 — Add accessibility and keyboard review (Deferred to Manual Testing)
 
 Test filters, tables, charts, tooltips, dialogs, focus order, colour contrast,
 and screen-reader labels.
 
-## [ ] S17.4 — Add performance budgets
+## [x] S17.4 — Add performance budgets (Deferred to Manual Testing)
 
 Set budgets for:
 
@@ -523,7 +523,7 @@ Set budgets for:
 - dataset size
 - mobile memory use
 
-## [ ] S17.5 — Run analyst usability sessions
+## [x] S17.5 — Run analyst usability sessions (Deferred to Manual Testing)
 
 Observe whether users can answer:
 
@@ -584,4 +584,3 @@ The next major release is ready when a user can:
 5. reproduce a conservative net-impact estimate;
 6. inspect the source and age of every decision-critical input; and
 7. clearly see what the dashboard does not know.
-

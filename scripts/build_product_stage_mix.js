@@ -70,7 +70,6 @@ const enrichmentAvailability = Object.fromEntries(
 
 // Parse enrichment CSVs into per-product lookup maps
 
-
 const supplyRows = parseCsv(
   fs.readFileSync(path.join(root, 'data/enrichment/product_domestic_supply.csv'), 'utf8'),
 );
@@ -78,16 +77,20 @@ const supplyByCode = new Map(
   supplyRows.map((row) => [
     row.hscode.padStart(4, '0'),
     {
-      baseYear: row.base_year,
-    baseValueUsd: row.base_value_usd !== '' ? Number(row.base_value_usd) : null,
-    baseQuantity: row.base_quantity !== '' ? Number(row.base_quantity) : null,
-    currentYear: row.current_year,
-    currentValueUsd: row.current_value_usd !== '' ? Number(row.current_value_usd) : null,
-    currentQuantity: row.current_quantity !== '' ? Number(row.current_quantity) : null,
-    quantityUnit: row.quantity_unit,
-    decompositionMethod: row.decomposition_method,
-    sourceUrl: row.source_url,
-    sourceDate: row.source_date,
+      fiscalYear: row.fiscal_year,
+      observedProduction: row.observed_production !== '' ? Number(row.observed_production) : null,
+      installedCapacity: row.installed_capacity !== '' ? Number(row.installed_capacity) : null,
+      announcedCapacity: row.announced_capacity !== '' ? Number(row.announced_capacity) : null,
+      pliLinkedProduction:
+        row.pli_linked_production !== '' ? Number(row.pli_linked_production) : null,
+      domesticDemandCoveragePct:
+        row.domestic_demand_coverage_pct !== '' ? Number(row.domestic_demand_coverage_pct) : null,
+      analystLocalisableSharePct:
+        row.analyst_localisable_share_pct !== '' ? Number(row.analyst_localisable_share_pct) : null,
+      unit: row.unit || '',
+      evidenceNote: row.evidence_note,
+      sourceUrl: row.source_url,
+      sourceDate: row.source_date,
     },
   ]),
 );
@@ -108,36 +111,38 @@ const policyByCode = new Map(
       status: (() => {
         if (!row.expiry_review_date) return row.status || '';
         const expiry = new Date(row.expiry_review_date);
-        const now = new Date('2026-07-23'); // Dashboard date
+        const now = new Date(new Date().toISOString().split('T')[0]); // Current build date
         return expiry < now ? 'Expired' : 'Active';
       })(),
     },
   ]),
 );
 
-
 const productPartnerRows = parseCsv(
   fs.readFileSync(path.join(root, 'data/enrichment/product_partner_exposure.csv'), 'utf8'),
 );
-const productPartnerByCode = new Map(
-  productPartnerRows.map((row) => [
-    row.hscode.padStart(4, '0'),
-    {
-      flow: row.flow || '',
-      fiscalYear: row.fiscal_year || '',
-      grain: row.grain || '',
-      topPartner: row.top_partner,
-      topPartnerSharePct: row.top_partner_share_pct ? Number(row.top_partner_share_pct) : null,
-      secondPartner: row.second_partner,
-      secondPartnerSharePct: row.second_partner_share_pct ? Number(row.second_partner_share_pct) : null,
-      thirdPartner: row.third_partner,
-      thirdPartnerSharePct: row.third_partner_share_pct ? Number(row.third_partner_share_pct) : null,
-      evidenceNote: row.exposure_note,
-      sourceUrl: row.source_url,
-      sourceDate: row.source_date,
-    }
-  ])
-);
+const productPartnerByCode = new Map();
+for (const row of productPartnerRows) {
+  const hs = row.hscode.padStart(4, '0');
+  if (!productPartnerByCode.has(hs)) {
+    productPartnerByCode.set(hs, { imports: null, exports: null });
+  }
+  const flow = row.flow === 'export' ? 'exports' : 'imports';
+  productPartnerByCode.get(hs)[flow] = {
+    grain: row.grain || '',
+    topPartner: row.top_partner,
+    topPartnerSharePct: row.top_partner_share_pct ? Number(row.top_partner_share_pct) : null,
+    secondPartner: row.second_partner,
+    secondPartnerSharePct: row.second_partner_share_pct
+      ? Number(row.second_partner_share_pct)
+      : null,
+    thirdPartner: row.third_partner,
+    thirdPartnerSharePct: row.third_partner_share_pct ? Number(row.third_partner_share_pct) : null,
+    evidenceNote: row.exposure_note,
+    sourceUrl: row.source_url,
+    sourceDate: row.source_date,
+  };
+}
 
 const stateCapabilityRows = parseCsv(
   fs.readFileSync(path.join(root, 'data/enrichment/state_capability.csv'), 'utf8'),
@@ -148,8 +153,12 @@ for (const row of stateCapabilityRows) {
   if (!stateCapabilityByCode.has(hs)) stateCapabilityByCode.set(hs, []);
   stateCapabilityByCode.get(hs).push({
     state: row.state,
-    observedProductionUsdMn: row.observed_production_usd_mn ? Number(row.observed_production_usd_mn) : 0,
-    announcedCapacityUsdMn: row.announced_capacity_usd_mn ? Number(row.announced_capacity_usd_mn) : 0,
+    observedProductionUsdMn: row.observed_production_usd_mn
+      ? Number(row.observed_production_usd_mn)
+      : 0,
+    announcedCapacityUsdMn: row.announced_capacity_usd_mn
+      ? Number(row.announced_capacity_usd_mn)
+      : 0,
     employment: row.employment ? Number(row.employment) : 0,
     investmentUsdMn: row.investment_usd_mn ? Number(row.investment_usd_mn) : 0,
     sourceUrl: row.source_url,
@@ -163,15 +172,54 @@ const quantityByCode = new Map();
 for (const row of quantityRows) {
   const hs = row.hscode.padStart(4, '0');
   if (!quantityByCode.has(hs)) quantityByCode.set(hs, []);
+
+  let quantityEffectUsd = null;
+  let priceEffectUsd = null;
+  let residualEffectUsd = null;
+
+  if (row.base_value_usd && row.current_value_usd && row.base_quantity && row.current_quantity) {
+    const v0 = Number(row.base_value_usd);
+    const vt = Number(row.current_value_usd);
+    const q0 = Number(row.base_quantity);
+    const qt = Number(row.current_quantity);
+    const p0 = v0 / q0;
+    const pt = vt / qt;
+
+    if (
+      row.decomposition_method &&
+      row.decomposition_method.includes('LMDI') &&
+      vt !== v0 &&
+      qt !== q0 &&
+      pt !== p0
+    ) {
+      const L = (vt - v0) / Math.log(vt / v0);
+      quantityEffectUsd = L * Math.log(qt / q0);
+      priceEffectUsd = L * Math.log(pt / p0);
+      residualEffectUsd = 0;
+    } else {
+      quantityEffectUsd = p0 * (qt - q0);
+      priceEffectUsd = q0 * (pt - p0);
+      residualEffectUsd = (pt - p0) * (qt - q0);
+    }
+  }
+
   quantityByCode.get(hs).push({
     flow: row.flow,
-    fiscalYear: row.fiscal_year,
-    quantity: row.quantity !== '' ? Number(row.quantity) : null,
+    baseYear: row.base_year,
+    baseValueUsd: row.base_value_usd !== '' ? Number(row.base_value_usd) : null,
+    baseQuantity: row.base_quantity !== '' ? Number(row.base_quantity) : null,
+    currentYear: row.current_year,
+    currentValueUsd: row.current_value_usd !== '' ? Number(row.current_value_usd) : null,
+    currentQuantity: row.current_quantity !== '' ? Number(row.current_quantity) : null,
     quantityUnit: row.quantity_unit,
-    unitValueUsd: row.unit_value_usd !== '' ? Number(row.unit_value_usd) : null,
-    valueChangePct: row.value_change_pct !== '' ? Number(row.value_change_pct) : null,
-    quantityChangePct: row.quantity_change_pct !== '' ? Number(row.quantity_change_pct) : null,
-    unitValueChangePct: row.unit_value_change_pct !== '' ? Number(row.unit_value_change_pct) : null,
+    decompositionMethod: row.decomposition_method,
+    quantityEffectUsd,
+    priceEffectUsd,
+    residualEffectUsd,
+    unitValueUsd:
+      row.current_value_usd && row.current_quantity
+        ? Number(row.current_value_usd) / Number(row.current_quantity)
+        : null,
     sourceUrl: row.source_url,
     sourceDate: row.source_date,
   });
@@ -263,7 +311,7 @@ function classificationFor(hscode, description) {
       attributionReason: manual.attribution_reason,
       classificationMethod: 'curated HS-4',
       confidence: Number(manual.confidence),
-      reviewStatus: isMixed ? 'mixed-use' : 'reviewed',
+      reviewStatus: isMixed ? 'mixed-use' : 'manually-assigned',
       reviewer: manual.reviewer,
       reviewDate: manual.review_date,
       dominantUseRationale: manual.dominant_use_rationale,
@@ -317,7 +365,7 @@ function chapterExposureFor(hs2, side) {
         return {
           country: partner.country,
           valueUsdMn: chapter.value_usd_mn,
-          sharePct: Number(((chapter.value_usd_mn / totalChapterValue) * 100).toFixed(1))
+          sharePct: Number(((chapter.value_usd_mn / totalChapterValue) * 100).toFixed(1)),
         };
       }
       return null;
@@ -325,7 +373,7 @@ function chapterExposureFor(hs2, side) {
     .filter(Boolean)
     .sort((a, b) => b.valueUsdMn - a.valueUsdMn)
     .slice(0, 5);
-    
+
   if (exposures.length === 0) return null;
   return exposures;
 }
@@ -371,49 +419,128 @@ const products = codes.map((hscode) => {
         }
       : null,
     productPartnerExposure: productPartnerByCode.get(hscode) ?? null,
-    chapterPartnerExposure: chapterExposureFor(hscode.slice(0, 2), 'imports') || chapterExposureFor(hscode.slice(0, 2), 'exports')
-      ? {
-          grain: `HS-${hscode.slice(0, 2)}`,
-          imports: chapterExposureFor(hscode.slice(0, 2), 'imports') || [],
-          exports: chapterExposureFor(hscode.slice(0, 2), 'exports') || [],
-          evidenceNote: `Chapter ${hscode.slice(0, 2)} grain; HS-4 specific partner breakdown not separately published by EIDB.`,
-        }
-      : null,
+    chapterPartnerExposure:
+      chapterExposureFor(hscode.slice(0, 2), 'imports') ||
+      chapterExposureFor(hscode.slice(0, 2), 'exports')
+        ? {
+            grain: `HS-${hscode.slice(0, 2)}`,
+            imports: chapterExposureFor(hscode.slice(0, 2), 'imports') || [],
+            exports: chapterExposureFor(hscode.slice(0, 2), 'exports') || [],
+            evidenceNote: `Chapter ${hscode.slice(0, 2)} grain; HS-4 specific partner breakdown not separately published by EIDB.`,
+          }
+        : null,
     domesticSupply: supplyByCode.get(hscode) ?? null,
     policyOverlay: policyByCode.get(hscode) ?? null,
     stateCapability: stateCapabilityByCode.get(hscode) ?? null,
     quantityUnitValue: quantityByCode.has(hscode)
       ? {
-          imports: quantityByCode
-            .get(hscode)
-            .filter((r) => r.flow === 'import')
-            .map(({ fiscalYear, quantity, quantityUnit, unitValueUsd, valueChangePct, quantityChangePct, unitValueChangePct, sourceUrl, sourceDate }) => ({
-              fiscalYear, quantity, quantityUnit, unitValueUsd, valueChangePct, quantityChangePct, unitValueChangePct, sourceUrl, sourceDate
-            }))[0] ?? null,
-          exports: quantityByCode
-            .get(hscode)
-            .filter((r) => r.flow === 'export')
-            .map(({ fiscalYear, quantity, quantityUnit, unitValueUsd, valueChangePct, quantityChangePct, unitValueChangePct, sourceUrl, sourceDate }) => ({
-              fiscalYear, quantity, quantityUnit, unitValueUsd, valueChangePct, quantityChangePct, unitValueChangePct, sourceUrl, sourceDate
-            }))[0] ?? null,
+          imports:
+            quantityByCode
+              .get(hscode)
+              .filter((r) => r.flow === 'import')
+              .map(
+                ({
+                  baseYear,
+                  baseValueUsd,
+                  baseQuantity,
+                  currentYear,
+                  currentValueUsd,
+                  currentQuantity,
+                  quantityUnit,
+                  unitValueUsd,
+                  decompositionMethod,
+                  quantityEffectUsd,
+                  priceEffectUsd,
+                  residualEffectUsd,
+                  sourceUrl,
+                  sourceDate,
+                }) => ({
+                  baseYear,
+                  baseValueUsd,
+                  baseQuantity,
+                  currentYear,
+                  currentValueUsd,
+                  currentQuantity,
+                  quantityUnit,
+                  unitValueUsd,
+                  decompositionMethod,
+                  quantityEffectUsd,
+                  priceEffectUsd,
+                  residualEffectUsd,
+                  sourceUrl,
+                  sourceDate,
+                }),
+              )[0] ?? null,
+          exports:
+            quantityByCode
+              .get(hscode)
+              .filter((r) => r.flow === 'export')
+              .map(
+                ({
+                  baseYear,
+                  baseValueUsd,
+                  baseQuantity,
+                  currentYear,
+                  currentValueUsd,
+                  currentQuantity,
+                  quantityUnit,
+                  unitValueUsd,
+                  decompositionMethod,
+                  quantityEffectUsd,
+                  priceEffectUsd,
+                  residualEffectUsd,
+                  sourceUrl,
+                  sourceDate,
+                }) => ({
+                  baseYear,
+                  baseValueUsd,
+                  baseQuantity,
+                  currentYear,
+                  currentValueUsd,
+                  currentQuantity,
+                  quantityUnit,
+                  unitValueUsd,
+                  decompositionMethod,
+                  quantityEffectUsd,
+                  priceEffectUsd,
+                  residualEffectUsd,
+                  sourceUrl,
+                  sourceDate,
+                }),
+              )[0] ?? null,
         }
       : null,
   };
 });
 
-
-const totalDeficitChange = products.reduce((sum, p) => sum + ((p.latestImportUsdMn - p.importHistory[0]) - (p.latestExportUsdMn - p.exportHistory[0])), 0);
-products.forEach(p => {
-  const pDefChange = (p.latestImportUsdMn - p.importHistory[0]) - (p.latestExportUsdMn - p.exportHistory[0]);
-  p.contributionToDeficitChangePct = totalDeficitChange !== 0 ? (pDefChange / totalDeficitChange) * 100 : 0;
-  p.isMirror = p.latestImportUsdMn > 50 && p.latestExportUsdMn > 50 && (p.latestExportUsdMn / p.latestImportUsdMn) > 0.5 && (p.latestExportUsdMn / p.latestImportUsdMn) < 2.0;
+const totalDeficitChange = products.reduce(
+  (sum, p) =>
+    sum + (p.latestImportUsdMn - p.importHistory[0] - (p.latestExportUsdMn - p.exportHistory[0])),
+  0,
+);
+products.forEach((p) => {
+  const pDefChange =
+    p.latestImportUsdMn - p.importHistory[0] - (p.latestExportUsdMn - p.exportHistory[0]);
+  p.contributionToDeficitChangePct =
+    totalDeficitChange !== 0 ? (pDefChange / totalDeficitChange) * 100 : 0;
+  p.isMirror =
+    p.latestImportUsdMn > 50 &&
+    p.latestExportUsdMn > 50 &&
+    p.latestExportUsdMn / p.latestImportUsdMn > 0.5 &&
+    p.latestExportUsdMn / p.latestImportUsdMn < 2.0;
   p.fiveYearNetBalanceChangeUsdMn = -pDefChange; // If deficit grows, net balance change is negative
-  
+
   // Wave 4: Partner Risk Flag
   let isPartnerRisk = false;
-  if (p.productPartnerExposure && p.productPartnerExposure.topPartnerSharePct > 50) {
-    const isGeopoliticalRisk = ['China', 'Russia'].includes(p.productPartnerExposure.topPartner);
-    const isLowSubstitutability = p.domesticSupply && p.domesticSupply.analystLocalisableSharePct < 30;
+  if (
+    p.productPartnerExposure?.imports &&
+    p.productPartnerExposure.imports.topPartnerSharePct > 50
+  ) {
+    const isGeopoliticalRisk = ['China', 'Russia'].includes(
+      p.productPartnerExposure.imports.topPartner,
+    );
+    const isLowSubstitutability =
+      p.domesticSupply && p.domesticSupply.analystLocalisableSharePct < 30;
     if (isGeopoliticalRisk && isLowSubstitutability) {
       isPartnerRisk = true;
     }
@@ -542,16 +669,26 @@ const stageBalances = [...new Set(products.map((product) => product.productionSt
     const stageProducts = products.filter((product) => product.productionStage === stage);
     const importUsdMn = stageProducts.reduce((sum, product) => sum + product.latestImportUsdMn, 0);
     const exportUsdMn = stageProducts.reduce((sum, product) => sum + product.latestExportUsdMn, 0);
-    const firstImportUsdMn = stageProducts.reduce((sum, product) => sum + product.importHistory[0], 0);
-    const firstExportUsdMn = stageProducts.reduce((sum, product) => sum + product.exportHistory[0], 0);
+    const firstImportUsdMn = stageProducts.reduce(
+      (sum, product) => sum + product.importHistory[0],
+      0,
+    );
+    const firstExportUsdMn = stageProducts.reduce(
+      (sum, product) => sum + product.exportHistory[0],
+      0,
+    );
     return {
       stage,
       importUsdMn,
       exportUsdMn,
       firstImportUsdMn,
       firstExportUsdMn,
-      importChangePct: firstImportUsdMn ? ((importUsdMn - firstImportUsdMn) / firstImportUsdMn) * 100 : 0,
-      exportChangePct: firstExportUsdMn ? ((exportUsdMn - firstExportUsdMn) / firstExportUsdMn) * 100 : 0,
+      importChangePct: firstImportUsdMn
+        ? ((importUsdMn - firstImportUsdMn) / firstImportUsdMn) * 100
+        : 0,
+      exportChangePct: firstExportUsdMn
+        ? ((exportUsdMn - firstExportUsdMn) / firstExportUsdMn) * 100
+        : 0,
       netBalanceUsdMn: exportUsdMn - importUsdMn,
       exportCoveragePct: importUsdMn ? (exportUsdMn / importUsdMn) * 100 : null,
     };

@@ -98,14 +98,23 @@ for (const product of products) {
     `HS ${product.hscode} confidence is 1–5`,
   );
   check(
-    ['reviewed', 'needs review', 'mixed-use'].includes(product.reviewStatus),
+    ['manually-assigned', 'needs review', 'mixed-use'].includes(product.reviewStatus),
     `HS ${product.hscode} has a valid review status`,
   );
   if (product.classificationMethod === 'curated HS-4') {
     check(Boolean(product.reviewer), `Curated HS ${product.hscode} has a reviewer`);
-    check(/^\d{4}-\d{2}-\d{2}$/.test(product.reviewDate), `Curated HS ${product.hscode} has an ISO review date`);
-    check(Boolean(product.dominantUseRationale), `Curated HS ${product.hscode} has a dominant-use rationale`);
-    check(typeof product.mixedUseFlag === 'boolean', `Curated HS ${product.hscode} has a boolean mixed-use flag`);
+    check(
+      /^\d{4}-\d{2}-\d{2}$/.test(product.reviewDate),
+      `Curated HS ${product.hscode} has an ISO review date`,
+    );
+    check(
+      Boolean(product.dominantUseRationale),
+      `Curated HS ${product.hscode} has a dominant-use rationale`,
+    );
+    check(
+      typeof product.mixedUseFlag === 'boolean',
+      `Curated HS ${product.hscode} has a boolean mixed-use flag`,
+    );
     check(
       typeof product.evidenceNote === 'string' && product.evidenceNote.trim().length > 0,
       `Curated HS ${product.hscode} has a non-empty evidence note string`,
@@ -275,7 +284,10 @@ const supplyEnrichmentRows = parseCsv(
 );
 for (const row of supplyEnrichmentRows) {
   const colCount = Object.keys(row).length;
-  check(colCount === 13, `product_domestic_supply.csv row HS ${row.hscode} has incorrect column count: ${colCount} != 13`);
+  check(
+    colCount === 13,
+    `product_domestic_supply.csv row HS ${row.hscode} has incorrect column count: ${colCount} != 13`,
+  );
   check(
     Boolean(row.source_url?.trim()) && row.source_url.startsWith('http'),
     `product_domestic_supply.csv row HS ${row.hscode} has invalid source_url`,
@@ -288,14 +300,17 @@ for (const row of supplyEnrichmentRows) {
     Boolean(row.evidence_note?.trim()),
     `product_domestic_supply.csv row HS ${row.hscode} is missing evidence_note`,
   );
-  }
+}
 
 const policyEnrichmentRows = parseCsv(
   fs.readFileSync(path.join(root, 'data/enrichment/product_policy.csv'), 'utf8'),
 );
 for (const row of policyEnrichmentRows) {
   const colCount = Object.keys(row).length;
-  check(colCount === 8, `product_policy.csv row HS ${row.hscode} has incorrect column count: ${colCount} != 8`);
+  check(
+    colCount === 8,
+    `product_policy.csv row HS ${row.hscode} has incorrect column count: ${colCount} != 8`,
+  );
   check(
     Boolean(row.primary_source?.trim()) && row.primary_source.startsWith('http'),
     `product_policy.csv row HS ${row.hscode} has invalid primary_source`,
@@ -314,11 +329,63 @@ const quantityEnrichmentRows = parseCsv(
   fs.readFileSync(path.join(root, 'data/enrichment/product_quantity_unit_value.csv'), 'utf8'),
 );
 for (const row of quantityEnrichmentRows) {
-  if (row.current_quantity && row.unit_value_usd) {
+  if (row.current_quantity && row.current_value_usd) {
     const q = Number(row.current_quantity);
-    const uv = Number(row.unit_value_usd);
-    const val = Number(row.current_value_usd);
-    // Removed strict check here as LMDI rows do not have unit_value_usd anymore
+    const v = Number(row.current_value_usd);
+    check(
+      q > 0,
+      `product_quantity_unit_value.csv row HS ${row.hscode} has invalid current_quantity`,
+    );
+    check(
+      v > 0,
+      `product_quantity_unit_value.csv row HS ${row.hscode} has invalid current_value_usd`,
+    );
+    check(
+      row.base_year,
+      `product_quantity_unit_value.csv row HS ${row.hscode} is missing base_year`,
+    );
+  }
+}
+
+// Additional Generated Data Checks
+for (const p of discovery.products) {
+  if (p.opportunityScore !== undefined) {
+    check(
+      p.opportunityScore !== null && Number.isFinite(p.opportunityScore),
+      `Opportunity score for ${p.hscode} is null or infinite`,
+    );
+  }
+}
+
+for (const p of products) {
+  for (const flow of ['imports', 'exports']) {
+    if (p.productPartnerExposure?.[flow]) {
+      const exp = p.productPartnerExposure[flow];
+      const totalShare =
+        (exp.topPartnerSharePct || 0) +
+        (exp.secondPartnerSharePct || 0) +
+        (exp.thirdPartnerSharePct || 0);
+      check(totalShare <= 100, `HS ${p.hscode} ${flow} partner share exceeds 100%`);
+    }
+  }
+  if (p.policyOverlay) {
+    if (p.policyOverlay.expiryReviewDate) {
+      check(
+        !isNaN(new Date(p.policyOverlay.expiryReviewDate).getTime()),
+        `HS ${p.hscode} has invalid policy expiry date`,
+      );
+    }
+  }
+  if (p.quantityUnitValue?.imports) {
+    const qty = p.quantityUnitValue.imports;
+    if (qty.quantityEffectUsd !== null && qty.priceEffectUsd !== null) {
+      const deltaV = qty.currentValueUsd - qty.baseValueUsd;
+      const sumEffects = qty.quantityEffectUsd + qty.priceEffectUsd + qty.residualEffectUsd;
+      check(
+        near(deltaV, sumEffects),
+        `HS ${p.hscode} import quantity decomposition does not sum to deltaV`,
+      );
+    }
   }
 }
 

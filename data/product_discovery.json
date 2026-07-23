@@ -2,7 +2,7 @@
   "metadata": {
     "fiscalYear": "2025-2026",
     "units": "USD million",
-    "generatedAt": "2026-07-23T07:35:23.945Z",
+    "generatedAt": "2026-07-23T12:07:49.446Z",
     "methodology": "Trade values are joined by HS-4. Net deficit equals imports minus exports. Realistic impact applies the curated scenario range to net deficit, not gross imports. Opportunity score combines high-case net impact, category tractability and confidence, normalized to 100.",
     "sources": [
       "data/import_product_classification.csv",
@@ -35,6 +35,12 @@
       "realisticReductionHighPct": 15,
       "realisticNetImpactLowUsdMn": 6735.839,
       "realisticNetImpactHighUsdMn": 20207.517,
+      "opportunityScores": {
+        "netDeficitRelevance": 134716.78,
+        "technicallyAddressableShare": 15,
+        "implementationFeasibility": 0.25,
+        "timeAdjustedImpact": 5051.87925
+      },
       "countryExposure": [
         {
           "country": "RUSSIA",
@@ -74,6 +80,12 @@
       "realisticReductionHighPct": 25,
       "realisticNetImpactLowUsdMn": 7173.473999999999,
       "realisticNetImpactHighUsdMn": 17933.684999999998,
+      "opportunityScores": {
+        "netDeficitRelevance": 71734.73999999999,
+        "technicallyAddressableShare": 25,
+        "implementationFeasibility": 0.58,
+        "timeAdjustedImpact": 8321.229839999998
+      },
       "countryExposure": [
         {
           "country": "U ARAB EMTS",
@@ -113,6 +125,12 @@
       "realisticReductionHighPct": 25,
       "realisticNetImpactLowUsdMn": 3004.32,
       "realisticNetImpactHighUsdMn": 7510.8,
+      "opportunityScores": {
+        "netDeficitRelevance": 30043.2,
+        "technicallyAddressableShare": 25,
+        "implementationFeasibility": 0.78,
+        "timeAdjustedImpact": 4686.7392
+      },
       "countryExposure": [
         {
           "country": "CHINA P RP",
@@ -152,6 +170,12 @@
       "realisticReductionHighPct": 25,
       "realisticNetImpactLowUsdMn": 2655.078,
       "realisticNetImpactHighUsdMn": 6637.695,
+      "opportunityScores": {
+        "netDeficitRelevance": 26550.78,
+        "technicallyAddressableShare": 25,
+        "implementationFeasibility": 0.78,
+        "timeAdjustedImpact": 4141.92168
+      },
       "countryExposure": [
         {
           "country": "RUSSIA",
@@ -191,6 +215,12 @@
       "realisticReductionHighPct": 15,
       "realisticNetImpactLowUsdMn": 1312.018,
       "realisticNetImpactHighUsdMn": 3936.054,
+      "opportunityScores": {
+        "netDeficitRelevance": 26240.36,
+        "technicallyAddressableShare": 15,
+        "implementationFeasibility": 0.25,
+        "timeAdjustedImpact": 787.2108000000001
+      },
       "countryExposure": [
         {
           "country": "RUSSIA",
@@ -230,6 +260,12 @@
       "realisticReductionHighPct": 15,
       "realisticNetImpactLowUsdMn": 637.9795,
       "realisticNetImpactHighUsdMn": 1913.9385,
+      "opportunityScores": {
+        "netDeficitRelevance": 12759.59,
+        "technicallyAddressableShare": 15,
+        "implementationFeasibility": 0.78,
+        "timeAdjustedImpact": 895.723218
+      },
       "countryExposure": [
         {
           "country": "GERMANY",
@@ -269,6 +305,12 @@
       "realisticReductionHighPct": 35,
       "realisticNetImpactLowUsdMn": 1894.8615,
       "realisticNetImpactHighUsdMn": 4421.3435,
+      "opportunityScores": {
+        "netDeficitRelevance": 12632.41,
+        "technicallyAddressableShare": 35,
+        "implementationFeasibility": 0.78,
+        "timeAdjustedImpact": 2758.918344
+      },
       "countryExposure": [
         {
           "country": "CHINA P RP",
@@ -308,6 +350,12 @@
       "realisticReductionHighPct": 25,
       "realisticNetImpactLowUsdMn": 1200.1119999999999,
       "realisticNetImpactHighUsdMn": 3000.2799999999997,
+      "opportunityScores": {
+        "netDeficitRelevance": 12001.119999999999,
+        "technicallyAddressableShare": 25,
+        "implementationFeasibility": 0.88,
+        "timeAdjustedImpact": 1584.1478399999999
+      },
       "countryExposure": [
         {
           "country": "U ARAB EMTS",
@@ -347,6 +395,12 @@
       "realisticReductionHighPct": 15,
       "realisticNetImpactLowUsdMn": 477.11500000000007,
       "realisticNetImpactHighUsdMn": 1431.345,
+      "opportunityScores": {
+        "netDeficitRelevance": 9542.300000000001,
+        "technicallyAddressableShare": 15,
+        "implementationFeasibility": 0.68,
+        "timeAdjustedImpact": 778.65168
+      },
       "countryExposure": [
         {
           "country": "RUSSIA",
@@ -386,6 +440,12 @@
       "realisticReductionHighPct": 20,
       "realisticNetImpactLowUsdMn": 698.736,
       "realisticNetImpactHighUsdMn": 1397.472,
+      "opportunityScores": {
+        "netDeficitRelevance": 6987.36,
+        "technicallyAddressableShare": 20,
+        "implementationFeasibility": 0.78,
+        "timeAdjustedImpact": 872.0225280000001
+      },
       "countryExposure": [
         {
           "country": "RUSSIA",
@@ -425,6 +485,12 @@
       "realisticReductionHighPct": 20,
       "realisticNetImpactLowUsdMn": 616.285,
       "realisticNetImpactHighUsdMn": 1232.57,
+      "opportunityScores": {
+        "netDeficitRelevance": 6162.849999999999,
+        "technicallyAddressableShare": 20,
+        "implementationFeasibility": 0.68,
+        "timeAdjustedImpact": 670.51808
+      },
       "countryExposure": [
         {
           "country": "RUSSIA",
@@ -464,6 +530,12 @@
       "realisticReductionHighPct": 15,
       "realisticNetImpactLowUsdMn": 295.059,
       "realisticNetImpactHighUsdMn": 885.177,
+      "opportunityScores": {
+        "netDeficitRelevance": 5901.18,
+        "technicallyAddressableShare": 15,
+        "implementationFeasibility": 0.25,
+        "timeAdjustedImpact": 177.0354
+      },
       "countryExposure": [
         {
           "country": "CHINA P RP",
@@ -495,6 +567,12 @@
       "realisticReductionHighPct": 25,
       "realisticNetImpactLowUsdMn": 555.9390000000001,
       "realisticNetImpactHighUsdMn": 1389.8475,
+      "opportunityScores": {
+        "netDeficitRelevance": 5559.39,
+        "technicallyAddressableShare": 25,
+        "implementationFeasibility": 0.88,
+        "timeAdjustedImpact": 733.83948
+      },
       "countryExposure": [
         {
           "country": "U ARAB EMTS",
@@ -534,6 +612,12 @@
       "realisticReductionHighPct": 20,
       "realisticNetImpactLowUsdMn": 553.575,
       "realisticNetImpactHighUsdMn": 1107.15,
+      "opportunityScores": {
+        "netDeficitRelevance": 5535.75,
+        "technicallyAddressableShare": 20,
+        "implementationFeasibility": 0.78,
+        "timeAdjustedImpact": 690.8616000000002
+      },
       "countryExposure": [
         {
           "country": "RUSSIA",
@@ -573,6 +657,12 @@
       "realisticReductionHighPct": 25,
       "realisticNetImpactLowUsdMn": 530.171,
       "realisticNetImpactHighUsdMn": 1325.4275,
+      "opportunityScores": {
+        "netDeficitRelevance": 5301.71,
+        "technicallyAddressableShare": 25,
+        "implementationFeasibility": 0.78,
+        "timeAdjustedImpact": 620.30007
+      },
       "countryExposure": [
         {
           "country": "CHINA P RP",
@@ -612,6 +702,12 @@
       "realisticReductionHighPct": 30,
       "realisticNetImpactLowUsdMn": 742.2524999999999,
       "realisticNetImpactHighUsdMn": 1484.5049999999999,
+      "opportunityScores": {
+        "netDeficitRelevance": 4948.349999999999,
+        "technicallyAddressableShare": 30,
+        "implementationFeasibility": 0.78,
+        "timeAdjustedImpact": 926.33112
+      },
       "countryExposure": [
         {
           "country": "CHINA P RP",
@@ -651,6 +747,12 @@
       "realisticReductionHighPct": 40,
       "realisticNetImpactLowUsdMn": 982.078,
       "realisticNetImpactHighUsdMn": 1964.156,
+      "opportunityScores": {
+        "netDeficitRelevance": 4910.389999999999,
+        "technicallyAddressableShare": 40,
+        "implementationFeasibility": 0.78,
+        "timeAdjustedImpact": 1225.633344
+      },
       "countryExposure": [
         {
           "country": "CHINA P RP",
@@ -690,6 +792,12 @@
       "realisticReductionHighPct": 40,
       "realisticNetImpactLowUsdMn": 907.3460000000001,
       "realisticNetImpactHighUsdMn": 1814.6920000000002,
+      "opportunityScores": {
+        "netDeficitRelevance": 4536.7300000000005,
+        "technicallyAddressableShare": 40,
+        "implementationFeasibility": 0.88,
+        "timeAdjustedImpact": 1596.9289600000002
+      },
       "countryExposure": [
         {
           "country": "KOREA RP",
@@ -729,6 +837,12 @@
       "realisticReductionHighPct": 40,
       "realisticNetImpactLowUsdMn": 899.5160000000001,
       "realisticNetImpactHighUsdMn": 1799.0320000000002,
+      "opportunityScores": {
+        "netDeficitRelevance": 4497.58,
+        "technicallyAddressableShare": 40,
+        "implementationFeasibility": 0.88,
+        "timeAdjustedImpact": 1583.1481600000002
+      },
       "countryExposure": [
         {
           "country": "CHINA P RP",
@@ -768,6 +882,12 @@
       "realisticReductionHighPct": 10,
       "realisticNetImpactLowUsdMn": 0,
       "realisticNetImpactHighUsdMn": 396.43899999999996,
+      "opportunityScores": {
+        "netDeficitRelevance": 3964.3899999999994,
+        "technicallyAddressableShare": 10,
+        "implementationFeasibility": 0.25,
+        "timeAdjustedImpact": 99.10974999999999
+      },
       "countryExposure": [
         {
           "country": "U ARAB EMTS",
@@ -807,6 +927,12 @@
       "realisticReductionHighPct": 30,
       "realisticNetImpactLowUsdMn": 525.288,
       "realisticNetImpactHighUsdMn": 1050.576,
+      "opportunityScores": {
+        "netDeficitRelevance": 3501.92,
+        "technicallyAddressableShare": 30,
+        "implementationFeasibility": 0.78,
+        "timeAdjustedImpact": 491.669568
+      },
       "countryExposure": [
         {
           "country": "CHINA P RP",
@@ -846,6 +972,12 @@
       "realisticReductionHighPct": 20,
       "realisticNetImpactLowUsdMn": 320.82400000000007,
       "realisticNetImpactHighUsdMn": 641.6480000000001,
+      "opportunityScores": {
+        "netDeficitRelevance": 3208.2400000000002,
+        "technicallyAddressableShare": 20,
+        "implementationFeasibility": 0.68,
+        "timeAdjustedImpact": 349.0565120000001
+      },
       "countryExposure": [
         {
           "country": "RUSSIA",
@@ -885,6 +1017,12 @@
       "realisticReductionHighPct": 40,
       "realisticNetImpactLowUsdMn": 622.1460000000001,
       "realisticNetImpactHighUsdMn": 1244.2920000000001,
+      "opportunityScores": {
+        "netDeficitRelevance": 3110.73,
+        "technicallyAddressableShare": 40,
+        "implementationFeasibility": 0.88,
+        "timeAdjustedImpact": 1094.9769600000002
+      },
       "countryExposure": [
         {
           "country": "JAPAN",
@@ -924,6 +1062,12 @@
       "realisticReductionHighPct": 25,
       "realisticNetImpactLowUsdMn": 308.30500000000006,
       "realisticNetImpactHighUsdMn": 770.7625,
+      "opportunityScores": {
+        "netDeficitRelevance": 3083.05,
+        "technicallyAddressableShare": 25,
+        "implementationFeasibility": 0.78,
+        "timeAdjustedImpact": 480.9558000000001
+      },
       "countryExposure": [
         {
           "country": "CHINA P RP",
@@ -963,6 +1107,12 @@
       "realisticReductionHighPct": 25,
       "realisticNetImpactLowUsdMn": 281.18,
       "realisticNetImpactHighUsdMn": 702.95,
+      "opportunityScores": {
+        "netDeficitRelevance": 2811.8,
+        "technicallyAddressableShare": 25,
+        "implementationFeasibility": 0.78,
+        "timeAdjustedImpact": 328.98060000000004
+      },
       "countryExposure": [
         {
           "country": "CHINA P RP",
@@ -1002,6 +1152,12 @@
       "realisticReductionHighPct": 25,
       "realisticNetImpactLowUsdMn": 278.82,
       "realisticNetImpactHighUsdMn": 697.05,
+      "opportunityScores": {
+        "netDeficitRelevance": 2788.2,
+        "technicallyAddressableShare": 25,
+        "implementationFeasibility": 0.58,
+        "timeAdjustedImpact": 323.4312
+      },
       "countryExposure": [
         {
           "country": "RUSSIA",
@@ -1041,6 +1197,12 @@
       "realisticReductionHighPct": 15,
       "realisticNetImpactLowUsdMn": 133.35750000000002,
       "realisticNetImpactHighUsdMn": 400.0725,
+      "opportunityScores": {
+        "netDeficitRelevance": 2667.15,
+        "technicallyAddressableShare": 15,
+        "implementationFeasibility": 0.25,
+        "timeAdjustedImpact": 80.0145
+      },
       "countryExposure": [
         {
           "country": "U ARAB EMTS",
@@ -1080,6 +1242,12 @@
       "realisticReductionHighPct": 30,
       "realisticNetImpactLowUsdMn": 399.28349999999995,
       "realisticNetImpactHighUsdMn": 798.5669999999999,
+      "opportunityScores": {
+        "netDeficitRelevance": 2661.89,
+        "technicallyAddressableShare": 30,
+        "implementationFeasibility": 0.68,
+        "timeAdjustedImpact": 434.42044799999996
+      },
       "countryExposure": [],
       "opportunityScore": 5
     },
@@ -1106,6 +1274,12 @@
       "realisticReductionHighPct": 20,
       "realisticNetImpactLowUsdMn": 257.053,
       "realisticNetImpactHighUsdMn": 514.106,
+      "opportunityScores": {
+        "netDeficitRelevance": 2570.5299999999997,
+        "technicallyAddressableShare": 20,
+        "implementationFeasibility": 0.78,
+        "timeAdjustedImpact": 240.601608
+      },
       "countryExposure": [
         {
           "country": "JAPAN",
@@ -1145,6 +1319,12 @@
       "realisticReductionHighPct": 30,
       "realisticNetImpactLowUsdMn": 361.07249999999993,
       "realisticNetImpactHighUsdMn": 722.1449999999999,
+      "opportunityScores": {
+        "netDeficitRelevance": 2407.1499999999996,
+        "technicallyAddressableShare": 30,
+        "implementationFeasibility": 0.78,
+        "timeAdjustedImpact": 450.6184799999999
+      },
       "countryExposure": [
         {
           "country": "CHINA P RP",

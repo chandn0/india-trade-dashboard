@@ -44,6 +44,7 @@ export const viewport = {
 import './globals.css';
 import ThemeRegistry from './ThemeRegistry';
 
+/* eslint-disable @next/next/no-page-custom-font */
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

@@ -23,17 +23,24 @@ export default function ValueChainMap({ value, onChange }) {
   const totalIn = CHAIN_FLOWS.reduce((sum, c) => sum + c.inVal, 0) || 1;
   const k = (compact ? 250 : 300) / totalIn;
 
-  let yL = headerH;
-  let yR = headerH;
-  const flowRows = CHAIN_FLOWS.map((c) => {
+  const flowRows = CHAIN_FLOWS.reduce((acc, c) => {
     const hIn = Math.max(c.inVal * k, minH);
     const hOut = Math.max(c.outVal * k, minH);
-    const row = { ...c, hIn, hOut, yIn: yL, yOut: yR };
-    yL += hIn + gap;
-    yR += hOut + gap;
-    return row;
-  });
-  const height = Math.max(yL, yR) - gap + 8;
+    const prev = acc.length > 0 ? acc[acc.length - 1] : null;
+    const yIn = prev ? prev.yIn + prev.hIn + gap : headerH;
+    const yOut = prev ? prev.yOut + prev.hOut + gap : headerH;
+    acc.push({ ...c, hIn, hOut, yIn, yOut });
+    return acc;
+  }, []);
+  const height =
+    flowRows.length > 0
+      ? Math.max(
+          flowRows[flowRows.length - 1].yIn + flowRows[flowRows.length - 1].hIn,
+          flowRows[flowRows.length - 1].yOut + flowRows[flowRows.length - 1].hOut,
+        ) -
+        gap +
+        8
+      : headerH;
   const xL = gutterL + barW;
   const xR = width - gutterR - barW;
   const mx = (xL + xR) / 2;

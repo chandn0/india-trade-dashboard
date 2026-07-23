@@ -55,6 +55,7 @@ from `transforms.js` directly when they need interactive access.
 1. **Create the component file** in `app/components/charts/MyChart.js`.
 
    Minimal template:
+
    ```js
    'use client'; // only if the component uses hooks or event handlers
 
@@ -76,15 +77,17 @@ from `transforms.js` directly when they need interactive access.
    ```
 
 2. **Import and place it in `app/page.js`**:
+
    ```js
    import MyChart from './components/charts/MyChart.js';
    // ...inside Dashboard:
    <Box component="section" id="my-chart" data-section>
      <MyChart />
-   </Box>
+   </Box>;
    ```
 
 3. **Run checks**:
+
    ```bash
    npm run lint && npm run format:check && npm run build
    ```
@@ -142,6 +145,7 @@ npm run build
 ```
 
 Python data scripts (optional):
+
 ```bash
 pip install -r scripts/requirements.txt
 # then any script in package.json, e.g.:

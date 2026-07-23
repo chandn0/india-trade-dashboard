@@ -8,12 +8,7 @@ import { C, mono } from '../../theme.js';
 import { moneyB, moneySignB, clamp, fyTick } from '../../lib/format.js';
 import { useMeasuredWidth } from '../../lib/responsive.js';
 import { buildTradeGeo } from '../../lib/chartGeometry.js';
-import {
-  PARTNERS,
-  PARTNER_BY_KEY,
-  COUNTRY_YEARS,
-  COUNTRY_LAST,
-} from '../../lib/transforms.js';
+import { PARTNERS, PARTNER_BY_KEY, COUNTRY_YEARS, COUNTRY_LAST } from '../../lib/transforms.js';
 import TipRow from '../primitives/TipRow.js';
 import ToggleChips from '../primitives/ToggleChips.js';
 import cardSx from '../primitives/cardSx.js';
@@ -223,9 +218,7 @@ export default function PartnerTrendCard() {
                   <text
                     x={pt.x}
                     y={geo.height - 18}
-                    textAnchor={
-                      pt.i === 0 ? 'start' : pt.i === data.length - 1 ? 'end' : 'middle'
-                    }
+                    textAnchor={pt.i === 0 ? 'start' : pt.i === data.length - 1 ? 'end' : 'middle'}
                     fill={pt.i === data.length - 1 ? C.purple : '#64748b'}
                     fontSize="11"
                     fontWeight={pt.i === data.length - 1 ? 800 : 500}

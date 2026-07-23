@@ -68,7 +68,7 @@ describe('S05 Suite 9: Responsive Component Rendering', () => {
     return render(
       <ThemeProvider theme={theme}>
         <ProductCompositionDashboard />
-      </ThemeProvider>
+      </ThemeProvider>,
     );
   }
 
@@ -80,20 +80,27 @@ describe('S05 Suite 9: Responsive Component Rendering', () => {
 
     // Check header renders
     assert.ok(screen.getByText(/Product attribution explorer/i), 'Explorer header should render');
-    
+
     // Check flow switching buttons render
     assert.ok(screen.getByRole('button', { name: /Imports/i }));
     assert.ok(screen.getByRole('button', { name: /Exports/i }));
 
     // Verify it rendered successfully without runtime errors
-    assert.ok(root.container.innerHTML.length > 1000, 'Rendered tree should have substantial content');
+    assert.ok(
+      root.container.innerHTML.length > 1000,
+      'Rendered tree should have substantial content',
+    );
 
     // Desktop view should render both import AND export column percentages
-    const percentages = Array.from(root.container.querySelectorAll('span')).filter(el => 
-      el.textContent.match(/^\d+\.\d+%$/)
+    const percentages = Array.from(root.container.querySelectorAll('span')).filter((el) =>
+      el.textContent.match(/^\d+\.\d+%$/),
     );
-    assert.equal(percentages.length, 14, 'Desktop view should render 14 percentages (import and export)');
-    
+    assert.equal(
+      percentages.length,
+      14,
+      'Desktop view should render 14 percentages (import and export)',
+    );
+
     root.unmount();
   });
 
@@ -104,17 +111,27 @@ describe('S05 Suite 9: Responsive Component Rendering', () => {
     });
 
     // Verify header still renders
-    assert.ok(screen.getByText(/Product attribution explorer/i), 'Explorer header should render on mobile');
+    assert.ok(
+      screen.getByText(/Product attribution explorer/i),
+      'Explorer header should render on mobile',
+    );
 
     // Verify rendering completed
-    assert.ok(root.container.innerHTML.length > 1000, 'Rendered tree should have substantial content on mobile');
+    assert.ok(
+      root.container.innerHTML.length > 1000,
+      'Rendered tree should have substantial content on mobile',
+    );
 
     // Mobile view should hide the export column (conditional rendering via useMediaQuery)
-    const percentages = Array.from(root.container.querySelectorAll('span')).filter(el => 
-      el.textContent.match(/^\d+\.\d+%$/)
+    const percentages = Array.from(root.container.querySelectorAll('span')).filter((el) =>
+      el.textContent.match(/^\d+\.\d+%$/),
     );
-    assert.equal(percentages.length, 7, 'Mobile view should render only 7 percentages (import only, export hidden)');
-    
+    assert.equal(
+      percentages.length,
+      7,
+      'Mobile view should render only 7 percentages (import only, export hidden)',
+    );
+
     root.unmount();
   });
 });

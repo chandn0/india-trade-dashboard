@@ -20,9 +20,7 @@ export default function ValueChainSection() {
   const inputItems = chain.inputs.map((code) => IMPORT_BY_CODE.get(code)).filter(Boolean);
   const outputItems = chain.outputs.map((code) => EXPORT_BY_CODE.get(code)).filter(Boolean);
   const inSeries = HS4_YEARS.map((_, i) => inputItems.reduce((sum, it) => sum + it.series[i], 0));
-  const outSeries = HS4_YEARS.map((_, i) =>
-    outputItems.reduce((sum, it) => sum + it.series[i], 0),
-  );
+  const outSeries = HS4_YEARS.map((_, i) => outputItems.reduce((sum, it) => sum + it.series[i], 0));
   const last = HS4_YEARS.length - 1;
   const covLast = inSeries[last] > 0 ? outSeries[last] / inSeries[last] : null;
   const covFirst = inSeries[0] > 0 ? outSeries[0] / inSeries[0] : null;
@@ -133,9 +131,7 @@ export default function ValueChainSection() {
           </Box>
         ) : null}
 
-        <Box
-          sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', alignItems: 'flex-start', py: 0.25 }}
-        >
+        <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', alignItems: 'flex-start', py: 0.25 }}>
           <ChainStat
             label="Imported inputs"
             value={moneyB(inSeries[last])}

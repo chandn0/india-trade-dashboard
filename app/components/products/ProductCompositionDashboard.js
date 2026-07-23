@@ -49,6 +49,7 @@ import {
   ScenarioModeller,
 } from './ProductDecisionTools.js';
 import { OpportunityEvidenceCard } from './OpportunityEvidenceCard.js';
+import ProductRelationshipMap from './ProductRelationshipMap.js';
 
 const stageColors = {
   'raw material': '#a16207',
@@ -604,7 +605,35 @@ function ProductExplorer() {
         .map((product) => product.hs2),
     ),
   ].sort();
-  
+
+  const handleExportCsv = () => {
+    const { products } = filterAndSortProducts(flowProducts, {
+      stage,
+      sector,
+      hs2,
+      reviewStatus,
+      query,
+      sortBy,
+      limit: 'all',
+      flowName,
+    });
+    const header =
+      'HS Code,Description,Sector,Stage,Value (USD Mn),Net Balance (USD Mn),Review Status,Buildability';
+    const rows = products.map(
+      (p) =>
+        `"${p.hscode}","${p.description.replace(/"/g, '""')}","${p.sector}","${p.productionStage}",${p[valueKey]},${p.netBalanceUsdMn},"${p.reviewStatus}","${p.buildability}"`,
+    );
+    const csvContent = [header, ...rows].join('\\n');
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('download', `indiandata_${flowName.toLowerCase()}_products.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const { products, visibleProducts } = filterAndSortProducts(flowProducts, {
     stage,
     sector,
@@ -623,10 +652,17 @@ function ProductExplorer() {
   return (
     <Paper sx={{ ...cardSx, p: 0, overflow: 'hidden' }}>
       <Box sx={{ p: { xs: 2, md: 2.5 }, borderBottom: '1px solid', borderColor: 'divider' }}>
-        <Typography variant="overline" sx={{ color: accent }}>
-          Product attribution explorer
-        </Typography>
-        <Typography variant="h5">Inspect every classification</Typography>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+          <Box>
+            <Typography variant="overline" sx={{ color: accent }}>
+              Product attribution explorer
+            </Typography>
+            <Typography variant="h5">Inspect every classification</Typography>
+          </Box>
+          <Button variant="outlined" size="small" onClick={handleExportCsv}>
+            Export CSV
+          </Button>
+        </Box>
         <Box sx={{ mt: 1.75, display: 'flex', gap: 1, flexWrap: 'wrap' }}>
           <Box sx={{ display: 'flex', gap: 0.5, p: 0.4, bgcolor: '#eef2f7', borderRadius: 2 }}>
             {['Imports', 'Exports'].map((option) => (
@@ -817,20 +853,35 @@ function ProductExplorer() {
                         </Typography>
                       </Box>
                     </TableCell>
-                    <TableCell align="right" sx={{ ...mono, fontWeight: 600, fontSize: 11, color: 'text.secondary' }}>
-                        {product.contributionToDeficitChangePct ? product.contributionToDeficitChangePct.toFixed(2) + '%' : '0%'}
-                      </TableCell>
-                      <TableCell
-                        align="right"
-                        sx={{ ...mono, fontSize: 11.5, fontWeight: 800, whiteSpace: 'nowrap' }}
-                      >
-                        {moneyB(product[valueKey])}
-                        {product.isMirror && (
-                          <Tooltip title="High simultaneous import & export (re-export/processing pattern)">
-                            <Chip size="small" label="Mirror" sx={{ ml: 1, height: 16, fontSize: 9, bgcolor: alpha(C.purple, 0.1), color: C.purple }} />
-                          </Tooltip>
-                        )}
-                      </TableCell>
+                    <TableCell
+                      align="right"
+                      sx={{ ...mono, fontWeight: 600, fontSize: 11, color: 'text.secondary' }}
+                    >
+                      {product.contributionToDeficitChangePct
+                        ? product.contributionToDeficitChangePct.toFixed(2) + '%'
+                        : '0%'}
+                    </TableCell>
+                    <TableCell
+                      align="right"
+                      sx={{ ...mono, fontSize: 11.5, fontWeight: 800, whiteSpace: 'nowrap' }}
+                    >
+                      {moneyB(product[valueKey])}
+                      {product.isMirror && (
+                        <Tooltip title="High simultaneous import & export (re-export/processing pattern)">
+                          <Chip
+                            size="small"
+                            label="Mirror"
+                            sx={{
+                              ml: 1,
+                              height: 16,
+                              fontSize: 9,
+                              bgcolor: alpha(C.purple, 0.1),
+                              color: C.purple,
+                            }}
+                          />
+                        </Tooltip>
+                      )}
+                    </TableCell>
                     <TableCell
                       align="right"
                       sx={{ ...mono, fontSize: 11, color: 'text.secondary' }}
@@ -882,12 +933,12 @@ function ProductExplorer() {
         </TableContainer>
         <Box sx={{ p: { xs: 2, md: 2.5 }, bgcolor: '#f8fafc', minHeight: 300 }}>
           {selected ? (
-            <OpportunityEvidenceCard 
-              selected={selected} 
-              flowName={flowName} 
-              rankKey={rankKey} 
-              historyKey={historyKey} 
-              stageData={stageData} 
+            <OpportunityEvidenceCard
+              selected={selected}
+              flowName={flowName}
+              rankKey={rankKey}
+              historyKey={historyKey}
+              stageData={stageData}
             />
           ) : (
             <Typography color="text.secondary">No products match these filters.</Typography>
@@ -1010,6 +1061,7 @@ export default function ProductCompositionDashboard() {
           </Box>
           <ConcentrationPanel />
           <ProductSignals />
+          <ProductRelationshipMap />
           <ScenarioModeller />
           <ProductComparison />
           <EvidenceReadiness />

@@ -28,7 +28,7 @@ export async function load(url, context, nextLoad) {
     return {
       format: 'module',
       shortCircuit: true,
-      source: `import React from 'react'; export default function Link({ children }) { return React.createElement('a', null, children); }`
+      source: `import React from 'react'; export default function Link({ children }) { return React.createElement('a', null, children); }`,
     };
   }
   if (url.endsWith('.json')) {
@@ -38,24 +38,29 @@ export async function load(url, context, nextLoad) {
     return {
       format: 'module',
       shortCircuit: true,
-      source: `export default ${content};`
+      source: `export default ${content};`,
     };
   }
-  
+
   const result = await nextLoad(url, context);
   if (url.endsWith('.js') && !url.includes('node_modules')) {
     const source = typeof result.source === 'string' ? result.source : result.source.toString();
-    if (source.includes('from \'react\'') || source.includes('React.createElement') || source.includes('</') || source.includes('/>')) {
+    if (
+      source.includes("from 'react'") ||
+      source.includes('React.createElement') ||
+      source.includes('</') ||
+      source.includes('/>')
+    ) {
       const transformed = await transform(source, {
         loader: 'jsx',
         jsx: 'automatic',
         format: 'esm',
-        target: 'es2022'
+        target: 'es2022',
       });
       return {
         format: 'module',
         shortCircuit: true,
-        source: transformed.code
+        source: transformed.code,
       };
     }
   }
