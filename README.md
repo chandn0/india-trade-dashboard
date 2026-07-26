@@ -82,6 +82,8 @@ a smallest useful implementation.
 - commodity-group composition over time
 - partner-country trade shares
 - HS4 item-level movers across the latest five-year window
+- a domestic value-chain research preview linking selected imported end products
+  to potentially relevant Indian inputs and missing conversion steps
 - the rupee/deficit long-run overlay
 - interpretive notes in [`docs/india-trade-trends.md`](docs/india-trade-trends.md)
   and [`docs/why-inr-has-weakened.md`](docs/why-inr-has-weakened.md)
@@ -123,6 +125,33 @@ node scripts/build_country_slim.js
 
 Source notes live in [`data/sources.md`](data/sources.md).
 
+## Domestic Value-Chain Research Preview
+
+The product workspace includes a directional HS-4 value-chain screen. Its
+curated links identify research hypotheses between an imported end product, a
+potentially relevant input, observed Indian capability, and a missing conversion
+step.
+
+- `E1` means the relationship is directional and the available source evidence
+  is partial. It is not a feasibility finding.
+- HS-4 headings are broad trade categories, not bills of materials.
+- Component imports are not allocated to finished products or added to
+  finished-product deficits.
+- Monetary localisation estimates remain suppressed until addressable product
+  scope, replacement share, and imported-input share are sourced.
+
+Source contracts and methodology are documented in
+[`data/enrichment/README.md`](data/enrichment/README.md) and
+[`docs/domestic-value-chain-opportunity-framework.md`](docs/domestic-value-chain-opportunity-framework.md).
+
+Rebuild and validate the preview with:
+
+```bash
+npm run build:product-stage-mix
+npm run build:value-chains
+npm test
+```
+
 ## Public Deployment
 
 The app builds as a standard Next.js production bundle and can be deployed on
@@ -130,10 +159,10 @@ Vercel, Netlify, or Cloudflare Pages.
 
 1. Push the repo to GitHub.
 2. Import it into your hosting platform.
-3. Set `NEXT_PUBLIC_SITE_URL` to the final public URL.
+3. Set `NEXT_PUBLIC_SITE_URL` to your custom domain (e.g., `https://example.com`). If unset on Vercel, the app automatically falls back to `VERCEL_PROJECT_PRODUCTION_URL` or `VERCEL_URL`.
 4. Deploy.
 
-That environment variable drives `metadataBase`, `sitemap.xml`, and
+That environment variable (or automatic Vercel fallback) drives `metadataBase`, `sitemap.xml`, and
 `robots.txt`.
 
 ## License

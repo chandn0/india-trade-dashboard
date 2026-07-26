@@ -26,7 +26,7 @@
         "path": "data/enrichment/product_partner_exposure.csv"
       },
       "domesticSupply": {
-        "rowCount": 12,
+        "rowCount": 23,
         "available": true,
         "path": "data/enrichment/product_domestic_supply.csv"
       },

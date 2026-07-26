@@ -19,7 +19,7 @@ env:
 
 jobs:
   verify:
-    name: Lint, format & build
+    name: Verify & Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -33,11 +33,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Audit production dependencies
+        run: npm audit --omit=dev --audit-level=high
+
+      - name: Run tests
+        run: npm test
+
       - name: Lint
         run: npm run lint
 
       - name: Check formatting
         run: npm run format:check
+
+      - name: Check generated value-chain consistency
+        run: npm run check:value-chain-consistency
 
       - name: Build
         run: npm run build

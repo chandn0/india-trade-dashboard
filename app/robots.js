@@ -1,5 +1,7 @@
+import { getSiteUrl } from './lib/siteUrl.js';
+
 export default function robots() {
-  const base = (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000').replace(/\/$/, '');
+  const base = getSiteUrl();
   return {
     rules: [{ userAgent: '*', allow: '/' }],
     sitemap: `${base}/sitemap.xml`,

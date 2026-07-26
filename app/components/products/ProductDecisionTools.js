@@ -443,7 +443,12 @@ export function ScenarioModeller() {
               textTransform: 'uppercase',
             }}
           >
-            Scenario result · HS {product.hscode}
+            {hasUserInputs
+              ? 'User-entered exploratory scenario'
+              : hasSourcedScenario
+                ? 'Sourced scenario result'
+                : 'Scenario result'}{' '}
+            · HS {product.hscode}
           </Typography>
           <Typography variant="h6" sx={{ mt: 0.4 }}>
             {compactName(product)}
@@ -693,7 +698,9 @@ export function ProductComparison() {
                 'Buildability',
                 (product) =>
                   product.buildability
-                    ? titleCase(product.buildability.category)
+                    ? product.domesticSupply?.analystLocalisableSharePct != null
+                      ? `${titleCase(product.buildability.category)} · ${titleCase(product.buildability.timeHorizon)}`
+                      : `${titleCase(product.buildability.category)} (Rule-based screen)`
                     : 'Not yet assessed',
               ],
               [

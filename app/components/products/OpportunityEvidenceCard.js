@@ -922,8 +922,16 @@ export function OpportunityEvidenceCard({ selected, flowName, rankKey, historyKe
           </Typography>
           {selected.buildability && (
             <Typography sx={{ mt: 0.75, fontSize: 12.5 }}>
-              <strong>{titleCase(selected.buildability.category)}</strong> ·{' '}
-              {titleCase(selected.buildability.lever)}
+              <strong>
+                {titleCase(selected.buildability.category)}
+                {selected.domesticSupply?.analystLocalisableSharePct == null
+                  ? ' (Rule-based screen)'
+                  : ''}
+              </strong>
+              {selected.domesticSupply?.analystLocalisableSharePct != null
+                ? ` · ${titleCase(selected.buildability.timeHorizon)}`
+                : ''}{' '}
+              · {titleCase(selected.buildability.lever)}
             </Typography>
           )}
           {selected.policyOverlay && (

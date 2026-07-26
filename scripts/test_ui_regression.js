@@ -448,3 +448,63 @@ describe('S05 Suite 8: Main-Dashboard Summary vs Dedicated-Page Totals Reconcili
     }
   });
 });
+
+describe('S05 Suite 11: Public-Readiness Evidence Safety Controls', () => {
+  it('enforces null analystLocalisableSharePct for unassessed electronics and industrial preview products', () => {
+    const previewCodes = [
+      '8517',
+      '8507',
+      '8542',
+      '8541',
+      '8471',
+      '8414',
+      '8421',
+      '8428',
+      '8477',
+      '8480',
+      '8482',
+    ];
+    for (const code of previewCodes) {
+      const prod = stageMix.products.find((p) => p.hscode === code);
+      assert.ok(prod, `Product HS ${code} must exist in stageMix`);
+      assert.equal(
+        prod.domesticSupply?.analystLocalisableSharePct ?? null,
+        null,
+        `HS ${code} must have null analystLocalisableSharePct`,
+      );
+    }
+  });
+});
+
+describe('S05 Suite 12: Deployment Site URL Resolution Controls', () => {
+  it('resolves site URL correctly across explicit production URL, Vercel hostnames, and local fallbacks', async () => {
+    const { getSiteUrl } = await import('../app/lib/siteUrl.js');
+
+    // Explicit NEXT_PUBLIC_SITE_URL takes top priority
+    assert.equal(
+      getSiteUrl({ NEXT_PUBLIC_SITE_URL: 'https://custom-trade-domain.com/' }),
+      'https://custom-trade-domain.com',
+    );
+    assert.equal(
+      getSiteUrl({
+        NEXT_PUBLIC_SITE_URL: 'https://custom-trade-domain.com',
+        VERCEL_PROJECT_PRODUCTION_URL: 'my-app.vercel.app',
+      }),
+      'https://custom-trade-domain.com',
+    );
+
+    // VERCEL_PROJECT_PRODUCTION_URL or VERCEL_URL fallback with https normalization
+    assert.equal(
+      getSiteUrl({ VERCEL_PROJECT_PRODUCTION_URL: 'india-trade-dashboard.vercel.app' }),
+      'https://india-trade-dashboard.vercel.app',
+    );
+    assert.equal(
+      getSiteUrl({ VERCEL_URL: 'india-trade-dashboard-preview.vercel.app/' }),
+      'https://india-trade-dashboard-preview.vercel.app',
+    );
+
+    // Local development fallback
+    assert.equal(getSiteUrl({}), 'http://localhost:3000');
+    assert.equal(getSiteUrl({ NEXT_PUBLIC_SITE_URL: '' }), 'http://localhost:3000');
+  });
+});

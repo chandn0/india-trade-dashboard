@@ -1,4 +1,6 @@
-const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000').replace(/\/$/, '');
+import { getSiteUrl } from './lib/siteUrl.js';
+
+const siteUrl = getSiteUrl();
 
 export const metadata = {
   metadataBase: new URL(siteUrl),

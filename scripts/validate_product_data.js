@@ -389,6 +389,28 @@ for (const p of products) {
   }
 }
 
+const clearedPreviewCodes = new Set([
+  '8517',
+  '8507',
+  '8542',
+  '8541',
+  '8471',
+  '8414',
+  '8421',
+  '8428',
+  '8477',
+  '8480',
+  '8482',
+]);
+for (const p of products) {
+  if (clearedPreviewCodes.has(p.hscode)) {
+    check(
+      p.domesticSupply?.analystLocalisableSharePct == null,
+      `Preview product HS ${p.hscode} must have null analystLocalisableSharePct`,
+    );
+  }
+}
+
 if (failures.length) {
   console.error(`Product-data validation failed with ${failures.length} issue(s):`);
   for (const failure of [...new Set(failures)]) console.error(`- ${failure}`);

@@ -14,8 +14,10 @@ export async function resolve(specifier, context, nextResolve) {
   } catch (err) {
     if (err.code === 'ERR_UNSUPPORTED_DIR_IMPORT' || err.code === 'ERR_MODULE_NOT_FOUND') {
       try {
-        const parentPath = context.parentURL ? new URL(context.parentURL).pathname : process.cwd();
-        const reqPath = require.resolve(specifier, { paths: [parentPath] });
+        const parentPath = context.parentURL
+          ? path.dirname(new URL(context.parentURL).pathname)
+          : process.cwd();
+        const reqPath = require.resolve(specifier, { paths: [parentPath, process.cwd()] });
         return { url: `file://${reqPath}`, shortCircuit: true };
       } catch (e2) {}
     }

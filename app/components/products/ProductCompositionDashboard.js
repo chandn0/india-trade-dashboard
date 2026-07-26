@@ -50,6 +50,7 @@ import {
 } from './ProductDecisionTools.js';
 import { OpportunityEvidenceCard } from './OpportunityEvidenceCard.js';
 import ProductRelationshipMap from './ProductRelationshipMap.js';
+import DomesticValueChainFramework from './DomesticValueChainFramework.js';
 
 const stageColors = {
   'raw material': '#a16207',
@@ -1061,6 +1062,7 @@ export default function ProductCompositionDashboard() {
           </Box>
           <ConcentrationPanel />
           <ProductSignals />
+          <DomesticValueChainFramework />
           <ProductRelationshipMap />
           <ScenarioModeller />
           <ProductComparison />

@@ -135,3 +135,49 @@ describe('S05 Suite 9: Responsive Component Rendering', () => {
     root.unmount();
   });
 });
+
+import DomesticValueChainFramework from '../app/components/products/DomesticValueChainFramework.js';
+import valueChainData from '../data/domestic_value_chain_opportunities.json';
+
+describe('S05 Suite 10: DomesticValueChainFramework Research Preview UI', () => {
+  it('renders Research preview labels, curated research links, clickable cited sources, and a dynamic total', () => {
+    let root;
+    act(() => {
+      root = render(
+        <ThemeProvider theme={theme}>
+          <DomesticValueChainFramework />
+        </ThemeProvider>,
+      );
+    });
+
+    // Labelled Research preview
+    assert.ok(
+      screen.getAllByText(/Research preview/i).length >= 1,
+      'Should display Research preview badge or overline',
+    );
+
+    // Curated research links note
+    assert.ok(
+      screen.getByText(/curated research links/i),
+      'Should label metric as curated research links',
+    );
+
+    // Clickable source URL link
+    const sourceLinks = root.container.querySelectorAll('a[href^="http"]');
+    assert.ok(sourceLinks.length > 0, 'Should render clickable external source links');
+    for (const linkEl of sourceLinks) {
+      assert.equal(linkEl.getAttribute('target'), '_blank');
+      assert.equal(linkEl.getAttribute('rel'), 'noopener noreferrer');
+    }
+
+    // Dynamic All N lines label
+    const expectedNumber = `${valueChainData.metadata.totalEndProductLines}`;
+    assert.ok(
+      root.container.innerHTML.includes(expectedNumber) ||
+        root.container.textContent.includes(expectedNumber),
+      `Should derive All ${expectedNumber} lines from metadata`,
+    );
+
+    root.unmount();
+  });
+});

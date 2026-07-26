@@ -2,7 +2,7 @@
   "metadata": {
     "fiscalYear": "2025-2026",
     "units": "USD million",
-    "generatedAt": "2026-07-23T12:07:49.446Z",
+    "generatedAt": "2026-07-26T10:07:33.001Z",
     "methodology": "Trade values are joined by HS-4. Net deficit equals imports minus exports. Realistic impact applies the curated scenario range to net deficit, not gross imports. Opportunity score combines high-case net impact, category tractability and confidence, normalized to 100.",
     "sources": [
       "data/import_product_classification.csv",

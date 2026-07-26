@@ -11,8 +11,8 @@ import { moneyB } from '../../lib/format.js';
 import cardSx from '../primitives/cardSx.js';
 
 const products = [...stageData.products]
-  .filter((product) => product.latestImportUsdMn > 0)
-  .sort((a, b) => Math.abs(b.netBalanceUsdMn) - Math.abs(a.netBalanceUsdMn));
+  .filter((product) => product.latestImportUsdMn >= 1.0)
+  .sort((a, b) => b.latestImportUsdMn - a.latestImportUsdMn);
 
 const stageColors = {
   'raw material': '#a16207',
@@ -266,7 +266,7 @@ export default function ProductRelationshipMap() {
                 localisable != null
                   ? `${localisable}% analyst-localisable ceiling`
                   : buildability
-                    ? titleCase(buildability.category)
+                    ? `${titleCase(buildability.category)} (Rule-based screen)`
                     : 'No capability estimate'
               }
               color={C.teal}
@@ -279,7 +279,11 @@ export default function ProductRelationshipMap() {
               height={76}
               eyebrow="Export offset"
               label={moneyB(product.latestExportUsdMn)}
-              value={`${exportCoverage.toFixed(1)}% of imports`}
+              value={
+                exportCoverage > 999
+                  ? '>999% of imports'
+                  : `${exportCoverage.toFixed(1)}% of imports`
+              }
               color={C.blue}
             />
             <GraphNode
@@ -319,7 +323,9 @@ export default function ProductRelationshipMap() {
             size="small"
             label={
               buildability
-                ? `${titleCase(buildability.category)} · ${titleCase(buildability.timeHorizon)}`
+                ? localisable != null
+                  ? `${titleCase(buildability.category)} · ${titleCase(buildability.timeHorizon)}`
+                  : `${titleCase(buildability.category)} (Rule-based screen)`
                 : 'Buildability unavailable'
             }
             sx={{ color: C.teal, bgcolor: alpha(C.teal, 0.08) }}

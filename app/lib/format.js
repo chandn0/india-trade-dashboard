@@ -8,7 +8,16 @@ export const pct = new Intl.NumberFormat('en-US', {
   signDisplay: 'always',
 });
 
-export const moneyB = (n) => `$${nf2.format(n / 1000)}B`;
+export const moneyB = (n) => {
+  if (n == null || isNaN(n)) return 'N/A';
+  if (n === 0) return '$0.00B';
+  const absN = Math.abs(n);
+  const sign = n < 0 ? '-' : '';
+  if (absN < 10) {
+    return `${sign}$${absN.toFixed(2)}M`;
+  }
+  return `${sign}$${nf2.format(absN / 1000)}B`;
+};
 export const moneyShortB = (n) => {
   const b = n / 1000;
   return Math.abs(b) >= 1000 ? `$${(b / 1000).toFixed(1)}T` : `$${Math.round(b)}B`;
