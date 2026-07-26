@@ -9,10 +9,99 @@ export default function Footer() {
     '&:hover': { textDecorationColor: 'currentColor' },
   };
   return (
-    <Box component="footer" sx={{ borderTop: '1px solid', borderColor: 'divider', py: 3 }}>
+    <Box
+      component="footer"
+      sx={{ borderTop: '1px solid', borderColor: 'divider', py: 3.5, bgcolor: '#f8fafc' }}
+    >
       <Container maxWidth="xl">
-        <Stack spacing={1.25} sx={{ maxWidth: 880 }}>
-          <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block' }}>
+        <Stack spacing={2} sx={{ maxWidth: 960 }}>
+          <Box
+            sx={{
+              p: 2,
+              borderRadius: 2.5,
+              bgcolor: '#fff',
+              border: '1px solid',
+              borderColor: 'divider',
+              display: 'flex',
+              flexDirection: { xs: 'column', md: 'row' },
+              alignItems: { xs: 'flex-start', md: 'center' },
+              justifyContent: 'space-between',
+              gap: 1.5,
+            }}
+          >
+            <Box sx={{ maxWidth: 580 }}>
+              <Typography sx={{ fontSize: 13, fontWeight: 800, color: '#0f172a' }}>
+                Open-source trade analytics &amp; value-chain initiative
+              </Typography>
+              <Typography sx={{ mt: 0.3, fontSize: 12, color: 'text.secondary', lineHeight: 1.5 }}>
+                Contributions welcome for data pipelines, HS-4 value chain links, UI enhancements,
+                and research validation.
+              </Typography>
+            </Box>
+            <Stack
+              direction="row"
+              spacing={1.5}
+              useFlexGap
+              sx={{ flexWrap: 'wrap', flexShrink: 0 }}
+            >
+              <Box
+                component="a"
+                href="https://github.com/chandn0/india-trade-dashboard"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Repository (opens in new tab)"
+                sx={{
+                  fontSize: 12,
+                  fontWeight: 700,
+                  color: '#0f172a',
+                  textDecoration: 'underline',
+                  textUnderlineOffset: '2px',
+                  '&:hover': { color: '#2563eb' },
+                }}
+              >
+                GitHub Repository ↗
+              </Box>
+              <Box
+                component="a"
+                href="https://github.com/chandn0/india-trade-dashboard/blob/main/CONTRIBUTING.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Contribution Guide (opens in new tab)"
+                sx={{
+                  fontSize: 12,
+                  fontWeight: 700,
+                  color: '#0f766e',
+                  textDecoration: 'underline',
+                  textUnderlineOffset: '2px',
+                  '&:hover': { color: '#0d9488' },
+                }}
+              >
+                Contribute ↗
+              </Box>
+              <Box
+                component="a"
+                href="https://github.com/chandn0/india-trade-dashboard/issues"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Report Issues on GitHub (opens in new tab)"
+                sx={{
+                  fontSize: 12,
+                  fontWeight: 700,
+                  color: '#4338ca',
+                  textDecoration: 'underline',
+                  textUnderlineOffset: '2px',
+                  '&:hover': { color: '#6366f1' },
+                }}
+              >
+                Report Issues ↗
+              </Box>
+            </Stack>
+          </Box>
+
+          <Typography
+            variant="caption"
+            sx={{ color: 'text.secondary', display: 'block', lineHeight: 1.55 }}
+          >
             Sources: Ministry of Commerce &amp; Industry,{' '}
             <Box
               component="a"
@@ -45,14 +134,17 @@ export default function Footer() {
             </Box>{' '}
             for annual-average INR/USD.
           </Typography>
-          <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block' }}>
+          <Typography
+            variant="caption"
+            sx={{ color: 'text.secondary', display: 'block', lineHeight: 1.55 }}
+          >
             Values in current US$; fiscal years run April–March.
             {latestIsYtd
               ? ` ${latestFyLabel} is year-to-date.`
               : latestIsProvisional
                 ? ` ${latestFyLabel} is provisional.`
                 : ''}{' '}
-            Independent dashboard; not affiliated with the Government of India.
+            Independent open-source dashboard; not affiliated with the Government of India.
           </Typography>
         </Stack>
       </Container>

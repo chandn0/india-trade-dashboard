@@ -181,3 +181,58 @@ describe('S05 Suite 10: DomesticValueChainFramework Research Preview UI', () => 
     root.unmount();
   });
 });
+
+import Masthead from '../app/components/layout/Masthead.js';
+import Footer from '../app/components/layout/Footer.js';
+
+describe('S05 Suite 13: Open-Source Contribution Links UI', () => {
+  it('renders accessible GitHub, Contribute, and Issues links in Masthead and Footer', () => {
+    let root;
+    act(() => {
+      root = render(
+        <ThemeProvider theme={theme}>
+          <div>
+            <Masthead />
+            <Footer />
+          </div>
+        </ThemeProvider>,
+      );
+    });
+
+    const repoUrl = 'https://github.com/chandn0/india-trade-dashboard';
+    const contributeUrl =
+      'https://github.com/chandn0/india-trade-dashboard/blob/main/CONTRIBUTING.md';
+    const issuesUrl = 'https://github.com/chandn0/india-trade-dashboard/issues';
+
+    const repoLinks = Array.from(root.container.querySelectorAll(`a[href="${repoUrl}"]`));
+    const contributeLinks = Array.from(
+      root.container.querySelectorAll(`a[href="${contributeUrl}"]`),
+    );
+    const issuesLinks = Array.from(root.container.querySelectorAll(`a[href="${issuesUrl}"]`));
+
+    assert.ok(repoLinks.length >= 2, 'Should render GitHub Repository link in Masthead and Footer');
+    assert.ok(contributeLinks.length >= 2, 'Should render Contribute link in Masthead and Footer');
+    assert.ok(issuesLinks.length >= 1, 'Should render Issues link in Footer');
+
+    for (const link of [...repoLinks, ...contributeLinks, ...issuesLinks]) {
+      assert.equal(
+        link.getAttribute('target'),
+        '_blank',
+        'External link must have target="_blank"',
+      );
+      assert.equal(
+        link.getAttribute('rel'),
+        'noopener noreferrer',
+        'External link must have rel="noopener noreferrer"',
+      );
+      assert.ok(link.getAttribute('aria-label'), 'External link must have aria-label');
+    }
+
+    assert.ok(
+      screen.getByText(/Open-source trade analytics/i),
+      'Footer should present an open-source participation invitation',
+    );
+
+    root.unmount();
+  });
+});

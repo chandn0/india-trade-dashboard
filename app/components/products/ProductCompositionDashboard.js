@@ -37,6 +37,7 @@ import {
 } from '@mui/icons-material';
 
 import stageData from '../../../data/product_stage_mix.json';
+import Footer from '../layout/Footer.js';
 import { C, mono } from '../../theme.js';
 import { moneyB } from '../../lib/format.js';
 import { filterAndSortProducts } from '../../lib/productLogic.js';
@@ -960,7 +961,16 @@ export default function ProductCompositionDashboard() {
         component="header"
         sx={{ bgcolor: C.ink, color: '#fff', borderBottom: '1px solid rgba(255,255,255,0.08)' }}
       >
-        <Container maxWidth="xl" sx={{ py: 1.3, display: 'flex', alignItems: 'center', gap: 2 }}>
+        <Container
+          maxWidth="xl"
+          sx={{
+            py: 1.3,
+            display: 'flex',
+            alignItems: 'center',
+            gap: { xs: 1, md: 1.5 },
+            flexWrap: 'wrap',
+          }}
+        >
           <Button
             component={Link}
             href="/"
@@ -971,11 +981,45 @@ export default function ProductCompositionDashboard() {
             Trade monitor
           </Button>
           <Typography sx={{ fontWeight: 800, fontSize: 13 }}>Product Composition</Typography>
-          <Chip
-            size="small"
-            label={`FY${stageData.metadata.fiscalYear}`}
-            sx={{ ml: 'auto', color: '#d9cbff', bgcolor: alpha(C.purple, 0.32) }}
-          />
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1, sm: 1.5 }, ml: 'auto' }}>
+            <Typography
+              component="a"
+              href="https://github.com/chandn0/india-trade-dashboard"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub Repository (opens in new tab)"
+              sx={{
+                fontSize: 12,
+                fontWeight: 700,
+                color: 'rgba(255,255,255,0.85)',
+                textDecoration: 'none',
+                '&:hover': { color: '#fff', textDecoration: 'underline' },
+              }}
+            >
+              GitHub ↗
+            </Typography>
+            <Typography
+              component="a"
+              href="https://github.com/chandn0/india-trade-dashboard/blob/main/CONTRIBUTING.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Contribute to India Trade Dashboard on GitHub (opens in new tab)"
+              sx={{
+                fontSize: 12,
+                fontWeight: 700,
+                color: '#5eead4',
+                textDecoration: 'none',
+                '&:hover': { textDecoration: 'underline' },
+              }}
+            >
+              Contribute ↗
+            </Typography>
+            <Chip
+              size="small"
+              label={`FY${stageData.metadata.fiscalYear}`}
+              sx={{ color: '#d9cbff', bgcolor: alpha(C.purple, 0.32) }}
+            />
+          </Box>
         </Container>
       </Box>
 
@@ -1146,6 +1190,7 @@ export default function ProductCompositionDashboard() {
           </Paper>
         </Stack>
       </Container>
+      <Footer />
     </Box>
   );
 }

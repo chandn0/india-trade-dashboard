@@ -74,6 +74,40 @@ export default function Masthead() {
             </Typography>
           ))}
         </Box>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1, sm: 1.5 }, flexShrink: 0 }}>
+          <Typography
+            component="a"
+            href="https://github.com/chandn0/india-trade-dashboard"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub Repository (opens in new tab)"
+            sx={{
+              fontSize: 12,
+              fontWeight: 700,
+              color: 'rgba(231,236,245,0.85)',
+              textDecoration: 'none',
+              '&:hover': { color: '#fff', textDecoration: 'underline' },
+            }}
+          >
+            GitHub ↗
+          </Typography>
+          <Typography
+            component="a"
+            href="https://github.com/chandn0/india-trade-dashboard/blob/main/CONTRIBUTING.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Contribute to India Trade Dashboard on GitHub (opens in new tab)"
+            sx={{
+              fontSize: 12,
+              fontWeight: 700,
+              color: '#5eead4',
+              textDecoration: 'none',
+              '&:hover': { textDecoration: 'underline' },
+            }}
+          >
+            Contribute ↗
+          </Typography>
+        </Box>
         <Chip
           size="small"
           label={`Data through ${latestFyLabel}${latestStatusNote ? ` · ${latestStatusNote}` : ''}`}
