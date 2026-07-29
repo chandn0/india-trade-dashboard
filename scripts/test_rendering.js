@@ -9,11 +9,14 @@ import React from 'react';
 import { render, screen, act } from '@testing-library/react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import ProductCompositionDashboard from '../app/components/products/ProductCompositionDashboard.js';
+import productStageData from '../data/product_stage_mix.json';
 
 const theme = createTheme();
 
 describe('S05 Suite 9: Responsive Component Rendering', () => {
   let originalGetBoundingClientRect;
+  let originalFetch;
+  let originalIntersectionObserver;
   let ResizeObserverMock;
 
   before(() => {
@@ -31,6 +34,21 @@ describe('S05 Suite 9: Responsive Component Rendering', () => {
       disconnect() {}
     };
     global.ResizeObserver = ResizeObserverMock;
+    originalFetch = global.fetch;
+    originalIntersectionObserver = global.IntersectionObserver;
+    global.IntersectionObserver = class IntersectionObserver {
+      constructor(callback) {
+        this.callback = callback;
+      }
+      observe() {
+        this.callback([{ isIntersecting: true }]);
+      }
+      disconnect() {}
+    };
+    global.fetch = async () => ({
+      ok: true,
+      json: async () => productStageData,
+    });
 
     originalGetBoundingClientRect = window.HTMLElement.prototype.getBoundingClientRect;
   });
@@ -38,6 +56,8 @@ describe('S05 Suite 9: Responsive Component Rendering', () => {
   after(() => {
     window.HTMLElement.prototype.getBoundingClientRect = originalGetBoundingClientRect;
     delete global.ResizeObserver;
+    global.fetch = originalFetch;
+    global.IntersectionObserver = originalIntersectionObserver;
   });
 
   function renderWithWidth(width) {
@@ -72,14 +92,17 @@ describe('S05 Suite 9: Responsive Component Rendering', () => {
     );
   }
 
-  it('renders at desktop width (1200px) without crashing and displays full tables', () => {
+  it('renders at desktop width (1200px) without crashing and displays full tables', async () => {
     let root;
     act(() => {
       root = renderWithWidth(1200);
     });
 
     // Check header renders
-    assert.ok(screen.getByText(/Product attribution explorer/i), 'Explorer header should render');
+    assert.ok(
+      await screen.findByText(/Product attribution explorer/i),
+      'Explorer header should render',
+    );
 
     // Check flow switching buttons render
     assert.ok(screen.getByRole('button', { name: /Imports/i }));
@@ -104,7 +127,7 @@ describe('S05 Suite 9: Responsive Component Rendering', () => {
     root.unmount();
   });
 
-  it('renders at mobile width (375px) without crashing and switches to compact chart logic', () => {
+  it('renders at mobile width (375px) without crashing and switches to compact chart logic', async () => {
     let root;
     act(() => {
       root = renderWithWidth(375);
@@ -112,7 +135,7 @@ describe('S05 Suite 9: Responsive Component Rendering', () => {
 
     // Verify header still renders
     assert.ok(
-      screen.getByText(/Product attribution explorer/i),
+      await screen.findByText(/Product attribution explorer/i),
       'Explorer header should render on mobile',
     );
 

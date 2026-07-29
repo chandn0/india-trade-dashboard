@@ -123,6 +123,10 @@ python scripts/fetch_rbi_exchange_rate.py
 node scripts/build_country_slim.js
 ```
 
+The monthly FTSPCC refresh stages and validates a complete CSV before atomically
+replacing the committed snapshot, so a failed upstream request preserves the
+last known-good file.
+
 Source notes live in [`data/sources.md`](data/sources.md).
 
 ## Domestic Value-Chain Research Preview

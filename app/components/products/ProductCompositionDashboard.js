@@ -36,22 +36,16 @@ import {
   SearchRounded,
 } from '@mui/icons-material';
 
-import stageData from '../../../data/product_stage_mix.json';
+import stageData from '../../../data/product_stage_summary.json';
 import Footer from '../layout/Footer.js';
 import { C, mono } from '../../theme.js';
 import { moneyB } from '../../lib/format.js';
 import { filterAndSortProducts } from '../../lib/productLogic.js';
 import cardSx from '../primitives/cardSx.js';
 import Sparkline from '../charts/Sparkline.js';
-import {
-  EvidenceReadiness,
-  ProductComparison,
-  ProductSignals,
-  ScenarioModeller,
-} from './ProductDecisionTools.js';
 import { OpportunityEvidenceCard } from './OpportunityEvidenceCard.js';
-import ProductRelationshipMap from './ProductRelationshipMap.js';
-import DomesticValueChainFramework from './DomesticValueChainFramework.js';
+import ProductToolSuite from './ProductToolSuite.js';
+import { useProductStageData } from './useProductStageData.js';
 
 const stageColors = {
   'raw material': '#a16207',
@@ -582,7 +576,7 @@ function ConcentrationPanel() {
   );
 }
 
-function ProductExplorer() {
+function ProductExplorer({ detailData }) {
   const [flowName, setFlowName] = React.useState('Imports');
   const [stage, setStage] = React.useState('');
   const [sector, setSector] = React.useState('');
@@ -598,7 +592,7 @@ function ProductExplorer() {
   const rankKey = flowName === 'Imports' ? 'importRank' : 'exportRank';
   const historyKey = flowName === 'Imports' ? 'importHistory' : 'exportHistory';
   const exposureKey = flowName.toLowerCase();
-  const flowProducts = stageData.products.filter((product) => product[valueKey] > 0);
+  const flowProducts = detailData.products.filter((product) => product[valueKey] > 0);
   const sectors = [...new Set(flowProducts.map((product) => product.sector))].sort();
   const hs2Options = [
     ...new Set(
@@ -940,7 +934,7 @@ function ProductExplorer() {
               flowName={flowName}
               rankKey={rankKey}
               historyKey={historyKey}
-              stageData={stageData}
+              stageData={detailData}
             />
           ) : (
             <Typography color="text.secondary">No products match these filters.</Typography>
@@ -954,7 +948,14 @@ function ProductExplorer() {
 export default function ProductCompositionDashboard() {
   const theme = useTheme();
   const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
+  const {
+    sentinelRef: detailSentinelRef,
+    data: detailData,
+    error: detailError,
+    retry: retryDetails,
+  } = useProductStageData();
   const classifiedGap = imports.totalUsdMn - exports.totalUsdMn;
+
   return (
     <Box sx={{ bgcolor: 'background.default', minHeight: '100vh' }}>
       <Box
@@ -1105,12 +1106,33 @@ export default function ProductCompositionDashboard() {
             <NetBalancePanel />
           </Box>
           <ConcentrationPanel />
-          <ProductSignals />
-          <DomesticValueChainFramework />
-          <ProductRelationshipMap />
-          <ScenarioModeller />
-          <ProductComparison />
-          <EvidenceReadiness />
+          <Box
+            ref={detailSentinelRef}
+            data-testid="product-detail-sentinel"
+            aria-hidden="true"
+            sx={{ height: 1 }}
+          />
+          {!detailData && !detailError ? (
+            <Paper sx={{ ...cardSx, textAlign: 'center' }} aria-live="polite">
+              <Typography variant="h6">Loading detailed product tools…</Typography>
+              <Typography sx={{ mt: 0.5, fontSize: 12.5, color: 'text.secondary' }}>
+                The complete HS-4 evidence dataset loads only when this workspace approaches the
+                viewport.
+              </Typography>
+            </Paper>
+          ) : null}
+          {detailError ? (
+            <Paper sx={{ ...cardSx, borderColor: 'error.light' }} role="alert">
+              <Typography variant="h6">Detailed product tools could not be loaded</Typography>
+              <Typography sx={{ mt: 0.5, fontSize: 12.5, color: 'text.secondary' }}>
+                {detailError}
+              </Typography>
+              <Button size="small" sx={{ mt: 1 }} onClick={retryDetails}>
+                Retry
+              </Button>
+            </Paper>
+          ) : null}
+          {detailData ? <ProductToolSuite detailData={detailData} /> : null}
           <Box
             sx={{
               display: 'grid',
@@ -1169,7 +1191,7 @@ export default function ProductCompositionDashboard() {
               </Typography>
             </Paper>
           </Box>
-          <ProductExplorer />
+          {detailData ? <ProductExplorer detailData={detailData} /> : null}
           <Paper sx={{ ...cardSx, bgcolor: alpha(C.purple, 0.035) }}>
             <Typography variant="subtitle1">Coverage and method</Typography>
             <Typography sx={{ mt: 0.7, fontSize: 12.5, lineHeight: 1.65, color: 'text.secondary' }}>

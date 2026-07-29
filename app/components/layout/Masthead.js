@@ -31,7 +31,7 @@ export default function Masthead() {
         maxWidth="xl"
         sx={{ py: 1.25, display: 'flex', alignItems: 'center', gap: { xs: 1.25, md: 2 } }}
       >
-        <Box sx={{ mr: 'auto', minWidth: 0 }}>
+        <Box sx={{ mr: 'auto', minWidth: 0, flexShrink: 0 }}>
           <Typography
             variant="h6"
             component="h1"
@@ -74,7 +74,14 @@ export default function Masthead() {
             </Typography>
           ))}
         </Box>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1, sm: 1.5 }, flexShrink: 0 }}>
+        <Box
+          sx={{
+            display: { xs: 'none', xl: 'flex' },
+            alignItems: 'center',
+            gap: 1.5,
+            flexShrink: 0,
+          }}
+        >
           <Typography
             component="a"
             href="https://github.com/chandn0/india-trade-dashboard"
@@ -111,7 +118,13 @@ export default function Masthead() {
         <Chip
           size="small"
           label={`Data through ${latestFyLabel}${latestStatusNote ? ` · ${latestStatusNote}` : ''}`}
-          sx={{ bgcolor: alpha(C.purple, 0.32), color: '#d9cbff', fontWeight: 700, flexShrink: 0 }}
+          sx={{
+            display: { xs: 'none', xl: 'flex' },
+            bgcolor: alpha(C.purple, 0.32),
+            color: '#d9cbff',
+            fontWeight: 700,
+            flexShrink: 0,
+          }}
         />
       </Container>
     </Box>

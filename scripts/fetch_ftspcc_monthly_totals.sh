@@ -23,12 +23,25 @@ month_name() {
   esac
 }
 
-tmpdir="$(mktemp -d)"
-trap 'rm -rf "$tmpdir"' EXIT
-
 monthly_csv="$OUT_DIR/india_trade_monthly_totals.csv"
-: > "$monthly_csv"
-printf 'financial_year,calendar_year,month,month_name,export_usd_mn,import_usd_mn\n' >> "$monthly_csv"
+tmpdir="$(mktemp -d)"
+staged_csv="$(mktemp "$OUT_DIR/.india_trade_monthly_totals.XXXXXX")"
+trap 'rm -rf "$tmpdir"; rm -f "$staged_csv"' EXIT
+
+printf 'financial_year,calendar_year,month,month_name,export_usd_mn,import_usd_mn\n' > "$staged_csv"
+
+curl_fetch() {
+  curl \
+    --fail \
+    --show-error \
+    --silent \
+    --location \
+    --retry 3 \
+    --retry-all-errors \
+    --connect-timeout 20 \
+    --max-time 120 \
+    "$@"
+}
 
 extract_totals() {
   perl -0ne '
@@ -64,42 +77,74 @@ YEAR_END="${TRADE_YEAR_END:-2025}"
 for fiscal_start in $(seq "$YEAR_START" "$YEAR_END"); do
   for month in 4 5 6 7 8 9 10 11 12; do
     year="$fiscal_start"
-    curl -L --silent -c "$tmpdir/cookies.txt" "$BASE_URL" -o "$tmpdir/page.html"
+    curl_fetch -c "$tmpdir/cookies.txt" "$BASE_URL" -o "$tmpdir/page.html"
     token="$(sed -n 's/.*name="_token" value="\([^"]*\)".*/\1/p' "$tmpdir/page.html" | head -n 1)"
     if [[ -z "$token" ]]; then
       echo "Could not read FTSPCC CSRF token" >&2
       exit 1
     fi
     result_html="$tmpdir/result-${year}-${month}.html"
-    curl -L --silent -b "$tmpdir/cookies.txt" -c "$tmpdir/cookies.txt" -X POST "$BASE_URL" \
+    curl_fetch -b "$tmpdir/cookies.txt" -c "$tmpdir/cookies.txt" -X POST "$BASE_URL" \
       -d "_token=$token&MonthCwTt=$month&YearCwTt=$year&countryCwTt=all&ValuesCwTt=0" \
       -o "$result_html"
     totals="$(extract_totals "$result_html")"
+    if [[ "$totals" != *$'\t'* ]]; then
+      echo "Could not extract FTSPCC totals for ${fiscal_start}-$((fiscal_start + 1)) month ${month}" >&2
+      exit 1
+    fi
     export_value="${totals%%$'\t'*}"
     import_value="${totals#*$'\t'}"
     fy="${fiscal_start}-$(printf '%04d' "$((fiscal_start + 1))")"
     printf '%s,%s,%s,%s,%s,%s\n' \
-      "$fy" "$year" "$month" "$(month_name "$month")" "$export_value" "$import_value" >> "$monthly_csv"
+      "$fy" "$year" "$month" "$(month_name "$month")" "$export_value" "$import_value" >> "$staged_csv"
     printf 'Fetched %s %s\n' "$fy" "$(month_name "$month")" >&2
   done
   for month in 1 2 3; do
     year="$((fiscal_start + 1))"
-    curl -L --silent -c "$tmpdir/cookies.txt" "$BASE_URL" -o "$tmpdir/page.html"
+    curl_fetch -c "$tmpdir/cookies.txt" "$BASE_URL" -o "$tmpdir/page.html"
     token="$(sed -n 's/.*name="_token" value="\([^"]*\)".*/\1/p' "$tmpdir/page.html" | head -n 1)"
     if [[ -z "$token" ]]; then
       echo "Could not read FTSPCC CSRF token" >&2
       exit 1
     fi
     result_html="$tmpdir/result-${year}-${month}.html"
-    curl -L --silent -b "$tmpdir/cookies.txt" -c "$tmpdir/cookies.txt" -X POST "$BASE_URL" \
+    curl_fetch -b "$tmpdir/cookies.txt" -c "$tmpdir/cookies.txt" -X POST "$BASE_URL" \
       -d "_token=$token&MonthCwTt=$month&YearCwTt=$year&countryCwTt=all&ValuesCwTt=0" \
       -o "$result_html"
     totals="$(extract_totals "$result_html")"
+    if [[ "$totals" != *$'\t'* ]]; then
+      echo "Could not extract FTSPCC totals for ${fiscal_start}-$((fiscal_start + 1)) month ${month}" >&2
+      exit 1
+    fi
     export_value="${totals%%$'\t'*}"
     import_value="${totals#*$'\t'}"
     fy="${fiscal_start}-$(printf '%04d' "$((fiscal_start + 1))")"
     printf '%s,%s,%s,%s,%s,%s\n' \
-      "$fy" "$year" "$month" "$(month_name "$month")" "$export_value" "$import_value" >> "$monthly_csv"
+      "$fy" "$year" "$month" "$(month_name "$month")" "$export_value" "$import_value" >> "$staged_csv"
     printf 'Fetched %s %s\n' "$fy" "$(month_name "$month")" >&2
   done
 done
+
+expected_rows="$(( (YEAR_END - YEAR_START + 1) * 12 + 1 ))"
+actual_rows="$(wc -l < "$staged_csv" | tr -d ' ')"
+if [[ "$actual_rows" -ne "$expected_rows" ]]; then
+  echo "FTSPCC refresh produced ${actual_rows} rows; expected ${expected_rows}. Existing data was preserved." >&2
+  exit 1
+fi
+
+if ! awk -F, '
+  NR == 1 {
+    if ($0 != "financial_year,calendar_year,month,month_name,export_usd_mn,import_usd_mn") exit 1
+    next
+  }
+  NF != 6 || $1 == "" || $2 !~ /^[0-9]{4}$/ || $3 !~ /^([1-9]|1[0-2])$/ ||
+    $4 == "" || $5 !~ /^[0-9]+([.][0-9]+)?$/ || $6 !~ /^[0-9]+([.][0-9]+)?$/ {
+    exit 1
+  }
+' "$staged_csv"; then
+  echo "FTSPCC refresh failed CSV validation. Existing data was preserved." >&2
+  exit 1
+fi
+
+mv "$staged_csv" "$monthly_csv"
+echo "Atomically replaced $monthly_csv with $((actual_rows - 1)) validated monthly rows." >&2

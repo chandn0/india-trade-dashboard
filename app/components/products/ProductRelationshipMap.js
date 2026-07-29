@@ -5,14 +5,9 @@ import { Autocomplete, Box, Chip, Paper, Stack, TextField, Typography } from '@m
 import { alpha } from '@mui/material/styles';
 import { HubRounded } from '@mui/icons-material';
 
-import stageData from '../../../data/product_stage_mix.json';
 import { C } from '../../theme.js';
 import { moneyB } from '../../lib/format.js';
 import cardSx from '../primitives/cardSx.js';
-
-const products = [...stageData.products]
-  .filter((product) => product.latestImportUsdMn >= 1.0)
-  .sort((a, b) => b.latestImportUsdMn - a.latestImportUsdMn);
 
 const stageColors = {
   'raw material': '#a16207',
@@ -67,7 +62,14 @@ function curve(x1, y1, x2, y2) {
   return `M ${x1} ${y1} C ${mid} ${y1}, ${mid} ${y2}, ${x2} ${y2}`;
 }
 
-export default function ProductRelationshipMap() {
+export default function ProductRelationshipMap({ products: allProducts }) {
+  const products = React.useMemo(
+    () =>
+      [...allProducts]
+        .filter((product) => product.latestImportUsdMn >= 1.0)
+        .sort((a, b) => b.latestImportUsdMn - a.latestImportUsdMn),
+    [allProducts],
+  );
   const [hscode, setHscode] = React.useState('8542');
   const product = products.find((item) => item.hscode === hscode) ?? products[0];
   const productPartner = product.productPartnerExposure?.imports;

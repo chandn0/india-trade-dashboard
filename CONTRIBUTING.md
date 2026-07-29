@@ -56,7 +56,14 @@ Check style and build before opening a pull request:
 ```bash
 npm run lint          # ESLint — must pass with 0 errors
 npm run format:check  # Prettier — must pass with 0 differences
+npm run test:e2e      # Playwright desktop and mobile browser checks
 npm run build         # production build — must succeed
+```
+
+Install Playwright's Chromium runtime once before the first browser-test run:
+
+```bash
+npx playwright install chromium
 ```
 
 Auto-fix formatting in one step:

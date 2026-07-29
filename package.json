@@ -31,6 +31,7 @@
     "validate:value-chains": "node scripts/validate_domestic_value_chain.js",
     "test:regression": "node --test scripts/test_ui_regression.js",
     "test:rendering": "node --import ./scripts/register-loader.js --test scripts/test_rendering.js",
+    "test:e2e": "playwright test",
     "test": "npm run validate:products && npm run validate:value-chains && npm run test:regression && npm run test:rendering",
     "refresh:all": "npm run fetch:monthly-totals && npm run build:yearly && npm run fetch:country-distribution && npm run build:country-slim && npm run fetch:commodity-shares && npm run fetch:partner-products && npm run fetch:exchange-rate-fbil"
   },
@@ -53,6 +54,7 @@
     "@babel/preset-react": "^8.0.1",
     "@babel/register": "^8.0.1",
     "@eslint/eslintrc": "^3.3.6",
+    "@playwright/test": "^1.62.0",
     "@testing-library/react": "^16.3.2",
     "css-mediaquery": "^0.1.2",
     "esbuild": "^0.28.1",
