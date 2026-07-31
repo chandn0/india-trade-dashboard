@@ -8,7 +8,6 @@ import Masthead from './components/layout/Masthead.js';
 import Footer from './components/layout/Footer.js';
 
 import TradeTrendChart from './components/charts/TradeTrendChart.js';
-import RupeeDeficitChart from './components/charts/RupeeDeficitChart.js';
 import CompositionDonut from './components/charts/CompositionDonut.js';
 import CompositionChart from './components/charts/CompositionChart.js';
 import PartnerButterfly from './components/charts/PartnerButterfly.js';
@@ -27,10 +26,6 @@ function Dashboard() {
       <Masthead />
       <Container maxWidth="xl" sx={{ py: { xs: 3, md: 4 } }}>
         <Stack spacing={{ xs: 4, md: 5 }}>
-          <Box component="section" id="rupee-deficit" data-section>
-            <RupeeDeficitChart />
-          </Box>
-
           <Box component="section" id="trends" data-section>
             <TradeTrendChart />
           </Box>

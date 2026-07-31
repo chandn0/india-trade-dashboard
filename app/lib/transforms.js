@@ -4,7 +4,6 @@
 /* ------------------------------------------------------------------ */
 
 import commodityShareData from '../../data/india_trade_commodity_group_shares.json';
-import exchangeRateData from '../../data/india_trade_inr_usd_fy.json';
 import yearlySummaryData from '../../data/india_trade_yearly_raw.json';
 import hs4ExportData from '../../data/india_trade_hs4_world_export_5fy.json';
 import hs4ImportData from '../../data/india_trade_hs4_world_import_5fy.json';
@@ -57,31 +56,9 @@ export const CAT = [
 ];
 
 /* ------------------------------------------------------------------ */
-/* FTSPCC yearly + exchange rate data                                  */
+/* FTSPCC yearly data                                                  */
 /* ------------------------------------------------------------------ */
 export const rows = yearlySummaryData.summary;
-
-const exchangeRows = exchangeRateData.rows;
-const exchangeByYear = Object.fromEntries(exchangeRows.map((row) => [row.financial_year, row]));
-
-export const rupeeDeficitRows = (() => {
-  let cumulative = 0;
-  return rows
-    .filter((row) => exchangeByYear[row.financial_year])
-    .map((row) => {
-      const exchange = exchangeByYear[row.financial_year];
-      const annualDeficit = Math.max(0, row.import_usd_mn - row.export_usd_mn);
-      cumulative += annualDeficit;
-      return {
-        financial_year: row.financial_year,
-        exchange_rate_inr_per_usd: Number(exchange.inr_per_usd_avg ?? 0),
-        annual_deficit_usd_mn: annualDeficit,
-        cumulative_deficit_usd_mn: cumulative,
-        export_usd_mn: row.export_usd_mn,
-        import_usd_mn: row.import_usd_mn,
-      };
-    });
-})();
 
 /* ------------------------------------------------------------------ */
 /* Commodity composition                                              */

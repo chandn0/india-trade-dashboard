@@ -3,18 +3,6 @@ import { alpha } from '@mui/material/styles';
 import { C } from '../../theme.js';
 import { latestFyLabel, latestStatusNote } from '../../lib/transforms.js';
 
-const NAV_SECTIONS = [
-  ['Rupee & deficit', '/#rupee-deficit'],
-  ['Trade trends', '/#trends'],
-  ['Industry mix', '/#basket-mix'],
-  ['Partners', '/#partners'],
-  ['Biggest movers', '/#item-trends'],
-  ['Explorer', '/#explorer'],
-  ['Product stages', '/products'],
-  ['Buildability atlas', '/#buildability-atlas'],
-  ['Value chains', '/#value-chains'],
-];
-
 export default function Masthead() {
   return (
     <Box
@@ -55,28 +43,8 @@ export default function Masthead() {
           </Typography>
         </Box>
         <Box
-          component="nav"
-          sx={{ display: { xs: 'none', md: 'flex' }, gap: 1.5, mr: 1, flexShrink: 0 }}
-        >
-          {NAV_SECTIONS.map(([label, href]) => (
-            <Typography
-              key={href}
-              component="a"
-              href={href}
-              sx={{
-                fontSize: 12.5,
-                fontWeight: 600,
-                color: 'rgba(231,236,245,0.72)',
-                '&:hover': { color: '#fff' },
-              }}
-            >
-              {label}
-            </Typography>
-          ))}
-        </Box>
-        <Box
           sx={{
-            display: { xs: 'none', xl: 'flex' },
+            display: { xs: 'none', md: 'flex' },
             alignItems: 'center',
             gap: 1.5,
             flexShrink: 0,
@@ -119,7 +87,7 @@ export default function Masthead() {
           size="small"
           label={`Data through ${latestFyLabel}${latestStatusNote ? ` · ${latestStatusNote}` : ''}`}
           sx={{
-            display: { xs: 'none', xl: 'flex' },
+            display: { xs: 'none', sm: 'flex' },
             bgcolor: alpha(C.purple, 0.32),
             color: '#d9cbff',
             fontWeight: 700,

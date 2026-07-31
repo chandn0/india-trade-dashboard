@@ -13,7 +13,7 @@ app/
     transforms.js            ← ALL data prep: imports JSON, exports computed data structures
     format.js                ← number formatters (moneyB, nf2, pct, fyTick, …)
     responsive.js            ← COMPACT_BELOW = 560, useMeasuredWidth()
-    chartGeometry.js         ← buildTradeGeo(), buildRupeeDeficitGeo() — SVG scale/tick math
+    chartGeometry.js         ← buildTradeGeo() — SVG scale/tick math
     chartInteraction.js      ← tipPosition() hover-tooltip helper
   config/
     icons.js                 ← BASKET_ICON, HS2_ICON, basketIconFor(), hs2Label()

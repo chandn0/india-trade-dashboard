@@ -325,7 +325,7 @@ describe('S05 Suite 6: Zero-Import and Zero-Export Products Handling', () => {
 describe('S05 Suite 7: Desktop and Mobile Layout Data Contracts', () => {
   it('enforces COMPACT_BELOW breakpoint and checks chart geometry math', async () => {
     const { COMPACT_BELOW } = await import('../app/lib/responsive.js');
-    const { buildTradeGeo, buildRupeeDeficitGeo } = await import('../app/lib/chartGeometry.js');
+    const { buildTradeGeo } = await import('../app/lib/chartGeometry.js');
 
     assert.equal(COMPACT_BELOW, 560, 'COMPACT_BELOW breakpoint must remain strictly at 560px');
 
@@ -344,21 +344,6 @@ describe('S05 Suite 7: Desktop and Mobile Layout Data Contracts', () => {
     assert.equal(mobileGeo.compact, true);
     assert.ok(mobileGeo.exportPath.includes('M ') && mobileGeo.importPath.includes('M '));
     assert.ok(!mobileGeo.exportPath.includes('NaN'));
-
-    const sampleDeficitData = [
-      {
-        financial_year: '2021-22',
-        exchange_rate_inr_per_usd: 74.5,
-        cumulative_deficit_usd_mn: 200000,
-      },
-      {
-        financial_year: '2022-23',
-        exchange_rate_inr_per_usd: 80.2,
-        cumulative_deficit_usd_mn: 450000,
-      },
-    ];
-    const defGeo = buildRupeeDeficitGeo(sampleDeficitData, 600);
-    assert.ok(!defGeo.fxPath.includes('NaN') && !defGeo.deficitPath.includes('NaN'));
   });
 });
 

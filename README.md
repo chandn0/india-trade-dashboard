@@ -84,7 +84,6 @@ a smallest useful implementation.
 - HS4 item-level movers across the latest five-year window
 - a domestic value-chain research preview linking selected imported end products
   to potentially relevant Indian inputs and missing conversion steps
-- the rupee/deficit long-run overlay
 - interpretive notes in [`docs/india-trade-trends.md`](docs/india-trade-trends.md)
   and [`docs/why-inr-has-weakened.md`](docs/why-inr-has-weakened.md)
 

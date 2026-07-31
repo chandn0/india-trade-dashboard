@@ -1,16 +1,13 @@
 import { expect, test } from '@playwright/test';
 
-test('dashboard exposes its primary navigation and product workspace', async ({
-  page,
-  isMobile,
-}) => {
-  test.skip(isMobile, 'Desktop navigation assertion');
+test('dashboard opens the product workspace from its content', async ({ page, isMobile }) => {
+  test.skip(isMobile, 'Desktop content-entry assertion');
 
   await page.goto('/');
 
   await expect(page.getByRole('heading', { level: 1, name: 'India Trade Monitor' })).toBeVisible();
 
-  await page.getByRole('link', { name: 'Product stages' }).click();
+  await page.getByRole('link', { name: 'Open full product workspace' }).click();
   await expect(page).toHaveURL(/\/products$/);
   await expect(
     page.getByRole('heading', {
