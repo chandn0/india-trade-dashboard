@@ -19,6 +19,7 @@
     "fetch:country-distribution": "node scripts/fetch_ftspcc_country_distribution.js",
     "fetch:commodity-shares": "node scripts/fetch_ftpa_group_shares.js",
     "fetch:partner-products": "node scripts/fetch_eidb_partner_products.js",
+    "fetch:petroleum-country-mix": "node scripts/fetch_petroleum_country_mix.js",
     "fetch:exchange-rate-fbil": "node scripts/fetch_fbil_reference_rates.js",
     "fetch:exchange-rate-rbi": "python3 scripts/fetch_rbi_exchange_rate.py",
     "build:yearly": "node scripts/build_ftspcc_yearly.js",

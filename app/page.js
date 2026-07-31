@@ -20,6 +20,7 @@ import MoverExplorer from './components/sections/MoverExplorer.js';
 import ValueChainSection from './components/sections/ValueChainSection.js';
 import ProductDiscovery from './components/sections/ProductDiscovery.js';
 import ProductStageSection from './components/sections/ProductStageSection.js';
+import PetroleumBriefPromo from './components/sections/PetroleumBriefPromo.js';
 
 function SectionIntro({ eyebrow, title, description, color = C.purple }) {
   return (
@@ -46,6 +47,8 @@ function Dashboard() {
           <Box component="section" id="trends" data-section>
             <TradeTrendChart />
           </Box>
+
+          <PetroleumBriefPromo />
 
           <Box component="section" id="basket-mix" data-section>
             <SectionIntro

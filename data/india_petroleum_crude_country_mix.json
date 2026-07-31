@@ -1,0 +1,933 @@
+{
+  "title": "India petroleum crude imports by source country",
+  "commodity": {
+    "code": "S5",
+    "label": "PETROLEUM: CRUDE"
+  },
+  "unit": "US$ million",
+  "source": "https://tradestat.commerce.gov.in/ftspcc/import_commodity_wise_all_countries",
+  "retrievedAt": "2026-07-31T18:48:51.926Z",
+  "note": "March selections report full April–March fiscal-year values. The latest year is provisional.",
+  "series": [
+    {
+      "fiscalYear": "FY21-22",
+      "yearEnding": 2022,
+      "provisional": false,
+      "totalUsdMillion": 122449.33,
+      "countries": [
+        {
+          "country": "IRAQ",
+          "valueUsdMillion": 30342.1,
+          "sharePct": 24.78
+        },
+        {
+          "country": "SAUDI ARAB",
+          "valueUsdMillion": 22869.27,
+          "sharePct": 18.68
+        },
+        {
+          "country": "U ARAB EMTS",
+          "valueUsdMillion": 12304.83,
+          "sharePct": 10.05
+        },
+        {
+          "country": "U S A",
+          "valueUsdMillion": 11319.84,
+          "sharePct": 9.24
+        },
+        {
+          "country": "NIGERIA",
+          "valueUsdMillion": 8591.21,
+          "sharePct": 7.02
+        },
+        {
+          "country": "KUWAIT",
+          "valueUsdMillion": 7943.04,
+          "sharePct": 6.49
+        },
+        {
+          "country": "OMAN",
+          "valueUsdMillion": 3600,
+          "sharePct": 2.94
+        },
+        {
+          "country": "MEXICO",
+          "valueUsdMillion": 3419.57,
+          "sharePct": 2.79
+        },
+        {
+          "country": "RUSSIA",
+          "valueUsdMillion": 2470.91,
+          "sharePct": 2.02
+        },
+        {
+          "country": "BRAZIL",
+          "valueUsdMillion": 2230.18,
+          "sharePct": 1.82
+        },
+        {
+          "country": "COLOMBIA",
+          "valueUsdMillion": 2141.43,
+          "sharePct": 1.75
+        },
+        {
+          "country": "ANGOLA",
+          "valueUsdMillion": 1979.47,
+          "sharePct": 1.62
+        },
+        {
+          "country": "EGYPT A RP",
+          "valueUsdMillion": 1768.11,
+          "sharePct": 1.44
+        },
+        {
+          "country": "CONGO P REP",
+          "valueUsdMillion": 1280.6,
+          "sharePct": 1.05
+        },
+        {
+          "country": "NORWAY",
+          "valueUsdMillion": 1231.19,
+          "sharePct": 1.01
+        },
+        {
+          "country": "MALAYSIA",
+          "valueUsdMillion": 1099.87,
+          "sharePct": 0.9
+        },
+        {
+          "country": "QATAR",
+          "valueUsdMillion": 981.44,
+          "sharePct": 0.8
+        },
+        {
+          "country": "ECUADOR",
+          "valueUsdMillion": 865.4,
+          "sharePct": 0.71
+        },
+        {
+          "country": "EQUTL GUINEA",
+          "valueUsdMillion": 764.57,
+          "sharePct": 0.62
+        },
+        {
+          "country": "GABON",
+          "valueUsdMillion": 671.81,
+          "sharePct": 0.55
+        },
+        {
+          "country": "CAMEROON",
+          "valueUsdMillion": 655.22,
+          "sharePct": 0.54
+        },
+        {
+          "country": "ALGERIA",
+          "valueUsdMillion": 551.27,
+          "sharePct": 0.45
+        },
+        {
+          "country": "SOUTH AFRICA",
+          "valueUsdMillion": 464.74,
+          "sharePct": 0.38
+        },
+        {
+          "country": "TURKEY",
+          "valueUsdMillion": 451.48,
+          "sharePct": 0.37
+        },
+        {
+          "country": "BRUNEI",
+          "valueUsdMillion": 390.71,
+          "sharePct": 0.32
+        },
+        {
+          "country": "CANADA",
+          "valueUsdMillion": 334.66,
+          "sharePct": 0.27
+        },
+        {
+          "country": "LIBYA",
+          "valueUsdMillion": 249.1,
+          "sharePct": 0.2
+        },
+        {
+          "country": "U K",
+          "valueUsdMillion": 245.04,
+          "sharePct": 0.2
+        },
+        {
+          "country": "INDONESIA",
+          "valueUsdMillion": 235.04,
+          "sharePct": 0.19
+        },
+        {
+          "country": "ISRAEL",
+          "valueUsdMillion": 177.28,
+          "sharePct": 0.14
+        },
+        {
+          "country": "KAZAKHSTAN",
+          "valueUsdMillion": 150.48,
+          "sharePct": 0.12
+        },
+        {
+          "country": "GUYANA",
+          "valueUsdMillion": 148.61,
+          "sharePct": 0.12
+        },
+        {
+          "country": "GHANA",
+          "valueUsdMillion": 129.77,
+          "sharePct": 0.11
+        },
+        {
+          "country": "COTE D&#039; IVOIRE",
+          "valueUsdMillion": 117.65,
+          "sharePct": 0.1
+        },
+        {
+          "country": "AZERBAIJAN",
+          "valueUsdMillion": 94.08,
+          "sharePct": 0.08
+        },
+        {
+          "country": "JAPAN",
+          "valueUsdMillion": 71.37,
+          "sharePct": 0.06
+        },
+        {
+          "country": "YEMEN REPUBLC",
+          "valueUsdMillion": 52.05,
+          "sharePct": 0.04
+        },
+        {
+          "country": "CHINA P RP",
+          "valueUsdMillion": 42.64,
+          "sharePct": 0.03
+        },
+        {
+          "country": "ITALY",
+          "valueUsdMillion": 13.3,
+          "sharePct": 0.01
+        }
+      ]
+    },
+    {
+      "fiscalYear": "FY22-23",
+      "yearEnding": 2023,
+      "provisional": false,
+      "totalUsdMillion": 162205.15,
+      "countries": [
+        {
+          "country": "IRAQ",
+          "valueUsdMillion": 33599.57,
+          "sharePct": 20.71
+        },
+        {
+          "country": "RUSSIA",
+          "valueUsdMillion": 31024.66,
+          "sharePct": 19.13
+        },
+        {
+          "country": "SAUDI ARAB",
+          "valueUsdMillion": 29077.41,
+          "sharePct": 17.93
+        },
+        {
+          "country": "U ARAB EMTS",
+          "valueUsdMillion": 16840.67,
+          "sharePct": 10.38
+        },
+        {
+          "country": "U S A",
+          "valueUsdMillion": 10181.72,
+          "sharePct": 6.28
+        },
+        {
+          "country": "KUWAIT",
+          "valueUsdMillion": 8024.61,
+          "sharePct": 4.95
+        },
+        {
+          "country": "NIGERIA",
+          "valueUsdMillion": 6059.58,
+          "sharePct": 3.74
+        },
+        {
+          "country": "ANGOLA",
+          "valueUsdMillion": 3175.05,
+          "sharePct": 1.96
+        },
+        {
+          "country": "MEXICO",
+          "valueUsdMillion": 2844.7,
+          "sharePct": 1.75
+        },
+        {
+          "country": "OMAN",
+          "valueUsdMillion": 2657.57,
+          "sharePct": 1.64
+        },
+        {
+          "country": "CONGO P REP",
+          "valueUsdMillion": 1994.17,
+          "sharePct": 1.23
+        },
+        {
+          "country": "BRAZIL",
+          "valueUsdMillion": 1885.5,
+          "sharePct": 1.16
+        },
+        {
+          "country": "QATAR",
+          "valueUsdMillion": 1874.62,
+          "sharePct": 1.16
+        },
+        {
+          "country": "TURKEY",
+          "valueUsdMillion": 1778.82,
+          "sharePct": 1.1
+        },
+        {
+          "country": "COLOMBIA",
+          "valueUsdMillion": 1609.77,
+          "sharePct": 0.99
+        },
+        {
+          "country": "MALAYSIA",
+          "valueUsdMillion": 1240.29,
+          "sharePct": 0.76
+        },
+        {
+          "country": "ALGERIA",
+          "valueUsdMillion": 848.57,
+          "sharePct": 0.52
+        },
+        {
+          "country": "SPAIN",
+          "valueUsdMillion": 827.74,
+          "sharePct": 0.51
+        },
+        {
+          "country": "ECUADOR",
+          "valueUsdMillion": 775.52,
+          "sharePct": 0.48
+        },
+        {
+          "country": "EGYPT A RP",
+          "valueUsdMillion": 716.3,
+          "sharePct": 0.44
+        },
+        {
+          "country": "KOREA RP",
+          "valueUsdMillion": 709.09,
+          "sharePct": 0.44
+        },
+        {
+          "country": "LIBYA",
+          "valueUsdMillion": 692.61,
+          "sharePct": 0.43
+        },
+        {
+          "country": "GREECE",
+          "valueUsdMillion": 601.34,
+          "sharePct": 0.37
+        },
+        {
+          "country": "EQUTL GUINEA",
+          "valueUsdMillion": 597.43,
+          "sharePct": 0.37
+        },
+        {
+          "country": "NETHERLAND",
+          "valueUsdMillion": 589.22,
+          "sharePct": 0.36
+        },
+        {
+          "country": "AZERBAIJAN",
+          "valueUsdMillion": 495.78,
+          "sharePct": 0.31
+        },
+        {
+          "country": "CAMEROON",
+          "valueUsdMillion": 347.55,
+          "sharePct": 0.21
+        },
+        {
+          "country": "BRUNEI",
+          "valueUsdMillion": 273.14,
+          "sharePct": 0.17
+        },
+        {
+          "country": "CONGO D. REP.",
+          "valueUsdMillion": 164.78,
+          "sharePct": 0.1
+        },
+        {
+          "country": "SRI LANKA DSR",
+          "valueUsdMillion": 130.38,
+          "sharePct": 0.08
+        },
+        {
+          "country": "KAZAKHSTAN",
+          "valueUsdMillion": 127.3,
+          "sharePct": 0.08
+        },
+        {
+          "country": "GABON",
+          "valueUsdMillion": 106.06,
+          "sharePct": 0.07
+        },
+        {
+          "country": "ISRAEL",
+          "valueUsdMillion": 105.84,
+          "sharePct": 0.07
+        },
+        {
+          "country": "GIBRALTAR",
+          "valueUsdMillion": 71.99,
+          "sharePct": 0.04
+        },
+        {
+          "country": "U K",
+          "valueUsdMillion": 66.79,
+          "sharePct": 0.04
+        },
+        {
+          "country": "TUNISIA",
+          "valueUsdMillion": 62.62,
+          "sharePct": 0.04
+        },
+        {
+          "country": "INDONESIA",
+          "valueUsdMillion": 26.38,
+          "sharePct": 0.02
+        },
+        {
+          "country": "CANADA",
+          "valueUsdMillion": 0.01,
+          "sharePct": 0
+        }
+      ]
+    },
+    {
+      "fiscalYear": "FY23-24",
+      "yearEnding": 2024,
+      "provisional": false,
+      "totalUsdMillion": 139287.82,
+      "countries": [
+        {
+          "country": "RUSSIA",
+          "valueUsdMillion": 46487.55,
+          "sharePct": 33.38
+        },
+        {
+          "country": "IRAQ",
+          "valueUsdMillion": 28898.24,
+          "sharePct": 20.75
+        },
+        {
+          "country": "SAUDI ARAB",
+          "valueUsdMillion": 21706.88,
+          "sharePct": 15.58
+        },
+        {
+          "country": "U ARAB EMTS",
+          "valueUsdMillion": 8958.44,
+          "sharePct": 6.43
+        },
+        {
+          "country": "U S A",
+          "valueUsdMillion": 5025.92,
+          "sharePct": 3.61
+        },
+        {
+          "country": "KUWAIT",
+          "valueUsdMillion": 4304.21,
+          "sharePct": 3.09
+        },
+        {
+          "country": "NIGERIA",
+          "valueUsdMillion": 3401.05,
+          "sharePct": 2.44
+        },
+        {
+          "country": "ANGOLA",
+          "valueUsdMillion": 2813.38,
+          "sharePct": 2.02
+        },
+        {
+          "country": "MALAYSIA",
+          "valueUsdMillion": 2717.37,
+          "sharePct": 1.95
+        },
+        {
+          "country": "KOREA RP",
+          "valueUsdMillion": 2367.87,
+          "sharePct": 1.7
+        },
+        {
+          "country": "COLOMBIA",
+          "valueUsdMillion": 1946.83,
+          "sharePct": 1.4
+        },
+        {
+          "country": "MEXICO",
+          "valueUsdMillion": 1873.27,
+          "sharePct": 1.34
+        },
+        {
+          "country": "TURKEY",
+          "valueUsdMillion": 1801.12,
+          "sharePct": 1.29
+        },
+        {
+          "country": "BRAZIL",
+          "valueUsdMillion": 1435.93,
+          "sharePct": 1.03
+        },
+        {
+          "country": "QATAR",
+          "valueUsdMillion": 1117.82,
+          "sharePct": 0.8
+        },
+        {
+          "country": "VENEZUELA",
+          "valueUsdMillion": 802.47,
+          "sharePct": 0.58
+        },
+        {
+          "country": "GREECE",
+          "valueUsdMillion": 596.02,
+          "sharePct": 0.43
+        },
+        {
+          "country": "EGYPT A RP",
+          "valueUsdMillion": 489.6,
+          "sharePct": 0.35
+        },
+        {
+          "country": "ALGERIA",
+          "valueUsdMillion": 473.8,
+          "sharePct": 0.34
+        },
+        {
+          "country": "OMAN",
+          "valueUsdMillion": 431.27,
+          "sharePct": 0.31
+        },
+        {
+          "country": "CAMEROON",
+          "valueUsdMillion": 357.75,
+          "sharePct": 0.26
+        },
+        {
+          "country": "ECUADOR",
+          "valueUsdMillion": 331.68,
+          "sharePct": 0.24
+        },
+        {
+          "country": "PANAMA REPUBLIC",
+          "valueUsdMillion": 169.46,
+          "sharePct": 0.12
+        },
+        {
+          "country": "BRUNEI",
+          "valueUsdMillion": 168.51,
+          "sharePct": 0.12
+        },
+        {
+          "country": "LIBYA",
+          "valueUsdMillion": 166.95,
+          "sharePct": 0.12
+        },
+        {
+          "country": "CONGO D. REP.",
+          "valueUsdMillion": 165.63,
+          "sharePct": 0.12
+        },
+        {
+          "country": "CONGO P REP",
+          "valueUsdMillion": 91.33,
+          "sharePct": 0.07
+        },
+        {
+          "country": "VIRGIN IS US",
+          "valueUsdMillion": 84.16,
+          "sharePct": 0.06
+        },
+        {
+          "country": "SPAIN",
+          "valueUsdMillion": 52.3,
+          "sharePct": 0.04
+        },
+        {
+          "country": "SUDAN",
+          "valueUsdMillion": 51.01,
+          "sharePct": 0.04
+        }
+      ]
+    },
+    {
+      "fiscalYear": "FY24-25",
+      "yearEnding": 2025,
+      "provisional": false,
+      "totalUsdMillion": 143076.91,
+      "countries": [
+        {
+          "country": "RUSSIA",
+          "valueUsdMillion": 50284.72,
+          "sharePct": 35.15
+        },
+        {
+          "country": "IRAQ",
+          "valueUsdMillion": 27355.78,
+          "sharePct": 19.12
+        },
+        {
+          "country": "SAUDI ARAB",
+          "valueUsdMillion": 20094.16,
+          "sharePct": 14.04
+        },
+        {
+          "country": "U ARAB EMTS",
+          "valueUsdMillion": 13861.78,
+          "sharePct": 9.69
+        },
+        {
+          "country": "U S A",
+          "valueUsdMillion": 6550.74,
+          "sharePct": 4.58
+        },
+        {
+          "country": "KUWAIT",
+          "valueUsdMillion": 4019.43,
+          "sharePct": 2.81
+        },
+        {
+          "country": "ANGOLA",
+          "valueUsdMillion": 3575.53,
+          "sharePct": 2.5
+        },
+        {
+          "country": "NIGERIA",
+          "valueUsdMillion": 3118.49,
+          "sharePct": 2.18
+        },
+        {
+          "country": "COLOMBIA",
+          "valueUsdMillion": 1840.14,
+          "sharePct": 1.29
+        },
+        {
+          "country": "MEXICO",
+          "valueUsdMillion": 1559.61,
+          "sharePct": 1.09
+        },
+        {
+          "country": "VENEZUELA",
+          "valueUsdMillion": 1406.76,
+          "sharePct": 0.98
+        },
+        {
+          "country": "BRAZIL",
+          "valueUsdMillion": 1314.13,
+          "sharePct": 0.92
+        },
+        {
+          "country": "OMAN",
+          "valueUsdMillion": 1147.61,
+          "sharePct": 0.8
+        },
+        {
+          "country": "QATAR",
+          "valueUsdMillion": 1063.3,
+          "sharePct": 0.74
+        },
+        {
+          "country": "KOREA RP",
+          "valueUsdMillion": 964.27,
+          "sharePct": 0.67
+        },
+        {
+          "country": "TURKEY",
+          "valueUsdMillion": 743.68,
+          "sharePct": 0.52
+        },
+        {
+          "country": "ALGERIA",
+          "valueUsdMillion": 657.81,
+          "sharePct": 0.46
+        },
+        {
+          "country": "MALAYSIA",
+          "valueUsdMillion": 644.24,
+          "sharePct": 0.45
+        },
+        {
+          "country": "EGYPT A RP",
+          "valueUsdMillion": 593.86,
+          "sharePct": 0.42
+        },
+        {
+          "country": "CONGO D. REP.",
+          "valueUsdMillion": 317.51,
+          "sharePct": 0.22
+        },
+        {
+          "country": "CONGO P REP",
+          "valueUsdMillion": 311.23,
+          "sharePct": 0.22
+        },
+        {
+          "country": "GHANA",
+          "valueUsdMillion": 300.71,
+          "sharePct": 0.21
+        },
+        {
+          "country": "TOGO",
+          "valueUsdMillion": 245.27,
+          "sharePct": 0.17
+        },
+        {
+          "country": "CANADA",
+          "valueUsdMillion": 219.19,
+          "sharePct": 0.15
+        },
+        {
+          "country": "LIBYA",
+          "valueUsdMillion": 171.71,
+          "sharePct": 0.12
+        },
+        {
+          "country": "ECUADOR",
+          "valueUsdMillion": 156.57,
+          "sharePct": 0.11
+        },
+        {
+          "country": "GREECE",
+          "valueUsdMillion": 136.47,
+          "sharePct": 0.1
+        },
+        {
+          "country": "C AFRI REP",
+          "valueUsdMillion": 131.39,
+          "sharePct": 0.09
+        },
+        {
+          "country": "BRUNEI",
+          "valueUsdMillion": 125.82,
+          "sharePct": 0.09
+        },
+        {
+          "country": "PANAMA REPUBLIC",
+          "valueUsdMillion": 68.74,
+          "sharePct": 0.05
+        },
+        {
+          "country": "ARGENTINA",
+          "valueUsdMillion": 57.55,
+          "sharePct": 0.04
+        },
+        {
+          "country": "GUINEA",
+          "valueUsdMillion": 19.44,
+          "sharePct": 0.01
+        },
+        {
+          "country": "EQUTL GUINEA",
+          "valueUsdMillion": 19.26,
+          "sharePct": 0.01
+        },
+        {
+          "country": "ISRAEL",
+          "valueUsdMillion": 0.01,
+          "sharePct": 0
+        }
+      ]
+    },
+    {
+      "fiscalYear": "FY25-26",
+      "yearEnding": 2026,
+      "provisional": true,
+      "totalUsdMillion": 134716.76,
+      "countries": [
+        {
+          "country": "RUSSIA",
+          "valueUsdMillion": 40823.05,
+          "sharePct": 30.3
+        },
+        {
+          "country": "IRAQ",
+          "valueUsdMillion": 23088.78,
+          "sharePct": 17.14
+        },
+        {
+          "country": "SAUDI ARAB",
+          "valueUsdMillion": 19524.38,
+          "sharePct": 14.49
+        },
+        {
+          "country": "U ARAB EMTS",
+          "valueUsdMillion": 15117.32,
+          "sharePct": 11.22
+        },
+        {
+          "country": "U S A",
+          "valueUsdMillion": 9865.44,
+          "sharePct": 7.32
+        },
+        {
+          "country": "KUWAIT",
+          "valueUsdMillion": 4479.06,
+          "sharePct": 3.32
+        },
+        {
+          "country": "NIGERIA",
+          "valueUsdMillion": 4089.13,
+          "sharePct": 3.04
+        },
+        {
+          "country": "ANGOLA",
+          "valueUsdMillion": 3586.39,
+          "sharePct": 2.66
+        },
+        {
+          "country": "BRAZIL",
+          "valueUsdMillion": 2276.27,
+          "sharePct": 1.69
+        },
+        {
+          "country": "QATAR",
+          "valueUsdMillion": 2042.18,
+          "sharePct": 1.52
+        },
+        {
+          "country": "EGYPT A RP",
+          "valueUsdMillion": 1686.19,
+          "sharePct": 1.25
+        },
+        {
+          "country": "OMAN",
+          "valueUsdMillion": 1633.55,
+          "sharePct": 1.21
+        },
+        {
+          "country": "COLOMBIA",
+          "valueUsdMillion": 1565.62,
+          "sharePct": 1.16
+        },
+        {
+          "country": "CONGO P REP",
+          "valueUsdMillion": 588,
+          "sharePct": 0.44
+        },
+        {
+          "country": "MALAYSIA",
+          "valueUsdMillion": 578.05,
+          "sharePct": 0.43
+        },
+        {
+          "country": "LIBYA",
+          "valueUsdMillion": 546.38,
+          "sharePct": 0.41
+        },
+        {
+          "country": "GABON",
+          "valueUsdMillion": 425.73,
+          "sharePct": 0.32
+        },
+        {
+          "country": "TURKEY",
+          "valueUsdMillion": 351.1,
+          "sharePct": 0.26
+        },
+        {
+          "country": "MEXICO",
+          "valueUsdMillion": 332.76,
+          "sharePct": 0.25
+        },
+        {
+          "country": "GUYANA",
+          "valueUsdMillion": 274.46,
+          "sharePct": 0.2
+        },
+        {
+          "country": "VENEZUELA",
+          "valueUsdMillion": 255.27,
+          "sharePct": 0.19
+        },
+        {
+          "country": "BRUNEI",
+          "valueUsdMillion": 227.19,
+          "sharePct": 0.17
+        },
+        {
+          "country": "GHANA",
+          "valueUsdMillion": 204.79,
+          "sharePct": 0.15
+        },
+        {
+          "country": "KOREA RP",
+          "valueUsdMillion": 202.79,
+          "sharePct": 0.15
+        },
+        {
+          "country": "ALGERIA",
+          "valueUsdMillion": 186.42,
+          "sharePct": 0.14
+        },
+        {
+          "country": "URUGUAY",
+          "valueUsdMillion": 137.13,
+          "sharePct": 0.1
+        },
+        {
+          "country": "SINGAPORE",
+          "valueUsdMillion": 112.7,
+          "sharePct": 0.08
+        },
+        {
+          "country": "ARGENTINA",
+          "valueUsdMillion": 110.36,
+          "sharePct": 0.08
+        },
+        {
+          "country": "CONGO D. REP.",
+          "valueUsdMillion": 94.03,
+          "sharePct": 0.07
+        },
+        {
+          "country": "TOGO",
+          "valueUsdMillion": 75.46,
+          "sharePct": 0.06
+        },
+        {
+          "country": "PANAMA REPUBLIC",
+          "valueUsdMillion": 69.21,
+          "sharePct": 0.05
+        },
+        {
+          "country": "SUDAN",
+          "valueUsdMillion": 61,
+          "sharePct": 0.05
+        },
+        {
+          "country": "CANADA",
+          "valueUsdMillion": 46.33,
+          "sharePct": 0.03
+        },
+        {
+          "country": "SOUTH SUDAN",
+          "valueUsdMillion": 40.49,
+          "sharePct": 0.03
+        },
+        {
+          "country": "CAMEROON",
+          "valueUsdMillion": 19.75,
+          "sharePct": 0.01
+        }
+      ]
+    }
+  ]
+}
