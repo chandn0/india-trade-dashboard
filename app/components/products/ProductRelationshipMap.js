@@ -10,13 +10,13 @@ import { moneyB } from '../../lib/format.js';
 import cardSx from '../primitives/cardSx.js';
 
 const stageColors = {
-  'raw material': '#a16207',
+  'raw material': '#887746',
   'intermediate input': C.purple,
   'finished product': C.blue,
   'capital good': C.teal,
   'energy input': C.orange,
-  'agricultural commodity': '#15803d',
-  'consumption asset': '#be185d',
+  'agricultural commodity': '#5f7b58',
+  'consumption asset': '#9a5868',
 };
 
 const titleCase = (value = '') => value.replace(/\b\w/g, (letter) => letter.toUpperCase());

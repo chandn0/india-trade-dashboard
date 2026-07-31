@@ -50,7 +50,7 @@ export default function ValueChainSection() {
   );
 
   return (
-    <Paper sx={{ ...cardSx, borderColor: alpha(C.teal, 0.2) }}>
+    <Paper sx={cardSx}>
       <Stack spacing={1.5}>
         <Box
           sx={{

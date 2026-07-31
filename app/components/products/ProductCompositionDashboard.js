@@ -48,13 +48,13 @@ import ProductToolSuite from './ProductToolSuite.js';
 import { useProductStageData } from './useProductStageData.js';
 
 const stageColors = {
-  'raw material': '#a16207',
+  'raw material': '#887746',
   'intermediate input': C.purple,
   'finished product': C.blue,
   'capital good': C.teal,
   'energy input': C.orange,
-  'agricultural commodity': '#15803d',
-  'consumption asset': '#be185d',
+  'agricultural commodity': '#5f7b58',
+  'consumption asset': '#9a5868',
 };
 
 const stageOrder = [
@@ -910,19 +910,19 @@ function ProductExplorer({ detailData }) {
                           fontWeight: 700,
                           color:
                             product.reviewStatus === 'reviewed'
-                              ? '#15803d'
+                              ? '#5f7b58'
                               : product.reviewStatus === 'mixed-use'
                                 ? C.purple
                                 : '#b45309',
                           bgcolor:
                             product.reviewStatus === 'reviewed'
-                              ? alpha('#15803d', 0.1)
+                              ? alpha('#5f7b58', 0.1)
                               : product.reviewStatus === 'mixed-use'
                                 ? alpha(C.purple, 0.1)
                                 : alpha('#b45309', 0.1),
                           border: `1px solid ${
                             product.reviewStatus === 'reviewed'
-                              ? alpha('#15803d', 0.2)
+                              ? alpha('#5f7b58', 0.2)
                               : product.reviewStatus === 'mixed-use'
                                 ? alpha(C.purple, 0.2)
                                 : alpha('#b45309', 0.2)
@@ -999,6 +999,7 @@ export default function ProductCompositionDashboard() {
               rel="noopener noreferrer"
               aria-label="GitHub Repository (opens in new tab)"
               sx={{
+                display: { xs: 'none', sm: 'inline' },
                 fontSize: 12,
                 fontWeight: 700,
                 color: 'rgba(255,255,255,0.85)',
@@ -1015,9 +1016,10 @@ export default function ProductCompositionDashboard() {
               rel="noopener noreferrer"
               aria-label="Contribute to India Trade Dashboard on GitHub (opens in new tab)"
               sx={{
+                display: { xs: 'none', sm: 'inline' },
                 fontSize: 12,
                 fontWeight: 700,
-                color: '#5eead4',
+                color: 'rgba(255,255,255,0.74)',
                 textDecoration: 'none',
                 '&:hover': { textDecoration: 'underline' },
               }}
@@ -1027,7 +1029,11 @@ export default function ProductCompositionDashboard() {
             <Chip
               size="small"
               label={`FY${stageData.metadata.fiscalYear}`}
-              sx={{ color: '#d9cbff', bgcolor: alpha(C.purple, 0.32) }}
+              sx={{
+                display: { xs: 'none', sm: 'flex' },
+                color: 'rgba(255,255,255,0.82)',
+                bgcolor: 'rgba(255,255,255,0.09)',
+              }}
             />
           </Box>
         </Container>
@@ -1036,17 +1042,17 @@ export default function ProductCompositionDashboard() {
       <Box
         sx={{
           color: '#fff',
-          background: `linear-gradient(125deg, ${C.ink} 0%, #172554 58%, #163b39 130%)`,
+          background: `linear-gradient(120deg, ${C.ink} 0%, #253249 100%)`,
         }}
       >
-        <Container maxWidth="xl" sx={{ py: { xs: 4, md: 6 } }}>
-          <Typography variant="overline" sx={{ color: '#7dd3fc' }}>
+        <Container maxWidth="xl" sx={{ py: { xs: 4, md: 5 } }}>
+          <Typography variant="overline" sx={{ color: 'rgba(255,255,255,0.62)' }}>
             India’s trade by production stage
           </Typography>
           <Typography
             variant="h2"
             component="h1"
-            sx={{ mt: 0.5, maxWidth: 920, fontSize: { xs: 38, md: 58 }, lineHeight: 1.02 }}
+            sx={{ mt: 0.5, maxWidth: 880, fontSize: { xs: 36, md: 52 }, lineHeight: 1.04 }}
           >
             What India buys, what India sells, and how much value is added
           </Typography>
@@ -1064,41 +1070,41 @@ export default function ProductCompositionDashboard() {
           </Typography>
           <Box
             sx={{
-              mt: 3.5,
+              mt: 3,
               display: 'grid',
               gridTemplateColumns: { xs: 'repeat(2,1fr)', md: 'repeat(4,minmax(150px,1fr))' },
-              gap: 2.5,
+              gap: { xs: 2, md: 2.5 },
             }}
           >
             <Metric
               label="Total HS-4 imports"
               value={moneyB(imports.totalUsdMn)}
               note={`${imports.productCount.toLocaleString()} active product lines`}
-              color="#fdba74"
+              color="#d0a37d"
             />
             <Metric
               label="Total HS-4 exports"
               value={moneyB(exports.totalUsdMn)}
               note={`${exports.productCount.toLocaleString()} active product lines`}
-              color="#93c5fd"
+              color="#9fb4ca"
             />
             <Metric
               label="Full-basket gap"
               value={`−${moneyB(classifiedGap)}`}
               note="Imports minus exports"
-              color="#fda4af"
+              color="#d49a9f"
             />
             <Metric
               label="Attributed HS-4 lines"
               value={stageData.metadata.totalUniqueHs4Products.toLocaleString()}
               note={`${stageData.metadata.classificationSummary['curated HS-4']} curated · ${stageData.metadata.classificationSummary['HS-2 dominant-use rule'].toLocaleString()} rule-mapped`}
-              color="#5eead4"
+              color="#9db7b1"
             />
           </Box>
         </Container>
       </Box>
 
-      <Container maxWidth="xl" sx={{ py: { xs: 3, md: 4 } }}>
+      <Container maxWidth="xl" sx={{ py: { xs: 3, md: 5 } }}>
         <Stack spacing={{ xs: 3, md: 4 }}>
           <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', lg: '1fr 1fr' }, gap: 2 }}>
             <MixCard flow={imports} />

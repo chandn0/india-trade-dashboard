@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <Box
       component="footer"
-      sx={{ borderTop: '1px solid', borderColor: 'divider', py: 3.5, bgcolor: '#f8fafc' }}
+      sx={{ borderTop: '1px solid', borderColor: 'divider', py: 3.5, bgcolor: '#eeece5' }}
     >
       <Container maxWidth="xl">
         <Stack spacing={2} sx={{ maxWidth: 960 }}>
@@ -19,7 +19,7 @@ export default function Footer() {
             sx={{
               p: 2,
               borderRadius: 2.5,
-              bgcolor: '#fff',
+              bgcolor: 'background.paper',
               border: '1px solid',
               borderColor: 'divider',
               display: 'flex',
@@ -56,7 +56,7 @@ export default function Footer() {
                   color: '#0f172a',
                   textDecoration: 'underline',
                   textUnderlineOffset: '2px',
-                  '&:hover': { color: '#2563eb' },
+                  '&:hover': { color: 'text.secondary' },
                 }}
               >
                 GitHub Repository ↗
@@ -70,10 +70,10 @@ export default function Footer() {
                 sx={{
                   fontSize: 12,
                   fontWeight: 700,
-                  color: '#0f766e',
+                  color: '#0f172a',
                   textDecoration: 'underline',
                   textUnderlineOffset: '2px',
-                  '&:hover': { color: '#0d9488' },
+                  '&:hover': { color: 'text.secondary' },
                 }}
               >
                 Contribute ↗
@@ -87,10 +87,10 @@ export default function Footer() {
                 sx={{
                   fontSize: 12,
                   fontWeight: 700,
-                  color: '#4338ca',
+                  color: '#0f172a',
                   textDecoration: 'underline',
                   textUnderlineOffset: '2px',
-                  '&:hover': { color: '#6366f1' },
+                  '&:hover': { color: 'text.secondary' },
                 }}
               >
                 Report Issues ↗

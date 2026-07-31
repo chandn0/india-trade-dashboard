@@ -39,8 +39,8 @@ import cardSx from '../primitives/cardSx.js';
 
 const categoryColors = {
   buildable: C.blue,
-  'partly buildable': '#4f46e5',
-  growable: '#15803d',
+  'partly buildable': C.purple,
+  growable: '#5f7b58',
   recoverable: C.teal,
   substitutable: C.purple,
   'structurally imported': C.slate,
@@ -249,10 +249,10 @@ export default function ProductDiscovery() {
           sx={{
             p: { xs: 2.25, md: 3 },
             color: '#fff',
-            background: `linear-gradient(125deg, ${C.ink} 0%, #172554 60%, #163b39 130%)`,
+            background: `linear-gradient(120deg, ${C.ink} 0%, #253249 100%)`,
           }}
         >
-          <Typography variant="overline" sx={{ color: '#7dd3fc' }}>
+          <Typography variant="overline" sx={{ color: 'rgba(255,255,255,0.62)' }}>
             Product discovery · Buildability atlas
           </Typography>
           <Typography component="h2" variant="h4" sx={{ mt: 0.5, maxWidth: 820 }}>
@@ -281,12 +281,12 @@ export default function ProductDiscovery() {
           >
             <Metric label="Products shown" value={filtered.length} />
             <Metric label="Gross imports" value={moneyB(totals.imports)} />
-            <Metric label="Export offset" value={moneyB(totals.exports)} tone="#7dd3fc" />
-            <Metric label="Net deficit" value={moneyB(totals.deficit)} tone="#fda4af" />
+            <Metric label="Export offset" value={moneyB(totals.exports)} tone="#9fb4ca" />
+            <Metric label="Net deficit" value={moneyB(totals.deficit)} tone="#d49a9f" />
             <Metric
               label="Realistic net range"
               value={`${moneyB(totals.low)}–${moneyB(totals.high)}`}
-              tone="#5eead4"
+              tone="#9db7b1"
               note="Sum of curated product-level scenario ranges applied to net deficit. These are directional scenarios, not forecasts."
             />
           </Box>

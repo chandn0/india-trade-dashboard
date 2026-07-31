@@ -22,7 +22,7 @@ function StageChip({ stage }) {
     'finished product': C.blue,
     'capital good': C.teal,
     'energy input': C.orange,
-    'agricultural commodity': '#15803d',
+    'agricultural commodity': '#5f7b58',
     'consumption asset': '#be185d',
   };
   return (
@@ -134,19 +134,19 @@ export function OpportunityEvidenceCard({ selected, flowName, rankKey, historyKe
               fontWeight: 700,
               color:
                 selected.reviewStatus === 'reviewed'
-                  ? '#15803d'
+                  ? '#5f7b58'
                   : selected.reviewStatus === 'mixed-use'
                     ? C.purple
                     : '#b45309',
               bgcolor:
                 selected.reviewStatus === 'reviewed'
-                  ? alpha('#15803d', 0.1)
+                  ? alpha('#5f7b58', 0.1)
                   : selected.reviewStatus === 'mixed-use'
                     ? alpha(C.purple, 0.1)
                     : alpha('#b45309', 0.1),
               border: `1px solid ${
                 selected.reviewStatus === 'reviewed'
-                  ? alpha('#15803d', 0.2)
+                  ? alpha('#5f7b58', 0.2)
                   : selected.reviewStatus === 'mixed-use'
                     ? alpha(C.purple, 0.2)
                     : alpha('#b45309', 0.2)
@@ -330,7 +330,7 @@ export function OpportunityEvidenceCard({ selected, flowName, rankKey, historyKe
               const f = selected.quantityUnitValue[flow];
               const isExport = flow === 'exports';
               const color = isExport ? C.blue : C.orange;
-              const goodColor = isExport ? '#15803d' : C.red;
+              const goodColor = isExport ? '#5f7b58' : C.red;
               const formatVal = (v) =>
                 v != null ? (v > 0 ? '+' : '') + '$' + (v / 1e6).toFixed(1) + 'M' : 'N/A';
 
@@ -974,9 +974,9 @@ export function OpportunityEvidenceCard({ selected, flowName, rankKey, historyKe
                     size="small"
                     label={selected.policyOverlay.status}
                     sx={{
-                      bgcolor: alpha('#15803d', 0.08),
-                      color: '#15803d',
-                      borderColor: alpha('#15803d', 0.25),
+                      bgcolor: alpha('#5f7b58', 0.08),
+                      color: '#5f7b58',
+                      borderColor: alpha('#5f7b58', 0.25),
                     }}
                     variant="outlined"
                   />

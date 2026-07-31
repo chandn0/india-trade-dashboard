@@ -27,7 +27,7 @@ export default function CompositionChart({
   const compact = width < COMPACT_BELOW;
   // Rendered at width:100%/height:auto, so on-screen height = containerWidth * (height/width).
   // Phones get a taller aspect so the stacked bands stay thick enough to read.
-  const height = Math.round(width * (compact ? 0.9 : 0.42));
+  const height = Math.round(width * (compact ? 0.86 : 0.34));
   const pad = compact
     ? { top: 20, right: 12, bottom: 42, left: 42 }
     : { top: 24, right: 22, bottom: 48, left: 52 };
@@ -84,7 +84,7 @@ export default function CompositionChart({
   const flip = tipLeft > 58;
 
   return (
-    <Paper sx={{ ...cardSx, borderColor: alpha(accent, 0.2) }}>
+    <Paper sx={cardSx}>
       <Stack spacing={1.25}>
         <Box
           sx={{

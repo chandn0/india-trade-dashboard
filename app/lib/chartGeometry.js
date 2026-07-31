@@ -2,7 +2,7 @@ import { COMPACT_BELOW } from './responsive.js';
 
 export function buildTradeGeo(data, width) {
   const compact = width < COMPACT_BELOW;
-  const height = Math.round(width * (compact ? 0.78 : 0.4));
+  const height = Math.round(width * (compact ? 0.78 : 0.33));
   const pad = compact
     ? { top: 32, right: 14, bottom: 42, left: 44 }
     : { top: 30, right: 24, bottom: 52, left: 52 };

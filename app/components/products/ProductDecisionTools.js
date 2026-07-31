@@ -148,7 +148,7 @@ export function ProductSignals({ products }) {
         />
         <SignalList
           title="Primary export strengths"
-          tone="#15803d"
+          tone="#5f7b58"
           products={upgrading}
           valueFor={(product) => moneyB(product.latestExportUsdMn)}
           note="Candidates for downstream value-add analysis"
@@ -316,7 +316,7 @@ export function ScenarioModeller({ products }) {
         sx={{
           p: { xs: 2, md: 2.5 },
           color: '#fff',
-          background: `linear-gradient(120deg, ${C.ink}, #172554)`,
+          background: `linear-gradient(120deg, ${C.ink}, #253249)`,
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'flex-start',
@@ -324,9 +324,9 @@ export function ScenarioModeller({ products }) {
       >
         <Box>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <CalculateRounded sx={{ color: '#5eead4' }} />
+            <CalculateRounded sx={{ color: '#9db7b1' }} />
             <Box>
-              <Typography variant="overline" sx={{ color: '#5eead4' }}>
+              <Typography variant="overline" sx={{ color: '#9db7b1' }}>
                 Scenario laboratory
               </Typography>
               <Typography variant="h5">Translate gross ambition into net impact</Typography>

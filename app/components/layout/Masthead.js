@@ -1,5 +1,4 @@
 import { Box, Chip, Container, Typography } from '@mui/material';
-import { alpha } from '@mui/material/styles';
 import { C } from '../../theme.js';
 import { latestFyLabel, latestStatusNote } from '../../lib/transforms.js';
 
@@ -76,10 +75,10 @@ export default function Masthead() {
             sx={{
               fontSize: 12,
               fontWeight: 700,
-              color: '#5eead4',
+              color: 'rgba(231,236,245,0.78)',
               textDecoration: 'none',
               '&:hover': { textDecoration: 'underline' },
-              '&:focus-visible': { outline: '2px solid #5eead4', outlineOffset: 3 },
+              '&:focus-visible': { outline: '2px solid #cbd5e1', outlineOffset: 3 },
             }}
           >
             Contribute ↗
@@ -99,8 +98,8 @@ export default function Masthead() {
           }
           sx={{
             display: 'flex',
-            bgcolor: alpha(C.purple, 0.32),
-            color: '#d9cbff',
+            bgcolor: 'rgba(255,255,255,0.09)',
+            color: 'rgba(255,255,255,0.82)',
             fontWeight: 700,
             flexShrink: 0,
           }}

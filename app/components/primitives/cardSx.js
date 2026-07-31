@@ -1,9 +1,9 @@
 const cardSx = {
-  p: { xs: 2, md: 2.25 },
+  p: { xs: 2, md: 2.5 },
   border: '1px solid',
   borderColor: 'divider',
-  borderRadius: 3,
-  boxShadow: '0 1px 2px rgba(15,23,42,0.04), 0 8px 24px -18px rgba(15,23,42,0.25)',
+  borderRadius: 1.5,
+  boxShadow: '0 1px 1px rgba(15,23,42,0.035), 0 10px 24px -22px rgba(15,23,42,0.28)',
 };
 
 export default cardSx;

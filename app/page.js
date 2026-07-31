@@ -41,8 +41,8 @@ function Dashboard() {
   return (
     <Box sx={{ bgcolor: 'background.default', minHeight: '100vh' }}>
       <Masthead />
-      <Container maxWidth="xl" sx={{ py: { xs: 3, md: 4 } }}>
-        <Stack spacing={{ xs: 4, md: 5 }}>
+      <Container maxWidth="xl" sx={{ py: { xs: 3, md: 5 } }}>
+        <Stack spacing={{ xs: 4.5, md: 6 }}>
           <Box component="section" id="trends" data-section>
             <TradeTrendChart />
           </Box>
