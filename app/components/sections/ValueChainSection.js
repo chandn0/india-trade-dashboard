@@ -61,7 +61,9 @@ export default function ValueChainSection() {
             flexWrap: 'wrap',
           }}
         >
-          <Typography variant="h6">How imports feed exports</Typography>
+          <Typography component="h2" variant="h6">
+            How imports feed exports
+          </Typography>
           <Chip
             size="small"
             label={`FY${fyTick(HS4_YEARS[0])} → FY${fyTick(HS4_YEARS[last])}`}

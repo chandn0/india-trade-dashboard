@@ -15,6 +15,15 @@ export function useProductStageData() {
       return undefined;
     }
 
+    const loadIfNearViewport = () => {
+      const bounds = sentinel.getBoundingClientRect();
+      if (bounds.top <= window.innerHeight + 900 && bounds.bottom >= -900) {
+        setShouldLoad(true);
+        return true;
+      }
+      return false;
+    };
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -25,7 +34,23 @@ export function useProductStageData() {
       { rootMargin: '900px 0px' },
     );
     observer.observe(sentinel);
-    return () => observer.disconnect();
+    const handleViewportChange = () => {
+      if (loadIfNearViewport()) {
+        observer.disconnect();
+        window.removeEventListener('scroll', handleViewportChange);
+        window.removeEventListener('resize', handleViewportChange);
+      }
+    };
+    window.addEventListener('scroll', handleViewportChange, { passive: true });
+    window.addEventListener('resize', handleViewportChange);
+    const animationFrame = requestAnimationFrame(handleViewportChange);
+
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(animationFrame);
+      window.removeEventListener('scroll', handleViewportChange);
+      window.removeEventListener('resize', handleViewportChange);
+    };
   }, []);
 
   React.useEffect(() => {

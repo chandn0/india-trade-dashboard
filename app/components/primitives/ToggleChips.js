@@ -16,6 +16,7 @@ export default function ToggleChips({ options, value, onChange, colorFor }) {
             label={label}
             onClick={() => onChange(key)}
             sx={{
+              minHeight: 32,
               cursor: 'pointer',
               fontWeight: 700,
               bgcolor: on ? alpha(c, 0.12) : 'transparent',

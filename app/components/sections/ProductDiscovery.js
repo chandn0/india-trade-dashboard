@@ -255,7 +255,7 @@ export default function ProductDiscovery() {
           <Typography variant="overline" sx={{ color: '#7dd3fc' }}>
             Product discovery · Buildability atlas
           </Typography>
-          <Typography variant="h4" sx={{ mt: 0.5, maxWidth: 820 }}>
+          <Typography component="h2" variant="h4" sx={{ mt: 0.5, maxWidth: 820 }}>
             From import bill to realistic domestic opportunity
           </Typography>
           <Typography

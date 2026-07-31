@@ -62,6 +62,7 @@ export default function Masthead() {
               color: 'rgba(231,236,245,0.85)',
               textDecoration: 'none',
               '&:hover': { color: '#fff', textDecoration: 'underline' },
+              '&:focus-visible': { outline: '2px solid #93c5fd', outlineOffset: 3 },
             }}
           >
             GitHub ↗
@@ -78,6 +79,7 @@ export default function Masthead() {
               color: '#5eead4',
               textDecoration: 'none',
               '&:hover': { textDecoration: 'underline' },
+              '&:focus-visible': { outline: '2px solid #5eead4', outlineOffset: 3 },
             }}
           >
             Contribute ↗
@@ -85,9 +87,18 @@ export default function Masthead() {
         </Box>
         <Chip
           size="small"
-          label={`Data through ${latestFyLabel}${latestStatusNote ? ` · ${latestStatusNote}` : ''}`}
+          label={
+            <>
+              <Box component="span" sx={{ display: { xs: 'inline', sm: 'none' } }}>
+                {latestFyLabel}
+              </Box>
+              <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' } }}>
+                {`Data through ${latestFyLabel}${latestStatusNote ? ` · ${latestStatusNote}` : ''}`}
+              </Box>
+            </>
+          }
           sx={{
-            display: { xs: 'none', sm: 'flex' },
+            display: 'flex',
             bgcolor: alpha(C.purple, 0.32),
             color: '#d9cbff',
             fontWeight: 700,

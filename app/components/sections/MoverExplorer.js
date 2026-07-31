@@ -86,7 +86,9 @@ export default function MoverExplorer() {
             flexWrap: 'wrap',
           }}
         >
-          <Typography variant="h6">Explore export &amp; import product lines</Typography>
+          <Typography component="h3" variant="h6">
+            Explore export &amp; import product lines
+          </Typography>
           <Chip
             size="small"
             label={windowLabel}

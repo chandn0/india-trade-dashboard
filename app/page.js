@@ -1,6 +1,7 @@
 'use client';
 
-import { Box, Container, Stack } from '@mui/material';
+import { Box, Container, Stack, Typography } from '@mui/material';
+import { C } from './theme.js';
 
 import { exportComp, importComp, exportMovers, importMovers } from './lib/transforms.js';
 
@@ -20,6 +21,22 @@ import ValueChainSection from './components/sections/ValueChainSection.js';
 import ProductDiscovery from './components/sections/ProductDiscovery.js';
 import ProductStageSection from './components/sections/ProductStageSection.js';
 
+function SectionIntro({ eyebrow, title, description, color = C.purple }) {
+  return (
+    <Box sx={{ mb: 2, maxWidth: 760 }}>
+      <Typography variant="overline" sx={{ color }}>
+        {eyebrow}
+      </Typography>
+      <Typography component="h2" variant="h4" sx={{ mt: 0.25 }}>
+        {title}
+      </Typography>
+      <Typography sx={{ mt: 0.6, color: 'text.secondary', fontSize: 13.5, lineHeight: 1.6 }}>
+        {description}
+      </Typography>
+    </Box>
+  );
+}
+
 function Dashboard() {
   return (
     <Box sx={{ bgcolor: 'background.default', minHeight: '100vh' }}>
@@ -31,6 +48,12 @@ function Dashboard() {
           </Box>
 
           <Box component="section" id="basket-mix" data-section>
+            <SectionIntro
+              eyebrow="Commodity mix"
+              title="What India trades"
+              description="See the latest export and import baskets, then follow how their industry mix has changed over time."
+              color={C.blue}
+            />
             <Box
               sx={{
                 display: 'grid',
@@ -59,6 +82,12 @@ function Dashboard() {
           </Box>
 
           <Box component="section" id="partners" data-section>
+            <SectionIntro
+              eyebrow="Trading partners"
+              title="Who India trades with"
+              description="Compare the largest bilateral relationships, their balances, and how partner shares have shifted."
+              color={C.teal}
+            />
             <Box
               sx={{
                 display: 'grid',
@@ -74,6 +103,12 @@ function Dashboard() {
           </Box>
 
           <Box component="section" id="item-trends" data-section>
+            <SectionIntro
+              eyebrow="Product shifts"
+              title="Where trade is moving"
+              description="Find the HS-4 product lines driving the largest gains and declines in India’s trade basket."
+              color={C.orange}
+            />
             <Box
               sx={{
                 display: 'grid',

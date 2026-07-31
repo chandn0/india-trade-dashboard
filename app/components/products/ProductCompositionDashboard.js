@@ -482,13 +482,19 @@ function NetBalancePanel() {
         </Typography>
       </Box>
       <TableContainer>
-        <Table size="small">
+        <Table size="small" sx={{ tableLayout: { xs: 'fixed', sm: 'auto' } }}>
           <TableHead>
             <TableRow>
-              <TableCell>Stage</TableCell>
-              <TableCell align="right">Imports</TableCell>
-              <TableCell align="right">Exports</TableCell>
-              <TableCell align="right">Net</TableCell>
+              <TableCell sx={{ width: { xs: '42%', sm: 'auto' } }}>Stage</TableCell>
+              <TableCell align="right" sx={{ width: { xs: '27%', sm: 'auto' } }}>
+                Imports
+              </TableCell>
+              <TableCell align="right" sx={{ display: { xs: 'none', sm: 'table-cell' } }}>
+                Exports
+              </TableCell>
+              <TableCell align="right" sx={{ width: { xs: '31%', sm: 'auto' } }}>
+                Net
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -500,7 +506,10 @@ function NetBalancePanel() {
                 <TableCell align="right" sx={{ ...mono, fontSize: 11 }}>
                   {moneyB(row.importUsdMn)}
                 </TableCell>
-                <TableCell align="right" sx={{ ...mono, fontSize: 11 }}>
+                <TableCell
+                  align="right"
+                  sx={{ ...mono, fontSize: 11, display: { xs: 'none', sm: 'table-cell' } }}
+                >
                   {moneyB(row.exportUsdMn)}
                 </TableCell>
                 <TableCell align="right">
@@ -1036,6 +1045,7 @@ export default function ProductCompositionDashboard() {
           </Typography>
           <Typography
             variant="h2"
+            component="h1"
             sx={{ mt: 0.5, maxWidth: 920, fontSize: { xs: 38, md: 58 }, lineHeight: 1.02 }}
           >
             What India buys, what India sells, and how much value is added
