@@ -1,5 +1,6 @@
 'use client';
 
+import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import {
   ArrowBack,
@@ -14,7 +15,17 @@ import {
   Science,
   TwoWheeler,
 } from '@mui/icons-material';
-import { Box, Button, Container, Divider, Paper, Stack, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  Container,
+  Divider,
+  Paper,
+  Stack,
+  ToggleButton,
+  ToggleButtonGroup,
+  Typography,
+} from '@mui/material';
 import crudeCountryData from '../../data/india_petroleum_crude_country_mix.json';
 import importData from '../../data/india_trade_hs4_world_import_5fy.json';
 import exportData from '../../data/india_trade_hs4_world_export_5fy.json';
@@ -26,6 +37,7 @@ import { C, fontDisplay, mono } from '../theme.js';
 const YEARS = ['2021-22', '2022-23', '2023-24', '2024-25', '2025-26'];
 const latestYear = YEARS.at(-1);
 const latestTotalImports = 774.97819;
+const latestConsumptionTotal = 241.6;
 
 const COUNTRY_NAMES = {
   'SAUDI ARAB': 'Saudi Arabia',
@@ -41,18 +53,35 @@ const COUNTRY_NAMES = {
 
 const importLines = [
   { code: '2709', label: 'Crude oil', color: '#374151' },
-  { code: '2711', label: 'Petroleum gas & LPG feedstocks', color: '#5b6f77' },
+  { code: '2711', label: 'Petroleum gas, including LNG & LPG', color: '#5b6f77' },
   { code: '2710', label: 'Refined petroleum products', color: '#7b6f65' },
   { code: '2713', label: 'Petroleum coke, bitumen & residues', color: '#8b7b5f' },
   { code: '2712', label: 'Petroleum jelly, waxes & related products', color: '#9b9588' },
 ];
 
 const consumption = [
-  { label: 'Diesel', value: 91.41, share: 38.2, use: 'Freight, buses, farming and industry' },
-  { label: 'Petrol', value: 40.01, share: 16.7, use: 'Two-wheelers, cars and utility vehicles' },
-  { label: 'LPG', value: 31.32, share: 13.1, use: 'Homes, commercial kitchens and industry' },
-  { label: 'Aviation fuel', value: 8.99, share: 3.8, use: 'Passenger and cargo aviation' },
-  { label: 'Bitumen', value: 8.33, share: 3.5, use: 'Roads and construction' },
+  { label: 'Diesel', value: 94.7, use: 'Freight, buses, farming and industry' },
+  { label: 'Petrol', value: 42.6, use: 'Two-wheelers, cars and utility vehicles' },
+  { label: 'LPG', value: 33.2, use: 'Homes, commercial kitchens and industry' },
+  { label: 'Pet coke', value: 18.4, use: 'Cement and energy-intensive industry' },
+  { label: 'Naphtha', value: 11.7, use: 'Petrochemicals and fertiliser feedstock' },
+  {
+    label: 'Remaining',
+    value: 23.1,
+    use: 'Derived remainder: fuel oil, lubes, LDO, kerosene and others',
+  },
+  { label: 'Aviation fuel', value: 9.2, use: 'Passenger and cargo aviation' },
+  { label: 'Bitumen', value: 8.7, use: 'Roads and construction' },
+].map((item) => ({
+  ...item,
+  share: (item.value / latestConsumptionTotal) * 100,
+}));
+
+const petrolFacts = [
+  { value: '42.6 MMT', label: 'Petrol consumed', note: 'FY2025–26' },
+  { value: '17.6%', label: 'Share of petroleum use', note: 'by mass' },
+  { value: '+6.5%', label: 'Annual consumption growth', note: 'from 40.0 MMT' },
+  { value: '20%', label: 'Ethanol blending', note: 'FY2025–26' },
 ];
 
 const vehicleMix = [
@@ -84,18 +113,7 @@ const petroleumImportTotal = petroleumImports.reduce((sum, item) => sum + item.v
 const crudeImports = petroleumImports[0].value;
 const refinedExports = valueFor(exportData, '2710');
 
-const startCountries = new Map(
-  crudeCountryData.series[0].countries.map((item) => [item.country, item]),
-);
-const countryRows = crudeCountryData.series
-  .at(-1)
-  .countries.slice(0, 7)
-  .map((item) => ({
-    ...item,
-    label: COUNTRY_NAMES[item.country] || item.country,
-    startShare: startCountries.get(item.country)?.sharePct || 0,
-    change: item.sharePct - (startCountries.get(item.country)?.sharePct || 0),
-  }));
+const supplierColors = [C.orange, C.blueDeep, C.teal, C.purple, '#7b6f65'];
 
 function formatUsd(value, digits = 1) {
   return `$${value.toFixed(digits)}bn`;
@@ -137,9 +155,175 @@ function SectionHeading({ eyebrow, title, body }) {
   );
 }
 
+function SupplierTrendChart({ metric, countryCodes }) {
+  const shareKey = metric === 'value' ? 'sharePct' : 'quantitySharePct';
+  const width = 720;
+  const height = 270;
+  const margin = { top: 18, right: 18, bottom: 38, left: 42 };
+  const innerWidth = width - margin.left - margin.right;
+  const innerHeight = height - margin.top - margin.bottom;
+  const x = (index) => margin.left + (index / (crudeCountryData.series.length - 1)) * innerWidth;
+  const y = (share) => margin.top + innerHeight - (Math.min(40, share) / 40) * innerHeight;
+
+  return (
+    <Box>
+      <Box
+        component="svg"
+        viewBox={`0 0 ${width} ${height}`}
+        role="img"
+        aria-label={`Five-year crude supplier ${metric} share trend`}
+        sx={{ width: '100%', height: 'auto', display: 'block' }}
+      >
+        {[0, 10, 20, 30, 40].map((tick) => (
+          <g key={tick}>
+            <line
+              x1={margin.left}
+              x2={width - margin.right}
+              y1={y(tick)}
+              y2={y(tick)}
+              stroke="#dedbd3"
+              strokeWidth="1"
+            />
+            <text
+              x={margin.left - 9}
+              y={y(tick) + 4}
+              textAnchor="end"
+              fill="#7a8290"
+              fontSize="11"
+              fontFamily="IBM Plex Mono, monospace"
+            >
+              {tick}%
+            </text>
+          </g>
+        ))}
+        {countryCodes.map((country, countryIndex) => {
+          const points = crudeCountryData.series.map((year, index) => {
+            const row = year.countries.find((item) => item.country === country);
+            return [x(index), y(row?.[shareKey] || 0)];
+          });
+          const path = points
+            .map(([px, py], index) => `${index ? 'L' : 'M'} ${px} ${py}`)
+            .join(' ');
+          return (
+            <g key={country}>
+              <path
+                d={path}
+                fill="none"
+                stroke={supplierColors[countryIndex]}
+                strokeWidth={country === 'RUSSIA' ? 3.5 : 2.25}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              {points.map(([px, py], index) => (
+                <circle
+                  key={`${country}-${index}`}
+                  cx={px}
+                  cy={py}
+                  r={country === 'RUSSIA' ? 4 : 3}
+                  fill="#fffdf9"
+                  stroke={supplierColors[countryIndex]}
+                  strokeWidth="2"
+                />
+              ))}
+            </g>
+          );
+        })}
+        {crudeCountryData.series.map((year, index) => (
+          <text
+            key={year.fiscalYear}
+            x={x(index)}
+            y={height - 12}
+            textAnchor="middle"
+            fill="#687283"
+            fontSize="11"
+            fontFamily="IBM Plex Mono, monospace"
+          >
+            {year.fiscalYear.replace('FY', 'FY')}
+          </text>
+        ))}
+      </Box>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5, mt: 0.5 }}>
+        {countryCodes.map((country, index) => (
+          <Box key={country} sx={{ display: 'flex', alignItems: 'center', gap: 0.6 }}>
+            <Box sx={{ width: 13, height: 3, borderRadius: 99, bgcolor: supplierColors[index] }} />
+            <Typography sx={{ fontSize: 11.5, fontWeight: 700 }}>
+              {COUNTRY_NAMES[country] || country}
+            </Typography>
+          </Box>
+        ))}
+      </Box>
+    </Box>
+  );
+}
+
 function CountryShift() {
+  const [metric, setMetric] = useState('value');
+  const shareKey = metric === 'value' ? 'sharePct' : 'quantitySharePct';
+  const rankKey = metric === 'value' ? 'valueUsdMillion' : 'quantityTons';
+  const latest = crudeCountryData.series.at(-1);
+  const start = crudeCountryData.series[0];
+  const countryRows = useMemo(() => {
+    const startCountries = new Map(start.countries.map((item) => [item.country, item]));
+    return [...latest.countries]
+      .sort((a, b) => b[rankKey] - a[rankKey])
+      .slice(0, 7)
+      .map((item) => ({
+        ...item,
+        label: COUNTRY_NAMES[item.country] || item.country,
+        startShare: startCountries.get(item.country)?.[shareKey] || 0,
+        change: item[shareKey] - (startCountries.get(item.country)?.[shareKey] || 0),
+      }));
+  }, [latest.countries, rankKey, shareKey, start.countries]);
+  const countryCodes = countryRows.slice(0, 5).map((item) => item.country);
+  const concentration = crudeCountryData.series.map((year) => ({
+    fiscalYear: year.fiscalYear,
+    share: [...year.countries]
+      .sort((a, b) => b[rankKey] - a[rankKey])
+      .slice(0, 3)
+      .reduce((sum, item) => sum + item[shareKey], 0),
+  }));
+  const peakConcentration = concentration.reduce((peak, item) =>
+    item.share > peak.share ? item : peak,
+  );
+  const latestTop3 = concentration.at(-1).share;
+  const latestTotal =
+    metric === 'value'
+      ? formatUsd(latest.totalUsdMillion / 1000)
+      : `${(latest.totalQuantityTons / 1_000_000).toFixed(1)} MMT`;
+  const latestUnitValue = (latest.totalUsdMillion * 1_000_000) / latest.totalQuantityTons;
+
   return (
     <Paper sx={{ ...cardSx, overflow: 'hidden' }}>
+      <Box
+        sx={{
+          mb: 2.5,
+          display: 'flex',
+          flexDirection: { xs: 'column', sm: 'row' },
+          alignItems: { xs: 'flex-start', sm: 'center' },
+          justifyContent: 'space-between',
+          gap: 1.5,
+        }}
+      >
+        <Box>
+          <Typography sx={{ fontSize: 13, fontWeight: 800 }}>Share of crude imports</Typography>
+          <Typography sx={{ mt: 0.2, fontSize: 11.5, color: 'text.secondary' }}>
+            Switch between customs value and physical tonnes
+          </Typography>
+        </Box>
+        <ToggleButtonGroup
+          value={metric}
+          exclusive
+          size="small"
+          aria-label="Supplier share metric"
+          onChange={(_, next) => next && setMetric(next)}
+          sx={{ '& .MuiToggleButton-root': { px: 1.6, py: 0.55, fontSize: 11.5, fontWeight: 800 } }}
+        >
+          <ToggleButton value="value">Value share</ToggleButton>
+          <ToggleButton value="volume">Volume share</ToggleButton>
+        </ToggleButtonGroup>
+      </Box>
+      <SupplierTrendChart metric={metric} countryCodes={countryCodes} />
+      <Divider sx={{ my: 2.5 }} />
       <Box
         sx={{
           display: 'grid',
@@ -207,7 +391,7 @@ function CountryShift() {
                   <Box
                     sx={{
                       height: '100%',
-                      width: `${Math.min(100, row.sharePct * 2.7)}%`,
+                      width: `${Math.min(100, row[shareKey] * 2.5)}%`,
                       bgcolor: row.country === 'RUSSIA' ? C.orange : C.blueDeep,
                     }}
                   />
@@ -219,7 +403,7 @@ function CountryShift() {
                 {row.startShare.toFixed(1)}%
               </Typography>
               <Typography sx={{ ...mono, fontSize: 12.5, textAlign: 'right', fontWeight: 700 }}>
-                {row.sharePct.toFixed(1)}%
+                {row[shareKey].toFixed(1)}%
               </Typography>
               <Typography
                 sx={{
@@ -239,22 +423,53 @@ function CountryShift() {
           sx={{ p: { xs: 2, md: 2.5 }, bgcolor: '#f1eee6', borderRadius: 1.5, alignSelf: 'start' }}
         >
           <Typography variant="overline" sx={{ color: C.orange }}>
-            The structural shift
+            What changed
           </Typography>
           <Typography variant="h5" sx={{ mt: 0.5 }}>
-            Russia went from 9th to 1st.
+            Russia went from 9th to 1st—but its share has eased from the peak.
           </Typography>
           <Typography sx={{ mt: 1.2, color: 'text.secondary', fontSize: 13.5, lineHeight: 1.7 }}>
-            Its share rose from 2.0% in FY2021–22 to 30.3% in FY2025–26, while Iraq and Saudi Arabia
-            remained major suppliers but lost share.
+            Russia reached {metric === 'value' ? '35.2%' : '35.8%'} in FY2024–25, then moved to{' '}
+            {countryRows.find((item) => item.country === 'RUSSIA')?.[shareKey].toFixed(1)}% in the
+            latest year. Iraq and Saudi Arabia remain major suppliers.
           </Typography>
           <Divider sx={{ my: 2 }} />
-          <Typography sx={{ fontSize: 12.5, fontWeight: 800 }}>
-            Read values as trade exposure—not barrels.
-          </Typography>
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: { xs: '1fr 1fr', sm: 'repeat(3,1fr)' },
+              gap: 1.5,
+            }}
+          >
+            <Box>
+              <Typography sx={{ ...mono, fontSize: 19, fontWeight: 700 }}>{latestTotal}</Typography>
+              <Typography sx={{ fontSize: 10.8, color: 'text.secondary' }}>latest total</Typography>
+            </Box>
+            <Box>
+              <Typography sx={{ ...mono, fontSize: 19, fontWeight: 700 }}>
+                {latestTop3.toFixed(1)}%
+              </Typography>
+              <Typography sx={{ fontSize: 10.8, color: 'text.secondary' }}>
+                top-three share
+              </Typography>
+            </Box>
+            <Box>
+              <Typography sx={{ ...mono, fontSize: 19, fontWeight: 700 }}>
+                ${latestUnitValue.toFixed(0)}/t
+              </Typography>
+              <Typography sx={{ fontSize: 10.8, color: 'text.secondary' }}>
+                average customs value
+              </Typography>
+            </Box>
+          </Box>
           <Typography sx={{ mt: 0.5, color: 'text.secondary', fontSize: 12.5, lineHeight: 1.6 }}>
-            Country shares are based on US dollar import value, so they reflect both quantity and
-            the price paid.
+            Top-three concentration peaked at {peakConcentration.share.toFixed(1)}% in{' '}
+            {peakConcentration.fiscalYear}. Value and volume shares differ because crude grades and
+            prices differ by supplier.
+          </Typography>
+          <Typography sx={{ mt: 1, color: 'text.secondary', fontSize: 12.5, lineHeight: 1.6 }}>
+            In FY2025–26 customs volume rose 6.3%, while value fell 5.8%. The average unit value
+            dropped about 11.4%, showing why the bill can fall even when imported tonnes rise.
           </Typography>
         </Box>
       </Box>
@@ -306,7 +521,56 @@ function ImportMix() {
   );
 }
 
+function DefinitionNote() {
+  return (
+    <Paper sx={{ ...cardSx, mt: 2, bgcolor: '#f7f4ed' }}>
+      <Typography variant="overline" sx={{ color: C.teal }}>
+        Why two official totals can differ
+      </Typography>
+      <Box
+        sx={{
+          mt: 1,
+          display: 'grid',
+          gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+          gap: { xs: 2, md: 4 },
+        }}
+      >
+        <Box>
+          <Typography sx={{ fontSize: 13, fontWeight: 800 }}>Customs trade lens</Typography>
+          <Typography sx={{ ...mono, mt: 0.5, fontSize: 17, fontWeight: 700 }}>
+            $134.7bn · 259.8 MMT
+          </Typography>
+          <Typography sx={{ mt: 0.55, color: 'text.secondary', fontSize: 12.2, lineHeight: 1.6 }}>
+            TradeStat’s HS 2709 declarations. This is the consistent source for supplier shares and
+            merchandise-trade comparisons on this page.
+          </Typography>
+        </Box>
+        <Box
+          sx={{ borderLeft: { md: '1px solid' }, borderColor: { md: 'divider' }, pl: { md: 4 } }}
+        >
+          <Typography sx={{ fontSize: 13, fontWeight: 800 }}>Energy-sector lens</Typography>
+          <Typography sx={{ ...mono, mt: 0.5, fontSize: 17, fontWeight: 700 }}>
+            $121.8bn · 245.3 MMT
+          </Typography>
+          <Typography sx={{ mt: 0.55, color: 'text.secondary', fontSize: 12.2, lineHeight: 1.6 }}>
+            PPAC’s crude-import series. It is used for refinery, consumption and dependency
+            indicators. Coverage, timing and valuation differ, so the two series should not be
+            silently combined.
+          </Typography>
+        </Box>
+      </Box>
+    </Paper>
+  );
+}
+
 function RefineryFlow() {
+  const systemScale = [
+    { value: '28.0 MMT', label: 'Domestic crude production' },
+    { value: '245.3 MMT', label: 'Crude imported' },
+    { value: '272.1 MMT', label: 'Crude processed' },
+    { value: '284.9 MMT', label: 'Petroleum products produced' },
+    { value: '61.5 MMT', label: 'Petroleum products exported' },
+  ];
   return (
     <Paper sx={{ ...cardSx, bgcolor: '#f7f4ed' }}>
       <Box
@@ -382,6 +646,30 @@ function RefineryFlow() {
           ))}
         </Box>
       </Box>
+      <Box
+        sx={{
+          mt: 2.5,
+          pt: 2.5,
+          borderTop: '1px solid',
+          borderColor: 'divider',
+          display: 'grid',
+          gridTemplateColumns: { xs: '1fr 1fr', md: 'repeat(5,1fr)' },
+          gap: 2,
+        }}
+      >
+        {systemScale.map((item) => (
+          <Box key={item.label}>
+            <Typography sx={{ ...mono, fontSize: 17, fontWeight: 700 }}>{item.value}</Typography>
+            <Typography sx={{ mt: 0.3, color: 'text.secondary', fontSize: 10.8, lineHeight: 1.45 }}>
+              {item.label}
+            </Typography>
+          </Box>
+        ))}
+      </Box>
+      <Typography sx={{ mt: 1.5, color: 'text.secondary', fontSize: 10.8, lineHeight: 1.5 }}>
+        FY2025–26 · PPAC. These indicators describe system scale, not a closed mass balance;
+        inventories, refinery gains, feedstocks and product categories differ.
+      </Typography>
     </Paper>
   );
 }
@@ -402,7 +690,7 @@ function ConsumptionMix() {
               key={item.label}
               sx={{
                 display: 'grid',
-                gridTemplateColumns: '82px minmax(0,1fr) 58px',
+                gridTemplateColumns: '92px minmax(0,1fr) 62px',
                 gap: 1.25,
                 py: 1.15,
                 alignItems: 'center',
@@ -432,7 +720,7 @@ function ConsumptionMix() {
               </Box>
               <Box sx={{ textAlign: 'right' }}>
                 <Typography sx={{ ...mono, fontSize: 12.5, fontWeight: 700 }}>
-                  {item.share}%
+                  {item.share.toFixed(1)}%
                 </Typography>
                 <Typography sx={{ ...mono, fontSize: 10.5, color: 'text.secondary' }}>
                   {item.value} MMT
@@ -451,13 +739,48 @@ function ConsumptionMix() {
             Petrol is only one-sixth of domestic petroleum use.
           </Typography>
           <Typography sx={{ mt: 1, color: 'text.secondary', fontSize: 13.5, lineHeight: 1.7 }}>
-            Diesel is more than twice as large by mass. Petroleum demand also reaches cooking,
-            aviation, chemical manufacturing and road construction—not only private vehicles.
+            Diesel is more than twice as large as petrol by mass. Petroleum coke and naphtha also
+            make industry a major end user, while LPG, aviation fuel and bitumen connect the oil
+            system to homes, travel and infrastructure.
           </Typography>
           <Typography sx={{ mt: 1.5, color: 'text.secondary', fontSize: 11.5 }}>
-            FY2024–25 provisional · 239.17 MMT total consumption
+            FY2025–26 · 241.6 MMT total consumption · complete distribution grouped to avoid an
+            unexplained remainder
           </Typography>
         </Box>
+      </Box>
+    </Paper>
+  );
+}
+
+function PetrolFacts() {
+  return (
+    <Paper sx={{ ...cardSx, bgcolor: '#ece7dc' }}>
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: { xs: '1fr 1fr', md: 'repeat(4,1fr)' },
+          gap: { xs: 2, md: 3 },
+        }}
+      >
+        {petrolFacts.map((item, index) => (
+          <Box
+            key={item.label}
+            sx={{
+              minWidth: 0,
+              pl: { md: index ? 3 : 0 },
+              borderLeft: { md: index ? '1px solid #d2cbbf' : 0 },
+            }}
+          >
+            <Typography sx={{ ...mono, fontSize: { xs: 20, md: 24 }, fontWeight: 700 }}>
+              {item.value}
+            </Typography>
+            <Typography sx={{ mt: 0.4, fontSize: 12.5, fontWeight: 800 }}>{item.label}</Typography>
+            <Typography sx={{ mt: 0.2, fontSize: 11, color: 'text.secondary' }}>
+              {item.note}
+            </Typography>
+          </Box>
+        ))}
       </Box>
     </Paper>
   );
@@ -474,6 +797,9 @@ function VehicleUse() {
         }}
       >
         <Box>
+          <Typography variant="h6" sx={{ mb: 1.5 }}>
+            Who used petrol in the 2021 retail-outlet survey
+          </Typography>
           <Box
             sx={{ display: 'flex', height: 42, overflow: 'hidden', borderRadius: 1 }}
             aria-label="Petrol sales by vehicle type: two-wheelers 58%, cars 31%, utility vehicles 10%, three-wheelers 1%"
@@ -515,7 +841,8 @@ function VehicleUse() {
           <Typography sx={{ mt: 0.6, color: 'text.secondary', fontSize: 12.5, lineHeight: 1.65 }}>
             These shares come from PPAC’s July–September 2021 retail-outlet survey. They describe
             petrol sold by vehicle type; customs data cannot trace imported crude to a specific
-            vehicle.
+            vehicle. The survey also followed pandemic restrictions, so it should not be treated as
+            a current vehicle census.
           </Typography>
           <Typography sx={{ mt: 1.25, color: 'text.secondary', fontSize: 12.5, lineHeight: 1.65 }}>
             The same study found 89% of diesel retail sales went to transport; trucks used 69% of
@@ -555,22 +882,12 @@ function Sources() {
         Petroleum Planning &amp; Analysis Cell’s{' '}
         <Box
           component="a"
-          href="https://ppac.gov.in/download.php?file=whatsnew%2F1744892895_Snapshot-of-Indias-OIl-Gas-Data-March2025_A5.pdf"
+          href="https://ppac.gov.in/download.php?file=rep_studies/1784287517_Snapshot_of_India_Oil_and_Gas_June_2026_A5.pdf"
           target="_blank"
           rel="noreferrer"
           sx={linkSx}
         >
-          March 2025 oil and gas snapshot
-        </Box>{' '}
-        and{' '}
-        <Box
-          component="a"
-          href="https://ppac.gov.in/download.php?file=menu%2F1745468191_ICR_April-March+2024-25_Final.pdf"
-          target="_blank"
-          rel="noreferrer"
-          sx={linkSx}
-        >
-          FY2024–25 consumption report
+          June 2026 oil and gas snapshot
         </Box>
         . Vehicle-use shares are from PPAC’s{' '}
         <Box
@@ -587,10 +904,15 @@ function Sources() {
       <Typography
         sx={{ mt: 1, maxWidth: 880, color: 'text.secondary', fontSize: 11.5, lineHeight: 1.65 }}
       >
-        Values are current US dollars. Country shares use TradeStat’s principal commodity
-        “Petroleum: crude”; product mix uses HS-4 customs lines. FY2025–26 figures are provisional.
-        MMT means million metric tonnes; percentage-point changes may differ slightly due to
-        rounding.
+        Country shares use TradeStat’s principal commodity “Petroleum: crude”. Value shares are
+        reported by TradeStat; volume shares and unit values are derived from its tonnes series.
+        Product mix uses HS-4 customs lines. PPAC figures describe the energy system and are kept
+        separate from customs totals. MMT means million metric tonnes; percentage-point changes may
+        differ slightly due to rounding.
+      </Typography>
+      <Typography sx={{ mt: 1, color: 'text.secondary', fontSize: 11.5 }}>
+        Freshness: TradeStat retrieved 1 August 2026 · PPAC energy data through FY2025–26 and June
+        2026 · vehicle-use benchmark surveyed July–September 2021.
       </Typography>
     </Box>
   );
@@ -707,18 +1029,18 @@ export default function PetroleumBrief() {
               <Stat
                 value={formatUsd(crudeImports)}
                 label="Crude imports"
-                note="FY2025–26 · provisional"
+                note="FY2025–26 · customs value"
               />
               <Stat
                 value={`${((crudeImports / latestTotalImports) * 100).toFixed(1)}%`}
                 label="Share of all imports"
-                note="Crude alone · by value"
+                note="FY2025–26 · customs value"
               />
-              <Stat value="88.2%" label="Crude import dependence" note="FY2024–25 · PPAC" />
+              <Stat value="88.7%" label="Crude import dependence" note="FY2025–26 · PPAC" />
               <Stat
                 value={formatUsd(refinedExports)}
                 label="Refined-product exports"
-                note="FY2025–26 · HS 2710"
+                note="FY2025–26 · HS 2710 customs value"
               />
             </Box>
           </Container>
@@ -730,7 +1052,7 @@ export default function PetroleumBrief() {
               <SectionHeading
                 eyebrow="Supplier shift"
                 title="Where India buys its crude"
-                body="The source mix changed much faster than the total import bill. Compare value shares at the start and end of the five-year window."
+                body="Follow every year in the five-year transition, then switch between dollar exposure and physical tonnes to separate price effects from sourcing changes."
               />
               <CountryShift />
             </Box>
@@ -786,6 +1108,7 @@ export default function PetroleumBrief() {
                   </Box>
                 </Paper>
               </Box>
+              <DefinitionNote />
             </Box>
 
             <Box component="section">
@@ -801,18 +1124,21 @@ export default function PetroleumBrief() {
               <SectionHeading
                 eyebrow="Domestic demand"
                 title="What petroleum is used for in India"
-                body="Product consumption is the best current view of end demand. The leading products span freight, mobility, cooking, aviation, industry and infrastructure."
+                body="The complete FY2025–26 distribution spans freight, mobility, cooking, aviation, petrochemicals, heavy industry and infrastructure."
               />
               <ConsumptionMix />
             </Box>
 
             <Box component="section">
               <SectionHeading
-                eyebrow="Vehicle split"
-                title="Within petrol, two-wheelers use the largest share"
-                body="A nationwide retail-outlet study provides the vehicle view—but it should be read as a surveyed benchmark, not as an allocation of today’s imports."
+                eyebrow="Petrol deep dive"
+                title="Petrol demand is growing—but it is still one part of the oil system"
+                body="Current consumption and ethanol-blending data provide the scale. A nationwide retail-outlet survey supplies the vehicle split, with an important timing caveat."
               />
-              <VehicleUse />
+              <Stack spacing={2}>
+                <PetrolFacts />
+                <VehicleUse />
+              </Stack>
             </Box>
 
             <Box component="section">

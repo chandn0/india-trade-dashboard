@@ -22,25 +22,34 @@ function parseNumber(value) {
   return Number.isFinite(number) ? number : 0;
 }
 
-function parseRows(html) {
+function parseRows(html, reportType) {
   const body = html.match(/<tbody>([\s\S]*?)<\/tbody>/i)?.[1];
   if (!body) throw new Error('Country table was not found in the TradeStat response.');
 
-  return [...body.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)]
+  const rows = [...body.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)]
     .map((rowMatch) =>
       [...rowMatch[1].matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)].map((cell) => cleanCell(cell[1])),
     )
-    .filter((cells) => cells.length >= 12 && cells[1])
+    .filter((cells) => cells[1]);
+
+  if (reportType === 'quantity') {
+    return rows
+      .filter((cells) => cells.length >= 8)
+      .map((cells) => ({ country: cells[1], quantityTons: parseNumber(cells[6]) }))
+      .filter((row) => row.quantityTons > 0);
+  }
+
+  return rows
+    .filter((cells) => cells.length >= 12)
     .map((cells) => ({
       country: cells[1],
       valueUsdMillion: parseNumber(cells[9]),
       sharePct: parseNumber(cells[10]),
     }))
-    .filter((row) => row.valueUsdMillion > 0)
-    .sort((a, b) => b.valueUsdMillion - a.valueUsdMillion);
+    .filter((row) => row.valueUsdMillion > 0);
 }
 
-async function fetchYear(year) {
+async function fetchReport(year, reportType) {
   const formResponse = await fetch(ENDPOINT);
   if (!formResponse.ok) throw new Error(`TradeStat form request failed: ${formResponse.status}`);
 
@@ -60,23 +69,40 @@ async function fetchYear(year) {
       MonthAci: '3',
       YearAci: String(year),
       PCommodityAci: 'S5',
-      ReportValAci: '2',
+      ReportValAci: reportType === 'quantity' ? '3' : '2',
     }),
   });
 
   if (!response.ok) throw new Error(`TradeStat data request failed: ${response.status}`);
-  return parseRows(await response.text());
+  return parseRows(await response.text(), reportType);
 }
 
 const series = [];
 for (const year of YEARS) {
-  const countries = await fetchYear(year);
+  const [valueRows, quantityRows] = await Promise.all([
+    fetchReport(year, 'value'),
+    fetchReport(year, 'quantity'),
+  ]);
+  const quantities = new Map(quantityRows.map((item) => [item.country, item.quantityTons]));
+  const totalQuantityTons = quantityRows.reduce((sum, item) => sum + item.quantityTons, 0);
+  const countries = valueRows
+    .map((item) => {
+      const quantityTons = quantities.get(item.country) || 0;
+      return {
+        ...item,
+        quantityTons,
+        quantitySharePct: totalQuantityTons ? (quantityTons / totalQuantityTons) * 100 : 0,
+        unitValueUsdPerTon: quantityTons ? (item.valueUsdMillion * 1_000_000) / quantityTons : 0,
+      };
+    })
+    .sort((a, b) => b.valueUsdMillion - a.valueUsdMillion);
   const totalUsdMillion = countries.reduce((sum, item) => sum + item.valueUsdMillion, 0);
   series.push({
     fiscalYear: `FY${String(year - 1).slice(-2)}-${String(year).slice(-2)}`,
     yearEnding: year,
     provisional: year === Math.max(...YEARS),
     totalUsdMillion: Number(totalUsdMillion.toFixed(2)),
+    totalQuantityTons: Math.round(totalQuantityTons),
     countries,
   });
 }
@@ -84,10 +110,10 @@ for (const year of YEARS) {
 const output = {
   title: 'India petroleum crude imports by source country',
   commodity: { code: 'S5', label: 'PETROLEUM: CRUDE' },
-  unit: 'US$ million',
+  units: { value: 'US$ million', quantity: 'tonnes', unitValue: 'US$ per tonne' },
   source: ENDPOINT,
   retrievedAt: new Date().toISOString(),
-  note: 'March selections report full April–March fiscal-year values. The latest year is provisional.',
+  note: 'March selections report full April–March fiscal-year values. Value shares are supplied by TradeStat; quantity shares and unit values are derived. The latest year is provisional.',
   series,
 };
 

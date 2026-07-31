@@ -4,211 +4,333 @@
     "code": "S5",
     "label": "PETROLEUM: CRUDE"
   },
-  "unit": "US$ million",
+  "units": {
+    "value": "US$ million",
+    "quantity": "tonnes",
+    "unitValue": "US$ per tonne"
+  },
   "source": "https://tradestat.commerce.gov.in/ftspcc/import_commodity_wise_all_countries",
-  "retrievedAt": "2026-07-31T18:48:51.926Z",
-  "note": "March selections report full April–March fiscal-year values. The latest year is provisional.",
+  "retrievedAt": "2026-07-31T19:14:51.286Z",
+  "note": "March selections report full April–March fiscal-year values. Value shares are supplied by TradeStat; quantity shares and unit values are derived. The latest year is provisional.",
   "series": [
     {
       "fiscalYear": "FY21-22",
       "yearEnding": 2022,
       "provisional": false,
       "totalUsdMillion": 122449.33,
+      "totalQuantityTons": 220033450,
       "countries": [
         {
           "country": "IRAQ",
           "valueUsdMillion": 30342.1,
-          "sharePct": 24.78
+          "sharePct": 24.78,
+          "quantityTons": 56466783,
+          "quantitySharePct": 25.662817630682973,
+          "unitValueUsdPerTon": 537.3442294383939
         },
         {
           "country": "SAUDI ARAB",
           "valueUsdMillion": 22869.27,
-          "sharePct": 18.68
+          "sharePct": 18.68,
+          "quantityTons": 38878757,
+          "quantitySharePct": 17.66947570926148,
+          "unitValueUsdPerTon": 588.2201943853297
         },
         {
           "country": "U ARAB EMTS",
           "valueUsdMillion": 12304.83,
-          "sharePct": 10.05
+          "sharePct": 10.05,
+          "quantityTons": 21664421,
+          "quantitySharePct": 9.845967056372565,
+          "unitValueUsdPerTon": 567.9740991000867
         },
         {
           "country": "U S A",
           "valueUsdMillion": 11319.84,
-          "sharePct": 9.24
+          "sharePct": 9.24,
+          "quantityTons": 19976130,
+          "quantitySharePct": 9.078678719076578,
+          "unitValueUsdPerTon": 566.6683186382947
         },
         {
           "country": "NIGERIA",
           "valueUsdMillion": 8591.21,
-          "sharePct": 7.02
+          "sharePct": 7.02,
+          "quantityTons": 14994475,
+          "quantitySharePct": 6.814634320372652,
+          "unitValueUsdPerTon": 572.958373000722
         },
         {
           "country": "KUWAIT",
           "valueUsdMillion": 7943.04,
-          "sharePct": 6.49
+          "sharePct": 6.49,
+          "quantityTons": 14227980,
+          "quantitySharePct": 6.466280467810689,
+          "unitValueUsdPerTon": 558.2689882892722
         },
         {
           "country": "OMAN",
           "valueUsdMillion": 3600,
-          "sharePct": 2.94
+          "sharePct": 2.94,
+          "quantityTons": 6275938,
+          "quantitySharePct": 2.8522654169172914,
+          "unitValueUsdPerTon": 573.6194334615798
         },
         {
           "country": "MEXICO",
           "valueUsdMillion": 3419.57,
-          "sharePct": 2.79
+          "sharePct": 2.79,
+          "quantityTons": 7252379,
+          "quantitySharePct": 3.296034761987325,
+          "unitValueUsdPerTon": 471.5101072351569
         },
         {
           "country": "RUSSIA",
           "valueUsdMillion": 2470.91,
-          "sharePct": 2.02
+          "sharePct": 2.02,
+          "quantityTons": 4316598,
+          "quantitySharePct": 1.9617917184864393,
+          "unitValueUsdPerTon": 572.4206886997584
         },
         {
           "country": "BRAZIL",
           "valueUsdMillion": 2230.18,
-          "sharePct": 1.82
+          "sharePct": 1.82,
+          "quantityTons": 4158012,
+          "quantitySharePct": 1.8897181314931888,
+          "unitValueUsdPerTon": 536.3572784301729
         },
         {
           "country": "COLOMBIA",
           "valueUsdMillion": 2141.43,
-          "sharePct": 1.75
+          "sharePct": 1.75,
+          "quantityTons": 4387742,
+          "quantitySharePct": 1.994124984178542,
+          "unitValueUsdPerTon": 488.0482945442097
         },
         {
           "country": "ANGOLA",
           "valueUsdMillion": 1979.47,
-          "sharePct": 1.62
+          "sharePct": 1.62,
+          "quantityTons": 3369607,
+          "quantitySharePct": 1.531406702026442,
+          "unitValueUsdPerTon": 587.4483285439519
         },
         {
           "country": "EGYPT A RP",
           "valueUsdMillion": 1768.11,
-          "sharePct": 1.44
+          "sharePct": 1.44,
+          "quantityTons": 3535040,
+          "quantitySharePct": 1.6065920886119813,
+          "unitValueUsdPerTon": 500.1669005159772
         },
         {
           "country": "CONGO P REP",
           "valueUsdMillion": 1280.6,
-          "sharePct": 1.05
+          "sharePct": 1.05,
+          "quantityTons": 2110128,
+          "quantitySharePct": 0.9590032788196522,
+          "unitValueUsdPerTon": 606.882615651752
         },
         {
           "country": "NORWAY",
           "valueUsdMillion": 1231.19,
-          "sharePct": 1.01
+          "sharePct": 1.01,
+          "quantityTons": 2293911,
+          "quantitySharePct": 1.0425283064915811,
+          "unitValueUsdPerTon": 536.7209102707124
         },
         {
           "country": "MALAYSIA",
           "valueUsdMillion": 1099.87,
-          "sharePct": 0.9
+          "sharePct": 0.9,
+          "quantityTons": 1805976,
+          "quantitySharePct": 0.8207733869554834,
+          "unitValueUsdPerTon": 609.0169526062361
         },
         {
           "country": "QATAR",
           "valueUsdMillion": 981.44,
-          "sharePct": 0.8
+          "sharePct": 0.8,
+          "quantityTons": 1676640,
+          "quantitySharePct": 0.761993233301573,
+          "unitValueUsdPerTon": 585.3611985876515
         },
         {
           "country": "ECUADOR",
           "valueUsdMillion": 865.4,
-          "sharePct": 0.71
+          "sharePct": 0.71,
+          "quantityTons": 1775668,
+          "quantitySharePct": 0.8069991176341598,
+          "unitValueUsdPerTon": 487.36588145982245
         },
         {
           "country": "EQUTL GUINEA",
           "valueUsdMillion": 764.57,
-          "sharePct": 0.62
+          "sharePct": 0.62,
+          "quantityTons": 1378336,
+          "quantitySharePct": 0.6264211191525653,
+          "unitValueUsdPerTon": 554.7050936781743
         },
         {
           "country": "GABON",
           "valueUsdMillion": 671.81,
-          "sharePct": 0.55
+          "sharePct": 0.55,
+          "quantityTons": 1265223,
+          "quantitySharePct": 0.5750139353811886,
+          "unitValueUsdPerTon": 530.9814949617577
         },
         {
           "country": "CAMEROON",
           "valueUsdMillion": 655.22,
-          "sharePct": 0.54
+          "sharePct": 0.54,
+          "quantityTons": 1068390,
+          "quantitySharePct": 0.4855579912963233,
+          "unitValueUsdPerTon": 613.277922855886
         },
         {
           "country": "ALGERIA",
           "valueUsdMillion": 551.27,
-          "sharePct": 0.45
+          "sharePct": 0.45,
+          "quantityTons": 897317,
+          "quantitySharePct": 0.40780935807714686,
+          "unitValueUsdPerTon": 614.3536788002456
         },
         {
           "country": "SOUTH AFRICA",
           "valueUsdMillion": 464.74,
-          "sharePct": 0.38
+          "sharePct": 0.38,
+          "quantityTons": 914807,
+          "quantitySharePct": 0.41575814949954204,
+          "unitValueUsdPerTon": 508.019724379022
         },
         {
           "country": "TURKEY",
           "valueUsdMillion": 451.48,
-          "sharePct": 0.37
+          "sharePct": 0.37,
+          "quantityTons": 880512,
+          "quantitySharePct": 0.4001718829568868,
+          "unitValueUsdPerTon": 512.7471289431603
         },
         {
           "country": "BRUNEI",
           "valueUsdMillion": 390.71,
-          "sharePct": 0.32
+          "sharePct": 0.32,
+          "quantityTons": 708769,
+          "quantitySharePct": 0.3221187505808776,
+          "unitValueUsdPerTon": 551.251536114023
         },
         {
           "country": "CANADA",
           "valueUsdMillion": 334.66,
-          "sharePct": 0.27
+          "sharePct": 0.27,
+          "quantityTons": 667182,
+          "quantitySharePct": 0.3032184424686338,
+          "unitValueUsdPerTon": 501.6022614518977
         },
         {
           "country": "LIBYA",
           "valueUsdMillion": 249.1,
-          "sharePct": 0.2
+          "sharePct": 0.2,
+          "quantityTons": 497470,
+          "quantitySharePct": 0.22608835156654591,
+          "unitValueUsdPerTon": 500.7337125856836
         },
         {
           "country": "U K",
           "valueUsdMillion": 245.04,
-          "sharePct": 0.2
+          "sharePct": 0.2,
+          "quantityTons": 443732,
+          "quantitySharePct": 0.2016657012831458,
+          "unitValueUsdPerTon": 552.2252170228877
         },
         {
           "country": "INDONESIA",
           "valueUsdMillion": 235.04,
-          "sharePct": 0.19
+          "sharePct": 0.19,
+          "quantityTons": 435143,
+          "quantitySharePct": 0.19776220388309143,
+          "unitValueUsdPerTon": 540.1442744109407
         },
         {
           "country": "ISRAEL",
           "valueUsdMillion": 177.28,
-          "sharePct": 0.14
+          "sharePct": 0.14,
+          "quantityTons": 291792,
+          "quantitySharePct": 0.1326125641351349,
+          "unitValueUsdPerTon": 607.5560673356364
         },
         {
           "country": "KAZAKHSTAN",
           "valueUsdMillion": 150.48,
-          "sharePct": 0.12
+          "sharePct": 0.12,
+          "quantityTons": 264314,
+          "quantitySharePct": 0.12012446289416451,
+          "unitValueUsdPerTon": 569.3228508516386
         },
         {
           "country": "GUYANA",
           "valueUsdMillion": 148.61,
-          "sharePct": 0.12
+          "sharePct": 0.12,
+          "quantityTons": 294554,
+          "quantitySharePct": 0.13386782782345139,
+          "unitValueUsdPerTon": 504.52548598898676
         },
         {
           "country": "GHANA",
           "valueUsdMillion": 129.77,
-          "sharePct": 0.11
+          "sharePct": 0.11,
+          "quantityTons": 252190,
+          "quantitySharePct": 0.11461439158455225,
+          "unitValueUsdPerTon": 514.5723462468774
         },
         {
           "country": "COTE D&#039; IVOIRE",
           "valueUsdMillion": 117.65,
-          "sharePct": 0.1
+          "sharePct": 0.1,
+          "quantityTons": 145700,
+          "quantitySharePct": 0.06621720470228504,
+          "unitValueUsdPerTon": 807.481125600549
         },
         {
           "country": "AZERBAIJAN",
           "valueUsdMillion": 94.08,
-          "sharePct": 0.08
+          "sharePct": 0.08,
+          "quantityTons": 136966,
+          "quantitySharePct": 0.062247808230975796,
+          "unitValueUsdPerTon": 686.8857964750376
         },
         {
           "country": "JAPAN",
           "valueUsdMillion": 71.37,
-          "sharePct": 0.06
+          "sharePct": 0.06,
+          "quantityTons": 135322,
+          "quantitySharePct": 0.06150064910585186,
+          "unitValueUsdPerTon": 527.4086992506761
         },
         {
           "country": "YEMEN REPUBLC",
           "valueUsdMillion": 52.05,
-          "sharePct": 0.04
+          "sharePct": 0.04,
+          "quantityTons": 74678,
+          "quantitySharePct": 0.03393938512530709,
+          "unitValueUsdPerTon": 696.9924207932725
         },
         {
           "country": "CHINA P RP",
           "valueUsdMillion": 42.64,
-          "sharePct": 0.03
+          "sharePct": 0.03,
+          "quantityTons": 85189,
+          "quantitySharePct": 0.03871638607675333,
+          "unitValueUsdPerTon": 500.5341065160995
         },
         {
           "country": "ITALY",
           "valueUsdMillion": 13.3,
-          "sharePct": 0.01
+          "sharePct": 0.01,
+          "quantityTons": 29679,
+          "quantitySharePct": 0.01348840369498365,
+          "unitValueUsdPerTon": 448.128306209778
         }
       ]
     },
@@ -217,196 +339,311 @@
       "yearEnding": 2023,
       "provisional": false,
       "totalUsdMillion": 162205.15,
+      "totalQuantityTons": 236665469,
       "countries": [
         {
           "country": "IRAQ",
           "valueUsdMillion": 33599.57,
-          "sharePct": 20.71
+          "sharePct": 20.71,
+          "quantityTons": 50596251,
+          "quantitySharePct": 21.37880579443552,
+          "unitValueUsdPerTon": 664.0723242518502
         },
         {
           "country": "RUSSIA",
           "valueUsdMillion": 31024.66,
-          "sharePct": 19.13
+          "sharePct": 19.13,
+          "quantityTons": 50848698,
+          "quantitySharePct": 21.485474080716017,
+          "unitValueUsdPerTon": 610.1367629904703
         },
         {
           "country": "SAUDI ARAB",
           "valueUsdMillion": 29077.41,
-          "sharePct": 17.93
+          "sharePct": 17.93,
+          "quantityTons": 39470704,
+          "quantitySharePct": 16.67784665282116,
+          "unitValueUsdPerTon": 736.6833386098206
         },
         {
           "country": "U ARAB EMTS",
           "valueUsdMillion": 16840.67,
-          "sharePct": 10.38
+          "sharePct": 10.38,
+          "quantityTons": 22114558,
+          "quantitySharePct": 9.344226723671294,
+          "unitValueUsdPerTon": 761.5196288345442
         },
         {
           "country": "U S A",
           "valueUsdMillion": 10181.72,
-          "sharePct": 6.28
+          "sharePct": 6.28,
+          "quantityTons": 15164916,
+          "quantitySharePct": 6.407743412707158,
+          "unitValueUsdPerTon": 671.3996965100235
         },
         {
           "country": "KUWAIT",
           "valueUsdMillion": 8024.61,
-          "sharePct": 4.95
+          "sharePct": 4.95,
+          "quantityTons": 11630834,
+          "quantitySharePct": 4.914461771353724,
+          "unitValueUsdPerTon": 689.9427848424283
         },
         {
           "country": "NIGERIA",
           "valueUsdMillion": 6059.58,
-          "sharePct": 3.74
+          "sharePct": 3.74,
+          "quantityTons": 7604169,
+          "quantitySharePct": 3.213045414749543,
+          "unitValueUsdPerTon": 796.8760294517389
         },
         {
           "country": "ANGOLA",
           "valueUsdMillion": 3175.05,
-          "sharePct": 1.96
+          "sharePct": 1.96,
+          "quantityTons": 4440906,
+          "quantitySharePct": 1.876448650816905,
+          "unitValueUsdPerTon": 714.9554617909048
         },
         {
           "country": "MEXICO",
           "valueUsdMillion": 2844.7,
-          "sharePct": 1.75
+          "sharePct": 1.75,
+          "quantityTons": 4464998,
+          "quantitySharePct": 1.8866284206421342,
+          "unitValueUsdPerTon": 637.1111476421714
         },
         {
           "country": "OMAN",
           "valueUsdMillion": 2657.57,
-          "sharePct": 1.64
+          "sharePct": 1.64,
+          "quantityTons": 3359421,
+          "quantitySharePct": 1.419480845344616,
+          "unitValueUsdPerTon": 791.0797723774424
         },
         {
           "country": "CONGO P REP",
           "valueUsdMillion": 1994.17,
-          "sharePct": 1.23
+          "sharePct": 1.23,
+          "quantityTons": 2592317,
+          "quantitySharePct": 1.0953507543595218,
+          "unitValueUsdPerTon": 769.2616296540893
         },
         {
           "country": "BRAZIL",
           "valueUsdMillion": 1885.5,
-          "sharePct": 1.16
+          "sharePct": 1.16,
+          "quantityTons": 2858343,
+          "quantitySharePct": 1.207756675309485,
+          "unitValueUsdPerTon": 659.647914893349
         },
         {
           "country": "QATAR",
           "valueUsdMillion": 1874.62,
-          "sharePct": 1.16
+          "sharePct": 1.16,
+          "quantityTons": 2891184,
+          "quantitySharePct": 1.2216332244058807,
+          "unitValueUsdPerTon": 648.3918007293897
         },
         {
           "country": "TURKEY",
           "valueUsdMillion": 1778.82,
-          "sharePct": 1.1
+          "sharePct": 1.1,
+          "quantityTons": 2397137,
+          "quantitySharePct": 1.0128799144753982,
+          "unitValueUsdPerTon": 742.0602159993359
         },
         {
           "country": "COLOMBIA",
           "valueUsdMillion": 1609.77,
-          "sharePct": 0.99
+          "sharePct": 0.99,
+          "quantityTons": 2659859,
+          "quantitySharePct": 1.123889772022466,
+          "unitValueUsdPerTon": 605.2087723446995
         },
         {
           "country": "MALAYSIA",
           "valueUsdMillion": 1240.29,
-          "sharePct": 0.76
+          "sharePct": 0.76,
+          "quantityTons": 1441419,
+          "quantitySharePct": 0.6090533638432906,
+          "unitValueUsdPerTon": 860.46458385799
         },
         {
           "country": "ALGERIA",
           "valueUsdMillion": 848.57,
-          "sharePct": 0.52
+          "sharePct": 0.52,
+          "quantityTons": 1376108,
+          "quantitySharePct": 0.5814570270071804,
+          "unitValueUsdPerTon": 616.6449144979899
         },
         {
           "country": "SPAIN",
           "valueUsdMillion": 827.74,
-          "sharePct": 0.51
+          "sharePct": 0.51,
+          "quantityTons": 1136251,
+          "quantitySharePct": 0.48010848595745076,
+          "unitValueUsdPerTon": 728.4834072753291
         },
         {
           "country": "ECUADOR",
           "valueUsdMillion": 775.52,
-          "sharePct": 0.48
+          "sharePct": 0.48,
+          "quantityTons": 1223933,
+          "quantitySharePct": 0.5171574058402242,
+          "unitValueUsdPerTon": 633.629455207107
         },
         {
           "country": "EGYPT A RP",
           "valueUsdMillion": 716.3,
-          "sharePct": 0.44
+          "sharePct": 0.44,
+          "quantityTons": 1178846,
+          "quantitySharePct": 0.49810646436130485,
+          "unitValueUsdPerTon": 607.6281380265107
         },
         {
           "country": "KOREA RP",
           "valueUsdMillion": 709.09,
-          "sharePct": 0.44
+          "sharePct": 0.44,
+          "quantityTons": 1146266,
+          "quantitySharePct": 0.48434019751314034,
+          "unitValueUsdPerTon": 618.6085952126296
         },
         {
           "country": "LIBYA",
           "valueUsdMillion": 692.61,
-          "sharePct": 0.43
+          "sharePct": 0.43,
+          "quantityTons": 902620,
+          "quantitySharePct": 0.3813906624459862,
+          "unitValueUsdPerTon": 767.3328754071481
         },
         {
           "country": "GREECE",
           "valueUsdMillion": 601.34,
-          "sharePct": 0.37
+          "sharePct": 0.37,
+          "quantityTons": 1193136,
+          "quantitySharePct": 0.5041445230862979,
+          "unitValueUsdPerTon": 503.9995440586823
         },
         {
           "country": "EQUTL GUINEA",
           "valueUsdMillion": 597.43,
-          "sharePct": 0.37
+          "sharePct": 0.37,
+          "quantityTons": 691954,
+          "quantitySharePct": 0.2923764091668143,
+          "unitValueUsdPerTon": 863.3955436344035
         },
         {
           "country": "NETHERLAND",
           "valueUsdMillion": 589.22,
-          "sharePct": 0.36
+          "sharePct": 0.36,
+          "quantityTons": 818277,
+          "quantitySharePct": 0.3457525947733423,
+          "unitValueUsdPerTon": 720.0740091680445
         },
         {
           "country": "AZERBAIJAN",
           "valueUsdMillion": 495.78,
-          "sharePct": 0.31
+          "sharePct": 0.31,
+          "quantityTons": 553180,
+          "quantitySharePct": 0.23373921102110592,
+          "unitValueUsdPerTon": 896.2363064463647
         },
         {
           "country": "CAMEROON",
           "valueUsdMillion": 347.55,
-          "sharePct": 0.21
+          "sharePct": 0.21,
+          "quantityTons": 422433,
+          "quantitySharePct": 0.1784937201801924,
+          "unitValueUsdPerTon": 822.734019359283
         },
         {
           "country": "BRUNEI",
           "valueUsdMillion": 273.14,
-          "sharePct": 0.17
+          "sharePct": 0.17,
+          "quantityTons": 333533,
+          "quantitySharePct": 0.1409301498056736,
+          "unitValueUsdPerTon": 818.9294612527096
         },
         {
           "country": "CONGO D. REP.",
           "valueUsdMillion": 164.78,
-          "sharePct": 0.1
+          "sharePct": 0.1,
+          "quantityTons": 276056,
+          "quantitySharePct": 0.11664397056589612,
+          "unitValueUsdPerTon": 596.9078737647434
         },
         {
           "country": "SRI LANKA DSR",
           "valueUsdMillion": 130.38,
-          "sharePct": 0.08
+          "sharePct": 0.08,
+          "quantityTons": 138032,
+          "quantitySharePct": 0.05832367543234624,
+          "unitValueUsdPerTon": 944.5635794598354
         },
         {
           "country": "KAZAKHSTAN",
           "valueUsdMillion": 127.3,
-          "sharePct": 0.08
+          "sharePct": 0.08,
+          "quantityTons": 132196,
+          "quantitySharePct": 0.055857747460403694,
+          "unitValueUsdPerTon": 962.9640836333929
         },
         {
           "country": "GABON",
           "valueUsdMillion": 106.06,
-          "sharePct": 0.07
+          "sharePct": 0.07,
+          "quantityTons": 131652,
+          "quantitySharePct": 0.05562788714225141,
+          "unitValueUsdPerTon": 805.6087260353052
         },
         {
           "country": "ISRAEL",
           "valueUsdMillion": 105.84,
-          "sharePct": 0.07
+          "sharePct": 0.07,
+          "quantityTons": 149837,
+          "quantitySharePct": 0.06331172884372076,
+          "unitValueUsdPerTon": 706.3675861102398
         },
         {
           "country": "GIBRALTAR",
           "valueUsdMillion": 71.99,
-          "sharePct": 0.04
+          "sharePct": 0.04,
+          "quantityTons": 99614,
+          "quantitySharePct": 0.042090635537540125,
+          "unitValueUsdPerTon": 722.6895817856928
         },
         {
           "country": "U K",
           "valueUsdMillion": 66.79,
-          "sharePct": 0.04
+          "sharePct": 0.04,
+          "quantityTons": 99553,
+          "quantitySharePct": 0.0420648607592179,
+          "unitValueUsdPerTon": 670.898918164194
         },
         {
           "country": "TUNISIA",
           "valueUsdMillion": 62.62,
-          "sharePct": 0.04
+          "sharePct": 0.04,
+          "quantityTons": 89899,
+          "quantitySharePct": 0.037985685186713906,
+          "unitValueUsdPerTon": 696.5594722966885
         },
         {
           "country": "INDONESIA",
           "valueUsdMillion": 26.38,
-          "sharePct": 0.02
+          "sharePct": 0.02,
+          "quantityTons": 36379,
+          "quantitySharePct": 0.015371486239084587,
+          "unitValueUsdPerTon": 725.1436268176695
         },
         {
           "country": "CANADA",
           "valueUsdMillion": 0.01,
-          "sharePct": 0
+          "sharePct": 0,
+          "quantityTons": 0,
+          "quantitySharePct": 0,
+          "unitValueUsdPerTon": 0
         }
       ]
     },
@@ -415,156 +652,247 @@
       "yearEnding": 2024,
       "provisional": false,
       "totalUsdMillion": 139287.82,
+      "totalQuantityTons": 231463316,
       "countries": [
         {
           "country": "RUSSIA",
           "valueUsdMillion": 46487.55,
-          "sharePct": 33.38
+          "sharePct": 33.38,
+          "quantityTons": 83017886,
+          "quantitySharePct": 35.86654137453038,
+          "unitValueUsdPerTon": 559.9702936304593
         },
         {
           "country": "IRAQ",
           "valueUsdMillion": 28898.24,
-          "sharePct": 20.75
+          "sharePct": 20.75,
+          "quantityTons": 49835088,
+          "quantitySharePct": 21.530447615292957,
+          "unitValueUsdPerTon": 579.8773747525037
         },
         {
           "country": "SAUDI ARAB",
           "valueUsdMillion": 21706.88,
-          "sharePct": 15.58
+          "sharePct": 15.58,
+          "quantityTons": 32832454,
+          "quantitySharePct": 14.184733273241449,
+          "unitValueUsdPerTon": 661.1409552268009
         },
         {
           "country": "U ARAB EMTS",
           "valueUsdMillion": 8958.44,
-          "sharePct": 6.43
+          "sharePct": 6.43,
+          "quantityTons": 13697361,
+          "quantitySharePct": 5.917724344707824,
+          "unitValueUsdPerTon": 654.0267136129361
         },
         {
           "country": "U S A",
           "valueUsdMillion": 5025.92,
-          "sharePct": 3.61
+          "sharePct": 3.61,
+          "quantityTons": 7945070,
+          "quantitySharePct": 3.4325396081338435,
+          "unitValueUsdPerTon": 632.5834762941043
         },
         {
           "country": "KUWAIT",
           "valueUsdMillion": 4304.21,
-          "sharePct": 3.09
+          "sharePct": 3.09,
+          "quantityTons": 6590066,
+          "quantitySharePct": 2.8471319403373623,
+          "unitValueUsdPerTon": 653.136099092179
         },
         {
           "country": "NIGERIA",
           "valueUsdMillion": 3401.05,
-          "sharePct": 2.44
+          "sharePct": 2.44,
+          "quantityTons": 5099632,
+          "quantitySharePct": 2.203213920948061,
+          "unitValueUsdPerTon": 666.9206719229936
         },
         {
           "country": "ANGOLA",
           "valueUsdMillion": 2813.38,
-          "sharePct": 2.02
+          "sharePct": 2.02,
+          "quantityTons": 4453986,
+          "quantitySharePct": 1.9242729590895518,
+          "unitValueUsdPerTon": 631.6544326811984
         },
         {
           "country": "MALAYSIA",
           "valueUsdMillion": 2717.37,
-          "sharePct": 1.95
+          "sharePct": 1.95,
+          "quantityTons": 1782428,
+          "quantitySharePct": 0.7700693270980357,
+          "unitValueUsdPerTon": 1524.5328282544933
         },
         {
           "country": "KOREA RP",
           "valueUsdMillion": 2367.87,
-          "sharePct": 1.7
+          "sharePct": 1.7,
+          "quantityTons": 4132616,
+          "quantitySharePct": 1.7854302234225314,
+          "unitValueUsdPerTon": 572.9712124233173
         },
         {
           "country": "COLOMBIA",
           "valueUsdMillion": 1946.83,
-          "sharePct": 1.4
+          "sharePct": 1.4,
+          "quantityTons": 3540166,
+          "quantitySharePct": 1.5294717371110331,
+          "unitValueUsdPerTon": 549.9261899018295
         },
         {
           "country": "MEXICO",
           "valueUsdMillion": 1873.27,
-          "sharePct": 1.34
+          "sharePct": 1.34,
+          "quantityTons": 3440194,
+          "quantitySharePct": 1.486280443679464,
+          "unitValueUsdPerTon": 544.5245239076634
         },
         {
           "country": "TURKEY",
           "valueUsdMillion": 1801.12,
-          "sharePct": 1.29
+          "sharePct": 1.29,
+          "quantityTons": 2574294,
+          "quantitySharePct": 1.1121822863714612,
+          "unitValueUsdPerTon": 699.6559056580173
         },
         {
           "country": "BRAZIL",
           "valueUsdMillion": 1435.93,
-          "sharePct": 1.03
+          "sharePct": 1.03,
+          "quantityTons": 2660719,
+          "quantitySharePct": 1.149520816508133,
+          "unitValueUsdPerTon": 539.6774330547495
         },
         {
           "country": "QATAR",
           "valueUsdMillion": 1117.82,
-          "sharePct": 0.8
+          "sharePct": 0.8,
+          "quantityTons": 1757799,
+          "quantitySharePct": 0.7594287640811298,
+          "unitValueUsdPerTon": 635.9202616453872
         },
         {
           "country": "VENEZUELA",
           "valueUsdMillion": 802.47,
-          "sharePct": 0.58
+          "sharePct": 0.58,
+          "quantityTons": 1710481,
+          "quantitySharePct": 0.738985783820707,
+          "unitValueUsdPerTon": 469.14873652498915
         },
         {
           "country": "GREECE",
           "valueUsdMillion": 596.02,
-          "sharePct": 0.43
+          "sharePct": 0.43,
+          "quantityTons": 1308254,
+          "quantitySharePct": 0.565210082793422,
+          "unitValueUsdPerTon": 455.5843131379686
         },
         {
           "country": "EGYPT A RP",
           "valueUsdMillion": 489.6,
-          "sharePct": 0.35
+          "sharePct": 0.35,
+          "quantityTons": 943326,
+          "quantitySharePct": 0.40754881434429985,
+          "unitValueUsdPerTon": 519.0146354494628
         },
         {
           "country": "ALGERIA",
           "valueUsdMillion": 473.8,
-          "sharePct": 0.34
+          "sharePct": 0.34,
+          "quantityTons": 665007,
+          "quantitySharePct": 0.28730557027015025,
+          "unitValueUsdPerTon": 712.4737032843263
         },
         {
           "country": "OMAN",
           "valueUsdMillion": 431.27,
-          "sharePct": 0.31
+          "sharePct": 0.31,
+          "quantityTons": 776661,
+          "quantitySharePct": 0.3355438837660133,
+          "unitValueUsdPerTon": 555.2873132550752
         },
         {
           "country": "CAMEROON",
           "valueUsdMillion": 357.75,
-          "sharePct": 0.26
+          "sharePct": 0.26,
+          "quantityTons": 524421,
+          "quantitySharePct": 0.2265676518692923,
+          "unitValueUsdPerTon": 682.1809195283942
         },
         {
           "country": "ECUADOR",
           "valueUsdMillion": 331.68,
-          "sharePct": 0.24
+          "sharePct": 0.24,
+          "quantityTons": 596508,
+          "quantitySharePct": 0.2577116798931542,
+          "unitValueUsdPerTon": 556.0361302782193
         },
         {
           "country": "PANAMA REPUBLIC",
           "valueUsdMillion": 169.46,
-          "sharePct": 0.12
+          "sharePct": 0.12,
+          "quantityTons": 299378,
+          "quantitySharePct": 0.12934144605445816,
+          "unitValueUsdPerTon": 566.0402567990968
         },
         {
           "country": "BRUNEI",
           "valueUsdMillion": 168.51,
-          "sharePct": 0.12
+          "sharePct": 0.12,
+          "quantityTons": 248291,
+          "quantitySharePct": 0.10727013001058017,
+          "unitValueUsdPerTon": 678.6794527389233
         },
         {
           "country": "LIBYA",
           "valueUsdMillion": 166.95,
-          "sharePct": 0.12
+          "sharePct": 0.12,
+          "quantityTons": 322632,
+          "quantitySharePct": 0.139387962453627,
+          "unitValueUsdPerTon": 517.4626199509038
         },
         {
           "country": "CONGO D. REP.",
           "valueUsdMillion": 165.63,
-          "sharePct": 0.12
+          "sharePct": 0.12,
+          "quantityTons": 255976,
+          "quantitySharePct": 0.11059031056135046,
+          "unitValueUsdPerTon": 647.052848704566
         },
         {
           "country": "CONGO P REP",
           "valueUsdMillion": 91.33,
-          "sharePct": 0.07
+          "sharePct": 0.07,
+          "quantityTons": 122893,
+          "quantitySharePct": 0.053093942540769615,
+          "unitValueUsdPerTon": 743.1668199165127
         },
         {
           "country": "VIRGIN IS US",
           "valueUsdMillion": 84.16,
-          "sharePct": 0.06
+          "sharePct": 0.06,
+          "quantityTons": 148035,
+          "quantitySharePct": 0.0639561389503294,
+          "unitValueUsdPerTon": 568.5142027223292
         },
         {
           "country": "SPAIN",
           "valueUsdMillion": 52.3,
-          "sharePct": 0.04
+          "sharePct": 0.04,
+          "quantityTons": 99722,
+          "quantitySharePct": 0.0430832849556169,
+          "unitValueUsdPerTon": 524.4579932211548
         },
         {
           "country": "SUDAN",
           "valueUsdMillion": 51.01,
-          "sharePct": 0.04
+          "sharePct": 0.04,
+          "quantityTons": 81972,
+          "quantitySharePct": 0.035414683163011454,
+          "unitValueUsdPerTon": 622.2856585175426
         }
       ]
     },
@@ -573,176 +901,279 @@
       "yearEnding": 2025,
       "provisional": false,
       "totalUsdMillion": 143076.91,
+      "totalQuantityTons": 244439947,
       "countries": [
         {
           "country": "RUSSIA",
           "valueUsdMillion": 50284.72,
-          "sharePct": 35.15
+          "sharePct": 35.15,
+          "quantityTons": 87538578,
+          "quantitySharePct": 35.811895344585395,
+          "unitValueUsdPerTon": 574.4292533515909
         },
         {
           "country": "IRAQ",
           "valueUsdMillion": 27355.78,
-          "sharePct": 19.12
+          "sharePct": 19.12,
+          "quantityTons": 48589540,
+          "quantitySharePct": 19.877904817251494,
+          "unitValueUsdPerTon": 562.997303534876
         },
         {
           "country": "SAUDI ARAB",
           "valueUsdMillion": 20094.16,
-          "sharePct": 14.04
+          "sharePct": 14.04,
+          "quantityTons": 33138823,
+          "quantitySharePct": 13.557040658333966,
+          "unitValueUsdPerTon": 606.3631167588541
         },
         {
           "country": "U ARAB EMTS",
           "valueUsdMillion": 13861.78,
-          "sharePct": 9.69
+          "sharePct": 9.69,
+          "quantityTons": 22094642,
+          "quantitySharePct": 9.038883484948554,
+          "unitValueUsdPerTon": 627.3819688954453
         },
         {
           "country": "U S A",
           "valueUsdMillion": 6550.74,
-          "sharePct": 4.58
+          "sharePct": 4.58,
+          "quantityTons": 10546997,
+          "quantitySharePct": 4.314759976608897,
+          "unitValueUsdPerTon": 621.1000154830801
         },
         {
           "country": "KUWAIT",
           "valueUsdMillion": 4019.43,
-          "sharePct": 2.81
+          "sharePct": 2.81,
+          "quantityTons": 6924340,
+          "quantitySharePct": 2.8327366639463394,
+          "unitValueUsdPerTon": 580.4784282689758
         },
         {
           "country": "ANGOLA",
           "valueUsdMillion": 3575.53,
-          "sharePct": 2.5
+          "sharePct": 2.5,
+          "quantityTons": 5834311,
+          "quantitySharePct": 2.386807504912444,
+          "unitValueUsdPerTon": 612.8452871298771
         },
         {
           "country": "NIGERIA",
           "valueUsdMillion": 3118.49,
-          "sharePct": 2.18
+          "sharePct": 2.18,
+          "quantityTons": 4779195,
+          "quantitySharePct": 1.9551611995726705,
+          "unitValueUsdPerTon": 652.5136555424083
         },
         {
           "country": "COLOMBIA",
           "valueUsdMillion": 1840.14,
-          "sharePct": 1.29
+          "sharePct": 1.29,
+          "quantityTons": 3665364,
+          "quantitySharePct": 1.4994946795664295,
+          "unitValueUsdPerTon": 502.0347228815474
         },
         {
           "country": "MEXICO",
           "valueUsdMillion": 1559.61,
-          "sharePct": 1.09
+          "sharePct": 1.09,
+          "quantityTons": 3019882,
+          "quantitySharePct": 1.2354290029362507,
+          "unitValueUsdPerTon": 516.4473313857959
         },
         {
           "country": "VENEZUELA",
           "valueUsdMillion": 1406.76,
-          "sharePct": 0.98
+          "sharePct": 0.98,
+          "quantityTons": 2981941,
+          "quantitySharePct": 1.2199073991780893,
+          "unitValueUsdPerTon": 471.75983696525185
         },
         {
           "country": "BRAZIL",
           "valueUsdMillion": 1314.13,
-          "sharePct": 0.92
+          "sharePct": 0.92,
+          "quantityTons": 2430566,
+          "quantitySharePct": 0.994340749059318,
+          "unitValueUsdPerTon": 540.6683052424826
         },
         {
           "country": "OMAN",
           "valueUsdMillion": 1147.61,
-          "sharePct": 0.8
+          "sharePct": 0.8,
+          "quantityTons": 1879212,
+          "quantitySharePct": 0.7687826900077016,
+          "unitValueUsdPerTon": 610.6868197946799
         },
         {
           "country": "QATAR",
           "valueUsdMillion": 1063.3,
-          "sharePct": 0.74
+          "sharePct": 0.74,
+          "quantityTons": 1723337,
+          "quantitySharePct": 0.7050144713048887,
+          "unitValueUsdPerTon": 617.0006214686971
         },
         {
           "country": "KOREA RP",
           "valueUsdMillion": 964.27,
-          "sharePct": 0.67
+          "sharePct": 0.67,
+          "quantityTons": 1558010,
+          "quantitySharePct": 0.6373794541855304,
+          "unitValueUsdPerTon": 618.9113035218003
         },
         {
           "country": "TURKEY",
           "valueUsdMillion": 743.68,
-          "sharePct": 0.52
+          "sharePct": 0.52,
+          "quantityTons": 1077386,
+          "quantitySharePct": 0.4407569275082522,
+          "unitValueUsdPerTon": 690.2632853963204
         },
         {
           "country": "ALGERIA",
           "valueUsdMillion": 657.81,
-          "sharePct": 0.46
+          "sharePct": 0.46,
+          "quantityTons": 932834,
+          "quantitySharePct": 0.3816209303956362,
+          "unitValueUsdPerTon": 705.1736964990556
         },
         {
           "country": "MALAYSIA",
           "valueUsdMillion": 644.24,
-          "sharePct": 0.45
+          "sharePct": 0.45,
+          "quantityTons": 964207,
+          "quantitySharePct": 0.3944555756265157,
+          "unitValueUsdPerTon": 668.1552820089462
         },
         {
           "country": "EGYPT A RP",
           "valueUsdMillion": 593.86,
-          "sharePct": 0.42
+          "sharePct": 0.42,
+          "quantityTons": 1015967,
+          "quantitySharePct": 0.4156305106709911,
+          "unitValueUsdPerTon": 584.5268596322518
         },
         {
           "country": "CONGO D. REP.",
           "valueUsdMillion": 317.51,
-          "sharePct": 0.22
+          "sharePct": 0.22,
+          "quantityTons": 510710,
+          "quantitySharePct": 0.20893066222109757,
+          "unitValueUsdPerTon": 621.7031191870142
         },
         {
           "country": "CONGO P REP",
           "valueUsdMillion": 311.23,
-          "sharePct": 0.22
+          "sharePct": 0.22,
+          "quantityTons": 502288,
+          "quantitySharePct": 0.20548523519357498,
+          "unitValueUsdPerTon": 619.6245978402828
         },
         {
           "country": "GHANA",
           "valueUsdMillion": 300.71,
-          "sharePct": 0.21
+          "sharePct": 0.21,
+          "quantityTons": 510957,
+          "quantitySharePct": 0.20903170953477582,
+          "unitValueUsdPerTon": 588.5231046839558
         },
         {
           "country": "TOGO",
           "valueUsdMillion": 245.27,
-          "sharePct": 0.17
+          "sharePct": 0.17,
+          "quantityTons": 380013,
+          "quantitySharePct": 0.15546272393848948,
+          "unitValueUsdPerTon": 645.4252880822498
         },
         {
           "country": "CANADA",
           "valueUsdMillion": 219.19,
-          "sharePct": 0.15
+          "sharePct": 0.15,
+          "quantityTons": 401581,
+          "quantitySharePct": 0.16428615900493546,
+          "unitValueUsdPerTon": 545.8176557157834
         },
         {
           "country": "LIBYA",
           "valueUsdMillion": 171.71,
-          "sharePct": 0.12
+          "sharePct": 0.12,
+          "quantityTons": 273824,
+          "quantitySharePct": 0.1120209701240035,
+          "unitValueUsdPerTon": 627.0816290756106
         },
         {
           "country": "ECUADOR",
           "valueUsdMillion": 156.57,
-          "sharePct": 0.11
+          "sharePct": 0.11,
+          "quantityTons": 257267,
+          "quantitySharePct": 0.10524752732007424,
+          "unitValueUsdPerTon": 608.5895198373674
         },
         {
           "country": "GREECE",
           "valueUsdMillion": 136.47,
-          "sharePct": 0.1
+          "sharePct": 0.1,
+          "quantityTons": 213900,
+          "quantitySharePct": 0.08750615544847913,
+          "unitValueUsdPerTon": 638.008415147265
         },
         {
           "country": "C AFRI REP",
           "valueUsdMillion": 131.39,
-          "sharePct": 0.09
+          "sharePct": 0.09,
+          "quantityTons": 213876,
+          "quantitySharePct": 0.08749633708601647,
+          "unitValueUsdPerTon": 614.3279283323046
         },
         {
           "country": "BRUNEI",
           "valueUsdMillion": 125.82,
-          "sharePct": 0.09
+          "sharePct": 0.09,
+          "quantityTons": 189929,
+          "quantitySharePct": 0.07769965684045906,
+          "unitValueUsdPerTon": 662.4580764390904
         },
         {
           "country": "PANAMA REPUBLIC",
           "valueUsdMillion": 68.74,
-          "sharePct": 0.05
+          "sharePct": 0.05,
+          "quantityTons": 143993,
+          "quantitySharePct": 0.05890731108692312,
+          "unitValueUsdPerTon": 477.3843172932018
         },
         {
           "country": "ARGENTINA",
           "valueUsdMillion": 57.55,
-          "sharePct": 0.04
+          "sharePct": 0.04,
+          "quantityTons": 88048,
+          "quantitySharePct": 0.03602029908802099,
+          "unitValueUsdPerTon": 653.620752316918
         },
         {
           "country": "GUINEA",
           "valueUsdMillion": 19.44,
-          "sharePct": 0.01
+          "sharePct": 0.01,
+          "quantityTons": 29732,
+          "quantitySharePct": 0.012163314697495006,
+          "unitValueUsdPerTon": 653.8409794161173
         },
         {
           "country": "EQUTL GUINEA",
           "valueUsdMillion": 19.26,
-          "sharePct": 0.01
+          "sharePct": 0.01,
+          "quantityTons": 28695,
+          "quantitySharePct": 0.011739079619420797,
+          "unitValueUsdPerTon": 671.1970726607423
         },
         {
           "country": "ISRAEL",
           "valueUsdMillion": 0.01,
-          "sharePct": 0
+          "sharePct": 0,
+          "quantityTons": 2,
+          "quantitySharePct": 8.181968718885379e-7,
+          "unitValueUsdPerTon": 5000
         }
       ]
     },
@@ -751,181 +1182,287 @@
       "yearEnding": 2026,
       "provisional": true,
       "totalUsdMillion": 134716.76,
+      "totalQuantityTons": 259792581,
       "countries": [
         {
           "country": "RUSSIA",
           "valueUsdMillion": 40823.05,
-          "sharePct": 30.3
+          "sharePct": 30.3,
+          "quantityTons": 81048520,
+          "quantitySharePct": 31.19739589484274,
+          "unitValueUsdPerTon": 503.68655713885954
         },
         {
           "country": "IRAQ",
           "valueUsdMillion": 23088.78,
-          "sharePct": 17.14
+          "sharePct": 17.14,
+          "quantityTons": 47113289,
+          "quantitySharePct": 18.134963215135077,
+          "unitValueUsdPerTon": 490.0693729958017
         },
         {
           "country": "SAUDI ARAB",
           "valueUsdMillion": 19524.38,
-          "sharePct": 14.49
+          "sharePct": 14.49,
+          "quantityTons": 35878052,
+          "quantitySharePct": 13.810268123091628,
+          "unitValueUsdPerTon": 544.1872931116773
         },
         {
           "country": "U ARAB EMTS",
           "valueUsdMillion": 15117.32,
-          "sharePct": 11.22
+          "sharePct": 11.22,
+          "quantityTons": 27316298,
+          "quantitySharePct": 10.514656690677398,
+          "unitValueUsdPerTon": 553.4175970697054
         },
         {
           "country": "U S A",
           "valueUsdMillion": 9865.44,
-          "sharePct": 7.32
+          "sharePct": 7.32,
+          "quantityTons": 18172214,
+          "quantitySharePct": 6.994893360715332,
+          "unitValueUsdPerTon": 542.8859686552228
         },
         {
           "country": "KUWAIT",
           "valueUsdMillion": 4479.06,
-          "sharePct": 3.32
+          "sharePct": 3.32,
+          "quantityTons": 8991048,
+          "quantitySharePct": 3.4608563360013735,
+          "unitValueUsdPerTon": 498.1688452781033
         },
         {
           "country": "NIGERIA",
           "valueUsdMillion": 4089.13,
-          "sharePct": 3.04
+          "sharePct": 3.04,
+          "quantityTons": 7365600,
+          "quantitySharePct": 2.8351848892867344,
+          "unitValueUsdPerTon": 555.1659063755837
         },
         {
           "country": "ANGOLA",
           "valueUsdMillion": 3586.39,
-          "sharePct": 2.66
+          "sharePct": 2.66,
+          "quantityTons": 6755218,
+          "quantitySharePct": 2.6002351468227647,
+          "unitValueUsdPerTon": 530.9066265515044
         },
         {
           "country": "BRAZIL",
           "valueUsdMillion": 2276.27,
-          "sharePct": 1.69
+          "sharePct": 1.69,
+          "quantityTons": 4697933,
+          "quantitySharePct": 1.8083399386990193,
+          "unitValueUsdPerTon": 484.5258542427063
         },
         {
           "country": "QATAR",
           "valueUsdMillion": 2042.18,
-          "sharePct": 1.52
+          "sharePct": 1.52,
+          "quantityTons": 3977610,
+          "quantitySharePct": 1.5310714357928488,
+          "unitValueUsdPerTon": 513.4188620804956
         },
         {
           "country": "EGYPT A RP",
           "valueUsdMillion": 1686.19,
-          "sharePct": 1.25
+          "sharePct": 1.25,
+          "quantityTons": 3019144,
+          "quantitySharePct": 1.1621363429158125,
+          "unitValueUsdPerTon": 558.4993627332781
         },
         {
           "country": "OMAN",
           "valueUsdMillion": 1633.55,
-          "sharePct": 1.21
+          "sharePct": 1.21,
+          "quantityTons": 2851019,
+          "quantitySharePct": 1.0974212539194874,
+          "unitValueUsdPerTon": 572.9705764851094
         },
         {
           "country": "COLOMBIA",
           "valueUsdMillion": 1565.62,
-          "sharePct": 1.16
+          "sharePct": 1.16,
+          "quantityTons": 3501681,
+          "quantitySharePct": 1.3478756731702048,
+          "unitValueUsdPerTon": 447.1052617300091
         },
         {
           "country": "CONGO P REP",
           "valueUsdMillion": 588,
-          "sharePct": 0.44
+          "sharePct": 0.44,
+          "quantityTons": 1008517,
+          "quantitySharePct": 0.3882008470442041,
+          "unitValueUsdPerTon": 583.0342968933593
         },
         {
           "country": "MALAYSIA",
           "valueUsdMillion": 578.05,
-          "sharePct": 0.43
+          "sharePct": 0.43,
+          "quantityTons": 958669,
+          "quantitySharePct": 0.36901323213691,
+          "unitValueUsdPerTon": 602.9714114047706
         },
         {
           "country": "LIBYA",
           "valueUsdMillion": 546.38,
-          "sharePct": 0.41
+          "sharePct": 0.41,
+          "quantityTons": 955902,
+          "quantitySharePct": 0.3679481516833616,
+          "unitValueUsdPerTon": 571.5857901751435
         },
         {
           "country": "GABON",
           "valueUsdMillion": 425.73,
-          "sharePct": 0.32
+          "sharePct": 0.32,
+          "quantityTons": 714938,
+          "quantitySharePct": 0.27519569544597583,
+          "unitValueUsdPerTon": 595.4782092992679
         },
         {
           "country": "TURKEY",
           "valueUsdMillion": 351.1,
-          "sharePct": 0.26
+          "sharePct": 0.26,
+          "quantityTons": 587312,
+          "quantitySharePct": 0.22606958125567103,
+          "unitValueUsdPerTon": 597.8083199389762
         },
         {
           "country": "MEXICO",
           "valueUsdMillion": 332.76,
-          "sharePct": 0.25
+          "sharePct": 0.25,
+          "quantityTons": 751062,
+          "quantitySharePct": 0.2891006344788576,
+          "unitValueUsdPerTon": 443.05263746534905
         },
         {
           "country": "GUYANA",
           "valueUsdMillion": 274.46,
-          "sharePct": 0.2
+          "sharePct": 0.2,
+          "quantityTons": 558654,
+          "quantitySharePct": 0.21503847332730414,
+          "unitValueUsdPerTon": 491.2879886298138
         },
         {
           "country": "VENEZUELA",
           "valueUsdMillion": 255.27,
-          "sharePct": 0.19
+          "sharePct": 0.19,
+          "quantityTons": 643097,
+          "quantitySharePct": 0.24754248082242192,
+          "unitValueUsdPerTon": 396.9385644778315
         },
         {
           "country": "BRUNEI",
           "valueUsdMillion": 227.19,
-          "sharePct": 0.17
+          "sharePct": 0.17,
+          "quantityTons": 392612,
+          "quantitySharePct": 0.15112517782022422,
+          "unitValueUsdPerTon": 578.6629038338104
         },
         {
           "country": "GHANA",
           "valueUsdMillion": 204.79,
-          "sharePct": 0.15
+          "sharePct": 0.15,
+          "quantityTons": 377793,
+          "quantitySharePct": 0.14542101184944922,
+          "unitValueUsdPerTon": 542.0693342650605
         },
         {
           "country": "KOREA RP",
           "valueUsdMillion": 202.79,
-          "sharePct": 0.15
+          "sharePct": 0.15,
+          "quantityTons": 393990,
+          "quantitySharePct": 0.15165560097345504,
+          "unitValueUsdPerTon": 514.7084951394705
         },
         {
           "country": "ALGERIA",
           "valueUsdMillion": 186.42,
-          "sharePct": 0.14
+          "sharePct": 0.14,
+          "quantityTons": 264262,
+          "quantitySharePct": 0.1017203797671189,
+          "unitValueUsdPerTon": 705.4362715789633
         },
         {
           "country": "URUGUAY",
           "valueUsdMillion": 137.13,
-          "sharePct": 0.1
+          "sharePct": 0.1,
+          "quantityTons": 275931,
+          "quantitySharePct": 0.10621203998123412,
+          "unitValueUsdPerTon": 496.97206910423256
         },
         {
           "country": "SINGAPORE",
           "valueUsdMillion": 112.7,
-          "sharePct": 0.08
+          "sharePct": 0.08,
+          "quantityTons": 224294,
+          "quantitySharePct": 0.08633579878864978,
+          "unitValueUsdPerTon": 502.46551401285814
         },
         {
           "country": "ARGENTINA",
           "valueUsdMillion": 110.36,
-          "sharePct": 0.08
+          "sharePct": 0.08,
+          "quantityTons": 182430,
+          "quantitySharePct": 0.0702214048214102,
+          "unitValueUsdPerTon": 604.9443622211259
         },
         {
           "country": "CONGO D. REP.",
           "valueUsdMillion": 94.03,
-          "sharePct": 0.07
+          "sharePct": 0.07,
+          "quantityTons": 192257,
+          "quantitySharePct": 0.07400403785972626,
+          "unitValueUsdPerTon": 489.0849227856463
         },
         {
           "country": "TOGO",
           "valueUsdMillion": 75.46,
-          "sharePct": 0.06
+          "sharePct": 0.06,
+          "quantityTons": 139832,
+          "quantitySharePct": 0.05382447776674577,
+          "unitValueUsdPerTon": 539.647577092511
         },
         {
           "country": "PANAMA REPUBLIC",
           "valueUsdMillion": 69.21,
-          "sharePct": 0.05
+          "sharePct": 0.05,
+          "quantityTons": 143993,
+          "quantitySharePct": 0.05542614013292396,
+          "unitValueUsdPerTon": 480.6483648510692
         },
         {
           "country": "SUDAN",
           "valueUsdMillion": 61,
-          "sharePct": 0.05
+          "sharePct": 0.05,
+          "quantityTons": 115395,
+          "quantitySharePct": 0.04441812755230297,
+          "unitValueUsdPerTon": 528.6190909484814
         },
         {
           "country": "CANADA",
           "valueUsdMillion": 46.33,
-          "sharePct": 0.03
+          "sharePct": 0.03,
+          "quantityTons": 108894,
+          "quantitySharePct": 0.041915746624034654,
+          "unitValueUsdPerTon": 425.45962128308264
         },
         {
           "country": "SOUTH SUDAN",
           "valueUsdMillion": 40.49,
-          "sharePct": 0.03
+          "sharePct": 0.03,
+          "quantityTons": 79660,
+          "quantitySharePct": 0.030662923357307116,
+          "unitValueUsdPerTon": 508.2852121516445
         },
         {
           "country": "CAMEROON",
           "valueUsdMillion": 19.75,
-          "sharePct": 0.01
+          "sharePct": 0.01,
+          "quantityTons": 35461,
+          "quantitySharePct": 0.013649735440289575,
+          "unitValueUsdPerTon": 556.9498886100223
         }
       ]
     }
