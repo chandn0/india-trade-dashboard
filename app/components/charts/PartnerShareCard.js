@@ -20,6 +20,7 @@ export default function PartnerShareCard() {
       tone={META[metric].tone}
       comp={PARTNER_COMPS[metric]}
       groupNoun="partner countries"
+      mobileLegendLimit={6}
       controls={
         <ToggleChips
           options={[
