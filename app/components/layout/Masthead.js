@@ -1,19 +1,6 @@
 import { Box, Chip, Container, Typography } from '@mui/material';
-import { alpha } from '@mui/material/styles';
 import { C } from '../../theme.js';
 import { latestFyLabel, latestStatusNote } from '../../lib/transforms.js';
-
-const NAV_SECTIONS = [
-  ['Rupee & deficit', '/#rupee-deficit'],
-  ['Trade trends', '/#trends'],
-  ['Industry mix', '/#basket-mix'],
-  ['Partners', '/#partners'],
-  ['Biggest movers', '/#item-trends'],
-  ['Explorer', '/#explorer'],
-  ['Product stages', '/products'],
-  ['Buildability atlas', '/#buildability-atlas'],
-  ['Value chains', '/#value-chains'],
-];
 
 export default function Masthead() {
   return (
@@ -31,7 +18,7 @@ export default function Masthead() {
         maxWidth="xl"
         sx={{ py: 1.25, display: 'flex', alignItems: 'center', gap: { xs: 1.25, md: 2 } }}
       >
-        <Box sx={{ mr: 'auto', minWidth: 0 }}>
+        <Box sx={{ mr: 'auto', minWidth: 0, flexShrink: 0 }}>
           <Typography
             variant="h6"
             component="h1"
@@ -55,26 +42,13 @@ export default function Masthead() {
           </Typography>
         </Box>
         <Box
-          component="nav"
-          sx={{ display: { xs: 'none', md: 'flex' }, gap: 1.5, mr: 1, flexShrink: 0 }}
+          sx={{
+            display: { xs: 'none', md: 'flex' },
+            alignItems: 'center',
+            gap: 1.5,
+            flexShrink: 0,
+          }}
         >
-          {NAV_SECTIONS.map(([label, href]) => (
-            <Typography
-              key={href}
-              component="a"
-              href={href}
-              sx={{
-                fontSize: 12.5,
-                fontWeight: 600,
-                color: 'rgba(231,236,245,0.72)',
-                '&:hover': { color: '#fff' },
-              }}
-            >
-              {label}
-            </Typography>
-          ))}
-        </Box>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1, sm: 1.5 }, flexShrink: 0 }}>
           <Typography
             component="a"
             href="https://github.com/chandn0/india-trade-dashboard"
@@ -87,6 +61,7 @@ export default function Masthead() {
               color: 'rgba(231,236,245,0.85)',
               textDecoration: 'none',
               '&:hover': { color: '#fff', textDecoration: 'underline' },
+              '&:focus-visible': { outline: '2px solid #93c5fd', outlineOffset: 3 },
             }}
           >
             GitHub ↗
@@ -100,9 +75,10 @@ export default function Masthead() {
             sx={{
               fontSize: 12,
               fontWeight: 700,
-              color: '#5eead4',
+              color: 'rgba(231,236,245,0.78)',
               textDecoration: 'none',
               '&:hover': { textDecoration: 'underline' },
+              '&:focus-visible': { outline: '2px solid #cbd5e1', outlineOffset: 3 },
             }}
           >
             Contribute ↗
@@ -110,8 +86,23 @@ export default function Masthead() {
         </Box>
         <Chip
           size="small"
-          label={`Data through ${latestFyLabel}${latestStatusNote ? ` · ${latestStatusNote}` : ''}`}
-          sx={{ bgcolor: alpha(C.purple, 0.32), color: '#d9cbff', fontWeight: 700, flexShrink: 0 }}
+          label={
+            <>
+              <Box component="span" sx={{ display: { xs: 'inline', sm: 'none' } }}>
+                {latestFyLabel}
+              </Box>
+              <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' } }}>
+                {`Data through ${latestFyLabel}${latestStatusNote ? ` · ${latestStatusNote}` : ''}`}
+              </Box>
+            </>
+          }
+          sx={{
+            display: 'flex',
+            bgcolor: 'rgba(255,255,255,0.09)',
+            color: 'rgba(255,255,255,0.82)',
+            fontWeight: 700,
+            flexShrink: 0,
+          }}
         />
       </Container>
     </Box>

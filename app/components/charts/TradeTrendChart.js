@@ -49,7 +49,7 @@ export default function TradeTrendChart() {
             justifyContent: 'space-between',
           }}
         >
-          <Typography variant="subtitle1" sx={{ fontWeight: 800 }}>
+          <Typography component="h2" variant="subtitle1" sx={{ fontWeight: 800 }}>
             Exports vs imports · US$ billion
           </Typography>
           <Stack direction="row" spacing={0.75}>
@@ -73,6 +73,7 @@ export default function TradeTrendChart() {
                   }
                   label={l.label}
                   sx={{
+                    minHeight: 32,
                     cursor: 'pointer',
                     fontWeight: 700,
                     bgcolor: on ? alpha(l.color, 0.1) : 'transparent',

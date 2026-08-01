@@ -62,7 +62,7 @@ _\*FY25‑26 is the latest year (provisional)._
 **Persistent and widening.** India has not posted a single merchandise surplus year in this window. The deficit's trajectory is the clearest long‑term signal in the data:
 
 - **Export coverage ratio (exports ÷ imports) is deteriorating.** It oscillated 61–72% for most of the 2010s, spiked to 74% in the COVID year (imports collapsed faster), then fell steadily to a **record‑low 57.0% in FY26.** Exports now finance a _smaller_ share of the import bill than at any point since FY10.
-- **Cumulative deficit ≈ $3.0 trillion** over FY10–FY26 — the running total the dashboard plots against the rupee.
+- **Cumulative deficit ≈ $3.0 trillion** over FY10–FY26.
 
 **Deficit is cyclically sensitive to two things — oil prices and import demand:**
 
@@ -181,7 +181,7 @@ Nearly half of imports sit in ten HS‑4 lines dominated by bulk commodities (cr
 
 - The rupee **depreciated ~1.9× (≈4.5% CAGR)** against the dollar over the period and continues to weaken (FY26 year‑end already ₹94.7).
 - **Implication for the numbers above:** all trade values are in USD, so dollar‑terms export growth (5.8% CAGR) _understates_ rupee‑terms growth — in INR the export book grew roughly 4.8×. A weaker rupee cushions exporters but **inflates the USD‑priced import bill** (crude, gold, chips), reinforcing the deficit.
-- The dashboard deliberately plots **cumulative deficit alongside the rupee** because they trend together: a persistent merchandise deficit is one of the structural pressures on the currency.
+- A persistent merchandise deficit is one structural pressure on the currency, but the relationship is not one-to-one; inflation, capital flows, oil prices and global dollar cycles also matter.
 
 ---
 

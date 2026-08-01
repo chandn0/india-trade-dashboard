@@ -32,7 +32,7 @@ import { moneyB } from '../../lib/format.js';
 import cardSx from '../primitives/cardSx.js';
 
 const availabilityColor = {
-  available: '#15803d',
+  available: '#5f7b58',
   emerging: '#b45309',
   limited: '#be185d',
   not_available: '#b91c1c',
@@ -172,7 +172,7 @@ export default function DomesticValueChainFramework() {
         sx={{
           p: { xs: 2.25, md: 3 },
           color: '#fff',
-          background: 'linear-gradient(125deg, #172554 0%, #312e81 55%, #134e4a 125%)',
+          background: 'linear-gradient(120deg, #182235 0%, #2a3547 100%)',
         }}
       >
         <Box
@@ -229,13 +229,13 @@ export default function DomesticValueChainFramework() {
             label="Gross imports"
             value={moneyB(valueChainData.summary.totalEndProductImportUsdMn)}
             note="Never treated as achievable impact"
-            color="#fdba74"
+            color="#d0a37d"
           />
           <SummaryMetric
             label="Input-mapped"
             value={`${valueChainData.metadata.mappedEndProductLines}`}
             note={`${mappedProducts.reduce((sum, product) => sum + product.links.length, 0)} curated research links`}
-            color="#5eead4"
+            color="#9db7b1"
           />
           <SummaryMetric
             label="Research backlog"
@@ -244,7 +244,7 @@ export default function DomesticValueChainFramework() {
               valueChainData.metadata.mappedEndProductLines
             ).toLocaleString()}
             note="Requires product-to-input evidence"
-            color="#fda4af"
+            color="#d49a9f"
           />
         </Box>
       </Box>
@@ -413,9 +413,9 @@ export default function DomesticValueChainFramework() {
                   [
                     'Net balance',
                     `${selected.netBalanceUsdMn >= 0 ? '+' : '−'}${moneyB(Math.abs(selected.netBalanceUsdMn))}`,
-                    selected.netBalanceUsdMn >= 0 ? '#15803d' : '#be123c',
+                    selected.netBalanceUsdMn >= 0 ? '#5f7b58' : C.red,
                   ],
-                  ['Deficit base', moneyB(endProductDeficit), '#7c3aed'],
+                  ['Deficit base', moneyB(endProductDeficit), C.purple],
                 ].map(([label, value, color]) => (
                   <Box
                     key={label}

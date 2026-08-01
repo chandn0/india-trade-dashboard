@@ -36,31 +36,25 @@ import {
   SearchRounded,
 } from '@mui/icons-material';
 
-import stageData from '../../../data/product_stage_mix.json';
+import stageData from '../../../data/product_stage_summary.json';
 import Footer from '../layout/Footer.js';
 import { C, mono } from '../../theme.js';
 import { moneyB } from '../../lib/format.js';
 import { filterAndSortProducts } from '../../lib/productLogic.js';
 import cardSx from '../primitives/cardSx.js';
 import Sparkline from '../charts/Sparkline.js';
-import {
-  EvidenceReadiness,
-  ProductComparison,
-  ProductSignals,
-  ScenarioModeller,
-} from './ProductDecisionTools.js';
 import { OpportunityEvidenceCard } from './OpportunityEvidenceCard.js';
-import ProductRelationshipMap from './ProductRelationshipMap.js';
-import DomesticValueChainFramework from './DomesticValueChainFramework.js';
+import ProductToolSuite from './ProductToolSuite.js';
+import { useProductStageData } from './useProductStageData.js';
 
 const stageColors = {
-  'raw material': '#a16207',
+  'raw material': '#887746',
   'intermediate input': C.purple,
   'finished product': C.blue,
   'capital good': C.teal,
   'energy input': C.orange,
-  'agricultural commodity': '#15803d',
-  'consumption asset': '#be185d',
+  'agricultural commodity': '#5f7b58',
+  'consumption asset': '#9a5868',
 };
 
 const stageOrder = [
@@ -488,13 +482,19 @@ function NetBalancePanel() {
         </Typography>
       </Box>
       <TableContainer>
-        <Table size="small">
+        <Table size="small" sx={{ tableLayout: { xs: 'fixed', sm: 'auto' } }}>
           <TableHead>
             <TableRow>
-              <TableCell>Stage</TableCell>
-              <TableCell align="right">Imports</TableCell>
-              <TableCell align="right">Exports</TableCell>
-              <TableCell align="right">Net</TableCell>
+              <TableCell sx={{ width: { xs: '42%', sm: 'auto' } }}>Stage</TableCell>
+              <TableCell align="right" sx={{ width: { xs: '27%', sm: 'auto' } }}>
+                Imports
+              </TableCell>
+              <TableCell align="right" sx={{ display: { xs: 'none', sm: 'table-cell' } }}>
+                Exports
+              </TableCell>
+              <TableCell align="right" sx={{ width: { xs: '31%', sm: 'auto' } }}>
+                Net
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -506,7 +506,10 @@ function NetBalancePanel() {
                 <TableCell align="right" sx={{ ...mono, fontSize: 11 }}>
                   {moneyB(row.importUsdMn)}
                 </TableCell>
-                <TableCell align="right" sx={{ ...mono, fontSize: 11 }}>
+                <TableCell
+                  align="right"
+                  sx={{ ...mono, fontSize: 11, display: { xs: 'none', sm: 'table-cell' } }}
+                >
                   {moneyB(row.exportUsdMn)}
                 </TableCell>
                 <TableCell align="right">
@@ -582,7 +585,7 @@ function ConcentrationPanel() {
   );
 }
 
-function ProductExplorer() {
+function ProductExplorer({ detailData }) {
   const [flowName, setFlowName] = React.useState('Imports');
   const [stage, setStage] = React.useState('');
   const [sector, setSector] = React.useState('');
@@ -598,7 +601,7 @@ function ProductExplorer() {
   const rankKey = flowName === 'Imports' ? 'importRank' : 'exportRank';
   const historyKey = flowName === 'Imports' ? 'importHistory' : 'exportHistory';
   const exposureKey = flowName.toLowerCase();
-  const flowProducts = stageData.products.filter((product) => product[valueKey] > 0);
+  const flowProducts = detailData.products.filter((product) => product[valueKey] > 0);
   const sectors = [...new Set(flowProducts.map((product) => product.sector))].sort();
   const hs2Options = [
     ...new Set(
@@ -907,19 +910,19 @@ function ProductExplorer() {
                           fontWeight: 700,
                           color:
                             product.reviewStatus === 'reviewed'
-                              ? '#15803d'
+                              ? '#5f7b58'
                               : product.reviewStatus === 'mixed-use'
                                 ? C.purple
                                 : '#b45309',
                           bgcolor:
                             product.reviewStatus === 'reviewed'
-                              ? alpha('#15803d', 0.1)
+                              ? alpha('#5f7b58', 0.1)
                               : product.reviewStatus === 'mixed-use'
                                 ? alpha(C.purple, 0.1)
                                 : alpha('#b45309', 0.1),
                           border: `1px solid ${
                             product.reviewStatus === 'reviewed'
-                              ? alpha('#15803d', 0.2)
+                              ? alpha('#5f7b58', 0.2)
                               : product.reviewStatus === 'mixed-use'
                                 ? alpha(C.purple, 0.2)
                                 : alpha('#b45309', 0.2)
@@ -940,7 +943,7 @@ function ProductExplorer() {
               flowName={flowName}
               rankKey={rankKey}
               historyKey={historyKey}
-              stageData={stageData}
+              stageData={detailData}
             />
           ) : (
             <Typography color="text.secondary">No products match these filters.</Typography>
@@ -954,7 +957,14 @@ function ProductExplorer() {
 export default function ProductCompositionDashboard() {
   const theme = useTheme();
   const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
+  const {
+    sentinelRef: detailSentinelRef,
+    data: detailData,
+    error: detailError,
+    retry: retryDetails,
+  } = useProductStageData();
   const classifiedGap = imports.totalUsdMn - exports.totalUsdMn;
+
   return (
     <Box sx={{ bgcolor: 'background.default', minHeight: '100vh' }}>
       <Box
@@ -989,6 +999,7 @@ export default function ProductCompositionDashboard() {
               rel="noopener noreferrer"
               aria-label="GitHub Repository (opens in new tab)"
               sx={{
+                display: { xs: 'none', sm: 'inline' },
                 fontSize: 12,
                 fontWeight: 700,
                 color: 'rgba(255,255,255,0.85)',
@@ -1005,9 +1016,10 @@ export default function ProductCompositionDashboard() {
               rel="noopener noreferrer"
               aria-label="Contribute to India Trade Dashboard on GitHub (opens in new tab)"
               sx={{
+                display: { xs: 'none', sm: 'inline' },
                 fontSize: 12,
                 fontWeight: 700,
-                color: '#5eead4',
+                color: 'rgba(255,255,255,0.74)',
                 textDecoration: 'none',
                 '&:hover': { textDecoration: 'underline' },
               }}
@@ -1017,7 +1029,11 @@ export default function ProductCompositionDashboard() {
             <Chip
               size="small"
               label={`FY${stageData.metadata.fiscalYear}`}
-              sx={{ color: '#d9cbff', bgcolor: alpha(C.purple, 0.32) }}
+              sx={{
+                display: { xs: 'none', sm: 'flex' },
+                color: 'rgba(255,255,255,0.82)',
+                bgcolor: 'rgba(255,255,255,0.09)',
+              }}
             />
           </Box>
         </Container>
@@ -1026,16 +1042,17 @@ export default function ProductCompositionDashboard() {
       <Box
         sx={{
           color: '#fff',
-          background: `linear-gradient(125deg, ${C.ink} 0%, #172554 58%, #163b39 130%)`,
+          background: `linear-gradient(120deg, ${C.ink} 0%, #253249 100%)`,
         }}
       >
-        <Container maxWidth="xl" sx={{ py: { xs: 4, md: 6 } }}>
-          <Typography variant="overline" sx={{ color: '#7dd3fc' }}>
+        <Container maxWidth="xl" sx={{ py: { xs: 4, md: 5 } }}>
+          <Typography variant="overline" sx={{ color: 'rgba(255,255,255,0.62)' }}>
             India’s trade by production stage
           </Typography>
           <Typography
             variant="h2"
-            sx={{ mt: 0.5, maxWidth: 920, fontSize: { xs: 38, md: 58 }, lineHeight: 1.02 }}
+            component="h1"
+            sx={{ mt: 0.5, maxWidth: 880, fontSize: { xs: 36, md: 52 }, lineHeight: 1.04 }}
           >
             What India buys, what India sells, and how much value is added
           </Typography>
@@ -1053,41 +1070,41 @@ export default function ProductCompositionDashboard() {
           </Typography>
           <Box
             sx={{
-              mt: 3.5,
+              mt: 3,
               display: 'grid',
               gridTemplateColumns: { xs: 'repeat(2,1fr)', md: 'repeat(4,minmax(150px,1fr))' },
-              gap: 2.5,
+              gap: { xs: 2, md: 2.5 },
             }}
           >
             <Metric
               label="Total HS-4 imports"
               value={moneyB(imports.totalUsdMn)}
               note={`${imports.productCount.toLocaleString()} active product lines`}
-              color="#fdba74"
+              color="#d0a37d"
             />
             <Metric
               label="Total HS-4 exports"
               value={moneyB(exports.totalUsdMn)}
               note={`${exports.productCount.toLocaleString()} active product lines`}
-              color="#93c5fd"
+              color="#9fb4ca"
             />
             <Metric
               label="Full-basket gap"
               value={`−${moneyB(classifiedGap)}`}
               note="Imports minus exports"
-              color="#fda4af"
+              color="#d49a9f"
             />
             <Metric
               label="Attributed HS-4 lines"
               value={stageData.metadata.totalUniqueHs4Products.toLocaleString()}
               note={`${stageData.metadata.classificationSummary['curated HS-4']} curated · ${stageData.metadata.classificationSummary['HS-2 dominant-use rule'].toLocaleString()} rule-mapped`}
-              color="#5eead4"
+              color="#9db7b1"
             />
           </Box>
         </Container>
       </Box>
 
-      <Container maxWidth="xl" sx={{ py: { xs: 3, md: 4 } }}>
+      <Container maxWidth="xl" sx={{ py: { xs: 3, md: 5 } }}>
         <Stack spacing={{ xs: 3, md: 4 }}>
           <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', lg: '1fr 1fr' }, gap: 2 }}>
             <MixCard flow={imports} />
@@ -1105,12 +1122,33 @@ export default function ProductCompositionDashboard() {
             <NetBalancePanel />
           </Box>
           <ConcentrationPanel />
-          <ProductSignals />
-          <DomesticValueChainFramework />
-          <ProductRelationshipMap />
-          <ScenarioModeller />
-          <ProductComparison />
-          <EvidenceReadiness />
+          <Box
+            ref={detailSentinelRef}
+            data-testid="product-detail-sentinel"
+            aria-hidden="true"
+            sx={{ height: 1 }}
+          />
+          {!detailData && !detailError ? (
+            <Paper sx={{ ...cardSx, textAlign: 'center' }} aria-live="polite">
+              <Typography variant="h6">Loading detailed product tools…</Typography>
+              <Typography sx={{ mt: 0.5, fontSize: 12.5, color: 'text.secondary' }}>
+                The complete HS-4 evidence dataset loads only when this workspace approaches the
+                viewport.
+              </Typography>
+            </Paper>
+          ) : null}
+          {detailError ? (
+            <Paper sx={{ ...cardSx, borderColor: 'error.light' }} role="alert">
+              <Typography variant="h6">Detailed product tools could not be loaded</Typography>
+              <Typography sx={{ mt: 0.5, fontSize: 12.5, color: 'text.secondary' }}>
+                {detailError}
+              </Typography>
+              <Button size="small" sx={{ mt: 1 }} onClick={retryDetails}>
+                Retry
+              </Button>
+            </Paper>
+          ) : null}
+          {detailData ? <ProductToolSuite detailData={detailData} /> : null}
           <Box
             sx={{
               display: 'grid',
@@ -1169,7 +1207,7 @@ export default function ProductCompositionDashboard() {
               </Typography>
             </Paper>
           </Box>
-          <ProductExplorer />
+          {detailData ? <ProductExplorer detailData={detailData} /> : null}
           <Paper sx={{ ...cardSx, bgcolor: alpha(C.purple, 0.035) }}>
             <Typography variant="subtitle1">Coverage and method</Typography>
             <Typography sx={{ mt: 0.7, fontSize: 12.5, lineHeight: 1.65, color: 'text.secondary' }}>

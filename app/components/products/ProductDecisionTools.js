@@ -30,7 +30,6 @@ import {
   InsightsRounded,
 } from '@mui/icons-material';
 
-import stageData from '../../../data/product_stage_mix.json';
 import { C, mono } from '../../theme.js';
 import { moneyB } from '../../lib/format.js';
 import {
@@ -44,13 +43,6 @@ import {
 import cardSx from '../primitives/cardSx.js';
 
 const titleCase = (value) => value.replace(/\b\w/g, (letter) => letter.toUpperCase());
-const products = stageData.products;
-const byCode = new Map(products.map((product) => [product.hscode, product]));
-const productOptions = [...products].sort(
-  (a, b) =>
-    Math.max(b.latestImportUsdMn, b.latestExportUsdMn) -
-    Math.max(a.latestImportUsdMn, a.latestExportUsdMn),
-);
 
 function compactName(product) {
   return titleCase(product.description.toLowerCase());
@@ -97,7 +89,7 @@ function SignalList({ title, tone, products: rows, valueFor, note }) {
   );
 }
 
-export function ProductSignals() {
+export function ProductSignals({ products }) {
   const deficit = [...products].sort((a, b) => a.netBalanceUsdMn - b.netBalanceUsdMn).slice(0, 5);
   const finishedImportGrowth = products
     .filter(
@@ -156,7 +148,7 @@ export function ProductSignals() {
         />
         <SignalList
           title="Primary export strengths"
-          tone="#15803d"
+          tone="#5f7b58"
           products={upgrading}
           valueFor={(product) => moneyB(product.latestExportUsdMn)}
           note="Candidates for downstream value-add analysis"
@@ -194,7 +186,20 @@ function ScenarioSlider({ label, value, onChange, help, max = 100 }) {
   );
 }
 
-export function ScenarioModeller() {
+export function ScenarioModeller({ products }) {
+  const byCode = React.useMemo(
+    () => new Map(products.map((product) => [product.hscode, product])),
+    [products],
+  );
+  const productOptions = React.useMemo(
+    () =>
+      [...products].sort(
+        (a, b) =>
+          Math.max(b.latestImportUsdMn, b.latestExportUsdMn) -
+          Math.max(a.latestImportUsdMn, a.latestExportUsdMn),
+      ),
+    [products],
+  );
   const [hscode, setHscode] = React.useState('8542');
   const [substitution, setSubstitution] = React.useState(20);
   const [exportGrowth, setExportGrowth] = React.useState(15);
@@ -311,7 +316,7 @@ export function ScenarioModeller() {
         sx={{
           p: { xs: 2, md: 2.5 },
           color: '#fff',
-          background: `linear-gradient(120deg, ${C.ink}, #172554)`,
+          background: `linear-gradient(120deg, ${C.ink}, #253249)`,
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'flex-start',
@@ -319,9 +324,9 @@ export function ScenarioModeller() {
       >
         <Box>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <CalculateRounded sx={{ color: '#5eead4' }} />
+            <CalculateRounded sx={{ color: '#9db7b1' }} />
             <Box>
-              <Typography variant="overline" sx={{ color: '#5eead4' }}>
+              <Typography variant="overline" sx={{ color: '#9db7b1' }}>
                 Scenario laboratory
               </Typography>
               <Typography variant="h5">Translate gross ambition into net impact</Typography>
@@ -596,7 +601,20 @@ export function ScenarioModeller() {
   );
 }
 
-export function ProductComparison() {
+export function ProductComparison({ products }) {
+  const byCode = React.useMemo(
+    () => new Map(products.map((product) => [product.hscode, product])),
+    [products],
+  );
+  const productOptions = React.useMemo(
+    () =>
+      [...products].sort(
+        (a, b) =>
+          Math.max(b.latestImportUsdMn, b.latestExportUsdMn) -
+          Math.max(a.latestImportUsdMn, a.latestExportUsdMn),
+      ),
+    [products],
+  );
   const [selectedCodes, setSelectedCodes] = React.useState(['2709', '8542', '8507']);
   const [candidate, setCandidate] = React.useState(null);
   const selected = selectedCodes.map((code) => byCode.get(code)).filter(Boolean);
@@ -724,18 +742,18 @@ export function ProductComparison() {
   );
 }
 
-export function EvidenceReadiness() {
-  const external = stageData.metadata.enrichmentAvailability;
+export function EvidenceReadiness({ metadata }) {
+  const external = metadata.enrichmentAvailability;
   const rows = [
     [
       'Five-year HS-4 trade values',
       true,
-      `${stageData.metadata.totalUniqueHs4Products.toLocaleString()} products`,
+      `${metadata.totalUniqueHs4Products.toLocaleString()} products`,
     ],
     [
       'Production-stage attribution',
       true,
-      `${stageData.metadata.classificationSummary['curated HS-4']} curated; remaining lines rule-mapped`,
+      `${metadata.classificationSummary['curated HS-4']} curated; remaining lines rule-mapped`,
     ],
     ['Major-partner HS-2 exposure', true, '12 partners; chapter-level indicator only'],
     ['Partner × HS-4 sourcing', false, 'Data unavailable at HS-4 granularity'],

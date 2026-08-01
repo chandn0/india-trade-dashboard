@@ -17,16 +17,16 @@ export const mono = {
 
 // Shared accent palette used by charts and tone-keyed components.
 export const C = {
-  blue: '#2563eb', // exports
-  blueDeep: '#1e40af',
-  orange: '#ea670e', // imports
-  teal: '#0d9488', // balance / positive
-  red: '#e11d48', // deficit / negative
-  purple: '#7c3aed', // year-to-date highlight
-  slate: '#64748b',
-  grid: '#e8edf4',
-  ink: '#0b1220', // dark app bar
-  inkSoft: '#111a2e',
+  blue: '#46698f', // exports
+  blueDeep: '#334f70',
+  orange: '#a86435', // imports
+  teal: '#4f756d', // balance / positive
+  red: '#a45159', // deficit / negative
+  purple: '#756783', // year-to-date highlight
+  slate: '#6b7280',
+  grid: '#e2dfd7',
+  ink: '#111827', // dark app bar
+  inkSoft: '#1d2636',
 };
 
 export const toneColor = (tone) =>
@@ -42,11 +42,11 @@ const theme = createTheme({
     success: { main: C.teal },
     warning: { main: C.orange },
     error: { main: C.red },
-    background: { default: '#f0eee6', paper: '#faf9f5' },
-    text: { primary: '#0c1730', secondary: '#5a6a85' },
-    divider: '#e6ebf3',
+    background: { default: '#f3f0e8', paper: '#fffdf9' },
+    text: { primary: '#172033', secondary: '#687283' },
+    divider: '#dfddd5',
   },
-  shape: { borderRadius: 10 },
+  shape: { borderRadius: 8 },
   typography: {
     fontFamily: fontSans,
     // Titles use Fraunces (display serif); browser optical sizing makes larger sizes higher-contrast.
@@ -54,9 +54,20 @@ const theme = createTheme({
     h1: { fontFamily: fontDisplay, fontWeight: 800, letterSpacing: '-0.02em' },
     h2: { fontFamily: fontDisplay, fontWeight: 800, letterSpacing: '-0.02em' },
     h3: { fontFamily: fontDisplay, fontWeight: 700, letterSpacing: '-0.015em' },
-    h4: { fontFamily: fontDisplay, fontWeight: 700, letterSpacing: '-0.01em' },
-    h5: { fontFamily: fontDisplay, fontWeight: 700, letterSpacing: '-0.01em' },
-    h6: { fontFamily: fontDisplay, fontWeight: 700, letterSpacing: '-0.005em' },
+    h4: {
+      fontFamily: fontDisplay,
+      fontWeight: 700,
+      fontSize: 'clamp(1.75rem, 3vw, 2.25rem)',
+      lineHeight: 1.12,
+      letterSpacing: '-0.01em',
+    },
+    h5: { fontFamily: fontDisplay, fontWeight: 700, fontSize: '1.4rem', letterSpacing: '-0.01em' },
+    h6: {
+      fontFamily: fontDisplay,
+      fontWeight: 700,
+      fontSize: '1.125rem',
+      letterSpacing: '-0.005em',
+    },
     subtitle1: { fontFamily: fontDisplay, fontWeight: 700 },
     subtitle2: { fontFamily: fontDisplay, fontWeight: 700 },
     button: { fontWeight: 700, letterSpacing: 0 },
@@ -70,13 +81,13 @@ const theme = createTheme({
     MuiButton: {
       defaultProps: { disableElevation: true },
       styleOverrides: {
-        root: { textTransform: 'none', borderRadius: 9, fontWeight: 700 },
+        root: { textTransform: 'none', borderRadius: 6, fontWeight: 700 },
         sizeSmall: { paddingTop: 5, paddingBottom: 5 },
       },
     },
     MuiChip: {
       styleOverrides: {
-        root: { borderRadius: 7, fontWeight: 700, letterSpacing: '-0.005em' },
+        root: { borderRadius: 5, fontWeight: 700, letterSpacing: '-0.005em' },
         sizeSmall: { height: 22 },
         label: { paddingLeft: 8, paddingRight: 8 },
       },
@@ -84,7 +95,7 @@ const theme = createTheme({
     MuiTableCell: {
       styleOverrides: {
         root: {
-          borderColor: '#edf1f7',
+          borderColor: '#ebe8e0',
           paddingTop: 9,
           paddingBottom: 9,
         },
@@ -93,8 +104,15 @@ const theme = createTheme({
           fontSize: 11,
           textTransform: 'uppercase',
           letterSpacing: '0.06em',
-          color: '#64748b',
-          background: '#f7f9fc',
+          color: '#687283',
+          background: '#f7f4ed',
+        },
+      },
+    },
+    MuiContainer: {
+      styleOverrides: {
+        maxWidthXl: {
+          '@media (min-width: 1200px)': { maxWidth: 1320 },
         },
       },
     },

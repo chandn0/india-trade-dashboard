@@ -13,5 +13,10 @@ export default function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
+    {
+      url: `${base}/petroleum`,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
   ];
 }

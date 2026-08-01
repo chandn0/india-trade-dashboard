@@ -69,11 +69,11 @@ export const VALUE_CHAINS = [
 // detail header so the same chain reads as the same thing everywhere.
 export const CHAIN_COLOR = {
   petroleum: '#475569',
-  gems: '#8b5cf6',
-  electronics: '#2563eb',
-  pharma: '#0d9488',
-  textiles: '#db2777',
-  steel: '#b45309',
+  gems: '#756783',
+  electronics: '#46698f',
+  pharma: '#4f756d',
+  textiles: '#9a5868',
+  steel: '#926b46',
 };
 
 // Latest-year totals per chain for the overview map, ordered by input size so both stacks share

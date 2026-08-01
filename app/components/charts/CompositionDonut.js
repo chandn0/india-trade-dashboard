@@ -63,7 +63,7 @@ export default function CompositionDonut({ sideLabel, tone, comp }) {
   const hv = hover != null ? arcs[hover] : null;
 
   return (
-    <Paper sx={{ ...cardSx, borderColor: alpha(accent, 0.2) }}>
+    <Paper sx={cardSx}>
       <Stack spacing={1.25}>
         <Box
           sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1 }}

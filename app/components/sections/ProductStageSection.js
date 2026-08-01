@@ -26,13 +26,13 @@ import { moneyB } from '../../lib/format.js';
 import cardSx from '../primitives/cardSx.js';
 
 const stageColors = {
-  'raw material': '#a16207',
+  'raw material': '#887746',
   'intermediate input': C.purple,
   'finished product': C.blue,
   'capital good': C.teal,
   'energy input': C.orange,
-  'agricultural commodity': '#15803d',
-  'consumption asset': '#be185d',
+  'agricultural commodity': '#5f7b58',
+  'consumption asset': '#9a5868',
 };
 
 const titleCase = (value) => value.replace(/\b\w/g, (letter) => letter.toUpperCase());
@@ -50,6 +50,7 @@ function StageLegend({ stages, selected, onSelect }) {
             onClick={() => onSelect(selected === stage.stage ? '' : stage.stage)}
             label={`${titleCase(stage.stage)} · ${stage.sharePct.toFixed(1)}%`}
             sx={{
+              minHeight: 30,
               color: active ? color : 'text.secondary',
               bgcolor: active ? alpha(color, 0.1) : '#f1f5f9',
               opacity: active ? 1 : 0.55,
@@ -85,7 +86,9 @@ function FlowPanel({ flow }) {
             <Typography variant="overline" sx={{ color: accent }}>
               {flow.flow} · FY{stageData.metadata.fiscalYear}
             </Typography>
-            <Typography variant="h5">{flow.flow} by production stage</Typography>
+            <Typography component="h3" variant="h5">
+              {flow.flow} by production stage
+            </Typography>
           </Box>
           <Box sx={{ textAlign: 'right', flexShrink: 0 }}>
             <Typography sx={{ ...mono, fontSize: 19, fontWeight: 800 }}>
@@ -121,12 +124,10 @@ function FlowPanel({ flow }) {
               arrow
             >
               <Box
-                onClick={() => setSelectedStage(selectedStage === stage.stage ? '' : stage.stage)}
                 sx={{
                   width: `${stage.sharePct}%`,
                   minWidth: stage.sharePct > 0 ? 3 : 0,
                   bgcolor: stageColors[stage.stage],
-                  cursor: 'pointer',
                   opacity: selectedStage && selectedStage !== stage.stage ? 0.25 : 1,
                   transition: 'opacity 150ms',
                   borderRight: '1px solid rgba(255,255,255,0.65)',
@@ -145,12 +146,14 @@ function FlowPanel({ flow }) {
       </Box>
 
       <TableContainer sx={{ maxHeight: 485 }}>
-        <Table stickyHeader size="small">
+        <Table stickyHeader size="small" sx={{ tableLayout: { xs: 'fixed', sm: 'auto' } }}>
           <TableHead>
             <TableRow>
-              <TableCell>Attributed product</TableCell>
-              <TableCell align="right">Value</TableCell>
-              <TableCell>Stage</TableCell>
+              <TableCell sx={{ width: { xs: '72%', sm: 'auto' } }}>Attributed product</TableCell>
+              <TableCell align="right" sx={{ width: { xs: '28%', sm: 'auto' } }}>
+                Value
+              </TableCell>
+              <TableCell sx={{ display: { xs: 'none', sm: 'table-cell' } }}>Stage</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -164,13 +167,25 @@ function FlowPanel({ flow }) {
                   arrow
                 >
                   <TableRow hover>
-                    <TableCell>
+                    <TableCell sx={{ px: { xs: 1.5, sm: 2 } }}>
                       <Box sx={{ display: 'flex', gap: 1 }}>
                         <Typography sx={{ ...mono, fontSize: 11, fontWeight: 800, color: accent }}>
                           {product.hscode}
                         </Typography>
                         <Typography sx={{ fontSize: 11.5, fontWeight: 700, lineHeight: 1.35 }}>
                           {titleCase(product.description.toLowerCase())}
+                          <Box
+                            component="span"
+                            sx={{
+                              display: { xs: 'block', sm: 'none' },
+                              mt: 0.35,
+                              color,
+                              fontSize: 10,
+                              fontWeight: 800,
+                            }}
+                          >
+                            {titleCase(product.productionStage)}
+                          </Box>
                         </Typography>
                       </Box>
                     </TableCell>
@@ -180,7 +195,7 @@ function FlowPanel({ flow }) {
                     >
                       {moneyB(product.valueUsdMn)}
                     </TableCell>
-                    <TableCell>
+                    <TableCell sx={{ display: { xs: 'none', sm: 'table-cell' } }}>
                       <Chip
                         size="small"
                         label={titleCase(product.productionStage)}
@@ -223,7 +238,9 @@ export default function ProductStageSection() {
           <Typography variant="overline" sx={{ color: C.purple }}>
             Product composition
           </Typography>
-          <Typography variant="h4">What form does India trade?</Typography>
+          <Typography component="h2" variant="h4">
+            What form does India trade?
+          </Typography>
           <Typography
             sx={{
               mt: 0.75,

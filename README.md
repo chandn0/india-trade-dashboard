@@ -84,7 +84,6 @@ a smallest useful implementation.
 - HS4 item-level movers across the latest five-year window
 - a domestic value-chain research preview linking selected imported end products
   to potentially relevant Indian inputs and missing conversion steps
-- the rupee/deficit long-run overlay
 - interpretive notes in [`docs/india-trade-trends.md`](docs/india-trade-trends.md)
   and [`docs/why-inr-has-weakened.md`](docs/why-inr-has-weakened.md)
 
@@ -122,6 +121,10 @@ python scripts/fetch_rbi_exchange_rate.py
 # build the slim country file consumed by the partner charts
 node scripts/build_country_slim.js
 ```
+
+The monthly FTSPCC refresh stages and validates a complete CSV before atomically
+replacing the committed snapshot, so a failed upstream request preserves the
+last known-good file.
 
 Source notes live in [`data/sources.md`](data/sources.md).
 

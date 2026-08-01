@@ -75,7 +75,7 @@ export default function MoverExplorer() {
   const windowLabel = `FY${fyTick(HS4_YEARS[i0])} → FY${fyTick(HS4_YEARS[i1])}`;
 
   return (
-    <Paper sx={{ ...cardSx, borderColor: alpha(accent, 0.2) }}>
+    <Paper sx={cardSx}>
       <Stack spacing={1.5}>
         <Box
           sx={{
@@ -86,7 +86,9 @@ export default function MoverExplorer() {
             flexWrap: 'wrap',
           }}
         >
-          <Typography variant="h6">Explore export &amp; import product lines</Typography>
+          <Typography component="h3" variant="h6">
+            Explore export &amp; import product lines
+          </Typography>
           <Chip
             size="small"
             label={windowLabel}

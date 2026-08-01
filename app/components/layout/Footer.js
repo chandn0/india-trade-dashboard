@@ -11,25 +11,25 @@ export default function Footer() {
   return (
     <Box
       component="footer"
-      sx={{ borderTop: '1px solid', borderColor: 'divider', py: 3.5, bgcolor: '#f8fafc' }}
+      sx={{ borderTop: '1px solid', borderColor: 'divider', py: 3.5, bgcolor: '#eeece5' }}
     >
       <Container maxWidth="xl">
-        <Stack spacing={2} sx={{ maxWidth: 960 }}>
+        <Stack spacing={2} sx={{ width: '100%' }}>
           <Box
             sx={{
-              p: 2,
+              p: { xs: 2, md: 2.25 },
               borderRadius: 2.5,
-              bgcolor: '#fff',
+              bgcolor: 'background.paper',
               border: '1px solid',
               borderColor: 'divider',
               display: 'flex',
               flexDirection: { xs: 'column', md: 'row' },
               alignItems: { xs: 'flex-start', md: 'center' },
               justifyContent: 'space-between',
-              gap: 1.5,
+              gap: { xs: 1.5, md: 2.5 },
             }}
           >
-            <Box sx={{ maxWidth: 580 }}>
+            <Box sx={{ minWidth: 0, maxWidth: 720 }}>
               <Typography sx={{ fontSize: 13, fontWeight: 800, color: '#0f172a' }}>
                 Open-source trade analytics &amp; value-chain initiative
               </Typography>
@@ -42,7 +42,11 @@ export default function Footer() {
               direction="row"
               spacing={1.5}
               useFlexGap
-              sx={{ flexWrap: 'wrap', flexShrink: 0 }}
+              sx={{
+                flexWrap: 'wrap',
+                flexShrink: 0,
+                justifyContent: { xs: 'flex-start', md: 'flex-end' },
+              }}
             >
               <Box
                 component="a"
@@ -56,7 +60,7 @@ export default function Footer() {
                   color: '#0f172a',
                   textDecoration: 'underline',
                   textUnderlineOffset: '2px',
-                  '&:hover': { color: '#2563eb' },
+                  '&:hover': { color: 'text.secondary' },
                 }}
               >
                 GitHub Repository ↗
@@ -70,10 +74,10 @@ export default function Footer() {
                 sx={{
                   fontSize: 12,
                   fontWeight: 700,
-                  color: '#0f766e',
+                  color: '#0f172a',
                   textDecoration: 'underline',
                   textUnderlineOffset: '2px',
-                  '&:hover': { color: '#0d9488' },
+                  '&:hover': { color: 'text.secondary' },
                 }}
               >
                 Contribute ↗
@@ -87,10 +91,10 @@ export default function Footer() {
                 sx={{
                   fontSize: 12,
                   fontWeight: 700,
-                  color: '#4338ca',
+                  color: '#0f172a',
                   textDecoration: 'underline',
                   textUnderlineOffset: '2px',
-                  '&:hover': { color: '#6366f1' },
+                  '&:hover': { color: 'text.secondary' },
                 }}
               >
                 Report Issues ↗
@@ -100,7 +104,7 @@ export default function Footer() {
 
           <Typography
             variant="caption"
-            sx={{ color: 'text.secondary', display: 'block', lineHeight: 1.55 }}
+            sx={{ color: 'text.secondary', display: 'block', lineHeight: 1.6, maxWidth: 1180 }}
           >
             Sources: Ministry of Commerce &amp; Industry,{' '}
             <Box
@@ -136,7 +140,7 @@ export default function Footer() {
           </Typography>
           <Typography
             variant="caption"
-            sx={{ color: 'text.secondary', display: 'block', lineHeight: 1.55 }}
+            sx={{ color: 'text.secondary', display: 'block', lineHeight: 1.6, maxWidth: 1180 }}
           >
             Values in current US$; fiscal years run April–March.
             {latestIsYtd

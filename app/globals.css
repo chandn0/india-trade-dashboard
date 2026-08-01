@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100%;
-  background: #f0eee6;
+  background: #f3f0e8;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -22,7 +22,7 @@ a {
 }
 
 ::selection {
-  background: rgba(37, 99, 235, 0.18);
+  background: rgba(70, 105, 143, 0.18);
 }
 
 /* Anchored sections clear the sticky header when jumped to. */

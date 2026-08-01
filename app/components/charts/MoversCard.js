@@ -7,7 +7,7 @@ import MoversGroup from './MoversGroup.js';
 export default function MoversCard({ sideLabel, tone, movers }) {
   const accent = toneColor(tone);
   return (
-    <Paper sx={{ ...cardSx, borderColor: alpha(accent, 0.2) }}>
+    <Paper sx={cardSx}>
       <Stack spacing={1.5}>
         <Box
           sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1 }}

@@ -1,7 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#0b1220"/>
-  <rect x="6"  y="19" width="4" height="7"  fill="#2563eb"/>
-  <rect x="12" y="14" width="4" height="12" fill="#ea670e"/>
-  <rect x="18" y="9"  width="4" height="17" fill="#0d9488"/>
-  <rect x="24" y="6"  width="4" height="20" fill="#7c3aed"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+  <defs>
+    <clipPath id="flag-shape">
+      <rect x="2" y="5" width="32" height="26" rx="6"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#flag-shape)">
+    <rect x="2" y="5" width="32" height="8.67" fill="#ff9933"/>
+    <rect x="2" y="13.67" width="32" height="8.66" fill="#fff"/>
+    <rect x="2" y="22.33" width="32" height="8.67" fill="#138808"/>
+  </g>
+  <rect x="2" y="5" width="32" height="26" rx="6" fill="none" stroke="#0b1220" stroke-opacity=".14"/>
+  <circle cx="18" cy="18" r="3.55" fill="none" stroke="#000080" stroke-width=".75"/>
+  <circle cx="18" cy="18" r=".65" fill="#000080"/>
+  <path d="M18 14.45v7.1M14.45 18h7.1M15.49 15.49l5.02 5.02M20.51 15.49l-5.02 5.02" stroke="#000080" stroke-width=".48"/>
 </svg>

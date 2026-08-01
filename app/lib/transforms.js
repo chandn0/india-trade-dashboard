@@ -4,7 +4,6 @@
 /* ------------------------------------------------------------------ */
 
 import commodityShareData from '../../data/india_trade_commodity_group_shares.json';
-import exchangeRateData from '../../data/india_trade_inr_usd_fy.json';
 import yearlySummaryData from '../../data/india_trade_yearly_raw.json';
 import hs4ExportData from '../../data/india_trade_hs4_world_export_5fy.json';
 import hs4ImportData from '../../data/india_trade_hs4_world_import_5fy.json';
@@ -19,69 +18,47 @@ import countryLabels from '../../data/labels/country-labels.json';
 /* Palette                                                            */
 /* ------------------------------------------------------------------ */
 export const COMMODITY_PALETTE = [
-  '#0d9488',
-  '#2563eb',
-  '#db2777',
-  '#7c3aed',
-  '#0891b2',
-  '#475569',
-  '#d946ef',
-  '#ea580c',
-  '#16a34a',
-  '#65a30d',
-  '#0ea5e9',
-  '#f59e0b',
-  '#9333ea',
-  '#14b8a6',
-  '#f43f5e',
-  '#b45309',
-  '#a16207',
-  '#c026d3',
-  '#0e7490',
-  '#6d28d9',
-  '#525252',
-  '#a21caf',
+  '#4f756d',
+  '#46698f',
+  '#9a5868',
+  '#756783',
+  '#537888',
+  '#657080',
+  '#886b82',
+  '#a86435',
+  '#5f7b58',
+  '#818b55',
+  '#69859a',
+  '#a98545',
+  '#78678b',
+  '#5f817b',
+  '#a45159',
+  '#926b46',
+  '#887746',
+  '#80667c',
+  '#55737d',
+  '#6f6980',
+  '#696969',
+  '#795f76',
 ];
-export const REST_COLOR = '#cbd5e1';
+export const REST_COLOR = '#d7d8d5';
 
 // Fallback sequential palette for composition charts when a segment has no assigned color.
 export const CAT = [
-  '#2563eb',
-  '#0ea5e9',
-  '#14b8a6',
-  '#22c55e',
-  '#84cc16',
-  '#eab308',
-  '#f97316',
-  '#ef4444',
+  '#46698f',
+  '#69859a',
+  '#4f756d',
+  '#5f7b58',
+  '#818b55',
+  '#a98545',
+  '#a86435',
+  '#a45159',
 ];
 
 /* ------------------------------------------------------------------ */
-/* FTSPCC yearly + exchange rate data                                  */
+/* FTSPCC yearly data                                                  */
 /* ------------------------------------------------------------------ */
 export const rows = yearlySummaryData.summary;
-
-const exchangeRows = exchangeRateData.rows;
-const exchangeByYear = Object.fromEntries(exchangeRows.map((row) => [row.financial_year, row]));
-
-export const rupeeDeficitRows = (() => {
-  let cumulative = 0;
-  return rows
-    .filter((row) => exchangeByYear[row.financial_year])
-    .map((row) => {
-      const exchange = exchangeByYear[row.financial_year];
-      const annualDeficit = Math.max(0, row.import_usd_mn - row.export_usd_mn);
-      cumulative += annualDeficit;
-      return {
-        financial_year: row.financial_year,
-        exchange_rate_inr_per_usd: Number(exchange.inr_per_usd_avg ?? 0),
-        annual_deficit_usd_mn: annualDeficit,
-        cumulative_deficit_usd_mn: cumulative,
-        export_usd_mn: row.export_usd_mn,
-        import_usd_mn: row.import_usd_mn,
-      };
-    });
-})();
 
 /* ------------------------------------------------------------------ */
 /* Commodity composition                                              */

@@ -13,7 +13,7 @@ app/
     transforms.js            ← ALL data prep: imports JSON, exports computed data structures
     format.js                ← number formatters (moneyB, nf2, pct, fyTick, …)
     responsive.js            ← COMPACT_BELOW = 560, useMeasuredWidth()
-    chartGeometry.js         ← buildTradeGeo(), buildRupeeDeficitGeo() — SVG scale/tick math
+    chartGeometry.js         ← buildTradeGeo() — SVG scale/tick math
     chartInteraction.js      ← tipPosition() hover-tooltip helper
   config/
     icons.js                 ← BASKET_ICON, HS2_ICON, basketIconFor(), hs2Label()
@@ -38,17 +38,21 @@ scripts/
 ## Data Flow
 
 ```
-data/*.json  →  app/lib/transforms.js  →  component props or direct import
-                      ↑
-              data/labels/*.json       (label maps, imported by transforms.js)
+data/*.json  →  app/lib/transforms.js  →  dashboard component props/imports
+       │              ↑
+       │      data/labels/*.json
+       └── app/api/product-stage-mix → lazy-loaded product workspace
 ```
 
-`transforms.js` is the single source of truth for all non-visual data. Charts
-either receive computed data as props from `page.js`, or import named exports
-from `transforms.js` directly when they need interactive access.
+`transforms.js` is the single source of truth for main-dashboard trade data.
+Charts either receive computed data as props from `page.js`, or import named
+exports from `transforms.js` directly when they need interactive access. The
+larger product-stage dataset is served by `app/api/product-stage-mix/route.js`
+and loaded when the detailed `/products` workspace approaches the viewport.
 
-**Never import raw JSON data files inside a chart component.** Import from
-`transforms.js` instead — that keeps data prep in one place.
+**Never import a large raw JSON file inside a client component.** Main-dashboard
+charts should import from `transforms.js`; detailed product tools receive their
+dataset through props from the lazy-loading workspace boundary.
 
 ## How to Add a New Chart
 
@@ -149,5 +153,5 @@ Python data scripts (optional):
 ```bash
 pip install -r scripts/requirements.txt
 # then any script in package.json, e.g.:
-npm run fetch:monthly
+npm run fetch:monthly-totals
 ```
