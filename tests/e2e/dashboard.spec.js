@@ -32,4 +32,12 @@ test('dashboard does not overflow the mobile viewport', async ({ page, isMobile 
 
   expect(dimensions.content).toBeLessThanOrEqual(dimensions.viewport + 1);
   await expect(page.getByRole('heading', { level: 1, name: 'India Trade Monitor' })).toBeVisible();
+  await expect(page.getByText(/more partner countries.*tap a band for detail/i)).toBeVisible();
+});
+
+test('trade trend explains the latest provisional data and pandemic break', async ({ page }) => {
+  await page.goto('/');
+
+  await expect(page.getByText(/FY25–26 provisional/i)).toBeVisible();
+  await expect(page.getByText(/FY2020–21.*pandemic disruption/i)).toBeVisible();
 });

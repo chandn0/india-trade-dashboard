@@ -18,6 +18,7 @@ export default function CompositionChart({
   comp,
   groupNoun = 'official commodity groups',
   controls = null,
+  mobileLegendLimit = null,
 }) {
   const accent = toneColor(tone);
   const [hover, setHover] = React.useState(null);
@@ -82,6 +83,11 @@ export default function CompositionChart({
     ? (y((bands[hover.band].top[hy] + bands[hover.band].bottom[hy]) / 2) / height) * 100
     : 0;
   const flip = tipLeft > 58;
+  const mobileLegendIsTrimmed = compact && mobileLegendLimit != null;
+  const legendSegs = mobileLegendIsTrimmed
+    ? comp.latestYear.segs.slice(0, mobileLegendLimit)
+    : comp.latestYear.segs;
+  const hiddenLegendCount = comp.latestYear.segs.length - legendSegs.length;
 
   return (
     <Paper sx={cardSx}>
@@ -89,6 +95,7 @@ export default function CompositionChart({
         <Box
           sx={{
             display: 'flex',
+            flexDirection: { xs: 'column', sm: 'row' },
             alignItems: 'flex-start',
             justifyContent: 'space-between',
             gap: 1,
@@ -271,7 +278,7 @@ export default function CompositionChart({
         </Box>
 
         <Box sx={{ display: 'flex', gap: 0.6, flexWrap: 'wrap' }}>
-          {comp.latestYear.segs.map((seg, si) => (
+          {legendSegs.map((seg, si) => (
             <Box
               key={seg.key}
               sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, px: 0.5 }}
@@ -289,6 +296,13 @@ export default function CompositionChart({
               Rest {comp.latestYear.rest.share.toFixed(1)}%
             </Typography>
           </Box>
+          {hiddenLegendCount > 0 ? (
+            <Typography
+              sx={{ alignSelf: 'center', fontSize: 11, color: 'text.secondary', px: 0.5 }}
+            >
+              + {hiddenLegendCount} more {groupNoun} · tap a band for detail
+            </Typography>
+          ) : null}
         </Box>
         <Typography variant="caption" sx={{ color: 'text.secondary' }}>
           {sideLabel} across {comp.groupCount} {groupNoun}; the top {comp.items.length} are shown as

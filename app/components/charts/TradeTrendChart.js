@@ -7,7 +7,7 @@ import { C, mono } from '../../theme.js';
 import { moneyB, moneySignB, pct, clamp } from '../../lib/format.js';
 import { useMeasuredWidth } from '../../lib/responsive.js';
 import { buildTradeGeo } from '../../lib/chartGeometry.js';
-import { rows } from '../../lib/transforms.js';
+import { latestFyLabel, latestIsProvisional, rows } from '../../lib/transforms.js';
 import TipRow from '../primitives/TipRow.js';
 import cardSx from '../primitives/cardSx.js';
 
@@ -49,9 +49,23 @@ export default function TradeTrendChart() {
             justifyContent: 'space-between',
           }}
         >
-          <Typography component="h2" variant="subtitle1" sx={{ fontWeight: 800 }}>
-            Exports vs imports · US$ billion
-          </Typography>
+          <Stack
+            direction="row"
+            spacing={0.75}
+            useFlexGap
+            sx={{ alignItems: 'center', flexWrap: 'wrap' }}
+          >
+            <Typography component="h2" variant="subtitle1" sx={{ fontWeight: 800 }}>
+              Exports vs imports · US$ billion
+            </Typography>
+            {latestIsProvisional ? (
+              <Chip
+                size="small"
+                label={`${latestFyLabel} provisional`}
+                sx={{ bgcolor: alpha(C.orange, 0.1), color: C.orange, fontWeight: 800 }}
+              />
+            ) : null}
+          </Stack>
           <Stack direction="row" spacing={0.75}>
             {legend.map((l) => {
               const on = show[l.k];
@@ -86,6 +100,23 @@ export default function TradeTrendChart() {
               );
             })}
           </Stack>
+        </Box>
+        <Box
+          sx={{
+            borderLeft: '3px solid',
+            borderColor: alpha(C.orange, 0.65),
+            bgcolor: alpha(C.orange, 0.055),
+            borderRadius: 1,
+            px: 1.25,
+            py: 0.8,
+          }}
+        >
+          <Typography variant="caption" sx={{ color: 'text.secondary', lineHeight: 1.55 }}>
+            <Box component="span" sx={{ color: 'text.primary', fontWeight: 800 }}>
+              FY2020–21 · pandemic disruption.
+            </Box>{' '}
+            Trade flows contracted sharply before the recovery that followed in FY2021–22.
+          </Typography>
         </Box>
 
         <Box
@@ -274,6 +305,7 @@ export default function TradeTrendChart() {
         <Typography variant="caption" sx={{ color: 'text.secondary' }}>
           The shaded band is the trade deficit — the gap between imports and exports. Hover or tap
           any year for figures; click a legend chip to toggle a series.
+          {latestIsProvisional ? ` ${latestFyLabel} figures may be revised.` : ''}
         </Typography>
       </Stack>
     </Paper>
