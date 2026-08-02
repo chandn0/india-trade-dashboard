@@ -1,0 +1,32 @@
+{
+  "sources": {
+    "retail": {
+      "label": "FADA, OEM-wise retail market share, FY2024–25",
+      "url": "https://www.fada.in/images/press-release/167f3463b1a212FADA%20Releases%20FY%202025%20and%20March%202025%20Vehicle%20Retail%20Data.pdf"
+    },
+    "sales": {
+      "label": "SIAM, FY2025–26 industry performance",
+      "url": "https://www.siam.in/pressrelease-details.aspx?pid=605"
+    },
+    "localisation": {
+      "label": "PIB, PLI-Auto localisation update",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2287124&lang=2&reg=48"
+    }
+  },
+  "twoWheelers": [
+    { "brand": "Hero MotoCorp", "units": 5445251, "share": 28.84 },
+    { "brand": "Honda", "units": 4789283, "share": 25.37 },
+    { "brand": "TVS", "units": 3301781, "share": 17.49 },
+    { "brand": "Bajaj", "units": 2154467, "share": 11.41 },
+    { "brand": "Suzuki", "units": 982007, "share": 5.2 },
+    { "brand": "Royal Enfield", "units": 843058, "share": 4.47 }
+  ],
+  "cars": [
+    { "brand": "Maruti Suzuki", "units": 1671559, "share": 40.25 },
+    { "brand": "Hyundai", "units": 559149, "share": 13.46 },
+    { "brand": "Tata Motors", "units": 535960, "share": 12.9 },
+    { "brand": "Mahindra", "units": 512626, "share": 12.34 },
+    { "brand": "Toyota", "units": 275665, "share": 6.64 },
+    { "brand": "Kia", "units": 241859, "share": 5.82 }
+  ]
+}
