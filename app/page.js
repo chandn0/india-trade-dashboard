@@ -21,6 +21,7 @@ import ValueChainSection from './components/sections/ValueChainSection.js';
 import ProductDiscovery from './components/sections/ProductDiscovery.js';
 import ProductStageSection from './components/sections/ProductStageSection.js';
 import PetroleumBriefPromo from './components/sections/PetroleumBriefPromo.js';
+import PhoneBriefPromo from './components/sections/PhoneBriefPromo.js';
 
 function SectionIntro({ eyebrow, title, description, color = C.purple }) {
   return (
@@ -49,6 +50,8 @@ function Dashboard() {
           </Box>
 
           <PetroleumBriefPromo />
+
+          <PhoneBriefPromo />
 
           <Box component="section" id="basket-mix" data-section>
             <SectionIntro

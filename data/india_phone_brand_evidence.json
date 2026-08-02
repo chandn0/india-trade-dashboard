@@ -1,0 +1,76 @@
+{
+  "marketSnapshot": {
+    "period": "Q1 2025",
+    "measure": "India smartphone shipment share",
+    "source": {
+      "label": "Counterpoint Research, historical India quarterly market-share table",
+      "url": "https://germany.counterpointresearch.com/daten/india-smartphone-market-share-quarterly/"
+    }
+  },
+  "brands": [
+    {
+      "brand": "Vivo",
+      "share": 22,
+      "scopeNote": "Includes iQOO",
+      "manufacturing": "Vivo reports production facilities in India.",
+      "evidence": "Company disclosure",
+      "source": { "label": "Vivo India", "url": "https://www.vivo.com/in/aboutVivo/futureVivoInfo" }
+    },
+    {
+      "brand": "Samsung",
+      "share": 17,
+      "scopeNote": "",
+      "manufacturing": "Samsung says its Noida factory manufactures smartphones for India and export markets.",
+      "evidence": "Company disclosure",
+      "source": { "label": "Samsung Newsroom India", "url": "https://news.samsung.com/in/vice-chairman-and-ceo-jh-han-visits-noida-factory-signaling-growing-importance-of-india-for-samsung" }
+    },
+    {
+      "brand": "OPPO",
+      "share": 15,
+      "scopeNote": "",
+      "manufacturing": "OPPO describes a Noida operation with assembly and SMT capability.",
+      "evidence": "Company disclosure",
+      "source": { "label": "OPPO India", "url": "https://www.oppo.com/in/newsroom/press/oppo-mobile-now-manufactures-one-smartphone-in-3-seconds-in-india/" }
+    },
+    {
+      "brand": "Xiaomi",
+      "share": 13,
+      "scopeNote": "Includes POCO",
+      "manufacturing": "Brand-specific factory and value-add evidence is being researched for this brief.",
+      "evidence": "Research needed"
+    },
+    {
+      "brand": "realme",
+      "share": 11,
+      "scopeNote": "",
+      "manufacturing": "Brand-specific factory and value-add evidence is being researched for this brief.",
+      "evidence": "Research needed"
+    }
+  ],
+  "sectorFacts": [
+    {
+      "value": "99.2%",
+      "label": "of phones sold made locally",
+      "note": "Government estimate, February 2025",
+      "source": { "label": "PIB", "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2099656&lang=2&reg=3" }
+    },
+    {
+      "value": "18–20%",
+      "label": "electronics domestic value addition",
+      "note": "Sector estimate — not a phone or brand measure",
+      "source": { "label": "PIB", "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2247771&lang=2&reg=3" }
+    },
+    {
+      "value": "₹5.45L cr",
+      "label": "mobile phone production",
+      "note": "FY2024–25",
+      "source": { "label": "PIB", "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2247771&lang=2&reg=3" }
+    },
+    {
+      "value": "300+",
+      "label": "operational mobile factories",
+      "note": "Government count, February 2025",
+      "source": { "label": "PIB", "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2099656&lang=2&reg=3" }
+    }
+  ]
+}

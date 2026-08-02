@@ -18,5 +18,10 @@ export default function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
+    {
+      url: `${base}/phones`,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
   ];
 }
