@@ -24,7 +24,7 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
-      url: `${base}/mobility`,
+      url: `${base}/brands`,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
