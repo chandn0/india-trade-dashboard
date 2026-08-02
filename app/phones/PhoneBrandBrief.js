@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowBack, Factory, PhoneIphone, Public, Verified } from '@mui/icons-material';
+import { ArrowBack, Factory, PhoneIphone, Public, Storefront, Verified } from '@mui/icons-material';
 import { Box, Button, Chip, Container, Divider, Paper, Stack, Typography } from '@mui/material';
 import phoneData from '../../data/india_phone_brand_evidence.json';
 import Footer from '../components/layout/Footer.js';
@@ -30,7 +30,10 @@ export default function PhoneBrandBrief() {
     <Masthead />
     <Box sx={{ bgcolor: C.ink, color: '#fff', borderBottom: '1px solid rgba(255,255,255,.08)' }}>
       <Container maxWidth="xl" sx={{ pt: { xs: 4, md: 6 }, pb: { xs: 3.5, md: 5 } }}>
-        <Button component={Link} href="/" startIcon={<ArrowBack />} sx={{ mb: 2.5, color: 'rgba(255,255,255,.78)' }}>All trade data</Button>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.25, mb: 2.5 }}>
+          <Button component={Link} href="/" startIcon={<ArrowBack />} sx={{ color: 'rgba(255,255,255,.78)' }}>All trade data</Button>
+          <Button component={Link} href="/brands" startIcon={<Storefront />} sx={{ color: 'rgba(255,255,255,.6)', border: '1px solid rgba(255,255,255,.22)', '&:hover': { bgcolor: 'rgba(255,255,255,.07)' } }}>Consumer brands hub</Button>
+        </Box>
         <Typography variant="overline" sx={{ color: '#e7b48c' }}>India’s consumer brands · first brief</Typography>
         <Typography component="h1" sx={{ mt: .4, maxWidth: 900, fontFamily: 'var(--font-display)', fontSize: { xs: '2.45rem', md: '4.1rem' }, lineHeight: 1.02, letterSpacing: '-.035em' }}>
           Your next phone may be made here. Its value chain is not yet fully Indian.
@@ -72,6 +75,10 @@ export default function PhoneBrandBrief() {
           </Paper>
           <Typography sx={{ mt: 1, color: 'text.secondary', fontSize: 12, lineHeight: 1.55 }}>
             Market-share source: <SourceLink source={phoneData.marketSnapshot.source} />. Company disclosures establish a reported India operation; they do not establish a brand-wide local-value-add percentage.
+          </Typography>
+          <Typography sx={{ mt: 1.25, fontSize: 13, color: 'text.secondary' }}>
+            Looking for bikes and cars?{' '}
+            <Box component={Link} href="/brands" sx={{ color: 'text.primary', fontWeight: 700, textDecorationColor: 'rgba(0,0,0,.25)', '&:hover': { color: 'text.primary' } }}>See the full consumer brands hub →</Box>
           </Typography>
         </Box>
 

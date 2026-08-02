@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowBack, DirectionsBike, DirectionsCar, FactCheck, PrecisionManufacturing } from '@mui/icons-material';
+import { ArrowBack, ArrowForward, DirectionsBike, DirectionsCar, FactCheck, PrecisionManufacturing } from '@mui/icons-material';
 import { Box, Button, Chip, Container, Divider, Paper, Stack, Typography } from '@mui/material';
 import mobility from '../../data/india_mobility_brand_evidence.json';
 import phones from '../../data/india_phone_brand_evidence.json';
@@ -35,7 +35,7 @@ function PhoneChart() {
   const rows = phones.brands;
   const scaleMax = Math.max(...rows.map((row) => row.share));
   return <Paper component="section" aria-label="Phone brand shipment-share chart" sx={{ ...cardSx, p: 0, overflow: 'hidden' }}>
-    <Box sx={{ p: { xs: 2, md: 2.5 }, display: 'flex', alignItems: 'center', gap: 1.25, bgcolor: '#f7f4ed', borderBottom: '1px solid', borderColor: 'divider' }}><Box sx={{ display: 'grid', placeItems: 'center', width: 34, height: 34, borderRadius: 1, bgcolor: C.purple, color: '#fff' }}><FactCheck fontSize="small" /></Box><Box><Typography variant="h5">Smartphones</Typography><Typography sx={{ color: 'text.secondary', fontSize: 11.5 }}>Q1 2025 shipment share</Typography></Box></Box>
+    <Box sx={{ p: { xs: 2, md: 2.5 }, display: 'flex', alignItems: 'center', gap: 1.25, bgcolor: '#f7f4ed', borderBottom: '1px solid', borderColor: 'divider' }}><Box sx={{ display: 'grid', placeItems: 'center', width: 34, height: 34, borderRadius: 1, bgcolor: C.purple, color: '#fff' }}><FactCheck fontSize="small" /></Box><Box sx={{ flex: 1 }}><Typography variant="h5">Smartphones</Typography><Typography sx={{ color: 'text.secondary', fontSize: 11.5 }}>Q1 2025 shipment share</Typography></Box><Box component={Link} href="/phones" sx={{ display: 'inline-flex', alignItems: 'center', gap: .4, color: C.purple, fontWeight: 700, fontSize: 12, textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>Full phone brief <ArrowForward sx={{ fontSize: 13 }} /></Box></Box>
     {rows.map((row, index) => <Box key={row.brand} sx={{ px: { xs: 2, md: 2.5 }, py: 1.25, borderBottom: index < rows.length - 1 ? '1px solid' : 0, borderColor: 'divider' }}><Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 1, alignItems: 'center' }}><Box><Typography sx={{ fontSize: 14, fontWeight: 800 }}>{row.brand}</Typography>{row.scopeNote && <Typography sx={{ color: 'text.secondary', fontSize: 10.5 }}>{row.scopeNote}</Typography>}</Box><Typography sx={{ ...mono, color: C.purple, fontWeight: 800, fontSize: 17 }}>{row.share}%</Typography></Box><Box aria-hidden="true" sx={{ mt: .7, height: 5, overflow: 'hidden', borderRadius: 99, bgcolor: '#e8e5dd' }}><Box sx={{ width: `${(row.share / scaleMax) * 100}%`, height: '100%', borderRadius: 99, bgcolor: C.purple }} /></Box></Box>)}
   </Paper>;
 }

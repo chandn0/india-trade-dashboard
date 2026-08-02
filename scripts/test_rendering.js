@@ -6,7 +6,7 @@ import 'global-jsdom/register';
 import mediaQuery from 'css-mediaquery';
 
 import React from 'react';
-import { render, screen, act } from '@testing-library/react';
+import { render, screen, act, cleanup } from '@testing-library/react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import ProductCompositionDashboard from '../app/components/products/ProductCompositionDashboard.js';
 import productStageData from '../data/product_stage_mix.json';
@@ -207,6 +207,81 @@ describe('S05 Suite 10: DomesticValueChainFramework Research Preview UI', () => 
 
 import Masthead from '../app/components/layout/Masthead.js';
 import Footer from '../app/components/layout/Footer.js';
+import PhoneBrandBrief from '../app/phones/PhoneBrandBrief.js';
+import MobilityBrief from '../app/mobility/MobilityBrief.js';
+import PetroleumBrief from '../app/petroleum/PetroleumBrief.js';
+
+describe('S05 Suite 11: PhoneBrandBrief Rendering', () => {
+  it('renders the h1 hero title, at least one source link, and the consumer brands hub link', () => {
+    let root;
+    act(() => {
+      root = render(
+        <ThemeProvider theme={theme}>
+          <PhoneBrandBrief />
+        </ThemeProvider>,
+      );
+    });
+
+    // Principal page h1 headline (Masthead also uses h1 for its own title)
+    const phoneH1s = Array.from(root.container.querySelectorAll('h1'));
+    const phoneBriefH1 = phoneH1s.find((el) => /Your next phone may be made here/i.test(el.textContent));
+    assert.ok(phoneBriefH1, 'Should render the phone brief hero h1 headline');
+
+    // At least one external source link
+    const sourceLinks = root.container.querySelectorAll('a[href^="http"]');
+    assert.ok(sourceLinks.length > 0, 'Should render at least one external source link');
+
+    // Consumer brands hub link to /brands
+    const brandsHubLinks = Array.from(root.container.querySelectorAll('a')).filter(
+      (a) => a.textContent.includes('Consumer brands hub') || a.textContent.includes('consumer brands hub'),
+    );
+    assert.ok(brandsHubLinks.length > 0, 'Should render a link to the consumer brands hub');
+
+    root.unmount();
+    cleanup();
+  });
+});
+
+describe('S05 Suite 12: MobilityBrief (/brands) Rendering', () => {
+  it('renders the h1 title, all three category chart landmarks, and a source link', () => {
+    let root;
+    act(() => {
+      root = render(
+        <ThemeProvider theme={theme}>
+          <MobilityBrief />
+        </ThemeProvider>,
+      );
+    });
+
+    // Principal page h1 headline (Masthead also uses h1 for its own title)
+    const mobilityH1s = Array.from(root.container.querySelectorAll('h1'));
+    const mobilityBriefH1 = mobilityH1s.find((el) => /The brands India buys/i.test(el.textContent));
+    assert.ok(mobilityBriefH1, 'Should render the brands hub h1 headline');
+
+    // All three chart section aria-labels
+    const phoneChart = root.container.querySelector(
+      '[aria-label="Phone brand shipment-share chart"]',
+    );
+    assert.ok(phoneChart, 'Should render the Smartphones shipment-share chart section');
+
+    const bikeChart = root.container.querySelector(
+      '[aria-label="Two-wheelers retail market-share chart"]',
+    );
+    assert.ok(bikeChart, 'Should render the Two-wheelers retail market-share chart section');
+
+    const carChart = root.container.querySelector(
+      '[aria-label="Passenger vehicles retail market-share chart"]',
+    );
+    assert.ok(carChart, 'Should render the Passenger vehicles retail market-share chart section');
+
+    // At least one external source link
+    const sourceLinks = root.container.querySelectorAll('a[href^="http"]');
+    assert.ok(sourceLinks.length > 0, 'Should render at least one external source link');
+
+    root.unmount();
+    cleanup();
+  });
+});
 
 describe('S05 Suite 13: Open-Source Contribution Links UI', () => {
   it('renders accessible GitHub, Contribute, and Issues links in Masthead and Footer', () => {
@@ -255,6 +330,40 @@ describe('S05 Suite 13: Open-Source Contribution Links UI', () => {
       screen.getByText(/Open-source trade analytics/i),
       'Footer should present an open-source participation invitation',
     );
+
+    root.unmount();
+  });
+});
+
+describe('S05 Suite 14: PetroleumBrief Rendering', () => {
+  it('renders the h1 title, the main landmark, and the Sources & method section', () => {
+    let root;
+    act(() => {
+      root = render(
+        <ThemeProvider theme={theme}>
+          <PetroleumBrief />
+        </ThemeProvider>,
+      );
+    });
+
+    // Principal h1 headline (skip Masthead's h1 which says "India Trade Monitor")
+    const h1s = Array.from(root.container.querySelectorAll('h1'));
+    const briefH1 = h1s.find((el) => /petroleum import bill/i.test(el.textContent));
+    assert.ok(briefH1, 'Should render a page-level h1 with the petroleum brief headline');
+
+    // <main> landmark wrapping the brief content
+    const mainEl = root.container.querySelector('main');
+    assert.ok(mainEl, 'Should render a <main> landmark element');
+
+    // Sources & method section heading
+    const sourcesHeading = Array.from(root.container.querySelectorAll('h5, h2')).find((el) =>
+      el.textContent.includes('Sources'),
+    );
+    assert.ok(sourcesHeading, 'Should render a Sources & method heading');
+
+    // At least one external source link in the Sources section
+    const sourceLinks = root.container.querySelectorAll('a[href^="http"]');
+    assert.ok(sourceLinks.length > 0, 'Should render at least one external source link');
 
     root.unmount();
   });
