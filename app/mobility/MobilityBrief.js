@@ -84,7 +84,8 @@ const additionalRows = [
     madeShare: 'Not disclosed',
     importedShare: 'Not disclosed',
     originMethod: 'Supplier-footprint evidence',
-    originNote: 'Apple documents a growing Indian supplier network, but not the origin mix of iPhones sold in India.',
+    originNote:
+      'Apple documents a growing Indian supplier network, but not the origin mix of iPhones sold in India.',
     originSource: {
       label: 'Apple India supply chain',
       url: 'https://www.apple.com/in/newsroom/2026/02/apple-launches-new-education-hub-for-supplier-employees-in-india/',
@@ -105,7 +106,8 @@ const additionalRows = [
     madeShare: 'India-made models',
     importedShare: 'Model-dependent',
     originMethod: 'Product disclosure',
-    originNote: 'Motorola identifies India and Padget Electronics as the origin and manufacturer for current high-volume models.',
+    originNote:
+      'Motorola identifies India and Padget Electronics as the origin and manufacturer for current high-volume models.',
     originSource: {
       label: 'Motorola India product disclosure',
       url: 'https://www.motorola.in/smartphones-motorola-edge-50-ultra/p',
@@ -162,7 +164,8 @@ const additionalRows = [
     madeShare: 'India production',
     importedShare: 'Not reported',
     originMethod: 'Company manufacturing disclosure',
-    originNote: 'Ather manufactures electric scooters and batteries at its Hosur facilities in Tamil Nadu.',
+    originNote:
+      'Ather manufactures electric scooters and batteries at its Hosur facilities in Tamil Nadu.',
     originSource: {
       label: 'Ather Energy annual report',
       url: 'https://media.atherenergy.com/AGM-and-Annual-Report-FY-2024-25.pdf',
@@ -180,7 +183,8 @@ const additionalRows = [
     madeShare: 'India-built range',
     importedShare: 'Not separately reported',
     originMethod: 'Company manufacturing disclosure',
-    originNote: 'Honda Cars India operates its vehicle and engine manufacturing facility at Tapukara, Rajasthan.',
+    originNote:
+      'Honda Cars India operates its vehicle and engine manufacturing facility at Tapukara, Rajasthan.',
     originSource: {
       label: 'Honda Cars India operations',
       url: 'https://www.hondacarindia.com/company/india-operations',
@@ -216,7 +220,8 @@ const additionalRows = [
     madeShare: 'India-built range',
     importedShare: 'No regular CBU mix',
     originMethod: 'Company manufacturing disclosure',
-    originNote: 'Renault builds the Kwid, Triber and Kiger at its Chennai plant for India and export markets.',
+    originNote:
+      'Renault builds the Kwid, Triber and Kiger at its Chennai plant for India and export markets.',
     originSource: {
       label: 'Renault Group Chennai plant',
       url: 'https://www.renaultgroup.com/en/group/locations/chennai-plant/',
@@ -240,7 +245,8 @@ const apparelRows = [
     madeShare: 'Not disclosed',
     importedShare: 'Not disclosed',
     originMethod: 'Brand-level sourcing gap',
-    originNote: 'The retailer reports its store network, but not a country-of-origin split for garments sold.',
+    originNote:
+      'The retailer reports its store network, but not a country-of-origin split for garments sold.',
     originSource: {
       label: 'Trent FY25 annual report',
       url: 'https://docs.trent-tata.com/Seventy_Third_Annual_Report_FY_2024-25.pdf',
@@ -307,7 +313,8 @@ const apparelRows = [
     madeShare: 'Not disclosed',
     importedShare: 'Not disclosed',
     originMethod: 'India-specific sourcing gap',
-    originNote: 'Public India filings report sales and stores, not garment origin by value or units.',
+    originNote:
+      'Public India filings report sales and stores, not garment origin by value or units.',
     originSource: {
       label: 'Trent FY25 disclosure',
       url: 'https://www.business-standard.com/amp/companies/news/zara-s-india-fy25-sales-flat-at-2-782-06-cr-profit-up-23-to-299-47-cr-125061200024_1.html',
@@ -328,7 +335,8 @@ const apparelRows = [
     madeShare: 'Not disclosed',
     importedShare: 'Not disclosed',
     originMethod: 'India-specific sourcing gap',
-    originNote: 'H&M publishes global supplier information, not an origin split for garments sold in India.',
+    originNote:
+      'H&M publishes global supplier information, not an origin split for garments sold in India.',
     originSource: {
       label: 'H&M supplier transparency',
       url: 'https://hmgroup.com/sustainability/leading-the-change/transparency/supply-chain/',
@@ -349,7 +357,8 @@ const apparelRows = [
     madeShare: 'Not disclosed',
     importedShare: 'Not disclosed',
     originMethod: 'India-specific sourcing gap',
-    originNote: 'Fast Retailing publishes production-partner lists, not the origin mix of India retail sales.',
+    originNote:
+      'Fast Retailing publishes production-partner lists, not the origin mix of India retail sales.',
     originSource: {
       label: 'Fast Retailing production partners',
       url: 'https://www.fastretailing.com/eng/sustainability/labor/list.html',
@@ -485,20 +494,29 @@ function BrandsTable() {
                     <DetailCell value={row.sales} note={row.salesPeriod} tone={meta.color} />
                   </TableCell>
                   <TableCell>
-                    <DetailCell
-                      value={productionSummary(row)}
-                      tone={C.teal}
-                    />
+                    <DetailCell value={productionSummary(row)} tone={C.teal} />
                   </TableCell>
                   <TableCell>
                     <Stack direction="row" spacing={1} sx={{ minWidth: 90 }}>
                       {row.salesSource && (
-                        <Box component="a" href={row.salesSource.url} target="_blank" rel="noopener noreferrer" sx={sourceLinkSx}>
+                        <Box
+                          component="a"
+                          href={row.salesSource.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          sx={sourceLinkSx}
+                        >
                           Scale ↗
                         </Box>
                       )}
                       {row.originSource && (
-                        <Box component="a" href={row.originSource.url} target="_blank" rel="noopener noreferrer" sx={sourceLinkSx}>
+                        <Box
+                          component="a"
+                          href={row.originSource.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          sx={sourceLinkSx}
+                        >
                           Origin ↗
                         </Box>
                       )}
@@ -520,10 +538,17 @@ export default function MobilityBrief() {
       <Masthead />
       <Box sx={{ bgcolor: C.ink, color: '#fff' }}>
         <Container maxWidth="xl" sx={{ py: layout.heroY }}>
-          <Button component={Link} href="/" startIcon={<ArrowBack />} sx={{ mb: 2.5, color: 'rgba(255,255,255,.78)' }}>
+          <Button
+            component={Link}
+            href="/"
+            startIcon={<ArrowBack />}
+            sx={{ mb: 2.5, color: 'rgba(255,255,255,.78)' }}
+          >
             All trade data
           </Button>
-          <Typography variant="overline" sx={{ color: '#e7b48c' }}>India’s consumer brands</Typography>
+          <Typography variant="overline" sx={{ color: '#e7b48c' }}>
+            India’s consumer brands
+          </Typography>
           <Typography
             component="h1"
             sx={{
@@ -537,8 +562,17 @@ export default function MobilityBrief() {
           >
             The brands India buys. What is actually made here?
           </Typography>
-          <Typography sx={{ mt: 2, maxWidth: 780, color: 'rgba(255,255,255,.73)', fontSize: { xs: 15, md: 17 }, lineHeight: 1.65 }}>
-            A compact, source-linked view of market scale and India production across smartphones, two-wheelers, cars and apparel.
+          <Typography
+            sx={{
+              mt: 2,
+              maxWidth: 780,
+              color: 'rgba(255,255,255,.73)',
+              fontSize: { xs: 15, md: 17 },
+              lineHeight: 1.65,
+            }}
+          >
+            A compact, source-linked view of market scale and India production across smartphones,
+            two-wheelers, cars and apparel.
           </Typography>
         </Container>
       </Box>
@@ -546,12 +580,24 @@ export default function MobilityBrief() {
       <Container maxWidth="xl" sx={{ py: layout.pageY }}>
         <Stack spacing={layout.sectionGap}>
           <Box>
-            <Typography variant="overline" sx={{ color: C.orange }}>One comparable view</Typography>
+            <Typography variant="overline" sx={{ color: C.orange }}>
+              One comparable view
+            </Typography>
             <Typography component="h2" variant="h4" sx={{ mt: 0.25 }}>
               Sales and sourcing, without false precision
             </Typography>
-            <Typography sx={{ mt: 0.8, maxWidth: 900, color: 'text.secondary', fontSize: 14, lineHeight: 1.7 }}>
-              Scale means shipment share for phones, registered retail for vehicles, and stores or India revenue for apparel. Production is shown as an evidence status—not a precise percentage where public data cannot support one.
+            <Typography
+              sx={{
+                mt: 0.8,
+                maxWidth: 900,
+                color: 'text.secondary',
+                fontSize: 14,
+                lineHeight: 1.7,
+              }}
+            >
+              Scale means shipment share for phones, registered retail for vehicles, and stores or
+              India revenue for apparel. Production is shown as an evidence status—not a precise
+              percentage where public data cannot support one.
             </Typography>
           </Box>
 
@@ -567,18 +613,31 @@ export default function MobilityBrief() {
             <Paper sx={{ ...cardSx, bgcolor: '#e7ece9' }}>
               <Verified sx={{ color: C.teal, mb: 0.8 }} />
               <Typography variant="h5">A useful sector benchmark</Typography>
-              <Typography sx={{ mt: 0.8, color: 'text.secondary', fontSize: 13.5, lineHeight: 1.7 }}>
-                The Government of India estimates that 99.2% of phones sold in India are made locally. Brand-specific company claims take priority; the sector figure is only used to bound clearly marked estimates.
+              <Typography
+                sx={{ mt: 0.8, color: 'text.secondary', fontSize: 13.5, lineHeight: 1.7 }}
+              >
+                The Government of India estimates that 99.2% of phones sold in India are made
+                locally. Brand-specific company claims take priority; the sector figure is only used
+                to bound clearly marked estimates.
               </Typography>
-              <Box component="a" href={phones.sectorFacts[0].source.url} target="_blank" rel="noopener noreferrer" sx={{ ...sourceLinkSx, display: 'inline-block', mt: 1 }}>
+              <Box
+                component="a"
+                href={phones.sectorFacts[0].source.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ ...sourceLinkSx, display: 'inline-block', mt: 1 }}
+              >
                 {phones.sectorFacts[0].source.label} ↗
               </Box>
             </Paper>
             <Paper sx={{ ...cardSx, bgcolor: '#e9e4d9' }}>
               <FactCheck sx={{ color: C.orange, mb: 0.8 }} />
               <Typography variant="h5">What “Made in India” means here</Typography>
-              <Typography sx={{ mt: 0.8, color: 'text.secondary', fontSize: 13.5, lineHeight: 1.7 }}>
-                It identifies documented final assembly or manufacturing in India. It does not claim that chips, batteries, engines, fabrics or other component value is Indian.
+              <Typography
+                sx={{ mt: 0.8, color: 'text.secondary', fontSize: 13.5, lineHeight: 1.7 }}
+              >
+                It identifies documented final assembly or manufacturing in India. It does not claim
+                that chips, batteries, engines, fabrics or other component value is Indian.
               </Typography>
             </Paper>
           </Box>

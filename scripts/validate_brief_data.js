@@ -84,8 +84,14 @@ for (const fact of phone.sectorFacts) {
   check(nonEmpty(fact.label), `phone sectorFact "${fact.label}": label is non-empty`);
   check(nonEmpty(fact.note), `phone sectorFact "${fact.label}": note is non-empty`);
   if (fact.source !== undefined) {
-    check(nonEmpty(fact.source.label), `phone sectorFact "${fact.label}": source.label is non-empty`);
-    check(isHttpsUrl(fact.source.url), `phone sectorFact "${fact.label}": source.url is an HTTPS URL`);
+    check(
+      nonEmpty(fact.source.label),
+      `phone sectorFact "${fact.label}": source.label is non-empty`,
+    );
+    check(
+      isHttpsUrl(fact.source.url),
+      `phone sectorFact "${fact.label}": source.url is an HTTPS URL`,
+    );
   }
 }
 
@@ -112,10 +118,7 @@ check(
 
 // sources – each named source must have a non-empty label and HTTPS URL
 for (const [key, src] of Object.entries(mobility.sources)) {
-  check(
-    src !== null && typeof src === 'object',
-    `mobility: sources.${key} is an object`,
-  );
+  check(src !== null && typeof src === 'object', `mobility: sources.${key} is an object`);
   check(nonEmpty(src.label), `mobility: sources.${key}.label is non-empty`);
   check(isHttpsUrl(src.url), `mobility: sources.${key}.url is an HTTPS URL`);
 }
@@ -162,10 +165,7 @@ check(
 );
 check(nonEmpty(petro.commodity?.code), 'petro: commodity.code is non-empty');
 check(nonEmpty(petro.commodity?.label), 'petro: commodity.label is non-empty');
-check(
-  petro.units !== null && typeof petro.units === 'object',
-  'petro: units object is present',
-);
+check(petro.units !== null && typeof petro.units === 'object', 'petro: units object is present');
 check(nonEmpty(petro.units?.value), 'petro: units.value label is non-empty');
 check(nonEmpty(petro.units?.quantity), 'petro: units.quantity label is non-empty');
 check(isHttpsUrl(petro.source), 'petro: source is an HTTPS URL');
@@ -180,10 +180,7 @@ for (const entry of petro.series) {
     Number.isFinite(entry.yearEnding) && Number.isInteger(entry.yearEnding),
     `petro series "${fy}": yearEnding is an integer`,
   );
-  check(
-    typeof entry.provisional === 'boolean',
-    `petro series "${fy}": provisional is a boolean`,
-  );
+  check(typeof entry.provisional === 'boolean', `petro series "${fy}": provisional is a boolean`);
   check(
     Number.isFinite(entry.totalUsdMillion) && entry.totalUsdMillion > 0,
     `petro series "${fy}": totalUsdMillion is positive finite`,
