@@ -29,6 +29,17 @@ export const C = {
   inkSoft: '#1d2636',
 };
 
+// Shared layout rhythm. Use these values for page shells and groups so
+// individual sections do not drift onto their own spacing scales.
+export const layout = {
+  pageY: { xs: 3, sm: 4, md: 5 },
+  heroY: { xs: 4, sm: 5, md: 6 },
+  sectionGap: { xs: 4, sm: 5, md: 6 },
+  contentGap: { xs: 1.5, md: 2 },
+  cardPadding: { xs: 2, sm: 2.5, md: 3 },
+  sectionIntroGap: { xs: 2, md: 2.5 },
+};
+
 export const toneColor = (tone) =>
   ({ primary: C.blue, warning: C.orange, success: C.teal, accent: C.purple, danger: C.red })[
     tone
@@ -111,6 +122,18 @@ const theme = createTheme({
     },
     MuiContainer: {
       styleOverrides: {
+        root: {
+          paddingLeft: 16,
+          paddingRight: 16,
+          '@media (min-width: 600px)': {
+            paddingLeft: 24,
+            paddingRight: 24,
+          },
+          '@media (min-width: 1200px)': {
+            paddingLeft: 32,
+            paddingRight: 32,
+          },
+        },
         maxWidthXl: {
           '@media (min-width: 1200px)': { maxWidth: 1320 },
         },

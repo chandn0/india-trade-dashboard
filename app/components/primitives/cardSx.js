@@ -1,5 +1,7 @@
+import { layout } from '../../theme.js';
+
 const cardSx = {
-  p: { xs: 2, md: 2.5 },
+  p: layout.cardPadding,
   border: '1px solid',
   borderColor: 'divider',
   borderRadius: 1.5,

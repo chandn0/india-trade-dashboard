@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import { ArrowForward, LocalGasStation } from '@mui/icons-material';
+import { ArrowForward, Storefront } from '@mui/icons-material';
 import { Box, Button, Paper, Typography } from '@mui/material';
 import { C, layout } from '../../theme.js';
 import cardSx from '../primitives/cardSx.js';
 
-export default function PetroleumBriefPromo() {
+export default function PhoneBriefPromo() {
   return (
-    <Paper component="aside" sx={{ ...cardSx, p: layout.cardPadding, bgcolor: '#e9e4d9' }}>
+    <Paper component="aside" sx={{ ...cardSx, p: layout.cardPadding, bgcolor: '#e7ece9' }}>
       <Box
         sx={{
           display: 'flex',
@@ -27,30 +27,30 @@ export default function PetroleumBriefPromo() {
             color: '#fff',
           }}
         >
-          <LocalGasStation fontSize="small" />
+          <Storefront fontSize="small" />
         </Box>
         <Box sx={{ flex: 1 }}>
-          <Typography variant="overline" sx={{ color: C.orange }}>
-            New data brief
+          <Typography variant="overline" sx={{ color: C.teal }}>
+            Consumer brands hub
           </Typography>
-          <Typography variant="h5" sx={{ mt: 0.2 }}>
-            India’s petroleum import bill, explained
+          <Typography variant="h5" sx={{ mt: 0.25 }}>
+            India&apos;s phones, bikes and cars — in one place
           </Typography>
           <Typography
             sx={{ mt: 0.5, maxWidth: 720, color: 'text.secondary', fontSize: 13, lineHeight: 1.6 }}
           >
-            See where crude comes from, how supplier shares changed, what refineries produce, and
-            which vehicles use petrol.
+            Market share, India manufacturing evidence and value-chain limits — clearly separated,
+            across three categories.
           </Typography>
         </Box>
         <Button
           component={Link}
-          href="/petroleum"
+          href="/brands"
           variant="contained"
           endIcon={<ArrowForward />}
           sx={{ flexShrink: 0, bgcolor: C.ink, '&:hover': { bgcolor: C.inkSoft } }}
         >
-          Read the brief
+          Explore brands
         </Button>
       </Box>
     </Paper>

@@ -1,7 +1,7 @@
 'use client';
 
 import { Box, Container, Stack, Typography } from '@mui/material';
-import { C } from './theme.js';
+import { C, layout } from './theme.js';
 
 import { exportComp, importComp, exportMovers, importMovers } from './lib/transforms.js';
 
@@ -16,7 +16,6 @@ import PartnerTrendCard from './components/charts/PartnerTrendCard.js';
 import PartnerShareCard from './components/charts/PartnerShareCard.js';
 import MoversCard from './components/charts/MoversCard.js';
 
-import MoverExplorer from './components/sections/MoverExplorer.js';
 import ValueChainSection from './components/sections/ValueChainSection.js';
 import ProductDiscovery from './components/sections/ProductDiscovery.js';
 import ProductStageSection from './components/sections/ProductStageSection.js';
@@ -24,7 +23,7 @@ import PetroleumBriefPromo from './components/sections/PetroleumBriefPromo.js';
 
 function SectionIntro({ eyebrow, title, description, color = C.purple }) {
   return (
-    <Box sx={{ mb: 2, maxWidth: 760 }}>
+    <Box sx={{ mb: layout.sectionIntroGap, maxWidth: 760 }}>
       <Typography variant="overline" sx={{ color }}>
         {eyebrow}
       </Typography>
@@ -42,13 +41,15 @@ function Dashboard() {
   return (
     <Box sx={{ bgcolor: 'background.default', minHeight: '100vh' }}>
       <Masthead />
-      <Container maxWidth="xl" sx={{ py: { xs: 3, md: 5 } }}>
-        <Stack spacing={{ xs: 4.5, md: 6 }}>
+      <Container maxWidth="xl" sx={{ py: layout.pageY }}>
+        <Stack spacing={layout.sectionGap}>
           <Box component="section" id="trends" data-section>
             <TradeTrendChart />
           </Box>
 
-          <PetroleumBriefPromo />
+          <Stack component="section" aria-label="Featured data briefs" spacing={layout.contentGap}>
+            <PetroleumBriefPromo />
+          </Stack>
 
           <Box component="section" id="basket-mix" data-section>
             <SectionIntro
@@ -61,14 +62,14 @@ function Dashboard() {
               sx={{
                 display: 'grid',
                 gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
-                gap: 2,
-                mb: 2,
+                gap: layout.contentGap,
+                mb: layout.contentGap,
               }}
             >
               <CompositionDonut sideLabel="Exports" tone="primary" comp={exportComp} />
               <CompositionDonut sideLabel="Imports" tone="warning" comp={importComp} />
             </Box>
-            <Box sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: 2 }}>
+            <Box sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: layout.contentGap }}>
               <CompositionChart
                 title="Historical exports by industry"
                 sideLabel="Exports"
@@ -95,8 +96,8 @@ function Dashboard() {
               sx={{
                 display: 'grid',
                 gridTemplateColumns: { xs: '1fr', lg: '1fr 1fr' },
-                gap: 2,
-                mb: 2,
+                gap: layout.contentGap,
+                mb: layout.contentGap,
               }}
             >
               <PartnerButterfly />
@@ -116,7 +117,7 @@ function Dashboard() {
               sx={{
                 display: 'grid',
                 gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
-                gap: 2,
+                gap: layout.contentGap,
               }}
             >
               <MoversCard sideLabel="Exports" tone="primary" movers={exportMovers} />
@@ -124,16 +125,12 @@ function Dashboard() {
             </Box>
           </Box>
 
-          <Box component="section" id="explorer" data-section>
-            <MoverExplorer />
-          </Box>
-
           <Box component="section" id="product-discovery" data-section>
             <ProductStageSection />
           </Box>
 
           <Box component="section" id="buildability-atlas" data-section>
-            <ProductDiscovery />
+            <ProductDiscovery preview />
           </Box>
 
           <Box component="section" id="value-chains" data-section>

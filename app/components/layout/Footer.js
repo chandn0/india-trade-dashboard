@@ -67,23 +67,6 @@ export default function Footer() {
               </Box>
               <Box
                 component="a"
-                href="https://github.com/chandn0/india-trade-dashboard/blob/main/CONTRIBUTING.md"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Contribution Guide (opens in new tab)"
-                sx={{
-                  fontSize: 12,
-                  fontWeight: 700,
-                  color: '#0f172a',
-                  textDecoration: 'underline',
-                  textUnderlineOffset: '2px',
-                  '&:hover': { color: 'text.secondary' },
-                }}
-              >
-                Contribute ↗
-              </Box>
-              <Box
-                component="a"
                 href="https://github.com/chandn0/india-trade-dashboard/issues"
                 target="_blank"
                 rel="noopener noreferrer"

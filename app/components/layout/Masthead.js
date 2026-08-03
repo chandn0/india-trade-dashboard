@@ -1,6 +1,5 @@
-import { Box, Chip, Container, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import { C } from '../../theme.js';
-import { latestFyLabel, latestStatusNote } from '../../lib/transforms.js';
 
 export default function Masthead() {
   return (
@@ -31,15 +30,6 @@ export default function Masthead() {
           >
             India Trade Monitor
           </Typography>
-          <Typography
-            sx={{
-              color: 'rgba(231,236,245,0.6)',
-              fontSize: 11.5,
-              display: { xs: 'none', sm: 'block' },
-            }}
-          >
-            Exports, imports and the trade balance, from official Government of India data
-          </Typography>
         </Box>
         <Box
           sx={{
@@ -66,44 +56,7 @@ export default function Masthead() {
           >
             GitHub ↗
           </Typography>
-          <Typography
-            component="a"
-            href="https://github.com/chandn0/india-trade-dashboard/blob/main/CONTRIBUTING.md"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Contribute to India Trade Dashboard on GitHub (opens in new tab)"
-            sx={{
-              fontSize: 12,
-              fontWeight: 700,
-              color: 'rgba(231,236,245,0.78)',
-              textDecoration: 'none',
-              '&:hover': { textDecoration: 'underline' },
-              '&:focus-visible': { outline: '2px solid #cbd5e1', outlineOffset: 3 },
-            }}
-          >
-            Contribute ↗
-          </Typography>
         </Box>
-        <Chip
-          size="small"
-          label={
-            <>
-              <Box component="span" sx={{ display: { xs: 'inline', sm: 'none' } }}>
-                {latestFyLabel}
-              </Box>
-              <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' } }}>
-                {`Data through ${latestFyLabel}${latestStatusNote ? ` · ${latestStatusNote}` : ''}`}
-              </Box>
-            </>
-          }
-          sx={{
-            display: 'flex',
-            bgcolor: 'rgba(255,255,255,0.09)',
-            color: 'rgba(255,255,255,0.82)',
-            fontWeight: 700,
-            flexShrink: 0,
-          }}
-        />
       </Container>
     </Box>
   );
