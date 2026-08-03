@@ -243,7 +243,7 @@ describe('S05 Suite 11: PhoneBrandBrief Rendering', () => {
 });
 
 describe('S05 Suite 12: MobilityBrief (/brands) Rendering', () => {
-  it('renders the h1 title, all three category chart landmarks, and a source link', () => {
+  it('renders the h1 title, unified brands table, category filters, and a source link', () => {
     let root;
     act(() => {
       root = render(
@@ -258,21 +258,14 @@ describe('S05 Suite 12: MobilityBrief (/brands) Rendering', () => {
     const mobilityBriefH1 = mobilityH1s.find((el) => /The brands India buys/i.test(el.textContent));
     assert.ok(mobilityBriefH1, 'Should render the brands hub h1 headline');
 
-    // All three chart section aria-labels
-    const phoneChart = root.container.querySelector(
-      '[aria-label="Phone brand shipment-share chart"]',
+    const brandsTable = root.container.querySelector(
+      '[aria-label="India company sales revenue and manufacturing origin"]',
     );
-    assert.ok(phoneChart, 'Should render the Smartphones shipment-share chart section');
+    assert.ok(brandsTable, 'Should render one unified consumer brands table');
 
-    const bikeChart = root.container.querySelector(
-      '[aria-label="Two-wheelers retail market-share chart"]',
-    );
-    assert.ok(bikeChart, 'Should render the Two-wheelers retail market-share chart section');
-
-    const carChart = root.container.querySelector(
-      '[aria-label="Passenger vehicles retail market-share chart"]',
-    );
-    assert.ok(carChart, 'Should render the Passenger vehicles retail market-share chart section');
+    for (const label of ['All categories', 'Smartphones', 'Two-wheelers', 'Cars']) {
+      assert.ok(root.container.textContent.includes(label), `Should render the ${label} filter`);
+    }
 
     // At least one external source link
     const sourceLinks = root.container.querySelectorAll('a[href^="http"]');

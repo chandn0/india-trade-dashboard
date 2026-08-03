@@ -1,18 +1,18 @@
 import Link from 'next/link';
 import { ArrowForward, LocalGasStation } from '@mui/icons-material';
 import { Box, Button, Paper, Typography } from '@mui/material';
-import { C } from '../../theme.js';
+import { C, layout } from '../../theme.js';
 import cardSx from '../primitives/cardSx.js';
 
 export default function PetroleumBriefPromo() {
   return (
-    <Paper component="aside" sx={{ ...cardSx, p: { xs: 2.25, md: 3 }, bgcolor: '#e9e4d9' }}>
+    <Paper component="aside" sx={{ ...cardSx, p: layout.cardPadding, bgcolor: '#e9e4d9' }}>
       <Box
         sx={{
           display: 'flex',
           flexDirection: { xs: 'column', sm: 'row' },
           alignItems: { xs: 'flex-start', sm: 'center' },
-          gap: { xs: 2, sm: 3 },
+          gap: layout.cardPadding,
         }}
       >
         <Box

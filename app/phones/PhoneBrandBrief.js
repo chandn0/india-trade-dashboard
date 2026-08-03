@@ -7,7 +7,7 @@ import phoneData from '../../data/india_phone_brand_evidence.json';
 import Footer from '../components/layout/Footer.js';
 import Masthead from '../components/layout/Masthead.js';
 import cardSx from '../components/primitives/cardSx.js';
-import { C, mono } from '../theme.js';
+import { C, layout, mono } from '../theme.js';
 
 function SourceLink({ source }) {
   return source ? (
@@ -29,7 +29,7 @@ export default function PhoneBrandBrief() {
   return <Box sx={{ minHeight: '100vh', bgcolor: 'background.default' }}>
     <Masthead />
     <Box sx={{ bgcolor: C.ink, color: '#fff', borderBottom: '1px solid rgba(255,255,255,.08)' }}>
-      <Container maxWidth="xl" sx={{ pt: { xs: 4, md: 6 }, pb: { xs: 3.5, md: 5 } }}>
+      <Container maxWidth="xl" sx={{ py: layout.heroY }}>
         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.25, mb: 2.5 }}>
           <Button component={Link} href="/" startIcon={<ArrowBack />} sx={{ color: 'rgba(255,255,255,.78)' }}>All trade data</Button>
           <Button component={Link} href="/brands" startIcon={<Storefront />} sx={{ color: 'rgba(255,255,255,.6)', border: '1px solid rgba(255,255,255,.22)', '&:hover': { bgcolor: 'rgba(255,255,255,.07)' } }}>Consumer brands hub</Button>
@@ -43,8 +43,8 @@ export default function PhoneBrandBrief() {
         </Typography>
       </Container>
     </Box>
-    <Container maxWidth="xl" sx={{ py: { xs: 3.5, md: 5 } }}>
-      <Stack spacing={{ xs: 4.5, md: 6 }}>
+    <Container maxWidth="xl" sx={{ py: layout.pageY }}>
+      <Stack spacing={layout.sectionGap}>
         <Box component="section" aria-label="India phone market snapshot">
           <Typography variant="overline" sx={{ color: C.teal }}>The important distinction</Typography>
           <Typography component="p" sx={{ mt: .5, mb: 2.25, maxWidth: 900, fontSize: { xs: 17, md: 20 }, lineHeight: 1.5, fontWeight: 700, color: 'text.primary' }}>

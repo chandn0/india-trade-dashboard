@@ -4,14 +4,14 @@ import MobilityBrief from '../mobility/MobilityBrief.js';
 const siteUrl = getSiteUrl();
 
 export const metadata = {
-  title: 'India\u2019s top consumer brands: phones, bikes and cars | India Trade Monitor',
+  title: 'India consumer brands: sales, manufacturing and imports | India Trade Monitor',
   description:
-    'India\u2019s leading phone, two-wheeler and passenger-vehicle brands \u2014 market-share data from official FADA and SIAM sources, with careful evidence on what is actually made in India.',
+    'Compare India sales, product revenue disclosure, India manufacturing and imports for leading smartphone, two-wheeler and car companies in one table.',
   alternates: { canonical: '/brands' },
   openGraph: {
-    title: 'India\u2019s top consumer brands: phones, bikes and cars',
+    title: 'India consumer brands: sales, manufacturing and imports',
     description:
-      'Market-share rankings for phones (Q1\u00a02025 shipments), two-wheelers and passenger vehicles (FY2024\u201325 retail), with honest notes on domestic manufacturing evidence.',
+      'One table for smartphone, two-wheeler and car sales, product revenue disclosure, India manufacturing and imports.',
     type: 'article',
     url: '/brands',
     siteName: 'India Trade Monitor',
@@ -19,9 +19,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'India\u2019s top consumer brands: phones, bikes and cars',
+    title: 'India consumer brands: sales, manufacturing and imports',
     description:
-      'Phone shipment share, two-wheeler and car retail rankings for India \u2014 with honest notes on what\u2019s actually manufactured here.',
+      'Compare sales and sourcing for leading smartphone, two-wheeler and car companies in one table.',
   },
 };
 
@@ -36,9 +36,9 @@ function safeJsonLd(value) {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemPage',
-  name: 'India\u2019s top consumer brands: phones, bikes and cars',
+  name: 'India consumer brands: sales, manufacturing and imports',
   description:
-    'Market-share data for India\u2019s leading phone, two-wheeler and passenger-vehicle brands, drawn from Counterpoint Research, FADA and SIAM official sources.',
+    'A unified table comparing India sales, product revenue disclosure, domestic manufacturing and imports for leading consumer brands.',
   url: `${siteUrl}/brands`,
   isPartOf: {
     '@type': 'WebSite',
