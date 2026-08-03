@@ -16,12 +16,10 @@ import PartnerTrendCard from './components/charts/PartnerTrendCard.js';
 import PartnerShareCard from './components/charts/PartnerShareCard.js';
 import MoversCard from './components/charts/MoversCard.js';
 
-import MoverExplorer from './components/sections/MoverExplorer.js';
 import ValueChainSection from './components/sections/ValueChainSection.js';
 import ProductDiscovery from './components/sections/ProductDiscovery.js';
 import ProductStageSection from './components/sections/ProductStageSection.js';
 import PetroleumBriefPromo from './components/sections/PetroleumBriefPromo.js';
-import PhoneBriefPromo from './components/sections/PhoneBriefPromo.js';
 
 function SectionIntro({ eyebrow, title, description, color = C.purple }) {
   return (
@@ -51,7 +49,6 @@ function Dashboard() {
 
           <Stack component="section" aria-label="Featured data briefs" spacing={layout.contentGap}>
             <PetroleumBriefPromo />
-            <PhoneBriefPromo />
           </Stack>
 
           <Box component="section" id="basket-mix" data-section>
@@ -128,16 +125,12 @@ function Dashboard() {
             </Box>
           </Box>
 
-          <Box component="section" id="explorer" data-section>
-            <MoverExplorer />
-          </Box>
-
           <Box component="section" id="product-discovery" data-section>
             <ProductStageSection />
           </Box>
 
           <Box component="section" id="buildability-atlas" data-section>
-            <ProductDiscovery />
+            <ProductDiscovery preview />
           </Box>
 
           <Box component="section" id="value-chains" data-section>

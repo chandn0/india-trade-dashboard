@@ -224,7 +224,9 @@ describe('S05 Suite 11: PhoneBrandBrief Rendering', () => {
 
     // Principal page h1 headline (Masthead also uses h1 for its own title)
     const phoneH1s = Array.from(root.container.querySelectorAll('h1'));
-    const phoneBriefH1 = phoneH1s.find((el) => /Your next phone may be made here/i.test(el.textContent));
+    const phoneBriefH1 = phoneH1s.find((el) =>
+      /Your next phone may be made here/i.test(el.textContent),
+    );
     assert.ok(phoneBriefH1, 'Should render the phone brief hero h1 headline');
 
     // At least one external source link
@@ -233,7 +235,9 @@ describe('S05 Suite 11: PhoneBrandBrief Rendering', () => {
 
     // Consumer brands hub link to /brands
     const brandsHubLinks = Array.from(root.container.querySelectorAll('a')).filter(
-      (a) => a.textContent.includes('Consumer brands hub') || a.textContent.includes('consumer brands hub'),
+      (a) =>
+        a.textContent.includes('Consumer brands hub') ||
+        a.textContent.includes('consumer brands hub'),
     );
     assert.ok(brandsHubLinks.length > 0, 'Should render a link to the consumer brands hub');
 
@@ -259,11 +263,11 @@ describe('S05 Suite 12: MobilityBrief (/brands) Rendering', () => {
     assert.ok(mobilityBriefH1, 'Should render the brands hub h1 headline');
 
     const brandsTable = root.container.querySelector(
-      '[aria-label="India company sales revenue and manufacturing origin"]',
+      '[aria-label="India brand scale and production evidence"]',
     );
     assert.ok(brandsTable, 'Should render one unified consumer brands table');
 
-    for (const label of ['All categories', 'Smartphones', 'Two-wheelers', 'Cars']) {
+    for (const label of ['All categories', 'Smartphones', 'Two-wheelers', 'Cars', 'Apparel']) {
       assert.ok(root.container.textContent.includes(label), `Should render the ${label} filter`);
     }
 
@@ -276,8 +280,8 @@ describe('S05 Suite 12: MobilityBrief (/brands) Rendering', () => {
   });
 });
 
-describe('S05 Suite 13: Open-Source Contribution Links UI', () => {
-  it('renders accessible GitHub, Contribute, and Issues links in Masthead and Footer', () => {
+describe('S05 Suite 13: Open-Source Repository Links UI', () => {
+  it('renders one GitHub action in each location without a duplicate contribute action', () => {
     let root;
     act(() => {
       root = render(
@@ -291,21 +295,20 @@ describe('S05 Suite 13: Open-Source Contribution Links UI', () => {
     });
 
     const repoUrl = 'https://github.com/chandn0/india-trade-dashboard';
-    const contributeUrl =
-      'https://github.com/chandn0/india-trade-dashboard/blob/main/CONTRIBUTING.md';
     const issuesUrl = 'https://github.com/chandn0/india-trade-dashboard/issues';
 
     const repoLinks = Array.from(root.container.querySelectorAll(`a[href="${repoUrl}"]`));
-    const contributeLinks = Array.from(
-      root.container.querySelectorAll(`a[href="${contributeUrl}"]`),
-    );
     const issuesLinks = Array.from(root.container.querySelectorAll(`a[href="${issuesUrl}"]`));
 
-    assert.ok(repoLinks.length >= 2, 'Should render GitHub Repository link in Masthead and Footer');
-    assert.ok(contributeLinks.length >= 2, 'Should render Contribute link in Masthead and Footer');
+    assert.equal(repoLinks.length, 2, 'Should render one GitHub link in Masthead and Footer');
+    assert.equal(
+      screen.queryByText(/Contribute ↗/i),
+      null,
+      'Should not render duplicate Contribute links',
+    );
     assert.ok(issuesLinks.length >= 1, 'Should render Issues link in Footer');
 
-    for (const link of [...repoLinks, ...contributeLinks, ...issuesLinks]) {
+    for (const link of [...repoLinks, ...issuesLinks]) {
       assert.equal(
         link.getAttribute('target'),
         '_blank',
@@ -341,8 +344,8 @@ describe('S05 Suite 14: PetroleumBrief Rendering', () => {
 
     // Principal h1 headline (skip Masthead's h1 which says "India Trade Monitor")
     const h1s = Array.from(root.container.querySelectorAll('h1'));
-    const briefH1 = h1s.find((el) => /petroleum import bill/i.test(el.textContent));
-    assert.ok(briefH1, 'Should render a page-level h1 with the petroleum brief headline');
+    const briefH1 = h1s.find((el) => /crude oil and energy trade/i.test(el.textContent));
+    assert.ok(briefH1, 'Should render a page-level h1 with the energy trade brief headline');
 
     // <main> landmark wrapping the brief content
     const mainEl = root.container.querySelector('main');
