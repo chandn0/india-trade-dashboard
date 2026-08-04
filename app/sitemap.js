@@ -19,6 +19,26 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
+      url: `${base}/electronics`,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${base}/gems-jewellery`,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${base}/chemicals`,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${base}/machinery`,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${base}/phones`,
       changeFrequency: 'monthly',
       priority: 0.9,

@@ -210,6 +210,7 @@ import Footer from '../app/components/layout/Footer.js';
 import PhoneBrandBrief from '../app/phones/PhoneBrandBrief.js';
 import MobilityBrief from '../app/mobility/MobilityBrief.js';
 import PetroleumBrief from '../app/petroleum/PetroleumBrief.js';
+import TradeSectorBrief from '../app/components/briefs/TradeSectorBrief.js';
 
 describe('S05 Suite 11: PhoneBrandBrief Rendering', () => {
   it('renders the h1 hero title, at least one source link, and the consumer brands hub link', () => {
@@ -259,7 +260,9 @@ describe('S05 Suite 12: MobilityBrief (/brands) Rendering', () => {
 
     // Principal page h1 headline (Masthead also uses h1 for its own title)
     const mobilityH1s = Array.from(root.container.querySelectorAll('h1'));
-    const mobilityBriefH1 = mobilityH1s.find((el) => /The brands India buys/i.test(el.textContent));
+    const mobilityBriefH1 = mobilityH1s.find((el) =>
+      /India’s leading consumer brands/i.test(el.textContent),
+    );
     assert.ok(mobilityBriefH1, 'Should render the brands hub h1 headline');
 
     const brandsTable = root.container.querySelector(
@@ -351,11 +354,65 @@ describe('S05 Suite 14: PetroleumBrief Rendering', () => {
     const mainEl = root.container.querySelector('main');
     assert.ok(mainEl, 'Should render a <main> landmark element');
 
+    assert.ok(
+      root.container.textContent.includes('India’s domestic petroleum-use mix'),
+      'Should render the domestic petroleum-use breakdown',
+    );
+    for (const label of [
+      'India’s crude-import bill under different prices',
+      'Imported crude supplies nearly nine-tenths of demand',
+      'India’s largest refinery sites',
+      'Strategic petroleum reserves',
+    ]) {
+      assert.ok(root.container.textContent.includes(label), `Should render ${label}`);
+    }
+    assert.ok(
+      root.container.querySelector('[aria-label="Assumed crude oil price per barrel"]'),
+      'Should render the crude-price scenario control',
+    );
+    assert.ok(
+      root.container.textContent.includes('State petroleum-product consumption'),
+      'Should render the state petroleum consumption map',
+    );
+    assert.ok(
+      root.container.querySelector('[aria-label*="India map shaded by state petroleum-product"]'),
+      'Should render an accessible India choropleth',
+    );
+    assert.ok(
+      root.container.textContent.includes('Per person'),
+      'Should offer a per-person state comparison',
+    );
+    assert.ok(
+      root.container.textContent.includes('Share of India’s petroleum-product sales'),
+      'Should contextualize each selected state with its national sales share',
+    );
+    assert.equal(
+      root.container.querySelectorAll('[data-state-share-label]').length,
+      36,
+      'Should place a national sales-share label on every state and UT',
+    );
+    assert.ok(
+      root.container.textContent.includes('India’s petrol-pump operators'),
+      'Should render the fuel-distribution company breakdown',
+    );
+    assert.ok(
+      root.container.textContent.includes('Indian-controlled pump footprint'),
+      'Should render the Indian-controlled outlet share',
+    );
+
     // Sources & method section heading
     const sourcesHeading = Array.from(root.container.querySelectorAll('h5, h2')).find((el) =>
       el.textContent.includes('Sources'),
     );
     assert.ok(sourcesHeading, 'Should render a Sources & method heading');
+
+    const sourcesDetails = sourcesHeading.closest('details');
+    assert.ok(sourcesDetails, 'Should render sources as an expandable disclosure');
+    assert.equal(
+      sourcesDetails.hasAttribute('open'),
+      false,
+      'Sources should be collapsed by default',
+    );
 
     // At least one external source link in the Sources section
     const sourceLinks = root.container.querySelectorAll('a[href^="http"]');
@@ -363,4 +420,79 @@ describe('S05 Suite 14: PetroleumBrief Rendering', () => {
 
     root.unmount();
   });
+});
+
+describe('S05 Suite 15: High-value sector briefs', () => {
+  for (const sector of [
+    {
+      type: 'electronics',
+      title: /electronics import stack/i,
+      total: '$100.5bn',
+      product: 'Electronic integrated circuits',
+      trendLabel: 'Five-year electronics import and export trend',
+    },
+    {
+      type: 'gems',
+      title: /gems, gold and jewellery value chain/i,
+      total: '$109.4bn',
+      product: 'Gold, unwrought or semi-manufactured',
+      trendLabel: 'Five-year gems and jewellery import and export trend',
+    },
+    {
+      type: 'chemicals',
+      title: /chemicals and pharmaceutical trade/i,
+      total: '$73.8bn',
+      product: 'Compound and mixed fertilisers',
+      trendLabel: 'Five-year chemicals import and export trend',
+    },
+    {
+      type: 'machinery',
+      title: /machinery and equipment trade/i,
+      total: '$74.0bn',
+      product: 'Computers and data-processing machines',
+      trendLabel: 'Five-year machinery import and export trend',
+    },
+  ]) {
+    it(`renders the ${sector.type} analysis, data caveat, and collapsed sources`, () => {
+      let root;
+      act(() => {
+        root = render(
+          <ThemeProvider theme={theme}>
+            <TradeSectorBrief type={sector.type} />
+          </ThemeProvider>,
+        );
+      });
+
+      const briefH1 = Array.from(root.container.querySelectorAll('h1')).find((element) =>
+        sector.title.test(element.textContent),
+      );
+      assert.ok(briefH1, 'Should render a descriptive sector headline');
+      assert.ok(root.container.querySelector('main'), 'Should render a main landmark');
+      assert.ok(root.container.textContent.includes(sector.total), 'Should show the sector total');
+      assert.ok(
+        root.container.textContent.includes(sector.product),
+        'Should show product-level analysis',
+      );
+      assert.ok(
+        root.container.querySelector(`[aria-label="${sector.trendLabel}"]`),
+        'Should render an accessible five-year trend',
+      );
+      assert.ok(
+        root.container.textContent.includes('Observed major-partner share'),
+        'Should identify the partner view as an observed proxy',
+      );
+
+      const sourcesDetails = Array.from(root.container.querySelectorAll('details')).find(
+        (element) => element.textContent.includes('Sources & method'),
+      );
+      assert.ok(sourcesDetails, 'Should render Sources & method');
+      assert.equal(sourcesDetails.hasAttribute('open'), false, 'Sources should start collapsed');
+      assert.ok(
+        sourcesDetails.querySelectorAll('a[href^="http"]').length >= 4,
+        'Should link to trade and sector sources',
+      );
+
+      root.unmount();
+    });
+  }
 });

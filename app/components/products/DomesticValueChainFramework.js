@@ -188,7 +188,7 @@ export default function DomesticValueChainFramework() {
               Domestic value-chain opportunity framework · Research preview
             </Typography>
             <Typography variant="h4" sx={{ mt: 0.3, maxWidth: 850 }}>
-              Where final-product imports meet Indian input capability
+              Final-product imports and Indian input capability
             </Typography>
             <Typography
               sx={{ mt: 0.8, maxWidth: 860, fontSize: 12.5, lineHeight: 1.65, color: '#cbd5e1' }}
@@ -535,7 +535,7 @@ export default function DomesticValueChainFramework() {
                 }}
               >
                 <Typography sx={{ fontSize: 11.5, fontWeight: 800, color: '#0f766e' }}>
-                  Why no monetary localisation number?
+                  Monetary localisation is not yet estimated
                 </Typography>
                 <Typography
                   sx={{ mt: 0.35, fontSize: 11, lineHeight: 1.55, color: 'text.secondary' }}

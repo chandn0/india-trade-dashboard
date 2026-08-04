@@ -146,7 +146,7 @@ function StageComparison() {
           <Typography variant="overline" sx={{ color: C.purple }}>
             Stage comparison
           </Typography>
-          <Typography variant="h5">Where imports and exports sit in the value chain</Typography>
+          <Typography variant="h5">Imports and exports by value-chain stage</Typography>
           <Typography sx={{ mt: 0.5, fontSize: 12.5, color: 'text.secondary' }}>
             Values compare every available HS-4 line on each side.
           </Typography>
@@ -377,7 +377,7 @@ function TrendPanel() {
         <Typography variant="overline" sx={{ color: C.teal }}>
           Five-year transformation
         </Typography>
-        <Typography variant="h5">How the stage mix is changing</Typography>
+        <Typography variant="h5">Changes in the traded-stage mix</Typography>
         <Typography sx={{ mt: 0.5, fontSize: 12.5, color: 'text.secondary' }}>
           Each bar is the complete annual HS-4 basket; segment width is that stage’s share of the
           flow.
@@ -543,7 +543,7 @@ function ConcentrationPanel() {
       <Typography variant="overline" sx={{ color: C.purple }}>
         Distribution depth
       </Typography>
-      <Typography variant="h5">How concentrated is the basket?</Typography>
+      <Typography variant="h5">Trade-basket concentration</Typography>
       <Box
         sx={{ mt: 2, display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 2 }}
       >
@@ -1054,7 +1054,7 @@ export default function ProductCompositionDashboard() {
             component="h1"
             sx={{ mt: 0.5, maxWidth: 880, fontSize: { xs: 36, md: 52 }, lineHeight: 1.04 }}
           >
-            What India buys, what India sells, and how much value is added
+            India’s imports, exports, and value addition
           </Typography>
           <Typography
             sx={{

@@ -7,6 +7,7 @@ import {
   ArrowForward,
   Construction,
   DirectionsCar,
+  ExpandMore,
   Factory,
   Flight,
   Home,
@@ -21,6 +22,7 @@ import {
   Container,
   Divider,
   Paper,
+  Slider,
   Stack,
   ToggleButton,
   ToggleButtonGroup,
@@ -33,10 +35,150 @@ import Footer from '../components/layout/Footer.js';
 import Masthead from '../components/layout/Masthead.js';
 import cardSx from '../components/primitives/cardSx.js';
 import { C, fontDisplay, mono } from '../theme.js';
+import indiaStatePaths from './indiaStatePaths.js';
 
 const YEARS = ['2021-22', '2022-23', '2023-24', '2024-25', '2025-26'];
 const latestYear = YEARS.at(-1);
 const latestConsumptionTotal = 241.6;
+const nationalStateSalesH1Fy25 = 104478.4;
+
+const statePetroleumConsumption = [
+  { name: 'Andaman and Nicobar Islands', total: 114.3, perCapita: 282.9 },
+  { name: 'Andhra Pradesh', total: 3996.0, perCapita: 74.8 },
+  { name: 'Arunachal Pradesh', total: 188.9, perCapita: 119.6 },
+  { name: 'Assam', total: 1598.5, perCapita: 44.2 },
+  { name: 'Bihar', total: 2920.7, perCapita: 22.6 },
+  { name: 'Chandigarh', total: 249.3, perCapita: 199.9 },
+  { name: 'Chhattisgarh', total: 2046.2, perCapita: 66.8 },
+  {
+    name: 'Dadra and Nagar Haveli and Daman and Diu',
+    total: 256.4,
+    perCapita: 184.8,
+  },
+  { name: 'Delhi', total: 2352.4, perCapita: 107.5 },
+  { name: 'Goa', total: 381.7, perCapita: 240.8 },
+  { name: 'Gujarat', total: 12622.0, perCapita: 173.7 },
+  { name: 'Haryana', total: 5410.3, perCapita: 176.3 },
+  { name: 'Himachal Pradesh', total: 1012.8, perCapita: 134.7 },
+  { name: 'Jammu and Kashmir', total: 907.5, perCapita: 66.1 },
+  { name: 'Jharkhand', total: 1869.4, perCapita: 46.6 },
+  { name: 'Karnataka', total: 7769.2, perCapita: 113.8 },
+  { name: 'Kerala', total: 3388.7, perCapita: 94.2 },
+  { name: 'Ladakh', total: 159.8, perCapita: 529.0 },
+  { name: 'Lakshadweep', total: 11.5, perCapita: 166.4 },
+  { name: 'Madhya Pradesh', total: 4413.0, perCapita: 50.2 },
+  { name: 'Maharashtra', total: 11067.6, perCapita: 86.7 },
+  { name: 'Manipur', total: 120.1, perCapita: 36.8 },
+  { name: 'Meghalaya', total: 286.2, perCapita: 84.5 },
+  { name: 'Mizoram', total: 100.6, perCapita: 80.4 },
+  { name: 'Nagaland', total: 106.5, perCapita: 47.2 },
+  { name: 'Odisha', total: 3618.4, perCapita: 77.5 },
+  { name: 'Puducherry', total: 439.4, perCapita: 259.3 },
+  { name: 'Punjab', total: 3360.4, perCapita: 108.4 },
+  { name: 'Rajasthan', total: 5681.0, perCapita: 69.1 },
+  { name: 'Sikkim', total: 73.1, perCapita: 104.9 },
+  { name: 'Tamil Nadu', total: 7889.8, perCapita: 102.2 },
+  { name: 'Telangana', total: 3717.3, perCapita: 97.0 },
+  { name: 'Tripura', total: 130.2, perCapita: 31.0 },
+  { name: 'Uttar Pradesh', total: 10412.7, perCapita: 43.6 },
+  { name: 'Uttarakhand', total: 930.5, perCapita: 78.9 },
+  { name: 'West Bengal', total: 4876.1, perCapita: 48.9 },
+];
+
+const stateMapNames = {
+  'Andaman & Nicobar': 'Andaman and Nicobar Islands',
+  'Daman and Diu and Dadra and Nagar Haveli': 'Dadra and Nagar Haveli and Daman and Diu',
+  Tamilnadu: 'Tamil Nadu',
+  Chhattishgarh: 'Chhattisgarh',
+  Telengana: 'Telangana',
+};
+
+const stateMapColors = ['#eee7dc', '#dfc7ad', '#c99c75', '#a9673e', '#704025'];
+
+const crudeImportDependence = [
+  { year: 'FY17', value: 81.7 },
+  { year: 'FY18', value: 82.9 },
+  { year: 'FY19', value: 83.7 },
+  { year: 'FY20', value: 85.0 },
+  { year: 'FY21', value: 84.4 },
+  { year: 'FY22', value: 85.5 },
+  { year: 'FY23', value: 87.4 },
+  { year: 'FY24', value: 87.8 },
+  { year: 'FY25', value: 88.2 },
+  { year: 'FY26', value: 88.7 },
+];
+
+const majorRefineries = [
+  { name: 'Reliance · Jamnagar', state: 'Gujarat', capacity: 68.2 },
+  { name: 'Nayara · Vadinar', state: 'Gujarat', capacity: 20.0 },
+  { name: 'BPCL · Kochi', state: 'Kerala', capacity: 15.5 },
+  { name: 'IOC · Panipat', state: 'Haryana', capacity: 15.0 },
+  { name: 'IOC · Paradip', state: 'Odisha', capacity: 15.0 },
+  { name: 'HPCL · Visakhapatnam', state: 'Andhra Pradesh', capacity: 15.0 },
+  { name: 'MRPL · Mangaluru', state: 'Karnataka', capacity: 15.0 },
+];
+
+const strategicReserveSites = [
+  { name: 'Visakhapatnam', capacity: 1.33 },
+  { name: 'Mangaluru', capacity: 1.5 },
+  { name: 'Padur', capacity: 2.5 },
+];
+
+const stateLabelPositions = {
+  'Andaman and Nicobar Islands': [674, 668],
+  'Andhra Pradesh': [324, 582],
+  'Arunachal Pradesh': [725, 245],
+  Assam: [670, 286],
+  Bihar: [478, 312],
+  Chandigarh: [205, 198],
+  Chhattisgarh: [380, 432],
+  'Dadra and Nagar Haveli and Daman and Diu': [131, 463],
+  Delhi: [265, 237],
+  Goa: [160, 594],
+  Gujarat: [96, 394],
+  Haryana: [225, 216],
+  'Himachal Pradesh': [250, 141],
+  'Jammu and Kashmir': [185, 93],
+  Jharkhand: [476, 367],
+  Karnataka: [220, 611],
+  Kerala: [227, 727],
+  Ladakh: [237, 59],
+  Lakshadweep: [136, 786],
+  'Madhya Pradesh': [278, 370],
+  Maharashtra: [219, 482],
+  Manipur: [733, 340],
+  Meghalaya: [625, 319],
+  Mizoram: [682, 384],
+  Nagaland: [743, 306],
+  Odisha: [445, 453],
+  Puducherry: [327, 739],
+  Punjab: [196, 169],
+  Rajasthan: [157, 287],
+  Sikkim: [556, 260],
+  'Tamil Nadu': [281, 711],
+  Telangana: [298, 527],
+  Tripura: [640, 367],
+  'Uttar Pradesh': [340, 278],
+  Uttarakhand: [307, 189],
+  'West Bengal': [542, 362],
+};
+
+const stateLabelCalloutPositions = {
+  Chandigarh: [177, 202],
+  Delhi: [274, 239],
+  Goa: [127, 606],
+  Haryana: [218, 226],
+  Manipur: [754, 340],
+  Meghalaya: [607, 342],
+  Mizoram: [726, 390],
+  Nagaland: [756, 304],
+  Puducherry: [333, 752],
+  Punjab: [169, 166],
+  Sikkim: [543, 239],
+  Tripura: [624, 386],
+  Uttarakhand: [329, 188],
+  'Dadra and Nagar Haveli and Daman and Diu': [104, 459],
+};
 
 const COUNTRY_NAMES = {
   'SAUDI ARAB': 'Saudi Arabia',
@@ -112,6 +254,85 @@ const uses = [
   { name: 'Road building', detail: 'Bitumen', icon: Construction },
 ];
 
+const nationalRetailOutletsFy25 = 96724;
+
+const fuelRetailers = [
+  {
+    name: 'IndianOil',
+    ownership: 'Government of India controlled',
+    indianControlled: true,
+    outlets: 40221,
+    revenue: '₹8.59 lakh cr',
+    volume: '85.0 MMT',
+    volumeScope: 'Domestic petroleum-product sales',
+    color: C.blueDeep,
+    source: 'https://iocl.com/download/spreadAnnualReport202425.pdf',
+  },
+  {
+    name: 'HPCL',
+    ownership: 'Government of India controlled',
+    indianControlled: true,
+    outlets: 23747,
+    revenue: '₹4.66 lakh cr',
+    volume: '30.0 MMT',
+    volumeScope: 'Retail sales · petrol 9.8 MMT',
+    color: C.orange,
+    source: 'https://www.hindustanpetroleum.com/documents/pdf/HPCL-Annual-Report-2024-25.pdf',
+  },
+  {
+    name: 'BPCL',
+    ownership: 'Government of India controlled',
+    indianControlled: true,
+    outlets: 23642,
+    revenue: '₹5.00 lakh cr',
+    volume: '52.4 MMT',
+    volumeScope: 'Market sales · petrol 10.74, diesel 21.56 MMT',
+    color: C.teal,
+    source: 'https://www.bharatpetroleum.in/bharat-petroleum/pdf/annual-report-2024-25.pdf',
+  },
+  {
+    name: 'Nayara Energy',
+    ownership: 'Indian-incorporated · foreign-controlled',
+    indianControlled: false,
+    outlets: 6683,
+    revenue: '₹1.49 lakh cr',
+    volume: '8.3 Mn KL',
+    volumeScope: 'Petrol and diesel sold through retail outlets',
+    color: C.purple,
+    source:
+      'https://www.nayaraenergy.com/storage/annual-reports/November2025/1CmN7t5vJH0yKEQ1y2Cw.pdf',
+  },
+  {
+    name: 'Jio-bp',
+    ownership: 'Indian-controlled JV · RIL 51%',
+    indianControlled: true,
+    outlets: 1916,
+    revenue: 'Not disclosed',
+    volume: '6.0 Mn KL',
+    volumeScope: 'Petrol and diesel retail sales',
+    color: '#58758f',
+    source: 'https://www.ril.com/sites/default/files/2025-04/SE_Investor.pdf',
+  },
+  {
+    name: 'Shell India',
+    ownership: 'Foreign-controlled',
+    indianControlled: false,
+    outlets: 325,
+    revenue: 'Not disclosed',
+    volume: 'Not disclosed',
+    volumeScope: 'India retail fuel volume',
+    color: '#8b7b5f',
+    source: 'https://www.shell.in/about-us/what-we-do/powering-progress-in-india.html',
+  },
+];
+
+const indianControlledOutletShare =
+  (fuelRetailers
+    .filter((company) => company.indianControlled)
+    .reduce((sum, company) => sum + company.outlets, 0) /
+    nationalRetailOutletsFy25) *
+  100;
+
 function valueFor(rows, code, year = latestYear) {
   const row = rows.find((item) => item.HSCODE === code);
   return Number(row?.[`VAL_USD_${year}`] || 0) / 1000;
@@ -154,13 +375,13 @@ function Stat({ value, label, note }) {
   );
 }
 
-function SectionHeading({ eyebrow, title, body }) {
+function SectionHeading({ eyebrow, title, body, id }) {
   return (
     <Box sx={{ maxWidth: 760, mb: { xs: 2.5, md: 3 } }}>
       <Typography variant="overline" sx={{ color: C.orange }}>
         {eyebrow}
       </Typography>
-      <Typography component="h2" variant="h4" sx={{ mt: 0.3 }}>
+      <Typography component="h2" id={id} variant="h4" sx={{ mt: 0.3 }}>
         {title}
       </Typography>
       {body && (
@@ -458,7 +679,7 @@ function CountryShift() {
               }}
             >
               <Typography variant="overline" sx={{ color: C.orange }}>
-                What changed
+                Supplier shift
               </Typography>
               <Typography variant="h5" sx={{ mt: 0.5 }}>
                 Russia went from 9th to 1st—but its share has eased from the peak.
@@ -1361,6 +1582,589 @@ function ConsumptionMix() {
   );
 }
 
+function formatStateMetric(value, metric) {
+  if (metric === 'perCapita') return `${value.toFixed(1)} kg/person`;
+  return value >= 1000 ? `${(value / 1000).toFixed(2)} MMT` : `${value.toFixed(1)} TMT`;
+}
+
+function StatePetroleumMap() {
+  const [metric, setMetric] = useState('total');
+  const [selectedName, setSelectedName] = useState('Gujarat');
+  const rowsByName = useMemo(
+    () => new Map(statePetroleumConsumption.map((row) => [row.name, row])),
+    [],
+  );
+  const rankedRows = useMemo(
+    () => [...statePetroleumConsumption].sort((a, b) => b[metric] - a[metric]),
+    [metric],
+  );
+  const thresholds = useMemo(() => {
+    const values = statePetroleumConsumption.map((row) => row[metric]).sort((a, b) => a - b);
+    return [0.2, 0.4, 0.6, 0.8].map(
+      (fraction) => values[Math.min(values.length - 1, Math.floor(values.length * fraction))],
+    );
+  }, [metric]);
+  const selected = rowsByName.get(selectedName) || rankedRows[0];
+  const metricLabel = metric === 'total' ? 'total sales' : 'sales per person';
+  const nationalValue = metric === 'total' ? nationalStateSalesH1Fy25 : 74.4;
+  const shareOfIndia = (row) => (row.total / nationalStateSalesH1Fy25) * 100;
+  const fillFor = (value) =>
+    stateMapColors[thresholds.reduce((band, threshold) => band + (value >= threshold ? 1 : 0), 0)];
+
+  return (
+    <Paper sx={cardSx}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: { xs: 'column', sm: 'row' },
+          alignItems: { xs: 'flex-start', sm: 'center' },
+          justifyContent: 'space-between',
+          gap: 1.5,
+          mb: 2,
+        }}
+      >
+        <Box>
+          <Typography sx={{ fontSize: 13, fontWeight: 800 }}>
+            Apr–Sep 2024 consumption proxy
+          </Typography>
+          <Typography sx={{ mt: 0.2, fontSize: 11.5, color: 'text.secondary' }}>
+            Petroleum-product sales · PPAC
+          </Typography>
+        </Box>
+        <ToggleButtonGroup
+          value={metric}
+          exclusive
+          size="small"
+          aria-label="State petroleum consumption metric"
+          onChange={(_, next) => next && setMetric(next)}
+          sx={{ '& .MuiToggleButton-root': { px: 1.5, py: 0.5, fontSize: 11, fontWeight: 800 } }}
+        >
+          <ToggleButton value="total">Total sales</ToggleButton>
+          <ToggleButton value="perCapita">Per person</ToggleButton>
+        </ToggleButtonGroup>
+      </Box>
+
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: { xs: '1fr', lg: 'minmax(0,1.25fr) minmax(260px,.75fr)' },
+          gap: { xs: 2.5, lg: 4 },
+          alignItems: 'center',
+        }}
+      >
+        <Box>
+          <Box
+            component="svg"
+            viewBox="0 0 800 828"
+            role="img"
+            aria-label={`India map shaded by state petroleum-product ${metricLabel}`}
+            sx={{ width: '100%', maxHeight: 570, display: 'block' }}
+          >
+            {indiaStatePaths.map((shape, index) => {
+              const canonicalName = stateMapNames[shape.name] || shape.name;
+              const row = rowsByName.get(canonicalName);
+              if (!row) return null;
+              const isSelected = canonicalName === selected.name;
+              return (
+                <path
+                  key={`${shape.name}-${index}`}
+                  d={shape.path}
+                  fillRule={shape.fillRule}
+                  fill={fillFor(row[metric])}
+                  stroke={isSelected ? C.ink : '#fffdf9'}
+                  strokeWidth={isSelected ? 2.2 : 0.75}
+                  vectorEffect="non-scaling-stroke"
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`${canonicalName}: ${formatStateMetric(row[metric], metric)}, ${shareOfIndia(row).toFixed(1)}% of India petroleum-product sales`}
+                  onMouseEnter={() => setSelectedName(canonicalName)}
+                  onFocus={() => setSelectedName(canonicalName)}
+                  onClick={() => setSelectedName(canonicalName)}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      event.preventDefault();
+                      setSelectedName(canonicalName);
+                    }
+                  }}
+                  style={{ cursor: 'pointer', outline: 'none', transition: 'fill 160ms ease' }}
+                >
+                  <title>{`${canonicalName}: ${formatStateMetric(row[metric], metric)} · ${shareOfIndia(row).toFixed(1)}% of India sales`}</title>
+                </path>
+              );
+            })}
+            <g aria-hidden="true" pointerEvents="none">
+              {statePetroleumConsumption.map((row) => {
+                const [anchorX, anchorY] = stateLabelPositions[row.name];
+                const [x, y] = stateLabelCalloutPositions[row.name] || [anchorX, anchorY];
+                const share = shareOfIndia(row);
+                const label = share < 0.05 ? '<0.1%' : `${share.toFixed(1)}%`;
+                const isSelected = row.name === selected.name;
+                const isCallout = x !== anchorX || y !== anchorY;
+                const badgeWidth = label.length > 4 ? 54 : 49;
+                return (
+                  <g key={row.name} data-state-share-label={row.name}>
+                    {isCallout ? (
+                      <line
+                        x1={anchorX}
+                        y1={anchorY}
+                        x2={x}
+                        y2={y}
+                        stroke={C.ink}
+                        strokeWidth="0.9"
+                        strokeOpacity="0.65"
+                        vectorEffect="non-scaling-stroke"
+                      />
+                    ) : null}
+                    <rect
+                      x={x - badgeWidth / 2}
+                      y={y - 12}
+                      width={badgeWidth}
+                      height="24"
+                      rx="8"
+                      fill={isSelected ? C.ink : '#fffdf9'}
+                      fillOpacity={isSelected ? 1 : 0.94}
+                      stroke={isSelected ? '#fffdf9' : C.ink}
+                      strokeWidth="0.8"
+                      vectorEffect="non-scaling-stroke"
+                    />
+                    <text
+                      x={x}
+                      y={y + 0.5}
+                      textAnchor="middle"
+                      dominantBaseline="middle"
+                      fill={isSelected ? '#fffdf9' : C.ink}
+                      fontFamily="IBM Plex Mono, monospace"
+                      fontSize="14"
+                      fontWeight="800"
+                    >
+                      {label}
+                    </text>
+                  </g>
+                );
+              })}
+            </g>
+          </Box>
+          <Box sx={{ mt: 1, display: 'flex', alignItems: 'center', gap: 0.8, flexWrap: 'wrap' }}>
+            <Typography sx={{ mr: 0.4, fontSize: 10.5, color: 'text.secondary' }}>Lower</Typography>
+            {stateMapColors.map((color, index) => (
+              <Box
+                key={color}
+                aria-label={`Color band ${index + 1} of ${stateMapColors.length}`}
+                sx={{ width: 34, height: 9, bgcolor: color, borderRadius: 99 }}
+              />
+            ))}
+            <Typography sx={{ ml: 0.4, fontSize: 10.5, color: 'text.secondary' }}>
+              Higher
+            </Typography>
+            <Typography sx={{ ml: { sm: 'auto' }, fontSize: 10.5, color: 'text.secondary' }}>
+              Labels: share of India sales · colors: five equal state groups
+            </Typography>
+          </Box>
+        </Box>
+
+        <Stack spacing={1.5}>
+          <Box sx={{ p: 2.2, bgcolor: C.ink, color: '#fff', borderRadius: 1.5 }}>
+            <Typography variant="overline" sx={{ color: '#d0a77f' }}>
+              Selected state / UT
+            </Typography>
+            <Typography variant="h5" sx={{ mt: 0.4, color: '#fff' }}>
+              {selected.name}
+            </Typography>
+            <Box
+              sx={{ mt: 1, display: 'flex', alignItems: 'baseline', gap: 1.2, flexWrap: 'wrap' }}
+            >
+              <Typography sx={{ ...mono, fontSize: 25, fontWeight: 800 }}>
+                {shareOfIndia(selected).toFixed(1)}%
+              </Typography>
+              <Typography sx={{ ...mono, fontSize: 14, color: 'rgba(255,255,255,.76)' }}>
+                {formatStateMetric(selected[metric], metric)}
+              </Typography>
+            </Box>
+            <Typography sx={{ mt: 0.25, fontSize: 11.5, color: 'rgba(255,255,255,.62)' }}>
+              Share of India’s petroleum-product sales
+            </Typography>
+            <Typography sx={{ mt: 0.3, fontSize: 11.5, color: 'rgba(255,255,255,.62)' }}>
+              Rank {rankedRows.findIndex((row) => row.name === selected.name) + 1} of 36
+            </Typography>
+          </Box>
+
+          <Box sx={{ p: 2, bgcolor: '#f1eee6', borderRadius: 1.5 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 1 }}>
+              <Typography sx={{ fontSize: 12.5, fontWeight: 800 }}>India</Typography>
+              <Typography sx={{ ...mono, fontSize: 12.5, fontWeight: 800 }}>
+                {formatStateMetric(nationalValue, metric)}
+              </Typography>
+            </Box>
+            <Divider sx={{ my: 1.25 }} />
+            <Typography variant="overline" sx={{ color: C.orange, fontSize: 9.5 }}>
+              Highest {metricLabel}
+            </Typography>
+            {rankedRows.slice(0, 5).map((row, index) => (
+              <Box
+                component="button"
+                type="button"
+                key={row.name}
+                onClick={() => setSelectedName(row.name)}
+                sx={{
+                  width: '100%',
+                  mt: 0.8,
+                  p: 0,
+                  display: 'grid',
+                  gridTemplateColumns: '18px minmax(0,1fr) auto',
+                  gap: 0.7,
+                  border: 0,
+                  bgcolor: 'transparent',
+                  color: 'inherit',
+                  textAlign: 'left',
+                  cursor: 'pointer',
+                  font: 'inherit',
+                }}
+              >
+                <Typography sx={{ ...mono, fontSize: 10.5, color: 'text.secondary' }}>
+                  {index + 1}
+                </Typography>
+                <Typography sx={{ fontSize: 11.5, fontWeight: 700 }}>{row.name}</Typography>
+                <Box sx={{ textAlign: 'right' }}>
+                  <Typography sx={{ ...mono, fontSize: 10.8, fontWeight: 800 }}>
+                    {shareOfIndia(row).toFixed(1)}%
+                  </Typography>
+                  <Typography sx={{ ...mono, fontSize: 9.5, color: 'text.secondary' }}>
+                    {formatStateMetric(row[metric], metric)}
+                  </Typography>
+                </Box>
+              </Box>
+            ))}
+          </Box>
+        </Stack>
+      </Box>
+
+      <Typography sx={{ mt: 2, fontSize: 10.8, color: 'text.secondary', lineHeight: 1.55 }}>
+        This is petroleum-product sales, used as a consumption proxy—not total energy use. It does
+        not include electricity, coal used outside petroleum-product sales, gas or biomass. The
+        per-person view helps separate population scale from consumption intensity; small
+        territories can rank highly on that measure.
+      </Typography>
+    </Paper>
+  );
+}
+
+function CrudePriceSensitivity() {
+  const [price, setPrice] = useState(75);
+  const importedBarrelsBillion = (245.3 * 7.3) / 1000;
+  const estimatedBill = importedBarrelsBillion * price;
+  const tenDollarImpact = importedBarrelsBillion * 10;
+
+  return (
+    <Paper sx={cardSx}>
+      <Typography variant="overline" sx={{ color: C.orange }}>
+        Price sensitivity
+      </Typography>
+      <Typography variant="h5" sx={{ mt: 0.4 }}>
+        India’s crude-import bill under different prices
+      </Typography>
+      <Typography sx={{ mt: 0.7, color: 'text.secondary', fontSize: 12.5, lineHeight: 1.6 }}>
+        Hold FY2025–26 import volume constant and move the assumed crude price.
+      </Typography>
+      <Box sx={{ mt: 2.2, display: 'grid', gridTemplateColumns: '1fr auto', gap: 2 }}>
+        <Box>
+          <Typography sx={{ ...mono, fontSize: 29, fontWeight: 800, color: C.orange }}>
+            ${price}/bbl
+          </Typography>
+          <Typography sx={{ fontSize: 11, color: 'text.secondary' }}>scenario price</Typography>
+        </Box>
+        <Box sx={{ textAlign: 'right' }}>
+          <Typography sx={{ ...mono, fontSize: 29, fontWeight: 800 }}>
+            ${estimatedBill.toFixed(0)}bn
+          </Typography>
+          <Typography sx={{ fontSize: 11, color: 'text.secondary' }}>
+            estimated annual crude cost
+          </Typography>
+        </Box>
+      </Box>
+      <Slider
+        value={price}
+        min={50}
+        max={120}
+        step={5}
+        marks={[
+          { value: 50, label: '$50' },
+          { value: 75, label: '$75' },
+          { value: 100, label: '$100' },
+          { value: 120, label: '$120' },
+        ]}
+        valueLabelDisplay="auto"
+        valueLabelFormat={(value) => `$${value}/bbl`}
+        onChange={(_, value) => setPrice(Array.isArray(value) ? value[0] : value)}
+        aria-label="Assumed crude oil price per barrel"
+        sx={{ mt: 3, color: C.orange, '& .MuiSlider-markLabel': { fontSize: 10.5 } }}
+      />
+      <Box sx={{ mt: 2.5, p: 1.5, bgcolor: '#f1eee6', borderRadius: 1.25 }}>
+        <Typography sx={{ ...mono, fontSize: 18, fontWeight: 800 }}>
+          ≈${tenDollarImpact.toFixed(1)}bn
+        </Typography>
+        <Typography sx={{ mt: 0.25, fontSize: 11.5, color: 'text.secondary' }}>
+          Additional annual cost for every $10/barrel increase
+        </Typography>
+      </Box>
+      <Typography sx={{ mt: 1.3, fontSize: 10.5, color: 'text.secondary', lineHeight: 1.5 }}>
+        Scenario uses 245.3 MMT of crude imports and an approximate conversion of 7.3 barrels per
+        metric tonne. Actual customs cost also reflects crude grade, freight, insurance and timing.
+      </Typography>
+    </Paper>
+  );
+}
+
+function ImportDependenceTrend() {
+  const width = 620;
+  const height = 250;
+  const margin = { top: 22, right: 28, bottom: 36, left: 42 };
+  const minValue = 80;
+  const maxValue = 90;
+  const x = (index) =>
+    margin.left +
+    (index / (crudeImportDependence.length - 1)) * (width - margin.left - margin.right);
+  const y = (value) =>
+    margin.top +
+    ((maxValue - value) / (maxValue - minValue)) * (height - margin.top - margin.bottom);
+  const path = crudeImportDependence
+    .map((row, index) => `${index ? 'L' : 'M'} ${x(index)} ${y(row.value)}`)
+    .join(' ');
+  const change = crudeImportDependence.at(-1).value - crudeImportDependence[0].value;
+
+  return (
+    <Paper sx={cardSx}>
+      <Typography variant="overline" sx={{ color: C.teal }}>
+        Long-run dependence
+      </Typography>
+      <Box sx={{ mt: 0.4, display: 'flex', justifyContent: 'space-between', gap: 2 }}>
+        <Typography variant="h5">Imported crude supplies nearly nine-tenths of demand</Typography>
+        <Box sx={{ flexShrink: 0, textAlign: 'right' }}>
+          <Typography sx={{ ...mono, fontSize: 22, fontWeight: 800, color: C.teal }}>
+            +{change.toFixed(1)}pp
+          </Typography>
+          <Typography sx={{ fontSize: 10.5, color: 'text.secondary' }}>since FY2016–17</Typography>
+        </Box>
+      </Box>
+      <Box
+        component="svg"
+        viewBox={`0 0 ${width} ${height}`}
+        role="img"
+        aria-label="India crude oil import dependence from fiscal year 2016-17 to 2025-26"
+        sx={{ mt: 1.5, width: '100%', height: 'auto', display: 'block' }}
+      >
+        {[80, 85, 90].map((tick) => (
+          <g key={tick}>
+            <line
+              x1={margin.left}
+              x2={width - margin.right}
+              y1={y(tick)}
+              y2={y(tick)}
+              stroke="#ddd8cd"
+            />
+            <text
+              x={margin.left - 8}
+              y={y(tick) + 4}
+              textAnchor="end"
+              fill="#687283"
+              fontSize="10"
+              fontFamily="IBM Plex Mono, monospace"
+            >
+              {tick}%
+            </text>
+          </g>
+        ))}
+        <path d={path} fill="none" stroke={C.teal} strokeWidth="3" strokeLinejoin="round" />
+        {crudeImportDependence.map((row, index) => (
+          <g key={row.year}>
+            <circle
+              cx={x(index)}
+              cy={y(row.value)}
+              r="4"
+              fill="#fffdf9"
+              stroke={C.teal}
+              strokeWidth="2"
+            />
+            <text
+              x={x(index)}
+              y={height - 12}
+              textAnchor="middle"
+              fill="#687283"
+              fontSize="9.5"
+              fontFamily="IBM Plex Mono, monospace"
+            >
+              {row.year}
+            </text>
+            {index === 0 || index === crudeImportDependence.length - 1 ? (
+              <text
+                x={x(index)}
+                y={y(row.value) - 10}
+                textAnchor="middle"
+                fill={C.teal}
+                fontSize="11"
+                fontWeight="800"
+              >
+                {row.value.toFixed(1)}%
+              </text>
+            ) : null}
+          </g>
+        ))}
+      </Box>
+      <Typography sx={{ mt: 0.5, fontSize: 10.5, color: 'text.secondary', lineHeight: 1.5 }}>
+        PPAC’s consumption-basis measure; FY2025–26 is provisional.
+      </Typography>
+    </Paper>
+  );
+}
+
+function RefineryCapacity() {
+  const maxCapacity = majorRefineries[0].capacity;
+  return (
+    <Paper sx={cardSx}>
+      <Box
+        sx={{ display: 'flex', justifyContent: 'space-between', gap: 2, alignItems: 'baseline' }}
+      >
+        <Box>
+          <Typography variant="overline" sx={{ color: C.blueDeep }}>
+            Refining capacity
+          </Typography>
+          <Typography variant="h5" sx={{ mt: 0.4 }}>
+            India’s largest refinery sites
+          </Typography>
+        </Box>
+        <Box sx={{ textAlign: 'right', flexShrink: 0 }}>
+          <Typography sx={{ ...mono, fontSize: 22, fontWeight: 800 }}>258.1 MMT/yr</Typography>
+          <Typography sx={{ fontSize: 10.5, color: 'text.secondary' }}>
+            all-India installed capacity
+          </Typography>
+        </Box>
+      </Box>
+      <Box
+        sx={{
+          mt: 2.2,
+          display: 'grid',
+          gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+          gap: 1.2,
+        }}
+      >
+        {majorRefineries.map((refinery) => (
+          <Box key={refinery.name} sx={{ p: 1.4, bgcolor: '#f4f1ea', borderRadius: 1.25 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 1.5 }}>
+              <Box sx={{ minWidth: 0 }}>
+                <Typography sx={{ fontSize: 12, fontWeight: 800 }}>{refinery.name}</Typography>
+                <Typography sx={{ fontSize: 10.5, color: 'text.secondary' }}>
+                  {refinery.state}
+                </Typography>
+              </Box>
+              <Typography sx={{ ...mono, flexShrink: 0, fontSize: 12, fontWeight: 800 }}>
+                {refinery.capacity.toFixed(1)}
+              </Typography>
+            </Box>
+            <Box
+              sx={{ mt: 0.8, height: 6, bgcolor: '#ddd8cd', borderRadius: 99, overflow: 'hidden' }}
+            >
+              <Box
+                sx={{
+                  width: `${(refinery.capacity / maxCapacity) * 100}%`,
+                  height: '100%',
+                  bgcolor: C.blueDeep,
+                }}
+              />
+            </Box>
+          </Box>
+        ))}
+      </Box>
+      <Typography sx={{ mt: 1.4, fontSize: 10.5, color: 'text.secondary', lineHeight: 1.5 }}>
+        Capacity in million metric tonnes per year as at 1 April 2025. Reliance combines its 33.0
+        MMT domestic-tariff and 35.2 MMT SEZ units at Jamnagar.
+      </Typography>
+    </Paper>
+  );
+}
+
+function StrategicReserves() {
+  const operatingCapacity = strategicReserveSites.reduce((sum, site) => sum + site.capacity, 0);
+  const currentImportDays = operatingCapacity / (245.3 / 365);
+  const phaseTwoImportDays = 6.5 / (245.3 / 365);
+  return (
+    <Paper sx={{ ...cardSx, bgcolor: '#ece7dc' }}>
+      <Typography variant="overline" sx={{ color: C.purple }}>
+        Supply buffer
+      </Typography>
+      <Typography variant="h5" sx={{ mt: 0.4 }}>
+        Strategic petroleum reserves
+      </Typography>
+      <Box sx={{ mt: 2, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1.5 }}>
+        <Box sx={{ p: 1.6, bgcolor: C.ink, color: '#fff', borderRadius: 1.25 }}>
+          <Typography sx={{ ...mono, fontSize: 25, fontWeight: 800 }}>5.33 MMT</Typography>
+          <Typography sx={{ mt: 0.3, fontSize: 11.5, color: 'rgba(255,255,255,.7)' }}>
+            operating Phase I capacity
+          </Typography>
+        </Box>
+        <Box sx={{ p: 1.6, bgcolor: '#fffdf9', borderRadius: 1.25 }}>
+          <Typography sx={{ ...mono, fontSize: 25, fontWeight: 800 }}>
+            ≈{currentImportDays.toFixed(1)} days
+          </Typography>
+          <Typography sx={{ mt: 0.3, fontSize: 11.5, color: 'text.secondary' }}>
+            at FY2025–26 import volume
+          </Typography>
+        </Box>
+      </Box>
+      <Stack spacing={1.1} sx={{ mt: 2 }}>
+        {strategicReserveSites.map((site) => (
+          <Box
+            key={site.name}
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: '110px 1fr 62px',
+              gap: 1,
+              alignItems: 'center',
+            }}
+          >
+            <Typography sx={{ fontSize: 11.5, fontWeight: 800 }}>{site.name}</Typography>
+            <Box sx={{ height: 7, bgcolor: '#d4cdbf', borderRadius: 99, overflow: 'hidden' }}>
+              <Box
+                sx={{ width: `${(site.capacity / 2.5) * 100}%`, height: '100%', bgcolor: C.purple }}
+              />
+            </Box>
+            <Typography sx={{ ...mono, fontSize: 11, textAlign: 'right' }}>
+              {site.capacity.toFixed(2)} MMT
+            </Typography>
+          </Box>
+        ))}
+      </Stack>
+      <Divider sx={{ my: 2 }} />
+      <Typography sx={{ fontSize: 12.5, fontWeight: 800 }}>
+        Phase II: 6.5 MMT approved—not yet operating
+      </Typography>
+      <Typography sx={{ mt: 0.45, fontSize: 11.5, color: 'text.secondary', lineHeight: 1.55 }}>
+        Chandikhol (4.0 MMT) and a second Padur facility (2.5 MMT) would add roughly{' '}
+        {phaseTwoImportDays.toFixed(1)} days at FY2025–26 import volume. The government’s official
+        benchmark for Phase I is 9.5 days using 2019–20 consumption.
+      </Typography>
+      <Typography sx={{ mt: 1.1, fontSize: 10.5, color: 'text.secondary', lineHeight: 1.5 }}>
+        Storage capacity is not the same as the amount of crude currently held.
+      </Typography>
+    </Paper>
+  );
+}
+
+function CrudeExposureAndResilience() {
+  return (
+    <Stack spacing={1.5}>
+      <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', lg: '1fr 1fr' }, gap: 1.5 }}>
+        <CrudePriceSensitivity />
+        <ImportDependenceTrend />
+      </Box>
+      <Box
+        sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', lg: '1.15fr .85fr' }, gap: 1.5 }}
+      >
+        <RefineryCapacity />
+        <StrategicReserves />
+      </Box>
+    </Stack>
+  );
+}
+
 function PetrolFacts() {
   return (
     <Paper sx={{ ...cardSx, bgcolor: '#ece7dc' }}>
@@ -1406,7 +2210,7 @@ function VehicleUse() {
       >
         <Box>
           <Typography variant="h6" sx={{ mb: 1.5 }}>
-            Who used petrol in the 2021 retail-outlet survey
+            Petrol use by vehicle type in the 2021 retail-outlet survey
           </Typography>
           <Box
             sx={{ display: 'flex', height: 42, overflow: 'hidden', borderRadius: 1 }}
@@ -1462,6 +2266,220 @@ function VehicleUse() {
   );
 }
 
+function FuelRetailMarket() {
+  const coveredOutlets = fuelRetailers.reduce((sum, company) => sum + company.outlets, 0);
+  const otherOutlets = Math.max(0, nationalRetailOutletsFy25 - coveredOutlets);
+  const networkRows = [
+    ...fuelRetailers,
+    {
+      name: 'Other operators',
+      outlets: otherOutlets,
+      color: '#c8c2b7',
+    },
+  ];
+
+  return (
+    <Stack spacing={1.5}>
+      <Paper sx={{ ...cardSx, bgcolor: '#ece7dc' }}>
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr 1fr', md: 'repeat(4,1fr)' },
+            gap: { xs: 2, md: 3 },
+          }}
+        >
+          {[
+            {
+              value: `≥${indianControlledOutletShare.toFixed(1)}%`,
+              label: 'Indian-controlled pump footprint',
+              note: 'Listed operators · FY2024–25',
+            },
+            { value: '96,724', label: 'Petrol pumps nationwide', note: 'As at 1 April 2025' },
+            { value: '40.01 MMT', label: 'Petrol consumed', note: 'FY2024–25' },
+            { value: '91.41 MMT', label: 'Diesel consumed', note: 'FY2024–25 · 88% retail' },
+          ].map((item, index) => (
+            <Box
+              key={item.label}
+              sx={{
+                minWidth: 0,
+                pl: { md: index ? 3 : 0 },
+                borderLeft: { md: index ? '1px solid #d2cbbf' : 0 },
+              }}
+            >
+              <Typography sx={{ ...mono, fontSize: { xs: 18, md: 22 }, fontWeight: 700 }}>
+                {item.value}
+              </Typography>
+              <Typography sx={{ mt: 0.35, fontSize: 12.5, fontWeight: 800 }}>
+                {item.label}
+              </Typography>
+              <Typography sx={{ mt: 0.2, fontSize: 10.8, color: 'text.secondary' }}>
+                {item.note}
+              </Typography>
+            </Box>
+          ))}
+        </Box>
+      </Paper>
+
+      <Paper sx={cardSx}>
+        <Typography sx={{ fontSize: 13, fontWeight: 800 }}>
+          Share of India’s petrol-pump network
+        </Typography>
+        <Typography sx={{ mt: 0.25, fontSize: 11.5, color: 'text.secondary' }}>
+          Outlet count is the consistent distribution measure available across operators.
+        </Typography>
+        <Box
+          sx={{ mt: 2, display: 'flex', height: 30, borderRadius: 1, overflow: 'hidden' }}
+          role="img"
+          aria-label={networkRows
+            .map(
+              (company) =>
+                `${company.name} ${((company.outlets / nationalRetailOutletsFy25) * 100).toFixed(1)}%`,
+            )
+            .join(', ')}
+        >
+          {networkRows.map((company) => (
+            <Box
+              key={company.name}
+              sx={{
+                width: `${(company.outlets / nationalRetailOutletsFy25) * 100}%`,
+                minWidth: company.outlets > 0 ? 2 : 0,
+                bgcolor: company.color,
+              }}
+            />
+          ))}
+        </Box>
+        <Box
+          sx={{
+            mt: 1.5,
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr 1fr', sm: 'repeat(4,1fr)', lg: 'repeat(7,1fr)' },
+            gap: 1,
+          }}
+        >
+          {networkRows.map((company) => (
+            <Box key={company.name} sx={{ minWidth: 0 }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.6 }}>
+                <Box sx={{ width: 8, height: 8, borderRadius: 99, bgcolor: company.color }} />
+                <Typography sx={{ fontSize: 10.8, fontWeight: 800 }}>{company.name}</Typography>
+              </Box>
+              <Typography sx={{ ...mono, mt: 0.25, fontSize: 11.5 }}>
+                {((company.outlets / nationalRetailOutletsFy25) * 100).toFixed(1)}%
+              </Typography>
+            </Box>
+          ))}
+        </Box>
+      </Paper>
+
+      <Paper sx={{ ...cardSx, p: 0, overflow: 'hidden' }}>
+        <Box
+          sx={{
+            px: { xs: 1.5, md: 2 },
+            py: 1.15,
+            display: { xs: 'none', md: 'grid' },
+            gridTemplateColumns: '1.05fr 1.35fr .72fr .9fr 1.45fr 44px',
+            gap: 1.5,
+            bgcolor: '#f1eee6',
+            borderBottom: '1px solid',
+            borderColor: 'divider',
+          }}
+        >
+          {[
+            'Company',
+            'Ownership / control',
+            'Pump share',
+            'FY25 revenue',
+            'Annual fuel volume',
+            '',
+          ].map((label) => (
+            <Typography
+              key={label || 'source'}
+              variant="overline"
+              sx={{ fontSize: 9.5, color: 'text.secondary' }}
+            >
+              {label}
+            </Typography>
+          ))}
+        </Box>
+        {fuelRetailers.map((company, index) => {
+          const share = (company.outlets / nationalRetailOutletsFy25) * 100;
+          return (
+            <Box
+              key={company.name}
+              sx={{
+                px: { xs: 1.5, md: 2 },
+                py: { xs: 1.5, md: 1.25 },
+                display: 'grid',
+                gridTemplateColumns: { xs: '1fr 1fr', md: '1.05fr 1.35fr .72fr .9fr 1.45fr 44px' },
+                gap: { xs: 1.2, md: 1.5 },
+                alignItems: 'center',
+                borderBottom: index < fuelRetailers.length - 1 ? '1px solid' : 0,
+                borderColor: 'divider',
+              }}
+            >
+              <Box>
+                <Typography sx={{ fontSize: 12.5, fontWeight: 800 }}>{company.name}</Typography>
+                <Typography sx={{ ...mono, mt: 0.2, fontSize: 10.5, color: 'text.secondary' }}>
+                  {company.outlets.toLocaleString('en-IN')} outlets
+                </Typography>
+              </Box>
+              <Typography sx={{ fontSize: 11.5, lineHeight: 1.45, color: 'text.secondary' }}>
+                {company.ownership}
+              </Typography>
+              <Box>
+                <Typography sx={{ ...mono, fontSize: 12.5, fontWeight: 700 }}>
+                  {share.toFixed(1)}%
+                </Typography>
+                <Typography
+                  sx={{ display: { md: 'none' }, fontSize: 9.8, color: 'text.secondary' }}
+                >
+                  Pump share
+                </Typography>
+              </Box>
+              <Box>
+                <Typography sx={{ ...mono, fontSize: 12, fontWeight: 700 }}>
+                  {company.revenue}
+                </Typography>
+                <Typography
+                  sx={{ display: { md: 'none' }, fontSize: 9.8, color: 'text.secondary' }}
+                >
+                  Revenue
+                </Typography>
+              </Box>
+              <Box sx={{ gridColumn: { xs: '1 / -1', md: 'auto' } }}>
+                <Typography sx={{ ...mono, fontSize: 12, fontWeight: 700 }}>
+                  {company.volume}
+                </Typography>
+                <Typography
+                  sx={{ mt: 0.15, fontSize: 10.3, lineHeight: 1.35, color: 'text.secondary' }}
+                >
+                  {company.volumeScope}
+                </Typography>
+              </Box>
+              <Box
+                component="a"
+                href={company.source}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${company.name} source (opens in new tab)`}
+                sx={{ fontSize: 10.5, fontWeight: 800, color: C.blueDeep, textDecoration: 'none' }}
+              >
+                Source ↗
+              </Box>
+            </Box>
+          );
+        })}
+      </Paper>
+
+      <Typography sx={{ px: 0.25, fontSize: 10.8, color: 'text.secondary', lineHeight: 1.55 }}>
+        Revenue is company-wide revenue from operations, not profit or petrol-pump revenue alone.
+        Annual volume follows each company’s own disclosure and is labelled by scope; MMT and
+        million kilolitres are not directly interchangeable. Jio-bp and Shell do not publish
+        standalone India fuel-retail revenue in the cited sources.
+      </Typography>
+    </Stack>
+  );
+}
+
 function Sources() {
   const linkSx = {
     color: 'text.primary',
@@ -1471,47 +2489,157 @@ function Sources() {
     textDecorationColor: '#b8b0a1',
   };
   return (
-    <Box component="section" sx={{ pt: 1 }}>
-      <Typography variant="h5">Sources &amp; method</Typography>
-      <Typography
-        sx={{ mt: 1, maxWidth: 880, color: 'text.secondary', fontSize: 12.5, lineHeight: 1.75 }}
+    <Box
+      component="details"
+      sx={{
+        borderTop: '1px solid',
+        borderBottom: '1px solid',
+        borderColor: 'divider',
+        '& summary::-webkit-details-marker': { display: 'none' },
+        '&[open] .source-chevron': { transform: 'rotate(180deg)' },
+      }}
+    >
+      <Box
+        component="summary"
+        sx={{
+          py: 1.6,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: 2,
+          cursor: 'pointer',
+          listStyle: 'none',
+          userSelect: 'none',
+          '&:hover': { color: C.orange },
+          '&:focus-visible': { outline: `2px solid ${C.orange}`, outlineOffset: 3 },
+        }}
       >
-        Import values and source-country shares are from the Ministry of Commerce &amp; Industry’s{' '}
-        <Box
-          component="a"
-          href="https://tradestat.commerce.gov.in/ftspcc/import_commodity_wise_all_countries"
-          target="_blank"
-          rel="noreferrer"
-          sx={linkSx}
-        >
-          TradeStat commodity-wise country table
+        <Box>
+          <Typography component="h2" variant="h5">
+            Sources &amp; method
+          </Typography>
+          <Typography sx={{ mt: 0.2, fontSize: 11.5, color: 'text.secondary' }}>
+            Data definitions, source links and freshness notes
+          </Typography>
         </Box>
-        . Product consumption, crude import dependence and gross petroleum trade come from the
-        Petroleum Planning &amp; Analysis Cell’s{' '}
-        <Box
-          component="a"
-          href="https://ppac.gov.in/download.php?file=rep_studies/1784287517_Snapshot_of_India_Oil_and_Gas_June_2026_A5.pdf"
-          target="_blank"
-          rel="noreferrer"
-          sx={linkSx}
+        <ExpandMore
+          className="source-chevron"
+          aria-hidden="true"
+          sx={{ flexShrink: 0, color: 'text.secondary', transition: 'transform 180ms ease' }}
+        />
+      </Box>
+      <Box sx={{ pb: 2.25 }}>
+        <Typography
+          sx={{ maxWidth: 880, color: 'text.secondary', fontSize: 12.5, lineHeight: 1.75 }}
         >
-          June 2026 oil and gas snapshot
-        </Box>
-        .
-      </Typography>
-      <Typography
-        sx={{ mt: 1, maxWidth: 880, color: 'text.secondary', fontSize: 11.5, lineHeight: 1.65 }}
-      >
-        Country shares use TradeStat’s principal commodity “Petroleum: crude”. Value shares are
-        reported by TradeStat; volume shares and unit values are derived from its tonnes series.
-        Product mix uses HS-4 customs lines. PPAC figures describe the energy system and are kept
-        separate from customs totals. MMT means million metric tonnes; percentage-point changes may
-        differ slightly due to rounding.
-      </Typography>
-      <Typography sx={{ mt: 1, color: 'text.secondary', fontSize: 11.5 }}>
-        Freshness: TradeStat retrieved 1 August 2026 · PPAC energy data through FY2025–26 and June
-        2026.
-      </Typography>
+          Import values and source-country shares are from the Ministry of Commerce &amp; Industry’s{' '}
+          <Box
+            component="a"
+            href="https://tradestat.commerce.gov.in/ftspcc/import_commodity_wise_all_countries"
+            target="_blank"
+            rel="noreferrer"
+            sx={linkSx}
+          >
+            TradeStat commodity-wise country table
+          </Box>
+          . Product consumption, crude import dependence and gross petroleum trade come from the
+          Petroleum Planning &amp; Analysis Cell’s{' '}
+          <Box
+            component="a"
+            href="https://ppac.gov.in/download.php?file=rep_studies/1784287517_Snapshot_of_India_Oil_and_Gas_June_2026_A5.pdf"
+            target="_blank"
+            rel="noreferrer"
+            sx={linkSx}
+          >
+            June 2026 oil and gas snapshot
+          </Box>
+          . The FY2024–25 fuel-distribution baseline uses PPAC’s{' '}
+          <Box
+            component="a"
+            href="https://ppac.gov.in/download.php?file=menu%2F1745468191_ICR_April-March+2024-25_Final.pdf"
+            target="_blank"
+            rel="noreferrer"
+            sx={linkSx}
+          >
+            April–March industry report
+          </Box>
+          . State petroleum-product sales and per-capita sales use PPAC’s{' '}
+          <Box
+            component="a"
+            href="https://ppac.gov.in/download.php?file=rep_studies%2F1733114272_Ready+Reckoner_H1_FY+2024-25_Final.pdf"
+            target="_blank"
+            rel="noreferrer"
+            sx={linkSx}
+          >
+            H1 FY2024–25 Ready Reckoner
+          </Box>
+          ; company revenue, outlet and sales-volume figures come from the annual reports linked in
+          the operator table. Map geometry is simplified from Anuj Tiwari’s{' '}
+          <Box
+            component="a"
+            href="https://github.com/AnujTiwari/India-State-and-Country-Shapefile-Updated-Jan-2020"
+            target="_blank"
+            rel="noreferrer"
+            sx={linkSx}
+          >
+            MIT-licensed state boundary dataset
+          </Box>
+          .
+        </Typography>
+        <Typography
+          sx={{ mt: 1, maxWidth: 880, color: 'text.secondary', fontSize: 12.5, lineHeight: 1.75 }}
+        >
+          Refinery figures use PPAC’s{' '}
+          <Box
+            component="a"
+            href="https://ppac.gov.in/infrastructure/installed-refinery-capacity"
+            target="_blank"
+            rel="noreferrer"
+            sx={linkSx}
+          >
+            installed refinery capacity table
+          </Box>
+          . Strategic-storage capacity and Phase II status come from the Ministry of Petroleum &amp;
+          Natural Gas’s{' '}
+          <Box
+            component="a"
+            href="https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2113233"
+            target="_blank"
+            rel="noreferrer"
+            sx={linkSx}
+          >
+            March 2025 reserve update
+          </Box>
+          . The price scenario uses the EIA’s approximate{' '}
+          <Box
+            component="a"
+            href="https://www.eia.gov/todayinenergy/detail.php?id=30792"
+            target="_blank"
+            rel="noreferrer"
+            sx={linkSx}
+          >
+            7.3 barrels-per-tonne conversion
+          </Box>
+          .
+        </Typography>
+        <Typography
+          sx={{ mt: 1, maxWidth: 880, color: 'text.secondary', fontSize: 11.5, lineHeight: 1.65 }}
+        >
+          Country shares use TradeStat’s principal commodity “Petroleum: crude”. Value shares are
+          reported by TradeStat; volume shares and unit values are derived from its tonnes series.
+          Product mix uses HS-4 customs lines. PPAC figures describe the energy system and are kept
+          separate from customs totals. State-map colors are quantile bands, with an equal number of
+          states and UTs in each band. Price sensitivity holds import volume constant and is not a
+          forecast. Reserve-day estimates divide stated capacity by FY2025–26 crude-import volume;
+          they measure capacity, not current inventory. Pump shares divide each reported outlet
+          count by the national total of 96,724. MMT means million metric tonnes; TMT means thousand
+          metric tonnes; percentage-point changes may differ slightly due to rounding.
+        </Typography>
+        <Typography sx={{ mt: 1, color: 'text.secondary', fontSize: 11.5 }}>
+          Freshness: TradeStat retrieved 1 August 2026 · PPAC energy data through FY2025–26 and June
+          2026.
+        </Typography>
+      </Box>
     </Box>
   );
 }
@@ -1649,7 +2777,7 @@ export default function PetroleumBrief() {
             <Box component="section">
               <SectionHeading
                 eyebrow="Supplier shift"
-                title="Where India buys its crude"
+                title="India’s crude oil suppliers"
                 body="Follow every year in the five-year transition, then switch between dollar exposure and physical tonnes to separate price effects from sourcing changes."
               />
               <CountryShift />
@@ -1658,7 +2786,7 @@ export default function PetroleumBrief() {
             <Box component="section">
               <SectionHeading
                 eyebrow="Energy trade flow"
-                title="What India imports—and what it exports back out"
+                title="India’s energy imports and refined-product exports"
                 body={`The flow view compares FY2025–26 customs values for crude oil, coal, gas, refined fuels and other petroleum products. Five-year change is summarized above the ribbons without crowding the chart.`}
               />
               <EnergyTradeTrend />
@@ -1711,6 +2839,16 @@ export default function PetroleumBrief() {
               ) : null}
             </Box>
 
+            <Box component="section" aria-labelledby="crude-exposure-heading">
+              <SectionHeading
+                id="crude-exposure-heading"
+                eyebrow="Exposure and resilience"
+                title="India’s crude-price exposure, refining capacity and reserves"
+                body="Imported volume determines how strongly global oil prices affect the bill. Refining capacity converts that crude into useful products, while strategic storage provides a limited disruption buffer."
+              />
+              <CrudeExposureAndResilience />
+            </Box>
+
             <Box component="section">
               <SectionHeading
                 eyebrow="From barrel to use"
@@ -1720,7 +2858,35 @@ export default function PetroleumBrief() {
               <RefineryFlow />
             </Box>
 
-            {false ? <ConsumptionMix /> : null}
+            <Box component="section" aria-labelledby="domestic-use-heading">
+              <SectionHeading
+                id="domestic-use-heading"
+                eyebrow="Domestic use breakdown"
+                title="India’s domestic petroleum-use mix"
+                body="PPAC reports consumption by petroleum product rather than by one exclusive end-use sector. This breakdown shows each product’s share of FY2025–26 consumption and connects it to the main purposes it serves."
+              />
+              <ConsumptionMix />
+            </Box>
+
+            <Box component="section" aria-labelledby="state-consumption-heading">
+              <SectionHeading
+                id="state-consumption-heading"
+                eyebrow="State consumption map"
+                title="State petroleum-product consumption"
+                body="PPAC’s state sales data show where petroleum demand is concentrated. Toggle between total sales and sales per person to compare market scale with consumption intensity."
+              />
+              <StatePetroleumMap />
+            </Box>
+
+            <Box component="section" aria-labelledby="fuel-retail-heading">
+              <SectionHeading
+                id="fuel-retail-heading"
+                eyebrow="Fuel distribution"
+                title="India’s petrol-pump operators"
+                body="The distribution layer is led by Indian-controlled oil marketing companies. Pump-network share provides a consistent comparison; company revenue and annual fuel volume are shown separately with their reported scope."
+              />
+              <FuelRetailMarket />
+            </Box>
 
             {false ? (
               <Box component="section">

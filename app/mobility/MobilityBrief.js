@@ -560,7 +560,7 @@ export default function MobilityBrief() {
               letterSpacing: '-.035em',
             }}
           >
-            The brands India buys. What is actually made here?
+            India’s leading consumer brands and their domestic production footprint
           </Typography>
           <Typography
             sx={{

@@ -63,6 +63,33 @@ export const VALUE_CHAINS = [
       'Coking coal and scrap feed the mills, but most of the steel stays home — exports cover only a sliver of the input bill.',
     players: ['JSW Steel', 'Tata Steel', 'SAIL', 'ArcelorMittal Nippon', 'Jindal Steel'],
   },
+  {
+    key: 'autos',
+    name: 'Auto manufacturing',
+    inputs: ['8708', '8507'],
+    outputs: ['8703', '8711', '8701'],
+    story:
+      'Imported vehicle parts and batteries enter a broader domestic supplier network that produces passenger vehicles, motorcycles and tractors for export.',
+    players: ['Maruti Suzuki', 'Tata Motors', 'Mahindra', 'Bajaj Auto', 'TVS Motor'],
+  },
+  {
+    key: 'plastics',
+    name: 'Plastics conversion',
+    inputs: ['3901', '3902'],
+    outputs: ['3923', '3926'],
+    story:
+      'Imported polyethylene and polypropylene feed domestic converters making packaging and finished plastic articles for local use and export.',
+    players: ['Reliance Industries', 'Supreme Industries', 'Astral', 'UFlex', 'Time Technoplast'],
+  },
+  {
+    key: 'footwear',
+    name: 'Leather & footwear',
+    inputs: ['4107'],
+    outputs: ['6403'],
+    story:
+      'Prepared leather joins India’s domestic hides, components and labour base to produce finished leather footwear for export.',
+    players: ['Bata India', 'Mirza International', 'Farida Group', 'Superhouse', 'Liberty Shoes'],
+  },
 ];
 
 // One categorical color per chain, shared by the map ribbons, the selector chips and the
@@ -74,6 +101,9 @@ export const CHAIN_COLOR = {
   pharma: '#4f756d',
   textiles: '#9a5868',
   steel: '#926b46',
+  autos: '#55737d',
+  plastics: '#818b55',
+  footwear: '#a45159',
 };
 
 // Latest-year totals per chain for the overview map, ordered by input size so both stacks share

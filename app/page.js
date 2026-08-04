@@ -19,7 +19,7 @@ import MoversCard from './components/charts/MoversCard.js';
 import ValueChainSection from './components/sections/ValueChainSection.js';
 import ProductDiscovery from './components/sections/ProductDiscovery.js';
 import ProductStageSection from './components/sections/ProductStageSection.js';
-import PetroleumBriefPromo from './components/sections/PetroleumBriefPromo.js';
+import SectorBriefsPromo from './components/sections/SectorBriefsPromo.js';
 
 function SectionIntro({ eyebrow, title, description, color = C.purple }) {
   return (
@@ -48,13 +48,13 @@ function Dashboard() {
           </Box>
 
           <Stack component="section" aria-label="Featured data briefs" spacing={layout.contentGap}>
-            <PetroleumBriefPromo />
+            <SectorBriefsPromo />
           </Stack>
 
           <Box component="section" id="basket-mix" data-section>
             <SectionIntro
               eyebrow="Commodity mix"
-              title="What India trades"
+              title="India’s traded goods"
               description="See the latest export and import baskets, then follow how their industry mix has changed over time."
               color={C.blue}
             />
@@ -88,7 +88,7 @@ function Dashboard() {
           <Box component="section" id="partners" data-section>
             <SectionIntro
               eyebrow="Trading partners"
-              title="Who India trades with"
+              title="India’s trading partners"
               description="Compare the largest bilateral relationships, their balances, and how partner shares have shifted."
               color={C.teal}
             />
@@ -109,7 +109,7 @@ function Dashboard() {
           <Box component="section" id="item-trends" data-section>
             <SectionIntro
               eyebrow="Product shifts"
-              title="Where trade is moving"
+              title="Trade growth and decline"
               description="Find the HS-4 product lines driving the largest gains and declines in India’s trade basket."
               color={C.orange}
             />

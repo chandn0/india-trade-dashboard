@@ -4,14 +4,14 @@ import PetroleumBrief from './PetroleumBrief.js';
 const siteUrl = getSiteUrl();
 
 export const metadata = {
-  title: 'India\u2019s petroleum imports, explained | India Trade Monitor',
+  title: 'India\u2019s crude oil and energy trade | India Trade Monitor',
   description:
-    'An evidence-led guide to India\u2019s crude oil suppliers, how country shares shifted from FY2021\u201322 to FY2025\u201326, refinery outputs, domestic petroleum consumption and the link to vehicle demand.',
+    'An evidence-led guide to India\u2019s crude oil and energy imports, energy-product exports, supplier shifts, refinery outputs and domestic energy use.',
   alternates: { canonical: '/petroleum' },
   openGraph: {
-    title: 'India\u2019s petroleum imports, explained',
+    title: 'India\u2019s crude oil and energy trade, explained',
     description:
-      'Where India buys crude oil, how the supplier mix changed across five fiscal years, and what the country ultimately uses petroleum for \u2014 sourced from TradeStat, Ministry of Commerce and Industry.',
+      'Five-year import and export trends for crude oil and other energy products, plus crude supplier shifts and refinery context.',
     type: 'article',
     url: '/petroleum',
     siteName: 'India Trade Monitor',
@@ -19,9 +19,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'India\u2019s petroleum imports, explained',
+    title: 'India\u2019s crude oil and energy trade, explained',
     description:
-      'Five-year breakdown of India\u2019s crude oil supplier mix \u2014 Iraq, Saudi Arabia, Russia, UAE and others \u2014 with domestic consumption context.',
+      'Five-year energy import and export trends with a direct view of India\u2019s crude supplier mix.',
   },
 };
 
@@ -36,9 +36,9 @@ function safeJsonLd(value) {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemPage',
-  name: 'India\u2019s petroleum imports, explained',
+  name: 'India\u2019s crude oil and energy trade, explained',
   description:
-    'Five-year dataset of India crude petroleum imports by source country (FY2021\u201322 to FY2025\u201326), sourced from TradeStat, Ministry of Commerce and Industry (FTSPCC commodity S5).',
+    'Five-year customs view of India crude oil and related energy-product imports and exports, with crude imports by source country.',
   url: `${siteUrl}/petroleum`,
   isPartOf: {
     '@type': 'WebSite',

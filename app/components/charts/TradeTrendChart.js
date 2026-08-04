@@ -252,6 +252,44 @@ export default function TradeTrendChart() {
                 })()}
               </React.Fragment>
             ))}
+            {(() => {
+              const last = geo.points[geo.points.length - 1];
+              if (!last) return null;
+              return (
+                <>
+                  {show.imports ? (
+                    <text
+                      x={last.x - 8}
+                      y={last.yi - 9}
+                      textAnchor="end"
+                      fill={C.orange}
+                      stroke="#fff"
+                      strokeWidth="4"
+                      paintOrder="stroke"
+                      fontSize="11"
+                      fontWeight="800"
+                    >
+                      Imports
+                    </text>
+                  ) : null}
+                  {show.exports ? (
+                    <text
+                      x={last.x - 8}
+                      y={last.ye + 16}
+                      textAnchor="end"
+                      fill={C.blue}
+                      stroke="#fff"
+                      strokeWidth="4"
+                      paintOrder="stroke"
+                      fontSize="11"
+                      fontWeight="800"
+                    >
+                      Exports
+                    </text>
+                  ) : null}
+                </>
+              );
+            })()}
           </Box>
 
           {p ? (

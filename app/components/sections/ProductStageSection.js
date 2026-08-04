@@ -239,7 +239,7 @@ export default function ProductStageSection() {
             Product composition
           </Typography>
           <Typography component="h2" variant="h4">
-            What form does India trade?
+            India’s traded product stages
           </Typography>
           <Typography
             sx={{

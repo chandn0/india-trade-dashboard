@@ -120,7 +120,7 @@ export function ProductSignals({ products }) {
           <Typography variant="overline" sx={{ color: C.purple }}>
             Automatic signals
           </Typography>
-          <Typography variant="h5">What deserves attention now</Typography>
+          <Typography variant="h5">Current priority opportunities</Typography>
         </Box>
       </Box>
       <Box
@@ -779,7 +779,7 @@ export function EvidenceReadiness({ metadata }) {
       <Typography variant="overline" sx={{ color: C.slate }}>
         Evidence coverage
       </Typography>
-      <Typography variant="h5">What the page knows—and what it does not</Typography>
+      <Typography variant="h5">Evidence coverage and limitations</Typography>
       <Typography sx={{ mt: 0.6, fontSize: 12.5, color: 'text.secondary' }}>
         Unavailable dimensions have committed data contracts but are not estimated.
       </Typography>

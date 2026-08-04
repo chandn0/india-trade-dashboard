@@ -111,7 +111,7 @@ function FilterSelect({ label, value, options, onChange, format = titleCase }) {
 
 function ProductDetail({ product }) {
   const details = [
-    ['Why India imports it', product.importReason],
+    ['Import rationale', product.importReason],
     ['Best lever', titleCase(product.bestLever)],
     ['Domestic capacity proxy', product.domesticCapacityProxy],
     ['Technology complexity', titleCase(product.technologyComplexity)],
@@ -194,7 +194,144 @@ function ProductDetail({ product }) {
   );
 }
 
-export default function ProductDiscovery() {
+function ProductDiscoveryPreview() {
+  const topFive = [...atlas.products]
+    .sort((a, b) => b.realisticNetImpactHighUsdMn - a.realisticNetImpactHighUsdMn)
+    .slice(0, 5);
+
+  return (
+    <Paper sx={{ ...cardSx, overflow: 'hidden', p: 0 }}>
+      <Box
+        sx={{
+          p: { xs: 2.25, md: 3 },
+          color: '#fff',
+          background: `linear-gradient(120deg, ${C.ink} 0%, #253249 100%)`,
+        }}
+      >
+        <Typography variant="overline" sx={{ color: 'rgba(255,255,255,0.62)' }}>
+          Top five buildability opportunities
+        </Typography>
+        <Box
+          sx={{
+            mt: 0.5,
+            display: 'flex',
+            alignItems: { xs: 'flex-start', md: 'center' },
+            justifyContent: 'space-between',
+            flexDirection: { xs: 'column', md: 'row' },
+            gap: 2,
+          }}
+        >
+          <Box sx={{ maxWidth: 760 }}>
+            <Typography component="h2" variant="h4">
+              From import bill to realistic domestic opportunity
+            </Typography>
+            <Typography
+              sx={{ mt: 1, color: 'rgba(236,244,255,0.73)', fontSize: 14, lineHeight: 1.65 }}
+            >
+              A concise ranking of the largest directional opportunities after export offsets and
+              realistic reduction ranges are considered.
+            </Typography>
+          </Box>
+          <Button
+            component="a"
+            href="/opportunities"
+            variant="contained"
+            sx={{
+              flexShrink: 0,
+              bgcolor: '#fff',
+              color: C.ink,
+              fontWeight: 800,
+              '&:hover': { bgcolor: '#e7ecf5' },
+            }}
+          >
+            Explore the full atlas →
+          </Button>
+        </Box>
+      </Box>
+
+      <Box sx={{ p: { xs: 1.5, md: 2.5 } }}>
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr', md: 'repeat(5, minmax(0, 1fr))' },
+            gap: 1.25,
+          }}
+        >
+          {topFive.map((product, index) => {
+            const categoryColor = categoryColors[product.buildabilityCategory] ?? C.slate;
+            return (
+              <Box
+                key={product.hscode}
+                sx={{
+                  p: 1.5,
+                  border: '1px solid',
+                  borderColor: 'divider',
+                  borderRadius: 2,
+                  bgcolor: alpha(categoryColor, 0.035),
+                }}
+              >
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 1 }}>
+                  <Typography sx={{ ...mono, fontSize: 11, fontWeight: 800, color: C.blue }}>
+                    {`#${index + 1} · HS ${product.hscode}`}
+                  </Typography>
+                  <Typography sx={{ ...mono, fontSize: 11, fontWeight: 800, color: C.teal }}>
+                    {product.opportunityScore}
+                  </Typography>
+                </Box>
+                <Typography
+                  sx={{
+                    mt: 0.75,
+                    minHeight: { md: 48 },
+                    fontSize: 12.5,
+                    fontWeight: 750,
+                    lineHeight: 1.3,
+                  }}
+                >
+                  {titleCase(product.description.toLowerCase())}
+                </Typography>
+                <Typography
+                  sx={{
+                    mt: 1.25,
+                    fontSize: 10,
+                    color: 'text.secondary',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em',
+                  }}
+                >
+                  Realistic net impact
+                </Typography>
+                <Typography sx={{ ...mono, mt: 0.2, fontSize: 13, fontWeight: 800, color: C.teal }}>
+                  {moneyB(product.realisticNetImpactLowUsdMn)}–
+                  {moneyB(product.realisticNetImpactHighUsdMn)}
+                </Typography>
+                <Typography sx={{ ...mono, mt: 0.75, fontSize: 10.5, color: C.red }}>
+                  {`${moneyB(product.netDeficitUsdMn)} net deficit`}
+                </Typography>
+                <Chip
+                  size="small"
+                  label={titleCase(product.buildabilityCategory)}
+                  sx={{
+                    mt: 1.25,
+                    maxWidth: '100%',
+                    color: categoryColor,
+                    bgcolor: alpha(categoryColor, 0.1),
+                  }}
+                />
+              </Box>
+            );
+          })}
+        </Box>
+        <Typography sx={{ mt: 1.5, fontSize: 11.5, color: 'text.secondary', lineHeight: 1.55 }}>
+          Ranked by the high end of the curated realistic net-impact range. These are directional
+          scenarios, not forecasts; the full atlas includes all filters, assumptions, and product
+          detail.
+        </Typography>
+      </Box>
+    </Paper>
+  );
+}
+
+function ProductDiscoveryWorkspace() {
   const [query, setQuery] = React.useState('');
   const [filters, setFilters] = React.useState(initialFilters);
   const [sortBy, setSortBy] = React.useState('impact');
@@ -530,7 +667,7 @@ export default function ProductDiscovery() {
       </Paper>
 
       <Paper sx={{ ...cardSx, bgcolor: alpha(C.blue, 0.035) }}>
-        <Typography variant="subtitle1">How to read the atlas</Typography>
+        <Typography variant="subtitle1">Reading the atlas</Typography>
         <Typography sx={{ mt: 0.75, fontSize: 12.5, lineHeight: 1.65, color: 'text.secondary' }}>
           Net deficit = imports minus the export offset. The realistic range is a transparent
           scenario applied to that net figure; it is not a forecast or the full import bill. The
@@ -541,4 +678,8 @@ export default function ProductDiscovery() {
       </Paper>
     </Stack>
   );
+}
+
+export default function ProductDiscovery({ preview = false }) {
+  return preview ? <ProductDiscoveryPreview /> : <ProductDiscoveryWorkspace />;
 }

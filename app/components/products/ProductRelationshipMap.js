@@ -116,7 +116,7 @@ export default function ProductRelationshipMap({ products: allProducts }) {
             Connected-data view
           </Typography>
           <Typography variant="h5">
-            How an imported product moves through the decision system
+            Imported-product decision pathway
           </Typography>
           <Typography sx={{ mt: 0.5, maxWidth: 760, fontSize: 12.5, color: 'text.secondary' }}>
             Trace supplier exposure into the HS-4 line, its production stage, domestic lever, export
