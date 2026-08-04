@@ -85,6 +85,15 @@ const theme = createTheme({
     overline: { fontWeight: 800, letterSpacing: '0.12em' },
   },
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        ':focus-visible': {
+          outline: '2px solid #46698F',
+          outlineOffset: '2px',
+          borderRadius: '6px',
+        },
+      },
+    },
     MuiPaper: {
       defaultProps: { elevation: 0 },
       styleOverrides: { root: { backgroundImage: 'none' } },

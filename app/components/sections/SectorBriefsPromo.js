@@ -61,7 +61,12 @@ export default function SectorBriefsPromo() {
       <Box
         sx={{
           display: 'grid',
-          gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', lg: 'repeat(5, 1fr)' },
+          gridTemplateColumns: {
+            xs: '1fr',
+            sm: 'repeat(2, 1fr)',
+            md: 'repeat(3, 1fr)',
+            lg: 'repeat(5, 1fr)',
+          },
           gap: 1.25,
         }}
       >
@@ -91,7 +96,7 @@ export default function SectorBriefsPromo() {
             >
               <Icon fontSize="small" />
             </Box>
-            <Typography variant="h6" sx={{ mt: 1.25 }}>
+            <Typography component="h3" variant="h6" sx={{ mt: 1.25 }}>
               {title}
             </Typography>
             <Typography

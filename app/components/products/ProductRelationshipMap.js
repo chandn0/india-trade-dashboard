@@ -115,9 +115,7 @@ export default function ProductRelationshipMap({ products: allProducts }) {
           <Typography variant="overline" sx={{ color: C.teal }}>
             Connected-data view
           </Typography>
-          <Typography variant="h5">
-            Imported-product decision pathway
-          </Typography>
+          <Typography variant="h5">Imported-product decision pathway</Typography>
           <Typography sx={{ mt: 0.5, maxWidth: 760, fontSize: 12.5, color: 'text.secondary' }}>
             Trace supplier exposure into the HS-4 line, its production stage, domestic lever, export
             offset, and final net-balance consequence.

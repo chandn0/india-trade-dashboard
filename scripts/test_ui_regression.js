@@ -325,9 +325,14 @@ describe('S05 Suite 6: Zero-Import and Zero-Export Products Handling', () => {
 describe('S05 Suite 7: Desktop and Mobile Layout Data Contracts', () => {
   it('enforces COMPACT_BELOW breakpoint and checks chart geometry math', async () => {
     const { COMPACT_BELOW } = await import('../app/lib/responsive.js');
-    const { buildTradeGeo } = await import('../app/lib/chartGeometry.js');
+    const { buildTradeGeo, getNiceMaxAndStep } = await import('../app/lib/chartGeometry.js');
 
     assert.equal(COMPACT_BELOW, 560, 'COMPACT_BELOW breakpoint must remain strictly at 560px');
+
+    // Test nice tick number generator
+    const { niceMax, step } = getNiceMaxAndStep(730, 5);
+    assert.ok(niceMax % step === 0, 'niceMax must be an exact multiple of tick step');
+    assert.ok(step > 0 && niceMax >= 730, 'niceMax must cover raw value with positive step');
 
     const sampleTradeData = [
       { financial_year: '2021-22', export_usd_mn: 400000, import_usd_mn: 600000 },
@@ -339,6 +344,10 @@ describe('S05 Suite 7: Desktop and Mobile Layout Data Contracts', () => {
     assert.equal(desktopGeo.compact, false);
     assert.ok(desktopGeo.exportPath.includes('M ') && desktopGeo.importPath.includes('M '));
     assert.ok(!desktopGeo.exportPath.includes('NaN'));
+    assert.ok(
+      desktopGeo.yTicks.every((t) => Number.isInteger(t.v)),
+      'Ticks should be integers',
+    );
 
     const mobileGeo = buildTradeGeo(sampleTradeData, 375);
     assert.equal(mobileGeo.compact, true);

@@ -1,3 +1,4 @@
+import { LaunchRounded } from '@mui/icons-material';
 import { Box, Container, Stack, Typography } from '@mui/material';
 import { latestFyLabel, latestIsYtd, latestIsProvisional } from '../../lib/transforms.js';
 
@@ -18,7 +19,7 @@ export default function Footer() {
           <Box
             sx={{
               p: { xs: 2, md: 2.25 },
-              borderRadius: 2.5,
+              borderRadius: 1.5,
               bgcolor: 'background.paper',
               border: '1px solid',
               borderColor: 'divider',
@@ -60,10 +61,14 @@ export default function Footer() {
                   color: '#0f172a',
                   textDecoration: 'underline',
                   textUnderlineOffset: '2px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 0.4,
                   '&:hover': { color: 'text.secondary' },
                 }}
               >
-                GitHub Repository ↗
+                GitHub Repository
+                <LaunchRounded sx={{ fontSize: 12 }} />
               </Box>
               <Box
                 component="a"
@@ -77,10 +82,14 @@ export default function Footer() {
                   color: '#0f172a',
                   textDecoration: 'underline',
                   textUnderlineOffset: '2px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 0.4,
                   '&:hover': { color: 'text.secondary' },
                 }}
               >
-                Report Issues ↗
+                Report Issues
+                <LaunchRounded sx={{ fontSize: 12 }} />
               </Box>
             </Stack>
           </Box>

@@ -17,7 +17,7 @@ export default function PartnerTrendCard() {
   }));
 
   return (
-    <Paper sx={{ ...cardSx }}>
+    <Paper sx={{ ...cardSx, minWidth: 0 }}>
       <Stack spacing={1.25}>
         <Box
           sx={{

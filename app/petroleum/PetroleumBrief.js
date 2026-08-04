@@ -2647,7 +2647,7 @@ function Sources() {
 export default function PetroleumBrief() {
   return (
     <Box sx={{ bgcolor: 'background.default', minHeight: '100vh' }}>
-      <Masthead />
+      <Masthead pageTitle="Petroleum & Energy" backHref="/" />
       <Box component="main">
         <Box sx={{ bgcolor: C.ink, color: '#fff', borderTop: '1px solid rgba(255,255,255,.06)' }}>
           <Container maxWidth="xl" sx={{ pt: { xs: 3, md: 5 }, pb: { xs: 4, md: 6 } }}>

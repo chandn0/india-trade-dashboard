@@ -535,7 +535,7 @@ function BrandsTable() {
 export default function MobilityBrief() {
   return (
     <Box sx={{ minHeight: '100vh', bgcolor: 'background.default' }}>
-      <Masthead />
+      <Masthead pageTitle="Consumer Brands Hub" backHref="/" />
       <Box sx={{ bgcolor: C.ink, color: '#fff' }}>
         <Container maxWidth="xl" sx={{ py: layout.heroY }}>
           <Button

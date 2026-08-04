@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowBack, ExpandMore } from '@mui/icons-material';
+import { ArrowBack, ExpandMore, Launch } from '@mui/icons-material';
 import { Box, Button, Container, Divider, Paper, Stack, Typography } from '@mui/material';
 import importData from '../../../data/india_trade_hs4_world_import_5fy.json';
 import exportData from '../../../data/india_trade_hs4_world_export_5fy.json';
@@ -527,12 +527,15 @@ export default function TradeSectorBrief({ type }) {
   const sourceLinkSx = {
     color: 'text.primary',
     textUnderlineOffset: 2,
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: 0.4,
     '&:hover': { color: config.accent },
   };
 
   return (
     <Box sx={{ minHeight: '100vh', bgcolor: 'background.default' }}>
-      <Masthead />
+      <Masthead pageTitle={config.title} backHref="/" />
       <Box component="main">
         <Container maxWidth="xl" sx={{ py: layout.pageY }}>
           <Button
@@ -863,7 +866,8 @@ export default function TradeSectorBrief({ type }) {
                     aria-label="TradeStat commodity trade source (opens in new tab)"
                     sx={sourceLinkSx}
                   >
-                    TradeStat · HS-4 commodity trade ↗
+                    TradeStat · HS-4 commodity trade
+                    <Launch sx={{ fontSize: 12 }} />
                   </Typography>
                   <Typography
                     component="a"
@@ -873,7 +877,8 @@ export default function TradeSectorBrief({ type }) {
                     aria-label="TradeStat partner trade source (opens in new tab)"
                     sx={sourceLinkSx}
                   >
-                    TradeStat · partner imports by chapter ↗
+                    TradeStat · partner imports by chapter
+                    <Launch sx={{ fontSize: 12 }} />
                   </Typography>
                   {config.officialSources.map(([label, href]) => (
                     <Typography
@@ -885,7 +890,8 @@ export default function TradeSectorBrief({ type }) {
                       aria-label={`${label} (opens in new tab)`}
                       sx={sourceLinkSx}
                     >
-                      {label} ↗
+                      {label}
+                      <Launch sx={{ fontSize: 12 }} />
                     </Typography>
                   ))}
                 </Stack>

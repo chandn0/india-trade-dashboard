@@ -37,6 +37,7 @@ import {
 } from '@mui/icons-material';
 
 import stageData from '../../../data/product_stage_summary.json';
+import Masthead from '../layout/Masthead.js';
 import Footer from '../layout/Footer.js';
 import { C, mono } from '../../theme.js';
 import { moneyB } from '../../lib/format.js';
@@ -304,7 +305,9 @@ function MixCard({ flow }) {
           <Typography variant="overline" sx={{ color: accent }}>
             {flow.flow}
           </Typography>
-          <Typography variant="h6">Composition of the complete basket</Typography>
+          <Typography component="h3" variant="h6">
+            {flow.flow === 'Imports' ? 'Import basket composition' : 'Export basket composition'}
+          </Typography>
         </Box>
         <Typography sx={{ ...mono, fontSize: 17, fontWeight: 800 }}>
           {moneyB(flow.totalUsdMn)}
@@ -628,7 +631,7 @@ function ProductExplorer({ detailData }) {
       (p) =>
         `"${p.hscode}","${p.description.replace(/"/g, '""')}","${p.sector}","${p.productionStage}",${p[valueKey]},${p.netBalanceUsdMn},"${p.reviewStatus}","${p.buildability}"`,
     );
-    const csvContent = [header, ...rows].join('\\n');
+    const csvContent = [header, ...rows].join('\n');
     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
@@ -967,77 +970,7 @@ export default function ProductCompositionDashboard() {
 
   return (
     <Box sx={{ bgcolor: 'background.default', minHeight: '100vh' }}>
-      <Box
-        component="header"
-        sx={{ bgcolor: C.ink, color: '#fff', borderBottom: '1px solid rgba(255,255,255,0.08)' }}
-      >
-        <Container
-          maxWidth="xl"
-          sx={{
-            py: 1.3,
-            display: 'flex',
-            alignItems: 'center',
-            gap: { xs: 1, md: 1.5 },
-            flexWrap: 'wrap',
-          }}
-        >
-          <Button
-            component={Link}
-            href="/"
-            size="small"
-            startIcon={<ArrowBackRounded />}
-            sx={{ color: 'rgba(255,255,255,0.75)' }}
-          >
-            Trade monitor
-          </Button>
-          <Typography sx={{ fontWeight: 800, fontSize: 13 }}>Product Composition</Typography>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1, sm: 1.5 }, ml: 'auto' }}>
-            <Typography
-              component="a"
-              href="https://github.com/chandn0/india-trade-dashboard"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub Repository (opens in new tab)"
-              sx={{
-                display: { xs: 'none', sm: 'inline' },
-                fontSize: 12,
-                fontWeight: 700,
-                color: 'rgba(255,255,255,0.85)',
-                textDecoration: 'none',
-                '&:hover': { color: '#fff', textDecoration: 'underline' },
-              }}
-            >
-              GitHub ↗
-            </Typography>
-            <Typography
-              component="a"
-              href="https://github.com/chandn0/india-trade-dashboard/blob/main/CONTRIBUTING.md"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Contribute to India Trade Dashboard on GitHub (opens in new tab)"
-              sx={{
-                display: { xs: 'none', sm: 'inline' },
-                fontSize: 12,
-                fontWeight: 700,
-                color: 'rgba(255,255,255,0.74)',
-                textDecoration: 'none',
-                '&:hover': { textDecoration: 'underline' },
-              }}
-            >
-              Contribute ↗
-            </Typography>
-            <Chip
-              size="small"
-              label={`FY${stageData.metadata.fiscalYear}`}
-              sx={{
-                display: { xs: 'none', sm: 'flex' },
-                color: 'rgba(255,255,255,0.82)',
-                bgcolor: 'rgba(255,255,255,0.09)',
-              }}
-            />
-          </Box>
-        </Container>
-      </Box>
+      <Masthead pageTitle="Product Composition" backHref="/" />
 
       <Box
         sx={{
