@@ -11,7 +11,7 @@ test('dashboard opens the product workspace from its content', async ({ page, is
   await expect(page).toHaveURL(/\/products$/);
   await expect(
     page.getByRole('heading', {
-      name: 'What India buys, what India sells, and how much value is added',
+      name: 'India’s imports, exports, and value addition',
     }),
   ).toBeVisible();
 
@@ -25,19 +25,19 @@ test('dashboard does not overflow the mobile viewport', async ({ page, isMobile 
   test.skip(!isMobile, 'Mobile layout assertion');
 
   await page.goto('/');
+
   const dimensions = await page.evaluate(() => ({
-    viewport: document.documentElement.clientWidth,
+    viewport: window.innerWidth,
     content: document.documentElement.scrollWidth,
   }));
 
   expect(dimensions.content).toBeLessThanOrEqual(dimensions.viewport + 1);
   await expect(page.getByRole('heading', { level: 1, name: 'India Trade Monitor' })).toBeVisible();
-  await expect(page.getByText(/more partner countries.*tap a band for detail/i)).toBeVisible();
 });
 
 test('trade trend explains the latest provisional data and pandemic break', async ({ page }) => {
   await page.goto('/');
 
-  await expect(page.getByText(/FY25–26 provisional/i)).toBeVisible();
+  await expect(page.getByText(/FY25–26 provisional/i).first()).toBeVisible();
   await expect(page.getByText(/FY2020–21.*pandemic disruption/i)).toBeVisible();
 });

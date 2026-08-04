@@ -4,8 +4,9 @@ import Link from 'next/link';
 import { Box, Chip, Container, Typography } from '@mui/material';
 import { ArrowBackRounded, LaunchRounded } from '@mui/icons-material';
 import { C } from '../../theme.js';
+import { latestFyLabel } from '../../lib/transforms.js';
 
-export default function Masthead({ pageTitle, backHref, backLabel, showFyBadge = true }) {
+export default function Masthead({ pageTitle, backHref, backLabel, fyLabel = latestFyLabel, showFyBadge = true }) {
   return (
     <Box
       component="header"
@@ -30,74 +31,81 @@ export default function Masthead({ pageTitle, backHref, backLabel, showFyBadge =
           justifyContent: 'space-between',
         }}
       >
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1, sm: 1.5 }, minWidth: 0 }}>
-          {backHref ? (
-            <Typography
-              component={Link}
-              href={backHref}
-              sx={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 0.5,
-                fontSize: { xs: 13, sm: 14 },
-                fontWeight: 700,
-                color: 'rgba(231,236,245,0.85)',
-                textDecoration: 'none',
-                flexShrink: 0,
-                '&:hover': { color: '#fff', textDecoration: 'underline' },
-                '&:focus-visible': { outline: '2px solid #93c5fd', outlineOffset: 3 },
-              }}
-            >
-              <ArrowBackRounded sx={{ fontSize: 16 }} />
-              {backLabel || 'Home'}
-            </Typography>
-          ) : (
-            <Typography
-              component={Link}
-              href="/"
-              sx={{
-                color: '#fff',
-                fontSize: { xs: 16, sm: 18, md: 19 },
-                fontWeight: 800,
-                lineHeight: 1,
-                textDecoration: 'none',
-                whiteSpace: 'nowrap',
-                letterSpacing: '-0.015em',
-                '&:hover': { opacity: 0.9 },
-                '&:focus-visible': { outline: '2px solid #93c5fd', outlineOffset: 3 },
-              }}
-            >
-              India Trade Monitor
-            </Typography>
-          )}
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1, sm: 1.25 }, minWidth: 0 }}>
+          <Typography
+            component={Link}
+            href="/"
+            sx={{
+              color: '#fff',
+              fontSize: { xs: 16, sm: 18, md: 19 },
+              fontWeight: 800,
+              lineHeight: 1,
+              textDecoration: 'none',
+              whiteSpace: 'nowrap',
+              letterSpacing: '-0.015em',
+              flexShrink: 0,
+              '&:hover': { opacity: 0.9 },
+              '&:focus-visible': { outline: '2px solid #93c5fd', outlineOffset: 3 },
+            }}
+          >
+            India Trade Monitor
+          </Typography>
 
-          {pageTitle && (
+          {(pageTitle || backHref) && (
             <>
               <Typography
                 component="span"
-                sx={{ color: 'rgba(255,255,255,0.3)', fontSize: 14, userSelect: 'none' }}
+                sx={{
+                  color: 'rgba(255,255,255,0.3)',
+                  fontSize: 14,
+                  userSelect: 'none',
+                  display: { xs: pageTitle ? 'none' : 'inline', sm: 'inline' },
+                }}
               >
                 /
               </Typography>
-              <Typography
-                noWrap
-                sx={{
-                  color: 'rgba(255,255,255,0.9)',
-                  fontSize: { xs: 13, sm: 14 },
-                  fontWeight: 700,
-                }}
-              >
-                {pageTitle}
-              </Typography>
+              {backHref ? (
+                <Typography
+                  component={Link}
+                  href={backHref}
+                  sx={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 0.5,
+                    fontSize: { xs: 13, sm: 14 },
+                    fontWeight: 700,
+                    color: 'rgba(231,236,245,0.85)',
+                    textDecoration: 'none',
+                    flexShrink: 0,
+                    '&:hover': { color: '#fff', textDecoration: 'underline' },
+                    '&:focus-visible': { outline: '2px solid #93c5fd', outlineOffset: 3 },
+                  }}
+                >
+                  <ArrowBackRounded sx={{ fontSize: 15 }} />
+                  {backLabel || pageTitle || 'Back'}
+                </Typography>
+              ) : (
+                <Typography
+                  noWrap
+                  sx={{
+                    color: 'rgba(255,255,255,0.9)',
+                    fontSize: { xs: 13, sm: 14 },
+                    fontWeight: 700,
+                    display: { xs: 'none', sm: 'inline' },
+                  }}
+                >
+                  {pageTitle}
+                </Typography>
+              )}
             </>
           )}
         </Box>
 
         <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1, sm: 1.5 }, flexShrink: 0 }}>
-          {showFyBadge && (
+          {showFyBadge && fyLabel && (
             <Chip
               size="small"
-              label="FY2025–26"
+              label={fyLabel}
               sx={{
                 height: 24,
                 fontSize: 11,
