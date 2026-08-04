@@ -535,7 +535,7 @@ export default function TradeSectorBrief({ type }) {
 
   return (
     <Box sx={{ minHeight: '100vh', bgcolor: 'background.default' }}>
-      <Masthead pageTitle={config.title} backHref="/" backLabel="Trade Monitor" />
+      <Masthead pageTitle={config.title} backHref="/" />
       <Box component="main">
         <Container maxWidth="xl" sx={{ py: layout.pageY }}>
           <Button

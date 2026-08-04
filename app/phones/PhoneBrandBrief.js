@@ -55,7 +55,7 @@ function SectionHeading({ eyebrow, title, body }) {
 export default function PhoneBrandBrief() {
   return (
     <Box sx={{ minHeight: '100vh', bgcolor: 'background.default' }}>
-      <Masthead pageTitle="Smartphone Brands" backHref="/" backLabel="Trade Monitor" />
+      <Masthead pageTitle="Smartphone Brands" backHref="/" />
       <Box sx={{ bgcolor: C.ink, color: '#fff', borderBottom: '1px solid rgba(255,255,255,.08)' }}>
         <Container maxWidth="xl" sx={{ py: layout.heroY }}>
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.25, mb: 2.5 }}>

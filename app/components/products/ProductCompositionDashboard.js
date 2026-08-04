@@ -970,7 +970,7 @@ export default function ProductCompositionDashboard() {
 
   return (
     <Box sx={{ bgcolor: 'background.default', minHeight: '100vh' }}>
-      <Masthead pageTitle="Product Composition" backHref="/" backLabel="Trade Monitor" />
+      <Masthead pageTitle="Product Composition" backHref="/" />
 
       <Box
         sx={{

@@ -13,6 +13,8 @@ export default function Masthead({
   fyLabel = latestFyLabel,
   showFyBadge = true,
 }) {
+  const displayTitle = pageTitle || backLabel;
+
   return (
     <Box
       component="header"
@@ -33,7 +35,7 @@ export default function Masthead({
           height: '100%',
           display: 'flex',
           alignItems: 'center',
-          gap: { xs: 1, md: 2 },
+          gap: { xs: 1, md: 1.5 },
           justifyContent: 'space-between',
         }}
       >
@@ -57,7 +59,7 @@ export default function Masthead({
             India Trade Monitor
           </Typography>
 
-          {(pageTitle || backHref) && (
+          {displayTitle && (
             <>
               <Typography
                 component="span"
@@ -65,44 +67,42 @@ export default function Masthead({
                   color: 'rgba(255,255,255,0.3)',
                   fontSize: 14,
                   userSelect: 'none',
-                  display: { xs: pageTitle ? 'none' : 'inline', sm: 'inline' },
                 }}
               >
                 /
               </Typography>
-              {backHref ? (
-                <Typography
-                  component={Link}
-                  href={backHref}
+
+              <Typography
+                component={backHref ? Link : 'span'}
+                href={backHref || undefined}
+                noWrap
+                sx={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 0.5,
+                  fontSize: { xs: 13, sm: 14 },
+                  fontWeight: 700,
+                  color: 'rgba(231,236,245,0.9)',
+                  textDecoration: 'none',
+                  minWidth: 0,
+                  '&:hover': backHref ? { color: '#fff', textDecoration: 'underline' } : undefined,
+                  '&:focus-visible': backHref
+                    ? { outline: '2px solid #93c5fd', outlineOffset: 3 }
+                    : undefined,
+                }}
+              >
+                {backHref && <ArrowBackRounded sx={{ fontSize: 14, flexShrink: 0 }} />}
+                <Box
+                  component="span"
                   sx={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: 0.5,
-                    fontSize: { xs: 13, sm: 14 },
-                    fontWeight: 700,
-                    color: 'rgba(231,236,245,0.85)',
-                    textDecoration: 'none',
-                    flexShrink: 0,
-                    '&:hover': { color: '#fff', textDecoration: 'underline' },
-                    '&:focus-visible': { outline: '2px solid #93c5fd', outlineOffset: 3 },
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
                   }}
                 >
-                  <ArrowBackRounded sx={{ fontSize: 15 }} />
-                  {backLabel || pageTitle || 'Back'}
-                </Typography>
-              ) : (
-                <Typography
-                  noWrap
-                  sx={{
-                    color: 'rgba(255,255,255,0.9)',
-                    fontSize: { xs: 13, sm: 14 },
-                    fontWeight: 700,
-                    display: { xs: 'none', sm: 'inline' },
-                  }}
-                >
-                  {pageTitle}
-                </Typography>
-              )}
+                  {displayTitle}
+                </Box>
+              </Typography>
             </>
           )}
         </Box>
