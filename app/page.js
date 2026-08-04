@@ -43,6 +43,31 @@ function Dashboard() {
       <Masthead />
       <Container maxWidth="xl" sx={{ py: layout.pageY }}>
         <Stack spacing={layout.sectionGap}>
+          <Box component="section" aria-label="Overview introduction">
+            <Typography variant="overline" sx={{ color: C.purple, fontWeight: 800 }}>
+              TRADE PERFORMANCE & STRUCTURE
+            </Typography>
+            <Typography
+              component="h1"
+              variant="h4"
+              sx={{ mt: 0.25, fontWeight: 800, color: 'text.primary' }}
+            >
+              India Trade Monitor
+            </Typography>
+            <Typography
+              sx={{
+                mt: 0.5,
+                color: 'text.secondary',
+                fontSize: { xs: 13.5, sm: 14.5 },
+                maxWidth: 760,
+                lineHeight: 1.6,
+              }}
+            >
+              FY2025–26 bilateral trade totals, commodity basket composition, production-stage
+              attributions, and domestic value-chain dependencies.
+            </Typography>
+          </Box>
+
           <Box component="section" id="trends" data-section>
             <TradeTrendChart />
           </Box>

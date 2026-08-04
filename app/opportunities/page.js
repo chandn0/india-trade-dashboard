@@ -12,7 +12,7 @@ export const metadata = {
 export default function OpportunitiesPage() {
   return (
     <Box sx={{ bgcolor: 'background.default', minHeight: '100vh' }}>
-      <Masthead />
+      <Masthead pageTitle="Buildability Atlas" backHref="/" backLabel="Trade Monitor" />
       <Container maxWidth="xl" sx={{ py: { xs: 3, md: 5 } }}>
         <ProductDiscovery />
       </Container>

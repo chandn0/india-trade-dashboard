@@ -26,6 +26,7 @@ import {
 } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import {
+  ArrowForwardRounded,
   ExpandMoreRounded,
   FilterAltOffRounded,
   InfoOutlined,
@@ -236,6 +237,7 @@ function ProductDiscoveryPreview() {
             component="a"
             href="/opportunities"
             variant="contained"
+            endIcon={<ArrowForwardRounded />}
             sx={{
               flexShrink: 0,
               bgcolor: '#fff',
@@ -244,7 +246,7 @@ function ProductDiscoveryPreview() {
               '&:hover': { bgcolor: '#e7ecf5' },
             }}
           >
-            Explore the full atlas →
+            Explore the full atlas
           </Button>
         </Box>
       </Box>
@@ -253,7 +255,12 @@ function ProductDiscoveryPreview() {
         <Box
           sx={{
             display: 'grid',
-            gridTemplateColumns: { xs: '1fr', md: 'repeat(5, minmax(0, 1fr))' },
+            gridTemplateColumns: {
+              xs: '1fr',
+              sm: 'repeat(2, 1fr)',
+              md: 'repeat(3, 1fr)',
+              lg: 'repeat(5, 1fr)',
+            },
             gap: 1.25,
           }}
         >
@@ -275,7 +282,7 @@ function ProductDiscoveryPreview() {
                     {`#${index + 1} · HS ${product.hscode}`}
                   </Typography>
                   <Typography sx={{ ...mono, fontSize: 11, fontWeight: 800, color: C.teal }}>
-                    {product.opportunityScore}
+                    {`${product.opportunityScore}/100`}
                   </Typography>
                 </Box>
                 <Typography

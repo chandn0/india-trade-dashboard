@@ -31,7 +31,7 @@
     "validate:products": "node scripts/validate_product_data.js",
     "validate:value-chains": "node scripts/validate_domestic_value_chain.js",
     "validate:brief-data": "node scripts/validate_brief_data.js",
-    "test:regression": "node --test scripts/test_ui_regression.js",
+    "test:regression": "node --import ./scripts/register-loader.js --test scripts/test_ui_regression.js",
     "test:rendering": "node --import ./scripts/register-loader.js --test scripts/test_rendering.js",
     "test:e2e": "playwright test",
     "test": "npm run validate:products && npm run validate:value-chains && npm run validate:brief-data && npm run test:regression && npm run test:rendering",

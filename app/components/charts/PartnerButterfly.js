@@ -24,7 +24,7 @@ export default function PartnerButterfly() {
   const topShare = (top.reduce((sum, p) => sum + p.total[COUNTRY_LAST], 0) / grandTotal) * 100;
 
   return (
-    <Paper sx={{ ...cardSx }}>
+    <Paper sx={{ ...cardSx, minWidth: 0 }}>
       <Stack spacing={1.25}>
         <Box
           sx={{
@@ -39,7 +39,13 @@ export default function PartnerButterfly() {
           <Chip
             size="small"
             label={`Top 12 = ${topShare.toFixed(1)}% of FY${fyTick(COUNTRY_YEARS[COUNTRY_LAST])} trade`}
-            sx={{ bgcolor: alpha(C.teal, 0.1), color: C.teal, fontWeight: 800 }}
+            sx={{
+              bgcolor: alpha(C.teal, 0.1),
+              color: C.teal,
+              fontWeight: 800,
+              maxWidth: '100%',
+              '& .MuiChip-label': { overflow: 'hidden', textOverflow: 'ellipsis' },
+            }}
           />
         </Box>
 

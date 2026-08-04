@@ -1,7 +1,15 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowBack, Factory, PhoneIphone, Public, Storefront, Verified } from '@mui/icons-material';
+import {
+  ArrowBack,
+  ArrowForward,
+  Factory,
+  PhoneIphone,
+  Public,
+  Storefront,
+  Verified,
+} from '@mui/icons-material';
 import { Box, Button, Chip, Container, Divider, Paper, Stack, Typography } from '@mui/material';
 import phoneData from '../../data/india_phone_brand_evidence.json';
 import Footer from '../components/layout/Footer.js';
@@ -47,7 +55,7 @@ function SectionHeading({ eyebrow, title, body }) {
 export default function PhoneBrandBrief() {
   return (
     <Box sx={{ minHeight: '100vh', bgcolor: 'background.default' }}>
-      <Masthead />
+      <Masthead pageTitle="Smartphone Brands" backHref="/" backLabel="Trade Monitor" />
       <Box sx={{ bgcolor: C.ink, color: '#fff', borderBottom: '1px solid rgba(255,255,255,.08)' }}>
         <Container maxWidth="xl" sx={{ py: layout.heroY }}>
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.25, mb: 2.5 }}>
@@ -291,10 +299,14 @@ export default function PhoneBrandBrief() {
                   color: 'text.primary',
                   fontWeight: 700,
                   textDecorationColor: 'rgba(0,0,0,.25)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 0.4,
                   '&:hover': { color: 'text.primary' },
                 }}
               >
-                See the full consumer brands hub →
+                See the full consumer brands hub
+                <ArrowForward sx={{ fontSize: 13 }} />
               </Box>
             </Typography>
           </Box>

@@ -21,6 +21,7 @@ import {
   ArrowForwardRounded,
   FactoryRounded,
   Inventory2Rounded,
+  LaunchRounded,
   SearchRounded,
   VerifiedRounded,
   WarningAmberRounded,
@@ -124,7 +125,8 @@ function ChainNode({ eyebrow, title, note, color, icon, sourceUrl, sourceLabel }
             '&:hover': { textDecoration: 'none' },
           }}
         >
-          <span>Open cited source ↗</span>
+          <span>Open cited source</span>
+          <LaunchRounded sx={{ fontSize: 11 }} />
         </Box>
       ) : null}
     </Box>
