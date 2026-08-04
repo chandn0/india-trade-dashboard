@@ -34,13 +34,13 @@ export default function PetroleumBriefPromo() {
             New data brief
           </Typography>
           <Typography variant="h5" sx={{ mt: 0.2 }}>
-            India’s petroleum import bill, explained
+            India’s crude oil and energy trade
           </Typography>
           <Typography
             sx={{ mt: 0.5, maxWidth: 720, color: 'text.secondary', fontSize: 13, lineHeight: 1.6 }}
           >
-            See where crude comes from, how supplier shares changed, what refineries produce, and
-            which vehicles use petrol.
+            Compare five-year energy imports and exports, see where crude comes from, and follow
+            what Indian refineries produce.
           </Typography>
         </Box>
         <Button

@@ -6,7 +6,13 @@ import Sparkline from './Sparkline.js';
 
 const pctLabel = (pct) => (pct == null ? 'new' : `${pct >= 0 ? '+' : ''}${Math.round(pct)}%`);
 
-export default function MoverRow({ item, color, years = HS4_YEARS, rankFy = '26' }) {
+export default function MoverRow({
+  item,
+  color,
+  years = HS4_YEARS,
+  rankFy = '26',
+  showTrend = true,
+}) {
   const tip = (
     <Box>
       {years.map((y, i) => (
@@ -58,18 +64,22 @@ export default function MoverRow({ item, color, years = HS4_YEARS, rankFy = '26'
           </Typography>
         </Box>
       </Box>
-      <Tooltip title={tip} arrow placement="top" enterTouchDelay={0} leaveTouchDelay={2500}>
-        <Box sx={{ cursor: 'help' }}>
-          <Sparkline series={item.series} color={color} />
-        </Box>
-      </Tooltip>
+      {showTrend ? (
+        <Tooltip title={tip} arrow placement="top" enterTouchDelay={0} leaveTouchDelay={2500}>
+          <Box sx={{ cursor: 'help' }}>
+            <Sparkline series={item.series} color={color} />
+          </Box>
+        </Tooltip>
+      ) : null}
       <Box sx={{ textAlign: 'right', minWidth: 82 }}>
         <Typography sx={{ ...mono, fontSize: 12.5, fontWeight: 800, color, lineHeight: 1.2 }}>
-          {moneySignB(item.abs)}
+          {showTrend ? moneySignB(item.abs) : moneyB(item.last)}
         </Typography>
-        <Typography sx={{ ...mono, fontSize: 10.5, color: 'text.secondary' }}>
-          {pctLabel(item.pct)}
-        </Typography>
+        {showTrend ? (
+          <Typography sx={{ ...mono, fontSize: 10.5, color: 'text.secondary' }}>
+            {pctLabel(item.pct)}
+          </Typography>
+        ) : null}
       </Box>
     </Box>
   );

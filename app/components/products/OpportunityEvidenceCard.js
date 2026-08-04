@@ -91,7 +91,7 @@ export function OpportunityEvidenceCard({ selected, flowName, rankKey, historyKe
           <Typography
             sx={{ fontSize: 10, fontWeight: 700, color: accent, textTransform: 'uppercase' }}
           >
-            Why this ranks #{selected[rankKey]}
+            Evidence behind rank #{selected[rankKey]}
           </Typography>
           <Typography sx={{ mt: 0.5, fontSize: 11.5, color: 'text.secondary', lineHeight: 1.4 }}>
             Ranked primarily by gross {flowName.toLowerCase()} value (

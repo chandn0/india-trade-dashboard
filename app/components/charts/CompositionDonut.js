@@ -76,104 +76,117 @@ export default function CompositionDonut({ sideLabel, tone, comp }) {
           />
         </Box>
 
-        <Box sx={{ position: 'relative', width: '100%', maxWidth: 300, mx: 'auto' }}>
-          <Box
-            component="svg"
-            viewBox={`0 0 ${size} ${size}`}
-            role="img"
-            aria-label={`${sideLabel} by industry, ${year}`}
-            sx={{ width: '100%', height: 'auto', display: 'block' }}
-            onMouseLeave={() => setHover(null)}
-          >
-            {arcs.map((a, i) => (
-              <path
-                key={a.key}
-                d={arcPath(a.a0, a.a1, rOuter, rInner)}
-                fill={a.color}
-                fillOpacity={hover != null && hover !== i ? 0.32 : 0.92}
-                stroke="#fff"
-                strokeWidth="1.5"
-                onMouseEnter={() => setHover(i)}
-                style={{ cursor: 'pointer', transition: 'fill-opacity 120ms' }}
-              />
-            ))}
-          </Box>
-
-          {arcs.map((a, i) => {
-            if (a.share < 4 || !basketIconFor(a.name, a.key === 'rest')) return null;
-            const p = polar((rInner + rOuter) / 2, (a.a0 + a.a1) / 2);
-            return (
-              <Box
-                key={`ic-${a.key}`}
-                sx={{
-                  position: 'absolute',
-                  left: `${(p.x / size) * 100}%`,
-                  top: `${(p.y / size) * 100}%`,
-                  transform: 'translate(-50%, -50%)',
-                  pointerEvents: 'none',
-                  opacity: hover != null && hover !== i ? 0.3 : 1,
-                  transition: 'opacity 120ms',
-                }}
-              >
-                <BasketMark
-                  name={a.name}
-                  color={iconInk(a.color)}
-                  rest={a.key === 'rest'}
-                  size={14}
+        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+          <Box sx={{ position: 'relative', width: 'min(100%, 300px)', flex: '0 1 300px' }}>
+            <Box
+              component="svg"
+              viewBox={`0 0 ${size} ${size}`}
+              role="img"
+              aria-label={`${sideLabel} by industry, ${year}`}
+              sx={{ width: '100%', height: 'auto', display: 'block' }}
+              onMouseLeave={() => setHover(null)}
+            >
+              {arcs.map((a, i) => (
+                <path
+                  key={a.key}
+                  d={arcPath(a.a0, a.a1, rOuter, rInner)}
+                  fill={a.color}
+                  fillOpacity={hover != null && hover !== i ? 0.32 : 0.92}
+                  stroke="#fff"
+                  strokeWidth="1.5"
+                  onMouseEnter={() => setHover(i)}
+                  style={{ cursor: 'pointer', transition: 'fill-opacity 120ms' }}
                 />
-              </Box>
-            );
-          })}
+              ))}
+            </Box>
 
-          <Box
-            sx={{
-              position: 'absolute',
-              inset: 0,
-              display: 'grid',
-              placeItems: 'center',
-              pointerEvents: 'none',
-              textAlign: 'center',
-              px: '22%',
-            }}
-          >
-            {hv ? (
-              <Box>
+            {arcs.map((a, i) => {
+              if (a.share < 4 || !basketIconFor(a.name, a.key === 'rest')) return null;
+              const p = polar((rInner + rOuter) / 2, (a.a0 + a.a1) / 2);
+              return (
                 <Box
+                  key={`ic-${a.key}`}
                   sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: 0.5,
-                    mb: 0.25,
+                    position: 'absolute',
+                    left: `${(p.x / size) * 100}%`,
+                    top: `${(p.y / size) * 100}%`,
+                    transform: 'translate(-50%, -50%)',
+                    pointerEvents: 'none',
+                    opacity: hover != null && hover !== i ? 0.3 : 1,
+                    transition: 'opacity 120ms',
                   }}
                 >
-                  <BasketMark name={hv.name} color={hv.color} rest={hv.key === 'rest'} size={16} />
-                  <Typography sx={{ fontSize: 12, fontWeight: 700, lineHeight: 1.1 }}>
-                    {hv.name}
+                  <BasketMark
+                    name={a.name}
+                    color={iconInk(a.color)}
+                    rest={a.key === 'rest'}
+                    size={14}
+                  />
+                </Box>
+              );
+            })}
+
+            <Box
+              sx={{
+                position: 'absolute',
+                inset: 0,
+                display: 'grid',
+                placeItems: 'center',
+                pointerEvents: 'none',
+                textAlign: 'center',
+                px: '22%',
+              }}
+            >
+              {hv ? (
+                <Box>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: 0.5,
+                      mb: 0.25,
+                    }}
+                  >
+                    <BasketMark
+                      name={hv.name}
+                      color={hv.color}
+                      rest={hv.key === 'rest'}
+                      size={16}
+                    />
+                    <Typography sx={{ fontSize: 12, fontWeight: 700, lineHeight: 1.1 }}>
+                      {hv.name}
+                    </Typography>
+                  </Box>
+                  <Typography
+                    sx={{
+                      ...mono,
+                      fontSize: 18,
+                      fontWeight: 800,
+                      color: hv.color,
+                      lineHeight: 1.1,
+                    }}
+                  >{`${hv.share.toFixed(1)}%`}</Typography>
+                  <Typography sx={{ ...mono, fontSize: 11, color: 'text.secondary' }}>
+                    {moneyB(hv.value)}
                   </Typography>
                 </Box>
-                <Typography
-                  sx={{ ...mono, fontSize: 18, fontWeight: 800, color: hv.color, lineHeight: 1.1 }}
-                >{`${hv.share.toFixed(1)}%`}</Typography>
-                <Typography sx={{ ...mono, fontSize: 11, color: 'text.secondary' }}>
-                  {moneyB(hv.value)}
-                </Typography>
-              </Box>
-            ) : (
-              <Box>
-                <Typography
-                  sx={{ ...mono, fontSize: 22, fontWeight: 800, color: C.ink, lineHeight: 1.05 }}
-                >
-                  {moneyB(total)}
-                </Typography>
-                <Typography
-                  variant="overline"
-                  sx={{ color: 'text.secondary', display: 'block', lineHeight: 1.4 }}
-                >
-                  Total
-                </Typography>
-              </Box>
-            )}
+              ) : (
+                <Box>
+                  <Typography
+                    sx={{ ...mono, fontSize: 22, fontWeight: 800, color: C.ink, lineHeight: 1.05 }}
+                  >
+                    {moneyB(total)}
+                  </Typography>
+                  <Typography
+                    variant="overline"
+                    sx={{ color: 'text.secondary', display: 'block', lineHeight: 1.4 }}
+                  >
+                    Total
+                  </Typography>
+                </Box>
+              )}
+            </Box>
           </Box>
         </Box>
 

@@ -221,8 +221,8 @@ export function windowHs4(items, i0, i1) {
 }
 
 export function buildMovers(list) {
-  const gainers = [...list].sort((a, b) => b.abs - a.abs).slice(0, 6);
-  const decliners = [...list].sort((a, b) => a.abs - b.abs).slice(0, 6);
+  const gainers = [...list].sort((a, b) => b.abs - a.abs).slice(0, 10);
+  const decliners = [...list].sort((a, b) => a.abs - b.abs).slice(0, 10);
   return { gainers, decliners };
 }
 

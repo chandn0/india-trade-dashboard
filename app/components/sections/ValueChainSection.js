@@ -8,7 +8,6 @@ import { moneyB, moneySignB, ratioLabel, fyTick } from '../../lib/format.js';
 import { HS4_YEARS, IMPORT_BY_CODE, EXPORT_BY_CODE } from '../../lib/transforms.js';
 import { VALUE_CHAINS, CHAIN_COLOR } from '../../config/valueChains.js';
 import ValueChainMap from '../charts/ValueChainMap.js';
-import ChainFlowChart from '../charts/ChainFlowChart.js';
 import ChainStat from '../primitives/ChainStat.js';
 import MoverRow from '../charts/MoverRow.js';
 import ToggleChips from '../primitives/ToggleChips.js';
@@ -23,7 +22,6 @@ export default function ValueChainSection() {
   const outSeries = HS4_YEARS.map((_, i) => outputItems.reduce((sum, it) => sum + it.series[i], 0));
   const last = HS4_YEARS.length - 1;
   const covLast = inSeries[last] > 0 ? outSeries[last] / inSeries[last] : null;
-  const covFirst = inSeries[0] > 0 ? outSeries[0] / inSeries[0] : null;
 
   const counterFlows = [
     ...chain.inputs
@@ -62,11 +60,11 @@ export default function ValueChainSection() {
           }}
         >
           <Typography component="h2" variant="h6">
-            How imports feed exports
+            Imported inputs in export value chains
           </Typography>
           <Chip
             size="small"
-            label={`FY${fyTick(HS4_YEARS[0])} → FY${fyTick(HS4_YEARS[last])}`}
+            label={`FY${fyTick(HS4_YEARS[last])} linkage view`}
             sx={{ bgcolor: alpha(C.teal, 0.1), color: C.teal, fontWeight: 800 }}
           />
         </Box>
@@ -137,29 +135,27 @@ export default function ValueChainSection() {
           <ChainStat
             label="Imported inputs"
             value={moneyB(inSeries[last])}
-            sub={`FY${fyTick(HS4_YEARS[0])}: ${moneyB(inSeries[0])}`}
+            sub={`${inputItems.length} input product ${inputItems.length === 1 ? 'line' : 'lines'}`}
             color={C.orange}
           />
           <ChainStat
             label="Exported outputs"
             value={moneyB(outSeries[last])}
-            sub={`FY${fyTick(HS4_YEARS[0])}: ${moneyB(outSeries[0])}`}
+            sub={`${outputItems.length} output product ${outputItems.length === 1 ? 'line' : 'lines'}`}
             color={C.blue}
           />
           <ChainStat
             label="Coverage out÷in"
             value={ratioLabel(covLast)}
-            sub={`FY${fyTick(HS4_YEARS[0])}: ${ratioLabel(covFirst)}`}
+            sub="Exported outputs ÷ imported inputs"
           />
           <ChainStat
             label="Chain trade balance"
             value={moneySignB(chainNet[last])}
-            sub={`FY${fyTick(HS4_YEARS[0])}: ${moneySignB(chainNet[0])}`}
+            sub="Exports minus imports"
             color={chainNet[last] >= 0 ? C.teal : C.red}
           />
         </Box>
-
-        <ChainFlowChart inSeries={inSeries} outSeries={outSeries} />
 
         <Box
           sx={{
@@ -176,7 +172,7 @@ export default function ValueChainSection() {
               Imported inputs
             </Typography>
             {inputItems.map((it) => (
-              <MoverRow key={`in-${it.code}`} item={it} color={C.orange} />
+              <MoverRow key={`in-${it.code}`} item={it} color={C.orange} showTrend={false} />
             ))}
           </Box>
           <Box sx={{ minWidth: 0 }}>
@@ -184,7 +180,7 @@ export default function ValueChainSection() {
               Exported outputs
             </Typography>
             {outputItems.map((it) => (
-              <MoverRow key={`out-${it.code}`} item={it} color={C.blue} />
+              <MoverRow key={`out-${it.code}`} item={it} color={C.blue} showTrend={false} />
             ))}
           </Box>
           {counterFlows.length ? (
@@ -197,6 +193,7 @@ export default function ValueChainSection() {
                   key={`cf-${dir}-${it.code}`}
                   item={it}
                   color={dir === 'import' ? C.orange : C.blue}
+                  showTrend={false}
                 />
               ))}
               <Typography
@@ -221,8 +218,7 @@ export default function ValueChainSection() {
           than measured value-added: imported inputs also serve domestic demand (most gold and coal
           never leave), and exports also draw on domestic inputs. Key players are well-known firms
           in each chain from public reporting — company-level detail is not part of the official
-          trade data. Gross trade values from FY2021-22 to FY2025-26. Hover or tap the chart for
-          year-by-year figures.
+          trade data. Values shown are for FY2025-26.
         </Typography>
       </Stack>
     </Paper>
