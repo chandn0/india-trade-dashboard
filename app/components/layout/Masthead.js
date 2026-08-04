@@ -6,7 +6,13 @@ import { ArrowBackRounded, LaunchRounded } from '@mui/icons-material';
 import { C } from '../../theme.js';
 import { latestFyLabel } from '../../lib/transforms.js';
 
-export default function Masthead({ pageTitle, backHref, backLabel, fyLabel = latestFyLabel, showFyBadge = true }) {
+export default function Masthead({
+  pageTitle,
+  backHref,
+  backLabel,
+  fyLabel = latestFyLabel,
+  showFyBadge = true,
+}) {
   return (
     <Box
       component="header"
