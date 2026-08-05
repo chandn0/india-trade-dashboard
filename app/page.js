@@ -72,10 +72,6 @@ function Dashboard() {
             <TradeTrendChart />
           </Box>
 
-          <Stack component="section" aria-label="Featured data briefs" spacing={layout.contentGap}>
-            <SectorBriefsPromo />
-          </Stack>
-
           <Box component="section" id="basket-mix" data-section>
             <SectionIntro
               eyebrow="Commodity mix"
@@ -107,6 +103,9 @@ function Dashboard() {
                 tone="warning"
                 comp={importComp}
               />
+            </Box>
+            <Box sx={{ mt: layout.contentGap }}>
+              <SectorBriefsPromo />
             </Box>
           </Box>
 

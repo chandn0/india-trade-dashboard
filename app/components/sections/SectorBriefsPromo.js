@@ -7,7 +7,7 @@ import {
   Science,
   Settings,
 } from '@mui/icons-material';
-import { Box, Button, Paper, Typography } from '@mui/material';
+import { Box, Paper, Typography } from '@mui/material';
 import { C } from '../../theme.js';
 import cardSx from '../primitives/cardSx.js';
 
@@ -15,35 +15,30 @@ const briefs = [
   {
     href: '/petroleum',
     title: 'Crude oil and energy',
-    text: 'Suppliers, refineries, distribution and domestic use.',
     icon: LocalGasStation,
     color: C.ink,
   },
   {
     href: '/electronics',
     title: 'Electronics',
-    text: 'Chips, phones, computers and component dependence.',
     icon: Memory,
     color: C.blueDeep,
   },
   {
     href: '/gems-jewellery',
     title: 'Gems, gold and jewellery',
-    text: 'Gold demand, diamond processing and jewellery exports.',
     icon: Diamond,
     color: '#7a4b2d',
   },
   {
     href: '/chemicals',
     title: 'Chemicals and pharma',
-    text: 'Fertilisers, industrial inputs and medicine exports.',
     icon: Science,
     color: C.teal,
   },
   {
     href: '/machinery',
     title: 'Machinery and equipment',
-    text: 'Computers, turbines and industrial production equipment.',
     icon: Settings,
     color: C.purple,
   },
@@ -70,49 +65,46 @@ export default function SectorBriefsPromo() {
           gap: 1.25,
         }}
       >
-        {briefs.map(({ href, title, text, icon: Icon, color }) => (
+        {briefs.map(({ href, title, icon: Icon, color }) => (
           <Paper
             key={href}
-            component="article"
+            component={Link}
+            href={href}
+            aria-label={`Open ${title} brief`}
             sx={{
               ...cardSx,
-              p: 2,
+              p: 1.5,
               display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'flex-start',
-              minHeight: 190,
+              alignItems: 'center',
+              gap: 1.1,
+              minHeight: 72,
+              color: 'text.primary',
+              textDecoration: 'none',
+              transition: 'border-color 150ms ease, transform 150ms ease',
+              '&:hover': {
+                borderColor: color,
+                transform: 'translateY(-1px)',
+              },
             }}
           >
             <Box
               sx={{
-                width: 36,
-                height: 36,
+                width: 32,
+                height: 32,
                 display: 'grid',
                 placeItems: 'center',
                 borderRadius: 1,
                 bgcolor: color,
                 color: '#fff',
+                flexShrink: 0,
               }}
             >
               <Icon fontSize="small" />
             </Box>
-            <Typography component="h3" variant="h6" sx={{ mt: 1.25 }}>
+            <Typography component="h3" variant="subtitle2" sx={{ lineHeight: 1.25 }}>
               {title}
             </Typography>
-            <Typography
-              sx={{ mt: 0.4, mb: 1.4, color: 'text.secondary', fontSize: 12.5, lineHeight: 1.55 }}
-            >
-              {text}
-            </Typography>
-            <Button
-              component={Link}
-              href={href}
-              size="small"
-              endIcon={<ArrowForward />}
-              sx={{ mt: 'auto', color }}
-            >
-              Open brief
-            </Button>
+            <ArrowForward sx={{ ml: 'auto', color, fontSize: 18, flexShrink: 0 }} />
           </Paper>
         ))}
       </Box>
