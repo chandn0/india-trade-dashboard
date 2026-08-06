@@ -9,6 +9,7 @@ import { REST_COLOR } from '../../lib/transforms.js';
 import { basketIconFor, iconInk } from '../../config/icons.js';
 import BasketMark from '../primitives/BasketMark.js';
 import cardSx from '../primitives/cardSx.js';
+import ChartFooter from '../primitives/ChartFooter.js';
 
 export default function CompositionDonut({ sideLabel, tone, comp }) {
   const accent = toneColor(tone);
@@ -205,9 +206,9 @@ export default function CompositionDonut({ sideLabel, tone, comp }) {
           ))}
         </Box>
 
-        <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+        <ChartFooter>
           {`Share of total ${sideLabel.toLowerCase()} by commodity basket in ${year}; slices sum to 100%.`}
-        </Typography>
+        </ChartFooter>
       </Stack>
     </Paper>
   );

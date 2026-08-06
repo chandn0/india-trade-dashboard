@@ -5,6 +5,7 @@ import { Box, Button, Chip, Paper, Stack, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { toneColor } from '../../theme.js';
 import cardSx from '../primitives/cardSx.js';
+import ChartFooter from '../primitives/ChartFooter.js';
 import MoversGroup from './MoversGroup.js';
 
 export default function MoversCard({ sideLabel, tone, movers }) {
@@ -42,9 +43,9 @@ export default function MoversCard({ sideLabel, tone, movers }) {
         >
           {expanded ? 'Show fewer product lines' : 'Show 10 product lines in each group'}
         </Button>
-        <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+        <ChartFooter>
           {`Ranked by change in annual ${sideLabel.toLowerCase()} value (US$) from FY2021-22 to FY2025-26, across HS-4 product lines. Each row also shows the item's FY2025-26 position in the latest basket. Hover or tap a sparkline for the year-by-year path.`}
-        </Typography>
+        </ChartFooter>
       </Stack>
     </Paper>
   );

@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og';
+import { SITE_DOMAIN } from './lib/siteBrand.js';
 
 export const alt =
   'India Trade Monitor — exports, imports and the trade balance from official Government of India data';
@@ -58,9 +59,9 @@ export default async function OpengraphImage() {
           color: '#7a86a0',
         }}
       >
-        <span>tradestat.commerce.gov.in &middot; RBI &middot; FBIL</span>
-        <span style={{ color: '#d9cbff', fontWeight: 700, letterSpacing: 1 }}>
-          FY10–11 → present
+        <span>Official public data &middot; FY10–11 → present</span>
+        <span style={{ color: '#d9cbff', fontWeight: 800, fontSize: 28, letterSpacing: 1 }}>
+          {SITE_DOMAIN}
         </span>
       </div>
     </div>,

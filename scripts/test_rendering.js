@@ -207,6 +207,7 @@ describe('S05 Suite 10: DomesticValueChainFramework Research Preview UI', () => 
 
 import Masthead from '../app/components/layout/Masthead.js';
 import Footer from '../app/components/layout/Footer.js';
+import ChartFooter from '../app/components/primitives/ChartFooter.js';
 import PhoneBrandBrief from '../app/phones/PhoneBrandBrief.js';
 import MobilityBrief from '../app/mobility/MobilityBrief.js';
 import PetroleumBrief from '../app/petroleum/PetroleumBrief.js';
@@ -329,6 +330,27 @@ describe('S05 Suite 13: Open-Source Repository Links UI', () => {
       screen.getByText(/Open-source trade analytics/i),
       'Footer should present an open-source participation invitation',
     );
+
+    root.unmount();
+  });
+});
+
+describe('S05 Suite 13a: Shareable Chart Attribution', () => {
+  it('renders the canonical domain as a visible, clickable chart credit', () => {
+    let root;
+    act(() => {
+      root = render(
+        <ThemeProvider theme={theme}>
+          <ChartFooter>Chart methodology note.</ChartFooter>
+        </ThemeProvider>,
+      );
+    });
+
+    const domainLink = root.container.querySelector('a[href="https://indiaatlas.xyz"]');
+    assert.ok(domainLink, 'Chart footer should link to the canonical site');
+    assert.equal(domainLink.textContent, 'indiaatlas.xyz');
+    assert.equal(domainLink.getAttribute('aria-label'), 'Visit indiaatlas.xyz');
+    assert.ok(root.container.textContent.includes('Chart methodology note.'));
 
     root.unmount();
   });

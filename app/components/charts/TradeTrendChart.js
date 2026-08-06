@@ -10,6 +10,7 @@ import { buildTradeGeo } from '../../lib/chartGeometry.js';
 import { latestFyLabel, latestIsProvisional, rows } from '../../lib/transforms.js';
 import TipRow from '../primitives/TipRow.js';
 import cardSx from '../primitives/cardSx.js';
+import ChartFooter from '../primitives/ChartFooter.js';
 
 export default function TradeTrendChart() {
   const [hover, setHover] = React.useState(null);
@@ -340,11 +341,11 @@ export default function TradeTrendChart() {
             </Box>
           ) : null}
         </Box>
-        <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+        <ChartFooter>
           The shaded band is the trade deficit — the gap between imports and exports. Hover or tap
           any year for figures; click a legend chip to toggle a series.
           {latestIsProvisional ? ` ${latestFyLabel} figures may be revised.` : ''}
-        </Typography>
+        </ChartFooter>
       </Stack>
     </Paper>
   );

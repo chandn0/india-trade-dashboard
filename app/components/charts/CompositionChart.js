@@ -10,6 +10,7 @@ import { REST_COLOR, CAT } from '../../lib/transforms.js';
 import { basketIconFor, iconInk } from '../../config/icons.js';
 import BasketMark from '../primitives/BasketMark.js';
 import cardSx from '../primitives/cardSx.js';
+import ChartFooter from '../primitives/ChartFooter.js';
 
 export default function CompositionChart({
   title,
@@ -304,10 +305,10 @@ export default function CompositionChart({
             </Typography>
           ) : null}
         </Box>
-        <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+        <ChartFooter>
           {sideLabel} across {comp.groupCount} {groupNoun}; the top {comp.items.length} are shown as
           continuous bands and each year sums to 100%.
-        </Typography>
+        </ChartFooter>
       </Stack>
     </Paper>
   );

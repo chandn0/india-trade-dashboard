@@ -16,6 +16,7 @@ import {
 import { hs2Label } from '../../config/icons.js';
 import PartnerProductIcons from '../primitives/PartnerProductIcons.js';
 import cardSx from '../primitives/cardSx.js';
+import ChartFooter from '../primitives/ChartFooter.js';
 
 export default function PartnerButterfly() {
   const top = PARTNERS.slice(0, 12);
@@ -191,9 +192,9 @@ export default function PartnerButterfly() {
           );
         })}
 
-        <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+        <ChartFooter>
           {`Top 12 partners by total trade in FY${fyTick(COUNTRY_YEARS[COUNTRY_LAST])}. Bars share one scale; the balance column is exports minus imports. The small icons are each partner's top three traded product chapters (FY${PARTNER_PRODUCTS_FY ? fyTick(PARTNER_PRODUCTS_FY) : ''}, EIDB) — hover or tap a row to name them.`}
-        </Typography>
+        </ChartFooter>
       </Stack>
     </Paper>
   );

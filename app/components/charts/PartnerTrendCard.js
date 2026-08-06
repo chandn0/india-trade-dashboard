@@ -4,6 +4,7 @@ import { C, mono } from '../../theme.js';
 import { moneySignB, fyTick } from '../../lib/format.js';
 import { PARTNERS, COUNTRY_YEARS } from '../../lib/transforms.js';
 import cardSx from '../primitives/cardSx.js';
+import ChartFooter from '../primitives/ChartFooter.js';
 
 export default function PartnerTrendCard() {
   const years = COUNTRY_YEARS.slice(-5);
@@ -117,10 +118,10 @@ export default function PartnerTrendCard() {
           </Box>
         </Box>
 
-        <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+        <ChartFooter>
           Each cell is exports minus imports for that partner. Red values are trade deficits; green
           values are surpluses. The latest fiscal year is emphasized.
-        </Typography>
+        </ChartFooter>
       </Stack>
     </Paper>
   );
